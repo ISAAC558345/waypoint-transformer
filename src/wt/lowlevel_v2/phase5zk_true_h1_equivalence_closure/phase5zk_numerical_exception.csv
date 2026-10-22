@@ -1,3 +1,0 @@
-path,scenario_id,time_step,assignment_vector,candidate_index,uav,field,unit,serial_value,optimized_value,abs_error,rel_error,combined_limit,exceeds_combined,near_zero_reference
-batch_gemm_not_shipped,310110,30,-1;3;4;-1;-1;5,74,5,delta_distance_to_target,m,-0.00010984696217830603,-0.00010985722903633643,1.0266858030405501e-08,9.346510660659062e-05,1.001098469621783e-06,False,True
-batch_gemm_not_shipped,310110,30,-1;3;4;-1;-1;5,74,5,heading_alignment_1,dimensionless,0.0150741155619209,0.015075387156634678,1.2715947137788286e-06,8.43561739032329e-05,1.150741155619209e-06,True,False

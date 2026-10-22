@@ -10,3 +10,8 @@ logs/
 _tmp_round19_full_tests/
 round_*/outputs/
 round_*/figures/
+round_*/report/
+report/
+docs/archive/
+results/root_exports/
+src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/

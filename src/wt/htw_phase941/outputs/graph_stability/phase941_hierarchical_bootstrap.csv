@@ -1,3 +1,0 @@
-kind,mean,ci_lo,ci_hi,n_boot
-hierarchical,75000.0,-1012500.0,1112500.0,2000
-seed_cluster,75000.0,-862500.0,937500.0,2000

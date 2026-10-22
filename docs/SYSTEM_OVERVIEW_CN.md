@@ -1,6 +1,6 @@
 # 多无人机高低层轨迹规划系统总报告
 
-本文件是当前研究系统的权威说明。数字来自已保存的 `summary.json` 和代码中的配置，不把尚未重新运行的结论写成新实验结果。仓库根目录仍保留被 `src` 引用的阶段报告；没有代码引用的过程报告已按全文合并到 `docs/archive/merged/`。盘点见 `docs/archive/REPOSITORY_CLEANUP_INVENTORY.md`，删除记录见 `docs/archive/DELETION_AND_MERGE_LOG.md`。
+本文件是当前研究系统的权威说明。数字来自代码中的配置和已冻结权重，不把尚未重新运行的结论写成新实验结果。过去的阶段报告不再保留在仓库中。
 
 ## 1. 项目目标与研究问题
 
@@ -191,7 +191,7 @@ py -3 -c "from wt.benchmark_v2.phase6f_system_bringup.episode import run_active_
 
 场景划分：训练 322000–322047，验证 322048–322063，保留测试 322064–322079。环境 reset 种子是场景编号；每条臂的 torch 种子是 `1000000 + scenario`。输出目录分别是 `results/phase6iab_planner_stability/` 与 `results/phase6iac_independent_holdout/`。
 
-关键 checkpoint 与哈希见 `docs/archive/REPOSITORY_CLEANUP_INVENTORY.md`，路径索引见 `configs/`。
+关键 checkpoint 的路径和哈希写在对应协议代码与 `configs/` 中。
 
 ## 仓库组织
 
@@ -204,12 +204,11 @@ requirements.txt
 configs/
 docs/
 ├── SYSTEM_OVERVIEW_CN.md
-└── archive/phase_reports/
+└── paper/
 results/
-├── root_exports/
 └── phase6if_ranking_loss/
 src/
 tests/
 ```
 
-过程报告不再放在仓库根目录。`backup/` 和 `round_01`–`round_36` 仍在原处，轮次测试按这些路径读取。checkpoint 在对应的 `results/phase*` 目录中。
+过去的阶段报告已从仓库移除。`round_01`–`round_36` 仍保留锁定文件，轮次测试按这些路径读取。正式权重保留方案 C 的 `epoch_001.pt`、其起点 `epoch_006.pt`、低层 `phase6g_seed0.pt` 和 `mappo_original.pt`。

@@ -1,4 +1,0 @@
-scenario,time_step,uav,chosen_candidate,utility_best_candidates,payload,regret
-310101,15,1,7,10,0.0,1.0
-310101,15,2,7,8 10,0.0,1.0
-310101,15,4,7,6 9,1000000.0,0.5

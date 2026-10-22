@@ -1,7 +1,0 @@
-system,link,spearman,pearson,n,mean_left,mean_right
-primary,sinr_rate,1.0,0.6338891649428192,384,,
-primary,rate_progress,0.9617060372649592,0.9535309152033158,384,,
-primary,progress_completion,0.09792949815895705,0.12376748130124815,384,,
-model_s,sinr_rate,1.0,0.6141711104205555,2027,,
-model_s,rate_progress,0.9127118365941371,0.8760217270177528,2027,,
-model_s,progress_completion,-0.03771232884067162,0.011915897813152223,2027,,

@@ -1,6 +1,0 @@
-source,files_scanned,reusable_labels,reuse_existing_label,reason
-src/wt/benchmark_v2/phase6h_executor_conditioned_macro,14,0,0,Artifacts have no per-candidate J15_MAPPO_CURRENT joined to a state hash for scenarios 322000-322063. Optima without the full G1_RATE k=6 pool are not reused.
-src/wt/benchmark_v2/phase6ia_candidate_boundary,70,0,0,Artifacts have no per-candidate J15_MAPPO_CURRENT joined to a state hash for scenarios 322000-322063. Optima without the full G1_RATE k=6 pool are not reused.
-src/wt/benchmark_v2/phase6e,15,0,0,Artifacts have no per-candidate J15_MAPPO_CURRENT joined to a state hash for scenarios 322000-322063. Optima without the full G1_RATE k=6 pool are not reused.
-src/wt/benchmark_v2/phase6f_system_bringup,75,0,0,Artifacts have no per-candidate J15_MAPPO_CURRENT joined to a state hash for scenarios 322000-322063. Optima without the full G1_RATE k=6 pool are not reused.
-src/wt/benchmark_v2/phase6ib_highlevel_dataset,0,0,0,No Phase-6I-B shard existed before the first J15 call.

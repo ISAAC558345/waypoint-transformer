@@ -1,5 +1,0 @@
-experiment,low_level_action_delta,low_level_flag,high_level_changes,high_level_flag,urgency_gap
-Baseline DeepSets+MAPPO,nan,NOT_APPLICABLE,False,NOT_IN_ENCODER,nan
-HGNN+MAPPO,nan,NOT_APPLICABLE,False,NOT_IN_ENCODER,nan
-DeepSets+UrgencyMAPPO,0.0005784708191640675,USED,False,NOT_IN_ENCODER,0.04236111100520835
-HGNN+UrgencyMAPPO,0.0007918728515505791,USED,False,URGENCY_IGNORED_BY_HIGH_LEVEL,-0.22916666609374994

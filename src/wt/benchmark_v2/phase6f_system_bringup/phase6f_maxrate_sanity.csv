@@ -1,5 +1,0 @@
-scenario_id,episode_complete,illegal_assignment,shadow_state_contamination,accounting_failures,nan_inf,hold_ok,chain_ok,decision_count,mean_candidate_count,mean_j15_seconds,episode_seconds,cumulative_payload_bits
-320000,1,0,0,0,0,1,1,4,1.0,0.0,0.022857300005853176,75667549.17509584
-320001,1,0,0,0,0,1,1,4,1.0,0.0,0.023531599988928065,74310033.92469798
-320002,1,0,0,0,0,1,1,4,1.0,0.0,0.02519770001526922,80382051.01923223
-320003,1,0,0,0,0,1,1,4,1.0,0.0,0.031172499991953373,67640470.42750777

@@ -1,7 +1,0 @@
-feature,decisions,assignment_disagreement,mean_true_served_bits_drop
-distance,256,0.48828125,1186053.2585388538
-queue,256,0.56640625,641879.4732707264
-rate_if_assigned,256,1.0,1516834.4538308487
-uav_uav_interference,256,0.546875,2105360.0110833184
-current_association,256,0.0,0.0
-uav_positions,256,0.65625,1805553.5245721447

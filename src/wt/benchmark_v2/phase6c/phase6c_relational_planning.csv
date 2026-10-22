@@ -1,3 +1,0 @@
-contrast,mean_delta_bits,median_delta_bits,ci_low,ci_high,positive_scenario_fraction,confirmed
-joint_true_bit_minus_max_rate_independent,-61118469.8584192,-60855075.339198135,-62491184.744135424,-59646612.96258659,0.0,False
-joint_true_bit_minus_queue_rate,-51085102.04051116,-52938685.59942055,-52718986.83025354,-49467836.37414845,0.0,False

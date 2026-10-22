@@ -15,7 +15,7 @@ results/        评估表、统计和阶段输出
 tests/
 ```
 
-过程报告在 `docs/archive/phase_reports/`。`round_01` 到 `round_36` 与 `backup/` 仍在原处，因为轮次锁定和测试按这些目录名读取。
+当前系统说明在 `docs/SYSTEM_OVERVIEW_CN.md`，论文在 `docs/paper/`。过去的阶段报告不再保留。`round_01` 到 `round_36` 仍保留锁定文件，因为轮次测试按这些目录名读取。
 
 常用命令：
 

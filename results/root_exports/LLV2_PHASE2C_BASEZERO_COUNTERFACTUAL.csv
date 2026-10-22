@@ -1,3 +1,0 @@
-model_seed,n_population,note
-0,0,base_zero AND NOT rec.service_lock AND NOT idle is empty; leftover freeze is IDLE_OPTION
-1,0,base_zero AND NOT rec.service_lock AND NOT idle is empty; leftover freeze is IDLE_OPTION
