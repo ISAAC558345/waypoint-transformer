@@ -1,0 +1,24 @@
+scenario,time_step,uav,candidate,case,payload_gain,utility_score,utility_rank,assignment_score,assignment_rank,payload_best_candidates
+310100,15,0,4,assignment_selection_error,0.0,0.0,3,62040.648430341185,1,8 10
+310100,15,1,1,assignment_selection_error,0.0,0.0,6,244469.9421044176,1,6 7 9 10 11
+310100,15,2,2,assignment_selection_error,0.0,0.0,7,221484.0136371826,1,6 7 8 9 10 11
+310100,15,3,0,assignment_selection_error,0.0,0.0,7,179675.51375595172,1,6 7 8 9 10 11
+310100,15,4,5,assignment_selection_error,0.0,0.0,7,47122.448638726615,1,6 7 8 9 10 11
+310100,15,5,3,assignment_selection_error,0.0,0.0,6,62761.24714272317,1,6 7 8 10 11
+310100,30,0,4,assignment_selection_error,0.0,0.0,7,275054.8612959505,1,6 7 8 9 10 11
+310100,30,1,1,assignment_selection_error,0.0,0.0,7,40136.40261854351,1,6 7 8 9 10 11
+310100,30,2,3,assignment_selection_error,0.0,0.0,6,666518.3909140134,1,6 7 8 9 11
+310100,30,3,0,assignment_selection_error,0.0,0.0,7,1797103.929964851,1,6 7 8 9 10 11
+310100,30,4,5,assignment_selection_error,0.0,0.0,6,1395788.432817402,1,6 7 9 10 11
+310100,30,5,2,assignment_selection_error,0.0,0.0,7,469235.1588757908,1,6 7 8 9 10 11
+310101,15,0,1,assignment_selection_error,0.0,0.0,7,231673.3186585262,1,6 7 8 9 10 11
+310101,15,1,4,assignment_selection_error,0.0,0.0,2,56266.02288145111,1,10
+310101,15,2,2,assignment_selection_error,0.0,0.0,3,252343.00089082742,1,8 10
+310101,15,3,0,assignment_selection_error,0.0,0.0,7,202893.98628183562,1,6 7 8 9 10 11
+310101,15,4,3,assignment_selection_error,0.0,0.0,7,53452.35781613578,1,6 9
+310101,15,5,5,assignment_selection_error,0.0,0.0,7,56898.39140917732,1,6 7 8 9 10 11
+310101,30,0,1,assignment_selection_error,1000000.0,1000000.0,5,957970.2187173722,1,6 7 9 11
+310101,30,2,2,assignment_selection_error,1000000.0,1000000.0,7,458975.21665369236,1,6 7 8 9 10 11
+310101,30,3,0,assignment_selection_error,1000000.0,1000000.0,7,1815302.8486415239,1,6 7 8 9 10 11
+310101,30,4,3,assignment_selection_error,1000000.0,1000000.0,7,516969.5049127475,1,6 7 8 9 10 11
+310101,30,5,5,assignment_selection_error,1000000.0,1000000.0,7,116033.16311897547,1,6 7 8 9 10 11

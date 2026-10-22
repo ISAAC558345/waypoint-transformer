@@ -1,0 +1,43 @@
+{
+  "round": "round_29",
+  "topic": "Cross-Scale Deferred-Service Pressure Normalization and Independent Confirmation Audit",
+  "previous_round_lock": "round_28/ROUND_LOCK.json",
+  "previous_round_lock_sha256": "9E3F10B893891B6E0E0415D886E00AEC234CD1376B3146E5704093A210384C91",
+  "round28_formal_output": "round_28/outputs/round28_planning_need_representation_20260830_1624",
+  "round28_train_validation_only": true,
+  "original_dsp": {
+    "formula": "0.5 * train_minmax(unserved_high_queue_mass) + 0.5 * train_minmax(distance_to_best_unassigned_high_value_buoy_m)",
+    "unserved_high_queue_mass": "sum(current queues at unserved buoys) / per_buoy_queue_capacity_bits",
+    "implicit_k_dependence": "yes: numerator is a sum over unserved buoys while denominator is one-buoy capacity"
+  },
+  "variants": {
+    "DSP-V1": {"backlog": "unserved_queue_bits / (total_queue_bits + epsilon)", "backlog_normalization": "physical_share", "spatial": "frozen_round28_train_minmax_distance", "weights": [0.5, 0.5], "simplicity_rank": 3},
+    "DSP-V2": {"backlog": "unserved_queue_bits / (num_valid_buoys * per_buoy_queue_capacity_bits + epsilon)", "backlog_normalization": "physical_per_buoy_fraction", "spatial": "frozen_round28_train_minmax_distance", "weights": [0.5, 0.5], "simplicity_rank": 2},
+    "DSP-V3": {"backlog": "unserved_queue_bits / (5 * current_aggregate_service_capacity_bits_per_step + epsilon)", "backlog_normalization": "round28_train_minmax_only", "spatial": "frozen_round28_train_minmax_distance", "weights": [0.5, 0.5], "simplicity_rank": 1}
+  },
+  "normalization": {"epsilon": 1e-12, "validation_used_for_scalers": false, "confirmation_used_for_scalers": false},
+  "formal_threshold": {"kind": "train_p75", "single_threshold_per_variant": true, "k_specific_threshold_excluded_from_gate": true},
+  "variant_selection": {"source_split": "round28_train_only", "ranking": ["useful_vs_nonuseful_auc_desc", "useful_vs_harmful_auc_desc", "k3_k5_activation_balance_desc", "physical_simplicity_rank_desc", "variant_name_asc"], "validation_utility_used": false},
+  "confirmation": {
+    "namespace": "round29_trigger_confirmation_v1",
+    "seed_start": 33000,
+    "scenario_count": 40,
+    "num_uavs": 2,
+    "num_buoys": [3, 5],
+    "eta": [0.25, 0.5],
+    "scenarios_per_k_eta_cell": 10,
+    "state_timesteps": [0, 2, 4, 6],
+    "selection_rule": "every listed timestep for every manifest scenario before DSP or utility computation",
+    "episode_horizon": 12,
+    "fresh_outcome_accesses": 1
+  },
+  "counterfactual_protocol": {"primary_horizon": 5, "planner_first_horizon": 5, "reference_first_horizon": 1, "continuation_horizon": 1, "same_snapshot_required": true, "only_first_action_differs": true, "numerical_utility_tolerance_bits": 1e-6},
+  "statistics": {"bootstrap_resamples": 2000, "bootstrap_seed": 2901, "bootstrap_cluster": "scenario_id", "minimum_active_states": 8, "minimum_active_scenarios": 5},
+  "cross_scale_gate": {"overall_ci_lower_min_bits": 0.0, "harmful_rate_not_above_population": true, "require_k3_k5_nonnegative": true, "require_eta_positive_direction": true, "require_coverage": true},
+  "training_performed": false,
+  "trigger_model_training_performed": false,
+  "cross_scale_audit_performed": true,
+  "confirmation_diagnostic_performed": true,
+  "protected_data_accessed": false,
+  "round30_created": false
+}

@@ -1,0 +1,19 @@
+proxy,component,available_at_first_hold,used,note
+U_single,A local value,1,1,first-hold shadow increment
+mean_uav_target_dist,B cand-state / E access,1,1,t=0 UAV to assigned buoy
+max_uav_target_dist,B/C UAV geometry,1,1,t=0
+n_in_range,E accessibility,1,1,service_radius at t=0
+assigned_queue_mean,D/H task queue,1,1,queue of assigned buoys
+n_unique_buoys,D other-task geometry,1,1,assignment coverage
+leftover_queue,F/H remaining-task,1,1,queue mass not assigned now
+leftover_hot,F remaining hot,1,1,unassigned hot-buoy queue
+leftover_min_dist,E leftover access,1,1,min UAV distance to leftover queued buoys
+idle_frac,F flexibility,1,1,idle UAVs at first hold
+competition_count,G competition,1,1,shared-buoy conflicts
+cand_mean_sinr,B comm geometry,1,1,"assignment on t=0, no step"
+queue_hot_mass,H state queue,1,1,t=0 hot queue; nearly constant
+O_traj,opportunity proxy,1,1,leftover_queue*(1+idle)/(1+comp)/(1+d/R)
+C_transition,transition proxy,1,1,in_range_frac/(1+competition)
+F,target,0,0,forbidden as feature
+U_traj,target,0,0,forbidden as feature
+future trajectory,forbidden,0,0,not used

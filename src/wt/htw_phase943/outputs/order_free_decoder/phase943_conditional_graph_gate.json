@@ -1,0 +1,5 @@
+{
+  "conditional_graph_advantage_confirmed": false,
+  "conditional_graph_advantage_suggestive": true,
+  "gate": "CGRAPH-B"
+}

@@ -1,0 +1,15 @@
+{
+  "atol": 1e-06,
+  "rtol": 1e-05,
+  "combined_rule": "abs(optimized-serial) <= atol + rtol * abs(serial)",
+  "median_definition": "median of per-state mean wall times",
+  "ci_definition": "scenario-cluster 95% CI of the mean paired absolute improvement in milliseconds",
+  "warmup": 1,
+  "repeats": 5,
+  "value_seed_in_latency": 0,
+  "threads": 12,
+  "omp_num_threads": "",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false
+}

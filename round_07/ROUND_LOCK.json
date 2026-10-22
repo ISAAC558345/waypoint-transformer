@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "round": "round_07",
+  "status": "completed",
+  "locked_at": "2026-08-09T18:30:00+08:00",
+  "topic": "Gate-B root-cause audit and versioned non-learning maritime offline dataset v2 construction",
+  "snapshot": {
+    "path": "backup/snapshots/before_round_07_20260809_1630",
+    "file_count": 22,
+    "byte_count": 407158,
+    "tree_sha256": "0C889F918B9C607D2527391914FD31A7ABCEB9EBE5898FBE4744F66468C91135"
+  },
+  "previous_round": {
+    "round": "round_06",
+    "lock_file": "round_06/ROUND_LOCK.json",
+    "lock_sha256": "E77A83EE903739AB6EB327238E632BAEB8FE93E7298258429BA471295AA71772"
+  },
+  "frozen_inputs": {
+    "round03_dataset": "round_03/outputs/round03_pilot_canonical_20260730_230000",
+    "round04_waypoint_checkpoint_sha256": "F92133AACA1FF6F0839EE7C817F40B696F7FD8FB15973A6118D222F83F01368D",
+    "round05_lock_sha256": "50124434E0CC9B2B4A3D954A27C97AA139F498C8AE023DA11DE602E533FDD380",
+    "round06_lock_sha256": "E77A83EE903739AB6EB327238E632BAEB8FE93E7298258429BA471295AA71772",
+    "round03_to_round06_preserved": true
+  },
+  "scope": {
+    "training_performed": false,
+    "waypoint_training_performed": false,
+    "transformer_training_performed": false,
+    "closed_loop_evaluation_performed": false,
+    "dataset_generation_performed": true,
+    "optimizer_created": false,
+    "backward_called": false,
+    "checkpoint_created": false,
+    "ppo_training_performed": false,
+    "hgnn_training_performed": false,
+    "next_round_created": false
+  },
+  "formal_dataset": {
+    "dataset_version": "maritime_offline_dataset_v2",
+    "goal_schema_candidate": "goal_schema_v2_candidate",
+    "waypoint_sample_schema": "waypoint_sample_schema_v2",
+    "scenario_seeds": "2000..2029",
+    "num_buoys": [3, 5],
+    "physical_scenarios": 60,
+    "behaviour_generators": ["nearest_buoy", "max_queue", "queue_rate_energy", "random_valid", "noisy_nearest", "noisy_queue_rate_energy", "policy_switch", "delayed_commitment"],
+    "episodes": 720,
+    "waypoint_samples": 214080,
+    "quality_counts": {"high": 288, "medium": 288, "low": 144},
+    "difficulty_counts": {"easy": 20, "medium": 20, "hard": 20},
+    "split_unit": "scenario seed; both scales and every behaviour share one split",
+    "scenario_seed_split_leakage": 0,
+    "untouched_holdout": {"physical_scenarios": 12, "episodes": 144, "used_for_training_or_selection": false}
+  },
+  "audit_results": {
+    "p25_cross_policy_overlap_rate": 0.7460701330108828,
+    "p25_bridge_candidate_count": 1641,
+    "p25_cross_episode_queries": 3308,
+    "stitching_stress_constructible": true,
+    "achieved_terminal_goal_hindsight_only": true,
+    "deployable_goal_candidate_available": true,
+    "deployable_goal_has_spatial_destination": false,
+    "mse_averaging_risk": {"5": "high", "10": "high", "20": "high", "30": "high"},
+    "recommended_horizon_candidates": [10, 20],
+    "retraining_data_ready": true
+  },
+  "acceptance": {
+    "focused_round07_tests": "7/7 PASS",
+    "repository_tests": "260/260 PASS",
+    "compileall": "PASS",
+    "dataset_validation": "development and holdout PASS; all finite; no invalid executed action",
+    "figure_png_files": 20,
+    "figure_svg_files": 20,
+    "failures": 0,
+    "blockers": 0
+  },
+  "canonical_outputs": {
+    "smoke_output": "round_07/outputs/round07_smoke_20260809_1705",
+    "formal_output": "round_07/outputs/round07_formal_20260809_1740",
+    "formal_figures": "round_07/figures/round07_formal_20260809_1740",
+    "root_cause_audit": "report/round_07_gate_b_root_cause_audit_20260809_1810.md",
+    "completion_report": "report/round_07_report_20260809_1810.md",
+    "implementation_log": "logs/codex/round_07_implementation_20260809_1630.md"
+  },
+  "tree_digest_algorithm": "SHA256 over UTF-8 records sorted by relative POSIX path; each record is relative_path + NUL + uppercase_file_SHA256 + LF",
+  "canonical_tree_sha256": {
+    "round_07/outputs/round07_formal_20260809_1740": {"file_count": 1469, "byte_count": 106357958, "sha256": "46DEB332F9F9A408C7CE783A7C8CDF2FB508B25D2EB35B2432DEEE47E6228F8F"},
+    "round_07/figures/round07_formal_20260809_1740": {"file_count": 40, "byte_count": 1328134, "sha256": "964DE9D809BE2A62E01B037D74D3D54946462652951086C1EC77E1BA4CDF5032"}
+  },
+  "implementation_sha256": {
+    "AGENTS.md": "73D0D3F7BC502234BEEE8807ECD97C29A6CCA9FB117B269AB9CB9C5392D592BA",
+    "CURRENT_ROUND.txt": "71C28340B87CC87DDBA3CEAA8A996CB2ADAB1856FCCE074E9AA553D1923C7BD8",
+    "PLANS.md": "A8EA8E6D4BB8A6682FE3BA0E2B112D5F40AC07A15A1FD37CC07A3067F385C21D",
+    "README.md": "CAEC8CB6A0611E26336D882BF548619BC069AAB884355EEFAFE1FE33A93459AA",
+    "round_manifest.json": "D6E003FC7B87371A5D7409CC3564FC3C3B79E3779D62C99673570D1FE7B13124",
+    "round_07/AGENTS.md": "9922627326FF3A7FC0311E857F8C4E4B15FAEB417935878F3D11AF9F719CAB09",
+    "round_07/configs/round07_data_audit_v1.json": "87041181DEBA4F8012B77340F650F45CBD8A06B72AA4754EC2C00CDFA77CFB36",
+    "round_07/round_manifest.json": "AF2A8730CA0E477B531522CA4161028193097E9052C85F66EC46DF170FDB240D",
+    "src/wt/round7/round7_runner.py": "93FEDE1489F56106EA17705BF504B0F1C1FDA5358A62D10313D90A6F7B33D516",
+    "experiments/run_round07.py": "608E5A39FADC857934A32D7637498B710B4190A63C94E0224FED993FBCB93FFB",
+    "tests/test_round07_data_audit.py": "53859FE808F83BBB680F0B59EEBAB66711CE9290CCBCF77A73ED9DF4A26C8A77",
+    "report/round_07_gate_b_root_cause_audit_20260809_1810.md": "443F3976C4E74563B81A1EC20F041E08F8C178365BA694851D464A8D4F362D3F",
+    "report/round_07_report_20260809_1810.md": "0447FD099700F6B4E1EBBED250BEBE49F72F041012CADF200E4D4A5748027794",
+    "logs/codex/round_07_implementation_20260809_1630.md": "8B5618B3EA9D08C16AF6C1232E5F34C6AE0A116B82E918512C1F5F7ABAD684C6"
+  },
+  "known_limitations": [
+    "single UAV/static buoy simplified communication environment",
+    "the deployable goal candidate contains task thresholds but no spatial destination",
+    "stitching audit establishes candidate structure, not future model performance",
+    "no model has been retrained or closed-loop ranked on v2"
+  ],
+  "unresolved_blockers": []
+}

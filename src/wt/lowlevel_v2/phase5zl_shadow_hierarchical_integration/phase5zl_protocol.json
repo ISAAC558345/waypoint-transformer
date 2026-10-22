@@ -1,0 +1,50 @@
+{
+  "atol": 1e-06,
+  "rtol": 1e-05,
+  "baseline_value_abs": 0.001,
+  "hold_steps": 15,
+  "warmup": 1,
+  "repeats": 3,
+  "bootstrap_draws": 10000,
+  "near_tie_abs": 1e-06,
+  "aggregation": "per_seed_only",
+  "tie_break": "stable_argsort_descending",
+  "deployment_latency_requirement": "NOT_SPECIFIED",
+  "phase4e_status": "DEPLOYMENT_VERIFICATION_FAILED",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "scenarios": [
+    310110,
+    310111,
+    310112,
+    310113,
+    310114,
+    310115,
+    310116,
+    310117
+  ],
+  "times": [
+    0,
+    15,
+    30
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "gate_priority": [
+    "INT-E",
+    "INT-B",
+    "INT-C",
+    "INT-D",
+    "INT-A"
+  ],
+  "record_all_blockers": true,
+  "calls_deployment_decision": false,
+  "prior_unified_median_ms": 357.55,
+  "prior_median_includes_taskoption": false
+}

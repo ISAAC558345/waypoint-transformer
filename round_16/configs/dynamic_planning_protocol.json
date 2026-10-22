@@ -1,0 +1,28 @@
+{
+  "schema_version": "round16_dynamic_planning_protocol_v1",
+  "scenario_namespace": "round16_dynamic_planning_diagnostic",
+  "training_performed": false,
+  "horizons": [1, 5, 10, 20],
+  "action_candidates": ["zero", "+x", "-x", "+y", "-y", "diag_ne", "diag_nw", "diag_se", "diag_sw", "nearest_buoy", "max_queue", "queue_rate_energy", "myopic_one_step_greedy"],
+  "continuation_policy": "queue_rate_energy",
+  "planning_objective": "actual simulated payload; then minimum radial action norm; then stable Round-15 candidate order",
+  "safe_projection": "unchanged existing radial action projection and environment boundary processing",
+  "causal_transition": "service at current buoy positions; then predict next buoy positions from current velocity and deterministic reflection. No future drift trace is read.",
+  "oracle_future_drift": true,
+  "oracle_deployable": false,
+  "arrival_assumption": "same Round-15 configuration-derived expected arrival; no realized future arrival trace is read by causal planning",
+  "drift_tiers": {
+    "static": {"mode": "static", "speed_fraction_of_uav_max": 0.0},
+    "low": {"mode": "constant", "speed_fraction_of_uav_max": 0.05},
+    "medium": {"mode": "constant", "speed_fraction_of_uav_max": 0.10},
+    "high": {"mode": "constant", "speed_fraction_of_uav_max": 0.20},
+    "slowly_varying_secondary": {"mode": "slowly_varying", "speed_fraction_of_uav_max": 0.10, "rho": 0.95, "innovation_fraction_of_drift_max": 0.01}
+  },
+  "buoy_boundary": "reflection at [buoy_margin, area_extent-buoy_margin] on each axis, including repeated crossings; reflected velocity has its corresponding sign reversed",
+  "bootstrap": {"confidence": 0.95, "replicates": 4000, "seed": 16016, "unit": "base_scenario_id"},
+  "primary_tiers": ["static", "low", "medium", "high"],
+  "secondary_tiers": ["slowly_varying_secondary"],
+  "diagnostic_seeds": {"first": 16000, "count_per_primary_tier": 12, "count_secondary": 12},
+  "forbidden_inputs": ["old_development_test", "fresh_development", "holdout", "untouched_holdout"],
+  "round17_created": false
+}

@@ -1,0 +1,173 @@
+{
+  "assignment_not_solved": true,
+  "flip_changes_payload": true,
+  "flips": [
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": -2000000.0,
+      "payload_hold_flipped": 20000000.0,
+      "payload_hold_oracle_init": 22000000.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": -2000000.0,
+      "payload_hold_flipped": 22000000.0,
+      "payload_hold_oracle_init": 24000000.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": -2000000.0,
+      "payload_hold_flipped": 20000000.0,
+      "payload_hold_oracle_init": 22000000.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": -2000000.0,
+      "payload_hold_flipped": 23000000.0,
+      "payload_hold_oracle_init": 25000000.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": -2000000.0,
+      "payload_hold_flipped": 20000000.0,
+      "payload_hold_oracle_init": 22000000.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": -2000000.0,
+      "payload_hold_flipped": 22000000.0,
+      "payload_hold_oracle_init": 24000000.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": -2000000.0,
+      "payload_hold_flipped": 20000000.0,
+      "payload_hold_oracle_init": 22000000.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": -1000000.0,
+      "payload_hold_flipped": 20000000.0,
+      "payload_hold_oracle_init": 21000000.0
+    }
+  ],
+  "legal_assignments": 169021,
+  "mean_abs_flip_payload": 1875000.0,
+  "mean_myopic_drop": 77.625,
+  "mean_myopic_oracle_agreement": 0.6484375,
+  "mean_myopic_payload": 17000000.0,
+  "mean_oracle_drop": 67.5,
+  "mean_oracle_payload": 28750000.0,
+  "myopic": [
+    {
+      "dropped_blocks": 78.0,
+      "oracle_agreement": 0.6041666666666666,
+      "payload_bits": 17000000.0,
+      "residual_queue": 25.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "oracle_agreement": 0.775,
+      "payload_bits": 12000000.0,
+      "residual_queue": 30.0
+    },
+    {
+      "dropped_blocks": 77.0,
+      "oracle_agreement": 0.6291666666666667,
+      "payload_bits": 18000000.0,
+      "residual_queue": 25.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "oracle_agreement": 0.7666666666666667,
+      "payload_bits": 21000000.0,
+      "residual_queue": 21.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "oracle_agreement": 0.6208333333333333,
+      "payload_bits": 14000000.0,
+      "residual_queue": 28.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "oracle_agreement": 0.5916666666666667,
+      "payload_bits": 18000000.0,
+      "residual_queue": 24.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "oracle_agreement": 0.6625,
+      "payload_bits": 15000000.0,
+      "residual_queue": 27.0
+    },
+    {
+      "dropped_blocks": 76.0,
+      "oracle_agreement": 0.5375000000000001,
+      "payload_bits": 21000000.0,
+      "residual_queue": 23.0
+    }
+  ],
+  "oracle_beats_myopic": true,
+  "oracle_minus_myopic": 11750000.0,
+  "oracle_option": [
+    {
+      "dropped_blocks": 68.0,
+      "oracle_agreement": 1.0,
+      "payload_bits": 30000000.0,
+      "residual_queue": 22.0
+    },
+    {
+      "dropped_blocks": 68.0,
+      "oracle_agreement": 1.0,
+      "payload_bits": 28000000.0,
+      "residual_queue": 24.0
+    },
+    {
+      "dropped_blocks": 68.0,
+      "oracle_agreement": 1.0,
+      "payload_bits": 26000000.0,
+      "residual_queue": 26.0
+    },
+    {
+      "dropped_blocks": 68.0,
+      "oracle_agreement": 1.0,
+      "payload_bits": 27000000.0,
+      "residual_queue": 25.0
+    },
+    {
+      "dropped_blocks": 68.0,
+      "oracle_agreement": 1.0,
+      "payload_bits": 28000000.0,
+      "residual_queue": 24.0
+    },
+    {
+      "dropped_blocks": 68.0,
+      "oracle_agreement": 1.0,
+      "payload_bits": 28000000.0,
+      "residual_queue": 24.0
+    },
+    {
+      "dropped_blocks": 63.0,
+      "oracle_agreement": 1.0,
+      "payload_bits": 35000000.0,
+      "residual_queue": 22.0
+    },
+    {
+      "dropped_blocks": 69.0,
+      "oracle_agreement": 1.0,
+      "payload_bits": 28000000.0,
+      "residual_queue": 23.0
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

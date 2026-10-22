@@ -1,0 +1,522 @@
+{
+  "planner_ready": false,
+  "deployment_verified": false,
+  "decide_called": false,
+  "encoder_frozen": true,
+  "matching_decoder_frozen": true,
+  "head_trained": true,
+  "mappo_modified": false,
+  "reward_modified": false,
+  "deployment_modified": false,
+  "learned_search_gain": false,
+  "training": {
+    "best_epoch": 10,
+    "best_train_spearman": 0.3565323392533849
+  },
+  "models": {
+    "original": {
+      "test": {
+        "n_states": 3.0,
+        "mappo": 333333.3333333333,
+        "spearman": -0.04329904812505385,
+        "top1": 0.0,
+        "inference_ms": 0.24376667958373824
+      },
+      "all": {
+        "n_states": 6.0,
+        "mappo": 166666.66666666666,
+        "spearman": -0.08567081098728335,
+        "top1": 0.0,
+        "inference_ms": 0.2993833428869645
+      },
+      "states": [
+        {
+          "model": "original",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 0,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 0.0,
+          "inference_ms": 0.4336999845691025,
+          "assignment": [
+            1,
+            0,
+            2,
+            5,
+            4,
+            3
+          ]
+        },
+        {
+          "model": "original",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 15,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 0.0,
+          "inference_ms": 0.3233000170439482,
+          "assignment": [
+            4,
+            5,
+            3,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "model": "original",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 30,
+          "mappo": 0.0,
+          "spearman": -0.12804257384951284,
+          "top1": 0.0,
+          "inference_ms": 0.30800001695752144,
+          "assignment": [
+            2,
+            4,
+            5,
+            0,
+            3,
+            1
+          ]
+        },
+        {
+          "model": "original",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 0,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 0.0,
+          "inference_ms": 0.2688000095076859,
+          "assignment": [
+            1,
+            0,
+            2,
+            5,
+            4,
+            3
+          ]
+        },
+        {
+          "model": "original",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 15,
+          "mappo": 1000000.0,
+          "spearman": NaN,
+          "top1": 0.0,
+          "inference_ms": 0.23300002794712782,
+          "assignment": [
+            2,
+            4,
+            3,
+            5,
+            0,
+            1
+          ]
+        },
+        {
+          "model": "original",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 30,
+          "mappo": 0.0,
+          "spearman": -0.04329904812505385,
+          "top1": 0.0,
+          "inference_ms": 0.22950000129640102,
+          "assignment": [
+            5,
+            0,
+            1,
+            2,
+            4,
+            3
+          ]
+        }
+      ]
+    },
+    "phase5l": {
+      "test": {
+        "n_states": 3.0,
+        "mappo": 333333.3333333333,
+        "spearman": -0.049766917892057144,
+        "top1": 0.0,
+        "inference_ms": 0.170533312484622
+      },
+      "all": {
+        "n_states": 6.0,
+        "mappo": 166666.66666666666,
+        "spearman": -0.07345133178549895,
+        "top1": 0.0,
+        "inference_ms": 0.1927666598930955
+      },
+      "states": [
+        {
+          "model": "phase5l",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 0,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 0.0,
+          "inference_ms": 0.17559999832883477,
+          "assignment": [
+            4,
+            3,
+            5,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "model": "phase5l",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 15,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 0.0,
+          "inference_ms": 0.29739999445155263,
+          "assignment": [
+            4,
+            3,
+            5,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "model": "phase5l",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 30,
+          "mappo": 0.0,
+          "spearman": -0.09713574567894076,
+          "top1": 0.0,
+          "inference_ms": 0.17200002912431955,
+          "assignment": [
+            2,
+            3,
+            5,
+            1,
+            4,
+            0
+          ]
+        },
+        {
+          "model": "phase5l",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 0,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 0.0,
+          "inference_ms": 0.20949996542185545,
+          "assignment": [
+            4,
+            3,
+            2,
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "model": "phase5l",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 15,
+          "mappo": 1000000.0,
+          "spearman": NaN,
+          "top1": 0.0,
+          "inference_ms": 0.13649999164044857,
+          "assignment": [
+            2,
+            4,
+            3,
+            5,
+            0,
+            1
+          ]
+        },
+        {
+          "model": "phase5l",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 30,
+          "mappo": 0.0,
+          "spearman": -0.049766917892057144,
+          "top1": 0.0,
+          "inference_ms": 0.16559998039156199,
+          "assignment": [
+            2,
+            5,
+            1,
+            0,
+            4,
+            3
+          ]
+        }
+      ]
+    },
+    "exhaustive": {
+      "test": {
+        "n_states": 3.0,
+        "mappo": 1000000.0,
+        "spearman": 1.0,
+        "top1": 1.0,
+        "inference_ms": 4039.5175333251245
+      },
+      "all": {
+        "n_states": 6.0,
+        "mappo": 833333.3333333334,
+        "spearman": 1.0,
+        "top1": 1.0,
+        "inference_ms": 4184.7794999969965
+      },
+      "states": [
+        {
+          "model": "exhaustive",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 0,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 1.0,
+          "inference_ms": 4150.965099979658,
+          "assignment": [
+            4,
+            3,
+            5,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "model": "exhaustive",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 15,
+          "mappo": 1000000.0,
+          "spearman": NaN,
+          "top1": 1.0,
+          "inference_ms": 4493.161000020336,
+          "assignment": [
+            4,
+            3,
+            5,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "model": "exhaustive",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 30,
+          "mappo": 1000000.0,
+          "spearman": 0.9999999999999999,
+          "top1": 1.0,
+          "inference_ms": 4345.998300006613,
+          "assignment": [
+            4,
+            -1,
+            -1,
+            3,
+            5,
+            -1
+          ]
+        },
+        {
+          "model": "exhaustive",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 0,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 1.0,
+          "inference_ms": 4008.038999978453,
+          "assignment": [
+            4,
+            3,
+            5,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "model": "exhaustive",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 15,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 1.0,
+          "inference_ms": 4252.599500003271,
+          "assignment": [
+            4,
+            3,
+            5,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        {
+          "model": "exhaustive",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 30,
+          "mappo": 3000000.0,
+          "spearman": 1.0,
+          "top1": 1.0,
+          "inference_ms": 3857.91409999365,
+          "assignment": [
+            5,
+            4,
+            -1,
+            -1,
+            3,
+            -1
+          ]
+        }
+      ]
+    },
+    "phase5n": {
+      "test": {
+        "n_states": 3.0,
+        "mappo": 1333333.3333333333,
+        "spearman": -0.08429328116641976,
+        "top1": 0.6666666666666666,
+        "inference_ms": 1.005766661061595
+      },
+      "all": {
+        "n_states": 6.0,
+        "mappo": 833333.3333333334,
+        "spearman": 0.13611952904348257,
+        "top1": 0.8333333333333334,
+        "inference_ms": 0.9806666639633477
+      },
+      "states": [
+        {
+          "model": "phase5n",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 0,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 1.0,
+          "inference_ms": 0.8644000045023859,
+          "assignment": [
+            5,
+            -1,
+            -1,
+            -1,
+            4,
+            3
+          ]
+        },
+        {
+          "model": "phase5n",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 15,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 1.0,
+          "inference_ms": 1.112300029490143,
+          "assignment": [
+            5,
+            -1,
+            -1,
+            3,
+            -1,
+            4
+          ]
+        },
+        {
+          "model": "phase5n",
+          "split": "train",
+          "scenario_id": 310100,
+          "time_step": 30,
+          "mappo": 1000000.0,
+          "spearman": 0.3565323392533849,
+          "top1": 1.0,
+          "inference_ms": 0.8899999666027725,
+          "assignment": [
+            -1,
+            -1,
+            -1,
+            4,
+            5,
+            3
+          ]
+        },
+        {
+          "model": "phase5n",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 0,
+          "mappo": 0.0,
+          "spearman": NaN,
+          "top1": 1.0,
+          "inference_ms": 1.1020000092685223,
+          "assignment": [
+            5,
+            -1,
+            -1,
+            4,
+            -1,
+            3
+          ]
+        },
+        {
+          "model": "phase5n",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 15,
+          "mappo": 3000000.0,
+          "spearman": NaN,
+          "top1": 1.0,
+          "inference_ms": 0.8761999779380858,
+          "assignment": [
+            -1,
+            4,
+            3,
+            -1,
+            -1,
+            5
+          ]
+        },
+        {
+          "model": "phase5n",
+          "split": "test",
+          "scenario_id": 310101,
+          "time_step": 30,
+          "mappo": 1000000.0,
+          "spearman": -0.08429328116641976,
+          "top1": 0.0,
+          "inference_ms": 1.0390999959781766,
+          "assignment": [
+            -1,
+            -1,
+            5,
+            -1,
+            3,
+            4
+          ]
+        }
+      ]
+    }
+  }
+}

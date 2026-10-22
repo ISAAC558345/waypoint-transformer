@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "round": "round_08",
+  "status": "completed",
+  "topic": "V2 deployable-goal waypoint and causal-policy retraining with isolated holdout",
+  "previous_round": "round_07",
+  "previous_lock": "round_07/ROUND_LOCK.json",
+  "snapshot": "backup/snapshots/before_round_08_20260809_1900",
+  "data_source": "round_07/outputs/round07_formal_20260809_1740/development_dataset_v2",
+  "allowed_waypoint_horizons": [10, 20],
+  "policy_context": 10,
+  "seeds": [0, 1, 2],
+  "status_flags": {
+    "training_performed": true,
+    "waypoint_training_performed": true,
+    "transformer_training_performed": true,
+    "development_closed_loop_performed": true,
+    "untouched_holdout_accessed": false,
+    "ppo_training_performed": false,
+    "hgnn_training_performed": false
+  },
+  "completed_at": "2026-08-09T23:50:00+08:00",
+  "gate": "B",
+  "candidate_ready_for_next_phase": false,
+  "canonical_formal": "round_08/outputs/round08_formal_20260809_2330"
+}

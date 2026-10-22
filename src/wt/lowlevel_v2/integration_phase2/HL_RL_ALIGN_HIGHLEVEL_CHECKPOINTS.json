@@ -1,0 +1,41 @@
+{
+  "items": [
+    {
+      "best_epoch": 60,
+      "best_val_regret": 350000.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2\\outputs\\deepsets_rlalign_seed0.pt",
+      "from_old_checkpoint": false,
+      "high_seed": 0
+    },
+    {
+      "best_epoch": 70,
+      "best_val_regret": 343750.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2\\outputs\\deepsets_rlalign_seed1.pt",
+      "from_old_checkpoint": false,
+      "high_seed": 1
+    },
+    {
+      "best_epoch": 80,
+      "best_val_regret": 381250.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2\\outputs\\deepsets_rlalign_seed2.pt",
+      "from_old_checkpoint": false,
+      "high_seed": 2
+    },
+    {
+      "best_epoch": 80,
+      "best_val_regret": 275000.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2\\outputs\\deepsets_rlalign_seed3.pt",
+      "from_old_checkpoint": false,
+      "high_seed": 3
+    },
+    {
+      "best_epoch": 30,
+      "best_val_regret": 387500.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2\\outputs\\deepsets_rlalign_seed4.pt",
+      "from_old_checkpoint": false,
+      "high_seed": 4
+    }
+  ],
+  "old_hl": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\final_artifacts\\checkpoints\\deepsets_util_seed0.pt",
+  "rule": "best_validation_mean_candidate_regret"
+}

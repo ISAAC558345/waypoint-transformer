@@ -1,0 +1,219 @@
+{
+  "deepsets": {
+    "conflict_rate": 0.0,
+    "environment_steps": 61440,
+    "goal_completion_rate": 1.0,
+    "high_level_entropy": 10.290540516376495,
+    "hold": 15,
+    "interference_utility": 0.0,
+    "last_update": {
+      "advantage_mean": 0.1307426393032074,
+      "advantage_std": 1.1623293161392212,
+      "approx_kl": 0.023781055584549904,
+      "clip_fraction": 0.2734375,
+      "entropy": 12.231629848480225,
+      "explained_variance": 0.5628341138362885,
+      "gradient_norm_preclip": 3.6838176175951958,
+      "mean_entropy": 12.173023223876953,
+      "mean_raw_reward": 0.84375,
+      "policy_loss": -0.02705741743557155,
+      "value_loss": 0.6814434193074703
+    },
+    "mean_payload_bits": 0.0,
+    "name": "deepsets",
+    "option_selection_accuracy": 0.41666666666666663,
+    "reward_mode": "delta",
+    "service_success_rate": 0.0,
+    "train_entropy": 12.231629848480225
+  },
+  "generalization": {
+    "k8_mask": {
+      "deepsets": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 1.0,
+        "high_level_entropy": 8.65659949183464,
+        "interference_utility": 0.0,
+        "mean_payload_bits": 0.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.0
+      },
+      "hgnn": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 1.0,
+        "high_level_entropy": 11.772968351840973,
+        "interference_utility": 0.0,
+        "mean_payload_bits": 0.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.0
+      },
+      "mlp": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 0.6996527777777779,
+        "high_level_entropy": 7.9826406836509705,
+        "interference_utility": 893741.0126928358,
+        "mean_payload_bits": 6500000.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.04040798611111111
+      }
+    },
+    "kappa_0.5": {
+      "deepsets": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 1.0,
+        "high_level_entropy": 10.290540516376495,
+        "interference_utility": 0.0,
+        "mean_payload_bits": 0.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.0
+      },
+      "hgnn": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 1.0,
+        "high_level_entropy": 13.730645298957825,
+        "interference_utility": 0.0,
+        "mean_payload_bits": 0.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.0
+      },
+      "mlp": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 0.6853298611111109,
+        "high_level_entropy": 8.687553614377975,
+        "interference_utility": 1337946.919429131,
+        "mean_payload_bits": 9500000.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.04036458333333333
+      }
+    },
+    "kappa_1.5": {
+      "deepsets": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 1.0,
+        "high_level_entropy": 10.290540516376495,
+        "interference_utility": 0.0,
+        "mean_payload_bits": 0.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.0
+      },
+      "hgnn": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 1.0,
+        "high_level_entropy": 13.730645298957825,
+        "interference_utility": 0.0,
+        "mean_payload_bits": 0.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.0
+      },
+      "mlp": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 0.6840277777777777,
+        "high_level_entropy": 8.706252351403236,
+        "interference_utility": 1104158.3658933064,
+        "mean_payload_bits": 7625000.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.03125
+      }
+    },
+    "m5_mask": {
+      "deepsets": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 1.0,
+        "high_level_entropy": 8.57974648475647,
+        "interference_utility": 0.0,
+        "mean_payload_bits": 0.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.0
+      },
+      "hgnn": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 1.0,
+        "high_level_entropy": 11.438723802566528,
+        "interference_utility": 0.0,
+        "mean_payload_bits": 0.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.0
+      },
+      "mlp": {
+        "conflict_rate": 0.0,
+        "goal_completion_rate": 0.7152777777777778,
+        "high_level_entropy": 7.760158896446228,
+        "interference_utility": 987090.209706878,
+        "mean_payload_bits": 7500000.0,
+        "option_selection_accuracy": NaN,
+        "service_success_rate": 0.04223090277777777
+      }
+    }
+  },
+  "hgnn": {
+    "conflict_rate": 0.0,
+    "environment_steps": 61440,
+    "goal_completion_rate": 1.0,
+    "high_level_entropy": 13.730645298957825,
+    "hold": 15,
+    "interference_utility": 0.0,
+    "last_update": {
+      "advantage_mean": -0.2392304241657257,
+      "advantage_std": 0.9544879198074341,
+      "approx_kl": -0.0033538751304149628,
+      "clip_fraction": 0.27734375,
+      "entropy": 14.155604541301727,
+      "explained_variance": 0.6035099029541016,
+      "gradient_norm_preclip": 1.6341049000620842,
+      "mean_entropy": 14.040382385253906,
+      "mean_raw_reward": 0.765625,
+      "policy_loss": -0.024149892386049032,
+      "value_loss": 0.4643527902662754
+    },
+    "mean_payload_bits": 0.0,
+    "name": "hgnn",
+    "option_selection_accuracy": 0.41666666666666663,
+    "reward_mode": "delta",
+    "service_success_rate": 0.0,
+    "train_entropy": 14.155604541301727
+  },
+  "hgnn_beats_deepsets": false,
+  "hgnn_beats_mlp": false,
+  "hold": 15,
+  "low_level": "fly_toward",
+  "mlp": {
+    "conflict_rate": 0.0,
+    "environment_steps": 61440,
+    "goal_completion_rate": 0.6853298611111109,
+    "high_level_entropy": 8.707226261496544,
+    "hold": 15,
+    "interference_utility": 1203335.6075056512,
+    "last_update": {
+      "advantage_mean": 0.4631290137767792,
+      "advantage_std": 1.7816084623336792,
+      "approx_kl": 0.06842823512852192,
+      "clip_fraction": 0.4453125,
+      "entropy": 8.934444189071655,
+      "explained_variance": 0.6339923143386841,
+      "gradient_norm_preclip": 4.701042801141739,
+      "mean_entropy": 9.42745590209961,
+      "mean_raw_reward": 1.640625,
+      "policy_loss": -0.07967175031080842,
+      "value_loss": 1.5746064968407154
+    },
+    "mean_payload_bits": 8250000.0,
+    "name": "mlp",
+    "option_selection_accuracy": 0.20616319444444442,
+    "reward_mode": "delta",
+    "service_success_rate": 0.03515625,
+    "train_entropy": 8.934444189071655
+  },
+  "modified_l3b": false,
+  "modified_low_level_ppo": false,
+  "phase82": {
+    "mean_exclusive_conflict": 0.0,
+    "mean_exclusive_payload": 2250000.0,
+    "mean_myopic_conflict": 0.9348958333333333,
+    "mean_myopic_payload": 1500000.0,
+    "mean_oracle_conflict": 0.0,
+    "mean_oracle_payload": 5375000.0
+  },
+  "reward_mode": "delta",
+  "seed": 0,
+  "updates": 80,
+  "used_exclusive_projection": false
+}

@@ -1,0 +1,9 @@
+name: waypoint-transformer
+channels:
+  - conda-forge
+dependencies:
+  # Upstream RvS/GCSL is most reproducible below Python 3.9.
+  - python=3.8
+  - pip=23.3.2
+  - pip:
+      - -r requirements.txt

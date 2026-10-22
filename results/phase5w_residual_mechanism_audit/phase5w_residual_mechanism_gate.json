@@ -1,0 +1,29 @@
+{
+  "gate": "W-C",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "continuity_bias": false,
+  "temp_shortcut_shift": false,
+  "shortcut_confirmed": true,
+  "synergy_confirmed": true,
+  "inversion_fraction": 0.2006546644844517,
+  "eval_score_continuation_spearman": 0.6994056779145096,
+  "eval_j_continuation_spearman": 0.47639760991825797,
+  "train_score_continuation_spearman": 0.705046864784036,
+  "train_j_continuation_spearman": 0.46167751802755175,
+  "case_synergy": 3000000.0,
+  "case_single_gains": [
+    -2000000.0
+  ],
+  "case_all_gain": 1000000.0,
+  "case_divergence_step": 1,
+  "case_divergence_source": "sinr",
+  "payload_divergence_step": 6,
+  "inversion_fraction_aid": 0.3,
+  "illegal_single_switches_excluded": 3,
+  "residual_synergy_median": 1000000.0,
+  "residual_synergy_mean": 1300000.0,
+  "residual_synergy_positive_fraction": 0.9,
+  "motion_nearly_identical_fraction": 0.9,
+  "train_replayed": false
+}

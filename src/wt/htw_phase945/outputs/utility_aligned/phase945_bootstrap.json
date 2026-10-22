@@ -1,0 +1,20 @@
+{
+  "deepsets_util_minus_old": {
+    "ci_hi": 4878203.125,
+    "ci_lo": 2478125.0,
+    "mean": 3750000.0,
+    "n_boot": 2000
+  },
+  "hgnn_util_minus_deepsets_util": {
+    "ci_hi": 453203.1249999996,
+    "ci_lo": -2387656.25,
+    "mean": -825000.0,
+    "n_boot": 2000
+  },
+  "hgnn_util_minus_old": {
+    "ci_hi": 4609453.125,
+    "ci_lo": 834375.0,
+    "mean": 2731250.0,
+    "n_boot": 2000
+  }
+}

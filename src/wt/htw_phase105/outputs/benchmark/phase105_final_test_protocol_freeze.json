@@ -1,0 +1,24 @@
+{
+  "architecture": "FINAL-HIER",
+  "auto_run_now": false,
+  "baselines": [
+    "M0 legal myopic",
+    "M1 exclusive",
+    "M2 DeepSets-old if legal",
+    "M3 FINAL-HIER"
+  ],
+  "metrics": [
+    "payload",
+    "completed_blocks",
+    "residual_queue",
+    "dropped",
+    "flight",
+    "legality",
+    "paired bootstrap"
+  ],
+  "next_phase": "10.6 Final Untouched Evaluation only, after explicit instruction",
+  "one_shot_untouched": true,
+  "scenario_generation": "unused integers from a new base; never reuse 105000 pre-final set",
+  "statistics": "scenario-paired percentile bootstrap; no invented model-seed CI unless multiple frozen high seeds are pre-registered",
+  "table_structure": "Method | Payload | Gain | Completed Blocks | Residual Queue | Drop | Flight Distance | Legality"
+}

@@ -1,0 +1,21 @@
+{
+  "round": "round_11",
+  "status": "completed",
+  "topic": "Task-aware communication waypoint supervised training and learnability validation",
+  "snapshot": "backup/snapshots/before_round_11_20260810_0140",
+  "input": "round_10/outputs/round10_task_waypoint_20260810_0110",
+  "allowed_splits": ["train", "validation"],
+  "forbidden": ["old_development_test", "untouched_holdout", "spatial_head", "constant_goal", "transformer", "policy", "closed_loop", "PPO", "HGNN"],
+  "training_runs": 6,
+  "horizons": [10, 20],
+  "seeds": [0, 1, 2],
+  "completed_at": "2026-08-10T02:45:00+08:00",
+  "canonical_output": "round_11/outputs/round11_task_waypoint_20260810_0220",
+  "predictor_gate": "TW-A",
+  "recommended_horizon": 10,
+  "tests": "429/429 PASS",
+  "figures": {"png": 20, "svg": 20},
+  "next_round_created": false
+  ,"completion_addendum": "report/round_11_completion_addendum_20260810_0330.md"
+  ,"lock_amendment": "round_11/ROUND_LOCK_AMENDMENT.json"
+}

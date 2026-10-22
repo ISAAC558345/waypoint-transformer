@@ -1,0 +1,15 @@
+{
+  "gate": "LL-A",
+  "gate_name": "V2_LOW_LEVEL_MAPPO_CONFIRMED",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "deployment_pass": false,
+  "trained_hgnn": false,
+  "candidate_generator_modified": false,
+  "high_level_modified": false,
+  "fresh_confirmation_untouched": true,
+  "low_level_frozen": true,
+  "next_phase_regenerates_j15": true,
+  "updates": 300,
+  "initialization_rule": "LEGACY_WARM_START if actor state dict loads, else SCRATCH_REQUIRED"
+}

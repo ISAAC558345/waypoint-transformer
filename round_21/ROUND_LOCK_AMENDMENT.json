@@ -1,0 +1,82 @@
+{
+  "amendment_type": "lifecycle_test_scope_fix",
+  "reason": "Historical test incorrectly asserted that round_22 must never exist, preventing legitimate later-round progression.",
+  "original_round21_lock_sha256": "F754D441B0A8A3DF77EDAD7EAF2E2CA3062A32025444524270795897E9958BD6",
+  "original_test_path": "tests/test_round21_hgnn_task_waypoint.py",
+  "original_test_sha256": "D3F5593CE5E053994F84A37BEFC248DFAF712FA99C22081C38BA4A41B2EB5A36",
+  "amended_test_sha256": "0AAAB8F01574516C5752F0806B80AFCB033AF047AF3430AD10F7A3A38AF7017F",
+  "original_semantic_intent": "Round-22 did not exist when Round-21 was completed.",
+  "amended_semantic_intent": "Round-22 must not have existed before Round-21 lock; later legal Round creation is permitted.",
+  "scientific_artifacts_modified": false,
+  "dataset_modified": false,
+  "checkpoints_modified": false,
+  "metrics_modified": false,
+  "reports_modified": false,
+  "neural_training_performed": false,
+  "protected_data_accessed": false,
+  "original_lock_modified": false,
+  "approved_at": "2026-08-29T12:11:00+08:00",
+  "scope": "Only the one Round-21 lifecycle assertion was changed. The original lock remains byte-for-byte immutable; this amendment is a strict single-path hash overlay.",
+  "round23_successor_lifecycle_clarification": {
+    "prior_amended_test_sha256": "A1D28501A3C031A914ACEA35B7C586895D776D60EFCEC200912B70EEFDAB712C",
+    "reason": "The existing legal-successor semantic assertion named Round-22 literally, although its stated intent permits later legal rounds. Round-23 is an authorized successor of the locked Round-22 state.",
+    "authorized_by": "Round-23 creation instruction",
+    "scientific_artifacts_modified": false,
+    "original_round21_lock_modified": false,
+    "approved_at": "2026-08-29T15:05:00+08:00"
+  },
+  "round24_successor_lifecycle_clarification": {
+    "prior_amended_test_sha256": "BE73FC2348C76F1FCA5B7A4B8E76AE8E32424271F3B1CDF40C84D56C32FF3481",
+    "amended_test_sha256": "0EFF11937CA2D025FB2C00ABE71177BDF2C27DAA04D736A0076B10874F95FB09",
+    "reason": "The same legal-successor assertion had to admit explicitly authorized Round-24 after the locked Round-23 state; the historical lock-time fact remains unchanged.",
+    "authorized_by": "Round-24 creation instruction",
+    "scientific_artifacts_modified": false,
+    "original_round21_lock_modified": false,
+    "approved_at": "2026-08-29T17:07:48+08:00"
+  },
+  "round25_successor_lifecycle_clarification": {
+    "prior_amended_test_sha256": "0EFF11937CA2D025FB2C00ABE71177BDF2C27DAA04D736A0076B10874F95FB09",
+    "amended_test_sha256": "1CBA3C4B00ACE80D3245248E999EB53D36BDE3CE0494B757AE38B36E95C1ADBE",
+    "reason": "The authorized Round-25 diagnostic successor must be accepted by the existing legal-successor lifecycle assertion. The locked-time fact that Round-22 was absent at the Round-21 lock remains unchanged.",
+    "authorized_by": "Round-25 creation instruction",
+    "scientific_artifacts_modified": false,
+    "original_round21_lock_modified": false,
+    "approved_at": "2026-08-30T12:05:53+08:00"
+  },
+  "round26_successor_lifecycle_clarification": {
+    "prior_amended_test_sha256": "1CBA3C4B00ACE80D3245248E999EB53D36BDE3CE0494B757AE38B36E95C1ADBE",
+    "amended_test_sha256": "478F11EF4E68580AAFBBCEC323C7ED9D1B0A514A487371854FA22B404EF6D6CF",
+    "reason": "The existing legal-successor lifecycle assertion must admit the explicitly authorized Round-26 diagnostic successor without changing the original Round-21 lock-time fact.",
+    "authorized_by": "Round-26 creation instruction",
+    "scientific_artifacts_modified": false,
+    "original_round21_lock_modified": false,
+    "approved_at": "2026-08-30T13:22:00+08:00"
+  },
+  "round27_successor_lifecycle_clarification": {
+    "prior_amended_test_sha256": "478F11EF4E68580AAFBBCEC323C7ED9D1B0A514A487371854FA22B404EF6D6CF",
+    "amended_test_sha256": "A89358EB9580B89538445108BDD5FA6655B4CF868980D03001720F121B870530",
+    "reason": "The lifecycle assertion must admit the explicitly authorized Round-27 diagnostic successor without changing the original Round-21 lock-time fact.",
+    "authorized_by": "Round-27 creation instruction",
+    "scientific_artifacts_modified": false,
+    "original_round21_lock_modified": false,
+    "approved_at": "2026-08-30T14:47:00+08:00"
+  },
+  "round28_successor_lifecycle_clarification": {
+    "prior_amended_test_sha256": "A89358EB9580B89538445108BDD5FA6655B4CF868980D03001720F121B870530",
+    "amended_test_sha256": "8B65D6A43EF300DAC4548BCB864FD9EDA2397EA383FF127787C1CD682DCA4952",
+    "reason": "The lifecycle assertion must admit the explicitly authorized Round-28 diagnostic successor without changing the original Round-21 lock-time fact.",
+    "authorized_by": "Round-28 creation instruction",
+    "scientific_artifacts_modified": false,
+    "original_round21_lock_modified": false,
+    "approved_at": "2026-08-30T16:24:00+08:00"
+  },
+  "round30_successor_lifecycle_clarification": {
+    "prior_amended_test_sha256": "8B65D6A43EF300DAC4548BCB864FD9EDA2397EA383FF127787C1CD682DCA4952",
+    "amended_test_sha256": "0AAAB8F01574516C5752F0806B80AFCB033AF047AF3430AD10F7A3A38AF7017F",
+    "reason": "The lifecycle assertion must admit the expressly authorized Round-29 and Round-30 successors while preserving the original Round-21 lock-time fact.",
+    "authorized_by": "Round-30 creation instruction",
+    "scientific_artifacts_modified": false,
+    "original_round21_lock_modified": false,
+    "approved_at": "2026-08-30T18:45:00+08:00"
+  }
+}

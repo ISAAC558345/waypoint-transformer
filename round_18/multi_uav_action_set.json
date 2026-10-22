@@ -1,0 +1,16 @@
+{
+  "schema_version": "round18_multi_uav_action_set_v1",
+  "per_uav_candidate_names": [
+    "zero",
+    "+x",
+    "-x",
+    "+y",
+    "-y",
+    "queue_rate_direction",
+    "nearest_unsatisfied_buoy_direction"
+  ],
+  "per_uav_candidate_count": 7,
+  "primary_num_uavs": 2,
+  "primary_joint_candidate_upper_bound": 49,
+  "frozen_before_formal_run": true
+}

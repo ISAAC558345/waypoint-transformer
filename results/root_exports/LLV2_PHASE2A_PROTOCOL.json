@@ -1,0 +1,8 @@
+{
+  "design_used": true,
+  "name": "LL-V2.2A",
+  "no_checkpoint_pick": true,
+  "primary_ckpts": "update100 only",
+  "trained": false,
+  "validation_posthoc_only": true
+}

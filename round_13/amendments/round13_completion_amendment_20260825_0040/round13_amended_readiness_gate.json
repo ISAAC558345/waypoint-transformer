@@ -1,0 +1,9 @@
+{
+  "amendment_only": true,
+  "continuous_service_action_gate": "SA-C-continuous",
+  "next_recommendation": "task_waypoint_action_mapping_redesign",
+  "original_service_action_gate": "SA-C-discrete",
+  "reward_alignment_gate": "RA-A",
+  "round14_creation_allowed": false,
+  "service_action_extension_ready": false
+}

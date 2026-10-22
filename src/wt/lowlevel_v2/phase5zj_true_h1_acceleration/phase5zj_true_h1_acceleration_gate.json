@@ -1,0 +1,19 @@
+{
+  "gate": "FAST-A",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "baseline_ok": true,
+  "batch_safe": true,
+  "equivalent": true,
+  "speedup_ok": true,
+  "latency_ci_low": 814.066673275819,
+  "latency_ci_high": 862.0973668935121,
+  "median_reduction": 0.6957202006752632,
+  "serial_median_ms": 711.4324833770904,
+  "optimized_median_ms": 216.4745332750802,
+  "j15_retained": true,
+  "shipped_path": "original executor.act plus one clone and no counterfactual rate grid",
+  "batch_gemm_shipped": false,
+  "deployment_latency_requirement": "NOT_SPECIFIED"
+}

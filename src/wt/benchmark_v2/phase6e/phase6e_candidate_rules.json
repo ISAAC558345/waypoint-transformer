@@ -1,0 +1,25 @@
+{
+  "rules": {
+    "G1_RATE": "normalized instantaneous rate_if_assigned",
+    "G2_DISTANCE": "negative normalized distance",
+    "G3_ETA": "negative eta_steps from current distance, speed and service radius",
+    "G4_QUEUE_RATE": "normalized Q_bits times normalized rate_if_assigned",
+    "G5_REACHABLE_RATE": "normalized rate_if_assigned / (1 + eta_steps)",
+    "G6_REACHABLE_QUEUE_RATE": "normalized Q_bits times normalized rate_if_assigned / (1 + eta_steps)"
+  },
+  "k": [
+    3,
+    4,
+    5
+  ],
+  "weights_fitted": false,
+  "j15_is_candidate_score": false,
+  "realized_future_arrival_allowed": false,
+  "tie_break": "mergesort on descending score, so equal scores keep the smaller buoy index",
+  "normalization": "divide each feature by its maximum over the current state; a zero maximum stays zero",
+  "idle": "top-k contains buoys only; idle is a separate legal choice and does not consume a buoy slot",
+  "reference": "G1_RATE k=5 candidate-pool optimum of J15_CURRENT. Not a global oracle.",
+  "state_source": "decision epochs of deterministic max-rate fly-toward with hold 15",
+  "horizon": "min(15, steps remaining)",
+  "future_arrivals_in_j15_current": 0
+}

@@ -1,0 +1,31 @@
+{
+  "agent_transitions_pilot": 115200,
+  "alpha_residual": 0.25,
+  "d_safe_m": 1.0,
+  "env_transitions_pilot": 19200,
+  "high_sha_after": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "high_sha_before": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "loaded_old_ppo_weights": false,
+  "logprob_uses_projected_action": false,
+  "mappo_difference": "separate ResidualActor + CentralizedCritic 188-d; joint tanh log-prob over 6x2; log_prob of pre-projection residual only",
+  "model_seed": 0,
+  "name": "LL-V2.1",
+  "ppo": {
+    "checkpoint_interval_steps": 192,
+    "clip_eps": 0.2,
+    "device": "cpu",
+    "entropy_coef": 0.01,
+    "gae_lambda": 0.95,
+    "gamma": 0.99,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 0.5,
+    "num_envs": 4,
+    "num_minibatches": 4,
+    "rollout_length": 48,
+    "update_epochs": 4,
+    "value_coef": 0.5
+  },
+  "service_safety_margin_m": 0.5,
+  "visited_phase106": false,
+  "wall_s": 116.27660822868347
+}

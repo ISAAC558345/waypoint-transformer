@@ -1,0 +1,27 @@
+{
+  "mode": "executor response observability",
+  "training": false,
+  "probe": false,
+  "l0_score": "sum_marginal_rate_if_assigned",
+  "phy_score": "sum_joint_sinr_rate",
+  "act0_score": "mean_radial_toward_assigned_buoy",
+  "horizon_score": "q_exec_h",
+  "motion_efficiency": "distance_reduction_h / (low_level_action_norm + 1e-8)",
+  "spearman_bar": 0.7,
+  "top3_bar": 0.85,
+  "regret_bar": 0.12,
+  "residual_bar": 0.4,
+  "spearman_gain": 0.1,
+  "cross_uav_fraction": 0.2,
+  "residual_orientation": {
+    "mean_sinr": 1.0,
+    "service_progress": 1.0,
+    "mean_interference": -1.0,
+    "distance_reduction": 1.0,
+    "motion_efficiency": 1.0
+  },
+  "population": "310100-310117, scenario bootstrap",
+  "opened_310118": false,
+  "planner_ready": false,
+  "deployment_verified": false
+}

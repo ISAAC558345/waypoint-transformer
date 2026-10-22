@@ -1,0 +1,30 @@
+{
+  "aux": {
+    "distance": 0.05,
+    "in_range": 0.5,
+    "pilot_design_not_validated_optimal": true
+  },
+  "compare_r_train_to_b0": false,
+  "deterministic_eval": "tanh(mu), no resampling",
+  "forbidden_m5": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase63\\outputs\\checkpoints\\low_level_c05_d005.pt",
+  "high_model_seed": 0,
+  "hold": 15,
+  "low_model_seed": 0,
+  "ppo": {
+    "checkpoint_interval_steps": 192,
+    "clip_eps": 0.2,
+    "device": "cpu",
+    "entropy_coef": 0.01,
+    "gae_lambda": 0.95,
+    "gamma": 0.99,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 0.5,
+    "num_envs": 4,
+    "num_minibatches": 4,
+    "rollout_length": 48,
+    "update_epochs": 4,
+    "value_coef": 0.5
+  },
+  "r_env": "payload_delta / block_payload_bits",
+  "r_train": "r_env + r_aux"
+}

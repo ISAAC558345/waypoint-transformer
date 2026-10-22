@@ -1,0 +1,165 @@
+{
+  "role": "candidate_final_architecture",
+  "installed_in_official_planner": false,
+  "modifiable_after_freeze": false,
+  "encoder": "Phase-5L JointUtilityHGNN",
+  "encoder_width": 128,
+  "candidate_generator": "stage-1 matching logits, per-UAV top-3, exclusive joint pool",
+  "top_k": 3,
+  "candidate_count": 120,
+  "true_h1": "shipped_h1: original executor act, one clone, one environment step, no counterfactual rate grid",
+  "true_h1_excludes_unshipped_batch_gemm": true,
+  "model_r1_heads": 5,
+  "aggregation": "RANK_MEAN_CONSENSUS_V1",
+  "aggregation_uses_j15": false,
+  "aggregation_uses_scenario_performance": false,
+  "aggregation_uses_seed_weights": false,
+  "selects_best_seed": false,
+  "tie_break": [
+    "majority_top1_count",
+    "lexicographic assignment tuple"
+  ],
+  "rank_definition": "competition rank, rank 1 is best",
+  "taskoption_schema": [
+    "targets",
+    "decision_time",
+    "remaining_hold",
+    "uav_mask",
+    "buoy_mask",
+    "association",
+    "urgency"
+  ],
+  "association_equals_targets": true,
+  "urgency": null,
+  "hold": 15,
+  "idle": -1,
+  "official_deepsets_is_controller_encoder": false,
+  "safety_projector": "SafetyProjector",
+  "alpha_residual": 0.25,
+  "response_schema": [
+    "sinr_1",
+    "delta_sinr",
+    "interference_1",
+    "delta_interference",
+    "service_progress_1",
+    "delta_service_progress",
+    "rate_1",
+    "distance_to_target_1",
+    "delta_distance_to_target",
+    "assigned_in_range_1",
+    "service_active_1",
+    "same_target_after_step_1",
+    "radial_motion_1",
+    "heading_alignment_1"
+  ],
+  "components": {
+    "stage1_encoder": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\phase5l_joint_encoder\\joint_utility_encoder.pt",
+      "exists": true,
+      "sha256": "929a5ae71ac78e63745eadfb5af018158b15e2d03de7f8b33c82a789d946663d"
+    },
+    "matching_decoder": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\phase5k_joint_decoder\\matching_decoder.pt",
+      "exists": true,
+      "sha256": "de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5"
+    },
+    "official_deepsets_weights": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\final_artifacts\\checkpoints\\deepsets_util_seed0.pt",
+      "exists": true,
+      "sha256": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109"
+    },
+    "mappo_checkpoint": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\phase5_hgnn_urgency\\checkpoints\\mappo_original.pt",
+      "exists": true,
+      "sha256": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14"
+    },
+    "temporal_normalization_seed0": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\phase5v_temporal_representation\\checkpoints\\phase5v_temp_aug_seed0.pt",
+      "exists": true,
+      "sha256": "0f5198110cfb7a453a3f9d3d7f1b2201b5ccc1681d2dd4ba32ddb4f8290aadac"
+    },
+    "response_normalization": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5zd_executor_response_value\\phase5zd_response_normalization.json",
+      "exists": true,
+      "sha256": "d511d7597dcc1047a56404cde141d9b97bdce9a011ac21b2173c15de221452ef"
+    },
+    "response_feature_spec": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5zd_executor_response_value\\phase5zd_response_feature_spec.json",
+      "exists": true,
+      "sha256": "6cad2970fdf67cbd83fbe56d96ef4bd101e38fe55568197d8e256f4130cfcc84"
+    },
+    "rank_mean_source": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5zm_multiseed_model_policy\\consensus.py",
+      "exists": true,
+      "sha256": "82c6d436763efa31557dd92cea8ce494da5e27898e2fd7194b69ce8b9b8f3a83"
+    },
+    "true_h1_source": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5zj_true_h1_acceleration\\fast_path.py",
+      "exists": true,
+      "sha256": "866a550c51838896a585b2d9da402cfdd8c96867476a43a3e3e3e1c3b03c129d"
+    },
+    "candidate_pool_source": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5r_nonadditive_generalization\\world.py",
+      "exists": true,
+      "sha256": "631072b446998b0d1f1083e745bdf1699922857a04ec668f13bfe9a88ed63951"
+    },
+    "candidate_lists_source": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5m_joint_planner\\planner.py",
+      "exists": true,
+      "sha256": "8227a8fba47be7070f1af9f63c4e29825d61b7736a90011287d87774c175925c"
+    },
+    "exclusive_pool_source": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5n_joint_planner\\matchings.py",
+      "exists": true,
+      "sha256": "5f67d90fed1cbc175558533663ba0b277bc43ad33e4ddb8f232c06a336ea9a38"
+    },
+    "safety_projector_source": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\safety_projector.py",
+      "exists": true,
+      "sha256": "75478f547b5741b85735143cf2a0301bcd9b281d4dcd49c355e615a7e84fa6d7"
+    },
+    "taskoption_source": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase100\\contract.py",
+      "exists": true,
+      "sha256": "82d28a53b386d29d97ec848ed321556842b5438a599006b9d79d8cebe503cce4"
+    },
+    "response_assembler_source": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5zd_executor_response_value\\response.py",
+      "exists": true,
+      "sha256": "ebb042ae86b01f2d06af5d0d6d7d1e7496b61e1626091814b64df109c8b715e7"
+    },
+    "value_scorer_source": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5zd_executor_response_value\\scorer.py",
+      "exists": true,
+      "sha256": "f07cdc85cfe19ed1d1ac1dbb9a9a4df950caa4078447dbf933f1f59f5b5593db"
+    },
+    "model_r1_seed_0": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5zd_executor_response_value\\checkpoints\\phase5zd_response_seed0.pt",
+      "exists": true,
+      "sha256": "1acad0969909571bae0fd50c9ccfae9af52e951b2287ca6c8f776f51fb823790"
+    },
+    "model_r1_seed_1": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5zd_executor_response_value\\checkpoints\\phase5zd_response_seed1.pt",
+      "exists": true,
+      "sha256": "479f6b88e2bb54532ffcf9e1c3a67081f1f348710801fcf741895dd81586c37b"
+    },
+    "model_r1_seed_2": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5zd_executor_response_value\\checkpoints\\phase5zd_response_seed2.pt",
+      "exists": true,
+      "sha256": "82e0de4fc579ccf201ce012f4ac25f0c4f01d33660feb64a4a4e2c4d9e514ace"
+    },
+    "model_r1_seed_3": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5zd_executor_response_value\\checkpoints\\phase5zd_response_seed3.pt",
+      "exists": true,
+      "sha256": "037f14e20c837361080d6f95f1189f503202cf4c2759cfe1bba1683e19b11f61"
+    },
+    "model_r1_seed_4": {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase5zd_executor_response_value\\checkpoints\\phase5zd_response_seed4.pt",
+      "exists": true,
+      "sha256": "188dfd2e0c95d8c347ec80206ae5dd3c1d5afa237606d9bba0df315cf72fbc01"
+    }
+  },
+  "missing_components": [],
+  "pipeline_consistent": true,
+  "manifest_sha256": "ebf61f60bfdf2d3ad2939b5fd741c25950c1ccbcdc67fce6f600c7c047f1970b"
+}

@@ -1,0 +1,43 @@
+{
+  "action_candidates": [
+    "zero",
+    "+x",
+    "-x",
+    "+y",
+    "-y",
+    "diag_ne",
+    "diag_nw",
+    "diag_se",
+    "diag_sw",
+    "nearest_buoy",
+    "max_queue",
+    "queue_rate_energy",
+    "myopic_one_step_greedy"
+  ],
+  "bootstrap": {
+    "confidence": 0.95,
+    "replicates": 4000,
+    "seed": 15015,
+    "unit": "scenario_id"
+  },
+  "causal_exogenous_assumption": "use only the arrival expectation implied by the current environment configuration (constant arrival, or the Poisson mean); no realized future arrival trace is read",
+  "current_queue_tie_bridge_proxy": "A diagnostic-only, non-Round-7 proxy: the two largest current raw queues differ by at most 10 percent of the largest queue. No Round-7 development or holdout artifact is read.",
+  "continuation_policy": "queue_rate_energy",
+  "forbidden_splits": [
+    "old_development_test",
+    "fresh_development",
+    "holdout",
+    "untouched_holdout"
+  ],
+  "horizons": [
+    1,
+    5,
+    10,
+    20
+  ],
+  "myopic_objective": "lexicographically maximize current projected payload; then minimize radial action norm; then stable candidate order",
+  "oracle_exogenous_knowledge": true,
+  "planner": "finite action lattice rollout; evaluate each first action and use the pre-registered queue_rate_energy continuation",
+  "schema_version": "round15_planning_protocol_v1",
+  "training_performed": false
+}

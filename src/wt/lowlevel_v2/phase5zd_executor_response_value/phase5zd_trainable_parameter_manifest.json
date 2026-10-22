@@ -1,0 +1,52 @@
+{
+  "trainable_module": "ExecutorConditionedJointScorer",
+  "parameter_count": 164993,
+  "static_and_response_use_the_same_module": true,
+  "encoder_requires_grad": false,
+  "matching_requires_grad": false,
+  "mappo_requires_grad": false,
+  "encoder_grad_abs_sum": 0.0,
+  "mappo_grad_abs_sum": 0.0,
+  "parameters": [
+    {
+      "name": "interact.0.weight",
+      "numel": 32768,
+      "requires_grad": true
+    },
+    {
+      "name": "interact.0.bias",
+      "numel": 128,
+      "requires_grad": true
+    },
+    {
+      "name": "interact.2.weight",
+      "numel": 16384,
+      "requires_grad": true
+    },
+    {
+      "name": "interact.2.bias",
+      "numel": 128,
+      "requires_grad": true
+    },
+    {
+      "name": "mlp.0.weight",
+      "numel": 115328,
+      "requires_grad": true
+    },
+    {
+      "name": "mlp.0.bias",
+      "numel": 128,
+      "requires_grad": true
+    },
+    {
+      "name": "mlp.2.weight",
+      "numel": 128,
+      "requires_grad": true
+    },
+    {
+      "name": "mlp.2.bias",
+      "numel": 1,
+      "requires_grad": true
+    }
+  ]
+}

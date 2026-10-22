@@ -19,7 +19,7 @@ GPT model:
 
 import math
 import logging
-from typing import Dict, List, Tuple, Type, Union
+from typing import Dict, List, Optional, Tuple, Type, Union
 
 from stable_baselines3.common.torch_layers import MlpExtractor
 
@@ -37,6 +37,21 @@ import numpy as np
 from wt import goal_net
 
 DEPRECATED = True
+
+
+def _environment_flag(name: str) -> bool:
+    value = os.environ.get(name)
+    return (
+        value is not None
+        and value.strip().lower() not in ("", "0", "false", "no", "off")
+    )
+
+
+def _config_flag(value) -> bool:
+    if isinstance(value, str):
+        return value.strip().lower() not in ("", "0", "false", "no", "off")
+    return bool(value)
+
 
 class GELU(nn.Module):
     def forward(self, input):
@@ -86,7 +101,12 @@ class CausalSelfAttention(nn.Module):
                                      .view(1, 1, config.block_size + 1, config.block_size + 1))
         self.n_head = config.n_head
 
-    def forward(self, x, layer_past=None):
+    def forward(
+        self,
+        x: torch.Tensor,
+        attention_mask: Optional[torch.Tensor] = None,
+        layer_past=None,
+    ):
         B, T, C = x.size()
 
         # calculate query, key, values for all heads in batch and move head forward to be the batch dim
@@ -96,7 +116,22 @@ class CausalSelfAttention(nn.Module):
 
         # causal self-attention; Self-attend: (B, nh, T, hs) x (B, nh, hs, T) -> (B, nh, T, T)
         att = (q @ k.transpose(-2, -1)) * (1.0 / math.sqrt(k.size(-1)))
-        att = att.masked_fill(self.mask[:,:,:T,:T] == 0, float('-inf'))
+        allowed = self.mask[:, :, :T, :T].bool()
+        if attention_mask is not None:
+            if attention_mask.shape != (B, T):
+                raise ValueError(
+                    "attention_mask must have shape "
+                    f"{(B, T)}, got {tuple(attention_mask.shape)}"
+                )
+            valid_tokens = attention_mask.to(device=x.device, dtype=torch.bool)
+            # Mask keys so a valid token can never attend to padding. Padding
+            # queries receive a diagonal fallback solely to keep softmax rows
+            # finite; their outputs are zeroed below.
+            allowed = allowed & valid_tokens[:, None, None, :]
+            diagonal = torch.eye(T, device=x.device, dtype=torch.bool)[None, None]
+            padded_queries = ~valid_tokens[:, None, :, None]
+            allowed = allowed | (padded_queries & diagonal)
+        att = att.masked_fill(~allowed, float('-inf'))
         att = F.softmax(att, dim=-1)
         att = self.attn_drop(att)
         y = att @ v # (B, nh, T, T) x (B, nh, T, hs) -> (B, nh, T, hs)
@@ -104,6 +139,8 @@ class CausalSelfAttention(nn.Module):
 
         # output projection
         y = self.resid_drop(self.proj(y))
+        if attention_mask is not None:
+            y = y * valid_tokens.unsqueeze(-1).to(y.dtype)
         return y
 
 class Block(nn.Module):
@@ -121,9 +158,15 @@ class Block(nn.Module):
             nn.Dropout(config.resid_pdrop),
         )
 
-    def forward(self, x):
-        x = x + self.attn(self.ln1(x))
+    def forward(
+        self,
+        x: torch.Tensor,
+        attention_mask: Optional[torch.Tensor] = None,
+    ):
+        x = x + self.attn(self.ln1(x), attention_mask=attention_mask)
         x = x + self.mlp(self.ln2(x))
+        if attention_mask is not None:
+            x = x * attention_mask.unsqueeze(-1).to(x.dtype)
         return x
 
 class GPT(nn.Module):
@@ -143,7 +186,7 @@ class GPT(nn.Module):
         self.drop = nn.Dropout(config.embd_pdrop)
 
         # transformer
-        self.blocks = nn.Sequential(*[Block(config) for _ in range(config.n_layer)])
+        self.blocks = nn.ModuleList([Block(config) for _ in range(config.n_layer)])
         # modified decoder head
         self.ln_f = nn.LayerNorm(config.n_embd)
         self.head = nn.Sequential(nn.Linear(config.n_embd, config.vocab_size), nn.Tanh())
@@ -219,30 +262,72 @@ class GPT(nn.Module):
         return optimizer
 
     # state, action, and return
-    def forward(self, obs):
-        # obs = obs.view(-1, self.block_size, self.config.feature_dim)
-        obs, actions = obs
+    def forward(self, inputs):
+        # ``inputs`` is kept as one object so GPT remains usable inside the
+        # legacy nn.Sequential extractor.
+        if isinstance(inputs, (tuple, list)):
+            if len(inputs) == 2:
+                obs, actions = inputs
+                attention_mask = None
+            elif len(inputs) == 3:
+                obs, actions, attention_mask = inputs
+            else:
+                raise ValueError(
+                    "GPT expects (observations, actions[, attention_mask])"
+                )
+        else:
+            obs, actions, attention_mask = inputs, None, None
         if os.environ.get('debug'):
             print(obs[0, -1, :2])
         B, T, D = obs.shape
         assert D == self.config.feature_dim
+        if attention_mask is None:
+            attention_mask = torch.ones(
+                (B, T), device=obs.device, dtype=torch.bool
+            )
+        else:
+            attention_mask = attention_mask.to(device=obs.device)
+            if attention_mask.ndim == 3 and attention_mask.shape[-1] == 1:
+                attention_mask = attention_mask.squeeze(-1)
+            if attention_mask.shape != (B, T):
+                raise ValueError(
+                    "attention_mask must have shape "
+                    f"{(B, T)}, got {tuple(attention_mask.shape)}"
+                )
+            attention_mask = attention_mask.bool()
         if actions is not None:
             actions = actions.view(B, T, -1)
+            if self.model_actions and actions.shape[-1] != self.config.act_dim:
+                raise ValueError(
+                    f"Expected action_dim={self.config.act_dim}, "
+                    f"got {actions.shape[-1]}"
+                )
         if self.model_actions:
             token_embeddings = torch.zeros((B, 2 * T, self.config.n_embd), device = obs.device)
             token_embeddings[:, 0::2] = self.obs_emb(obs)
             token_embeddings[:, 1::2] = self.act_emb(actions) if actions is not None else 0
             assert token_embeddings.shape == (B, 2 * T, self.config.n_embd)
+            token_attention_mask = attention_mask.repeat_interleave(2, dim=1)
         else:
             token_embeddings = self.obs_emb(obs) # (batch * block_size, n_embd)
             assert token_embeddings.shape == (B, T, self.config.n_embd)
+            token_attention_mask = attention_mask
 
+        if token_embeddings.shape[1] > self.block_size:
+            raise ValueError(
+                "Input sequence exceeds the configured Transformer block size: "
+                f"{token_embeddings.shape[1]} > {self.block_size}"
+            )
         position_embeddings = self.pos_emb[:, :token_embeddings.shape[1], :]
 
         x = self.drop(token_embeddings + position_embeddings)
-        x = self.blocks(x)
+        x = x * token_attention_mask.unsqueeze(-1).to(x.dtype)
+        for block in self.blocks:
+            x = block(x, attention_mask=token_attention_mask)
         x = self.ln_f(x)
+        x = x * token_attention_mask.unsqueeze(-1).to(x.dtype)
         logits = self.head(x)
+        logits = logits * token_attention_mask.unsqueeze(-1).to(logits.dtype)
         if self.model_actions:
             assert logits.shape == (B, 2 * T, self.config.vocab_size)
             act = logits[:, 1::2]
@@ -262,45 +347,96 @@ class TransformerExtractor(MlpExtractor):
         net_arch: List[Union[int, Dict[str, List[int]]]],
         activation_fn: Type[nn.Module],
         device: Union[torch.device, str] = "auto",
-        config = {},
-        goal_network_ckpt = None
+        config=None,
+        goal_network_ckpt=None,
+        goal_network_config=None,
+        goal_network_restore_mode=None,
+        action_dim=None,
     ):
+        config = {} if config is None else dict(config)
         super(TransformerExtractor, self).__init__(config.get('vocab_size', 512), net_arch, activation_fn, device)
         self.config = config
 
         # preprocessing data points w/ goal network
         self.goal_network = None
-        self.cfg = None
+        self.cfg = self._normalize_goal_network_config(goal_network_config)
         self.goal_network_ckpt = goal_network_ckpt
-        # assert goal_network_ckpt is not None
+        if goal_network_restore_mode not in (None, "embedded"):
+            raise ValueError(
+                "goal_network_restore_mode must be None or 'embedded'."
+            )
+        self.goal_network_restore_mode = goal_network_restore_mode
         if goal_network_ckpt is not None:
-            # TODO make this prettier
-            if 'antmaze' in goal_network_ckpt:
-                self.cfg = dict(obs_dim = 29, goal_dim = 2, hidden_dim = 1024, max_T = None)
-            elif 'kitchen' in goal_network_ckpt:
-                self.cfg = dict(obs_dim = 60, goal_dim = 60, hidden_dim = 1024, max_T = 30,)
-            elif 'hopper' in goal_network_ckpt:
-                self.cfg = dict(obs_dim = 11, goal_dim = 2, hidden_dim = 1024, max_T = 30, reward = True)
-            elif 'cheetah' in goal_network_ckpt:
-                self.cfg = dict(obs_dim = 17, goal_dim = 2, hidden_dim = 1024, max_T = 30, reward = True)
-            elif 'walker' in goal_network_ckpt:
-                self.cfg = dict(obs_dim = 17, goal_dim = 2, hidden_dim = 1024, max_T = 30, reward = True)
+            if self.cfg is None:
+                raise ValueError(
+                    "goal_network_config is required when a waypoint network "
+                    "is enabled; checkpoint filenames are not used to infer "
+                    "state or goal dimensions"
+                )
+            if self.cfg["network_type"] == "manual":
+                manual_config = {
+                    key: value for key, value in self.cfg.items()
+                    if key not in ("network_type", "waypoint_dim")
+                }
+                self.goal_network = goal_net.ManualGoalNetwork(**manual_config)
+            elif goal_network_restore_mode == "embedded":
+                self.goal_network = self._build_learned_goal_network()
             else:
-                assert 'manual' in goal_network_ckpt
-                self.cfg = dict(obs_dim = 29, goal_dim = 2)
-                self.goal_network = goal_net.ManualGoalNetwork(**self.cfg)
+                self.goal_network = self._load_learned_goal_network()
+            self.goal_network.eval()
+            for parameter in self.goal_network.parameters():
+                parameter.requires_grad = False
 
         # if config is not specified, reverts to MLP only
         if config is not None:
-            model_actions = bool(os.environ.get('MODEL_ACTIONS', False))
+            model_actions = _config_flag(
+                config.get(
+                    "model_actions",
+                    _environment_flag("MODEL_ACTIONS"),
+                )
+            )
+            configured_action_dim = config.get(
+                'action_dim', config.get('act_dim', action_dim)
+            )
+            if configured_action_dim is None:
+                if model_actions:
+                    raise ValueError(
+                        "action_dim must be supplied by the action space or "
+                        "config when MODEL_ACTIONS is enabled"
+                    )
+                configured_action_dim = 0
+            else:
+                configured_action_dim = int(configured_action_dim)
+            if action_dim is not None and configured_action_dim != int(action_dim):
+                raise ValueError(
+                    "Transformer action_dim conflicts with the environment "
+                    f"action space: {configured_action_dim} != {int(action_dim)}"
+                )
+            context_length = int(config.get('context_length', 20))
+            if context_length <= 0:
+                raise ValueError("Transformer context_length must be positive")
             config = GPTConfig(vocab_size = config.get('vocab_size', 512), 
-                               block_size = 20 * (1 + model_actions), 
-                               n_layer = int(os.environ.get('NUM_LAYERS', 2)),
+                               block_size = context_length * (1 + model_actions),
+                               n_layer = int(config.get(
+                                   "n_layer",
+                                   os.environ.get("NUM_LAYERS", 2),
+                               )),
                                n_head = config.get('n_head', 16), 
                                n_embd = config.get('n_embd', 128),
-                               feature_dim = feature_dim + (self.cfg['goal_dim'] if self.goal_network_ckpt else 0), 
+                               resid_pdrop=config.get(
+                                   "resid_pdrop",
+                                   float(os.environ.get("DROPOUT", 0.15)),
+                               ),
+                               attn_pdrop=config.get(
+                                   "attn_pdrop",
+                                   float(os.environ.get("DROPOUT", 0.15)),
+                               ),
+                               feature_dim = feature_dim + (
+                                   self.cfg['waypoint_dim']
+                                   if self.goal_network_ckpt else 0
+                               ),
                                model_actions = model_actions,
-                               act_dim = 8)
+                               act_dim = configured_action_dim)
             transformer_base = GPT(config).float()
         else:
             transformer_base = lambda x: x
@@ -309,6 +445,130 @@ class TransformerExtractor(MlpExtractor):
             self.shared_net = nn.Sequential(transformer_base, mlp_head)
         else:
             self.transformer_base, self.mlp_head = transformer_base, mlp_head
+
+    @staticmethod
+    def _normalize_goal_network_config(config):
+        if config is None:
+            return None
+        config = dict(config)
+        state_dim = config.pop("state_dim", config.get("obs_dim"))
+        goal_dim = config.get("goal_dim")
+        waypoint_dim = config.pop("waypoint_dim", goal_dim)
+        network_type = config.get("network_type", "learned")
+        if state_dim is None or goal_dim is None or waypoint_dim is None:
+            raise ValueError(
+                "goal_network_config must define state_dim/obs_dim, "
+                "goal_dim, and waypoint_dim"
+            )
+        if network_type == "learned" and (
+            config.get("hidden_dim") is None or config.get("max_T") is None
+        ):
+            raise ValueError(
+                "A learned goal_network_config must define hidden_dim and max_T."
+            )
+        if int(waypoint_dim) != int(goal_dim):
+            raise ValueError(
+                "The official KForwardGoalNetwork emits goal_dim values, so "
+                "waypoint_dim must equal goal_dim"
+            )
+        config["obs_dim"] = int(state_dim)
+        config["goal_dim"] = int(goal_dim)
+        config["waypoint_dim"] = int(waypoint_dim)
+        config["network_type"] = network_type
+        return config
+
+    def _build_learned_goal_network(self):
+        """Construct waypoint topology for an embedded outer state dict."""
+        network_config = {
+            key: value for key, value in self.cfg.items()
+            if key not in ("network_type", "waypoint_dim")
+        }
+        return goal_net.KForwardGoalNetwork(**network_config)
+
+    def _load_learned_goal_network(self):
+        """Build and register a frozen waypoint network before policy loading."""
+        try:
+            checkpoint = torch.load(
+                self.goal_network_ckpt,
+                map_location="cpu",
+                weights_only=False,
+            )
+        except TypeError:
+            checkpoint = torch.load(
+                self.goal_network_ckpt,
+                map_location="cpu",
+            )
+        checkpoint_hparams = checkpoint.get("hyper_parameters", {})
+        checkpoint_hparams = (
+            dict(checkpoint_hparams)
+            if checkpoint_hparams is not None else {}
+        )
+        expected_metadata = {
+            "obs_dim": self.cfg["obs_dim"],
+            "goal_dim": self.cfg["goal_dim"],
+            "hidden_dim": self.cfg["hidden_dim"],
+            "max_T": self.cfg["max_T"],
+            "reward": self.cfg.get("reward", False),
+        }
+        if self.cfg.get("reward", False):
+            reward_metadata = {
+                "reward_representation": self.cfg.get(
+                    "reward_representation"
+                ),
+                "reward_normalization_const": self.cfg.get(
+                    "reward_normalization_const"
+                ),
+                "reward_episode_horizon": self.cfg.get(
+                    "reward_episode_horizon"
+                ),
+            }
+            missing_config = [
+                name for name, value in reward_metadata.items()
+                if value is None
+            ]
+            if missing_config:
+                raise ValueError(
+                    "Reward waypoint config is missing semantic metadata: "
+                    + ", ".join(missing_config)
+                )
+            expected_metadata.update(reward_metadata)
+
+        def metadata_matches(name, actual, expected):
+            return (
+                np.isclose(actual, expected)
+                if name == "reward_normalization_const"
+                else actual == expected
+            )
+
+        # Never overwrite metadata already present in a checkpoint. Validate
+        # present fields first, then supply only fields absent from old files.
+        for name, expected in expected_metadata.items():
+            if name in checkpoint_hparams and not metadata_matches(
+                name, checkpoint_hparams[name], expected
+            ):
+                raise ValueError(
+                    "Waypoint checkpoint metadata conflicts with the "
+                    f"current dataset/config: {name}="
+                    f"{checkpoint_hparams[name]!r}, expected {expected!r}"
+                )
+        load_config = {
+            name: expected for name, expected in expected_metadata.items()
+            if name not in checkpoint_hparams
+        }
+        network = goal_net.KForwardGoalNetwork.load_from_checkpoint(
+            self.goal_network_ckpt,
+            map_location="cpu",
+            **load_config,
+        )
+        for name, expected in expected_metadata.items():
+            actual = getattr(network, name)
+            if not metadata_matches(name, actual, expected):
+                raise ValueError(
+                    "Waypoint checkpoint metadata conflicts with the "
+                    f"current dataset/config: {name}={actual!r}, "
+                    f"expected {expected!r}"
+                )
+        return network
 
     def forward(self, features):
         """
@@ -324,20 +584,41 @@ class TransformerExtractor(MlpExtractor):
         return self.policy_net(shared_latent), self.value_net(shared_latent)
 
     def goal_extract(self, features):
-        if self.goal_network is None and self.goal_network_ckpt is not None:
-            self.goal_network = goal_net.KForwardGoalNetwork.load_from_checkpoint(
-                self.goal_network_ckpt, **self.cfg
-            ).to(features[0].device)
-            self.goal_network.eval()
-            for p in self.goal_network.parameters():
-                p.requires_grad = False
-        elif self.goal_network is None:
+        if self.goal_network is None:
             return features
-        obs, actions = features
+        if not isinstance(features, (tuple, list)):
+            obs, actions, attention_mask = features, None, None
+        elif len(features) == 2:
+            obs, actions = features
+            attention_mask = None
+        elif len(features) == 3:
+            obs, actions, attention_mask = features
+        else:
+            raise ValueError(
+                "Transformer features must be "
+                "(observations, actions[, attention_mask])"
+            )
+        expected_input_dim = self.cfg["obs_dim"] + self.cfg["goal_dim"]
+        if obs.shape[-1] != expected_input_dim:
+            raise ValueError(
+                "Waypoint network input dimension does not match "
+                f"goal_network_config: {obs.shape[-1]} != "
+                f"{self.cfg['obs_dim']} + {self.cfg['goal_dim']}"
+            )
         with torch.no_grad():
             new_goals = self.goal_network(obs).detach()
+            if new_goals.shape[-1] != self.cfg["waypoint_dim"]:
+                raise ValueError(
+                    "Waypoint network output dimension does not match "
+                    f"waypoint_dim={self.cfg['waypoint_dim']}: "
+                    f"got {new_goals.shape[-1]}"
+                )
             # print(new_goals[0, -1], obs[0, -1, :2])
             if os.environ.get('TRACK_GOALS'):
                 global GOAL_NET_OUT
-                GOAL_NET_OUT.extend(new_goals[:, -1].numpy().reshape((-1, 2)).tolist())
-        return torch.cat([obs, new_goals], dim = -1), actions
+                GOAL_NET_OUT.extend(
+                    new_goals[:, -1].cpu().reshape(
+                        (-1, self.cfg["waypoint_dim"])
+                    ).tolist()
+                )
+        return torch.cat([obs, new_goals], dim = -1), actions, attention_mask

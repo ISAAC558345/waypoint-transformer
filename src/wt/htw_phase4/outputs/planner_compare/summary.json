@@ -1,0 +1,86 @@
+{
+  "diversity": {
+    "mean_waypoint_l2_A_vs_B": 0.5053357407450676,
+    "mean_waypoint_l2_A_vs_C": 0.5061453059315681,
+    "mean_waypoint_l2_B_vs_C": 0.06244190502911806
+  },
+  "fresh_access": 0,
+  "hgnn": false,
+  "results": {
+    "state_only": {
+      "action_waypoint": {
+        "count": 0.0,
+        "mean_rho": NaN,
+        "median_rho": NaN
+      },
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "state_only",
+      "mean_payload_bits": 34297561.12152346,
+      "mean_residual_queue_bits": 2938352.64311604,
+      "mean_return": 3.63388947106866,
+      "mean_waypoint_tracking_error": NaN,
+      "tw_enters_actor": {
+        "any_conditioned_width": false,
+        "any_waypoint_nonzero": false
+      }
+    },
+    "tw_a": {
+      "action_waypoint": {
+        "count": 96.0,
+        "mean_rho": -0.044833898458493504,
+        "median_rho": -0.11639455246267483
+      },
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "tw_a",
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.6595457306754238,
+      "mean_waypoint_tracking_error": 0.3402147998635649,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_waypoint_nonzero": true
+      }
+    },
+    "tw_b": {
+      "action_waypoint": {
+        "count": 96.0,
+        "mean_rho": -0.4749695433932843,
+        "median_rho": -0.4492493325923611
+      },
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "tw_b",
+      "mean_payload_bits": 34279312.41340454,
+      "mean_residual_queue_bits": 2956601.351234964,
+      "mean_return": 3.646517826365172,
+      "mean_waypoint_tracking_error": 0.4366543923456125,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_waypoint_nonzero": true
+      }
+    },
+    "tw_c": {
+      "action_waypoint": {
+        "count": 96.0,
+        "mean_rho": -0.8819475626658132,
+        "median_rho": -0.9934057194749482
+      },
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "tw_c",
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.658071667862678,
+      "mean_waypoint_tracking_error": 0.4591430907910989,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_waypoint_nonzero": true
+      }
+    }
+  },
+  "seed": 0,
+  "untouched_access": 0,
+  "updates": 8
+}

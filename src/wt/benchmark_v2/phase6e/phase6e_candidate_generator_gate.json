@@ -1,0 +1,42 @@
+{
+  "gate": "CAND-D",
+  "gate_name": "TOP5_REQUIRED",
+  "phase6b_gate": "BITQ-A",
+  "phase6c_gate": "DYN-A",
+  "phase6d_gate": "TEMP-F",
+  "phase6d_flags": {
+    "HOLD_MISMATCH_CONFIRMED": false,
+    "TEMPORAL_OBJECTIVE_MISMATCH_CONFIRMED": true,
+    "FUTURE_ARRIVAL_INFORMATION_VALUE_CONFIRMED": true,
+    "TEMPORAL_CANDIDATE_COVERAGE_FAILURE": true,
+    "MACRO_RELATION_VALUE_CONFIRMED": true
+  },
+  "planner_ready": false,
+  "deployment_verified": false,
+  "deployment_pass": false,
+  "trained": false,
+  "fresh_confirmation_untouched": true,
+  "used_realized_future_arrival": false,
+  "j15_used_as_candidate_score": false,
+  "reopen_hold_aware_comparison": true,
+  "train_hgnn": false,
+  "SELECTED_GENERATOR": "G1_RATE",
+  "SELECTED_K": 5,
+  "K4_SUFFICIENT": false,
+  "INTERFERENCE_CANDIDATE_SENSITIVITY": false,
+  "IDLE_SLOT_INTERACTION": false,
+  "MEAN_POOL_SIZE": 4692.625,
+  "P95_POOL_SIZE": 5004.6125,
+  "MEAN_J15_EVAL_RUNTIME": 10.030584764763248,
+  "interference_detail": {
+    "disagreement_coverage": 1.0,
+    "agreement_coverage": 1.0,
+    "disagreement_scenarios": 48,
+    "agreement_scenarios": 48,
+    "high_interference_coverage": 1.0,
+    "low_interference_coverage": 1.0,
+    "high_scenarios": 48,
+    "low_scenarios": 48,
+    "interference_candidate_sensitivity": false
+  }
+}

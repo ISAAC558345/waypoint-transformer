@@ -1,0 +1,5 @@
+gate,constructible,tau_Uhat,n_use_B2,n_use_LOCAL,mean_U_traj,median_U_traj,mean_R,median_R,worst_R,worst_R_scenario,top1,top3,n_improve,n_worse,n_tie,mean_gain_vs_LOCAL,worst_change_vs_LOCAL,worst_change_scenario,residual_gap_vs_ORACLE,definition,reason
+Gate-0,True,,64,0,11031250.0,11000000.0,0.8924670381701633,1.0,0.5,220003,0.390625,0.765625,31,11,22,1562500.0,-0.5,220012,1359375.0,,
+Gate-1,True,1534933.5944128654,26,38,10812500.0,11000000.0,0.8738125156093907,1.0,0.5,220003,0.390625,0.671875,22,3,39,1343750.0,-0.2142857142857143,220059,1578125.0,,
+Gate-2,True,1534933.5944128654,26,38,10812500.0,11000000.0,0.8738125156093907,1.0,0.5,220003,0.390625,0.671875,22,3,39,1343750.0,-0.2142857142857143,220059,1578125.0,,
+Gate-3,False,,,,,,,,,,,,,,,,,,,uncertainty rejection; frozen B2 has no defined uncertainty,不可构造

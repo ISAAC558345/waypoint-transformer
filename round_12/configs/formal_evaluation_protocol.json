@@ -1,0 +1,20 @@
+{
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 12012,
+  "bootstrap_unit": "scenario_id",
+  "comparison_primary": "task_waypoint_transformer_minus_state_only_transformer",
+  "comparison_secondary": "task_waypoint_transformer_minus_task_waypoint_mlp",
+  "comparison_diagnostic": "oracle_task_waypoint_transformer_minus_task_waypoint_transformer_offline_only",
+  "configured_episode_horizon": 128,
+  "fresh_development_access_rule": "only_after_validation_gate_V-A_or_V-B",
+  "paired_metrics": {
+    "completion": "predicted_minus_state_only",
+    "payload": "predicted_minus_state_only",
+    "residual_queue": "state_only_minus_predicted",
+    "return": "predicted_minus_state_only"
+  },
+  "projection_absolute_degradation_limit": 0.05,
+  "safety_violation_degradation_limit": 0,
+  "tie_tolerance": 1e-12,
+  "validation_scenario_source": "Round-7 frozen scenario split assignment=validation"
+}

@@ -1,0 +1,25 @@
+{
+  "actor_samples_action": false,
+  "act_uses_mu_only": true,
+  "rng_consumed": false,
+  "caller_mutated": false,
+  "observation_cache_matches": false,
+  "safety_projector": "serial inside each assignment; pairwise UAV coupling is preserved",
+  "reusable": [
+    "pre-step communication features",
+    "pre-step interference",
+    "buoy positions"
+  ],
+  "not_reusable": [
+    "task vector",
+    "neighbor edges",
+    "joint SINR",
+    "service progress",
+    "payload"
+  ],
+  "counterfactual_rate_grid": "not read by the H1 response; skipped only on the experimental clone",
+  "batch_safe": true,
+  "batch_gemm_shipped": false,
+  "batch_gemm_failure": "310110 t=30 response relative error 9.35e-5 exceeds rtol 1e-5",
+  "shipped_path": "original executor.act plus one clone and no counterfactual rate grid"
+}

@@ -1,0 +1,44 @@
+{
+  "source_actor": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\benchmark_v2\\phase6g_lowlevel_mappo\\checkpoints\\phase6g_seed0.pt",
+  "source_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "updates": 80,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "train_pool": [
+    321000,
+    321095
+  ],
+  "eval_pool": [
+    321096,
+    321127
+  ],
+  "ppo": {
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "rollout_length": 48,
+    "num_envs": 4,
+    "learning_rate": 0.0003
+  },
+  "scales": {
+    "area_width_m": 160.0,
+    "area_height_m": 80.0,
+    "diagonal_m": 178.88543819998318,
+    "queue_capacity_blocks": 4.0,
+    "bandwidth_hz": 1000000.0,
+    "tx_power": 1.0,
+    "close_range_sinr": 1000.0,
+    "hold": 15.0,
+    "service_radius_m": 16.0
+  },
+  "reward_changed": false,
+  "action_dim_changed": false,
+  "safety_bounds_changed": false,
+  "high_level_changed": false,
+  "saturation_probe": {
+    "raw_first_layer_abs_mean": 3.721515417098999,
+    "scaled_first_layer_abs_mean": 0.2623016834259033
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "candidate_pool_unchanged": true,
+  "confirmation_still_64": true,
+  "did_not_regenerate_frozen_npz": true,
+  "five_plus_five_seeds": true,
+  "frozen_L": 24,
+  "gate": "ACCEL-A",
+  "hold": 15,
+  "no_approximation": true,
+  "no_utility_pruning": true,
+  "reason": "H=15 serial/parallel match; L stays the frozen protocol value; dataset reused.",
+  "scientific_equivalence_preserved": true,
+  "serial_parallel_utility_consistent": true
+}

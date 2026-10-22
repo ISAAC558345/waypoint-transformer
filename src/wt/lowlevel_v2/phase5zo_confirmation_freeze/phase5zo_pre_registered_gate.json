@@ -1,0 +1,28 @@
+{
+  "CONF-A": {
+    "name": "INDEPENDENT_PERFORMANCE_CONFIRMED",
+    "requires": [
+      "mean_delta_payload > 0",
+      "scenario_cluster_95_ci_lower_bound > 0",
+      "illegal_assignment = 0",
+      "state_contamination = 0",
+      "nan_inf_final_decision = 0",
+      "unhandled_runtime_exception = 0"
+    ]
+  },
+  "CONF-B": {
+    "name": "POSITIVE_MEAN_BUT_NOT_STATISTICALLY_CONFIRMED",
+    "condition": "mean_delta_payload > 0 and the 95% CI contains 0"
+  },
+  "CONF-C": {
+    "name": "NO_INDEPENDENT_GAIN",
+    "condition": "mean_delta_payload <= 0"
+  },
+  "CONF-D": {
+    "name": "SAFETY_OR_EXECUTION_FAILURE"
+  },
+  "CONF-E": {
+    "name": "PROTOCOL_VIOLATION"
+  },
+  "executed_now": false
+}

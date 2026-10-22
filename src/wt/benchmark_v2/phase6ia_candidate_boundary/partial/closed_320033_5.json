@@ -1,0 +1,1 @@
+{"stamp": "6IA-PRE-J15-1", "result": {"scenario_id": 320033, "k": 5, "controller": "c5", "payload_bits": 65159884.237807795, "residual_queue_bits": 5555762.370477124, "dropped_bits": 46284353.39171505, "conservation_error": 6.28642737865448e-09, "peak_rss_bytes": 257175552}}

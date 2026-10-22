@@ -1,0 +1,30 @@
+{
+  "gate": "MS-A",
+  "gate_name": "SEED_NEUTRAL_AGGREGATION_VERIFIED",
+  "blockers": [
+    "MS-D"
+  ],
+  "aggregation_technically_verified": true,
+  "aggregation": "RANK_MEAN_CONSENSUS_V1",
+  "model_r1_aggregation_approved": false,
+  "seed_permutation_invariance": 1.0,
+  "candidate_permutation_invariance": 1.0,
+  "illegal_assignments": 0,
+  "j15_retained": true,
+  "consensus_mean_j15": 2791666.6666666665,
+  "single_seed_not_selected": true,
+  "caller_fingerprint": 0.0,
+  "live_value_abs": 0.0,
+  "live_matches_saved": true,
+  "latency_median_ms": 334.2781832907349,
+  "deployment_latency_requirement": "NOT_SPECIFIED",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "fresh_confirmation_authorized": false,
+  "fresh_confirmation_answer": "FRESH_CONFIRMATION_NOT_AUTHORIZED",
+  "phase4e_status": "DEPLOYMENT_VERIFICATION_FAILED",
+  "phase4e_overwritten": false,
+  "opens_310118_310125": false,
+  "new_independent_confirmation": false
+}

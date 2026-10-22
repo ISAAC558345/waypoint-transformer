@@ -1,0 +1,28 @@
+{
+  "acceleration_only": true,
+  "candidate_count_changed": false,
+  "candidate_generator_sha256": "93bf0a4917e6968e6b4416cb4a1daa1816e9b672b39c6703faf42be0b157fe84",
+  "candidate_pool_changed": false,
+  "code_sha256": {
+    "run_phase945.py": "647c42943772c38ddbb347b5c941e9334b9a850d059985157017fe5fbf0d5ede",
+    "training.py": "76fd05aee6dfc06d743c7533147dac0f79f46621df2e95b5a94b3e56b4957033",
+    "utility_loss.py": "94c37c3a62d9afebc00a98c9057415fb597905ddd0386c28f6a678ad3a21c591"
+  },
+  "confirmation_changed": false,
+  "frozen_pool_size": 24,
+  "hold": 15,
+  "horizon_changed": false,
+  "lambda_rank": 0.25,
+  "lambda_ref": 0.1,
+  "loss_changed": false,
+  "model_changed": false,
+  "note_L": "Phase-9.4.5 froze L=24 before confirmation (allowed runtime clause). Acceleration did not change L.",
+  "phase945_protocol_sha256": "e3d6155a9116caccb98f94e593d06ce9551dd54846321f1875863c753142c47b",
+  "scientific_protocol_changed": false,
+  "seed_count_changed": false,
+  "shared_candidate_pool": true,
+  "shared_utility_dataset": true,
+  "train_npz_sha256": "9f2580cb1bf9a3bc4a56ee2443db400225a55ca1ad928794a518b80371229b8f",
+  "utility_rollout_sha256": "a33176c109df2730a762c5c3ad89e313f626d01a3d37175f923178a82a048306",
+  "val_npz_sha256": "5ae672a675a259e17d30edef254071600d6c00e34cf67b38eeeb5aec2b8c529c"
+}

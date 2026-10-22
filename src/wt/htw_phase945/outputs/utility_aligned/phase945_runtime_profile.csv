@@ -1,0 +1,10 @@
+phase,step,wall_s_before,wall_s_after,note
+prepare,candidate_pool+H15_dataset,150,150,already frozen; reused; not regenerated
+prepare,old_objective_val,420,0,reused CSV
+train,deepsets_seed0_serial,19800,19800,completed before amendment
+train,deepsets_seed1_serial,19800,19800,completed before amendment
+train,deepsets_seed2_serial,19800,19800,completed before amendment
+train,deepsets_seed3_serial,19800,19800,completed before amendment
+train,remaining_6_models_2wide,118800,59400,2 concurrent CPU jobs estimated
+confirm,64x10,pending,pending,process-pool planned after checkpoints
+overall,wall_clock,pending,pending,scientific protocol unchanged

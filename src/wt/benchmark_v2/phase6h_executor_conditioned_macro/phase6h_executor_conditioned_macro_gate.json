@@ -1,0 +1,17 @@
+{
+  "gate": "ALIGN-A",
+  "gate_name": "EXECUTOR_CONDITIONED_MACRO_PLANNING_CONFIRMED",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "deployment_pass": false,
+  "mappo_v2_frozen": true,
+  "high_level_trained": false,
+  "trained_hgnn": false,
+  "retrained_mappo": false,
+  "candidate_generator_modified": false,
+  "fresh_confirmation_untouched": true,
+  "next_phase_builds_high_level_dataset": true,
+  "primary_seed": 0,
+  "executor_value_alignment_improved": false,
+  "label_shift_material": true
+}

@@ -1,0 +1,31 @@
+{
+  "gate": "R-A",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "role": "PHASE5_DEVELOPMENT_GENERALIZATION",
+  "delta_j": {
+    "mean": 966666.6666666666,
+    "low": 599791.6666666669,
+    "high": 1316666.6666666667
+  },
+  "delta_regret": {
+    "mean": -0.32472211306485155,
+    "low": -0.4486109581019046,
+    "high": -0.19527771831714652
+  },
+  "n_scenarios_up": 7,
+  "n_scenarios_tie": 1,
+  "n_scenarios_down": 0,
+  "n_seeds_up": 5,
+  "coverage_ratio": 0.9083330356945484,
+  "coverage_regret": 416666.6666666667,
+  "scorer_regret": 666666.6666666666,
+  "coverage_ok": true,
+  "pool_hit_fraction": 0.5833333333333334,
+  "ablation_used": {
+    "no_global": false,
+    "no_uu": false,
+    "no_interaction": true
+  },
+  "coverage_definition": "union of top-3 maximal pool and top-5 maximal pool"
+}

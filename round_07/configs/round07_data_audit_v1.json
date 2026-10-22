@@ -1,0 +1,16 @@
+{
+  "schema_version": "round07_data_audit_v1",
+  "dataset_version": "maritime_offline_dataset_v2",
+  "goal_schema_candidate": "goal_schema_v2_candidate",
+  "waypoint_sample_schema": "waypoint_sample_schema_v2",
+  "scenario_seeds": [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029],
+  "num_buoys": [3, 5],
+  "episode_horizon": 128,
+  "behaviour_generators": ["nearest_buoy", "max_queue", "queue_rate_energy", "random_valid", "noisy_nearest", "noisy_queue_rate_energy", "policy_switch", "delayed_commitment"],
+  "noise_levels": [0.1, 0.25, 0.5],
+  "waypoint_horizons": [5, 10, 20, 30],
+  "split_ratios": {"train": 0.6, "validation": 0.2, "test": 0.2},
+  "holdout_scenario_count": 6,
+  "training_performed": false,
+  "dataset_generation_performed": true
+}

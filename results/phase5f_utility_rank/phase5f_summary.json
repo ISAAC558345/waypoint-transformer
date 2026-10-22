@@ -1,0 +1,139 @@
+{
+  "planner_ready": false,
+  "deployment_verified": false,
+  "decide_called": false,
+  "mappo_retrained": false,
+  "tau_modified": false,
+  "holdout_used": false,
+  "phase5g_started": false,
+  "new_network_module": false,
+  "train_scenario": 310100,
+  "test_scenario": 310101,
+  "train_groups": 12,
+  "validation_groups": 6,
+  "test_groups": 18,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.2227619062177837,
+      "val_spearman": 0.4523809523809525
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.10397938629360699,
+      "val_spearman": 0.4523809523809525
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.10397993335247217,
+      "val_spearman": 0.2142857142857143
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.10397161174870462,
+      "val_spearman": 0.2142857142857143
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.10397076292620493,
+      "val_spearman": 0.2142857142857143
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.10397484763421971,
+      "val_spearman": 0.13095238095238096
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.103973032821159,
+      "val_spearman": 0.2142857142857143
+    }
+  ],
+  "test": {
+    "assignment_score": {
+      "all": {
+        "n_groups": 18,
+        "spearman": -0.2321428571428572,
+        "kendall": -0.13227513227513227,
+        "top1": 0.3888888888888889,
+        "top3": 0.8888888888888888,
+        "payload": 333333.3333333333,
+        "regret": 0.4722222222222222
+      },
+      "payload_separated": {
+        "n_groups": 11,
+        "spearman": -0.4545454545454547,
+        "kendall": -0.21645021645021642,
+        "top1": 0.0,
+        "top3": 0.8181818181818182,
+        "payload": 454545.45454545453,
+        "regret": 0.7727272727272727
+      }
+    },
+    "deepsets": {
+      "all": {
+        "n_groups": 18,
+        "spearman": 0.130952380952381,
+        "kendall": 0.05291005291005291,
+        "top1": 0.7222222222222222,
+        "top3": 0.8888888888888888,
+        "payload": 722222.2222222222,
+        "regret": 0.19444444444444445
+      },
+      "payload_separated": {
+        "n_groups": 11,
+        "spearman": 0.3441558441558442,
+        "kendall": 0.08658008658008658,
+        "top1": 0.5454545454545454,
+        "top3": 0.8181818181818182,
+        "payload": 1090909.0909090908,
+        "regret": 0.3181818181818182
+      }
+    },
+    "old_hgnn": {
+      "all": {
+        "n_groups": 18,
+        "spearman": -0.26984126984126994,
+        "kendall": -0.13227513227513227,
+        "top1": 0.3888888888888889,
+        "top3": 0.8888888888888888,
+        "payload": 333333.3333333333,
+        "regret": 0.4722222222222222
+      },
+      "payload_separated": {
+        "n_groups": 11,
+        "spearman": -0.4642857142857144,
+        "kendall": -0.21645021645021642,
+        "top1": 0.0,
+        "top3": 0.8181818181818182,
+        "payload": 454545.45454545453,
+        "regret": 0.7727272727272727
+      }
+    },
+    "new_hgnn": {
+      "all": {
+        "n_groups": 18,
+        "spearman": 0.392857142857143,
+        "kendall": 0.13756613756613756,
+        "top1": 0.8333333333333334,
+        "top3": 0.8888888888888888,
+        "payload": 833333.3333333334,
+        "regret": 0.1388888888888889
+      },
+      "payload_separated": {
+        "n_groups": 11,
+        "spearman": 0.3928571428571429,
+        "kendall": 0.22510822510822506,
+        "top1": 0.7272727272727273,
+        "top3": 0.8181818181818182,
+        "payload": 1272727.2727272727,
+        "regret": 0.22727272727272727
+      }
+    }
+  },
+  "failure_count": 3,
+  "phase5g": {
+    "metric_improvement": true,
+    "phase5g_started": false
+  }
+}

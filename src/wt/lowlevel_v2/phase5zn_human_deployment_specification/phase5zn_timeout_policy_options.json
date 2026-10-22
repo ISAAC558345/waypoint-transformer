@@ -1,0 +1,25 @@
+{
+  "timeout_policy": "HUMAN_SPECIFICATION_REQUIRED",
+  "selected_option": null,
+  "current_rule": "A new option is published when the hold counter reaches zero and the counter is set to 15. Each executed step decrements the counter by 1.",
+  "options": {
+    "KEEP_CURRENT_TASKOPTION": {
+      "publishes_new_assignment": false,
+      "restarts_hold_15": false,
+      "decrements_existing_hold": true,
+      "calls_backup_planner": false,
+      "compatible_with_decrement_rule": true,
+      "identical_at_expired_hold_boundary": false
+    },
+    "USE_LAST_VALID_ASSIGNMENT": {
+      "rebuilds_taskoption": true,
+      "restarts_task_window": true,
+      "default_safe_equivalent": false
+    },
+    "ABORT_NEW_DECISION": {
+      "changes_executor_state": false,
+      "publishes_new_assignment": false,
+      "same_as_keep_current": false
+    }
+  }
+}

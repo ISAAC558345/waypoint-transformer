@@ -1,0 +1,31 @@
+{
+  "batch_1": {
+    "degradation_rate": 0.0,
+    "mean_U_gain": 1218750.0,
+    "mean_delta_R": 0.10168685481185481,
+    "n": 64,
+    "pass": true,
+    "worst_case_delta_R": 0.0
+  },
+  "batch_2": {
+    "degradation_rate": 0.0625,
+    "mean_U_gain": 1437500.0,
+    "mean_delta_R": 0.11326234529359529,
+    "n": 64,
+    "pass": false,
+    "worst_case_delta_R": -0.20000000000000007
+  },
+  "combined": {
+    "degradation_rate": 0.03125,
+    "mean_U_gain": 1328125.0,
+    "mean_delta_R": 0.10747460005272505,
+    "n": 128,
+    "pass": false,
+    "worst_case_delta_R": -0.20000000000000007
+  },
+  "criterion_id": "CONSERVATIVE_WITH_FALLBACK_V1",
+  "criterion_modified": false,
+  "deployment_pass": false,
+  "independent_batches_passed": 1,
+  "required_independent_batches": 2
+}

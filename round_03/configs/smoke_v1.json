@@ -1,0 +1,19 @@
+{
+  "schema_version": "round3_config_v1",
+  "mode": "smoke",
+  "scenario_id": "maritime_queue_collection_v1",
+  "policy_names": [
+    "random_valid",
+    "nearest_buoy",
+    "max_queue",
+    "queue_rate_energy"
+  ],
+  "seeds": [101, 202, 303],
+  "buoy_counts": [3, 5],
+  "episode_horizon": 8,
+  "k_values": [1, 5, 10, 20, 30],
+  "arrival_comparison_mode": "shared_trace",
+  "split_ratios": [0.6, 0.2, 0.2],
+  "goal_source": "achieved_terminal_goal",
+  "training_performed": false
+}

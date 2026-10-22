@@ -1,0 +1,24 @@
+{
+  "phase5zp_gate": "CONF-C",
+  "phase5zq_gate": "ATTR-C",
+  "development_pool": "320000-320063",
+  "reserved_pool": "320100-320131",
+  "historical_consumed": "310100-310125",
+  "training": false,
+  "lambda_status": "HUMAN_OR_NEXT_PHASE_SELECTION_REQUIRED",
+  "saturation_max": 0.5,
+  "pairwise_tie_max": 0.4,
+  "distinguish_min": 0.75,
+  "switch_negative_spearman": -0.2,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "candidate_mechanism_not_yet_a_conclusion": [
+    "better PHY",
+    "higher rate",
+    "more service work",
+    "excessive reassignment",
+    "progress reset",
+    "no additional completed block",
+    "identical payload"
+  ]
+}

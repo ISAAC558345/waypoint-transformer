@@ -1,0 +1,14 @@
+{
+  "cluster": "scenario_id",
+  "draws": 10000,
+  "seed": 0,
+  "statistic": "mean paired delta",
+  "mean": 0.0,
+  "median": 0.0,
+  "low": 0.0,
+  "high": 0.0,
+  "positive": 0,
+  "tie": 8,
+  "negative": 0,
+  "n_scenarios": 8
+}

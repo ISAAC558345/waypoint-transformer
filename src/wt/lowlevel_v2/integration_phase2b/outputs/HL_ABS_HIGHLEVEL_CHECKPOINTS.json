@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "best_epoch": 80,
+      "best_val_regret": 337500.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2b\\outputs\\deepsets_abs_seed0.pt",
+      "from_cond_checkpoint": false,
+      "high_seed": 0
+    },
+    {
+      "best_epoch": 60,
+      "best_val_regret": 412500.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2b\\outputs\\deepsets_abs_seed1.pt",
+      "from_cond_checkpoint": false,
+      "high_seed": 1
+    },
+    {
+      "best_epoch": 80,
+      "best_val_regret": 368750.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2b\\outputs\\deepsets_abs_seed2.pt",
+      "from_cond_checkpoint": false,
+      "high_seed": 2
+    },
+    {
+      "best_epoch": 80,
+      "best_val_regret": 318750.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2b\\outputs\\deepsets_abs_seed3.pt",
+      "from_cond_checkpoint": false,
+      "high_seed": 3
+    },
+    {
+      "best_epoch": 30,
+      "best_val_regret": 381250.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2b\\outputs\\deepsets_abs_seed4.pt",
+      "from_cond_checkpoint": false,
+      "high_seed": 4
+    }
+  ],
+  "rule": "best_validation_mean_candidate_regret"
+}

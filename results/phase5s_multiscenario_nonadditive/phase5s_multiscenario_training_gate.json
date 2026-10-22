@@ -1,0 +1,22 @@
+{
+  "gate": "S-C",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "delta_j": {
+    "mean": 108333.33333333333,
+    "low": -83333.33333333333,
+    "high": 325000.0
+  },
+  "delta_regret": {
+    "mean": -0.036111099074078085,
+    "low": -0.10833329722223424,
+    "high": 0.027777768518521605
+  },
+  "n_scenarios_up": 2,
+  "n_scenarios_tie": 5,
+  "n_scenarios_down": 1,
+  "n_seeds_up": 5,
+  "scorer_regret": 1141666.6666666667,
+  "phase5q_scorer_regret": 1250000.0,
+  "coverage_regret": 333333.3333333333
+}

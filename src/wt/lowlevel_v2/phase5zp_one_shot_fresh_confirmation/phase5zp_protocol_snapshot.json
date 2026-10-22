@@ -1,0 +1,25 @@
+{
+  "primary_system": "Frozen Rank-Mean True-H1 Hierarchical Controller",
+  "primary_baseline": "Frozen Model-S",
+  "model_s_payload": "mean_of_five_frozen_static_seed_episode_payloads",
+  "model_s_selection": "per_seed_stable_argmax_on_the_same_120_pool_with_zero_response",
+  "not_primary_baseline": [
+    "DeepSets",
+    "direct HGNN",
+    "Oracle",
+    "single R1 seed",
+    "fly-toward"
+  ],
+  "protocol_file_sha256": {
+    "phase5zo_final_confirmation_protocol.json": "96605cf159b582ca4384cc5964de487cd37a8ae070e96e67d42569c9870758b1",
+    "phase5zo_pre_registered_metrics.json": "8d2e7892054f7049237187bfaf205c1f83633b1f147cf9c5d92be6256f521204",
+    "phase5zo_pre_registered_gate.json": "b992e0f8d2395d02b361b60588632ffe879d980b7a89766827497f9127a46d38",
+    "phase5zo_algorithm_hash_recheck.json": "529ae6c2b96576add27e7a811a94e785d643a4dcbd4f2c3b9d3d4bf78c2f9f79",
+    "phase5zo_protocol.json": "7264040fc803f66f49433418fe29cbbb1191597d18fee1d93ae00e60d5ce080f",
+    "phase5zo_human_specification.json": "6b62976249dd0644f05dfd91ddd296e334c5683c07c256961b51869b931ca613"
+  },
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 0,
+  "latency_gate_active": false,
+  "deployment_latency_requirement": "NOT_YET_SPECIFIED"
+}

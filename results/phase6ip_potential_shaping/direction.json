@@ -1,0 +1,21 @@
+{
+  "gamma": 0.99,
+  "distance_norm_m": 22.0,
+  "service_radius_m": 16.0,
+  "units": "m",
+  "phi_one_step": -1.0,
+  "toward": 0.505,
+  "away": -0.98,
+  "inside": 0.0,
+  "idle_motion": 0.0,
+  "idle_shift_minus_stay": 0.0,
+  "terminal": 1.0,
+  "terminal_inside": 0.0,
+  "phi_unchanged_by_payload": true,
+  "toward_positive": true,
+  "away_negative": true,
+  "inside_zero": true,
+  "idle_motion_adds_nothing": true,
+  "terminal_uses_zero_potential": true,
+  "bits_absent_from_potential": true
+}

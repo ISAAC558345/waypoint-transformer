@@ -1,0 +1,5 @@
+{
+  "initialization": "LEGACY_WARM_START",
+  "actor_source": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\phase5_hgnn_urgency\\checkpoints\\mappo_original.pt",
+  "critic_source": "CentralizedCritic architecture init"
+}

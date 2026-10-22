@@ -1,0 +1,37 @@
+{
+  "action_dim": 2,
+  "action_range": "tanh in [-1,1]^2 then env unit-disk clip times step_length_m",
+  "base_buoy_dim": 7,
+  "base_global_dim": 3,
+  "base_uav_dim": 8,
+  "buoy_dim": 7,
+  "forbids_future_arrivals": true,
+  "global_dim": 5,
+  "hardcoded_5x21": false,
+  "idle_assignment": -1,
+  "idle_index": 12,
+  "max_buoys": 12,
+  "max_uavs": 6,
+  "normalization": {
+    "distance": "euclidean_m / step_length_m; idle -> 0",
+    "onehot": "buoy k in 0..K-1 or idle token K; never index buoy[-1] on idle",
+    "progress": "env service_progress in [0,1)",
+    "rel_xy": " (target - uav) / (area_width, area_height); idle -> 0",
+    "remaining_hold": "pending / HOLD",
+    "remaining_horizon": "(T - t) / T",
+    "uav_xy": "2 * p / area - 1 (same as feature_dict_l3b)"
+  },
+  "option_onehot_dim": 13,
+  "uav_dim": 26,
+  "units": {
+    "area_height_m": 80.0,
+    "area_width_m": 160.0,
+    "d_out_reward": "max(dist_m - service_radius_m, 0) / step_length_m",
+    "distance_feature": "movement steps (meters / step_length_m)",
+    "hold": 15,
+    "horizon": 48,
+    "position": "meters, then area-normalized",
+    "service_radius_m": 16.0,
+    "step_length_m": 22.0
+  }
+}

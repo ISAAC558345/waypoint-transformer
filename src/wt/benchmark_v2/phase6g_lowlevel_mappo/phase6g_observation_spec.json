@@ -1,0 +1,8 @@
+{
+  "queue_environment_state": "Q_bits",
+  "queue_observation": "Q_equiv = Q_bits / B_block via env.queue",
+  "legacy_task_progress": "compatibility channel only",
+  "future_arrival": false,
+  "j15_feature": false,
+  "log_std_matches_phase1": true
+}

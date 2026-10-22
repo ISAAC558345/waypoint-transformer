@@ -1,0 +1,26 @@
+{
+  "allowed_policy_families": [
+    "task_waypoint_transformer",
+    "state_only_transformer",
+    "oracle_task_waypoint_transformer",
+    "task_waypoint_mlp"
+  ],
+  "final_policy_gate": "TW-POL-B",
+  "formal_output": "round_12\\outputs\\round12_formal_20260810_161000",
+  "fresh_development": "round_12/fresh_policy_dev_manifest.json",
+  "frozen_predictor": "round_12/selected_task_waypoint_predictor.json",
+  "lock_file": "round_12/ROUND_LOCK.json",
+  "next_round_created": false,
+  "old_development_test_accessed": false,
+  "planned_training_runs": 12,
+  "policy_horizon": 10,
+  "round": "round_12",
+  "snapshot": "backup/snapshots/before_round_12_20260810_0400",
+  "status": "completed",
+  "training_seeds": [
+    0,
+    1,
+    2
+  ],
+  "untouched_holdout_accessed": false
+}

@@ -1,0 +1,18 @@
+{
+  "round": "round_11",
+  "kind": "append_only_completion_evidence",
+  "created_at": "2026-08-10T03:30:00+08:00",
+  "does_not_rewrite": "round_11/ROUND_LOCK.json",
+  "canonical_detailed_audit": "round_11/outputs/round11_task_waypoint_20260810_0310",
+  "canonical_detailed_figures": "round_11/figures/round11_task_waypoint_20260810_0320",
+  "report_addendum": "report/round_11_completion_addendum_20260810_0330.md",
+  "evaluation_scope": {
+    "new_training_performed": false,
+    "existing_best_checkpoints_evaluated": 6,
+    "allowed_splits": ["train", "validation"],
+    "old_development_test_accessed": false,
+    "untouched_holdout_accessed": false,
+    "closed_loop_evaluation": false
+  },
+  "result": {"predictor_gate": "TW-A", "recommended_horizon": 10, "png_files": 20, "svg_files": 20}
+}

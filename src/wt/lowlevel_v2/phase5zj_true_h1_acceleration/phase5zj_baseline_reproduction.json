@@ -1,0 +1,12 @@
+{
+  "saved_value_max_abs": 0.0,
+  "baseline_ok": true,
+  "threshold": 0.001,
+  "caller_fingerprint": 0.0,
+  "observation_cache_gap": {
+    "max_abs": 0.0,
+    "max_rel": 0.0,
+    "bitwise": true
+  },
+  "rng_unchanged": true
+}

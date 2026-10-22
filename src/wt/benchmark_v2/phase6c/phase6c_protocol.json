@@ -1,0 +1,21 @@
+{
+  "environment": "L3BBitQueueEnvV2",
+  "development_pool": "320000-320063",
+  "reserved_pool": "320100-320131",
+  "fresh_confirmation_untouched": true,
+  "legacy_mappo_in_formal_comparison": false,
+  "low_level_status": "LOW_LEVEL_RETRAIN_PENDING",
+  "movement": "fly_toward",
+  "hold": 15,
+  "saturation_max": 0.5,
+  "pairwise_tie_max": 0.4,
+  "distinguish_min": 0.75,
+  "positive_min": 0.6,
+  "coverage_min": 0.9,
+  "relational_primary": "max_rate_independent",
+  "relational_secondary": "queue_rate",
+  "short_horizon_upper_bound": false,
+  "trained": false,
+  "planner_ready": false,
+  "deployment_verified": false
+}

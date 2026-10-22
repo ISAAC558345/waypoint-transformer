@@ -1,0 +1,35 @@
+{
+  "checked_registries_only": true,
+  "listed_data_directories": false,
+  "loaded_snapshots": false,
+  "checked_labels": false,
+  "ran_rollout": false,
+  "ran_inference": false,
+  "pool": [
+    310118,
+    310119,
+    310120,
+    310121,
+    310122,
+    310123,
+    310124,
+    310125
+  ],
+  "intersections": {
+    "train_310100_310109": [],
+    "confirm_310110_310117": [],
+    "phase5g": [],
+    "phase5i": [],
+    "phase5k": [],
+    "phase5l": [],
+    "phase5m": [],
+    "phase5n": [],
+    "phase5o": [],
+    "phase5p": [],
+    "phase5q": [],
+    "phase5r": [],
+    "phase5t": []
+  },
+  "consumed_registries": {},
+  "integrity": "PASS"
+}

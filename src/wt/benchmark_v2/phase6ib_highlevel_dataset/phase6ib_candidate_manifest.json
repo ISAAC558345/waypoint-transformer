@@ -1,0 +1,7 @@
+{
+  "candidate_id": "lexicographic index of the assignment tuple",
+  "generator": "G1_RATE",
+  "idle_is_separate_legal_option": true,
+  "k": 6,
+  "partial_injective": true
+}

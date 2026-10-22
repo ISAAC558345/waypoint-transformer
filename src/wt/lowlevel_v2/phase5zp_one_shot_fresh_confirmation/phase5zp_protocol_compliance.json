@@ -1,0 +1,15 @@
+{
+  "pre_access_match": true,
+  "post_access_hash_match": true,
+  "post_access_mismatch": [],
+  "protocol_files_unchanged": true,
+  "actor_checksum_unchanged": true,
+  "true_h1_is_one_step": true,
+  "hold_and_low_level_targets_ok": true,
+  "primary_baseline": "Frozen Model-S",
+  "baseline_switched_after_results": false,
+  "latency_gate_active": false,
+  "threshold_500ms_created": false,
+  "normalized_regret_note": "pre-registered formula needs an oracle J15 label; no 15-step oracle rollout was run",
+  "partial_peek_then_modify": false
+}

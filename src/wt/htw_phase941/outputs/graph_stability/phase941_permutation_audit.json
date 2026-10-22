@@ -1,0 +1,18 @@
+{
+  "deepsets": {
+    "buoy_hits": 1,
+    "buoy_pass": false,
+    "encoder": "deepsets",
+    "n_perm": 4,
+    "uav_hits": 0,
+    "uav_pass": false
+  },
+  "hgnn": {
+    "buoy_hits": 1,
+    "buoy_pass": false,
+    "encoder": "hgnn",
+    "n_perm": 4,
+    "uav_hits": 0,
+    "uav_pass": false
+  }
+}

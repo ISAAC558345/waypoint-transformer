@@ -1,0 +1,9 @@
+{
+  "high": "I(s) > q66",
+  "interference_q33": 0.05585927433314956,
+  "interference_q66": 0.0649851835524602,
+  "low": "I(s) <= q33",
+  "medium": "q33 < I(s) <= q66",
+  "metric": "episode-mean interference_uav_uav under exclusive matching (Phase-9.4.1 I(s))",
+  "source": "reused phase941_strata_lock.json; COLLECT_SEEDS only"
+}

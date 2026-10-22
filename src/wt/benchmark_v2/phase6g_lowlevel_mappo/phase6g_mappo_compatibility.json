@@ -1,0 +1,9 @@
+{
+  "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\phase5_hgnn_urgency\\checkpoints\\mappo_original.pt",
+  "actor_load_strict": true,
+  "action_dim": 2,
+  "critic_in_checkpoint": false,
+  "critic_dim": 188,
+  "log_std_init": -2.2,
+  "safety_margin": 0.5
+}

@@ -1,0 +1,13 @@
+{
+  "formula": "U(A_t) = V_exec(A_t) - lambda_switch * C_switch(A_t, A_t_minus_1) - lambda_progress * C_abandon(A_t)",
+  "v_exec": "executor-conditioned value already available at the decision",
+  "c_switch": "count of UAV targets that differ from the current assignment; observable now",
+  "c_abandon": "sum of current UAV progress on targets that would be left; observable now",
+  "uses_future_information": false,
+  "label_leakage": false,
+  "possible_double_count": "V_exec already sees one-step progress features, so C_abandon can count progress twice",
+  "normalization": "C_switch / num_uavs and C_abandon / num_uavs; progress is already on [0, 1)",
+  "lambda_status": "HUMAN_OR_NEXT_PHASE_SELECTION_REQUIRED",
+  "distance_penalty_added": false,
+  "trained": false
+}

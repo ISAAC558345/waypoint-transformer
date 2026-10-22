@@ -1,0 +1,36 @@
+{
+  "best_of_curve_forbidden": true,
+  "checkpoints": [
+    {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase1b\\outputs\\ckpt_update0.pt",
+      "selected_by_design_payload": false,
+      "update": 0
+    },
+    {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase1b\\outputs\\ckpt_update20.pt",
+      "selected_by_design_payload": false,
+      "update": 20
+    },
+    {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase1b\\outputs\\ckpt_update40.pt",
+      "selected_by_design_payload": false,
+      "update": 40
+    },
+    {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase1b\\outputs\\ckpt_update60.pt",
+      "selected_by_design_payload": false,
+      "update": 60
+    },
+    {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase1b\\outputs\\ckpt_update80.pt",
+      "selected_by_design_payload": false,
+      "update": 80
+    },
+    {
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase1b\\outputs\\ckpt_update100.pt",
+      "selected_by_design_payload": false,
+      "update": 100
+    }
+  ],
+  "primary": "update100"
+}

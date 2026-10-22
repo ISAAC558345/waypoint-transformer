@@ -1,0 +1,31 @@
+{
+  "round": "round_26",
+  "topic": "Mixed-Behavior Action-Supervision Ambiguity and Planner-Action Distillation Readiness Audit",
+  "previous_round_lock": "round_25/ROUND_LOCK.json",
+  "previous_round_lock_sha256": "120A417582F314CDB8B227104DE096C39340D27646F6BF33308CEC018AC72027",
+  "round20_formal_output": "round_20/outputs/round20_multi_uav_dataset_20260828_2100",
+  "round25_formal_output": "round_25/outputs/round25_supervision_ambiguity_alignment_20260830_1203",
+  "allowed_splits": ["train", "validation"],
+  "action_field": "joint_action_applied_t",
+  "state_knn": 5,
+  "task_conditioned_knn": 3,
+  "exact_state_timestep": 0,
+  "planner_horizon": 5,
+  "planner_population": "all allowed scenarios at exact t=0",
+  "pre_registered_gates": {
+    "strong_exact_action_score_min": 0.2,
+    "action_vs_task_relative_ratio_min": 1.1,
+    "two_mode_sse_reduction_min": 0.35,
+    "mean_action_risk_share_min": 0.1,
+    "seed_disagreement_spearman_abs_min": 0.2,
+    "conditional_amplification_ratio_min": 1.05,
+    "predicted_task_arr_min": 0.1,
+    "true_task_arr_min": 0.1,
+    "planner_utility_spearman_max": -0.2,
+    "planner_h10_distance_max": 0.1
+  },
+  "round25_fresh_new_rollout_count": 0,
+  "round20_development_test_reuse_count": 0,
+  "untouched_eval_access_count": 0,
+  "round27_created": false
+}

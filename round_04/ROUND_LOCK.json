@@ -1,0 +1,292 @@
+{
+  "schema_version": "1.0",
+  "round": "round_04",
+  "status": "completed",
+  "locked_at": "2026-08-03T11:37:32+08:00",
+  "topic": "supervised two-dimensional spatial Waypoint Network training, validation-only horizon selection, and offline prediction evaluation",
+  "snapshot": {
+    "path": "backup/snapshots/before_round_04_20260802_1558",
+    "file_count": 92,
+    "byte_count": 1101443,
+    "tree_sha256": "D2AA86FCBBDFF6F993D148DAB0115924D119413C34D18B6605BB02F55EEBED83"
+  },
+  "previous_round": {
+    "round": "round_03",
+    "lock_file": "round_03/ROUND_LOCK.json",
+    "lock_sha256": "601C6679D17EE25534C9A415C75BBF0DC28A167E2ED5EFE11BA0FB3A5C984375"
+  },
+  "training_scope": {
+    "training_performed": true,
+    "waypoint_training_performed": true,
+    "transformer_training_performed": false,
+    "policy_training_performed": false,
+    "closed_loop_evaluation_performed": false,
+    "next_round_created": false
+  },
+  "canonical_input": {
+    "path": "round_03/outputs/round03_pilot_canonical_20260730_230000",
+    "read_only": true,
+    "dataset_manifest_sha256": "2F2BF1C59D9DDD10CA1D1B559F7C0DDB99D3838A70CC332FEF9C9CF1DAF58602",
+    "waypoint_manifest_sha256": "9A485861D7D35E68BB325F233B57A0AA255DDF506CB65BCF34537279844D2B3E",
+    "episodes": 80,
+    "transitions": 6604,
+    "waypoint_samples": 28140,
+    "split_episodes": {
+      "train": 48,
+      "validation": 16,
+      "test": 16
+    },
+    "split_transitions": {
+      "train": 3910,
+      "validation": 1279,
+      "test": 1415
+    },
+    "source_directory_hashes": "177/177 PASS",
+    "checkpoint_provenance_source_hashes": "178/178 PASS",
+    "round03_lock_and_artifacts_unchanged": true
+  },
+  "spatial_protocol": {
+    "candidate_horizons": [1, 5, 10, 20, 30],
+    "training_seeds": [0, 1, 2],
+    "goal_source": "achieved_terminal_goal",
+    "target": "q[t+H]-q[t]",
+    "target_units": "metre",
+    "normalization": "H * maximum_step_distance_m",
+    "output_representation": "relative_delta_xy",
+    "goal_conditioned_input_dim": 80,
+    "state_only_input_dim": 67,
+    "output_dim": 2,
+    "goal_conditioned_parameter_count": 152834,
+    "state_only_parameter_count": 149506,
+    "hidden_dim": 256,
+    "hidden_layers": 3,
+    "activation": "relu",
+    "dropout": 0.0,
+    "optimizer": "adam",
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "maximum_epochs": 300,
+    "early_stopping_patience": 30,
+    "weight_decay": 0.0,
+    "gradient_clipping": 1.0,
+    "projection_evaluation_only": true,
+    "reachability_tolerance_m": 0.001,
+    "checkpoint_selection_split": "validation",
+    "checkpoint_selection_metric": "validation_future_endpoint_rmse_m",
+    "test_used_for_model_selection": false
+  },
+  "sample_counts": {
+    "1": {"train": 3910, "validation": 1279, "test": 1415},
+    "5": {"train": 3718, "validation": 1215, "test": 1351},
+    "10": {"train": 3478, "validation": 1135, "test": 1271},
+    "20": {"train": 2998, "validation": 975, "test": 1111},
+    "30": {"train": 2518, "validation": 815, "test": 951}
+  },
+  "acceptance": {
+    "prechange_repository_tests": "146/146 PASS",
+    "prechange_compileall": "PASS",
+    "prechange_round03_lock_replay": "57/57 PASS",
+    "round04_focused_tests": "56/56 PASS",
+    "repository_tests": "202/202 PASS",
+    "compileall": "PASS",
+    "formal_training_runs": "30/30 PASS",
+    "goal_conditioned_runs": 15,
+    "state_only_runs": 15,
+    "checkpoint_strict_reload": "60/60 PASS",
+    "checkpoint_forward_checks": "60/60 PASS",
+    "unique_checkpoint_sha256": "60/60 PASS",
+    "implementation_config_hashes": "8/8 PASS",
+    "train_validation_tensor_hashes": "8/8 per horizon PASS",
+    "required_top_level_outputs": "11/11 PASS",
+    "per_horizon_bundles": "5/5 PASS",
+    "csv_files": 72,
+    "csv_rows": 10415,
+    "csv_nan_inf_count": 0,
+    "formal_output_files": 227,
+    "figure_files": 36,
+    "figure_png_files": 18,
+    "figure_svg_files": 18,
+    "figure_categories": 13,
+    "visual_and_semantic_qa": "PASS",
+    "source_hashes_unchanged": true,
+    "stderr_bytes": 0,
+    "failures": 0,
+    "blockers": 0
+  },
+  "validation_selection": {
+    "metric": "validation_composite_spatial_waypoint_v1",
+    "recommended_horizon": 30,
+    "test_metrics_used": false,
+    "rows": {
+      "1": {
+        "endpoint_rmse_m_mean": 8.632281912252017,
+        "endpoint_rmse_m_std": 0.04495760423499781,
+        "normalized_error_mean": 0.8632281940169784,
+        "direction_cosine_mean": 0.33451588190077125,
+        "reachable_rate_mean": 0.9913995308835027,
+        "selection_score": 0.5675770254925336,
+        "rank": 5
+      },
+      "5": {
+        "endpoint_rmse_m_mean": 19.23882137879437,
+        "endpoint_rmse_m_std": 0.2495052159314006,
+        "normalized_error_mean": 0.38477642777084425,
+        "direction_cosine_mean": 0.25645447683392725,
+        "reachable_rate_mean": 1.0,
+        "selection_score": 0.34182081746529236,
+        "rank": 4
+      },
+      "10": {
+        "endpoint_rmse_m_mean": 27.100683304549193,
+        "endpoint_rmse_m_std": 0.6050671168782183,
+        "normalized_error_mean": 0.27100683366539413,
+        "direction_cosine_mean": 0.37531162973491217,
+        "reachable_rate_mean": 1.0,
+        "selection_score": 0.29003349478426194,
+        "rank": 3
+      },
+      "20": {
+        "endpoint_rmse_m_mean": 34.922076517103335,
+        "endpoint_rmse_m_std": 1.207056695447797,
+        "normalized_error_mean": 0.1746103824613343,
+        "direction_cosine_mean": 0.41486744458765723,
+        "reachable_rate_mean": 1.0,
+        "selection_score": 0.2554542584178555,
+        "rank": 2
+      },
+      "30": {
+        "endpoint_rmse_m_mean": 29.252157612885693,
+        "endpoint_rmse_m_std": 1.1890135044899846,
+        "normalized_error_mean": 0.0975071920751564,
+        "direction_cosine_mean": 0.4577996989250197,
+        "reachable_rate_mean": 1.0,
+        "selection_score": 0.19220757680123443,
+        "rank": 1
+      }
+    }
+  },
+  "test_results": {
+    "goal_conditioned_endpoint_rmse_m_mean_by_horizon": {
+      "1": 9.2450,
+      "5": 26.1200,
+      "10": 35.4020,
+      "20": 43.1572,
+      "30": 44.2811
+    },
+    "state_only_endpoint_rmse_m_mean_by_horizon": {
+      "1": 9.3870,
+      "5": 25.5982,
+      "10": 37.6417,
+      "20": 48.2929,
+      "30": 49.0059
+    },
+    "zero_endpoint_rmse_m_by_horizon": {
+      "1": 9.287,
+      "5": 25.234,
+      "10": 38.352,
+      "20": 53.848,
+      "30": 52.564
+    },
+    "selected_horizon_30": {
+      "goal_endpoint_rmse_m_mean": 44.2811,
+      "goal_endpoint_rmse_m_std": 1.0499,
+      "goal_endpoint_mae_m": 36.430,
+      "goal_normalized_error": 0.147604,
+      "goal_direction_cosine": 0.4254,
+      "goal_angular_error_deg": 58.11,
+      "goal_magnitude_absolute_error_m": 26.844,
+      "goal_reachable_rate": 1.0,
+      "state_only_endpoint_rmse_m": 49.0059,
+      "state_only_direction_cosine": 0.1930,
+      "zero_endpoint_rmse_m": 52.564,
+      "train_mean_endpoint_rmse_m": 52.876,
+      "constant_velocity_endpoint_rmse_m": 137.234,
+      "improvement_over_state_only_percent": 9.64,
+      "improvement_over_zero_percent": 15.76,
+      "projection_activation_rate": 0.0
+    }
+  },
+  "canonical_outputs": {
+    "smoke_output": "round_04/outputs/round04_smoke_final_verified_20260802_171037",
+    "smoke_figures": "round_04/figures/round04_smoke_final_verified_20260802_171037",
+    "formal_output": "round_04/outputs/round04_formal_canonical_20260802_173717",
+    "formal_figures": "round_04/figures/round04_formal_canonical_20260802_173717",
+    "formal_stdout": "logs/codex/round04_formal_canonical_20260802_173717.stdout.log",
+    "formal_stderr": "logs/codex/round04_formal_canonical_20260802_173717.stderr.log",
+    "leakage_audit": "report/round_04_input_leakage_audit_20260802_1558.md",
+    "completion_report": "report/round_04_report_20260802_174159.md",
+    "implementation_log": "logs/codex/round_04_implementation_20260802_1558.md"
+  },
+  "tree_digest_algorithm": "SHA256 over UTF-8 records sorted by relative POSIX path; each record is relative_path + NUL + uppercase_file_SHA256 + LF",
+  "canonical_tree_sha256": {
+    "round_04/outputs/round04_smoke_final_verified_20260802_171037": {
+      "file_count": 35,
+      "byte_count": 8601608,
+      "sha256": "601A22BC0E7F751A63F8D8054246C2D47449203B222627B7D0ECF7B29B6718AB"
+    },
+    "round_04/figures/round04_smoke_final_verified_20260802_171037": {
+      "file_count": 28,
+      "byte_count": 1836180,
+      "sha256": "F8A0E83926FAFED9BF9E0EC184D0B014EAE06AB4DC26EC081314CACABF08EEF0"
+    },
+    "round_04/outputs/round04_formal_canonical_20260802_173717": {
+      "file_count": 227,
+      "byte_count": 123514922,
+      "sha256": "E58C32A71A12396548CBCA6637DBB7AA4A212C356AFBCD9A78BD391F01945CD0"
+    },
+    "round_04/figures/round04_formal_canonical_20260802_173717": {
+      "file_count": 36,
+      "byte_count": 4124775,
+      "sha256": "357E25F891136F04D09D1AC23963D81FB6D9C9A8C1398B0D6495B48B59AA8F1A"
+    }
+  },
+  "implementation_sha256": {
+    "AGENTS.md": "3BFD9236176169B3F9B5300A4F46E685D01EF37F08B6E1C95D6C440D4778AD3A",
+    "README.md": "D0BCA69B6B09A60A6A3BB3C302E6BC03FE436F692586E5B6C381B9398E33F1DF",
+    "CURRENT_ROUND.txt": "A9FF46D3137CA36A2D8D0CD004A7A83B26C805FD608AE7637389BAB101B0088F",
+    "PLANS.md": "91EF6FB7533A534074F4F0DC663DE99BDFAF539EBF4A96B648D553D524ADBD88",
+    "ROUND_VERSIONING.md": "FF2409E5870FE15A32A1DAA9B4AFF2B81BFB822DE10156B6D070BEB3DEBB35A3",
+    "round_manifest.json": "3E054249F773B3C5DB388187B84F624703CEEE63F134E02FAC0913767452CAB2",
+    "src/wt/round4/__init__.py": "877C9AD14A565C4161D48AA351C1AE9D896CAE6B52DF494739F675DE33A212AE",
+    "src/wt/round4/round4_data.py": "D8E6D6C6946CA979C8492A7B63AF7240B11350F3EB4F69BC993EF422089762BF",
+    "src/wt/round4/spatial_waypoint.py": "05D27449E5BAC439A3C7018F5868E0051269DB9B02E41D52E14D3E307A972CDF",
+    "src/wt/round4/round4_training.py": "9F4FB2A218E4DAC345EE86716623BEC1A9DC87AB35F84AB5CCE81609316B8CBF",
+    "src/wt/round4/round4_evaluation.py": "775FFF00A85EC93EBA73E2C41F84CE20AE361360B4086A7D50D1201B09D44C07",
+    "src/wt/round4/round4_runner.py": "01082C0E0A4FB4C011DDE78079D7936EF19E084F3132F3D727316CCF3C1AA407",
+    "src/wt/round4/round4_figures.py": "095262BFF93CDF740B793FC80BCA4DD7902C5C5C4A0241CAB16BA39859E50937",
+    "tests/test_round04_spatial_waypoint.py": "9F8554E0EE08DA5B5254568B2CF4C8F844FF001D0080A0F56AB0AD9F32D4E117",
+    "round_04/AGENTS.md": "3EEE293D3D9D809CB9B9F62648CCC2ECBEFDCE89309BD26C83847ACA655F9477",
+    "round_04/configs/spatial_waypoint_v1.json": "51A70B8B762EE20758EA69A4679DDE0C9D3FA57F8C04D6AD3244EC5A10C0551A",
+    "report/round_04_plan_20260802_1558.md": "B161BF85A3E7E6E04F4F8E612C8B15670B045F9563BCF9318D10620F85F9D5F3",
+    "report/round_04_input_leakage_audit_20260802_1558.md": "A9C766DAF42AD9F17E70EC24A12E69C049428AF7BDF70CEDFAF0602EC2CDC8E9",
+    "report/round_04_report_20260802_174159.md": "0D033874EEF824F12B0B2B30896EE692F8DE3DF0A029101310387952743A6E4C",
+    "logs/codex/round_04_implementation_20260802_1558.md": "C4D84064A2A87F1AA704ACA090ECF0120627F6868D4D98563959BCC876791E68",
+    "logs/codex/round04_formal_canonical_20260802_173717.stdout.log": "09229EB013F1F50A9DA086407EF2CD34DF6B12595BBA62E91AA90DCCD5E50AA7",
+    "logs/codex/round04_formal_canonical_20260802_173717.stderr.log": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  "canonical_core_sha256": {
+    "run_manifest.json": "167F0B7E49557580969306F0C7F71D22195E191C1323AB1BF15144CFFBD1ACB5",
+    "selected_waypoint_config.json": "63E6B6080F4DC1B537EEC6C26CD0E28252F3485DB706B69B4A75E8A7A43F6F21",
+    "input_schema.json": "DD908C40E9F394709D500220C00BAB6224EC57FB76E6FB25A3B1FA38D23DC392",
+    "output_schema.json": "5650C9B1B4CE2F9978C11537686C5C0BC2960EF9565AE4D89AAEA87AC14BEAA4",
+    "waypoint_training_summary.csv": "9F058C6870B24DAC0386CE60EE17805CDF466D72CEA15FF672519ABDDFE79D6D",
+    "waypoint_validation_metrics.csv": "13EE9CEE150ABBE80639CA3D305254225A831CCE852579CB47BB7E2F9FB8A025",
+    "waypoint_horizon_selection.csv": "CA830F0E233B19D03198F08D2930169DEB3944AD5FEEDE8728DB36869FAD0995",
+    "waypoint_test_metrics.csv": "C86D03AEE48A9556AE38236944AF0AF6CB32BA14DD5D68707F80A6723DCF4DFE",
+    "waypoint_baseline_metrics.csv": "8DD7DCDB72A9234EE522B57A7FB61392D864B184B9DE38A19C64E9E6C14D124D",
+    "waypoint_projection_metrics.csv": "1FD0EB0E4135073C85798EB49EAC7626600D50D14B60B671D0DB8F3543B4DF83",
+    "waypoint_prediction_examples.csv": "A5CE73EFA9EDC644704E1169D6189924DCFED8D9CD0126B3C9CC779FAE69A2EF"
+  },
+  "known_limitations": [
+    "single UAV and static buoys",
+    "achieved-terminal goal is explicitly declared hindsight future information",
+    "400 endpoint samples admit a terminal-goal shortcut",
+    "validation-to-test distribution shift is substantial",
+    "performance is heterogeneous across collection policies",
+    "the fixed pilot has high- and mid-quality episodes but no low-quality episodes",
+    "within-episode transition samples are correlated",
+    "three seeds vary model initialization and do not resample the fixed dataset",
+    "offline supervised prediction cannot establish policy, return, safety, or closed-loop improvement"
+  ],
+  "unresolved_blockers": []
+}

@@ -1,0 +1,477 @@
+{
+  "B2_keys": [
+    "U_single",
+    "idle_count",
+    "idle_frac",
+    "n_unique_buoys",
+    "competition_count",
+    "mean_uav_target_dist",
+    "max_uav_target_dist",
+    "n_in_range",
+    "assigned_queue_mean",
+    "cand_mean_sinr",
+    "cand_mean_rate",
+    "cand_mean_interference",
+    "assign_0",
+    "assign_1",
+    "assign_2",
+    "assign_3",
+    "assign_4",
+    "assign_5"
+  ],
+  "consistency": {
+    "all_match": true,
+    "mismatches": [],
+    "n_decision_match": 16,
+    "n_states": 16
+  },
+  "et": {
+    "max_depth": 8,
+    "min_samples_leaf": 5,
+    "n_estimators": 300,
+    "n_jobs": 1,
+    "random_state": 0
+  },
+  "features": {
+    "B2_keys": [
+      "U_single",
+      "idle_count",
+      "idle_frac",
+      "n_unique_buoys",
+      "competition_count",
+      "mean_uav_target_dist",
+      "max_uav_target_dist",
+      "n_in_range",
+      "assigned_queue_mean",
+      "cand_mean_sinr",
+      "cand_mean_rate",
+      "cand_mean_interference",
+      "assign_0",
+      "assign_1",
+      "assign_2",
+      "assign_3",
+      "assign_4",
+      "assign_5"
+    ],
+    "candidate_id_contiguous_0_23": true,
+    "forbidden_keys_in_model": [],
+    "live_geometry": {
+      "keys": [
+        "idle_count",
+        "idle_frac",
+        "n_unique_buoys",
+        "competition_count",
+        "mean_uav_target_dist",
+        "max_uav_target_dist",
+        "n_in_range",
+        "assigned_queue_mean",
+        "cand_mean_sinr",
+        "cand_mean_rate",
+        "cand_mean_interference",
+        "assign_0",
+        "assign_1",
+        "assign_2",
+        "assign_3",
+        "assign_4",
+        "assign_5"
+      ],
+      "matches_attach_observables": true,
+      "max_abs_err": 0.0,
+      "mean_abs_err": 0.0,
+      "n_exact": 384,
+      "n_rows": 384
+    },
+    "matches_locked_B2_KEYS": true,
+    "n_scenarios": 16,
+    "normalization": "none",
+    "phase4a_source": {
+      "candidates": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase3c_credit_counterfactual\\outputs\\first_hold_all_candidates.csv",
+      "counterfactual": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\traj_audit\\outputs\\counterfactual.json",
+      "interventions": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase3c_credit_counterfactual\\outputs\\first_hold_counterfactual.csv",
+      "natural": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\traj_audit\\outputs\\natural_trajectories.json",
+      "pool": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\traj_audit\\outputs\\first_hold_pool.csv"
+    },
+    "pool_sizes": {
+      "221000": 24,
+      "221001": 24,
+      "221002": 24,
+      "221003": 24,
+      "221004": 24,
+      "221005": 24,
+      "221006": 24,
+      "221007": 24,
+      "221008": 24,
+      "221009": 24,
+      "221010": 24,
+      "221011": 24,
+      "221012": 24,
+      "221013": 24,
+      "221014": 24,
+      "221015": 24
+    },
+    "scenario_ids": [
+      221000,
+      221001,
+      221002,
+      221003,
+      221004,
+      221005,
+      221006,
+      221007,
+      221008,
+      221009,
+      221010,
+      221011,
+      221012,
+      221013,
+      221014,
+      221015
+    ]
+  },
+  "fold_metrics": [
+    {
+      "R_pred_B2": 0.9436813186813187,
+      "R_pred_LOCAL": 0.8288461538461538,
+      "fold": 0,
+      "mean_U_traj_B2": 12000000.0,
+      "test_scenarios": [
+        221000,
+        221005,
+        221010,
+        221015
+      ],
+      "top1": 0.25,
+      "top3": 0.75
+    },
+    {
+      "R_pred_B2": 0.9090909090909092,
+      "R_pred_LOCAL": 0.6329004329004329,
+      "fold": 1,
+      "mean_U_traj_B2": 10666666.666666666,
+      "test_scenarios": [
+        221004,
+        221009,
+        221014
+      ],
+      "top1": 0.6666666666666666,
+      "top3": 0.6666666666666666
+    },
+    {
+      "R_pred_B2": 0.9018518518518519,
+      "R_pred_LOCAL": 0.737037037037037,
+      "fold": 2,
+      "mean_U_traj_B2": 9333333.333333334,
+      "test_scenarios": [
+        221003,
+        221008,
+        221013
+      ],
+      "top1": 0.0,
+      "top3": 0.3333333333333333
+    },
+    {
+      "R_pred_B2": 1.0,
+      "R_pred_LOCAL": 0.7619047619047619,
+      "fold": 3,
+      "mean_U_traj_B2": 13000000.0,
+      "test_scenarios": [
+        221002,
+        221007,
+        221012
+      ],
+      "top1": 0.6666666666666666,
+      "top3": 0.6666666666666666
+    },
+    {
+      "R_pred_B2": 0.8183760683760682,
+      "R_pred_LOCAL": 0.8069800569800569,
+      "fold": 4,
+      "mean_U_traj_B2": 9000000.0,
+      "test_scenarios": [
+        221001,
+        221006,
+        221011
+      ],
+      "top1": 0.0,
+      "top3": 0.0
+    }
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "n_test": 96,
+      "n_train": 288,
+      "test_scenarios": [
+        221000,
+        221005,
+        221010,
+        221015
+      ],
+      "train_scenarios": [
+        221001,
+        221002,
+        221003,
+        221004,
+        221006,
+        221007,
+        221008,
+        221009,
+        221011,
+        221012,
+        221013,
+        221014
+      ]
+    },
+    {
+      "fold": 1,
+      "n_test": 72,
+      "n_train": 312,
+      "test_scenarios": [
+        221004,
+        221009,
+        221014
+      ],
+      "train_scenarios": [
+        221000,
+        221001,
+        221002,
+        221003,
+        221005,
+        221006,
+        221007,
+        221008,
+        221010,
+        221011,
+        221012,
+        221013,
+        221015
+      ]
+    },
+    {
+      "fold": 2,
+      "n_test": 72,
+      "n_train": 312,
+      "test_scenarios": [
+        221003,
+        221008,
+        221013
+      ],
+      "train_scenarios": [
+        221000,
+        221001,
+        221002,
+        221004,
+        221005,
+        221006,
+        221007,
+        221009,
+        221010,
+        221011,
+        221012,
+        221014,
+        221015
+      ]
+    },
+    {
+      "fold": 3,
+      "n_test": 72,
+      "n_train": 312,
+      "test_scenarios": [
+        221002,
+        221007,
+        221012
+      ],
+      "train_scenarios": [
+        221000,
+        221001,
+        221003,
+        221004,
+        221005,
+        221006,
+        221008,
+        221009,
+        221010,
+        221011,
+        221013,
+        221014,
+        221015
+      ]
+    },
+    {
+      "fold": 4,
+      "n_test": 72,
+      "n_train": 312,
+      "test_scenarios": [
+        221001,
+        221006,
+        221011
+      ],
+      "train_scenarios": [
+        221000,
+        221002,
+        221003,
+        221004,
+        221005,
+        221007,
+        221008,
+        221009,
+        221010,
+        221012,
+        221013,
+        221014,
+        221015
+      ]
+    }
+  ],
+  "gate": {
+    "Gate-1_B2_gt_LOCAL": true,
+    "Gate-2_perm_below_real": true,
+    "Gate-3": "\u672a\u5b9a\u4e49 deployment threshold",
+    "consistency_ok": true,
+    "fold_R_B2": 0.9146000296000295,
+    "fold_R_B2_std": 0.06631514434361672,
+    "fold_R_LOCAL": 0.7535336885336885,
+    "gate": "PARTIAL",
+    "independent_available": false,
+    "local_oracle_overlap": 2,
+    "locked_R_B2": 0.9164176101676103,
+    "locked_R_LOCAL_fold": 0.7535336885336885,
+    "locked_R_LOCAL_state": 0.7582407176157175,
+    "mean_R_B2": 0.9164176101676103,
+    "mean_R_LOCAL": 0.7582407176157175,
+    "mean_U_B2": 10875000.0,
+    "mean_U_LOCAL": 9000000.0,
+    "mean_U_ORACLE": 11875000.0,
+    "median_R_B2": 0.9642857142857143,
+    "median_R_LOCAL": 0.7207792207792207,
+    "n_changed": 13,
+    "n_degraded": 2,
+    "n_improve": 10,
+    "n_unchanged": 4,
+    "oracle_overlap": 5,
+    "payload_gain_vs_LOCAL": 1875000.0,
+    "perm_R": 0.6796732919857921,
+    "perm_drop": 0.23674431818181818,
+    "planner_ready": false,
+    "residual_gap_vs_ORACLE": 1000000.0,
+    "std_R_B2": 0.1266562040322448,
+    "std_R_LOCAL": 0.16135004445247006,
+    "text": "shadow scorer \u590d\u73b0\u4e86 LSO \u7684 U_hat first-hold \u9009\u62e9\uff0cGate-1/2 \u901a\u8fc7\u3002\u4ecd\u7f3a\u5c11\u771f\u6b63 held-out independent scenario\uff0cGate-3 \u672a\u5b9a\u4e49 deployment threshold\uff0c\u56e0\u6b64\u4e0d\u80fd\u6b63\u5f0f\u66ff\u6362 planner\u3002",
+    "top1": 0.3125,
+    "top3": 0.5
+  },
+  "integrity": {
+    "default_still_decode_assignment": true,
+    "high_level_has_b2_tokens": [],
+    "note": "shadow scorer is a side channel; high_level.decide was not imported for selection",
+    "official_decide_module": "wt.htw_phase100.high_level",
+    "official_decide_name": "decide",
+    "official_decide_patched": false,
+    "sha256": {
+      "src\\wt\\htw_phase100\\high_level.py": "a995aa8a87c08ecf05abf28210decbdec9d6606ae057b8def80805c0a919336f",
+      "src\\wt\\htw_phase943\\evaluation.py": "4e7c8b082a52e4cfafcb84dd9e512cbb1f5f8a09abec42181d39074cf16e31e0",
+      "src\\wt\\htw_phase945\\candidate_pool.py": "93bf0a4917e6968e6b4416cb4a1daa1816e9b672b39c6703faf42be0b157fe84"
+    }
+  },
+  "mechanism": {
+    "counts": {
+      "conflicting": 0,
+      "local+residual": 0,
+      "local-driven": 0,
+      "residual-driven": 13
+    },
+    "fractions": {
+      "conflicting": 0.0,
+      "local+residual": 0.0,
+      "local-driven": 0.0,
+      "residual-driven": 1.0
+    },
+    "mean_dC_changed": 2673395.132874404,
+    "mean_dU_hat_changed": 1534933.5944128654,
+    "mean_dU_single_changed": -1138461.5384615385,
+    "n_changed": 13,
+    "n_sign_conflict": 13
+  },
+  "perm": {
+    "R_pred_perm": {
+      "max": 0.7795204795204795,
+      "mean": 0.6796732919857921,
+      "median": 0.685127892940393,
+      "min": 0.5604468448218448,
+      "n": 50,
+      "p10": 0.6175395091020092,
+      "p25": 0.649269653957154,
+      "p75": 0.7055194805194804,
+      "p90": 0.7415874750249751,
+      "std": 0.048468945042666224
+    },
+    "R_pred_real_repeat": {
+      "max": 0.9164176101676103,
+      "mean": 0.9164176101676103,
+      "median": 0.9164176101676103,
+      "min": 0.9164176101676103,
+      "n": 50,
+      "p10": 0.9164176101676103,
+      "p25": 0.9164176101676103,
+      "p75": 0.9164176101676103,
+      "p90": 0.9164176101676103,
+      "std": 0.0
+    },
+    "n_perm": 50
+  },
+  "worse_geometry": {
+    "mean_geom_delta_better": {
+      "assign_0": 0.0,
+      "assign_1": -0.3,
+      "assign_2": -0.1,
+      "assign_3": 0.4,
+      "assign_4": -4.4,
+      "assign_5": 0.6,
+      "assigned_queue_mean": 0.5666666666666667,
+      "cand_mean_interference": 0.02738915246292613,
+      "cand_mean_rate": -407117.8770176505,
+      "cand_mean_sinr": -83.28607348546753,
+      "competition_count": 0.0,
+      "idle_count": 0.3,
+      "idle_frac": 0.049999999999999996,
+      "max_uav_target_dist": -9.812576789809269,
+      "mean_uav_target_dist": -12.760734810141182,
+      "n_in_range": 0.2,
+      "n_unique_buoys": -0.3
+    },
+    "mean_geom_delta_worse": {
+      "assign_0": 0.0,
+      "assign_1": 0.0,
+      "assign_2": -1.0,
+      "assign_3": 1.5,
+      "assign_4": 1.0,
+      "assign_5": 0.0,
+      "assigned_queue_mean": 0.0,
+      "cand_mean_interference": 0.0,
+      "cand_mean_rate": -476955.2875259066,
+      "cand_mean_sinr": -143.63650903823486,
+      "competition_count": 0.0,
+      "idle_count": 0.0,
+      "idle_frac": 0.0,
+      "max_uav_target_dist": 0.0,
+      "mean_uav_target_dist": 0.8333594197910799,
+      "n_in_range": 0.0,
+      "n_unique_buoys": 0.0
+    },
+    "n_worse": 2,
+    "note": "descriptive only; no new features and no retune",
+    "shared_worse_hash": null,
+    "worse_B2_candidates": [
+      5,
+      5
+    ],
+    "worse_B2_hashes": [
+      "569b38c6496e8e18d27f9ee0a962279949f822b182644d9372ccd934cf0dad24",
+      "b0c517dfbd28b205c8c0abb5e2e29b66113e7d75c10e6fb26cf78dc88c2eb347"
+    ],
+    "worse_scenarios": [
+      221011,
+      221015
+    ]
+  }
+}

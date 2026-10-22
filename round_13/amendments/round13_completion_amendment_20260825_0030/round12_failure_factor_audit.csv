@@ -1,0 +1,5 @@
+evidence,evidence_strength,factor,source
+mean oracle gap=0.141046754 across three locked seeds; nonzero gap can limit a policy fed predicted waypoints.,moderate,predictor_error,round12 oracle_gap_analysis.csv
+"C_service=0.0037064542, C_progress=0.0096376949, C_return=0.0030245169; continuous service diagnostic=SA-C-continuous.",strong,action_controllability_mismatch,Round-13 formal controllability plus amendment continuous headroom
+"Exact reward reconstruction gives RA-A and H=10 return/payload Pearson=0.985446, Spearman=0.997743; the original positive discrete sidecar return was not formula-equivalent.",unsupported,reward_return_waypoint_semantic_mismatch,amendment exact reward decomposition
+"Round-12 gate=TW-POL-B despite positive head sensitivities (service=0.2579, progress=1.7420, return=1.8939); predicted task signals remain movement-mediated.",moderate,representation_to_action_mapping_limitation,Round-12 locked head-utilization and policy gate

@@ -1,0 +1,23 @@
+{
+  "amendment_type": "round36_exact_runtime_optimization_resume",
+  "reason": "exact_unpruned_runtime_exceeded_preregistered_limit_before_scientific_outcome",
+  "original_projected_mean_seconds": 4186.434558122084,
+  "original_projected_worst_seconds": 4935.813386135967,
+  "runtime_limit_seconds": 1800,
+  "scientific_protocol_changed": false,
+  "scenario_manifest_changed": false,
+  "confirmation_manifest_changed": false,
+  "anchor_protocol_changed": false,
+  "candidate_space_changed": false,
+  "gate_changed": false,
+  "optimization_semantics_required": "exact_equivalent_only",
+  "precondition": {
+    "round35_original_lock_sha256": "8506179FF0F8E450125FF97FA42FC822D05DDFB9CD1F39CACC655079F972CD82",
+    "round35_locked_artifact_hash_mismatches": 0,
+    "confirmation_outcome_access_count": 0,
+    "protected_access_count": 0,
+    "untouched_access_count": 0,
+    "scientific_outcome_accessed": false
+  },
+  "round37_created": false
+}

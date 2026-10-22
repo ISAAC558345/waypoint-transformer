@@ -1,0 +1,25 @@
+{
+  "checked_registries_only": true,
+  "listed_pool_directory": false,
+  "loaded_snapshots": false,
+  "checked_labels": false,
+  "ran_inference": false,
+  "ran_rollout": false,
+  "consumed_registries": {},
+  "not_used_for": [
+    "training",
+    "validation",
+    "checkpoint_selection",
+    "architecture_design",
+    "loss_design",
+    "threshold_design",
+    "candidate_design",
+    "aggregation_design",
+    "true_h1_optimization",
+    "latency_optimization",
+    "fallback_design"
+  ],
+  "integrity": "PASS",
+  "post_freeze_fresh_pool_touch_count": 0,
+  "git_status_mentions_not_opened": 0
+}

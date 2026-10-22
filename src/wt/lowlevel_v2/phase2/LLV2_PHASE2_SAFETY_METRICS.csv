@@ -1,0 +1,6 @@
+model_seed,collision_count_1e9,collision_count_1e6,min_sep_worst,projector_failure_count,service_lock_violation_count,safety_ok_1e6
+0,2.0,0.0,0.9999999988207531,0.0,0.0,True
+1,0.0,0.0,0.9999999990831951,0.0,0.0,True
+2,0.0,0.0,0.9999999990000441,0.0,0.0,True
+3,0.0,0.0,0.9999999990025462,0.0,0.0,True
+4,8.0,0.0,0.9999999987201246,0.0,0.0,True

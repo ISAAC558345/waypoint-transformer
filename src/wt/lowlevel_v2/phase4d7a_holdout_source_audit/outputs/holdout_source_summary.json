@@ -1,0 +1,13 @@
+{
+  "criterion_id": "CONSERVATIVE_WITH_FALLBACK_V1",
+  "deployment_pass_fail": "NOT_EVALUATED",
+  "eligible_pool_count": 0,
+  "eligible_pools": [],
+  "holdout_source_status": "NO_ELIGIBLE_SOURCE",
+  "planner_ready": false,
+  "registered_batch_1": null,
+  "registered_batch_2": null,
+  "rollout_executed": false,
+  "status": "BLOCKED_ON_INDEPENDENT_HOLDOUT_DATA",
+  "phase106_note": "106000-106063 is a candidate pool only. final_untouched_consumed=true. Not official_holdout."
+}

@@ -1,0 +1,23 @@
+{
+  "benchmark": "round35_level2_relational_shared_spectrum_v1",
+  "num_uavs": 4,
+  "num_buoys": 8,
+  "episode_horizon": 20,
+  "spectrum_mode": "shared",
+  "interference_overlap_factors": [0.25, 0.5],
+  "association_modes": ["legacy_deterministic", "external_preference"],
+  "movement_action_shape": [4, 2],
+  "association_action_shape": [4, 8],
+  "decoder": {
+    "exact_partial_injective_search": true,
+    "legal_assignment_count": 3393,
+    "external_preference_overrides_legacy_candidate_score": true,
+    "constraints": ["candidate_mask", "injectivity", "one_service_per_uav", "idle_uav", "valid_buoy_index", "deterministic_tie_break"]
+  },
+  "training_performed": false,
+  "model_inference_performed": false,
+  "physics_redesigned": false,
+  "reward_redesigned": false,
+  "protected_data_access_count": 0,
+  "untouched_eval_access_count": 0
+}

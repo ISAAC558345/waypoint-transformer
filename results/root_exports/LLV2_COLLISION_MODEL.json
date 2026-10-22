@@ -1,0 +1,17 @@
+{
+  "collision_margin_placeholder_m": 0.2,
+  "d_safe_placeholder_m": 1.0,
+  "formula": "d_safe = 2*uav_physical_radius + collision_margin",
+  "geometry": "horizontal safety disc",
+  "l3b_has_native_radius": false,
+  "metrics": {
+    "collision_count": 0,
+    "d_safe": 1.0,
+    "d_safe_is_placeholder": true,
+    "minimum_pairwise_distance": 1.2433337643669597,
+    "near_collision_count": 1
+  },
+  "requires_pretraining_freeze": true,
+  "scientific_result": false,
+  "uav_physical_radius_placeholder_m": 0.4
+}

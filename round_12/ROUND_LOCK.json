@@ -1,0 +1,15 @@
+{
+  "acceptance_complete": true,
+  "final_audit_sha256": "22A7C57ABE56ACE2006C95F202A32FDEB360E7B39EAC8B361D6018AA06B99D5D",
+  "formal_output": "round_12\\outputs\\round12_formal_20260810_161000",
+  "formal_protocol_sha256": "CBA504D3A91DCF99437F6851CAF69C0CE74A7ADD47844FD44D8322FA2F7DBA78",
+  "fresh_development_access_count": 1,
+  "locked_at_utc": "2026-08-10T16:16:58.824224+00:00",
+  "old_development_test_access_count": 0,
+  "predictor_sha256": "A3E8B6C361CCA997A05766B847521EBB68E68985CAC273667DE95181ACCCEF65",
+  "round": "round_12",
+  "round_13_created": false,
+  "run_manifest_sha256": "8A946D2C59929E46F45BC0788C0D6F9DF5916C324F3847B8E09E2661665382DC",
+  "status": "locked",
+  "untouched_holdout_access_count": 0
+}

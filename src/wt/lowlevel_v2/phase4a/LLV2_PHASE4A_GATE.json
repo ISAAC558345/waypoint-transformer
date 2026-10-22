@@ -1,0 +1,9 @@
+{
+  "COLREL": "C",
+  "collision_relation_internalized": false,
+  "collision_teacher_signal_too_sparse": true,
+  "did_not_train": true,
+  "next_step": "stop; do not change d_safe or manufacture collisions",
+  "support_5seed_collision_aware_validation": false,
+  "text": "Teacher signal too sparse on LLV2_train."
+}

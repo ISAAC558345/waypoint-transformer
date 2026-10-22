@@ -1,0 +1,17 @@
+{
+  "gate": "RUN-A",
+  "gate_name": "END_TO_END_SYSTEM_OPERATIONAL",
+  "phase6b_gate": "BITQ-A",
+  "phase6c_gate": "DYN-A",
+  "phase6d_gate": "TEMP-F",
+  "phase6e_gate": "CAND-D",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "deployment_pass": false,
+  "trained": false,
+  "fresh_confirmation_untouched": true,
+  "parameters_modified_for_speed": false,
+  "train_hgnn_now": false,
+  "next_phase_trains_low_level_mappo_only": true,
+  "optimize_j15_runtime": false
+}

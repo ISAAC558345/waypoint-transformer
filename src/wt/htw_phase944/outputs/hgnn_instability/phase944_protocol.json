@@ -1,0 +1,81 @@
+{
+  "aux_rank_weight": 0.05,
+  "batch": 32,
+  "cgraph943": {
+    "conditional_graph_advantage_confirmed": false,
+    "conditional_graph_advantage_suggestive": true,
+    "gate": "CGRAPH-B"
+  },
+  "checkpoint_sha256": {
+    "deepsets_seed0": "7c93123dd489f805fa61d3d15fdf99b50aeaaa0fd359e57bdbd77112857cec87",
+    "deepsets_seed1": "b21ee7e4151e276f919a18753260bd3595b2a9ed0b45ad84fe15b3b5864ec4d7",
+    "deepsets_seed2": "66b46e78df6ba9044156498002f2ca0dd2e60d2650d6d191ff59cbe705189b8e",
+    "deepsets_seed3": "2ceff70916681fbdb955e44bcfbae6243a951ba9b5b111943988d1cf3f1cfe4f",
+    "deepsets_seed4": "f52dd198ea55dd9c1c163f8fdfb5e5408d1509a40cf932facfcd9c7350a7f2e7",
+    "hgnn_seed0": "1d85ba4827dff341368a611f9fe857834226094ff10d8aeb82f02d0c0b594712",
+    "hgnn_seed1": "0c60f5c8841bb4c5f41564f305f23a2fc5ca915b32d92a887707928f6d7f25af",
+    "hgnn_seed2": "c911433af8d46e69685859bb5db312b481e34aee236fe94d68b2550bf80b1617",
+    "hgnn_seed3": "1c4aa8fc27791860e8d638dd90aafb6fe11387b1c1bb37c0cf3755f6f9892e6c",
+    "hgnn_seed4": "04da741426ba58591c2d0c4433822358d2e98ca08f35ab519b630588ac5490e2"
+  },
+  "collect_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "design_val_seeds": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "diag_split": "historical_eval_8_15_plus_collect_states",
+  "diagnostic_only": true,
+  "epochs": 80,
+  "graph943": {
+    "gate": "GRAPH-B",
+    "reason": "\u5747\u503c\u6b63\u4f46\u4e0d\u7a33\u5b9a\u3002"
+  },
+  "lr": 0.001,
+  "mean_deep_943": 3146875.0,
+  "mean_delta_943": 443750.0,
+  "mean_hgnn_943": 3590625.0,
+  "model_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "modify_decoder": false,
+  "modify_hgnn": false,
+  "modify_lr": false,
+  "no_tuning_on_consumed_confirmation_outcomes": true,
+  "orderfix": {
+    "decoder_order_dependence_fixed": true,
+    "gate": "ORDERFIX-A",
+    "reason": "\u7ed3\u6784\u5ba1\u8ba1\u901a\u8fc7\uff1bPPV deep=0.0000 hgnn=0.0000\u3002"
+  },
+  "phase": "9.4.4",
+  "phase943_confirmation_consumed": true,
+  "phase944_model_tuning_on_phase943_confirmation": false,
+  "ppo": false,
+  "tie_atol": 1e-06
+}

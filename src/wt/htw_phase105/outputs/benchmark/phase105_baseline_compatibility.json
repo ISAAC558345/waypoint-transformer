@@ -1,0 +1,36 @@
+{
+  "M0": {
+    "comparable": true,
+    "legal_version": "independent greedy then keep best UAV per buoy, idle extras",
+    "name": "Myopic",
+    "raw_allows_collision": true
+  },
+  "M1": {
+    "comparable": true,
+    "future_information": false,
+    "name": "Exclusive matching"
+  },
+  "M2": {
+    "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase943\\outputs\\order_free_decoder\\deepsets_seed0.pt",
+    "comparable": true,
+    "compatible_order_free_decoder": true,
+    "exists": true,
+    "name": "DeepSets-Old",
+    "reason_if_missing": null
+  },
+  "M3": {
+    "comparable": true,
+    "name": "FINAL-HIER",
+    "primary": true
+  },
+  "flat_ppo": {
+    "reason": "Existing state-only / GoalOption PPO (Phase-5.1/6.x) lives on L2-A or uses external association (oracle/myopic) and only outputs movement. Decision authority differs from FINAL-HIER, which chooses association. Phase-6.2 M=5 weights are forbidden on L3-B M=6. No new joint PPO is trained in this phase.",
+    "strictly_comparable": false,
+    "used_as": "secondary historical baseline (not in primary table)"
+  },
+  "hold_ablation": {
+    "comparable_l3b_nohold_h5_h10_h15": false,
+    "historical": "Phase-6.4 hold=5/10/15 on L2-A is historical mechanism evidence only"
+  },
+  "trained_this_phase": false
+}

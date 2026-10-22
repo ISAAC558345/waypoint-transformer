@@ -1,0 +1,14 @@
+{
+  "architecture": "shared_mlp_3x_linear_256_relu",
+  "dropout": 0.0,
+  "epochs_max": 300,
+  "gradient_clip_norm": 1.0,
+  "horizons": [10, 20],
+  "learning_rate": 0.001,
+  "loss_weights": {"gross_service_progress": 1.0, "h_step_return": 1.0, "service_distribution": 1.0},
+  "optimizer": "Adam",
+  "patience_validation_checks": 30,
+  "seeds": [0, 1, 2],
+  "train_batch_size": 256,
+  "weight_decay": 0.0
+}

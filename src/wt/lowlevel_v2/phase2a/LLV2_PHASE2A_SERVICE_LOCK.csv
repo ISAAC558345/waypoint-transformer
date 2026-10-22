@@ -1,0 +1,6 @@
+model_seed,service_lock_violation,locked_residual_nonzero_fraction,envelope_intervention_rate,policy_active_mean
+0,0.0,0.0,0.0013020833333333333,0.6412760019302368
+1,0.0,0.0,0.0,0.7671440243721008
+2,0.0,0.0,0.0,0.6662326455116272
+3,0.0,0.0,0.0,0.6195746064186096
+4,0.0,0.0,0.0,0.6124131679534912

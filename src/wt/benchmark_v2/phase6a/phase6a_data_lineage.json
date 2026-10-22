@@ -1,0 +1,29 @@
+{
+  "development": {
+    "ids": "320000-320063",
+    "role": "BENCHMARK_V2_DEVELOPMENT",
+    "allowed_uses": [
+      "benchmark_development",
+      "mechanism_analysis"
+    ]
+  },
+  "reserved": {
+    "ids": "320100-320131",
+    "role": "BENCHMARK_V2_FRESH_CONFIRMATION_RESERVED",
+    "opened_in_phase6a": false,
+    "untouched": true
+  },
+  "historical_consumed": {
+    "ids": "310100-310125",
+    "opened_in_phase6a": false,
+    "forbidden_uses": [
+      "training",
+      "tuning",
+      "benchmark_redesign",
+      "feature_design",
+      "loss_design",
+      "threshold_selection",
+      "confirmation"
+    ]
+  }
+}

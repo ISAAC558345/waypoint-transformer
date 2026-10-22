@@ -1,0 +1,108 @@
+{
+  "scenario_id": 320003,
+  "mode": "maxrate",
+  "complete": true,
+  "payload_bits": 67640470.42750777,
+  "runtime": {
+    "candidate_generation": 0.001714700018055737,
+    "j15_exhaustive": 0.0,
+    "taskoption_construction": 0.0001541000383440405,
+    "low_level_action": 0.001636200089706108,
+    "environment_step": 0.021112199901835993,
+    "total_episode": 0.031172499991953373
+  },
+  "decisions": [
+    {
+      "decision_id": 0,
+      "episode_step": 0,
+      "assignment": [
+        4,
+        0,
+        1,
+        3,
+        5,
+        2
+      ],
+      "selected_j15": 0.0,
+      "second_best_j15": 0.0,
+      "j15_margin": 0.0,
+      "candidate_count": 1,
+      "illegal_assignment_count": 0,
+      "duplicate_target_count": 0,
+      "candidate_seconds": 0.00030980000155977905,
+      "j15_seconds": 0.0,
+      "shadow_conservation_error": 0.0,
+      "shadow_state_contamination": 0,
+      "horizon": 0
+    },
+    {
+      "decision_id": 1,
+      "episode_step": 15,
+      "assignment": [
+        1,
+        0,
+        2,
+        8,
+        10,
+        6
+      ],
+      "selected_j15": 0.0,
+      "second_best_j15": 0.0,
+      "j15_margin": 0.0,
+      "candidate_count": 1,
+      "illegal_assignment_count": 0,
+      "duplicate_target_count": 0,
+      "candidate_seconds": 0.0003037000133190304,
+      "j15_seconds": 0.0,
+      "shadow_conservation_error": 0.0,
+      "shadow_state_contamination": 0,
+      "horizon": 0
+    },
+    {
+      "decision_id": 2,
+      "episode_step": 30,
+      "assignment": [
+        11,
+        9,
+        7,
+        8,
+        10,
+        -1
+      ],
+      "selected_j15": 0.0,
+      "second_best_j15": 0.0,
+      "j15_margin": 0.0,
+      "candidate_count": 1,
+      "illegal_assignment_count": 0,
+      "duplicate_target_count": 0,
+      "candidate_seconds": 0.00028100001509301364,
+      "j15_seconds": 0.0,
+      "shadow_conservation_error": 0.0,
+      "shadow_state_contamination": 0,
+      "horizon": 0
+    },
+    {
+      "decision_id": 3,
+      "episode_step": 45,
+      "assignment": [
+        10,
+        9,
+        7,
+        6,
+        11,
+        -1
+      ],
+      "selected_j15": 0.0,
+      "second_best_j15": 0.0,
+      "j15_margin": 0.0,
+      "candidate_count": 1,
+      "illegal_assignment_count": 0,
+      "duplicate_target_count": 0,
+      "candidate_seconds": 0.0008201999880839139,
+      "j15_seconds": 0.0,
+      "shadow_conservation_error": 0.0,
+      "shadow_state_contamination": 0,
+      "horizon": 0
+    }
+  ]
+}

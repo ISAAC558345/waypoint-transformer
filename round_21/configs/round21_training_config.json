@@ -1,0 +1,31 @@
+{
+  "schema_version": "round21_hgnn_task_waypoint_training_v1",
+  "architecture": {
+    "hidden_dim": 128,
+    "graph_layers": 2,
+    "dropout": 0.1,
+    "temporal_module": false,
+    "attention": false,
+    "service_head": "masked_softmax",
+    "progress_head": "softplus_nonnegative",
+    "return_head": "team_scalar",
+    "role_head": false
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "batch_size": 128,
+    "max_epochs": 200,
+    "early_stopping_patience": 20
+  },
+  "loss_weights": {"service": 1.0, "progress": 1.0, "return": 1.0},
+  "horizons": [5, 10],
+  "seeds": [0, 1, 2],
+  "phase_a": ["full_hgnn", "deepsets"],
+  "phase_b": ["hgnn_no_uu", "hgnn_no_interference"],
+  "formal_run_count": 18,
+  "selection": "validation-only normalized total loss with per-head, stability, K=3/K=5, conflict, and bridge guard",
+  "development_test": "single guarded access after all selection fields are frozen"
+}

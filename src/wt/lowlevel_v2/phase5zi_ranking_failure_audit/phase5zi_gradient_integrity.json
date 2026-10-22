@@ -1,0 +1,84 @@
+{
+  "ranking_loss_in_backward": true,
+  "code_ranking_term": "regression + 0.2 * ranking, then backward",
+  "response_not_detached_in_value_forward": true,
+  "training_loop_does_not_wrap_ranking_in_no_grad": true,
+  "pairs_built_per_state": true,
+  "temperature": 1.0,
+  "temperature_unit": "one payload block in the frozen value output",
+  "real_training_parameter_gradients": "NOT_MEASURED",
+  "reason": "training states were not serialized; a new environment rollout is outside this phase",
+  "saved_checkpoints": {
+    "files": [
+      "phase5zh_rank_seed0.pt",
+      "phase5zh_rank_seed1.pt",
+      "phase5zh_rank_seed2.pt",
+      "phase5zh_rank_seed3.pt",
+      "phase5zh_rank_seed4.pt"
+    ],
+    "epochs": [
+      {
+        "file": "phase5zh_rank_seed0.pt",
+        "epoch": 10,
+        "seed": 0
+      },
+      {
+        "file": "phase5zh_rank_seed1.pt",
+        "epoch": 10,
+        "seed": 1
+      },
+      {
+        "file": "phase5zh_rank_seed2.pt",
+        "epoch": 10,
+        "seed": 2
+      },
+      {
+        "file": "phase5zh_rank_seed3.pt",
+        "epoch": 10,
+        "seed": 3
+      },
+      {
+        "file": "phase5zh_rank_seed4.pt",
+        "epoch": 10,
+        "seed": 4
+      }
+    ],
+    "intermediate_epochs_saved": false
+  },
+  "diagnostic": {
+    "diagnostic_tensor": true,
+    "optimizer_step": false,
+    "same_state_indices": true,
+    "teacher_orientation_higher_first": true,
+    "response_grad_reached_predictor_input": true,
+    "rank_grad_l2": 0.27087560296058655,
+    "response_grad_l2": 0.46733731031417847,
+    "diagnostic_cosine": -0.006010472308844328,
+    "diagnostic_opposite_sign_fraction": 0.5006557703018188,
+    "lambda_times_rank_over_response": 0.11592295200162131,
+    "sinr_head_l2_response": 0.002446915488690138,
+    "rate_head_l2_response": 0.0024470656644552946,
+    "sinr_head_l2_rank": 0.028641104698181152,
+    "rate_head_l2_rank": 0.04124448075890541,
+    "frozen_value_parameter_grad": 0.0,
+    "pair_count": 636,
+    "global_dim": 128
+  },
+  "score_space_on_saved_confirmation": {
+    "teacher_spearman": 0.8007635921613857,
+    "teacher_top1": 0.875,
+    "teacher_std": 0.650475561388945,
+    "pair_tie_rate": 0.00176937441643324,
+    "top1_margin": 0.22720142354567846,
+    "top3_margin": 0.07795587281386057,
+    "easy_loss_share": 0.556348999699211,
+    "hard_loss_share": 0.1689825943466579,
+    "tail_loss_share": 0.692736488705994,
+    "mean_sigmoid_weight": 0.30752035413239703,
+    "saturated_low_fraction": 0.009749795863649106,
+    "saturated_high_fraction": 0.0,
+    "hard_mean_sigmoid": 0.4286746388794241,
+    "tail_mean_sigmoid": 0.2936515824943944,
+    "duplicate_assignment_states": 0
+  }
+}

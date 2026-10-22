@@ -1,0 +1,154 @@
+{
+  "bootstrap": {
+    "M3_minus_M0": {
+      "boot_seed": 10501,
+      "ci95": {
+        "high": 1969140.624999998,
+        "low": 531250.0
+      },
+      "mean_delta": 1234375.0,
+      "median_delta": 1000000.0,
+      "model_seed_ci_invented": false,
+      "n": 64,
+      "n_boot": 2000,
+      "note": "scenario-paired percentile bootstrap; single frozen high-level seed",
+      "positive_scenario_frac": 0.546875,
+      "relative_gain": 0.1373913043478261,
+      "relative_gain_vs_abs_mean_ref": null
+    },
+    "M3_minus_M1": {
+      "boot_seed": 10502,
+      "ci95": {
+        "high": 9109765.624999998,
+        "low": 7875000.0
+      },
+      "mean_delta": 8500000.0,
+      "median_delta": 9000000.0,
+      "model_seed_ci_invented": false,
+      "n": 64,
+      "n_boot": 2000,
+      "note": "scenario-paired percentile bootstrap; single frozen high-level seed",
+      "positive_scenario_frac": 1.0,
+      "relative_gain": 4.945454545454545,
+      "relative_gain_vs_abs_mean_ref": null
+    },
+    "M3_minus_M2": {
+      "boot_seed": 10503,
+      "ci95": {
+        "high": 4281250.0,
+        "low": 2703125.0
+      },
+      "mean_delta": 3515625.0,
+      "median_delta": 4000000.0,
+      "model_seed_ci_invented": false,
+      "n": 64,
+      "n_boot": 2000,
+      "note": "scenario-paired percentile bootstrap; single frozen high-level seed",
+      "positive_scenario_frac": 0.8125,
+      "relative_gain": 0.5244755244755245,
+      "relative_gain_vs_abs_mean_ref": null
+    }
+  },
+  "can_write": "Utility-Aligned high-level assignment is effective on final L3-B; learned assignment beats legal myopic/exclusive on payload; order-free decoder, Task Option hold=15, and InRangeZeroMotionGate remain as the frozen stack.",
+  "cannot_write": "HGNN\u4f18\u4e8eDeepSets\uff1bPPO\u4f4e\u5c42\u4f18\u4e8e\u89c4\u5219\u4f4e\u5c42\uff1bTransformer\u8d21\u732e\u663e\u8457\uff1b\u5168\u9762\u4f18\u4e8e\u6240\u6709baseline\uff08\u5ffd\u7565\u98de\u884c\u8ddd\u79bb\uff09\u3002",
+  "consumed": true,
+  "cost_sentence": "FINAL-HIER improves communication payload and service completion, at the cost of increased UAV travel distance. FINAL-HIER\u63d0\u9ad8\u4e86\u7d2f\u8ba1\u6570\u636e\u91c7\u96c6\u91cf\u4e0e\u4efb\u52a1\u5b8c\u6210\u91cf\uff0c\u4f46\u9700\u8981\u66f4\u5927\u7684\u65e0\u4eba\u673a\u8fd0\u52a8\u8ddd\u79bb\u3002Flight distance is not an energy model.",
+  "final_gate": {
+    "FINAL": "A",
+    "completed_blocks_not_below_m0_m2": true,
+    "final_system_confirmed": true,
+    "legality_not_worse": true,
+    "m3_m1_not_reverse": true,
+    "not_drop_or_idle_cheat": true,
+    "ok_m3_m0_ci": true,
+    "ok_m3_m0_mean": true,
+    "ok_m3_m2_ci": true,
+    "ok_m3_m2_mean": true,
+    "text": "Final untouched confirmation of FINAL-HIER vs primary frozen baselines."
+  },
+  "high_sha": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "high_sha_unchanged": true,
+  "main_table": [
+    {
+      "completed_blocks": 8.984375,
+      "dropped": 78.0,
+      "flight_distance": 80.4375,
+      "idle": 0.5193684895833334,
+      "in_range": 0.9997735507246377,
+      "legality": 1.0,
+      "mean_rate": 1131628.6989140501,
+      "mean_sinr": 4.406770757335727,
+      "method": "Myopic",
+      "method_id": "M0",
+      "n_uav_completed": 3.234375,
+      "payload": 8984375.0,
+      "residual_queue": 30.015625,
+      "switch_loss": 0.9375,
+      "terminal_rho": 0.9888308467031908
+    },
+    {
+      "completed_blocks": 1.71875,
+      "dropped": 77.953125,
+      "flight_distance": 129.9375,
+      "idle": 0.0,
+      "in_range": 0.9937823917721664,
+      "legality": 1.0,
+      "mean_rate": 376004.2268620338,
+      "mean_sinr": 2.253435754828668,
+      "method": "Exclusive",
+      "method_id": "M1",
+      "n_uav_completed": 1.140625,
+      "payload": 1718750.0,
+      "residual_queue": 37.328125,
+      "switch_loss": 0.234375,
+      "terminal_rho": 1.697863142469266
+    },
+    {
+      "completed_blocks": 6.703125,
+      "dropped": 76.6875,
+      "flight_distance": 249.90625,
+      "idle": 0.18391927083333334,
+      "in_range": 1.0,
+      "legality": 1.0,
+      "mean_rate": 1014966.3734982117,
+      "mean_sinr": 3.1710477824469225,
+      "method": "DeepSets-old",
+      "method_id": "M2",
+      "n_uav_completed": 3.265625,
+      "payload": 6703125.0,
+      "residual_queue": 33.609375,
+      "switch_loss": 0.234375,
+      "terminal_rho": 0.918799101178739
+    },
+    {
+      "completed_blocks": 10.21875,
+      "dropped": 75.8125,
+      "flight_distance": 456.5,
+      "idle": 0.5525716145833334,
+      "in_range": 0.9985836810947205,
+      "legality": 1.0,
+      "mean_rate": 1375066.130766082,
+      "mean_sinr": 54.065693261172775,
+      "method": "FINAL-HIER",
+      "method_id": "M3",
+      "n_uav_completed": 3.375,
+      "payload": 10218750.0,
+      "residual_queue": 30.96875,
+      "switch_loss": 0.859375,
+      "terminal_rho": 1.2812230201908716
+    }
+  ],
+  "markdown": "| Method | Payload | Relative Gain | Completed Blocks | Residual Queue | Drop | Flight Distance | Legality |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Myopic | 8984375 | 0.1374 | 8.984 | 30.016 | 78.000 | 80.4 | 1.000 |\n| Exclusive | 1718750 | 4.9455 | 1.719 | 37.328 | 77.953 | 129.9 | 1.000 |\n| DeepSets-old | 6703125 | 0.5245 | 6.703 | 33.609 | 76.688 | 249.9 | 1.000 |\n| FINAL-HIER | 10218750 | \u2014 | 10.219 | 30.969 | 75.812 | 456.5 | 1.000 |\n\n| Comparison | Mean Delta | Median Delta | Positive Fraction | 95% CI |\n| --- | --- | --- | --- | --- |\n| M3-M0 | 1234375 | 1000000 | 0.547 | [531250, 1969141] |\n| M3-M1 | 8500000 | 9000000 | 1.000 | [7875000, 9109766] |\n| M3-M2 | 3515625 | 4000000 | 0.812 | [2703125, 4281250] |",
+  "n_scenarios": 64,
+  "overlap_count": 0,
+  "plots": {
+    "completed_blocks": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase106\\outputs\\untouched\\phase106_final_completed_blocks.png",
+    "flight_distance_m": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase106\\outputs\\untouched\\phase106_final_flight.png",
+    "n_uav_completed": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase106\\outputs\\untouched\\phase106_final_service_completion.png",
+    "paired": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase106\\outputs\\untouched\\phase106_final_paired_delta.png",
+    "payload_bits": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase106\\outputs\\untouched\\phase106_final_payload.png",
+    "queue_drop": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase106\\outputs\\untouched\\phase106_final_queue_drop.png"
+  },
+  "trained": false,
+  "wall_s": 75.15184420000878
+}

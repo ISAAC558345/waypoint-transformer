@@ -1,0 +1,9 @@
+{
+  "H10_return_payload_partial_pearson": 0.9954866520592536,
+  "H10_return_payload_pearson": 0.9854460518657391,
+  "H10_return_payload_spearman": 0.9977590915708352,
+  "definition": "RA-A requires directionally coherent reward/communication evidence; RA-B is mixed or weak alignment; RA-C requires a reward improvement concurrent with systematic primary communication deterioration.",
+  "observed_exact_reward_tradeoff": false,
+  "return_head_alignment_with_primary_metric": "strong",
+  "reward_alignment_gate": "RA-A"
+}

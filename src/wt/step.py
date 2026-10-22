@@ -18,7 +18,7 @@ from d4rl.kitchen.adept_envs.franka import kitchen_multitask_v0
 import torch
 from d4rl.locomotion import ant
 from gcsl import envs
-# from gcsl.algo import variants
+from gcsl.algo import variants
 from gcsl.envs import goal_env
 import gym
 import pickle
@@ -374,6 +374,92 @@ def sample_elite_steps(
     return dataset["observations"][elite_id], dataset["actions"][elite_id]
 
 
+def _policy_metadata(policy, name: str):
+    """Read one value from a live policy or Lightning checkpoint hparams."""
+    if policy is None:
+        return None
+    value = getattr(policy, name, None)
+    if value is not None:
+        return value
+    hparams = getattr(policy, "hparams", None)
+    if hparams is None:
+        return None
+    try:
+        return hparams.get(name)
+    except AttributeError:
+        return getattr(hparams, name, None)
+
+
+def _is_reward_conditioned(
+    policy,
+    reward_representation: Optional[str],
+) -> bool:
+    if reward_representation is not None:
+        return True
+    if _policy_metadata(policy, "reward_representation") is not None:
+        return True
+    reward_conditioning = _policy_metadata(
+        policy, "reward_conditioning"
+    )
+    if reward_conditioning is not None:
+        return bool(reward_conditioning)
+    return dataset._environment_flag(
+        "AVG_REWARD"
+    ) or dataset._environment_flag("CM_REWARD")
+
+
+def _resolve_reward_representation(
+    policy: Optional[policies.RvS],
+    reward_representation: Optional[str],
+) -> str:
+    """Resolve reward channels from explicit or checkpoint-owned metadata."""
+    if reward_representation is None:
+        reward_representation = _policy_metadata(
+            policy, "reward_representation"
+        )
+    return dataset.resolve_reward_representation(reward_representation)
+
+
+def _resolve_reward_normalization(
+    policy,
+    env: offline_env.OfflineEnv,
+    reward_normalization_const: Optional[float],
+) -> float:
+    """Resolve the train-split return scale, with a legacy dataset fallback."""
+    if reward_normalization_const is None:
+        reward_normalization_const = _policy_metadata(
+            policy, "reward_normalization_const"
+        )
+    if reward_normalization_const is None:
+        reward_normalization_const = dataset.flat_reward_normalization(
+            env.get_dataset()
+        )
+    reward_normalization_const = float(reward_normalization_const)
+    if (
+        not np.isfinite(reward_normalization_const)
+        or reward_normalization_const == 0
+    ):
+        raise ValueError(
+            "reward_normalization_const must be finite and non-zero."
+        )
+    return reward_normalization_const
+
+
+def _resolve_reward_episode_horizon(
+    policy,
+    env: offline_env.OfflineEnv,
+    reward_episode_horizon: Optional[int],
+) -> int:
+    """Resolve the fixed horizon used by average reward-to-go channels."""
+    policy_horizon = _policy_metadata(policy, "reward_episode_horizon")
+    environment_horizon = dataset.environment_episode_horizon(env)
+    return dataset.resolve_reward_episode_horizon(
+        explicit_horizon=reward_episode_horizon,
+        checkpoint_horizon=policy_horizon,
+        environment_horizon=environment_horizon,
+    )
+
+
 def sample_cumulative_reward(
     policy: Union[policies.RvS, Callable[[np.ndarray, np.ndarray], np.ndarray]],
     env: offline_env.OfflineEnv,
@@ -381,14 +467,48 @@ def sample_cumulative_reward(
     trajectory_samples: int = 2000,
     return_goals: bool = False,
     dynamic_kitchen_goal: bool = False,
+    reward_representation: Optional[str] = None,
+    reward_targets_are_average: bool = True,
+    reward_normalization_const: Optional[float] = None,
+    reward_episode_horizon: Optional[int] = None,
 ) -> Union[np.ndarray, Tuple[np.ndarray, Union[np.ndarray, List[np.ndarray], None]]]:
     """Samples cumulative reward from a D4RL environment.
 
     Handles the policy conditioning and supports dynamically conditioning on the next
     remaining task in Kitchen.
     """
+    reward_conditioned = _is_reward_conditioned(
+        policy, reward_representation
+    )
+    context_length = int(_policy_metadata(policy, "context_length") or 20)
+    if context_length <= 0:
+        raise ValueError("Policy context_length must be positive.")
+    if reward_conditioned:
+        reward_representation = _resolve_reward_representation(
+            policy, reward_representation
+        )
+        reward_normalization_const = _resolve_reward_normalization(
+            policy, env, reward_normalization_const
+        )
+        episode_horizon = _resolve_reward_episode_horizon(
+            policy, env, reward_episode_horizon
+        )
     if goals is None and not dynamic_kitchen_goal:
-        goals, _ = sample_elite_steps(env.get_dataset(), samples=trajectory_samples)
+        if reward_conditioned:
+            default_target = (
+                reward_normalization_const / episode_horizon
+                if reward_targets_are_average
+                else reward_normalization_const
+            )
+            goals = np.full(
+                (trajectory_samples, 1),
+                default_target,
+                dtype=np.float32,
+            )
+        else:
+            goals, _ = sample_elite_steps(
+                env.get_dataset(), samples=trajectory_samples
+            )
     if goals is not None:
         assert (
             len(goals) == trajectory_samples
@@ -404,54 +524,60 @@ def sample_cumulative_reward(
             if not dynamic_kitchen_goal
             else get_dynamic_kitchen_goal(env, observation)
         )
-        if 'hopper' in env.unwrapped.spec.id:
-            normalizer = 4000 if 'medium-expert' in env.unwrapped.spec.id else 3000
-            if 'medium-replay' in env.unwrapped.spec.id or 'medium-expert' in env.unwrapped.spec.id:
-                goal = np.array([goal[0], goal[0] * 1000 / normalizer])
-            else:
-                goal = np.array([goal[0], 2200 / 3000])
-        elif 'cheetah' in env.unwrapped.spec.id:
-            normalizer = 11000 if 'medium-expert' in env.unwrapped.spec.id else 5000
-            goal = np.array([goal[0], goal[0] * 1000 / normalizer]) 
-        elif 'walker' in env.unwrapped.spec.id:
-            if 'medium-expert' in env.unwrapped.spec.id:
-                normalizer = 5000
-                goal = np.array([goal[0], goal[0] * 1000 / 5000])
-            else:
-                normalizer = 4000
-                goal = np.array([goal[0], goal[0] * 1000 / 4000])
+        if reward_conditioned:
+            scalar_target = float(np.asarray(goal).reshape(-1)[0])
+            initial_cumulative_target = (
+                scalar_target * episode_horizon
+                if reward_targets_are_average
+                else scalar_target
+            )
+            goal = dataset.reward_window_command(
+                initial_cumulative_target,
+                reward_before_window=0.0,
+                representation=reward_representation,
+                normalization_const=reward_normalization_const,
+                episode_horizon=episode_horizon,
+                window_start=0,
+            )
         else:
-            goal = np.array(goal)
-            normalizer = -1
-        if os.environ.get('AVG_REWARD'):
-            goal = goal[:1]
-            normalizer = -1
-        elif os.environ.get('CM_REWARD'):
-            goal = goal[1:]
-        manager = goal_net.Manager(goal, goal_append = bool(os.environ.get('CM_REWARD')))
+            goal = np.asarray(goal)
+        # The dataset repeats the command at each sampled window's start.
+        # Online inference mirrors that contract as the context window slides.
+        manager = goal_net.Manager(
+            goal,
+            K=context_length,
+            goal_append=False,
+        )
         done = False
         t = 0
+        cumulative_reward_prefix = [0.0]
         if os.environ.get('TRACK_GOALS'):
             wt.transformer.GOAL_NET_OUT = []
         while not done:
             manager.update_obs(observation)
-            if normalizer != -1:
-                if os.environ.get('CM_REWARD'):
-                    new_goal = np.array([(goal[0] - total_reward / normalizer)])
-                    wt.transformer.GOAL_NET_OUT.append([None, new_goal[0]])
-                else:
-                    new_goal = np.array([goal[0], (goal[1] - total_reward / normalizer)])
-                manager.update_goal(new_goal)
-            # Hopper: 2000, Cheetah: 
-            # goali = goal_network(torch.Tensor(np.vstack([np.append(obs, goal[0])[None] for obs in manager.observations]))).mean(dim = 0)
-            # goali = [np.minimum(goali.detach().numpy(), 3.2)] * len(manager.observations)
-            # manager.update_goal(np.array([goal[0], (goal[0] * 1000 - total_reward) / 3000]))
+            if reward_conditioned:
+                window_start = max(0, t - context_length + 1)
+                goal = dataset.reward_window_command(
+                    initial_cumulative_target,
+                    reward_before_window=(
+                        cumulative_reward_prefix[window_start]
+                    ),
+                    representation=reward_representation,
+                    normalization_const=reward_normalization_const,
+                    episode_horizon=episode_horizon,
+                    window_start=window_start,
+                )
+                manager.update_goal(goal)
             action = get_action_from_policy(policy, manager.observations, manager.goal, actions = manager.actions)
             manager.update_act(action)
             observation, reward, done, _ = env.step(action)
             if dynamic_kitchen_goal:
                 goal = get_dynamic_kitchen_goal(env, observation)
+                manager.update_goal(goal)
             total_reward += reward
+            cumulative_reward_prefix.append(
+                cumulative_reward_prefix[-1] + float(reward)
+            )
             t += 1
         total_reward_vec.append(total_reward)
         if os.environ.get('TRACK_GOALS'):
@@ -471,6 +597,9 @@ def find_elite_goals(
     env: offline_env.OfflineEnv,
     trajectory_samples: int = 200,
     num_elites: int = 6,
+    reward_representation: Optional[str] = None,
+    reward_normalization_const: Optional[float] = None,
+    reward_episode_horizon: Optional[int] = None,
 ) -> np.ndarray:
     """Random search over length goals to find those with highest return."""
     rewards, goals = sample_cumulative_reward(
@@ -478,6 +607,9 @@ def find_elite_goals(
         env,
         trajectory_samples=max(trajectory_samples, num_elites),
         return_goals=True,
+        reward_representation=reward_representation,
+        reward_normalization_const=reward_normalization_const,
+        reward_episode_horizon=reward_episode_horizon,
     )
     elite_indices = np.argsort(rewards)[
         : -num_elites - 1 : -1
@@ -492,6 +624,10 @@ def evaluate_goals(
     env: offline_env.OfflineEnv,
     goals: Iterable[np.ndarray],
     trajectory_samples: int = 200,
+    reward_representation: Optional[str] = None,
+    reward_targets_are_average: bool = True,
+    reward_normalization_const: Optional[float] = None,
+    reward_episode_horizon: Optional[int] = None,
 ) -> List[np.ndarray]:
     """Evaluate the cumulative return for each goal."""
     reward_vecs = []
@@ -502,6 +638,10 @@ def evaluate_goals(
             env,
             goals=duplicated_goal,
             trajectory_samples=trajectory_samples,
+            reward_representation=reward_representation,
+            reward_targets_are_average=reward_targets_are_average,
+            reward_normalization_const=reward_normalization_const,
+            reward_episode_horizon=reward_episode_horizon,
         )
         reward_vecs.append(reward_vec)
 
@@ -539,6 +679,9 @@ def sample_episode_performance(
     max_episode_steps: int,
     traj_samples: int = 2000,
     kitchen_subtask: str = "all",
+    reward_representation: Optional[str] = None,
+    reward_normalization_const: Optional[float] = None,
+    reward_episode_horizon: Optional[int] = None,
 ) -> np.ndarray:
     """Helper function to sample episode performance correctly, depending on the env."""
     if env_name[:7] == "kitchen":
@@ -548,6 +691,9 @@ def sample_episode_performance(
                 env,
                 trajectory_samples=traj_samples,
                 dynamic_kitchen_goal=True,  # pytype: disable=bad-return-type
+                reward_representation=reward_representation,
+                reward_normalization_const=reward_normalization_const,
+                reward_episode_horizon=reward_episode_horizon,
             )
         else:
             goal, _ = get_kitchen_goal(env, subtask=kitchen_subtask)
@@ -557,12 +703,18 @@ def sample_episode_performance(
                 env,
                 goals=goals,
                 trajectory_samples=traj_samples,  # pytype: disable=bad-return-type
+                reward_representation=reward_representation,
+                reward_normalization_const=reward_normalization_const,
+                reward_episode_horizon=reward_episode_horizon,
             )
     elif env_name in d4rl_env_names:
         return sample_cumulative_reward(
             policy,
             env,
             trajectory_samples=traj_samples,  # pytype: disable=bad-return-type
+            reward_representation=reward_representation,
+            reward_normalization_const=reward_normalization_const,
+            reward_episode_horizon=reward_episode_horizon,
         )
     else:
         return sample_hitting_times(
@@ -579,6 +731,7 @@ def get_reward_targets(
     reward_fractions: List[float],
     targets: str = "of expert",
     average_reward_to_go: bool = True,
+    reward_episode_horizon: Optional[int] = None,
 ) -> List[float]:
     """Translate reward fractions into absolute reward targets.
 
@@ -597,10 +750,21 @@ def get_reward_targets(
     Raises:
         ValueError: If an invalid option for targets is specified.
     """
+    if reward_episode_horizon is None:
+        reward_episode_horizon = dataset.environment_episode_horizon(env)
+    if reward_episode_horizon is None:
+        raise ValueError(
+            "get_reward_targets needs reward_episode_horizon or an "
+            "environment TimeLimit."
+        )
+    reward_episode_horizon = int(reward_episode_horizon)
+    if reward_episode_horizon <= 0:
+        raise ValueError("reward_episode_horizon must be positive.")
     if targets == "of demos":
         reward_to_go = dataset.reward_to_go(
             env.get_dataset(),
             average=average_reward_to_go,
+            episode_horizon=reward_episode_horizon,
         )
         reward_min = np.min(reward_to_go)
         reward_max = np.max(reward_to_go)
@@ -612,8 +776,8 @@ def get_reward_targets(
             reward_min = infos.REF_MIN_SCORE[env_name]
             reward_max = infos.REF_MAX_SCORE[env_name]
         if average_reward_to_go:
-            reward_min /= env._max_episode_steps
-            reward_max /= env._max_episode_steps
+            reward_min /= reward_episode_horizon
+            reward_max /= reward_episode_horizon
     else:
         raise ValueError("targets must be 'of demos' or 'of expert'")
 
@@ -631,29 +795,40 @@ def eval_reward_conditioning(
     trajectory_samples: int = 200,
     average_reward_to_go: bool = True,
     targets: str = "of expert",
+    reward_representation: Optional[str] = None,
+    reward_normalization_const: Optional[float] = None,
+    reward_episode_horizon: Optional[int] = None,
 ) -> List[np.ndarray]:
     """Evaluate RvS-R (reward-conditioned) learning for each reward fraction."""
     if env_name not in d4rl_env_names:
         raise NotImplementedError
 
+    reward_representation = _resolve_reward_representation(
+        policy, reward_representation
+    )
+    reward_episode_horizon = _resolve_reward_episode_horizon(
+        policy, env, reward_episode_horizon
+    )
     reward_targets = get_reward_targets(
         env,
         env_name,
         reward_fractions,
         targets=targets,
         average_reward_to_go=average_reward_to_go,
+        reward_episode_horizon=reward_episode_horizon,
     )
 
-    if average_reward_to_go:
-        reward_targets = [np.array([reward_target]) for reward_target in reward_targets]
-        reward_vecs = evaluate_goals(
-            policy,
-            env,
-            reward_targets,
-            trajectory_samples=trajectory_samples,
-        )
-    else:
-        raise NotImplementedError("use CM_REWARD environment variable")
+    reward_targets = [np.array([reward_target]) for reward_target in reward_targets]
+    reward_vecs = evaluate_goals(
+        policy,
+        env,
+        reward_targets,
+        trajectory_samples=trajectory_samples,
+        reward_representation=reward_representation,
+        reward_targets_are_average=average_reward_to_go,
+        reward_normalization_const=reward_normalization_const,
+        reward_episode_horizon=reward_episode_horizon,
+    )
 
     return reward_vecs
 

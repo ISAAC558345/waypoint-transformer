@@ -1,0 +1,29 @@
+{
+  "event_type": "accidental_preflight_protected_split_decode",
+  "round": 34,
+  "protected_split": "development_test",
+  "records_decoded": 1,
+  "first_detection_action": "immediate_stop",
+  "timestamp": "2026-09-01T15:40:00+08:00",
+  "triggering_code_path": "src/wt/round34/audit.py::_allowed_json_records -> run_audit",
+  "safe_record_identifier": "r20_k3_orthogonal_medium_spread_offset__independent_queue_rate__t00__h5",
+  "safe_record_hash": "B6F2FFE54F87FEEDBEB7688675F31BAD5533FE4817D4F6F3C9F9F8012D62BBB5",
+  "safe_identifier_provenance": "post-incident lexical metadata-only clean preflight; no protected JSON payload was deserialized",
+  "environment_executed": false,
+  "planner_executed": false,
+  "model_inference_executed": false,
+  "training_executed": false,
+  "scientific_metric_computed_from_record": false,
+  "scientific_selection_influenced": false,
+  "gate_influenced": false,
+  "record_excluded_from_all_subsequent_round34_analysis": true,
+  "formal_round34_outputs_before_exception": [
+    "round_34/outputs/round34_benchmark_complexity_audit_20260901_1540/ (empty directory)",
+    "round_34/figures/round34_benchmark_complexity_audit_20260901_1540/ (empty directory)"
+  ],
+  "formal_scientific_results_before_exception": false,
+  "persistent_contaminated_artifacts_detected": [],
+  "in_memory_state_discarded_on_stop": true,
+  "relevant_config_sha256_at_incident": "C8000B4C2168F9E53AB71E7157022177399BF3465F1EA9FEA650E4B50CF9EA3A",
+  "relevant_source_sha256_at_incident": "E8B23FBE8067A6A8BF681274CBCD8D5F73E8DC353E394E2652A91BECDC9FDBF0"
+}

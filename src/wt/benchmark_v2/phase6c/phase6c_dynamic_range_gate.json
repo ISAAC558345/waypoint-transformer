@@ -1,0 +1,39 @@
+{
+  "gate": "DYN-A",
+  "gate_name": "BIT_LEVEL_BENCHMARK_DISCRIMINATIVE",
+  "phase5zp_gate": "CONF-C",
+  "phase5zq_gate": "ATTR-C",
+  "phase6a_gate": "BV2-E",
+  "phase6b_gate": "BITQ-A",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "deployment_pass": false,
+  "trained": false,
+  "lambda_switch": "NOT_DEFINED",
+  "lambda_progress": "NOT_DEFINED",
+  "low_level_status": "LOW_LEVEL_RETRAIN_PENDING",
+  "fresh_confirmation_untouched": true,
+  "conservation_ok": true,
+  "max_absolute_error_bits": 1.0128132998943329e-08,
+  "max_saturation_ratio": 1.0,
+  "pairwise_tie_fraction": 0.010416666666666666,
+  "scenario_distinguish_fraction": 1.0,
+  "best_coverage_at_3": 0.9895833333333334,
+  "relational_primary": {
+    "mean_delta_bits": -61118469.8584192,
+    "median_delta_bits": -60855075.339198135,
+    "ci_low": -62491184.744135424,
+    "ci_high": -59646612.96258659,
+    "positive_scenario_fraction": 0.0,
+    "confirmed": false
+  },
+  "relational_secondary": {
+    "mean_delta_bits": -51085102.04051116,
+    "median_delta_bits": -52938685.59942055,
+    "ci_low": -52718986.83025354,
+    "ci_high": -49467836.37414845,
+    "positive_scenario_fraction": 0.0,
+    "confirmed": false
+  },
+  "legacy_mappo_used": false
+}

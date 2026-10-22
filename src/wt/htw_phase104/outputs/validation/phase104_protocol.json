@@ -1,0 +1,74 @@
+{
+  "boot_seed": 10401,
+  "checkpoint_rule": "final checkpoint; no selection by validation",
+  "env_sha256": "de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba",
+  "gate_modified": false,
+  "high_level_modified": false,
+  "high_model_seed": 0,
+  "hold": 15,
+  "independent_label": "ordinary independent validation, not final untouched test",
+  "independent_n": 64,
+  "l3b": {
+    "K": 12,
+    "M": 6,
+    "T": 48,
+    "radius_m": 16.0
+  },
+  "low_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "methods_frozen": true,
+  "n_boot": 2000,
+  "new_low_seeds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "no_confirmation": true,
+  "no_phase105": true,
+  "num_envs": 4,
+  "phase": "10.4",
+  "phase103_design_caliber": {
+    "B0": 8500000.0,
+    "B1": 7250000.0,
+    "B2": 12875000.0,
+    "B2_minus_B3": 2125000.0,
+    "B3": 10750000.0,
+    "not_this_phase_result": true
+  },
+  "ppo": {
+    "checkpoint_interval_steps": 192,
+    "clip_eps": 0.2,
+    "device": "cpu",
+    "entropy_coef": 0.01,
+    "gae_lambda": 0.95,
+    "gamma": 0.99,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 0.5,
+    "num_envs": 4,
+    "num_minibatches": 4,
+    "rollout_length": 48,
+    "update_epochs": 4,
+    "value_coef": 0.5
+  },
+  "reward_modified": false,
+  "rollout_steps": 48,
+  "train_scenarios": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "transitions_per_new_seed": 19200,
+  "updates": 100,
+  "vector_seed": 101200
+}

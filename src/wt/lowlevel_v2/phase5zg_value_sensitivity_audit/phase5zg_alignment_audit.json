@@ -1,0 +1,12 @@
+{
+  "aligned": true,
+  "align_abs_p1": 0.0,
+  "align_abs_r1": 0.0,
+  "argmax_agreement": 1.0,
+  "feature_order_matches_spec": true,
+  "normalization_reused": "phase5zd_response_normalization.json",
+  "checkpoint_pairing": "response predictor seed k with Model-R1 seed k",
+  "candidate_source": "frozen stage-1 top-3 pool",
+  "quadrature_max_abs": 0.003487019307535366,
+  "linear_group_additivity_max_abs": 8.881784197001252e-16
+}

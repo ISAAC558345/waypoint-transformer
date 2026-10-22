@@ -1,0 +1,54 @@
+{
+  "amendment_type": "legal_round35_successor_governance_extension",
+  "authoritative_source": "round_34/ROUND_LOCK.json",
+  "original_round34_lock_sha256": "59A472D367BEE8364C2D5CC4468759685795E6CB7E2176DFFD2B12F56C489AF0",
+  "authorized_successor_round": "round_35",
+  "round35_creation_allowed": true,
+  "round36_creation_allowed": false,
+  "affected_paths": {
+    "src/wt/governance_state_sync.py": {
+      "prior_amended_sha256": "05B6C38868B7CFD6C9DAE2AF3B2E7A35F0130C5213EEDE3963FE6CF849FF5098",
+      "amended_sha256": "D6312A3B5C9BD3C3DAED11A383D040F6ABC175EAEA39B88C35EF65EACFD88806"
+    },
+    "tests/test_governance_state_sync.py": {
+      "prior_amended_sha256": "8D4ED2C8B00F1790BFE6CB7DE8AE7C4D3D8EC2AC2B57F8BFB14589D9D2F13F87",
+      "amended_sha256": "25927DB78F4535EFE37ECC9F67B3BD1EB60F7916A300BA5446938BBAA0D00EFD"
+    },
+    "tests/test_round21_hgnn_task_waypoint.py": {
+      "prior_amended_sha256": "8916727C827B660516867E5BC53DA5E979A82059A173F3563B394FBEF160A02E",
+      "amended_sha256": "0302E2B45E3F31D0008852396DD957F082E892EF2477F2E51BEA7555D4DB6FBF"
+    }
+  },
+  "governance_path_transitions": {
+    "CURRENT_ROUND.txt": {
+      "prior_locked_sha256": "2FE4DF1C9419B128C80082115396DD501A339D973AF22CCB2BD520635A4697A7",
+      "amended_sha256": "8AB4418539FB185C67D048BB850916DE7900AB2BAD599B3D85E429D429FA3213"
+    },
+    "PLANS.md": {
+      "prior_locked_sha256": "120FB61E75BC50057F16DEA82DCA83036A1426BD7F98DAD79E984F5342735D7B",
+      "amended_sha256": "CF3AC2B1551D4958B491A1984587DCB7409C040B08601664CCE8476571E7C155"
+    },
+    "ROUND_VERSIONING.md": {
+      "prior_locked_sha256": "0C203FEEE8723A42D2E9C14662C9B5B184C8742DC9F3A41328CA4B01FA19F1F5",
+      "amended_sha256": "CA37E57D83140419CC552ACDB3774E3F42604BB31567A99B4B07BA655CC6F90F"
+    },
+    "round_manifest.json": {
+      "prior_locked_sha256": "F6C99FC8079BFAF529CA9F68EB6A3B34601998F446B02D5C2E1A693F2CE998C0",
+      "amended_sha256": "47B004D50C12ABB4EA05F85840C135C0E444BB00196DF3510464EA5DABF89295"
+    }
+  },
+  "semantic_correction": "Authorize the explicitly instructed Round-35 Level-2 relational benchmark implementation after the immutable Round-34 audit. This is an append-only lifecycle transition: the original Round-34 lock, its scientific artifacts, metrics, figures, reports, and the recorded one-record development_test exception remain immutable. Round-35 has zero protected and untouched access, performs no training, and does not authorize Round-36.",
+  "round34_scientific_artifacts_modified": false,
+  "round34_metrics_modified": false,
+  "round34_figures_modified": false,
+  "round34_reports_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "neural_training_performed": false,
+  "round35_protected_data_access_count": 0,
+  "round35_untouched_eval_access_count": 0,
+  "round35_second_protected_access": false,
+  "historical_round34_exception_preserved": true,
+  "original_round34_lock_modified": false,
+  "approved_at": "2026-09-02T00:10:00+08:00"
+}

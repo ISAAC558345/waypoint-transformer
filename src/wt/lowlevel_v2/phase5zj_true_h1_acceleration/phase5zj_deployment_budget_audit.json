@@ -1,0 +1,13 @@
+{
+  "delta_t_s": 1.0,
+  "option_hold_steps": 15,
+  "episode_horizon_steps": 48,
+  "step_length_m": 22.0,
+  "formal_online_latency_limit": "NOT_SPECIFIED",
+  "deployment_latency_requirement": "NOT_SPECIFIED",
+  "this_machine_is_deployment_target": false,
+  "serial_traced_peak_bytes": 337277,
+  "shipped_traced_peak_bytes": 470802,
+  "measured_serial_median_ms": 711.4324833770904,
+  "measured_optimized_median_ms": 216.4745332750802
+}

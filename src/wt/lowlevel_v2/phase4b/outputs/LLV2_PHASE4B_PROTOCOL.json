@@ -1,0 +1,13 @@
+{
+  "H": 3,
+  "actor_comm_transform": "identity copy of sinr, rate, total_interference, INR; idle/invalid target -> zeros",
+  "alpha_residual": 0.25,
+  "candidate_offset": 0.125,
+  "collision_distillation": false,
+  "high_frac": 0.25,
+  "low_frac": 0.25,
+  "name": "LL-V2.4B",
+  "offset_rule": "0.5 * alpha_residual, single value, no grid",
+  "phase3_validation_blocked": true,
+  "training": false
+}

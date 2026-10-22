@@ -1,0 +1,527 @@
+{
+  "gate": "PLANNER_INTEGRATION_READY",
+  "failures": [],
+  "startup_hashes": {
+    "scheme_c": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
+    "epoch6": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde",
+    "mappo": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "adapter_config": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63"
+  },
+  "hashes_unchanged": true,
+  "historical_candidate_k": 5,
+  "active_candidate_k": 6,
+  "high_level_policy": "scheme_c",
+  "scheme_c_calls": 10,
+  "smoke": [
+    {
+      "scenario_id": 322000,
+      "policy": "scheme_c",
+      "stop_time": 15,
+      "complete": true,
+      "payload_bits": 15000000.0,
+      "served_bits": 15000000.000000002,
+      "payload_matches_served": 1,
+      "completed_blocks": 15.0,
+      "queue_bits": 24000000.0,
+      "sinr_mean": 0.1591049862555513,
+      "interference_mean": 0.07802463070922079,
+      "decision_count": 1,
+      "decision_times": [
+        0
+      ],
+      "anomalies": [],
+      "anomaly_count": 0,
+      "illegal": 0,
+      "accounting_failures": 0,
+      "nan_inf": 0,
+      "hold_ok": true,
+      "seconds": 0.47850659998948686,
+      "scheme_c_calls": 1,
+      "projector_interventions": 5,
+      "decisions": [
+        {
+          "time": 0,
+          "policy": "scheme_c",
+          "assignment": [
+            0,
+            2,
+            1,
+            3,
+            5,
+            4
+          ],
+          "score_index": 4853,
+          "candidate_count": 13327,
+          "pool_seconds": 0.22098740001092665,
+          "score_seconds": 0.009394399996381253,
+          "scheme_c_called": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": 322001,
+      "policy": "scheme_c",
+      "stop_time": 15,
+      "complete": true,
+      "payload_bits": 15000000.0,
+      "served_bits": 15000000.0,
+      "payload_matches_served": 1,
+      "completed_blocks": 15.0,
+      "queue_bits": 24000000.0,
+      "sinr_mean": 0.34970863611949393,
+      "interference_mean": 0.044038799191443594,
+      "decision_count": 1,
+      "decision_times": [
+        0
+      ],
+      "anomalies": [],
+      "anomaly_count": 0,
+      "illegal": 0,
+      "accounting_failures": 0,
+      "nan_inf": 0,
+      "hold_ok": true,
+      "seconds": 0.5326850000128616,
+      "scheme_c_calls": 1,
+      "projector_interventions": 5,
+      "decisions": [
+        {
+          "time": 0,
+          "policy": "scheme_c",
+          "assignment": [
+            2,
+            0,
+            1,
+            3,
+            5,
+            4
+          ],
+          "score_index": 7736,
+          "candidate_count": 13327,
+          "pool_seconds": 0.24387879998539574,
+          "score_seconds": 0.01043190000928007,
+          "scheme_c_called": 1
+        }
+      ]
+    }
+  ],
+  "episodes": [
+    {
+      "scenario_id": 322002,
+      "policy": "scheme_c",
+      "stop_time": 48,
+      "complete": true,
+      "payload_bits": 69252475.11879392,
+      "served_bits": 69252475.11879389,
+      "payload_matches_served": 1,
+      "completed_blocks": 66.0,
+      "queue_bits": 8342069.452465196,
+      "sinr_mean": 0.2994084142819173,
+      "interference_mean": 0.08456371448251558,
+      "decision_count": 4,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "anomalies": [],
+      "anomaly_count": 0,
+      "illegal": 0,
+      "accounting_failures": 0,
+      "nan_inf": 0,
+      "hold_ok": true,
+      "seconds": 1.826033399993321,
+      "scheme_c_calls": 4,
+      "projector_interventions": 25,
+      "decisions": [
+        {
+          "time": 0,
+          "policy": "scheme_c",
+          "assignment": [
+            2,
+            0,
+            1,
+            3,
+            5,
+            4
+          ],
+          "score_index": 7736,
+          "candidate_count": 13327,
+          "pool_seconds": 0.2337071000074502,
+          "score_seconds": 0.008154099981766194,
+          "scheme_c_called": 1
+        },
+        {
+          "time": 15,
+          "policy": "scheme_c",
+          "assignment": [
+            8,
+            7,
+            10,
+            11,
+            9,
+            6
+          ],
+          "score_index": 8027,
+          "candidate_count": 13327,
+          "pool_seconds": 0.2198962999973446,
+          "score_seconds": 0.007646199985174462,
+          "scheme_c_called": 1
+        },
+        {
+          "time": 30,
+          "policy": "scheme_c",
+          "assignment": [
+            11,
+            8,
+            9,
+            10,
+            7,
+            6
+          ],
+          "score_index": 12874,
+          "candidate_count": 13327,
+          "pool_seconds": 0.24733879999257624,
+          "score_seconds": 0.00720059999730438,
+          "scheme_c_called": 1
+        },
+        {
+          "time": 45,
+          "policy": "scheme_c",
+          "assignment": [
+            11,
+            6,
+            8,
+            7,
+            10,
+            9
+          ],
+          "score_index": 12408,
+          "candidate_count": 13327,
+          "pool_seconds": 0.215983200003393,
+          "score_seconds": 0.007130400015739724,
+          "scheme_c_called": 1
+        }
+      ]
+    },
+    {
+      "scenario_id": 322048,
+      "policy": "scheme_c",
+      "stop_time": 48,
+      "complete": true,
+      "payload_bits": 69937810.66618156,
+      "served_bits": 69937810.66618156,
+      "payload_matches_served": 1,
+      "completed_blocks": 67.0,
+      "queue_bits": 4700084.21388623,
+      "sinr_mean": 0.47277087283790326,
+      "interference_mean": 0.0419356352546432,
+      "decision_count": 4,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "anomalies": [],
+      "anomaly_count": 0,
+      "illegal": 0,
+      "accounting_failures": 0,
+      "nan_inf": 0,
+      "hold_ok": true,
+      "seconds": 1.9237174000008963,
+      "scheme_c_calls": 4,
+      "projector_interventions": 26,
+      "decisions": [
+        {
+          "time": 0,
+          "policy": "scheme_c",
+          "assignment": [
+            0,
+            2,
+            1,
+            3,
+            5,
+            4
+          ],
+          "score_index": 4853,
+          "candidate_count": 13327,
+          "pool_seconds": 0.25384499999927357,
+          "score_seconds": 0.009311599977081642,
+          "scheme_c_called": 1
+        },
+        {
+          "time": 15,
+          "policy": "scheme_c",
+          "assignment": [
+            8,
+            11,
+            6,
+            7,
+            9,
+            10
+          ],
+          "score_index": 8570,
+          "candidate_count": 13327,
+          "pool_seconds": 0.2507490999996662,
+          "score_seconds": 0.008012299978872761,
+          "scheme_c_called": 1
+        },
+        {
+          "time": 30,
+          "policy": "scheme_c",
+          "assignment": [
+            6,
+            0,
+            9,
+            7,
+            11,
+            8
+          ],
+          "score_index": 6258,
+          "candidate_count": 13327,
+          "pool_seconds": 0.2531989999988582,
+          "score_seconds": 0.00865250002243556,
+          "scheme_c_called": 1
+        },
+        {
+          "time": 45,
+          "policy": "scheme_c",
+          "assignment": [
+            11,
+            10,
+            7,
+            0,
+            6,
+            9
+          ],
+          "score_index": 13276,
+          "candidate_count": 13327,
+          "pool_seconds": 0.24845800001639873,
+          "score_seconds": 0.0063482999976258725,
+          "scheme_c_called": 1
+        }
+      ]
+    }
+  ],
+  "baseline_episodes": [
+    {
+      "scenario_id": 322002,
+      "policy": "g1_rate",
+      "stop_time": 48,
+      "complete": true,
+      "payload_bits": 63363363.45814259,
+      "served_bits": 63363363.458142586,
+      "payload_matches_served": 1,
+      "completed_blocks": 60.0,
+      "queue_bits": 7379667.280183796,
+      "sinr_mean": 0.2125637871962359,
+      "interference_mean": 0.06387393658072812,
+      "decision_count": 4,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "anomalies": [],
+      "anomaly_count": 0,
+      "illegal": 0,
+      "accounting_failures": 0,
+      "nan_inf": 0,
+      "hold_ok": true,
+      "seconds": 2.2245005999866407,
+      "scheme_c_calls": 0,
+      "projector_interventions": 23,
+      "decisions": [
+        {
+          "time": 0,
+          "policy": "g1_rate",
+          "assignment": [
+            2,
+            4,
+            0,
+            3,
+            5,
+            1
+          ],
+          "score_index": 8370,
+          "candidate_count": 13327,
+          "pool_seconds": 0.24065789999440312,
+          "score_seconds": 0.0,
+          "scheme_c_called": 0
+        },
+        {
+          "time": 15,
+          "policy": "g1_rate",
+          "assignment": [
+            9,
+            7,
+            6,
+            11,
+            8,
+            10
+          ],
+          "score_index": 9503,
+          "candidate_count": 13327,
+          "pool_seconds": 0.2479176000051666,
+          "score_seconds": 0.0,
+          "scheme_c_called": 0
+        },
+        {
+          "time": 30,
+          "policy": "g1_rate",
+          "assignment": [
+            6,
+            10,
+            11,
+            7,
+            8,
+            9
+          ],
+          "score_index": 5371,
+          "candidate_count": 13327,
+          "pool_seconds": 0.21894219997921027,
+          "score_seconds": 0.0,
+          "scheme_c_called": 0
+        },
+        {
+          "time": 45,
+          "policy": "g1_rate",
+          "assignment": [
+            11,
+            9,
+            6,
+            7,
+            8,
+            10
+          ],
+          "score_index": 12999,
+          "candidate_count": 13327,
+          "pool_seconds": 0.2263399999937974,
+          "score_seconds": 0.0,
+          "scheme_c_called": 0
+        }
+      ]
+    },
+    {
+      "scenario_id": 322048,
+      "policy": "g1_rate",
+      "stop_time": 48,
+      "complete": true,
+      "payload_bits": 74655957.74855648,
+      "served_bits": 74655957.74855645,
+      "payload_matches_served": 1,
+      "completed_blocks": 71.0,
+      "queue_bits": 3004598.327426493,
+      "sinr_mean": 0.2831766651931928,
+      "interference_mean": 0.05344624400398889,
+      "decision_count": 4,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "anomalies": [],
+      "anomaly_count": 0,
+      "illegal": 0,
+      "accounting_failures": 0,
+      "nan_inf": 0,
+      "hold_ok": true,
+      "seconds": 2.196401099994546,
+      "scheme_c_calls": 0,
+      "projector_interventions": 22,
+      "decisions": [
+        {
+          "time": 0,
+          "policy": "g1_rate",
+          "assignment": [
+            4,
+            2,
+            0,
+            3,
+            1,
+            5
+          ],
+          "score_index": 11251,
+          "candidate_count": 13327,
+          "pool_seconds": 0.23379230001592077,
+          "score_seconds": 0.0,
+          "scheme_c_called": 0
+        },
+        {
+          "time": 15,
+          "policy": "g1_rate",
+          "assignment": [
+            9,
+            11,
+            10,
+            6,
+            8,
+            7
+          ],
+          "score_index": 10220,
+          "candidate_count": 13327,
+          "pool_seconds": 0.25794899999164045,
+          "score_seconds": 0.0,
+          "scheme_c_called": 0
+        },
+        {
+          "time": 30,
+          "policy": "g1_rate",
+          "assignment": [
+            8,
+            6,
+            9,
+            11,
+            10,
+            7
+          ],
+          "score_index": 7784,
+          "candidate_count": 13327,
+          "pool_seconds": 0.2337824999995064,
+          "score_seconds": 0.0,
+          "scheme_c_called": 0
+        },
+        {
+          "time": 45,
+          "policy": "g1_rate",
+          "assignment": [
+            -1,
+            7,
+            8,
+            6,
+            9,
+            11
+          ],
+          "score_index": 2372,
+          "candidate_count": 13327,
+          "pool_seconds": 0.21563639998203143,
+          "score_seconds": 0.0,
+          "scheme_c_called": 0
+        }
+      ]
+    }
+  ],
+  "paired_payload": [
+    {
+      "scenario_id": 322002,
+      "scheme_c_payload_bits": 69252475.11879392,
+      "g1_payload_bits": 63363363.45814259,
+      "delta_bits": 5889111.660651326
+    },
+    {
+      "scenario_id": 322048,
+      "scheme_c_payload_bits": 69937810.66618156,
+      "g1_payload_bits": 74655957.74855648,
+      "delta_bits": -4718147.0823749155
+    }
+  ],
+  "closed_loop_gain_gate": "CLOSED_LOOP_GAIN_INCONCLUSIVE",
+  "closed_loop_gain_replaced": 0,
+  "reserved_scenarios_read": 0,
+  "trained": false,
+  "planner_ready": true,
+  "deployment_verified": false
+}

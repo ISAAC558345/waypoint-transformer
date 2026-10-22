@@ -1,0 +1,19 @@
+{
+  "match": true,
+  "component_count": 21,
+  "hash_mismatch": [],
+  "structural": {
+    "top_k": true,
+    "hold": true,
+    "aggregation": true,
+    "response_schema": true,
+    "alpha_residual": true,
+    "tie_break": true,
+    "idle": true,
+    "candidate_count": true,
+    "true_h1_excludes_unshipped_batch_gemm": true
+  },
+  "protocol_problems": [],
+  "phase4e_ok": true,
+  "opened_pool": false
+}

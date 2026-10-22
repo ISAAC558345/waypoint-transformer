@@ -1,0 +1,71 @@
+{
+  "gate": "ERR-E",
+  "aligned": true,
+  "recovery": {
+    "sinr": 0.6379310344827583,
+    "interference": 0.0,
+    "progress": 0.3793103448275858,
+    "rate": 0.6551724137931035,
+    "motion": 0.1896551724137929,
+    "binary": 0.0,
+    "C3": 0.7413793103448274
+  },
+  "case_p1_true_sinr_median_rank": 8.0,
+  "bootstrap_low": {
+    "P1+TRUE_SINR": 41666.666666666664,
+    "P1+TRUE_PROGRESS": 16666.666666666668,
+    "P1+TRUE_INTERFERENCE": -141666.66666666666,
+    "C3": 83333.33333333333
+  },
+  "scenario_direction": {
+    "P1+TRUE_SINR": {
+      "positive": 5,
+      "tie": 3,
+      "negative": 0
+    },
+    "P1+TRUE_PROGRESS": {
+      "positive": 4,
+      "tie": 3,
+      "negative": 1
+    },
+    "P1+TRUE_INTERFERENCE": {
+      "positive": 3,
+      "tie": 3,
+      "negative": 2
+    },
+    "C3": {
+      "positive": 5,
+      "tie": 3,
+      "negative": 0
+    }
+  },
+  "seed_direction": {
+    "P1+TRUE_SINR": {
+      "positive": 5,
+      "tie": 0,
+      "negative": 0
+    },
+    "P1+TRUE_PROGRESS": {
+      "positive": 4,
+      "tie": 1,
+      "negative": 0
+    },
+    "P1+TRUE_INTERFERENCE": {
+      "positive": 1,
+      "tie": 0,
+      "negative": 4
+    },
+    "C3": {
+      "positive": 5,
+      "tie": 0,
+      "negative": 0
+    }
+  },
+  "optimizer_steps": 0,
+  "new_checkpoint": false,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "opened_310118_310125": false,
+  "decide_called": false
+}

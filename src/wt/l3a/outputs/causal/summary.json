@@ -1,0 +1,351 @@
+{
+  "assignment_contrasts": [
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": 53000000.0,
+      "exclusive_conflict_rate": 0.0,
+      "payload_all_on_hot": 0.0,
+      "payload_exclusive_hold": 53000000.0,
+      "piled_conflict_rate": 1.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": 53000000.0,
+      "exclusive_conflict_rate": 0.0,
+      "payload_all_on_hot": 0.0,
+      "payload_exclusive_hold": 53000000.0,
+      "piled_conflict_rate": 1.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": 53000000.0,
+      "exclusive_conflict_rate": 0.0,
+      "payload_all_on_hot": 0.0,
+      "payload_exclusive_hold": 53000000.0,
+      "piled_conflict_rate": 1.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": 63000000.0,
+      "exclusive_conflict_rate": 0.0,
+      "payload_all_on_hot": 0.0,
+      "payload_exclusive_hold": 63000000.0,
+      "piled_conflict_rate": 1.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": 53000000.0,
+      "exclusive_conflict_rate": 0.0,
+      "payload_all_on_hot": 0.0,
+      "payload_exclusive_hold": 53000000.0,
+      "piled_conflict_rate": 1.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": 53000000.0,
+      "exclusive_conflict_rate": 0.0,
+      "payload_all_on_hot": 0.0,
+      "payload_exclusive_hold": 53000000.0,
+      "piled_conflict_rate": 1.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": 50000000.0,
+      "exclusive_conflict_rate": 0.0,
+      "payload_all_on_hot": 0.0,
+      "payload_exclusive_hold": 50000000.0,
+      "piled_conflict_rate": 1.0
+    },
+    {
+      "assignments_differ": 1.0,
+      "delta_payload": 53000000.0,
+      "exclusive_conflict_rate": 0.0,
+      "payload_all_on_hot": 0.0,
+      "payload_exclusive_hold": 53000000.0,
+      "piled_conflict_rate": 1.0
+    }
+  ],
+  "contrast_changes_payload": true,
+  "exclusive_myopic": [
+    {
+      "dropped_blocks": 68.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.23958333333333334,
+      "payload_bits": 37000000.0,
+      "residual_queue": 12.0
+    },
+    {
+      "dropped_blocks": 64.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.2673611111111111,
+      "payload_bits": 44000000.0,
+      "residual_queue": 9.0
+    },
+    {
+      "dropped_blocks": 66.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.23263888888888892,
+      "payload_bits": 45000000.0,
+      "residual_queue": 6.0
+    },
+    {
+      "dropped_blocks": 63.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.23958333333333334,
+      "payload_bits": 46000000.0,
+      "residual_queue": 8.0
+    },
+    {
+      "dropped_blocks": 66.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.23611111111111108,
+      "payload_bits": 44000000.0,
+      "residual_queue": 7.0
+    },
+    {
+      "dropped_blocks": 65.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.28125,
+      "payload_bits": 43000000.0,
+      "residual_queue": 9.0
+    },
+    {
+      "dropped_blocks": 63.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.2881944444444444,
+      "payload_bits": 46000000.0,
+      "residual_queue": 8.0
+    },
+    {
+      "dropped_blocks": 67.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.2395833333333333,
+      "payload_bits": 42000000.0,
+      "residual_queue": 8.0
+    }
+  ],
+  "hold": 15,
+  "legal_conflict_free_assignments": 1442173,
+  "mean_contrast_delta": 53875000.0,
+  "mean_exclusive_conflict": 0.0,
+  "mean_exclusive_myopic_payload": 43375000.0,
+  "mean_myopic_conflict": 0.9127604166666667,
+  "mean_myopic_drop": 78.0,
+  "mean_myopic_oracle_agreement": 0.12326388888888888,
+  "mean_myopic_payload": 2625000.0,
+  "mean_oracle_conflict": 0.0,
+  "mean_oracle_drop": 50.375,
+  "mean_oracle_payload": 47625000.0,
+  "mean_pairwise_delta": 4000000.0,
+  "myopic": [
+    {
+      "dropped_blocks": 78.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.9479166666666666,
+      "oracle_agreement": 0.16666666666666666,
+      "payload_bits": 2000000.0,
+      "residual_queue": 37.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.9479166666666666,
+      "oracle_agreement": 0.16666666666666666,
+      "payload_bits": 1000000.0,
+      "residual_queue": 38.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 1.0,
+      "oracle_agreement": 0.14236111111111108,
+      "payload_bits": 0.0,
+      "residual_queue": 39.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.8854166666666666,
+      "oracle_agreement": 0.0,
+      "payload_bits": 3000000.0,
+      "residual_queue": 36.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 1.0,
+      "oracle_agreement": 0.16666666666666666,
+      "payload_bits": 0.0,
+      "residual_queue": 39.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.8333333333333334,
+      "oracle_agreement": 0.10069444444444443,
+      "payload_bits": 5000000.0,
+      "residual_queue": 34.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.8437500000000001,
+      "oracle_agreement": 0.14236111111111108,
+      "payload_bits": 5000000.0,
+      "residual_queue": 34.0
+    },
+    {
+      "dropped_blocks": 78.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.84375,
+      "oracle_agreement": 0.10069444444444443,
+      "payload_bits": 5000000.0,
+      "residual_queue": 34.0
+    }
+  ],
+  "oracle_beats_myopic": true,
+  "oracle_minus_myopic": 45000000.0,
+  "oracle_option": [
+    {
+      "dropped_blocks": 52.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.59375,
+      "payload_bits": 44000000.0,
+      "residual_queue": 21.0
+    },
+    {
+      "dropped_blocks": 52.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.625,
+      "payload_bits": 44000000.0,
+      "residual_queue": 21.0
+    },
+    {
+      "dropped_blocks": 51.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.607638888888889,
+      "payload_bits": 47000000.0,
+      "residual_queue": 19.0
+    },
+    {
+      "dropped_blocks": 41.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.6284722222222222,
+      "payload_bits": 56000000.0,
+      "residual_queue": 20.0
+    },
+    {
+      "dropped_blocks": 51.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.5902777777777778,
+      "payload_bits": 49000000.0,
+      "residual_queue": 17.0
+    },
+    {
+      "dropped_blocks": 52.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.6041666666666666,
+      "payload_bits": 44000000.0,
+      "residual_queue": 21.0
+    },
+    {
+      "dropped_blocks": 52.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.5868055555555555,
+      "payload_bits": 53000000.0,
+      "residual_queue": 12.0
+    },
+    {
+      "dropped_blocks": 52.0,
+      "hold": 15.0,
+      "mean_conflict_rate": 0.0,
+      "oracle_agreement": 0.6145833333333334,
+      "payload_bits": 44000000.0,
+      "residual_queue": 21.0
+    }
+  ],
+  "pairwise": [
+    {
+      "delta_payload": 4000000.0,
+      "one_conflict_rate": 0.0,
+      "payload_one_on_hot": 4000000.0,
+      "payload_two_on_hot": 0.0,
+      "two_conflict_rate": 0.3333333333333333
+    },
+    {
+      "delta_payload": 4000000.0,
+      "one_conflict_rate": 0.0,
+      "payload_one_on_hot": 4000000.0,
+      "payload_two_on_hot": 0.0,
+      "two_conflict_rate": 0.3333333333333333
+    },
+    {
+      "delta_payload": 4000000.0,
+      "one_conflict_rate": 0.0,
+      "payload_one_on_hot": 4000000.0,
+      "payload_two_on_hot": 0.0,
+      "two_conflict_rate": 0.3333333333333333
+    },
+    {
+      "delta_payload": 4000000.0,
+      "one_conflict_rate": 0.0,
+      "payload_one_on_hot": 4000000.0,
+      "payload_two_on_hot": 0.0,
+      "two_conflict_rate": 0.3333333333333333
+    },
+    {
+      "delta_payload": 4000000.0,
+      "one_conflict_rate": 0.0,
+      "payload_one_on_hot": 4000000.0,
+      "payload_two_on_hot": 0.0,
+      "two_conflict_rate": 0.3333333333333333
+    },
+    {
+      "delta_payload": 4000000.0,
+      "one_conflict_rate": 0.0,
+      "payload_one_on_hot": 4000000.0,
+      "payload_two_on_hot": 0.0,
+      "two_conflict_rate": 0.3333333333333333
+    },
+    {
+      "delta_payload": 4000000.0,
+      "one_conflict_rate": 0.0,
+      "payload_one_on_hot": 4000000.0,
+      "payload_two_on_hot": 0.0,
+      "two_conflict_rate": 0.3333333333333333
+    },
+    {
+      "delta_payload": 4000000.0,
+      "one_conflict_rate": 0.0,
+      "payload_one_on_hot": 4000000.0,
+      "payload_two_on_hot": 0.0,
+      "two_conflict_rate": 0.3333333333333333
+    }
+  ],
+  "pairwise_nonadditive": true,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "legacy_env_unchanged": true,
+  "legacy_env_sha256": "de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba",
+  "legacy_config_sha256": "c0a4381dae4706cc32ea8b12849fcd1d8c96515fb35de5521fd49e2a6ef28a2b",
+  "new_environment": "L3BBitQueueEnvV2",
+  "phase5_still_uses_legacy_environment": true,
+  "training": false,
+  "lambda_switch": "NOT_DEFINED",
+  "lambda_progress": "NOT_DEFINED",
+  "continuity_penalty_added": false,
+  "opened_reserved_pool": false,
+  "opened_historical_consumed": false,
+  "sanity_scenarios": "320000-320003",
+  "planner_ready": false,
+  "deployment_verified": false
+}

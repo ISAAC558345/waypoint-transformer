@@ -1,0 +1,953 @@
+{
+  "all_stepwise_equivalent": true,
+  "design_seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "design_seeds_are_confirmation": false,
+  "n_pairs": 20,
+  "pairs": [
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 4,
+        "episode_payload_bits": 4000000.0,
+        "first_complete_t": [
+          25,
+          8,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "first_in_range_t": [
+          17,
+          2,
+          32,
+          32,
+          4,
+          -1
+        ],
+        "flight_distance_m": 2794.0,
+        "incomplete_in_range": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "incomplete_service": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 8
+      },
+      "model_seed": 0,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 4000000.0,
+      "scenario": 0
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 9,
+        "episode_payload_bits": 9000000.0,
+        "first_complete_t": [
+          23,
+          17,
+          -1,
+          -1,
+          44,
+          8
+        ],
+        "first_in_range_t": [
+          17,
+          4,
+          -1,
+          -1,
+          32,
+          2
+        ],
+        "flight_distance_m": 2794.0,
+        "incomplete_in_range": [
+          false,
+          false,
+          true,
+          true,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          false,
+          false,
+          true,
+          true,
+          false,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 9
+      },
+      "model_seed": 0,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 9000000.0,
+      "scenario": 1
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 6,
+        "episode_payload_bits": 6000000.0,
+        "first_complete_t": [
+          48,
+          8,
+          -1,
+          -1,
+          23,
+          33
+        ],
+        "first_in_range_t": [
+          32,
+          2,
+          47,
+          32,
+          17,
+          4
+        ],
+        "flight_distance_m": 2728.0,
+        "incomplete_in_range": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          false,
+          false,
+          true,
+          true,
+          false,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 10
+      },
+      "model_seed": 0,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 6000000.0,
+      "scenario": 2
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 5,
+        "episode_payload_bits": 5000000.0,
+        "first_complete_t": [
+          -1,
+          8,
+          -1,
+          32,
+          -1,
+          23
+        ],
+        "first_in_range_t": [
+          31,
+          2,
+          -1,
+          4,
+          32,
+          17
+        ],
+        "flight_distance_m": 2794.0,
+        "incomplete_in_range": [
+          false,
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 7
+      },
+      "model_seed": 0,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 5000000.0,
+      "scenario": 3
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 5,
+        "episode_payload_bits": 5000000.0,
+        "first_complete_t": [
+          -1,
+          39,
+          -1,
+          8,
+          17,
+          -1
+        ],
+        "first_in_range_t": [
+          -1,
+          17,
+          17,
+          2,
+          4,
+          -1
+        ],
+        "flight_distance_m": 2794.0,
+        "incomplete_in_range": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "incomplete_service": [
+          true,
+          false,
+          true,
+          false,
+          false,
+          true
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 7
+      },
+      "model_seed": 1,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 5000000.0,
+      "scenario": 0
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 4,
+        "episode_payload_bits": 4000000.0,
+        "first_complete_t": [
+          8,
+          40,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "first_in_range_t": [
+          2,
+          32,
+          17,
+          17,
+          17,
+          4
+        ],
+        "flight_distance_m": 2728.0,
+        "incomplete_in_range": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 10
+      },
+      "model_seed": 1,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 4000000.0,
+      "scenario": 1
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 11,
+        "episode_payload_bits": 11000000.0,
+        "first_complete_t": [
+          -1,
+          -1,
+          17,
+          8,
+          23,
+          -1
+        ],
+        "first_in_range_t": [
+          -1,
+          47,
+          4,
+          2,
+          17,
+          -1
+        ],
+        "flight_distance_m": 2794.0,
+        "incomplete_in_range": [
+          true,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "incomplete_service": [
+          true,
+          true,
+          false,
+          false,
+          false,
+          true
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 11
+      },
+      "model_seed": 1,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 11000000.0,
+      "scenario": 2
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 6,
+        "episode_payload_bits": 6000000.0,
+        "first_complete_t": [
+          -1,
+          8,
+          37,
+          -1,
+          -1,
+          38
+        ],
+        "first_in_range_t": [
+          17,
+          2,
+          17,
+          4,
+          17,
+          32
+        ],
+        "flight_distance_m": 2728.0,
+        "incomplete_in_range": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 11
+      },
+      "model_seed": 1,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 6000000.0,
+      "scenario": 3
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 7,
+        "episode_payload_bits": 7000000.0,
+        "first_complete_t": [
+          -1,
+          -1,
+          -1,
+          10,
+          -1,
+          16
+        ],
+        "first_in_range_t": [
+          -1,
+          -1,
+          -1,
+          2,
+          -1,
+          4
+        ],
+        "flight_distance_m": 2068.0,
+        "incomplete_in_range": [
+          true,
+          true,
+          true,
+          false,
+          true,
+          false
+        ],
+        "incomplete_service": [
+          true,
+          true,
+          true,
+          false,
+          true,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 7
+      },
+      "model_seed": 2,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 7000000.0,
+      "scenario": 0
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 6,
+        "episode_payload_bits": 6000000.0,
+        "first_complete_t": [
+          14,
+          36,
+          -1,
+          41,
+          -1,
+          -1
+        ],
+        "first_in_range_t": [
+          2,
+          4,
+          -1,
+          4,
+          -1,
+          -1
+        ],
+        "flight_distance_m": 3102.0,
+        "incomplete_in_range": [
+          false,
+          false,
+          true,
+          false,
+          true,
+          true
+        ],
+        "incomplete_service": [
+          false,
+          false,
+          true,
+          false,
+          true,
+          true
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 6
+      },
+      "model_seed": 2,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 6000000.0,
+      "scenario": 1
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 6,
+        "episode_payload_bits": 6000000.0,
+        "first_complete_t": [
+          -1,
+          12,
+          46,
+          -1,
+          -1,
+          44
+        ],
+        "first_in_range_t": [
+          -1,
+          2,
+          4,
+          -1,
+          -1,
+          4
+        ],
+        "flight_distance_m": 3102.0,
+        "incomplete_in_range": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          false
+        ],
+        "incomplete_service": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 6
+      },
+      "model_seed": 2,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 6000000.0,
+      "scenario": 2
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 7,
+        "episode_payload_bits": 7000000.0,
+        "first_complete_t": [
+          -1,
+          12,
+          35,
+          -1,
+          -1,
+          35
+        ],
+        "first_in_range_t": [
+          47,
+          2,
+          4,
+          -1,
+          47,
+          4
+        ],
+        "flight_distance_m": 3102.0,
+        "incomplete_in_range": [
+          false,
+          false,
+          false,
+          true,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 9
+      },
+      "model_seed": 2,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 7000000.0,
+      "scenario": 3
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 5,
+        "episode_payload_bits": 5000000.0,
+        "first_complete_t": [
+          40,
+          39,
+          -1,
+          8,
+          -1,
+          -1
+        ],
+        "first_in_range_t": [
+          32,
+          17,
+          17,
+          2,
+          4,
+          4
+        ],
+        "flight_distance_m": 2640.0,
+        "incomplete_in_range": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          false,
+          false,
+          true,
+          false,
+          true,
+          true
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 11
+      },
+      "model_seed": 3,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 5000000.0,
+      "scenario": 0
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 10,
+        "episode_payload_bits": 10000000.0,
+        "first_complete_t": [
+          -1,
+          16,
+          38,
+          -1,
+          8,
+          25
+        ],
+        "first_in_range_t": [
+          -1,
+          4,
+          32,
+          -1,
+          2,
+          17
+        ],
+        "flight_distance_m": 2398.0,
+        "incomplete_in_range": [
+          true,
+          false,
+          false,
+          true,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          true,
+          false,
+          false,
+          true,
+          false,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 11
+      },
+      "model_seed": 3,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 10000000.0,
+      "scenario": 1
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 5,
+        "episode_payload_bits": 5000000.0,
+        "first_complete_t": [
+          44,
+          -1,
+          38,
+          8,
+          -1,
+          -1
+        ],
+        "first_in_range_t": [
+          17,
+          17,
+          32,
+          2,
+          4,
+          4
+        ],
+        "flight_distance_m": 2706.0,
+        "incomplete_in_range": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          false,
+          true,
+          false,
+          false,
+          true,
+          true
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 10
+      },
+      "model_seed": 3,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 5000000.0,
+      "scenario": 2
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 11,
+        "episode_payload_bits": 11000000.0,
+        "first_complete_t": [
+          38,
+          -1,
+          -1,
+          23,
+          8,
+          17
+        ],
+        "first_in_range_t": [
+          32,
+          -1,
+          -1,
+          17,
+          2,
+          4
+        ],
+        "flight_distance_m": 2398.0,
+        "incomplete_in_range": [
+          false,
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          false,
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 12
+      },
+      "model_seed": 3,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 11000000.0,
+      "scenario": 3
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 6,
+        "episode_payload_bits": 6000000.0,
+        "first_complete_t": [
+          31,
+          8,
+          -1,
+          -1,
+          -1,
+          38
+        ],
+        "first_in_range_t": [
+          4,
+          2,
+          47,
+          47,
+          -1,
+          4
+        ],
+        "flight_distance_m": 3102.0,
+        "incomplete_in_range": [
+          false,
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        "incomplete_service": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 7
+      },
+      "model_seed": 4,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 6000000.0,
+      "scenario": 0
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 5,
+        "episode_payload_bits": 5000000.0,
+        "first_complete_t": [
+          8,
+          -1,
+          -1,
+          -1,
+          -1,
+          48
+        ],
+        "first_in_range_t": [
+          2,
+          -1,
+          -1,
+          4,
+          47,
+          4
+        ],
+        "flight_distance_m": 3102.0,
+        "incomplete_in_range": [
+          false,
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          false,
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 5
+      },
+      "model_seed": 4,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 5000000.0,
+      "scenario": 1
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 5,
+        "episode_payload_bits": 5000000.0,
+        "first_complete_t": [
+          -1,
+          8,
+          -1,
+          -1,
+          -1,
+          46
+        ],
+        "first_in_range_t": [
+          -1,
+          2,
+          -1,
+          47,
+          4,
+          4
+        ],
+        "flight_distance_m": 3102.0,
+        "incomplete_in_range": [
+          true,
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        "incomplete_service": [
+          true,
+          false,
+          true,
+          true,
+          true,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 5
+      },
+      "model_seed": 4,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 5000000.0,
+      "scenario": 2
+    },
+    {
+      "failed": [],
+      "metrics": {
+        "completed_blocks": 6,
+        "episode_payload_bits": 6000000.0,
+        "first_complete_t": [
+          -1,
+          8,
+          35,
+          -1,
+          -1,
+          35
+        ],
+        "first_in_range_t": [
+          -1,
+          2,
+          4,
+          -1,
+          -1,
+          4
+        ],
+        "flight_distance_m": 3102.0,
+        "incomplete_in_range": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          false
+        ],
+        "incomplete_service": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          false
+        ],
+        "note": "idle is not counted as a successful data service; -1 times mean never occurred",
+        "progress_reset_count": 6
+      },
+      "model_seed": 4,
+      "n_mismatches": 0,
+      "ok": true,
+      "payload": 6000000.0,
+      "scenario": 3
+    }
+  ]
+}

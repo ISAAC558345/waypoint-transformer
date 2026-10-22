@@ -1,0 +1,10 @@
+{
+  "block_payload_bits": 1000000.0,
+  "environment": "L3BBitQueueEnvV2",
+  "episode_horizon": 48,
+  "num_buoys": 12,
+  "num_uavs": 6,
+  "service_radius_m": 16.0,
+  "source_sha256": "8ec626b90ad0af4f63fe4314f10d13c4940500a7f60b8b1d36a59bb8bf1ab56e",
+  "step_length_m": 22.0
+}

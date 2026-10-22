@@ -1,0 +1,13 @@
+{
+  "round": 34,
+  "event": "accidental_preflight_protected_split_decode",
+  "persistent_payload_artifacts": [],
+  "formal_output_directories_before_clean_restart": [
+    "round_34/outputs/round34_benchmark_complexity_audit_20260901_1540/",
+    "round_34/figures/round34_benchmark_complexity_audit_20260901_1540/"
+  ],
+  "directories_contained_files": false,
+  "excluded_from_scientific_analysis": true,
+  "in_memory_state_discarded": true,
+  "note": "No decoded protected payload, cache, temporary table, log, or metric persisted after the immediate stop."
+}

@@ -1,0 +1,7 @@
+{
+  "competition_q50": 0.5,
+  "interference_q33": 0.05585927433314956,
+  "interference_q66": 0.0649851835524602,
+  "n": 16,
+  "source": "collect/train scenarios only; exclusive+myopic descriptors, not confirmation outcomes"
+}

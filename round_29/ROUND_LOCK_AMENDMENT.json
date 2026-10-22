@@ -1,0 +1,30 @@
+{
+  "amendment_type": "legal_round30_successor_governance_extension",
+  "authoritative_source": "round_29/ROUND_LOCK.json",
+  "original_round29_lock_sha256": "1F4CCAECE01F4B3F127CE4B922A9AC07B0E7E01AC9A34B204192EF8651AC51FB",
+  "affected_paths": {
+    "src/wt/governance_state_sync.py": {
+      "prior_amended_sha256": "6D8325BBE3C1040E8C5E7BB3FE6202C32208874B356D7656368004D6F8C7E231",
+      "amended_sha256": "A9FA2E30157A61097EFEE0939C8AB49FF52DFE2E5E57087E4DCE0D1C20B2748F"
+    },
+    "tests/test_governance_state_sync.py": {
+      "prior_amended_sha256": "71905E0CC261758B46F59061BEF7873FF3C00A8A3CD528855F5C0E377575595E",
+      "amended_sha256": "744109937BA79E4C4FDF0D79C0B0567A16E6480D643A0D486BA372C66DC2CEE0"
+    },
+    "tests/test_round29_cross_scale_deferred_service.py": {
+      "prior_locked_sha256": "7DD6EB0E1473B104AC1B1EB37F2D8F2445AA67881644C6FAEF1A31B1DB608559",
+      "amended_sha256": "51610883A0E243C974EC9B3E48752F8E6D53698540F382036632C056C2C8DB45"
+    }
+  },
+  "semantic_correction": "Allow Round-30 only as the explicitly authorized successor of locked Round-29. The historical Round-29 lock field round30_created=false remains immutable lock-time evidence; this overlay affects only successor lifecycle checks and the root-governance state synchronizer.",
+  "scientific_artifacts_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "metrics_modified": false,
+  "fresh_outcome_rerun": false,
+  "neural_training_performed": false,
+  "untouched_eval_accessed": false,
+  "original_round29_lock_modified": false,
+  "round30_created_at_amendment": false,
+  "approved_at": "2026-08-30T18:45:00+08:00"
+}

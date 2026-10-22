@@ -1,0 +1,20 @@
+{
+  "route_A_predictor": {
+    "scientific_feasibility": "the network can be trained, and both P1 and ZH-Rank finished",
+    "measured_gain_vs_S": -75000.0,
+    "p1_gain_vs_S": -33333.33333333302,
+    "requires_new_training_for_current_loss": false,
+    "changes_high_level_encoder": false,
+    "keeps_mappo": true,
+    "assignment_rank_error_remains": true
+  },
+  "route_B_true_h1": {
+    "scientific_feasibility": "true H1 response already changes the frozen value ranking",
+    "measured_gain_vs_S": 450000.0,
+    "requires_new_training": false,
+    "changes_high_level_encoder": false,
+    "keeps_mappo": true,
+    "online_planner_verified": false,
+    "deployment_budget_verified": false
+  }
+}

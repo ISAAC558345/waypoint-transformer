@@ -1,0 +1,15 @@
+{
+  "low_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "not_selected_by_eval": true,
+  "same_budget": true,
+  "seed0_sha256": "8cb0529e7f9c2851e0a102da5793b29d317e9c48c900e10ac976791b678aebb7",
+  "seed0_source": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase101\\outputs\\pilot\\checkpoints\\pilot_final.pt",
+  "transitions": 19200,
+  "updates": 100
+}

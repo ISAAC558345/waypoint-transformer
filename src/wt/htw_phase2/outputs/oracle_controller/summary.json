@@ -1,0 +1,53 @@
+{
+  "environment_reward_modified": false,
+  "fresh_access": 0,
+  "hgnn": false,
+  "horizon": 5,
+  "ppo_core_modified": false,
+  "results": {
+    "htw_oracle": {
+      "action_waypoint": {
+        "count": 96.0,
+        "mean_rho": 0.015357523452273045,
+        "median_rho": 0.17081444304454127
+      },
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "htw_oracle",
+      "mean_payload_bits": 34223606.44622762,
+      "mean_ppo_reward_last": -0.16747865080833435,
+      "mean_residual_queue_bits": 3012307.318411887,
+      "mean_return": 3.577101437062942,
+      "mean_waypoint_tracking_error": 0.30840406411837584,
+      "tracking_lambda": 1.0,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_waypoint_nonzero": true
+      }
+    },
+    "state_only": {
+      "action_waypoint": {
+        "count": 96.0,
+        "mean_rho": -0.30977252842446756,
+        "median_rho": -0.20087313880872307
+      },
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "state_only",
+      "mean_payload_bits": 34310913.764639504,
+      "mean_ppo_reward_last": 0.09490842372179031,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.678687336673839,
+      "mean_waypoint_tracking_error": 0.3443850289849668,
+      "tracking_lambda": 0.0,
+      "tw_enters_actor": {
+        "any_conditioned_width": false,
+        "any_waypoint_nonzero": false
+      }
+    }
+  },
+  "tracking_lambda": 1.0,
+  "transformer_modified": false,
+  "untouched_access": 0,
+  "updates": 8
+}

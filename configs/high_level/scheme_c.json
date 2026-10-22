@@ -1,0 +1,17 @@
+{
+  "policy": "scheme_c",
+  "generator": "G1_RATE",
+  "k": 6,
+  "hold": 15,
+  "historical_formal_k": 5,
+  "candidate_count": 13327,
+  "encoder": "src/wt/lowlevel_v2/phase5l_joint_encoder/model.py:JointUtilityHGNN",
+  "decoder": "src/wt/lowlevel_v2/phase5k_joint_decoder/decoders.py:JointAssignmentDecoder",
+  "loss": "src/wt/benchmark_v2/phase6if_ranking_loss/losses.py:top_regret_loss",
+  "checkpoint": "results/phase6if_ranking_loss/runs/c/epoch_001.pt",
+  "sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
+  "initialization_checkpoint": "results/phase6id_joint_utility_training/epoch_006.pt",
+  "initialization_sha256": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde",
+  "official_policy_file": "results/phase6iaa_formal_planner/active_policy.json",
+  "entry": "src/wt/benchmark_v2/phase6f_system_bringup/episode.py:run_active_episode"
+}

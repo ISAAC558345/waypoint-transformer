@@ -1,0 +1,12 @@
+{
+  "decoder": "OrderFreeSetDecoder",
+  "encoder": "DeepSetsAssignmentHead",
+  "epoch": 60,
+  "matches_phase105_106": true,
+  "n_parameters": 382723,
+  "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\final_artifacts\\checkpoints\\deepsets_util_seed0.pt",
+  "selected_by_phase106": false,
+  "sha256": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "train_phase": "HTW Phase-9.4.5 utility-aligned DeepSets, archived Phase-10.0",
+  "train_seed": 0
+}

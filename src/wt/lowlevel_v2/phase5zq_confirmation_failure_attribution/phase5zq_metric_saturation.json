@@ -1,0 +1,15 @@
+{
+  "completed_block_unique_values": [
+    3.0
+  ],
+  "COMPLETION_METRIC_SATURATION": true,
+  "overrides_phase5zp_gate": false,
+  "continuous_delivered_bits_exist": false,
+  "intermediate_fields_that_differ": [
+    "sinr",
+    "rate",
+    "service_progress_gauge",
+    "service_work",
+    "completion_time"
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "align": {
+    "deepsets_acc_payload_pearson": 0.10485265507137309,
+    "deepsets_nll_payload_pearson": -0.02877944666722629,
+    "deepsets_sinr_payload_pearson": 0.859363256135592,
+    "hgnn_acc_payload_pearson": -0.04357398227174412,
+    "hgnn_nll_payload_pearson": 0.018921719163203517,
+    "hgnn_sinr_payload_pearson": 0.8607575395548135
+  },
+  "ambiguity": "\u4e2d\u7b49\u504f\u9ad8",
+  "deepsets": {
+    "fr_acc": [
+      0.8229166666666666,
+      0.8229166666666666,
+      0.8541666666666666,
+      0.8229166666666666,
+      0.8159722222222222
+    ],
+    "last_train_loss": [
+      0.6012,
+      0.5916,
+      0.5904,
+      0.6297,
+      0.685
+    ],
+    "val_nll": [
+      1.9410647158219945,
+      3.0984916147038652,
+      2.5876999281220683,
+      2.23303551964594,
+      2.134089793971119
+    ]
+  },
+  "deepsets_same": "\u662f\uff1aDeepSets \u540c\u6837\u51fa\u73b0 assignment-acc/NLL \u4e0e payload \u5f31\u76f8\u5173\uff08\u6807\u7b7e: NONE,OBJ,OBJ,OBJ,OBJ\uff09",
+  "erank_flag": "\u5426\uff08\u7ec8\u5c42 erank_uav=[3.2903326970748936, 2.9830603331206493, 3.09248867495905, 3.13041344267163, 3.0659708111861907]\uff09",
+  "gate": {
+    "gate": "INST-B",
+    "next_action": "utility_aligned_supervised_objective",
+    "no_tuning_on_consumed_confirmation_outcomes": true,
+    "phase943_confirmation_consumed": true,
+    "phase944_model_tuning_on_phase943_confirmation": false,
+    "reason": "training metrics similar but assignment imitation is weakly aligned with payload; near-optimal multiplicity is high."
+  },
+  "grad_flag": "\u5426\uff08last-epoch \u8bca\u65ad backward \u672a\u89c1\u7206\u70b8/\u6d88\u5931\uff09",
+  "hgnn": {
+    "fr_acc": [
+      0.8368055555555557,
+      0.8090277777777777,
+      0.8159722222222222,
+      0.826388888888889,
+      0.8680555555555555
+    ],
+    "last_train_loss": [
+      0.7179,
+      0.7624,
+      0.6342,
+      0.677,
+      0.657
+    ],
+    "val_nll": [
+      2.3956374699094645,
+      2.7618412039155373,
+      1.958661015670259,
+      2.4252224611987003,
+      1.4424574524773561
+    ]
+  },
+  "multiplicity": {
+    "mean_within_10pct": 3.125,
+    "mean_within_1pct": 3.125,
+    "mean_within_5pct": 3.125
+  },
+  "opt_gap": "\u4e0d\u660e\u663e\uff1a\u8d1f\u5411 payload \u7684 seed 3/4 \u76d1\u7763 NLL/FR-acc \u5e76\u4e0d\u66f4\u5dee\uff08train/val NLL \u751a\u81f3\u66f4\u597d\uff09",
+  "os_flag": "\u5426\uff08\u7ec8\u5c42 OS_U \u5747\u503c=0.143\uff09",
+  "phase943_delta": [
+    515625.0,
+    2515625.0,
+    2421875.0,
+    -203125.0,
+    -3031250.0
+  ],
+  "pos_idle": 0.3324652777777778,
+  "pos_irs_uu": 0.012524206631042034,
+  "pos_margin": 5.7783339205025515,
+  "seed3": {
+    "acc_payload_pearson": -0.35328774594977835,
+    "delta_vs_deepsets": -203125.0,
+    "encoder": "hgnn",
+    "erank_uav": 3.13041344267163,
+    "evidence": "acc-payload r=-0.353 multiplicity5=3.12",
+    "idle": 0.3763020833333333,
+    "irs_ub": 28.938833236694336,
+    "irs_uu": 0.01761427929159254,
+    "labels": "OBJ",
+    "margin": 6.3923032703912925,
+    "model_seed": 3,
+    "os_u": 0.15897593332658744,
+    "payload": 2875000.0,
+    "train_loss_log": 0.677,
+    "train_set_nll": 0.4181986838151109,
+    "ub_dis": 0.625,
+    "uu_dis": 0.041666666666666664,
+    "val_fr_acc": 0.826388888888889,
+    "val_set_nll": 2.4252224611987003
+  },
+  "seed4": {
+    "acc_payload_pearson": 0.056294326303575656,
+    "delta_vs_deepsets": -3031250.0,
+    "encoder": "hgnn",
+    "erank_uav": 3.0659708111861907,
+    "evidence": "idle=0.480 margin=5.831; acc-payload r=0.056 multiplicity5=3.12; val assignment acc not low but confirmation payload far below paired DeepSets",
+    "idle": 0.48046874999999994,
+    "irs_ub": 53.354312896728516,
+    "irs_uu": 0.007962077914271504,
+    "labels": "DEC|OBJ|GEN",
+    "margin": 5.830529064767891,
+    "model_seed": 4,
+    "os_u": 0.09178011573385447,
+    "payload": 1609375.0,
+    "train_loss_log": 0.657,
+    "train_set_nll": 0.38940344549276534,
+    "ub_dis": 0.5208333333333334,
+    "uu_dis": 0.0,
+    "val_fr_acc": 0.8680555555555555,
+    "val_set_nll": 1.4424574524773561
+  },
+  "source": "objective",
+  "utility_equivalent_assignment_ambiguity": true
+}

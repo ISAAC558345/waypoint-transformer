@@ -1,0 +1,11 @@
+{
+  "auto_lowered_d_safe": false,
+  "d_safe_m": 1.0,
+  "infeasible_initial_geometry": false,
+  "n_design": 16,
+  "n_train": 64,
+  "ok": true,
+  "service_radius_m": 16.0,
+  "service_safety_margin_m": 0.5,
+  "worst_min_pairwise_m": 1.2000027967616596
+}

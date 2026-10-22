@@ -1,0 +1,41 @@
+{
+  "gate": "ZI-D",
+  "implementation_error": false,
+  "teacher_mismatch": false,
+  "easy_region": false,
+  "true_h1_stronger": true,
+  "mechanisms_recorded": {
+    "implementation": "connected",
+    "teacher_alignment": {
+      "teacher_spearman": 0.8007635921613857,
+      "teacher_top1": 0.875,
+      "teacher_std": 0.650475561388945,
+      "pair_tie_rate": 0.00176937441643324,
+      "top1_margin": 0.22720142354567846,
+      "top3_margin": 0.07795587281386057,
+      "easy_loss_share": 0.556348999699211,
+      "hard_loss_share": 0.1689825943466579,
+      "tail_loss_share": 0.692736488705994,
+      "mean_sigmoid_weight": 0.30752035413239703,
+      "saturated_low_fraction": 0.009749795863649106,
+      "saturated_high_fraction": 0.0,
+      "hard_mean_sigmoid": 0.4286746388794241,
+      "tail_mean_sigmoid": 0.2936515824943944,
+      "duplicate_assignment_states": 0
+    },
+    "easy_region": false,
+    "real_parameter_conflict": "NOT_MEASURED",
+    "per_epoch_ranking": "MISSING_CHECKPOINT"
+  },
+  "selected_j15": {
+    "S": 2341666.6666666665,
+    "P1": 2308333.3333333335,
+    "ZH": 2266666.6666666665,
+    "R1": 2791666.6666666665
+  },
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "opened_310118_310125": false,
+  "training_this_phase": false
+}

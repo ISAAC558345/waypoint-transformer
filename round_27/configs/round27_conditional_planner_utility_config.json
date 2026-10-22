@@ -1,0 +1,58 @@
+{
+  "round": "round_27",
+  "topic": "Conditional Planner-Action Utility and Causal Trigger Design Audit",
+  "previous_round_lock": "round_26/ROUND_LOCK.json",
+  "previous_round_lock_sha256": "606558C28019A0B4C49DB0CE1B09B10CCC49750CAEF8648B1648D3BC66666FEE",
+  "allowed_splits": ["train", "validation"],
+  "state_pool": {
+    "source": "Round-20 registered train/validation scenarios",
+    "selection": "one exact t=0 scenario reset snapshot; joint_h5 is action-identity control only",
+    "expected_total": 64,
+    "expected_train": 48,
+    "expected_validation": 16
+  },
+  "counterfactual_protocol": {
+    "primary_horizon": 5,
+    "secondary_horizon": 10,
+    "planner_first_horizon": 5,
+    "reference_first_horizon": 1,
+    "continuation_horizon": 1,
+    "continuation_rule": "frozen causal joint_h1 recomputed from each branch current state",
+    "same_snapshot_required": true,
+    "only_first_action_differs": true,
+    "numerical_utility_tolerance_bits": 1e-06
+  },
+  "features": {
+    "queue_competition": "1 - (top queue-weighted direct score gap / max(top score, 1e-12)) averaged across UAVs, clipped to [0,1]",
+    "duplicate_intent_current": "both UAV current greedy queue-rate buoy indices are identical",
+    "assignment_conflict_current": "duplicate intent and current joint-aware matching assigns the UAVs to distinct buoys",
+    "interference_conflict_current": "shared eta>0 and current joint-aware matching max ISR >= frozen threshold 0.25"
+  },
+  "trigger_rules": {
+    "A_interference_conflict": "interference_conflict_current",
+    "B_duplicate_intent": "duplicate_intent_current",
+    "C_queue_interference": "interference_conflict_current and queue_competition >= train_p75",
+    "D_assignment_conflict": "assignment_conflict_current",
+    "threshold_fit_split": "train",
+    "threshold_quantile": 0.75,
+    "no_threshold_sweep": true
+  },
+  "pre_registered_gates": {
+    "nontrivial_useful_ratio_min": 0.1,
+    "oracle_mean_payload_gain_min_bits": 50000.0,
+    "minimum_validation_active_states": 3,
+    "trigger_validation_mean_utility_min_bits": 0.0,
+    "trigger_validation_ci_lower_min_bits": 0.0,
+    "trigger_harmful_rate_max": 0.25,
+    "catastrophic_stratum_mean_utility_min_bits": 0.0,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 2701
+  },
+  "training_performed": false,
+  "conditional_planner_utility_audit": true,
+  "causal_trigger_design_performed": true,
+  "distillation_training_performed": false,
+  "fresh_new_rollout_count": 0,
+  "untouched_eval_accessed": false,
+  "round28_created": false
+}

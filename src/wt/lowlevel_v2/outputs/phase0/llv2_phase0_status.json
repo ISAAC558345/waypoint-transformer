@@ -1,0 +1,38 @@
+{
+  "K": 12,
+  "M": 6,
+  "T": 48,
+  "actor_zero_init_max_abs_mu": 0.0,
+  "alpha_residual_placeholder": 0.25,
+  "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\final_artifacts\\checkpoints\\deepsets_util_seed0.pt",
+  "checkpoint_sha": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "collision_requires_pretraining_freeze": true,
+  "critic_dim": 188,
+  "d_safe_placeholder_m": 1.0,
+  "expected_critic_dim": 188,
+  "high_level": "frozen DeepSets-util + Order-Free + Task Option hold=15",
+  "high_level_controls": "association",
+  "historical_maritime_min_separation_m": 15.0,
+  "historical_separation_not_used_as_l3b_truth": true,
+  "hold": 15,
+  "l0_baseline": "fly-toward + InRangeZeroMotionGate",
+  "l3b_spawn_spacing_m_approx": 1.2,
+  "low_level_controls": "movement",
+  "method_future": "ICAR-MAPPO",
+  "modified_final_hier": false,
+  "name": "LL-V2.0",
+  "neighbor_perm_error": 1.1920928955078125e-07,
+  "projector_status_on_design_seed8": "ok",
+  "service_safety_margin_placeholder_m": 0.5,
+  "suggested_margin_range_m": [
+    0.1,
+    0.5
+  ],
+  "suggested_uav_radius_range_m": [
+    0.2,
+    1.0
+  ],
+  "trained": false,
+  "visited_phase106_untouched": false,
+  "zero_residual_equals_base": true
+}

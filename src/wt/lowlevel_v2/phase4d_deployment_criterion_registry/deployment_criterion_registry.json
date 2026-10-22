@@ -1,0 +1,46 @@
+{
+  "approval_scope": "deployment criterion only",
+  "criterion_id": "CONSERVATIVE_WITH_FALLBACK_V1",
+  "criterion_name": "Conservative-with-Fallback",
+  "deployment_criterion": "CONSERVATIVE_WITH_FALLBACK_V1",
+  "gate_definition": {
+    "changed": false,
+    "margin": "U_hat(argmax U_hat) - U_hat(argmax U_single)",
+    "role": "per-scenario switch only; not rewritten by this criterion",
+    "rule": "if margin >= tau: use B2 else use LOCAL",
+    "tau": 1534933.5944128654,
+    "tau_display": 1.535e6,
+    "tau_source": "HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md changed-state mean dU_hat"
+  },
+  "human_approved": true,
+  "independent_holdout_required": true,
+  "locked_B2_version": {
+    "C_hat": "frozen ExtraTrees(U_single + Phase-3E candidate-conditioned geometry)",
+    "U_hat": "U_single + C_hat",
+    "fit": "one ExtraTrees on the 16 Phase-4B EXEC design states; independent labels never used for fit",
+    "hyperparameters": {
+      "max_depth": 8,
+      "min_samples_leaf": 5,
+      "n_estimators": 300,
+      "n_jobs": 1,
+      "random_state": 0
+    },
+    "retrained": false
+  },
+  "locked_tau": 1534933.5944128654,
+  "max_degradation_rate": 0.02,
+  "max_worst_case_delta_R": -0.125,
+  "min_mean_U_gain": 0.0,
+  "min_mean_delta_R": 0.02,
+  "phase_status": "CRITERION_REGISTERED_PENDING_INDEPENDENT_HOLDOUT",
+  "planner_ready": false,
+  "registration_note": "Values are the Phase-4D5 Candidate-C design constants confirmed by the project owner. They were not refit on the existing 64 independent scenarios.",
+  "require_all_scenarios_noninferior": false,
+  "required_independent_batches": 2,
+  "scenario_degradation_policy": "allow_some",
+  "source": "HUMAN_SPECIFICATION",
+  "source_candidate": "Candidate-C",
+  "source_phase": "Phase-4D6",
+  "status": "REGISTERED",
+  "thresholds_fit_from_existing_64": false
+}

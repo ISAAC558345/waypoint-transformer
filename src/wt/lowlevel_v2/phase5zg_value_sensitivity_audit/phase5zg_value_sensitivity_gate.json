@@ -1,0 +1,37 @@
+{
+  "gate": "SENS-C",
+  "aligned": true,
+  "next_step": "state-conditional ranking-aware response loss",
+  "optimizer_steps": 0,
+  "new_checkpoint": false,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "opened_310118_310125": false,
+  "decide_called": false,
+  "dominant_channel": "sinr",
+  "channel_stable": false,
+  "sign_agreement_mean": 0.9995833333333334,
+  "spearman_mean": 0.9945588669310713,
+  "margin_sign_agreement": 1.0,
+  "interaction_ratio": 0.04554713921242768,
+  "interaction_ci_low": -0.08250040719003389,
+  "interaction_ci_high": -0.027113242944081625,
+  "sinr_pairwise": 0.7563013538748834,
+  "rate_pairwise": 0.7736531279178337,
+  "recovery": {
+    "R1": 1.0,
+    "P1+TRUE_SINR": 0.6379310344827583,
+    "P1+TRUE_RATE": 0.6551724137931035,
+    "P1+TRUE_SINR+TRUE_RATE": 0.7241379310344832
+  },
+  "class_counts": {
+    "SAME_ASSIGNMENT": 42,
+    "SAME_J15": 43,
+    "LOWER_J15": 35,
+    "HIGHER_J15": 0
+  },
+  "first_order_ok": false,
+  "interaction_ok": false,
+  "ordering_failure": true
+}

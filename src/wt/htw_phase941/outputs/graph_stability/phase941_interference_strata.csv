@@ -1,0 +1,4 @@
+stratum,mean_delta,n_scenarios
+low,-650000.0,4
+medium,800000.0,2
+high,220000.0,10

@@ -1,0 +1,13 @@
+{
+  "alpha_grid_search": false,
+  "alpha_residual": 0.25,
+  "d_safe_definition": "minimum allowed center-to-center UAV distance in this 2D simulation benchmark; not a claim about real UAV physical diameter",
+  "d_safe_m": 1.0,
+  "frozen_before_any_training": true,
+  "high_checkpoint_sha": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "margin_grid_search": false,
+  "phase106_untouched_blocked": true,
+  "requires_pretraining_freeze": false,
+  "service_safety_margin_m": 0.5,
+  "tuned_from_payload": false
+}

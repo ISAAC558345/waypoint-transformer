@@ -1,0 +1,12 @@
+{
+  "reward_function": "unchanged_step_reward",
+  "reads_payload_increment": true,
+  "reads_queue": false,
+  "reads_progress": false,
+  "reads_completion_flag": false,
+  "payload_scale": 1000000.0,
+  "legacy_payload_increment": "0 或整数个 block_payload_bits",
+  "v2_payload_increment": "本步 served_bits，可以是不足一块的比特",
+  "compatibility_issue": "同一套 reward 会把连续比特增量当成训练时很少见到的分数奖励",
+  "accounting_changed_to_preserve_old_reward": false
+}

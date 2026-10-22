@@ -1,0 +1,141 @@
+{
+  "alignment_summary": {
+    "count": 128.0,
+    "frac_target_is_max_queue": 0.7734375,
+    "frac_waypoint_closer_to_target": 0.8046875,
+    "frac_waypoint_higher_gain_to_target": 0.8046875,
+    "frac_waypoint_higher_rate_to_target": 0.8046875,
+    "mean_distance_delta_target_m": -11.541738541440933,
+    "mean_gain_delta_target": 2.4436958274695543e-08,
+    "mean_rate_current_target_bps": 932641.0762855997,
+    "mean_rate_delta_target_bps": 80889.49212821617,
+    "mean_rate_waypoint_target_bps": 1013530.5684138159
+  },
+  "fresh_access": 0,
+  "lambda_sensitivity": [
+    {
+      "action_waypoint_cosine": 0.3494776662834104,
+      "environment_steps": 256,
+      "kind": "state_only",
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.6669008613736125,
+      "mean_waypoint_tracking_error": 0.3051917312497281,
+      "weight": 0.0
+    },
+    {
+      "action_waypoint_cosine": 0.10824601211251612,
+      "environment_steps": 256,
+      "kind": "reward_penalty",
+      "mean_payload_bits": 34283843.78984293,
+      "mean_residual_queue_bits": 2952069.9747965727,
+      "mean_return": 3.651370644756561,
+      "mean_waypoint_tracking_error": 0.3266079598822341,
+      "weight": 0.0
+    },
+    {
+      "action_waypoint_cosine": 0.10727912036341165,
+      "environment_steps": 256,
+      "kind": "reward_penalty",
+      "mean_payload_bits": 34283551.79207823,
+      "mean_residual_queue_bits": 2952361.9725612793,
+      "mean_return": 3.651340471052531,
+      "mean_waypoint_tracking_error": 0.3266577996305887,
+      "weight": 0.01
+    },
+    {
+      "action_waypoint_cosine": 0.1509239458905621,
+      "environment_steps": 256,
+      "kind": "reward_penalty",
+      "mean_payload_bits": 34287933.026932694,
+      "mean_residual_queue_bits": 2947980.737706812,
+      "mean_return": 3.656010869924039,
+      "mean_waypoint_tracking_error": 0.3231807708331773,
+      "weight": 0.05
+    },
+    {
+      "action_waypoint_cosine": 0.1857744292523524,
+      "environment_steps": 256,
+      "kind": "reward_penalty",
+      "mean_payload_bits": 34294703.78152699,
+      "mean_residual_queue_bits": 2941209.9831125173,
+      "mean_return": 3.6584722698725267,
+      "mean_waypoint_tracking_error": 0.3198969224490209,
+      "weight": 0.1
+    },
+    {
+      "action_waypoint_cosine": 0.21318461018806922,
+      "environment_steps": 256,
+      "kind": "reward_penalty",
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.6790924534212683,
+      "mean_waypoint_tracking_error": 0.32080240472941424,
+      "weight": 0.5
+    },
+    {
+      "action_waypoint_cosine": 0.4780438364704583,
+      "environment_steps": 256,
+      "kind": "reward_penalty",
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.677452714944746,
+      "mean_waypoint_tracking_error": 0.3066566366763038,
+      "weight": 1.0
+    }
+  ],
+  "seed": 0,
+  "state_only": {
+    "action_waypoint": {
+      "count": 96.0,
+      "mean_rho": 0.3494776662834104,
+      "median_rho": 0.7155713894330289
+    },
+    "environment_steps": 256,
+    "episodes": 4,
+    "family": "state_only",
+    "mean_payload_bits": 34310913.764639504,
+    "mean_residual_queue_bits": 2925000.0,
+    "mean_return": 3.6669008613736125,
+    "mean_waypoint_tracking_error": 0.3051917312497281,
+    "tracking_lambda": 0.0,
+    "tw_enters_actor": {
+      "any_conditioned_width": false,
+      "any_waypoint_nonzero": false
+    }
+  },
+  "tracking_loss": [
+    {
+      "action_waypoint_cosine": 0.10962429978269343,
+      "environment_steps": 256,
+      "kind": "tracking_loss",
+      "mean_payload_bits": 34284379.99720853,
+      "mean_residual_queue_bits": 2951533.767430979,
+      "mean_return": 3.651317745782287,
+      "mean_waypoint_tracking_error": 0.32649444442732617,
+      "weight": 0.01
+    },
+    {
+      "action_waypoint_cosine": 0.11509855268471347,
+      "environment_steps": 256,
+      "kind": "tracking_loss",
+      "mean_payload_bits": 34286542.41332428,
+      "mean_residual_queue_bits": 2949371.3513152227,
+      "mean_return": 3.651127136277508,
+      "mean_waypoint_tracking_error": 0.3260368893909027,
+      "weight": 0.05
+    },
+    {
+      "action_waypoint_cosine": 0.12160411267995952,
+      "environment_steps": 256,
+      "kind": "tracking_loss",
+      "mean_payload_bits": 34289235.31770893,
+      "mean_residual_queue_bits": 2946678.4469305743,
+      "mean_return": 3.650871094555371,
+      "mean_waypoint_tracking_error": 0.32547345847169346,
+      "weight": 0.1
+    }
+  ],
+  "untouched_access": 0,
+  "updates": 8
+}

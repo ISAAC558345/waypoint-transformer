@@ -1,0 +1,5 @@
+representation,collision_rate
+rep_base_z_a,0.3310416666666666
+z_rel_only,0.2420138888888889
+rep_aug_init,0.2804861111111111
+rep_aug_epoch10,0.2520833333333333

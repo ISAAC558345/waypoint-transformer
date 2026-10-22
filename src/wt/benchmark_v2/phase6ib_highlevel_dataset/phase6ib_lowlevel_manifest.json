@@ -1,0 +1,8 @@
+{
+  "checkpoint": "phase6g_seed0.pt",
+  "deterministic_mean": true,
+  "parameters_updated": false,
+  "primary_seed": 0,
+  "selection_rule": "MINIMUM_SEED_ID",
+  "sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e"
+}

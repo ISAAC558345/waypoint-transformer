@@ -1,0 +1,90 @@
+{
+  "installs_new_fallback": false,
+  "deepsets_not_a_new_fallback": true,
+  "b2_not_a_new_fallback": true,
+  "oracle_not_a_new_fallback": true,
+  "modes": {
+    "empty_candidate_pool": {
+      "action": "stop",
+      "may_use_existing_legal_assignment": false,
+      "verified_fallback": false,
+      "human_rule_required": true,
+      "status": "pending_human_approval"
+    },
+    "all_uavs_idle": {
+      "action": "stop",
+      "may_use_existing_legal_assignment": false,
+      "verified_fallback": false,
+      "human_rule_required": true,
+      "status": "pending_human_approval"
+    },
+    "illegal_association": {
+      "action": "stop",
+      "may_use_existing_legal_assignment": false,
+      "verified_fallback": false,
+      "human_rule_required": true,
+      "status": "pending_human_approval"
+    },
+    "true_h1_non_finite": {
+      "action": "stop",
+      "may_use_existing_legal_assignment": false,
+      "verified_fallback": false,
+      "human_rule_required": true,
+      "status": "pending_human_approval"
+    },
+    "model_r1_non_finite": {
+      "action": "stop",
+      "may_use_existing_legal_assignment": false,
+      "verified_fallback": false,
+      "human_rule_required": true,
+      "status": "pending_human_approval"
+    },
+    "safety_projector_failure": {
+      "action": "stop",
+      "may_use_existing_legal_assignment": false,
+      "verified_fallback": false,
+      "human_rule_required": true,
+      "status": "pending_human_approval",
+      "note": "The frozen executor already maps a failed projection to a zero action. That is frozen executor behavior, not a newly approved deployment fallback."
+    },
+    "inference_timeout": {
+      "action": "stop",
+      "may_use_existing_legal_assignment": false,
+      "verified_fallback": false,
+      "human_rule_required": true,
+      "status": "pending_human_approval",
+      "note": "No timeout is specified."
+    },
+    "missing_checkpoint": {
+      "action": "stop",
+      "may_use_existing_legal_assignment": false,
+      "verified_fallback": false,
+      "human_rule_required": true,
+      "status": "pending_human_approval"
+    },
+    "counterfactual_step_exception": {
+      "action": "stop",
+      "may_use_existing_legal_assignment": false,
+      "verified_fallback": false,
+      "human_rule_required": true,
+      "status": "pending_human_approval"
+    },
+    "exact_value_tie": {
+      "action": "stable_argsort_descending",
+      "may_use_existing_legal_assignment": true,
+      "verified_fallback": false,
+      "human_rule_required": true,
+      "status": "pending_human_approval",
+      "note": "Stable descending argsort is the replay convention. It is not an approved deployment tie rule."
+    }
+  },
+  "observed": {
+    "empty_candidate_pool": 0,
+    "illegal_assignments": 0,
+    "non_finite_response": 0,
+    "non_finite_value": 0,
+    "missing_checkpoint": false,
+    "exact_ties": 0,
+    "near_ties": 0
+  }
+}

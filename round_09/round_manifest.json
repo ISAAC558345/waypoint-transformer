@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "round": "round_09",
+  "status": "completed",
+  "topic": "Waypoint mechanism diagnosis and conditional minimal correction",
+  "previous_round": "round_08",
+  "previous_lock": "round_08/ROUND_LOCK.json",
+  "snapshot": "backup/snapshots/before_round_09_20260810_0005",
+  "status_flags": {
+    "training_performed": false,
+    "mechanism_diagnosis_performed": false,
+    "minimal_variant_training_performed": false,
+    "development_test_accessed": false,
+    "untouched_holdout_accessed": false,
+    "hgnn_training_performed": false,
+    "ppo_training_performed": false
+  },
+  "completed_at": "2026-08-10T00:50:00+08:00",
+  "mechanism_gate": "M3",
+  "candidate_for_new_dev_holdout": false,
+  "canonical_output": "round_09/outputs/round09_diagnosis_20260810_0030"
+}

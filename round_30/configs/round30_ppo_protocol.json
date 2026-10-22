@@ -1,0 +1,31 @@
+{
+  "round": "round_30",
+  "protocol_status": "pre_smoke",
+  "primary_algorithm": "state_only_deepsets_ppo",
+  "environment": {
+    "num_uavs": 2,
+    "num_buoys": [3, 5],
+    "spectrum_mode": "shared",
+    "eta": [0.0, 0.25, 0.5, 1.0],
+    "buoy_drift_mode": "static",
+    "channel_variation_mode": "static",
+    "matching_mode": "legacy",
+    "movement_action_shape": [2, 2],
+    "minimum_uav_separation_m": 15.0,
+    "physics_modified": false,
+    "reward_modified": false
+  },
+  "state_only_contract": {
+    "uav_features": ["position", "velocity_or_last_displacement", "remaining_energy", "path_length", "current_served_payload"],
+    "buoy_features": ["position", "queue", "current_arrival", "completion", "cumulative_payload"],
+    "global_features": ["current_num_buoys", "current_eta", "current_timestep_fraction"],
+    "raw_ids_used": false,
+    "assigned_indices_used": false,
+    "future_or_planner_or_waypoint_input": false
+  },
+  "formal_seeds": [0, 1, 2, 3, 4],
+  "formal_budget": "pending_smoke_runtime_freeze",
+  "fresh_access_count_before_freeze": 0,
+  "untouched_eval_access_count": 0,
+  "round31_created": false
+}

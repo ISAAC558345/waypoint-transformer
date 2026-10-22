@@ -1,0 +1,25 @@
+{
+  "schema_version": "round17_predictable_channel_protocol_v1",
+  "training_performed": false,
+  "primary_buoy_drift_mode": "static",
+  "channel_variation_modes": ["static", "slow_oscillation"],
+  "multiplier_formula": "exp(sigma * sin(theta_k[t]))",
+  "phase_transition": "theta_k[t+1] = theta_k[t] + 2*pi/24 mod 2*pi",
+  "period_slots": 24,
+  "frequency_normalization_max_angular_frequency_rad_per_slot": 0.3141592653589793,
+  "tiers": {
+    "static": {"mode": "static", "log_amplitude_sigma": 0.0},
+    "low": {"mode": "slow_oscillation", "log_amplitude_sigma": 0.15},
+    "medium": {"mode": "slow_oscillation", "log_amplitude_sigma": 0.35},
+    "high": {"mode": "slow_oscillation", "log_amplitude_sigma": 0.55}
+  },
+  "horizons": [1, 5, 10, 20],
+  "action_candidates": ["zero", "+x", "-x", "+y", "-y", "diag_ne", "diag_nw", "diag_se", "diag_sw", "nearest_buoy", "max_queue", "queue_rate_energy", "myopic_one_step_greedy"],
+  "bootstrap_resamples": 4000,
+  "bootstrap_seed": 17017,
+  "scenario_namespace": "round17_channel_planning_diagnostic",
+  "old_development_test_access_count": 0,
+  "fresh_development_access_count": 0,
+  "untouched_holdout_new_access_count": 0,
+  "round18_created": false
+}

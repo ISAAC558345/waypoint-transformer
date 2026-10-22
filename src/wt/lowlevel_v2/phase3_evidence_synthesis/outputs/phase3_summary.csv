@@ -1,0 +1,50 @@
+key,value,source,unit
+EXEC_NATURAL,5812500,Phase-3C/3D JSON,U_traj mean
+EXEC_LOCAL,9000000,Phase-3C/3D/3E/3F/3G/3H,U_traj mean
+EXEC_TRAJ,11875000,Phase-3C/3D/3E/3F/3G/3H,U_traj mean
+EXEC_LOCAL_median,8000000,Phase-3C,U_traj median
+EXEC_TRAJ_median,12000000,Phase-3C,U_traj median
+EXEC_delta_local,3187500,Phase-3C,LOCAL-NATURAL
+EXEC_delta_traj,6062500,Phase-3C,TRAJ-NATURAL
+EXEC_R_local_over_traj_gap,0.4786,Phase-3C,mean of scenario R where den>0
+EXEC_LOCAL_F,4387500,Phase-3C,remaining F of LOCAL pick
+EXEC_TRAJ_F,9625000,Phase-3C,remaining F of TRAJ pick
+EXEC_LOCAL_U_single,4612500,Phase-3C,U_single of LOCAL pick
+EXEC_TRAJ_U_single,2250000,Phase-3C,U_single of TRAJ pick
+EXEC_LOCAL_DecodeNR,0.0,Phase-3C/3D,by definition
+EXEC_TRAJ_DecodeNR,0.516,Phase-3C/3D,mean
+EXEC_beta0_U_traj,9000000,Phase-3D,must equal LOCAL
+EXEC_beta025_U_traj,10812500,Phase-3D,oracle F
+EXEC_beta05_U_traj,11437500,Phase-3D,oracle F
+EXEC_beta075_U_traj,11750000,Phase-3D,oracle F
+EXEC_beta10_U_traj,11875000,Phase-3D,must equal TRAJ
+EXEC_beta05_frac_of_TRAJ,0.9632,Phase-3D,11437500/11875000
+EXEC_beta05_recovery_of_gap,0.8478,Phase-3D,(11.438-9.000)/(11.875-9.000)
+EXEC_beta05_Spearman,0.946,Phase-3D,within-state mean
+EXEC_beta05_top1,0.312,Phase-3D,vs TRAJ
+E_ridge_u_OOF_Spearman,0.193,Phase-3E,U_single only
+E_et_sc_OOF_Spearman,0.527,Phase-3E,state+candidate
+E_et_full_OOF_Spearman,0.553,Phase-3E,U_single+state+candidate
+E_FHAT_closed_loop,9375000,Phase-3E/3F/3G/3H,U_single+0.25 F_hat
+E_R_pred_ratio_of_means,0.1304,Phase-3E,(9.375-9.000)/(11.875-9.000)
+E_R_pred_mean_of_ratios,0.1346,Phase-3F/3G/3H,per-scenario mean
+F_geometry_OOF_Spearman,0.546,Phase-3F,group B
+F_full_OOF_Spearman,0.553,Phase-3F,group G
+F_U_single_ET_OOF_Spearman,0.295,Phase-3F,ExtraTrees U_single; not Ridge 0.193
+F_within_U_F_median,0.259,Phase-3F/3G/3H,within-state
+F_within_Fhat_F_median,0.577,Phase-3F,Spearman(F_hat;F) not S_fhat
+G_O_traj_median,0.002,Phase-3G,within-state vs F
+G_STRUCT_OC_median,0.187,Phase-3G,within-state vs F
+G_FHAT_S_median,0.353,Phase-3G,Spearman(U+0.25 F_hat;F)
+G_STRUCT_OC_U_traj,9250000,Phase-3G,closed-loop
+H_degree_median,0.036,Phase-3H,within-state vs F
+H_weighted_median,0.018,Phase-3H,within-state vs F
+H_Flex_median,0.041,Phase-3H,within-state vs F
+H_S_disc_median,0.187,Phase-3H,within-state vs F
+H_S_disc_U_traj,9250000,Phase-3H,closed-loop; 1/16 state change
+H_argmax_degree_U_traj,4500000,Phase-3H,harmful
+consistency_LOCAL,pass,C-H all 9000000,
+consistency_TRAJ,pass,C-H all 11875000,
+consistency_NATURAL,pass,C-F/G 5812500,
+consistency_FHAT_loop,pass,E-H all 9375000,
+consistency_E_OOF,pass,E/F/G/H cite 0.553,

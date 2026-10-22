@@ -1,0 +1,8 @@
+{
+  "passed": 1,
+  "scenarios": [322000, 322001, 322002, 322003],
+  "equivalence_max_abs_error": 0.0,
+  "pilot_integrity": "4/4 passed before formal generation on 2026-10-16",
+  "pilot_determinism": "4/4 passed before formal generation on 2026-10-16",
+  "reused": 1
+}

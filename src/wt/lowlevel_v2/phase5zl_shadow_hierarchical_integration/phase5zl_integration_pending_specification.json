@@ -1,0 +1,9 @@
+{
+  "status": "pending_human_approval",
+  "deployment_latency_requirement": "NOT_SPECIFIED",
+  "model_selection": "per-seed replay only; no approved deployment seed or aggregation",
+  "fallback": "no approved fallback; DeepSets, B2, and Oracle are not installed",
+  "tie_break": "stable descending argsort is a replay convention, not an approved deployment rule",
+  "does_not_start_phase4f": true,
+  "planner_ready": false
+}

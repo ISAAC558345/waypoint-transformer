@@ -1,0 +1,45 @@
+{
+  "amendment_type": "root_governance_state_sync",
+  "reason": "CURRENT_ROUND/root governance retained initialization-stage lifecycle fields after Round-22 completed and locked.",
+  "authoritative_source": "round_22/ROUND_LOCK.json",
+  "original_round22_lock_sha256": "1D464A696ED8DE11E7AEDB14479F55ABB4F9F3E2621837E89CD854CD850190E4",
+  "current_round_before_sha256": "FF2D3EBEB4A502F2BE8EDDC5E081B5A66C9F47702F605F55EFD96D581ABBE354",
+  "current_round_after_sha256": "D410B1E73B1D75D794FD020B3DD8FF112C638909DA3D74DFA9244413103D0558",
+  "plans_before_sha256": "A35C8004DFD9CB840583A8F85502FF508196978DAEFC54EAC06F9050E9C72564",
+  "plans_after_sha256": "50AC33302DDC85F75FC8CB03014CD6A65F5E0DD0AD97A455C78AAA8C5FB8D755",
+  "round_versioning_before_sha256": "F6637E67D28E4F538566B9C912942832241A0423DB361816D4649973570D850B",
+  "round_versioning_after_sha256": "480289499C88C910B48B61521828920F9822A01F5232EFEC86A43AF923446D18",
+  "governance_hashes": {
+    "CURRENT_ROUND.txt": {
+      "before_sha256": "FF2D3EBEB4A502F2BE8EDDC5E081B5A66C9F47702F605F55EFD96D581ABBE354",
+      "after_sha256": "D410B1E73B1D75D794FD020B3DD8FF112C638909DA3D74DFA9244413103D0558"
+    },
+    "PLANS.md": {
+      "before_sha256": "A35C8004DFD9CB840583A8F85502FF508196978DAEFC54EAC06F9050E9C72564",
+      "after_sha256": "50AC33302DDC85F75FC8CB03014CD6A65F5E0DD0AD97A455C78AAA8C5FB8D755"
+    },
+    "ROUND_VERSIONING.md": {
+      "before_sha256": "F6637E67D28E4F538566B9C912942832241A0423DB361816D4649973570D850B",
+      "after_sha256": "480289499C88C910B48B61521828920F9822A01F5232EFEC86A43AF923446D18"
+    }
+  },
+  "test_lifecycle_semantic_correction": {
+    "path": "tests/test_round22_governance.py",
+    "original_sha256": "0E15DB81473085C029510923FADB9D4F9D2A91EB714DDEEF5C4BF9A8B96217BF",
+    "amended_sha256": "1DD081A29CBA681894691A05D9ADE0F9C4482ACEE92E5C18F6716F0882A32B63",
+    "original_semantic_intent": "Round-23 did not exist when Round-22 was locked.",
+    "amended_semantic_intent": "Round-23 must not have existed at Round-22 lock time; a later authorized Round-23 is permitted."
+  },
+  "scientific_artifacts_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "metrics_modified": false,
+  "fresh_dev_rerun": false,
+  "neural_training_performed": false,
+  "untouched_eval_accessed": false,
+  "original_round22_lock_modified": false,
+  "round23_created_at_sync": false,
+  "resume_round23_creation_allowed": true,
+  "approved_at": "2026-08-29T14:26:22+08:00",
+  "scope": "Only stale root-governance lifecycle state and one historical lifecycle assertion were synchronized. The original Round-22 lock and all scientific evidence remain immutable."
+}

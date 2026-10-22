@@ -1,0 +1,21 @@
+{
+  "collision_teacher_signal_too_sparse": true,
+  "d_near_q1": 1.4906007630071856,
+  "d_near_q2": 2.5963189415128736,
+  "eligible_far": 3,
+  "eligible_frac_of_active": 0.0023847376788553257,
+  "eligible_middle": 0,
+  "eligible_near": 0,
+  "far_steps": 6143,
+  "intervened_agent_steps": 6,
+  "middle_steps": 6138,
+  "model_seed_for_init": 0,
+  "n_active": 1258,
+  "n_agent_steps": 18432,
+  "n_collision_distill_eligible_active": 3,
+  "near_steps": 6151,
+  "pairwise_event_rate": 0.0003255208333333333,
+  "pairwise_intervened_agent_steps": 6,
+  "threshold": 0.005,
+  "trained": false
+}

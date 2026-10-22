@@ -1,0 +1,8 @@
+{
+  "gate": "INST-B",
+  "next_action": "utility_aligned_supervised_objective",
+  "no_tuning_on_consumed_confirmation_outcomes": true,
+  "phase943_confirmation_consumed": true,
+  "phase944_model_tuning_on_phase943_confirmation": false,
+  "reason": "training metrics similar but assignment imitation is weakly aligned with payload; near-optimal multiplicity is high."
+}

@@ -1,0 +1,39 @@
+{
+  "cpu_parallel": false,
+  "n_jobs": 6,
+  "results": [
+    {
+      "encoder": "deepsets",
+      "returncode": 0,
+      "seed": 4
+    },
+    {
+      "encoder": "hgnn",
+      "returncode": 0,
+      "seed": 0
+    },
+    {
+      "encoder": "hgnn",
+      "returncode": 0,
+      "seed": 1
+    },
+    {
+      "encoder": "hgnn",
+      "returncode": 0,
+      "seed": 2
+    },
+    {
+      "encoder": "hgnn",
+      "returncode": 0,
+      "seed": 3
+    },
+    {
+      "encoder": "hgnn",
+      "returncode": 0,
+      "seed": 4
+    }
+  ],
+  "serial_reason": "windows_pytorch_access_violation_on_two_cpu_jobs",
+  "shared_utility_dataset": true,
+  "workers": 1
+}

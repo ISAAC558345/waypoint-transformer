@@ -1,0 +1,12 @@
+{
+  "response_definition": "phase5zd assemble_response via frozen_h1",
+  "parity_gap_vs_one_step": 0.0,
+  "phase5x_sinr_gap": 0.0,
+  "phase5x_progress_gap": 0.0,
+  "phase5x_payload_gap": 0.0,
+  "caller_fingerprint": 0.0,
+  "edge_gap": 0.0,
+  "j15_source": "existing Phase-5O and Phase-5R caches",
+  "j15_used_as_predictor_loss": false,
+  "confirmation_opened": false
+}

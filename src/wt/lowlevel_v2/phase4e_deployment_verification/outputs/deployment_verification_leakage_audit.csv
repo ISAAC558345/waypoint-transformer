@@ -1,0 +1,11 @@
+check,leaked,evidence
+b2_fit,0,Batch IDs are absent from the 16 design states used to fit ExtraTrees
+feature_selection,0,Feature keys remain the locked B2_FEATURE_KEYS
+hyperparameter_selection,0,ExtraTrees hyperparameters remain the locked ET dict
+tau_selection,0,tau remains the Phase-4B locked value
+gate1_selection,0,Gate-1 rule was applied and not refit
+criterion_selection,0,Candidate-C thresholds were read and not changed
+candidate_criterion_design,0,Holdout metrics were not used to design Candidate-C
+planner_design,0,high_level planner was not edited
+decide_modification,0,official decide() was not called or edited
+holdout_regeneration,0,Scenario IDs come from the Phase-4D7F manifest

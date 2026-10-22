@@ -1,0 +1,57 @@
+{
+  "schema_version": "round22_deepsets_task_waypoint_policy_v1",
+  "topic": "Core Multi-UAV Task-Waypoint Policy Value Using a Permutation-Invariant DeepSets Spatial Encoder",
+  "dataset": {
+    "round20_output": "round_20/outputs/round20_multi_uav_dataset_20260828_2100",
+    "h_task": 5,
+    "training_split": "train",
+    "validation_split": "validation",
+    "development_test_permitted": false,
+    "untouched_eval_permitted": false
+  },
+  "predictor": {
+    "family": "deepsets",
+    "selection": "Round-21 H5 validation total loss with finite-head guard only",
+    "training_permitted": false
+  },
+  "architecture": {
+    "spatial_encoder": "permutation_invariant_deepsets_no_edges",
+    "hidden_dim": 128,
+    "context_length": 10,
+    "d_model": 128,
+    "transformer_layers": 2,
+    "attention_heads": 4,
+    "ffn_dim": 512,
+    "dropout": 0.1,
+    "action_dim_per_uav": 2,
+    "max_uavs": 2,
+    "max_buoys": 5
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "batch_size": 128,
+    "max_epochs": 120,
+    "early_stopping_patience": 20
+  },
+  "loss": {
+    "name": "unweighted_valid_uav_time_masked_mse",
+    "trajectory_weight": 1.0,
+    "quality_weighting": false,
+    "return_weighting": false,
+    "planner_weighting": false,
+    "advantage_weighting": false
+  },
+  "families": [
+    "predicted_task_waypoint_transformer",
+    "state_only_transformer",
+    "predicted_task_waypoint_mlp",
+    "oracle_task_waypoint_transformer"
+  ],
+  "seeds": [0, 1, 2],
+  "formal_run_count": 12,
+  "checkpoint_selection": "validation_raw_joint_movement_action_rmse_only",
+  "forbidden": ["hgnn", "graph_transformer", "ppo", "mappo", "marl", "power_control", "association_policy", "beamforming", "predictor_training", "historical_action_input"]
+}

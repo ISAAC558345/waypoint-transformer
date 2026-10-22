@@ -1,0 +1,36 @@
+{
+  "amendment_only": true,
+  "compileall_passed": true,
+  "completion_addendum": "report/round_13_completion_addendum_20260825_0040.md",
+  "continuous_service_action_gate": "SA-C-continuous",
+  "formal_amendment_output": "round_13/amendments/round13_completion_amendment_20260825_0040",
+  "locked_at_utc": "2026-08-25T03:41:21.720130+00:00",
+  "neural_training_performed": false,
+  "next_recommendation": "task_waypoint_action_mapping_redesign",
+  "old_development_test_access_count": 0,
+  "original_formal_output_unchanged": true,
+  "original_round13_lock_sha256": "8A250A37C02451627D4288AA83C41C7F9EAA8FFCD927579A60CEAFD25D22B225",
+  "original_round13_lock_unchanged": true,
+  "original_round13_results_modified": false,
+  "repository_tests_passed": 511,
+  "reward_alignment_gate": "RA-A",
+  "round12_integrity": {
+    "policy_checkpoint_count": 24,
+    "policy_checkpoint_hash_audit": true,
+    "predictor_sha256": "A3E8B6C361CCA997A05766B847521EBB68E68985CAC273667DE95181ACCCEF65",
+    "round12_lock_sha256": "441ECF714F56DF8E6C87A57B88FF8104234180B799EF2C196E6D5F29DE74AA1A"
+  },
+  "round14_created": false,
+  "schema_version": "round13_completion_amendment_v1",
+  "service_action_extension_ready": false,
+  "status": "locked",
+  "status_document_hashes_after": {
+    "PLANS.md": "FF0378EDFF3E74CDC7E9F9B9F1C5AC9BFA74BAE4DAD5A2DDDFDCE9B4CEB62F39",
+    "ROUND_VERSIONING.md": "B35B514EC58BB6814C8573D29634342997DB84337F8F9B353CA427031828CC8C"
+  },
+  "status_document_hashes_before": {
+    "PLANS.md": "FF0378EDFF3E74CDC7E9F9B9F1C5AC9BFA74BAE4DAD5A2DDDFDCE9B4CEB62F39",
+    "ROUND_VERSIONING.md": "B35B514EC58BB6814C8573D29634342997DB84337F8F9B353CA427031828CC8C"
+  },
+  "untouched_holdout_access_count": 0
+}

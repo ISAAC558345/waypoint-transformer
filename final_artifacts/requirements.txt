@@ -1,0 +1,5 @@
+# FINAL-HIER runtime recorded from the live interpreter. Do not upgrade blindly.
+# python==3.10.20
+numpy==1.26.4
+torch==2.7.1+cu128
+matplotlib==3.10.9

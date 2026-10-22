@@ -1,0 +1,9 @@
+{
+  "duplicate_fraction": 0.0,
+  "generated_candidate_count": 2304,
+  "pruned_by_utility": false,
+  "slots_per_state": 24,
+  "train_states": 64,
+  "unique_candidate_count": 2304,
+  "val_states": 32
+}

@@ -1,0 +1,2 @@
+n_agent_steps,n_active,n_collision_distill_eligible_active,eligible_frac_of_active,pairwise_intervened_agent_steps,intervened_agent_steps,pairwise_event_rate,near_steps,middle_steps,far_steps,eligible_near,eligible_middle,eligible_far,d_near_q1,d_near_q2,collision_teacher_signal_too_sparse,threshold,model_seed_for_init,trained
+18432,1258,3,0.0023847376788553257,6,6,0.0003255208333333333,6151,6138,6143,0,0,3,1.4906007630071856,2.5963189415128736,True,0.005,0,False

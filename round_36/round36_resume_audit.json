@@ -1,0 +1,32 @@
+{
+  "schema_version": "round36_resume_audit_v1",
+  "resume_mode": "authorized_partial_initialization",
+  "previous_round": 35,
+  "round35_lock_verified": true,
+  "round35_lock_sha256": "8506179FF0F8E450125FF97FA42FC822D05DDFB9CD1F39CACC655079F972CD82",
+  "round35_locked_artifact_hashes_checked": 54,
+  "round35_locked_artifact_hash_mismatches": 0,
+  "round36_preexisted": true,
+  "round36_preexistence_reason": "authorized_previous_session_initialization",
+  "previous_session_interruption_reason": "context_or_usage_limit",
+  "reused_from_previous_authorized_session": true,
+  "files_present_before_resume": [
+    "round_36/AGENTS.md",
+    "round_36/configs/round36_protocol_v1.json",
+    "round_36/round_manifest.json"
+  ],
+  "scientific_outputs_present_before_resume": [],
+  "formal_scientific_computation_completed_before_resume": false,
+  "training_before_resume": false,
+  "model_inference_before_resume": false,
+  "planner_outcome_evaluation_before_resume": false,
+  "confirmation_access_before_resume": 0,
+  "protected_access_before_resume": 0,
+  "untouched_access_before_resume": 0,
+  "round36_protocol_sha256": "8AA17F8C614437556B0CB7FC801D37EFA78840AF169906C4CB1EB1AD6699A2A4",
+  "round36_manifest_sha256": "BAA8D4269056DA77B9D715D2BBEAB8DCF45D434B2B2A43BD9E57D44FB9927A37",
+  "no_unauthorized_gate": true,
+  "no_outcome_based_protocol_modification": true,
+  "resume_allowed": true,
+  "scientific_execution_continues_from": "clean_manifest_preflight"
+}

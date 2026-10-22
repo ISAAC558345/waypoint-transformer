@@ -1,0 +1,63 @@
+{
+  "training": true,
+  "encoder": "frozen Phase-5L",
+  "representation": "frozen Phase-5U relational plus Phase-5V temporal",
+  "value_head": "randomly initialized ExecutorConditionedJointValue",
+  "loaded_phase5v_head": false,
+  "loss": "state-mean Huber, delta=1 payload block",
+  "loss_note": "Phase-5S steps once per state with the same Adam settings. Pairwise ranking is replaced by Huber on J15/1e6. Every state has the same candidate count, and the code still averages inside the state before averaging states.",
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "epochs": 10,
+  "checkpoint": "epoch_10",
+  "early_stopping": false,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "train_scenarios": [
+    310100,
+    310101,
+    310102,
+    310103,
+    310104,
+    310105,
+    310106,
+    310107,
+    310108,
+    310109
+  ],
+  "evaluation_scenarios": [
+    310110,
+    310111,
+    310112,
+    310113,
+    310114,
+    310115,
+    310116,
+    310117
+  ],
+  "opened_310118": false,
+  "forbidden_inputs": [
+    "payload_h",
+    "q_exec_h",
+    "mean_sinr_h",
+    "progress_end_sum",
+    "completed_blocks_h",
+    "j15",
+    "future_position",
+    "future_action"
+  ],
+  "top3_floor": 0.75,
+  "regret_ceiling": 0.1,
+  "collision_fraction": 0.25,
+  "regression_r2": 0.5,
+  "regression_mae": 1.0,
+  "planner_ready": false,
+  "deployment_verified": false
+}

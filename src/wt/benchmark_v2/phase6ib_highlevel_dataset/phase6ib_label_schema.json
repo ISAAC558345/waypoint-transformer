@@ -1,0 +1,15 @@
+{
+  "fields": [
+    "scenario_id",
+    "time_step",
+    "state_id",
+    "candidate_id",
+    "assignment",
+    "j15_bits",
+    "j15_block_equivalent",
+    "utility_rank",
+    "tie_group_id"
+  ],
+  "horizon": 15,
+  "label": "J15_MAPPO_CURRENT"
+}

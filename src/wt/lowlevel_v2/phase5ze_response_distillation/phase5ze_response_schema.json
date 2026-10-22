@@ -1,0 +1,94 @@
+{
+  "authority": "phase5zd_response_feature_spec.json",
+  "features": [
+    "sinr_1",
+    "delta_sinr",
+    "interference_1",
+    "delta_interference",
+    "service_progress_1",
+    "delta_service_progress",
+    "rate_1",
+    "distance_to_target_1",
+    "delta_distance_to_target",
+    "assigned_in_range_1",
+    "service_active_1",
+    "same_target_after_step_1",
+    "radial_motion_1",
+    "heading_alignment_1"
+  ],
+  "continuous": [
+    "sinr_1",
+    "delta_sinr",
+    "interference_1",
+    "delta_interference",
+    "service_progress_1",
+    "delta_service_progress",
+    "rate_1",
+    "distance_to_target_1",
+    "delta_distance_to_target",
+    "radial_motion_1",
+    "heading_alignment_1"
+  ],
+  "binary": [
+    "assigned_in_range_1",
+    "service_active_1",
+    "same_target_after_step_1"
+  ],
+  "groups": {
+    "sinr": [
+      0,
+      1
+    ],
+    "interference": [
+      2,
+      3
+    ],
+    "progress": [
+      4,
+      5
+    ],
+    "motion": [
+      7,
+      8,
+      12,
+      13
+    ]
+  },
+  "token_blocks": [
+    {
+      "name": "h_u",
+      "dim": 128
+    },
+    {
+      "name": "h_b",
+      "dim": 128
+    },
+    {
+      "name": "h_edge",
+      "dim": 128
+    },
+    {
+      "name": "rep",
+      "dim": 12
+    },
+    {
+      "name": "temp",
+      "dim": 9
+    },
+    {
+      "name": "assigned",
+      "dim": 1
+    },
+    {
+      "name": "idle",
+      "dim": 1
+    },
+    {
+      "name": "act0",
+      "dim": 2
+    }
+  ],
+  "queue_and_progress": "reused inside the frozen REP and TEMP per-UAV edges",
+  "payload_is_input": false,
+  "j15_is_input": false
+}

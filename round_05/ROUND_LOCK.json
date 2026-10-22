@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "round": "round_05",
+  "status": "completed",
+  "locked_at": "2026-08-03T15:05:52+08:00",
+  "topic": "frozen H=30 spatial waypoint conditioned causal offline two-dimensional trajectory policy and action-prediction evaluation",
+  "snapshot": {
+    "path": "backup/snapshots/before_round_05_20260803_1202",
+    "file_count": 107,
+    "byte_count": 1434980,
+    "tree_sha256": "50F173F688EC4DABCEADEE1A5FEB5668A1BD95A3F12A75852D2112670435618A"
+  },
+  "previous_round": {
+    "round": "round_04",
+    "lock_file": "round_04/ROUND_LOCK.json",
+    "lock_sha256": "A47895852DD03365DE168DD552961E24D33CAD3C13C3EF5E646507F19C4E3679"
+  },
+  "canonical_input": {
+    "path": "round_03/outputs/round03_pilot_canonical_20260730_230000",
+    "read_only": true,
+    "dataset_manifest_sha256": "2F2BF1C59D9DDD10CA1D1B559F7C0DDB99D3838A70CC332FEF9C9CF1DAF58602",
+    "waypoint_manifest_sha256": "9A485861D7D35E68BB325F233B57A0AA255DDF506CB65BCF34537279844D2B3E",
+    "episodes": 80,
+    "transitions": 6604,
+    "split_episodes": {"train": 48, "validation": 16, "test": 16},
+    "split_transitions": {"train": 3910, "validation": 1279, "test": 1415},
+    "round03_lock_and_artifacts_unchanged": true
+  },
+  "frozen_waypoint": {
+    "horizon": 30,
+    "model_kind": "goal_conditioned",
+    "training_seed": 1,
+    "checkpoint": "round_04/outputs/round04_formal_canonical_20260802_173717/horizon_030/goal_conditioned/seed_001/checkpoints/best.pt",
+    "checkpoint_sha256": "F92133AACA1FF6F0839EE7C817F40B696F7FD8FB15973A6118D222F83F01368D",
+    "parameters_trainable": false
+  },
+  "training_scope": {
+    "waypoint_training_performed": false,
+    "transformer_training_performed": true,
+    "policy_training_performed": true,
+    "reinforcement_learning_performed": false,
+    "closed_loop_evaluation_performed": false,
+    "ppo_training_performed": false,
+    "hgnn_training_performed": false,
+    "next_round_created": false
+  },
+  "formal_protocol": {
+    "contexts": [1, 10],
+    "training_seeds": [0, 1, 2],
+    "formal_run_count": 27,
+    "deployable_transformer_runs": 18,
+    "oracle_h10_diagnostic_runs": 3,
+    "one_step_mlp_control_runs": 6,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "action_representation": "two-dimensional executed physical displacement, normalized by maximum movement distance",
+    "action_output_activation": "tanh",
+    "history_action_input": false,
+    "formal_closed_loop_evaluation": false
+  },
+  "acceptance": {
+    "repository_tests": "247/247 PASS",
+    "compileall": "PASS",
+    "formal_training_runs": "27/27 PASS",
+    "formal_test_runs": "27/27 PASS",
+    "validation_selection_frozen_before_test": true,
+    "test_used_for_selection": false,
+    "checkpoint_strict_reload": "27/27 PASS",
+    "test_metric_rows": 54,
+    "training_summary_rows": 27,
+    "target_action_validity": 1.0,
+    "csv_nan_inf_tokens": 0,
+    "figure_categories": 16,
+    "figure_png_files": 16,
+    "figure_svg_files": 16,
+    "figure_semantic_qa": "16/16 PASS",
+    "reproducibility_smoke": "two independent seeded runs: model state, history, predictions, best epoch and validation RMSE exactly equal",
+    "failures": 0,
+    "blockers": 0
+  },
+  "validation_selection": {
+    "model_type": "wt_transformer",
+    "condition_source": "predicted_waypoint",
+    "context_length": 10,
+    "training_seed": 0,
+    "best_epoch": 7,
+    "validation_action_rmse_m": 7.176410593003361,
+    "checkpoint_sha256": "A01A1C2905FF61C0A0C889D6D3E9B77359F470BC2A05DE92594E6D6F884949C0",
+    "test_metrics_used": false
+  },
+  "test_results": {
+    "selected_wt_h10_seed0": {
+      "action_rmse_m": 7.772110,
+      "action_mae_m": 6.428427,
+      "projection_activation_rate": 0.033922,
+      "raw_action_validity": 0.9661,
+      "projected_action_validity": 1.0
+    },
+    "three_seed_test_action_rmse_m": {
+      "wt_transformer_h1": {"mean": 9.592254, "std": 0.277788},
+      "wt_transformer_h10": {"mean": 7.956057, "std": 0.143442},
+      "direct_goal_transformer_h10": {"mean": 7.949288, "std": 0.214267},
+      "state_only_transformer_h10": {"mean": 7.975383, "std": 0.084831},
+      "oracle_waypoint_transformer_h10_non_deployable": {"mean": 7.904962, "std": 0.210371},
+      "mlp_waypoint_h1": {"mean": 9.693729, "std": 0.041852}
+    },
+    "interpretation": "H_c=10 improves WT over H_c=1, but WT H_c=10 does not establish a stable advantage over the Direct-Goal H_c=10 control on this fixed offline test split."
+  },
+  "canonical_outputs": {
+    "smoke_output": "round_05/outputs/round05_smoke_canonical_20260803_1450",
+    "smoke_figures": "round_05/figures/round05_smoke_canonical_20260803_1450",
+    "formal_output": "round_05/outputs/round05_formal_canonical_20260803_1500",
+    "formal_figures": "round_05/figures/round05_formal_canonical_20260803_1500",
+    "completion_report": "report/round_05_report_20260803_151500.md",
+    "leakage_audit": "report/round_05_input_leakage_audit_20260803_1202.md",
+    "implementation_log": "logs/codex/round_05_implementation_20260803_1202.md"
+  },
+  "tree_digest_algorithm": "SHA256 over UTF-8 records sorted by relative POSIX path; each record is relative_path + NUL + uppercase_file_SHA256 + LF",
+  "canonical_tree_sha256": {
+    "round_05/outputs/round05_smoke_canonical_20260803_1450": {"file_count": 33, "byte_count": 20974282, "sha256": "13E44B696639A48F785B4B91E23F11C5454EBD647209E536C9C1EF5774A5E63F"},
+    "round_05/figures/round05_smoke_canonical_20260803_1450": {"file_count": 33, "byte_count": 3751319, "sha256": "292CAA38DB6E1AC5C26946988202247817EF1082589C575F1220E7F0CEE17403"},
+    "round_05/outputs/round05_formal_canonical_20260803_1500": {"file_count": 163, "byte_count": 342119924, "sha256": "E5F6906DE69F9E7AF722C9EF9E5747927C8BDF21464D786929C1344E2E5B1E63"},
+    "round_05/figures/round05_formal_canonical_20260803_1500": {"file_count": 33, "byte_count": 4784268, "sha256": "DB4372EF5A5BB7AF2A051B192BEF75A065317C3CAF9C1262B2310A2FF56B14C0"}
+  },
+  "implementation_sha256": {
+    "AGENTS.md": "73D0D3F7BC502234BEEE8807ECD97C29A6CCA9FB117B269AB9CB9C5392D592BA",
+    "README.md": "A1637E5604B9794BF9F07E6AB37AEC5FA2B3FF0EBDD842B393A74C027E74C927",
+    "CURRENT_ROUND.txt": "BAC57C03379D43F2680A2E9FDC879122DCF481A558514B4EBA7E5CDEC5C4AE67",
+    "PLANS.md": "4F992DA4C58D5ACA6B9D2D2C03ADFC2F545BE85113DE21B9E55C1560D5264E29",
+    "round_manifest.json": "B3BE1DF96BE6A25861D567E7FE205FCC12C1312298F3AC894824A3E7498C0589",
+    "round_05/AGENTS.md": "0D4D3F9990E5D6D191FF491A47E4F5E5A14C1F6E1D879CEBA3FC6F3560966A7A",
+    "round_05/configs/causal_transformer_v1.json": "FF367FEED95811DD3F23210F64D6832B9AF81EA914ECCE9CCDE4B2ACF6603AAE",
+    "src/wt/round5/__init__.py": "553F3773EC4B24CF5290355CE893960D7CC644FA2FACF3A7A8D958B814847767",
+    "src/wt/round5/round5_data.py": "DD64C0148A50FF2C151531B7F8FCC52A2229DA2E2698CA4DF2397B12D52A8F9C",
+    "src/wt/round5/frozen_waypoint.py": "097F234871EFF110AF954CB30DE25443E5CFA92213490EDE2E39A28C02DAB8E7",
+    "src/wt/round5/official_transformer_core.py": "FFB83AE9FEF74B44DE27368FE887E7858747F640D5BFCA805435C6E4B39D0F3C",
+    "src/wt/round5/causal_policy.py": "E747940E7FDF09032BEB03A51A0F97504D9223BE23FA3FDC76448BCD607E0998",
+    "src/wt/round5/round5_training.py": "E69E95316DD80AAC33794E5ED5680AC421292DC7B02E2C299A0E37E8D99C7C4C",
+    "src/wt/round5/round5_evaluation.py": "D6BC956D0A3BF4BCC7E6E4AB0E04017E4AD8F069A08C0BEA0ABEEC22B045818E",
+    "src/wt/round5/round5_diagnostics.py": "AA88DDC4687DE9380BDA413E371C5EF82E7F0DE5FC69CDF4F54F454C69301B56",
+    "src/wt/round5/round5_figures.py": "10950D07F7F975119CB2316B28EB565172F0ED50B09400E0CC0F43F49C5CBBE9",
+    "src/wt/round5/round5_runner.py": "7604624605DEE2B0BB4A3C1B48068593C585FEAEADC5B63C796D35A20B36AD6A",
+    "experiments/run_round05.py": "43085D8530575CFE14968ACCE896DF68CF6DC7D93BCBE6C91D879329D5F1703F",
+    "tests/test_round05_causal_policy.py": "83CC811FC0CACAA2F6AE9896136E6076618A342ED45C04561E20C986AC031F8B",
+    "docs/round05_causal_policy_schema_v1.md": "9C2BB01BC32B3DF4CF40BF8EA7FADA84B03818DE1C2E71390D79A9041C9CC3E8",
+    "report/round_05_input_leakage_audit_20260803_1202.md": "D12D0C469899E80A4573E863C8E80880DF9ADF20E65E384BA04E3AFDAA80D48E",
+    "report/round_05_report_20260803_151500.md": "166019A43956EBB2E2F17EC13D9ADC78757B9FB00E136F48D2D702299E311B8C",
+    "logs/codex/round_05_implementation_20260803_1202.md": "F7D60CD4B7B18FD0BC80405F73A39A72A88EF14B710DFB3039FA43D59CF98530",
+    "canonical_run_manifest": "0E0823D5988E0E8A4CBAE8AEB3AB49D01D612F6FB1C92019C72407DBE169289B",
+    "canonical_selected_transformer_config": "C89EDB76B49DA619F8FE2DF4029FF87A96DC60D0A430DF9C927B07A964027644"
+  },
+  "known_limitations": [
+    "single UAV and static buoys",
+    "achieved-terminal goal is explicitly declared hindsight future information; no online goal mechanism is established",
+    "fixed offline train/validation/test splits contain within-episode-correlated samples and no low-quality collection policy",
+    "three seeds vary initialization only and do not resample the fixed dataset",
+    "offline supervised action prediction cannot establish return, safety, or closed-loop policy improvement",
+    "the oracle waypoint diagnostic is non-deployable"
+  ],
+  "unresolved_blockers": []
+}

@@ -1,0 +1,6 @@
+{
+  "conditional_graph_advantage_confirmed": false,
+  "conditional_graph_advantage_suggestive": true,
+  "gate": "CGRAPH-B",
+  "reason": "R4 \u5747\u503c HGNN>DeepSets\uff0c\u4f46 CI \u8de8 0 \u6216 training-seed \u4e0d\u7a33\u5b9a\u3002"
+}

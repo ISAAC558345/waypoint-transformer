@@ -1,0 +1,31 @@
+{
+  "schema_version": "round3_config_v1",
+  "mode": "pilot",
+  "scenario_id": "maritime_queue_collection_v1",
+  "policy_names": [
+    "random_valid",
+    "nearest_buoy",
+    "max_queue",
+    "queue_rate_energy"
+  ],
+  "seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "buoy_counts": [3, 5],
+  "episodes_per_policy_case": 1,
+  "expected_episode_count": 80,
+  "episode_horizon": 128,
+  "k_values": [1, 5, 10, 20, 30],
+  "arrival_generator": {
+    "mode": "poisson_packets_materialized_as_shared_trace",
+    "packets_per_second": 450.0,
+    "packet_size_bits": 1000.0
+  },
+  "queue_capacity_bits": 5000000.0,
+  "initial_queue_fraction_range": [0.45, 0.94],
+  "target_task_completion_ratio": 0.985,
+  "maximum_allowed_residual_queue_ratio": 0.10,
+  "split_group_key": ["scenario_id", "seed"],
+  "split_ratios": [0.6, 0.2, 0.2],
+  "goal_source": "achieved_terminal_goal",
+  "training_performed": false,
+  "auto_large_scale_collection": false
+}

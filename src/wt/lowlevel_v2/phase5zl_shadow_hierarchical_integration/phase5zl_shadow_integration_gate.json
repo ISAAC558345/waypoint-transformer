@@ -1,0 +1,30 @@
+{
+  "gate": "INT-C",
+  "gate_name": "DECISION_OR_MODEL_SELECTION_UNRESOLVED",
+  "blockers": [
+    "INT-C",
+    "INT-D"
+  ],
+  "contract_technically_clean": true,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "phase4e_status": "DEPLOYMENT_VERIFICATION_FAILED",
+  "phase4e_overwritten": false,
+  "calls_deployment_decision": false,
+  "aggregation": "per_seed_only",
+  "deployment_latency_requirement": "NOT_SPECIFIED",
+  "seeds_agree": false,
+  "decisions_match": true,
+  "response_bitwise": true,
+  "saved_j15_consistent": true,
+  "caller_fingerprint": 0.0,
+  "value_abs": 0.0,
+  "selected_j15_r1": 2791666.6666666665,
+  "selected_j15_s": 2341666.6666666665,
+  "r1_minus_s": 450000.0,
+  "latency_median_ms": 342.0867666912576,
+  "prior_357_55_ms_includes_taskoption": false,
+  "int_a_sets_planner_ready": false,
+  "new_independent_confirmation": false
+}

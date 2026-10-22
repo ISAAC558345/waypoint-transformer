@@ -1,0 +1,24 @@
+{
+  "schema_version": "round16_dynamic_environment_schema_v1",
+  "environment": "MaritimeEnv",
+  "action_dim": 2,
+  "multi_uav_enabled": false,
+  "resource_semantics_changed": false,
+  "reward_semantics_changed": false,
+  "static_mode": {
+    "buoy_drift_mode": "static",
+    "buoy_velocity_mps": [0.0, 0.0],
+    "v1_per_buoy_feature_count": 7,
+    "observation_schema": "maritime_observation_v1"
+  },
+  "dynamic_mode": {
+    "position_update": "w[t+1] = reflect(w[t] + v_drift[t] * delta_t)",
+    "velocity_update": "constant: reflect velocity; slowly_varying: rho*v + (1-rho)*mean + frozen-scale innovation, then speed-bounded",
+    "ordinary_observation": ["current_buoy_position", "current_buoy_drift_velocity", "existing queue/arrival/rate features"],
+    "future_buoy_positions_exposed": false,
+    "v1_per_buoy_feature_count": 9,
+    "per_buoy_feature_order": ["relative_x", "relative_y", "drift_vx_normalized", "drift_vy_normalized", "distance", "rate", "queue", "last_arrival", "service_completion"],
+    "velocity_normalization": "v_drift / (buoy_drift_speed_fraction * max_speed)",
+    "diagnostic_dataset_interface": "direct Round-16 trace serialization only; no training dataset is generated"
+  }
+}

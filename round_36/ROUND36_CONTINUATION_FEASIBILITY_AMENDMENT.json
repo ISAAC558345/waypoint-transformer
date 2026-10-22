@@ -1,0 +1,25 @@
+{
+  "amendment_type": "authorized_frozen_projection_continuation_feasibility_record",
+  "authorization": "user_authorized_after_formal_design_projection_failure",
+  "original_protocol": "round_36/configs/round36_protocol_v1.json",
+  "original_protocol_modified": false,
+  "round35_environment_modified": false,
+  "round35_decoder_modified": false,
+  "round35_lock_modified": false,
+  "candidate_catalog_modified": false,
+  "scenario_manifest_modified": false,
+  "anchors_modified": false,
+  "worker_count": 4,
+  "candidate_pruning": false,
+  "handling": {
+    "hard_projection_error": "hard UAV separation projection did not converge",
+    "record_every_candidate": true,
+    "finite_invalid_utility_placeholder": 0.0,
+    "validity_masks": ["valid_H1", "valid_H5", "valid_H10"],
+    "invalid_candidate_can_win_corresponding_horizon": false,
+    "report_infeasible_counts": true
+  },
+  "scientific_interpretation": "A frozen hard-projection failure is recorded as an infeasible continuation, not repaired, softened, or scored as an alternative trajectory.",
+  "confirmation_access_before_prefinal_freeze": 0,
+  "round37_allowed": false
+}

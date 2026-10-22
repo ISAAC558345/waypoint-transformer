@@ -1,0 +1,34 @@
+{
+  "gate": "X-C",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "gate_score": "q_exec_h",
+  "h_star": 8,
+  "case_stable_horizon_payload": 15,
+  "case_stable_horizon_exec": 3,
+  "case_exec_optimum_set_rank_h5": 1.0,
+  "integrity_max_abs_change": 0.0,
+  "best_early_signal": {
+    "horizon": 1,
+    "name": "mean_sinr_h",
+    "spearman": 0.7928937121020069
+  },
+  "signal_spearman": {
+    "h1_mean_sinr_h": 0.7928937121020069,
+    "h1_mean_interference_h": -0.5098067256502743,
+    "h1_progress_end_sum": 0.7586738036881006,
+    "h1_completed_blocks_h": 0.5661356873748976,
+    "h1_payload_h": 0.5661356873748976,
+    "h3_mean_sinr_h": 0.7918943777966576,
+    "h3_mean_interference_h": -0.513094520968124,
+    "h3_progress_end_sum": 0.746681816488164,
+    "h3_completed_blocks_h": 0.7491036952088045,
+    "h3_payload_h": 0.7491036952088045,
+    "h5_mean_sinr_h": 0.789792492315711,
+    "h5_mean_interference_h": -0.5180267843498383,
+    "h5_progress_end_sum": 0.7351267692372542,
+    "h5_completed_blocks_h": 0.38074313399693777,
+    "h5_payload_h": 0.38074313399693777
+  },
+  "trained": false
+}

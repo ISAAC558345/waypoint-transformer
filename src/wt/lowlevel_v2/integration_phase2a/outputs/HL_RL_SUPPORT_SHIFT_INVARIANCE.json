@@ -1,0 +1,25 @@
+{
+  "base_L_utility": 2.9738962650299072,
+  "candidate_uniform_logprob_shift_invariant": true,
+  "ref_uses_absolute_nll": true,
+  "rows": [
+    {
+      "L_utility": 2.9738962650299072,
+      "c": -5.0,
+      "delta_vs_0": 0.0,
+      "rank_logit_delta": 0.0
+    },
+    {
+      "L_utility": 2.9738962650299072,
+      "c": 0.0,
+      "delta_vs_0": 0.0,
+      "rank_logit_delta": 0.0
+    },
+    {
+      "L_utility": 2.9738962650299072,
+      "c": 5.0,
+      "delta_vs_0": 0.0,
+      "rank_logit_delta": 0.0
+    }
+  ]
+}

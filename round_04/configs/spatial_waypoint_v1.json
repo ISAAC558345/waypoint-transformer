@@ -1,0 +1,49 @@
+{
+  "schema_version": "round04_spatial_waypoint_config_v1",
+  "data_path": "round_03/outputs/round03_pilot_canonical_20260730_230000",
+  "output_root": "round_04/outputs",
+  "figure_root": "round_04/figures",
+  "candidate_horizons": [1, 5, 10, 20, 30],
+  "training_seeds": [0, 1, 2],
+  "goal_source": "achieved_terminal_goal",
+  "output_representation": "relative_delta",
+  "model": {
+    "hidden_dim": 256,
+    "num_hidden_layers": 3,
+    "activation": "relu",
+    "dropout": 0.0,
+    "output_dim": 2
+  },
+  "training": {
+    "optimizer": "adam",
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "maximum_epochs": 300,
+    "early_stopping_patience": 30,
+    "weight_decay": 0.0,
+    "gradient_clipping": 1.0,
+    "device": "auto",
+    "deterministic": true,
+    "num_workers": 0
+  },
+  "evaluation": {
+    "near_zero_displacement_m": 0.001,
+    "reachability_tolerance_m": 0.001,
+    "episode_length_band_edges": [64, 100],
+    "episode_length_band_labels": [
+      "short_lt_64",
+      "medium_64_99",
+      "long_ge_100"
+    ],
+    "prediction_examples_per_run": 64,
+    "checkpoint_selection_metric": "validation_future_endpoint_rmse_m",
+    "horizon_selection_metric": "validation_composite_spatial_waypoint_v1"
+  },
+  "status": {
+    "training_performed": true,
+    "waypoint_training_performed": true,
+    "transformer_training_performed": false,
+    "policy_training_performed": false,
+    "closed_loop_evaluation_performed": false
+  }
+}

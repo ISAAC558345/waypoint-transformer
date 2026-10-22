@@ -1,0 +1,34 @@
+{
+  "gate": "ORDER-C",
+  "mean_delta_by_order": [
+    {
+      "mean_delta": -112500.0,
+      "order": "O0"
+    },
+    {
+      "mean_delta": -856250.0,
+      "order": "O1"
+    },
+    {
+      "mean_delta": -2900000.0,
+      "order": "O2"
+    },
+    {
+      "mean_delta": -2156250.0,
+      "order": "O3"
+    },
+    {
+      "mean_delta": -631250.0,
+      "order": "O4"
+    },
+    {
+      "mean_delta": -2487500.0,
+      "order": "O5"
+    }
+  ],
+  "n_mean_sign_flips": 0,
+  "osr_deepsets": 0.39056608620894695,
+  "osr_hgnn": 0.5545473918575642,
+  "reason": "HGNN vs DeepSets \u4f18\u52a3\u968f UAV decode order \u9891\u7e41\u53cd\u8f6c\u3002",
+  "reversal_rate": 0.49767441860465117
+}

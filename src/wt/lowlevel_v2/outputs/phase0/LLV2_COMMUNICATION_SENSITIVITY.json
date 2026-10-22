@@ -1,0 +1,11 @@
+{
+  "design_probe_only": true,
+  "interference_delta_max": 0.04543464861246424,
+  "n_active_links": 2,
+  "rate_delta_max": 672217.7106965459,
+  "responds_to_position_perturbation": true,
+  "scientific_result": false,
+  "second_sinr_formula": false,
+  "sinr_delta_max": 5.793313575138779,
+  "used_existing_l3b_formulas": true
+}

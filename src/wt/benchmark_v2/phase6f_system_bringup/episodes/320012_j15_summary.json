@@ -1,0 +1,108 @@
+{
+  "scenario_id": 320012,
+  "mode": "j15",
+  "complete": true,
+  "payload_bits": 78526096.04393207,
+  "runtime": {
+    "candidate_generation": 0.09412769999471493,
+    "j15_exhaustive": 51.31029110003146,
+    "taskoption_construction": 0.00024530000519007444,
+    "low_level_action": 0.0018319001537747681,
+    "environment_step": 0.026191600190941244,
+    "total_episode": 51.59582719998434
+  },
+  "decisions": [
+    {
+      "decision_id": 0,
+      "episode_step": 0,
+      "assignment": [
+        0,
+        2,
+        1,
+        4,
+        5,
+        3
+      ],
+      "selected_j15": 15000000.000000002,
+      "second_best_j15": 15000000.000000002,
+      "j15_margin": 0.0,
+      "candidate_count": 6388,
+      "illegal_assignment_count": 0,
+      "duplicate_target_count": 0,
+      "candidate_seconds": 0.0357988000032492,
+      "j15_seconds": 21.62139329998172,
+      "shadow_conservation_error": 1.862645149230957e-09,
+      "shadow_state_contamination": 0,
+      "horizon": 15
+    },
+    {
+      "decision_id": 1,
+      "episode_step": 15,
+      "assignment": [
+        -1,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_j15": 20000000.0,
+      "second_best_j15": 20000000.000000007,
+      "j15_margin": -7.450580596923828e-09,
+      "candidate_count": 4051,
+      "illegal_assignment_count": 0,
+      "duplicate_target_count": 0,
+      "candidate_seconds": 0.017265800008317456,
+      "j15_seconds": 12.886389600025723,
+      "shadow_conservation_error": 2.3283064365386963e-09,
+      "shadow_state_contamination": 0,
+      "horizon": 15
+    },
+    {
+      "decision_id": 2,
+      "episode_step": 30,
+      "assignment": [
+        -1,
+        -1,
+        7,
+        8,
+        9,
+        11
+      ],
+      "selected_j15": 12847660.691009656,
+      "second_best_j15": 12847660.69100966,
+      "j15_margin": -3.725290298461914e-09,
+      "candidate_count": 4051,
+      "illegal_assignment_count": 0,
+      "duplicate_target_count": 0,
+      "candidate_seconds": 0.01969960000133142,
+      "j15_seconds": 13.23841310001444,
+      "shadow_conservation_error": 3.725290298461914e-09,
+      "shadow_state_contamination": 0,
+      "horizon": 15
+    },
+    {
+      "decision_id": 3,
+      "episode_step": 45,
+      "assignment": [
+        -1,
+        -1,
+        -1,
+        -1,
+        6,
+        10
+      ],
+      "selected_j15": 8000000.0,
+      "second_best_j15": 8000000.0,
+      "j15_margin": 0.0,
+      "candidate_count": 4051,
+      "illegal_assignment_count": 0,
+      "duplicate_target_count": 0,
+      "candidate_seconds": 0.021363499981816858,
+      "j15_seconds": 3.564095100009581,
+      "shadow_conservation_error": 2.7939677238464355e-09,
+      "shadow_state_contamination": 0,
+      "horizon": 3
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "gate": "InRangeZeroMotionGate",
+  "gate_rule": "non-idle AND valid AND queue>0 AND env._in_range -> movement (0,0)",
+  "hold": 15,
+  "movement": "fly-toward",
+  "not_ppo": true
+}

@@ -1,0 +1,14 @@
+{
+  "SYS": "A",
+  "completed_blocks_not_worse": true,
+  "legality_not_worse": true,
+  "m2_note": "M2 present; require mean>0 and not clearly negative",
+  "not_idle_or_drop_cheat": true,
+  "not_untouched": true,
+  "ok_vs_m0": true,
+  "ok_vs_m1": true,
+  "ok_vs_m2": true,
+  "system_advantage_confirmed": true,
+  "text": "FINAL-HIER shows a confirmed system advantage on this pre-final set (not untouched).",
+  "trained": false
+}

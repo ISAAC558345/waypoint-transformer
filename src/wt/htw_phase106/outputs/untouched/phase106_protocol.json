@@ -1,0 +1,17 @@
+{
+  "boot_seed": 10501,
+  "families": [
+    "M0",
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "hold": 15,
+  "label": "FINAL UNTOUCHED TEST",
+  "n_boot": 2000,
+  "n_scenarios": 64,
+  "no_further_method_development": true,
+  "one_shot": true,
+  "phase": "10.6",
+  "training": false
+}

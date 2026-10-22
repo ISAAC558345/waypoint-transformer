@@ -1,0 +1,22 @@
+{
+  "M": 6,
+  "K": 12,
+  "T": 48,
+  "delta_t_s": 1.0,
+  "bandwidth_hz": 1000000.0,
+  "queue_capacity_blocks": 4,
+  "queue_capacity_bits": 4000000.0,
+  "block_bits": 1000000.0,
+  "arrival_process": "偶数时刻 4 到 36，浮标 6 到 11 各到达 1 block；换算成 bit 时乘 block_bits",
+  "initial_queue_blocks": "浮标 0-2 为 4，浮标 3-5 为 1，浮标 6-11 为 0",
+  "movement_limit_m_per_slot": 22.0,
+  "service_radius_m": 16.0,
+  "association_constraints": "独占；冲突双方都不服务；越界目标记为 idle",
+  "interference_model": "同簇 kappa_same_cluster，跨簇 kappa_cross_cluster，加到噪声上",
+  "sinr_formula": "P * d^(-alpha) / (noise + sum_j P * d_j^(-alpha) * kappa)",
+  "rate_formula": "bandwidth_hz * log2(1 + SINR)，单位 bit/s，本步比特再乘 delta_t",
+  "reference_rate_bps": 9967226.258835994,
+  "safety_projector": "保留在 legacy MAPPO 接口外；本阶段 scripted fly-toward 不调用它",
+  "hold": 15,
+  "service_order": "先按本步 rate 服务已有队列，再接收到达，再按容量丢弃"
+}

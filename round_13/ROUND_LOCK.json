@@ -1,0 +1,20 @@
+{
+  "compileall_passed": true,
+  "formal_output": "round_13\\outputs\\round13_formal_20260811_005500",
+  "locked_at_utc": "2026-08-10T16:48:30.043592+00:00",
+  "old_development_test_access_count": 0,
+  "policy_training_performed": false,
+  "predictor_sha256": "A3E8B6C361CCA997A05766B847521EBB68E68985CAC273667DE95181ACCCEF65",
+  "repository_tests_passed": 503,
+  "round": "round_13",
+  "round12_lock_unchanged": true,
+  "round12_policy_checkpoint_count": 24,
+  "round_14_created": false,
+  "service_action_extension_ready": false,
+  "service_action_headroom_gate": "SA-C",
+  "service_action_implemented": false,
+  "status": "locked",
+  "training_performed": false,
+  "untouched_holdout_access_count": 0,
+  "untouched_holdout_integrity_sha256": "B0D58BE57FD140E113B403E3C96955C56CF65DCDA9D97306E7178036A4A2218D"
+}

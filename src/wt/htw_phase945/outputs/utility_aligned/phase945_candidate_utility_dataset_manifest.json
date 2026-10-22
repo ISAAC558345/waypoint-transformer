@@ -1,0 +1,8 @@
+{
+  "best_is_global_oracle": false,
+  "mean_within_5pct": 6.6875,
+  "pool_size": 24,
+  "primary_utility": "h15_payload_increment",
+  "train_n": 64,
+  "val_n": 32
+}

@@ -1,0 +1,24 @@
+{
+  "U_LL": {
+    "max": 7000000.0,
+    "mean": 1645225.6944444445,
+    "min": 0.0,
+    "n": 2304,
+    "n_nonpositive": 629,
+    "std": 1521690.323987628
+  },
+  "artificial_q": false,
+  "candidate_conditional_q": false,
+  "candidate_generator": "unchanged official Phase-9.4.5 / Phase-2 pool",
+  "copied_phase2_npz": false,
+  "expected_utility_sha": "ff493cf0828e3fa8232b4d5d54cfcee7d34dddc1f42976bc6e9670beaefa3f57",
+  "hold": 15,
+  "materialize": "existing Phase-3 npz",
+  "pool_size": 24,
+  "prefix_label": false,
+  "q_method": "U/sum(U); if any U<=0 then U-min(U)+eps then normalize",
+  "q_sum_ok": true,
+  "rerolled": false,
+  "source": "Phase-2 frozen Low-Level H=15 RL-mean payload increment",
+  "source_utility_sha": "ff493cf0828e3fa8232b4d5d54cfcee7d34dddc1f42976bc6e9670beaefa3f57"
+}

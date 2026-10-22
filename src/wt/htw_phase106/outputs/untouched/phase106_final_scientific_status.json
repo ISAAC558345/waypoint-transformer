@@ -1,0 +1,16 @@
+{
+  "DeepSets_selected": true,
+  "HGNN_selected": false,
+  "architecture_finalized": true,
+  "executor": "fly_toward_with_in_range_zero_motion_gate",
+  "final_gate": "A",
+  "final_system_confirmed": true,
+  "final_untouched_consumed": true,
+  "hold": 15,
+  "low_level_PPO_selected": false,
+  "method_development_stopped": true,
+  "order_free_decoder_selected": true,
+  "task_option_selected": true,
+  "training_finished": true,
+  "utility_aligned_selected": true
+}

@@ -1,0 +1,17 @@
+{
+  "n_files": 26525,
+  "by_category": {
+    "KEEP": 24729,
+    "DELETE_CANDIDATE": 1777,
+    "ARCHIVE": 19
+  },
+  "delete_bytes": 31516965,
+  "archive_count": 19,
+  "keep_count": 24729,
+  "total_bytes": 5128621980,
+  "deleted_now": 0,
+  "deployment_verified": false,
+  "planner_ready": false,
+  "status": "DEPLOYMENT_VERIFICATION_FAILED",
+  "backup_in_delete": 0
+}

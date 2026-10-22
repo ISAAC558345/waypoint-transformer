@@ -1,0 +1,15 @@
+{
+  "movement_for_every_closed_loop": "fly_toward",
+  "legalization": "UAV 序号小的优先保留冲突浮标，被挤出的 UAV 取下一高分且未被占用的浮标",
+  "controllers": {
+    "random_legal": "固定 seed 的无放回浮标排列，前 M 个分给 UAV",
+    "nearest": "非空队列上 1/(distance+1)，再合法化",
+    "max_queue": "分数等于 Q_bits，再合法化",
+    "max_rate_independent": "分数等于 rate_if_assigned，不重新优化干扰，再合法化",
+    "queue_rate": "U = (Q / max Q) * (rate_if_assigned / max rate)",
+    "joint_rate": "精确枚举独占且可激活的分配，最大化 sum rate * delta_t",
+    "joint_true_bit": "同一个枚举，最大化 sum min(Q_bits, rate * delta_t)。这是 one-step true-bit optimum，不是 top-k pool optimum",
+    "fly_toward_joint_true_bit": "与 joint_true_bit 闭环相同，因为低层已经是 fly-toward"
+  },
+  "exactness": "超出服务半径或空队列的目标不会形成活动链路，等价于 idle；因此只枚举距离内且队列为正的独占分配，仍是完整合法空间上的一拍最优"
+}

@@ -1,0 +1,16 @@
+{
+  "fresh_confirmation_first_access_utc": "2026-10-09T03:08:28.762919+00:00",
+  "fresh_confirmation_pool_consumed": true,
+  "fresh_confirmation_pool_role": "ONE_SHOT_FRESH_CONFIRMATION_CONSUMED",
+  "pool": [
+    310118,
+    310119,
+    310120,
+    310121,
+    310122,
+    310123,
+    310124,
+    310125
+  ],
+  "untouched_after_this_record": false
+}

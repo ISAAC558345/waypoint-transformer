@@ -1,0 +1,51 @@
+{
+  "amendment_type": "legal_round32_successor_governance_extension",
+  "authoritative_source": "round_31/ROUND_LOCK.json",
+  "original_round31_lock_sha256": "9B26D6129264A05A6BD7198FE283D839A70085C7A8D798D4470AD9302CB6E2D3",
+  "affected_paths": {
+    "src/wt/governance_state_sync.py": {
+      "prior_amended_sha256": "2CDD273AF04AAF49887BFF3BF41CADA99974EB428D506B9F9AF66799ADCA0DBC",
+      "amended_sha256": "531C5610F10BDB0B2C4CDDEC4F581597DC1FE06A40FBA88AEBD51C4CC541C56F"
+    },
+    "tests/test_governance_state_sync.py": {
+      "prior_amended_sha256": "DDC59317E75CC4E9525387237A75FF34AF41E184ABED11E5A72C88689538EB10",
+      "amended_sha256": "2CDBE9B20A6BB84848734FCFCB7E6729865182D68064D875257A08C1725D38F1"
+    },
+    "tests/test_round21_hgnn_task_waypoint.py": {
+      "prior_amended_sha256": "195307DB14FB5D4B1FA8F0B1658EC026813A2F72DF1233CBDA2BCEB1616B51AD",
+      "amended_sha256": "ED9BDFF8E2B584EA0D0F025FBDE85B036B714CF25B1AA514B2C67F8C2CC1073B"
+    },
+    "tests/test_round24_seed_extension.py": {
+      "prior_amended_sha256": "445BE7926F104BC97EBECA36AF4D7239EF71DE5E3AA026B75FB90116AD59751F",
+      "amended_sha256": "F706F048599231EFBC6CBEC97FB0360F8C88EC08C6AA17730AEFF7F30A0F1DF8"
+    },
+    "tests/test_round28_planning_need_representation.py": {
+      "prior_amended_sha256": "0A51CA024A7252CBC92335F1943413D40A264643996C4E0264CE9A174F723995",
+      "amended_sha256": "2E984133BC60E6F8B58BF9C91DD91DB990D79817DD38F15B8C150A7AF780A22E"
+    },
+    "tests/test_round29_cross_scale_deferred_service.py": {
+      "prior_amended_sha256": "9230465649E7B8E0DEFDA182F0F0878E7158E9E687FF082F9049308A3A108BDE",
+      "amended_sha256": "AFBB026655C2E36CB09C69EA211A3A3B4BCE23E001FBD8FA88FA2795E3F9E94F"
+    },
+    "tests/test_round30_deepsets_ppo.py": {
+      "prior_amended_sha256": "05C73BF710DE0C65C2306097931783E7FB2F830E1B1747482917B41C84D6B0C3",
+      "amended_sha256": "9CA870BC203DAD347C68AB958DC50098D899E41AD9AC41B2EB3A3E119F3CDE16"
+    },
+    "tests/test_round31_ppo_failure_diagnosis.py": {
+      "prior_locked_sha256": "8B735B837988B987C7B7DBEEE61B22E81AAFE165A60FB5093CD0676AEADA26D2",
+      "amended_sha256": "609D8773697A2497412CFD40B9C53D45776BF1999DC6C6E39A36BCDD22A10769"
+    }
+  },
+  "semantic_correction": "Permit Round-32 only as the explicitly authorized, hash-linked read-only successor of locked Round-31. The historical Round-31 field round32_created=false remains lock-time evidence; this overlay changes only lifecycle guards and the hash-chain verifier, continues to prohibit Round-33, and does not alter scientific evidence.",
+  "scientific_artifacts_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "metrics_modified": false,
+  "fresh_outcome_rerun": false,
+  "neural_training_performed": false,
+  "untouched_eval_accessed": false,
+  "original_round30_lock_modified": false,
+  "original_round31_lock_modified": false,
+  "round32_created_at_amendment": false,
+  "approved_at": "2026-08-30T22:31:00+08:00"
+}

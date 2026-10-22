@@ -1,0 +1,230 @@
+{
+  "criterion_status": "NOT PRE-REGISTERED",
+  "data": {
+    "decisions": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase4c_independent_validation\\outputs\\independent_decisions.csv",
+    "independent_ids": [
+      220000,
+      220001,
+      220002,
+      220003,
+      220004,
+      220005,
+      220006,
+      220007,
+      220008,
+      220009,
+      220010,
+      220011,
+      220012,
+      220013,
+      220014,
+      220015,
+      220016,
+      220017,
+      220018,
+      220019,
+      220020,
+      220021,
+      220022,
+      220023,
+      220024,
+      220025,
+      220026,
+      220027,
+      220028,
+      220029,
+      220030,
+      220031,
+      220032,
+      220033,
+      220034,
+      220035,
+      220036,
+      220037,
+      220038,
+      220039,
+      220040,
+      220041,
+      220042,
+      220043,
+      220044,
+      220045,
+      220046,
+      220047,
+      220048,
+      220049,
+      220050,
+      220051,
+      220052,
+      220053,
+      220054,
+      220055,
+      220056,
+      220057,
+      220058,
+      220059,
+      220060,
+      220061,
+      220062,
+      220063
+    ],
+    "labels": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase4c_independent_validation\\outputs\\independent_eval_labels.csv",
+    "summary": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase4c_independent_validation\\outputs\\independent_summary.json"
+  },
+  "gates": [
+    {
+      "definition": "always B2",
+      "degrade_rate": 0.171875,
+      "gate": "Gate-0",
+      "mean_R": 0.8924670381701633,
+      "mean_U_traj": 11031250.0,
+      "mean_dR": 0.12943033528971026,
+      "mean_gain_U_vs_LOCAL": 1562500.0,
+      "mean_residual_gap_vs_ORACLE": 1359375.0,
+      "median_R": 1.0,
+      "median_U_traj": 11000000.0,
+      "median_dR": 0.0,
+      "n_B2": 64,
+      "n_LOCAL": 0,
+      "n_degrade": 11,
+      "n_improve": 31,
+      "n_tie": 22,
+      "oracle_overlap_count": 25,
+      "oracle_overlap_rate": 0.390625,
+      "p05_dR": -0.20000000000000007,
+      "p10_dR": -0.08506493506493507,
+      "std_R": 0.15358442361782337,
+      "tau_Uhat": null,
+      "top1": 0.390625,
+      "top3": 0.765625,
+      "worst_delta_R": -0.5,
+      "worst_scenario": 220012
+    },
+    {
+      "definition": "use B2 iff margin >= tau else LOCAL; margin = U_hat(argmax U_hat) - U_hat(argmax U_single)",
+      "degrade_rate": 0.046875,
+      "gate": "Gate-1",
+      "mean_R": 0.8738125156093907,
+      "mean_U_traj": 10812500.0,
+      "mean_dR": 0.11077581272893773,
+      "mean_gain_U_vs_LOCAL": 1343750.0,
+      "mean_residual_gap_vs_ORACLE": 1578125.0,
+      "median_R": 1.0,
+      "median_U_traj": 11000000.0,
+      "median_dR": 0.0,
+      "n_B2": 26,
+      "n_LOCAL": 38,
+      "n_degrade": 3,
+      "n_improve": 22,
+      "n_tie": 39,
+      "oracle_overlap_count": 25,
+      "oracle_overlap_rate": 0.390625,
+      "p05_dR": 0.0,
+      "p10_dR": 0.0,
+      "std_R": 0.15924716929276533,
+      "tau_Uhat": 1534933.5944128654,
+      "top1": 0.390625,
+      "top3": 0.671875,
+      "worst_delta_R": -0.2142857142857143,
+      "worst_scenario": 220059
+    }
+  ],
+  "planner_ready": false,
+  "special": {
+    "gate0_degraded_but_gate1_avoided": [
+      220000,
+      220007,
+      220012,
+      220032,
+      220036,
+      220040,
+      220041,
+      220046
+    ],
+    "gate1_largest_improvements": [
+      {
+        "delta_R_Gate1": 0.5714285714285714,
+        "scenario_id": 220006
+      },
+      {
+        "delta_R_Gate1": 0.5714285714285714,
+        "scenario_id": 220044
+      },
+      {
+        "delta_R_Gate1": 0.5,
+        "scenario_id": 220013
+      },
+      {
+        "delta_R_Gate1": 0.46153846153846156,
+        "scenario_id": 220009
+      },
+      {
+        "delta_R_Gate1": 0.46153846153846156,
+        "scenario_id": 220037
+      }
+    ],
+    "gate1_still_degraded": [
+      220023,
+      220028,
+      220059
+    ],
+    "scenario_220012": {
+      "avoided": true,
+      "delta_R_B2": -0.5,
+      "delta_R_Gate1": 0.0,
+      "margin": 1389178.1228512656,
+      "use_B2": 0
+    }
+  },
+  "stability": {
+    "gain_from_few_scenarios": {
+      "answer": "concentrated_but_not_single_scenario",
+      "n_positive": 22,
+      "positive_dR_mass": 7.703937728937728,
+      "top3_share_of_positive_dR": 0.21324901636811014,
+      "top5_share_of_positive_dR": 0.3330678616853092
+    },
+    "gate_uses_independent_U_traj_C_oracle": false,
+    "gate_uses_only_deployment_observables": true,
+    "permutation_sanity": {
+      "perm_R_mean": 0.671986153169747,
+      "perm_drop": 0.22048088500041618,
+      "real_R": 0.8924670381701633,
+      "source": "Phase-4C independent_summary.json; not retrained",
+      "supports_candidate_conditioned_signal": true
+    },
+    "reduce_degradation": {
+      "answer": "yes",
+      "degrade_rate_Gate0": 0.171875,
+      "degrade_rate_Gate1": 0.046875,
+      "n_degrade_Gate0": 11,
+      "n_degrade_Gate1": 3,
+      "worst_delta_R_Gate0": -0.5,
+      "worst_delta_R_Gate1": -0.2142857142857143
+    },
+    "retain_main_gain": {
+      "answer": "yes",
+      "fraction_of_Gate0_mean_dR_retained": 0.8558720989247438,
+      "mean_R_Gate0": 0.8924670381701633,
+      "mean_R_Gate1": 0.8738125156093907,
+      "mean_R_LOCAL": 0.763036702880453
+    },
+    "single_scenario_dominance": {
+      "answer": "no_single_scenario_dominates",
+      "dropped_scenario": 220006,
+      "loo_mean_dR_after_drop": 0.10346386417814989,
+      "max_loo_abs_change_mean_dR": 0.0073119485507878446
+    }
+  },
+  "verdict": {
+    "all_64_retained": true,
+    "deployment_criterion": "NOT PRE-REGISTERED",
+    "gate": "PARTIAL",
+    "includes_220012": true,
+    "planner_ready": false,
+    "pre_registered": false,
+    "tau_Uhat": 1534933.5944128654,
+    "tau_source": "HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md changed-state mean dU_hat",
+    "text": "B2 \u5728 independent scenario \u4e0a\u6cdb\u5316\u6210\u7acb\uff0c\u56fa\u5b9a margin gate \u4e5f\u964d\u4f4e\u4e86\u98ce\u9669\uff0c\u4f46\u9879\u76ee\u5c1a\u672a\u9884\u5148\u5b9a\u4e49\u6b63\u5f0f deployment-safety criterion\uff0c\u56e0\u6b64\u4e0d\u80fd\u5ba3\u5e03 planner_ready\u3002"
+  }
+}

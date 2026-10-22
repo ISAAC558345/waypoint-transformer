@@ -1,0 +1,20 @@
+{
+  "chain": [
+    "L3BBitQueueEnvV2",
+    "G1_RATE top-5",
+    "legal joint assignments",
+    "J15_CURRENT exhaustive",
+    "TaskOption",
+    "deterministic fly-toward",
+    "live environment step"
+  ],
+  "reused": [
+    "wt.benchmark_v2.bit_queue_v2.L3BBitQueueEnvV2",
+    "wt.benchmark_v2.phase6e.generators.build_pools",
+    "wt.benchmark_v2.phase6e.value.batch_j15",
+    "wt.l3b.policies.fly_toward"
+  ],
+  "velocity_state": "not_exposed",
+  "planner_ready": false,
+  "deployment_verified": false
+}

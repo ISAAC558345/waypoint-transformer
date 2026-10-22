@@ -1,0 +1,35 @@
+{
+  "status": "HUMAN_SPECIFIED",
+  "batch_1_size": 64,
+  "batch_2_size": 64,
+  "required_independent_batches": 2,
+  "total_new_holdout_scenarios": 128,
+  "source": "HUMAN_SPECIFICATION",
+  "human_approved": true,
+  "holdout_batch_size_status": "SPECIFIED",
+  "not_inherited_from": [
+    "LLV2_TRAIN_N",
+    "LLV2_DESIGN_N",
+    "VALIDATION_N",
+    "Phase-10 historical size"
+  ],
+  "must_be_new_realizations": true,
+  "forbidden_existing_ids": [
+    "220000-220063",
+    "221000-221015",
+    "222000-222063",
+    "223000-223063",
+    "104000-104063",
+    "105000-105063",
+    "106000-106063"
+  ],
+  "new_scenario_id_is_necessary_not_sufficient": true,
+  "scenarios_generated": true,
+  "data_registered": true,
+  "generation_status": "INDEPENDENT_HOLDOUT_DATA_CREATED_PENDING_VERIFICATION",
+  "holdout_namespace": "deployment_holdout",
+  "batch_1_ids": "230000-230063",
+  "batch_2_ids": "230064-230127",
+  "deployment_verified": false,
+  "planner_ready": false
+}

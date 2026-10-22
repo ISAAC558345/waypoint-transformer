@@ -1,0 +1,12 @@
+pool,scenario_ids,n,historical_role,used_for_B2_fit,used_for_feature_selection,used_for_hyperparameter_selection,used_for_tau_selection,used_for_gate_selection,used_for_criterion_selection,used_for_Phase4C_validation,used_for_Phase4E_holdout,eligible_for_future_development,source_file
+LLV2_design,221000-221015,16,DESIGN,1,1,0,1,1,0,0,0,0,src/wt/lowlevel_v2/outputs/phase0/LLV2_DATA_REGISTRY.json
+LLV2_train,220000-220063,64,VALIDATION,0,0,0,0,0,0,1,0,0,src/wt/lowlevel_v2/outputs/phase0/LLV2_DATA_REGISTRY.json
+phase2_val,222000-222063,64,HISTORICAL_TEST,0,0,0,0,0,0,0,0,0,src/wt/lowlevel_v2/phase2/LLV2_PHASE2_VALIDATION_MANIFEST.json
+phase3_val,223000-223063,64,HISTORICAL_TEST,0,0,0,0,0,0,0,0,0,src/wt/lowlevel_v2/phase3/LLV2_PHASE3_VALIDATION_MANIFEST.json
+phase104_independent,104000-104063,64,HISTORICAL_TEST,0,0,0,0,0,0,0,0,0,src/wt/lowlevel_v2/protocol.py
+phase105_independent,105000-105063,64,HISTORICAL_TEST,0,0,0,0,0,0,0,0,0,src/wt/lowlevel_v2/protocol.py
+phase106_final_test,106000-106063,64,HISTORICAL_TEST,0,0,0,0,0,0,0,0,0,src/wt/lowlevel_v2/outputs/phase0/LLV2_DATA_REGISTRY.json
+deployment_holdout,230000-230127,128,DEPLOYMENT_HOLDOUT_CONSUMED,0,0,0,0,0,0,0,1,0,src/wt/lowlevel_v2/phase4d7b_independent_holdout_generation/outputs/deployment_holdout_manifest.json
+LLV2_confirmation,,0,ABSENT,0,0,0,0,0,0,0,0,0,src/wt/lowlevel_v2/outputs/phase0/LLV2_DATA_REGISTRY.json
+LLV2_final_untouched,,0,ABSENT,0,0,0,0,0,0,0,0,0,src/wt/lowlevel_v2/outputs/phase0/LLV2_DATA_REGISTRY.json
+other_blocked_historical_seeds,,1353,BLOCKED,0,0,0,0,0,0,0,0,0,src/wt/lowlevel_v2/data_registry.py

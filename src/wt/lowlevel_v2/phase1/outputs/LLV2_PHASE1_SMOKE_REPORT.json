@@ -1,0 +1,49 @@
+{
+  "env_transitions": 384,
+  "forward_ok": true,
+  "history": [
+    {
+      "action_std": 0.11084766499698162,
+      "advantage_mean": 2.2756950855255127,
+      "advantage_std": 1.2650976181030273,
+      "approx_kl": 0.02439486301955185,
+      "clip_fraction": 0.2317708325572312,
+      "entropy": -9.368702232837677,
+      "env_steps": 192,
+      "explained_variance": 0.07156085968017578,
+      "gradient_norm_preclip": 140.2902557849884,
+      "policy_loss": -0.0024093482352327555,
+      "value_loss": 2.445182129740715
+    },
+    {
+      "action_std": 0.11104773636907339,
+      "advantage_mean": 2.463602066040039,
+      "advantage_std": 1.5738804340362549,
+      "approx_kl": 0.013737479646806605,
+      "clip_fraction": 0.24869791569653898,
+      "entropy": -9.348125278949738,
+      "env_steps": 384,
+      "explained_variance": -0.2152388095855713,
+      "gradient_norm_preclip": 14.344026058912277,
+      "policy_loss": -0.016333685372956097,
+      "value_loss": 3.2859434485435486
+    }
+  ],
+  "init_rms": {
+    "limit": 0.05,
+    "log_std_init": -2.2,
+    "measured_residual_rms": 0.02726655878359452,
+    "ok": true
+  },
+  "nan": false,
+  "not_counted_as_pilot": true,
+  "reload_after_smoke": true,
+  "update0_vs_l0": {
+    "n": 48,
+    "ok": true,
+    "payload_l0": 9000000.0,
+    "payload_u0": 9000000.0,
+    "reasons": []
+  },
+  "updates": 2
+}

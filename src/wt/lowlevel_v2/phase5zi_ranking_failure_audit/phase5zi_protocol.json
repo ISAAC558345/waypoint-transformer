@@ -1,0 +1,15 @@
+{
+  "phase": "5ZI",
+  "training": false,
+  "optimizer_step": false,
+  "new_h1_rollout": false,
+  "opened_310118_310125": false,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "easy_teacher_gap": 1.0,
+  "easy_loss_share_bar": 0.8,
+  "hard_loss_share_bar": 0.2,
+  "teacher_spearman_min": 0.7,
+  "teacher_top1_min": 0.7
+}

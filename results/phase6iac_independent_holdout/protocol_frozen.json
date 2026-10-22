@@ -1,0 +1,72 @@
+{
+  "adapter_config_sha256": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63",
+  "bit_tie": 1.0,
+  "bootstrap_draws": 10000,
+  "bootstrap_percentiles": [
+    2.5,
+    97.5
+  ],
+  "bootstrap_seed": 0,
+  "candidate_builder": "frozen_candidate_keys, the live path inside the Phase-6I-Y adapter used by generate_frozen_pool",
+  "code_sha256": {
+    "src/wt/benchmark_v2/phase6f_system_bringup/episode.py": "33a3fc4b9eb47373ca639c6709186789fe78d2ef9393c0b7bf97248495b99e87",
+    "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py": "2c79b1eedeb95b756023c9a007315fb5063be2c86811c6beabd906d7e2425c6d",
+    "src/wt/benchmark_v2/phase6iaa_formal_planner/protocol.py": "a97cf65c13b89254cf444d90356ca1c7c28c8ee3f2a2c78311ca4dd7b7d88541",
+    "src/wt/benchmark_v2/phase6iy_candidate_adapter/adapter.py": "f9ab5e5545fee59d6d278149ce4237958eef22090aae980069e1d58ec6e64c4c",
+    "src/wt/benchmark_v2/phase6iy_candidate_adapter/protocol.py": "87cc412cffbaeb71acafdbab6bc4006cd163e545838cbf758621f67866151a69"
+  },
+  "decision_times": [
+    0,
+    15,
+    30,
+    45
+  ],
+  "environment_sha256": "dbbf106ba7aadf1ee06e9721dd6b1018a10579fb23e34cf5bc791566b1e907fe",
+  "episode_entry": "run_active_episode",
+  "epoch6_sha256": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde",
+  "generator": "G1_RATE",
+  "git_revision": "716f514b942dfe413dd23fd51cf1c523d8211c0f",
+  "high_level_checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\phase6if_ranking_loss\\runs\\c\\epoch_001.pt",
+  "historical_formal_k": 5,
+  "hold": 15,
+  "horizon": 48,
+  "k": 6,
+  "mappo_checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\benchmark_v2\\phase6g_lowlevel_mappo\\checkpoints\\phase6g_seed0.pt",
+  "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "official_policy": {
+    "generator": "G1_RATE",
+    "high_level_policy": "scheme_c",
+    "historical_formal_k": 5,
+    "hold": 15,
+    "k": 6
+  },
+  "payload_definition": "sum of served_bits over the episode",
+  "reset_seed": "scenario_id",
+  "scenarios": [
+    322064,
+    322065,
+    322066,
+    322067,
+    322068,
+    322069,
+    322070,
+    322071,
+    322072,
+    322073,
+    322074,
+    322075,
+    322076,
+    322077,
+    322078,
+    322079
+  ],
+  "scheme_c_sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
+  "seeds_per_scenario": 1,
+  "smoke": [
+    322064,
+    322065
+  ],
+  "torch_seed": "1000000 + scenario_id",
+  "train_pool_unchanged": true,
+  "validation_pool_unchanged": true
+}

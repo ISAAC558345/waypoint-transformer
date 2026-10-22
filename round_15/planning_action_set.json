@@ -1,0 +1,12 @@
+{
+  "schema_version": "round15_action_set_v1",
+  "candidate_actions": [
+    "zero", "+x", "-x", "+y", "-y", "diag_ne", "diag_nw", "diag_se", "diag_sw",
+    "nearest_buoy", "max_queue", "queue_rate_energy", "myopic_one_step_greedy"
+  ],
+  "projection": "existing radial action projection followed by the environment's normal safe boundary processing",
+  "continuation": "queue_rate_energy",
+  "horizons": [1, 5, 10, 20],
+  "learned_model_used": false,
+  "optimizer_used": false
+}

@@ -1,0 +1,23 @@
+{
+  "compileall_passed": true,
+  "completed_at": "2026-08-29T15:03:18+08:00",
+  "figure_directory": "round_23/figures/round23_seed_stability_audit_20260829_1436",
+  "formal_output": "round_23/outputs/round23_seed_stability_audit_20260829_1436",
+  "fresh_dev_new_rollout_count": 0,
+  "full_regression_tests_pass_count": 857,
+  "head_causal_audit_performed": true,
+  "policy_training_performed": false,
+  "previous_round_lock": "round_22/ROUND_LOCK.json",
+  "previous_round_lock_sha256": "1D464A696ED8DE11E7AEDB14479F55ABB4F9F3E2621837E89CD854CD850190E4",
+  "round": "round_23",
+  "round22_formal_output": "round_22/outputs/round22_deepsets_task_waypoint_policy_20260829_1153",
+  "round22_governance_amendment": "round_22/ROUND_LOCK_AMENDMENT.json",
+  "round24_created": false,
+  "seed_stability_audit_performed": true,
+  "snapshot": "backup/snapshots/before_round_23_20260829_1436",
+  "status": "locked",
+  "topic": "Multi-UAV Task-Waypoint Policy Seed Stability, Head Causal Utilization, and Offline-to-Closed-Loop Alignment Audit",
+  "training_performed": false,
+  "untouched_eval_access_count": 0,
+  "untouched_eval_accessed": false
+}

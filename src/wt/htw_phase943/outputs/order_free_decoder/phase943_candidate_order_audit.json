@@ -1,0 +1,12 @@
+{
+  "deepsets": {
+    "candidate_order_invariance_rate": 1.0,
+    "hits": 3200,
+    "tot": 3200
+  },
+  "hgnn": {
+    "candidate_order_invariance_rate": 1.0,
+    "hits": 3200,
+    "tot": 3200
+  }
+}

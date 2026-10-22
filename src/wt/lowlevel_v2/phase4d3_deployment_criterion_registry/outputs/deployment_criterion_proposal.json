@@ -1,0 +1,86 @@
+{
+  "frozen_gate_not_optimized": {
+    "margin": "U_hat(argmax U_hat) - U_hat(argmax U_single)",
+    "rule": "if margin >= tau: B2 else LOCAL",
+    "tau": 1535000.0
+  },
+  "observed_performance_gate1": {
+    "degrade_rate": 0.047,
+    "mean_R": 0.874,
+    "mean_dR": 0.111,
+    "n_B2": "26/64",
+    "n_B2_int": 26,
+    "n_degrade": "3/64",
+    "n_degrade_int": 3,
+    "n_total": 64,
+    "tau": 1534933.5944128654,
+    "tau_display": 1535000.0,
+    "tau_source": "HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md changed-state mean dU_hat",
+    "worst_case_delta_R": -0.214
+  },
+  "official_standard": null,
+  "parameters_requiring_human_decision": [
+    {
+      "currently_observed": 0.047,
+      "currently_observed_note": "Gate-1 degrade = 3/64 = 0.047; not an acceptance threshold.",
+      "human_decision_required": true,
+      "meaning": "Maximum fraction of scenarios where selected first-hold is worse than LOCAL.",
+      "parameter": "max_allowed_degrade_rate",
+      "proposed_official_value": null
+    },
+    {
+      "currently_observed": -0.214,
+      "currently_observed_note": "Gate-1 worst-case \u0394R = -0.214 on 220059; not an acceptance threshold.",
+      "human_decision_required": true,
+      "meaning": "Most negative allowed R_selected - R_LOCAL on any retained scenario.",
+      "parameter": "max_allowed_worst_case_delta_R",
+      "proposed_official_value": null
+    },
+    {
+      "currently_observed": 0.111,
+      "currently_observed_note": "Gate-1 mean \u0394R = 0.111.",
+      "human_decision_required": true,
+      "meaning": "Whether mean(R_selected - R_LOCAL) must be strictly greater than 0.",
+      "parameter": "require_mean_delta_R_positive",
+      "proposed_official_value": null
+    },
+    {
+      "currently_observed": "Gate-1 mean U_traj = 1.081e7 vs LOCAL 9.469e6 (Phase-4C/4D frozen).",
+      "human_decision_required": true,
+      "meaning": "Whether mean selected U_traj must exceed mean LOCAL U_traj.",
+      "parameter": "require_mean_U_traj_above_LOCAL",
+      "proposed_official_value": null
+    },
+    {
+      "currently_observed": "yes, currently 3 scenarios still degrade: 220023, 220028, 220059",
+      "human_decision_required": true,
+      "meaning": "Whether any scenario may be worse than LOCAL after the gate.",
+      "parameter": "allow_some_scenario_degradation",
+      "proposed_official_value": null
+    },
+    {
+      "currently_observed": "false; the 3 remaining degradations all used B2 (margin >= tau).",
+      "human_decision_required": true,
+      "meaning": "Whether every scenario that actually uses B2 must have R_B2 >= R_LOCAL.",
+      "parameter": "require_B2_never_worse_than_LOCAL_when_used",
+      "proposed_official_value": null
+    },
+    {
+      "currently_observed": "not done; Phase-4C/4D/4D-2 all evaluate the same 220000-220063 set.",
+      "human_decision_required": true,
+      "meaning": "Whether a second unseen batch, not the current 64, must also pass the criterion.",
+      "parameter": "require_independent_deployment_holdout",
+      "proposed_official_value": null
+    },
+    {
+      "currently_observed": "only one independent batch exists.",
+      "human_decision_required": true,
+      "meaning": "Whether more than one independent batch must satisfy the same criterion.",
+      "parameter": "require_multiple_independent_batches",
+      "proposed_official_value": null
+    }
+  ],
+  "pre_registered": false,
+  "status": "PROPOSAL_ONLY_NOT_OFFICIAL",
+  "warning": "This file lists parameters a human must decide. No candidate number is declared as the official deployment criterion. Do not treat currently_observed as a threshold."
+}

@@ -1,0 +1,21 @@
+{
+  "H_task": 10,
+  "context_length": 10,
+  "d_model": 128,
+  "layers": 2,
+  "heads": 4,
+  "ffn": 512,
+  "dropout": 0.1,
+  "action_dim": 2,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0003,
+  "batch_size": 128,
+  "max_epochs": 200,
+  "patience": 20,
+  "weight_decay": 0.0001,
+  "gradient_clip_norm": 1.0,
+  "seeds": [0, 1, 2],
+  "families": ["task_waypoint_transformer", "state_only_transformer", "oracle_task_waypoint_transformer", "task_waypoint_mlp"],
+  "primary_metric": "cumulative_actual_payload",
+  "checkpoint_selection": "validation_raw_action_rmse_only"
+}

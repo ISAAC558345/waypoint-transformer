@@ -1,0 +1,56 @@
+{
+  "official_encoder": "OrderFreeAssignmentModel deepsets",
+  "official_decoder": "OrderFreeSetDecoder sequential pick",
+  "official_checkpoint": "final_artifacts/checkpoints/deepsets_util_seed0.pt",
+  "shadow_encoder": "frozen Phase-5L JointUtilityHGNN",
+  "shadow_candidates": "stage-1 top-3 exclusive pool, width 120",
+  "shadow_h1": "shipped optimized True-H1: original executor.act plus one clone, one step",
+  "h1_is_not_15_step_forecast": true,
+  "value_model": "frozen Model-R1 per seed",
+  "aggregation": "per_seed_only",
+  "tie_break": "stable_argsort_descending",
+  "taskoption_hold": 15,
+  "idle_code": -1,
+  "uav_order": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "buoy_order": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "shapes": {
+    "logits": [
+      6,
+      12
+    ],
+    "assignments": [
+      120,
+      6
+    ],
+    "response": [
+      120,
+      6,
+      14
+    ],
+    "values": [
+      120
+    ]
+  },
+  "calls_deployment_decision": false,
+  "drives_official_env": false
+}

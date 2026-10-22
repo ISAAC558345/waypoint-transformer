@@ -1,0 +1,19 @@
+{
+  "gate": "TEMP-F",
+  "gate_name": "TEMPORAL_CANDIDATE_COVERAGE_FAILURE",
+  "phase6a_gate": "BV2-E",
+  "phase6b_gate": "BITQ-A",
+  "phase6c_gate": "DYN-A",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "deployment_pass": false,
+  "trained": false,
+  "fresh_confirmation_untouched": true,
+  "shadow_is_intermediate_decision_layer": false,
+  "non_causal_upper_bound_used_for_training": false,
+  "HOLD_MISMATCH_CONFIRMED": false,
+  "TEMPORAL_OBJECTIVE_MISMATCH_CONFIRMED": true,
+  "FUTURE_ARRIVAL_INFORMATION_VALUE_CONFIRMED": true,
+  "TEMPORAL_CANDIDATE_COVERAGE_FAILURE": true,
+  "MACRO_RELATION_VALUE_CONFIRMED": true
+}

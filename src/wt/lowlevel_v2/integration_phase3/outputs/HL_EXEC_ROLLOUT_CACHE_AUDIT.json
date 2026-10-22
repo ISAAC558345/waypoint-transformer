@@ -1,0 +1,19 @@
+{
+  "phase": "HL-EXEC-UTIL",
+  "code_changed": false,
+  "training_interrupted": false,
+  "repeated_low_level_rollout_in_training": false,
+  "reason": "train_exec reads precomputed train['utility'] / val['utility'] from hl_exec_align_*.npz. Each epoch only runs DeepSets + subset-DP logP + L_exec/L_rank/L_ref. shadow_h15 is not called inside train.py.",
+  "executor_call_sites": {
+    "dataset_generation": "once per (state, candidate, low-level seed); already materialized; SHA ff493cf0...",
+    "train_epoch": "none",
+    "val_every": "split_metrics on stored U_LL only",
+    "post_train_eval_u_new": "only if greedy decode assignment is outside the L=24 pool; already cached by (scenario, t, assignment_hash)",
+    "closed_loop_evaluate_design": "design-pool episodes after all five seeds finish; not per-candidate labeling"
+  },
+  "cache_hit_rate_training": null,
+  "speedup_if_cache_added_to_training": 0.0,
+  "training_result_unchanged": true,
+  "seed0_seed1_untouched": true,
+  "action": "No cache added. Continue current seed2/3/4 training."
+}

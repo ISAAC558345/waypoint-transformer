@@ -1,0 +1,14 @@
+{
+  "queue_unit": "blocks",
+  "rate_unit": "bits per second",
+  "delta_t_s": 1.0,
+  "progress_owner": "uav",
+  "progress_increment": "(rate / reference_rate) / service_slots, capped at 1",
+  "block_completion": "uav progress >= 1 - 1e-9",
+  "payload_increment": "block_payload_bits, currently 1e6, only on completion",
+  "queue_decrement": "one block on the served buoy at completion",
+  "drop": "max(0, queue - completed_service + arrivals - capacity)",
+  "partial_transmission_stored": false,
+  "classification": "task_completion_metric",
+  "matches_information_transmission": false
+}

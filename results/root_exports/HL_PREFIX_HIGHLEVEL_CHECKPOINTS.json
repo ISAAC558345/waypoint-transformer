@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "best_epoch": 80,
+      "best_val_regret": 325000.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2d\\outputs\\deepsets_prefix_seed0.pt",
+      "high_seed": 0
+    },
+    {
+      "best_epoch": 70,
+      "best_val_regret": 343750.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase2d\\outputs\\deepsets_prefix_seed1.pt",
+      "high_seed": 1
+    }
+  ],
+  "rule": "best_validation_mean_candidate_regret"
+}

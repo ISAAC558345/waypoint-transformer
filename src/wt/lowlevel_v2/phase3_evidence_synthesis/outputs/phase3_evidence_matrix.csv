@@ -1,0 +1,7 @@
+phase,hypothesis,method,core_metric,result,supported,note
+C,local utility represents trajectory utility,first-hold counterfactual,LOCAL vs TRAJ U_traj,9.000e6 vs 11.875e6,no,gap 2.875e6; later holds stay official greedy
+D,trajectory-aware credit F exists,oracle S_beta=U_single+beta F,EXEC beta sweep U_traj,beta0=9.000e6; beta0.5=11.438e6 (~96% of TRAJ); beta1=11.875e6,yes,F is offline remaining return; not an online feature
+E,first-hold observables predict F,GroupKFold ExtraTrees OOF,Spearman(F_hat;F),U_single Ridge=0.193; state+cand=0.527; full=0.553,partial,best predicted closed-loop 9.375e6; R_pred ratio-of-means=0.130
+F,candidate geometry carries future signal,feature-group ceiling,OOF Spearman,geometry=0.546; full=0.553; ExtraTrees U_single=0.295,partial,empirical ceiling 0.5-0.6; not near-perfect
+G,simple continuous structural proxy explains signal,O_traj leftover*access/competition,within-state Spearman vs F,U_single=0.259; O_traj=0.002; STRUCT_OC=0.187; FHAT=0.353,no,STRUCT_OC closed-loop 9.250e6; 2/16 states change
+H,discrete feasible-set structure explains signal,degree/weighted_degree/Flex,within-state Spearman vs F,degree=0.036; weighted=0.018; Flex=0.041; S_disc=0.187; FHAT=0.353,no,S_disc changes 1/16 states; argmax degree/Flex harms to ~4.5e6

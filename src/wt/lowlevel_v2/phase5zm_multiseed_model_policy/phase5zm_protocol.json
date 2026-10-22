@@ -1,0 +1,132 @@
+{
+  "aggregation": "RANK_MEAN_CONSENSUS_V1",
+  "rank_definition": "competition rank, 1 is best, ties share the minimum rank",
+  "tie_break_1": "higher majority_top1_count",
+  "tie_break_2": "lexicographic assignment tuple",
+  "uses_j15_in_selection": false,
+  "uses_scenario_id_in_selection": false,
+  "trainable_parameters": 0,
+  "seed_permutations": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      4,
+      3,
+      0,
+      1
+    ],
+    [
+      4,
+      1,
+      2,
+      0,
+      3
+    ],
+    [
+      0,
+      2,
+      3,
+      4,
+      1
+    ],
+    [
+      3,
+      2,
+      0,
+      1,
+      4
+    ],
+    [
+      4,
+      2,
+      1,
+      3,
+      0
+    ],
+    [
+      4,
+      0,
+      3,
+      2,
+      1
+    ],
+    [
+      2,
+      4,
+      3,
+      0,
+      1
+    ],
+    [
+      3,
+      2,
+      0,
+      1,
+      4
+    ],
+    [
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    [
+      4,
+      3,
+      2,
+      1,
+      0
+    ]
+  ],
+  "candidate_permutation_count": 10,
+  "candidate_permutation_seed": 1,
+  "j15_retain_abs_bit": 1.0,
+  "large_conflict_fraction": 0.5,
+  "low_strength": 0.4,
+  "warmup": 1,
+  "repeats": 3,
+  "deployment_latency_requirement": "NOT_SPECIFIED",
+  "model_r1_aggregation_approved": false,
+  "fresh_confirmation_authorized": false,
+  "fresh_confirmation_pool": "310118-310125",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "phase4e_status": "DEPLOYMENT_VERIFICATION_FAILED",
+  "scenarios": [
+    310110,
+    310111,
+    310112,
+    310113,
+    310114,
+    310115,
+    310116,
+    310117
+  ],
+  "times": [
+    0,
+    15,
+    30
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

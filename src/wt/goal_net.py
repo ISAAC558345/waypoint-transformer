@@ -16,27 +16,97 @@ from wt import dataset, layers, step, util
 
 class KForwardGoalNetwork(pl.LightningModule):
     def __init__(self, obs_dim, goal_dim, hidden_dim, max_T, recurrent = False,
-                learning_rate=1e-3, batch_size=1024, reward = False):
+                learning_rate=1e-3, batch_size=1024, reward = False,
+                reward_representation=None,
+                reward_normalization_const=None,
+                reward_episode_horizon=None):
         super().__init__()
+        if obs_dim <= 0 or goal_dim <= 0 or hidden_dim <= 0:
+            raise ValueError("obs_dim, goal_dim, and hidden_dim must be positive.")
+        if max_T is None or int(max_T) < 0:
+            raise ValueError("max_T must be a non-negative integer.")
         self.recurrent = recurrent 
         self.learning_rate = learning_rate
         self.batch_size = batch_size
-        self.hidden_dim = hidden_dim
-        self.goal_dim = goal_dim
-        self.max_T = max_T
-        self.reward = reward
-
+        self.obs_dim = int(obs_dim)
+        self.hidden_dim = int(hidden_dim)
+        self.goal_dim = int(goal_dim)
+        self.max_T = int(max_T)
+        self.reward = bool(reward)
         if self.reward:
-            assert goal_dim == 2
-        self.net = nn.Sequential(nn.Linear(obs_dim + goal_dim, hidden_dim),
+            if reward_representation is None:
+                raise ValueError(
+                    "Reward waypoint checkpoints require an explicit "
+                    "reward_representation."
+                )
+            self.reward_representation = dataset.resolve_reward_representation(
+                reward_representation
+            )
+            expected_goal_dim = (
+                2 if self.reward_representation == "both" else 1
+            )
+            if self.goal_dim != expected_goal_dim:
+                raise ValueError(
+                    "Reward waypoint goal_dim conflicts with "
+                    f"reward_representation: {self.goal_dim} != "
+                    f"{expected_goal_dim}."
+                )
+            if reward_normalization_const is None:
+                raise ValueError(
+                    "Reward waypoint checkpoints require the training-split "
+                    "reward_normalization_const."
+                )
+            self.reward_normalization_const = float(
+                reward_normalization_const
+            )
+            if (
+                not np.isfinite(self.reward_normalization_const)
+                or self.reward_normalization_const == 0
+            ):
+                raise ValueError(
+                    "reward_normalization_const must be finite and non-zero."
+                )
+            if reward_episode_horizon is None:
+                raise ValueError(
+                    "Reward waypoint checkpoints require "
+                    "reward_episode_horizon."
+                )
+            self.reward_episode_horizon = int(reward_episode_horizon)
+            if self.reward_episode_horizon <= 0:
+                raise ValueError(
+                    "reward_episode_horizon must be positive."
+                )
+        else:
+            self.reward_representation = None
+            self.reward_normalization_const = None
+            self.reward_episode_horizon = None
+        self.save_hyperparameters(
+            {
+                "obs_dim": self.obs_dim,
+                "goal_dim": self.goal_dim,
+                "hidden_dim": self.hidden_dim,
+                "max_T": self.max_T,
+                "recurrent": self.recurrent,
+                "learning_rate": self.learning_rate,
+                "batch_size": self.batch_size,
+                "reward": self.reward,
+                "reward_representation": self.reward_representation,
+                "reward_normalization_const": (
+                    self.reward_normalization_const
+                ),
+                "reward_episode_horizon": self.reward_episode_horizon,
+            }
+        )
+
+        self.net = nn.Sequential(nn.Linear(self.obs_dim + self.goal_dim, self.hidden_dim),
                                  nn.ReLU(),
-                                 nn.Linear(hidden_dim, hidden_dim),
+                                 nn.Linear(self.hidden_dim, self.hidden_dim),
                                  nn.ReLU(),
-                                 nn.Linear(hidden_dim, hidden_dim),
+                                 nn.Linear(self.hidden_dim, self.hidden_dim),
                                  nn.ReLU(),
-                                 nn.Linear(hidden_dim, hidden_dim),
+                                 nn.Linear(self.hidden_dim, self.hidden_dim),
                                  nn.ReLU(),
-                                 nn.Linear(hidden_dim, goal_dim))
+                                 nn.Linear(self.hidden_dim, self.goal_dim))
 
     def forward(self, obs_goal):
         if self.reward:
@@ -44,24 +114,47 @@ class KForwardGoalNetwork(pl.LightningModule):
 
         return obs_goal[..., :self.goal_dim] + self.net(obs_goal)
 
+    @staticmethod
+    def _masked_mse(
+        prediction: torch.Tensor,
+        target: torch.Tensor,
+        mask: torch.Tensor,
+    ) -> torch.Tensor:
+        """Mean squared error over valid timesteps only."""
+        if prediction.shape != target.shape:
+            raise ValueError(
+                f"prediction and target shapes differ: {prediction.shape} != {target.shape}"
+            )
+        valid = mask.to(device=prediction.device, dtype=torch.bool)
+        if valid.ndim == prediction.ndim and valid.shape[-1] == 1:
+            valid = valid.squeeze(-1)
+        if valid.shape != prediction.shape[:-1]:
+            raise ValueError(
+                "mask must match the batch/time dimensions of prediction: "
+                f"{valid.shape} != {prediction.shape[:-1]}"
+            )
+
+        per_timestep_loss = F.mse_loss(prediction, target, reduction="none").mean(dim=-1)
+        if not torch.any(valid):
+            # Keep the zero connected to the model graph so backward remains valid.
+            return prediction.sum() * 0.0
+        return per_timestep_loss[valid].mean()
+
     def training_step(
         self,
         batch,
         batch_idx: int,
         log_prefix: str = "train",
     ) -> torch.Tensor:
-        """Computes loss for a training batch."""
-        obs_goal, var, mask = batch
-        if self.reward:
-            # average reward case 
-            loss = F.mse_loss(self(obs_goal), var)
-            # cumulative reward case
-        else:
-            loss = 0
-            for i in range(obs_goal.shape[1] - self.max_T):
-                loss = loss + F.mse_loss(self(obs_goal[:, i]), obs_goal[:, i + self.max_T, :self.goal_dim])
+        """Compute waypoint loss against episode-safe dataset labels.
 
-            loss = loss / (obs_goal.shape[1] - self.max_T)
+        The dataset owns horizon alignment for both goal and reward waypoints,
+        including terminal clamping. This keeps the model loss independent of
+        window padding and guarantees that every reduction sees the timestep
+        mask before averaging.
+        """
+        obs_goal, waypoint, mask = batch
+        loss = self._masked_mse(self(obs_goal), waypoint, mask)
 
         self.log(f"{log_prefix}_loss", loss, prog_bar=True)
         return loss
@@ -94,7 +187,10 @@ class Manager:
 
     def update_act(self, act):
         self._actions.append(act)
-        self._actions = self._actions[-self.K + 1:]
+        history_length = max(self.K - 1, 0)
+        self._actions = (
+            self._actions[-history_length:] if history_length else []
+        )
 
     @property
     def goal(self):
@@ -144,7 +240,10 @@ class Manager:
 
     def update_act(self, act):
         self._actions.append(act)
-        self._actions = self._actions[-self.K + 1:]
+        history_length = max(self.K - 1, 0)
+        self._actions = (
+            self._actions[-history_length:] if history_length else []
+        )
 
     def step_goal(self, lambd, thres):
         assert not self.goal_append

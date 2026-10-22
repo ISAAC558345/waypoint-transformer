@@ -1,0 +1,25 @@
+{
+  "amendment_type": "legal_round24_successor_governance_extension",
+  "authoritative_source": "round_23/ROUND_LOCK.json",
+  "original_round23_lock_sha256": "948E89F9197E8204B147FA2F3B9543CD878D4380680254DCB1190E7E9015F22A",
+  "affected_paths": {
+    "src/wt/governance_state_sync.py": {
+      "original_sha256": "281D3633A1FC706BF42DC81FA16E805755B168FB775C2EEA6F4377C50D1DD001",
+      "amended_sha256": "5F88CC7563EC1EBC3A90B375017F997C4AEBAF218FFFD605B8BB38D642A57322"
+    },
+    "tests/test_round23_audit.py": {
+      "original_sha256": "1D54D2B378DE4BC5633BE82C392C484D27C864F56CED7D294C0D784EACBD1C64",
+      "amended_sha256": "D3235EC3725B2F030FAC4B8364B72E0143A8D172A31A0B74E7F986A8DF712793"
+    }
+  },
+  "semantic_correction": "Permit Round-24 only as the explicitly authorized successor of locked Round-23, retaining all Round-22 access constraints and every original Round-23 scientific hash. The lifecycle test now checks the lock-time historical field round24_created=false instead of incorrectly prohibiting the later authorized successor from existing.",
+  "scientific_artifacts_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "metrics_modified": false,
+  "fresh_dev_rerun": false,
+  "untouched_eval_accessed": false,
+  "original_round23_lock_modified": false,
+  "round24_created_at_amendment": false,
+  "approved_at": "2026-08-29T15:15:00+08:00"
+}

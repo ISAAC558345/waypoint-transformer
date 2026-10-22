@@ -1,0 +1,37 @@
+{
+  "training_data": [
+    310100,
+    310101,
+    310102,
+    310103,
+    310104,
+    310105,
+    310106,
+    310107,
+    310108,
+    310109
+  ],
+  "evaluation_after_all_checkpoints": [
+    310110,
+    310111,
+    310112,
+    310113,
+    310114,
+    310115,
+    310116,
+    310117
+  ],
+  "opened_310118": false,
+  "new_j15_rollout": false,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "epochs": 10,
+  "checkpoint": "epoch_10",
+  "loss": "state-mean Huber, delta 1, target J15/1e6",
+  "swap_collision_ceiling": 0.1,
+  "permutation_eps": 1e-05,
+  "planner_ready": false,
+  "deployment_verified": false
+}

@@ -1,0 +1,32 @@
+{
+  "amendment_figure_pairs": 12,
+  "new_figure_files": [
+    "13_difficulty_controllability.png",
+    "13_difficulty_controllability.svg",
+    "14_completion_comparison.png",
+    "14_completion_comparison.svg",
+    "15_residual_queue_comparison.png",
+    "15_residual_queue_comparison.svg",
+    "16_payload_comparison.png",
+    "16_payload_comparison.svg",
+    "17_continuous_vs_current_payload.png",
+    "17_continuous_vs_current_payload.svg",
+    "18_continuous_priority_allocation.png",
+    "18_continuous_priority_allocation.svg",
+    "19_reward_component_contributions.png",
+    "19_reward_component_contributions.svg",
+    "20_reward_vs_payload.png",
+    "20_reward_vs_payload.svg",
+    "21_return_vs_completion.png",
+    "21_return_vs_completion.svg",
+    "22_hstep_return_vs_payload.png",
+    "22_hstep_return_vs_payload.svg",
+    "23_return_head_alignment.png",
+    "23_return_head_alignment.svg",
+    "24_controllability_summary.png",
+    "24_controllability_summary.svg"
+  ],
+  "original_figure_pairs": 12,
+  "total_figure_pairs": 24,
+  "white_background": true
+}

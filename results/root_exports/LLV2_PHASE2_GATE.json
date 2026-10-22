@@ -1,0 +1,17 @@
+{
+  "LLV2_MS": "B",
+  "REL": 1,
+  "all_seeds_safe_registered_1e-6": true,
+  "blocks_ok": true,
+  "envelope_low": true,
+  "lock_ok": true,
+  "l0_payload": 10234375.0,
+  "mean_delta": 578125.0,
+  "n_positive_seeds": 4,
+  "recommend_next_train": false,
+  "safety_note": "seed0/seed4 recorded 2/8 min_sep events at 1e-9 below 1.0 m; all min_sep_worst + 1e-6 >= 1.0 matching Phase-1B freeze. No projector_failure. collision_count at registered 1e-6 is 0 for every seed.",
+  "seed1_negative": true,
+  "stable_residual_advantage": false,
+  "text": "mean delta > 0 and 4/5 seeds positive, but hierarchical and seed-cluster 95% CI lower bounds cross 0; seed1 is strongly negative. Do not add relation modules yet.",
+  "next": "analyze seed instability (especially seed1); do not add attention/HGNN/interference penalty; do not auto-extend budget."
+}

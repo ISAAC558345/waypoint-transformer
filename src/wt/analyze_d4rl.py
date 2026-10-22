@@ -67,6 +67,14 @@ def run_reward_conditioning(
 
     # reward_fractions = [0.3, 0.28, 0.29, 0.31, 0.32]
     reward_vecs, r_attribute_dicts = [], []
+    reward_representation = parameters.get("reward_representation")
+    if parameters.get("cumulative_reward_to_go", False):
+        if reward_representation not in (None, "cumulative"):
+            raise ValueError(
+                "Experiment metadata conflicts: cumulative_reward_to_go "
+                f"and reward_representation={reward_representation!r}."
+            )
+        reward_representation = "cumulative"
     for policy, attribute_dict in zip(loaded_policies, attribute_dicts):
         reward_vecs += step.eval_reward_conditioning(
             policy,
@@ -75,7 +83,8 @@ def run_reward_conditioning(
             reward_fractions,
             trajectory_samples=trajectory_samples,
             targets=targets,
-            average_reward_to_go=True
+            average_reward_to_go=True,
+            reward_representation=reward_representation,
         )
         r_attribute_dicts += [
             {"Policy": "RCBC", "Reward Target": reward_fraction, **attribute_dict}
@@ -300,7 +309,7 @@ def analyze_performance(
             unconditional_policy=parameters["unconditional_policy"],
             reward_conditioning=parameters["reward_conditioning"],
             env_name=parameters["env_name"],
-            strict = False
+            strict=True,
         )
         for checkpoint in checkpoints
     ]

@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "train_scenarios": [
+    310100,
+    310101,
+    310102,
+    310103,
+    310104,
+    310105,
+    310106,
+    310107,
+    310108,
+    310109
+  ],
+  "label_source": "phase5o and phase5r train labels, same as phase5ze",
+  "response_normalization": "phase5zd_response_normalization.json",
+  "input_normalization": "phase5ze checkpoint seed 0",
+  "token_norm_gap": 0.0,
+  "seed_norm_gap": 0.0,
+  "response_mean_gap": 0.0,
+  "caller_integrity": 0.0,
+  "parity_gap": 0.0,
+  "confirm_used_for_checkpoint_selection": false,
+  "opened_310118_310125": false
+}

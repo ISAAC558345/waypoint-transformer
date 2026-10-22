@@ -1,0 +1,54 @@
+{
+  "collect_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "dataset_size": 768,
+  "deepsets": {
+    "assignment_accuracy": 0.3042534722222222,
+    "conflict_rate": 0.0,
+    "hold": 15,
+    "interference_utility": 544931.2491947303,
+    "mean_payload_bits": 4000000.0,
+    "name": "deepsets",
+    "service_success_rate": 0.04774305555555555
+  },
+  "direct_ppo": false,
+  "epochs": 80,
+  "hgnn": {
+    "assignment_accuracy": 0.41449652777777773,
+    "conflict_rate": 0.0,
+    "hold": 15,
+    "interference_utility": 385541.5576158706,
+    "mean_payload_bits": 2250000.0,
+    "name": "hgnn",
+    "service_success_rate": 0.046875
+  },
+  "hgnn_beats_deepsets": false,
+  "hold": 15,
+  "mlp": {
+    "assignment_accuracy": 0.4175347222222222,
+    "conflict_rate": 0.09895833333333334,
+    "hold": 15,
+    "interference_utility": 943289.6481079953,
+    "mean_payload_bits": 4375000.0,
+    "name": "mlp",
+    "service_success_rate": 0.02191840277777778
+  },
+  "modified_l3b": false,
+  "modified_low_level_ppo": false
+}

@@ -1,0 +1,32 @@
+{
+  "caliber_from_disk": {
+    "gap_frac": 0.1470588235294118,
+    "mean_b0": 8500000.0,
+    "mean_b1": 7250000.0,
+    "mean_b1_over_mean_b0": 0.8529411764705882,
+    "mean_delta_over_mean_b0": -0.14705882352941177,
+    "mean_of_per_scene_ratio": 0.8663194444444444,
+    "n": 8,
+    "per_scene_ratio_definition": "mean_i (payload_B1(i) / payload_B0(i)); this is what Phase-10.1 mean_ratio stored"
+  },
+  "design_val_seeds": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "do_not_reselect_checkpoint": true,
+  "high_ckpt": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase100\\outputs\\handoff\\frozen_deepsets_util\\deepsets_util_seed0.pt",
+  "low_ckpt": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase101\\outputs\\pilot\\checkpoints\\pilot_final.pt",
+  "low_sha256": "8cb0529e7f9c2851e0a102da5793b29d317e9c48c900e10ac976791b678aebb7",
+  "max_episodes": 16,
+  "max_per_scenario": 2,
+  "max_snapshots": 16,
+  "no_training": true,
+  "phase": "10.2",
+  "snapshot_rule": "Scan B1 episodes in scenario order 8-15. Inside each episode scan increasing time_step, then UAV index 0..M-1. Accept a snapshot at the start of a step iff: target not idle, target in 0..K-1, target queue > 0, UAV currently in service range, remaining_hold > 0, episode not terminated. Take at most MAX_PER_SCENARIO per scenario and stop at MAX_SNAPSHOTS. Do not filter by later C1/C2 payoff."
+}

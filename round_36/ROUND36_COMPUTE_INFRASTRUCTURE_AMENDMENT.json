@@ -1,0 +1,17 @@
+{
+  "amendment_type": "round36_exact_compute_infrastructure_recovery",
+  "previous_runtime_gate": "RRT-B",
+  "previous_mean_seconds": 4186.434558122084,
+  "previous_worst_seconds": 4935.813386135967,
+  "runtime_limit_seconds": 1800,
+  "reason_for_new_authorization": "process_parallelism_was_not_available_due_to_windows_permission_and_the_primary_bottleneck_remains_exact_continuation_execution",
+  "scientific_protocol_changed": false,
+  "scenario_manifest_changed": false,
+  "confirmation_manifest_changed": false,
+  "anchors_changed": false,
+  "legal_candidate_space_changed": false,
+  "planner_or_continuation_changed": false,
+  "gate_threshold_changed": false,
+  "human_authorized_infrastructure_recovery": true,
+  "round37_created": false
+}

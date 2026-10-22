@@ -1,0 +1,43 @@
+{
+  "phase": "5ZH",
+  "loss": "L_resp + 0.2 * L_rank",
+  "lambda_rank": 0.2,
+  "value_temperature": 1.0,
+  "value_temperature_unit": "one payload block in Model-R1 output units",
+  "payload_block_bits": 1000000.0,
+  "epochs": 10,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "hidden": 128,
+  "optimizer": "Adam",
+  "batch": "one state",
+  "checkpoint": "final epoch only",
+  "train_scenarios": [
+    310100,
+    310101,
+    310102,
+    310103,
+    310104,
+    310105,
+    310106,
+    310107,
+    310108,
+    310109
+  ],
+  "confirm_scenarios_not_for_selection": [
+    310110,
+    310111,
+    310112,
+    310113,
+    310114,
+    310115,
+    310116,
+    310117
+  ],
+  "opened_310118_310125": false,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "configuration_difference": "ranking loss only; network, data, optimizer, and normalization stay at Phase-5ZE"
+}

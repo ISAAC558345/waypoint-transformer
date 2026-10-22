@@ -1,0 +1,72 @@
+{
+  "fresh_access": 0,
+  "goal_conditioned": {
+    "action_waypoint": {
+      "count": 96.0,
+      "mean_rho": -0.00026900016546090494,
+      "median_rho": -0.06648297997401648
+    },
+    "actor_uav_dim": 16,
+    "critic_uav_dim": 16,
+    "environment_steps": 256,
+    "episodes": 4,
+    "family": "htw_oracle",
+    "mean_payload_bits": 34310913.764639504,
+    "mean_ppo_reward_last": 0.09604775905609131,
+    "mean_residual_queue_bits": 2925000.0,
+    "mean_return": 3.6801865594608767,
+    "mean_waypoint_tracking_error": 0.3302863629075066,
+    "ppo_reward": "r_comm",
+    "tracking_penalty": false,
+    "tw_enters_actor": {
+      "any_conditioned_width": true,
+      "any_waypoint_nonzero": true
+    }
+  },
+  "hgnn": false,
+  "phase2": {
+    "phase2_state_only": {
+      "action_waypoint_cosine": -0.30977252842446756,
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.678687336673839,
+      "mean_waypoint_tracking_error": 0.3443850289849668
+    },
+    "phase2_tracking": {
+      "action_waypoint_cosine": 0.015357523452273045,
+      "mean_payload_bits": 34223606.44622762,
+      "mean_residual_queue_bits": 3012307.318411887,
+      "mean_return": 3.577101437062942,
+      "mean_waypoint_tracking_error": 0.30840406411837584,
+      "tracking_lambda": 1.0
+    }
+  },
+  "predictor_trained": false,
+  "seed": 0,
+  "state_only": {
+    "action_waypoint": {
+      "count": 96.0,
+      "mean_rho": -0.23401110672012584,
+      "median_rho": -0.1874815259405005
+    },
+    "actor_uav_dim": 8,
+    "critic_uav_dim": 8,
+    "environment_steps": 256,
+    "episodes": 4,
+    "family": "state_only",
+    "mean_payload_bits": 34310913.764639504,
+    "mean_ppo_reward_last": 0.09525243192911148,
+    "mean_residual_queue_bits": 2925000.0,
+    "mean_return": 3.675818286922804,
+    "mean_waypoint_tracking_error": 0.3434830269682658,
+    "ppo_reward": "r_comm",
+    "tracking_penalty": false,
+    "tw_enters_actor": {
+      "any_conditioned_width": false,
+      "any_waypoint_nonzero": false
+    }
+  },
+  "tracking_penalty": false,
+  "untouched_access": 0,
+  "updates": 8
+}

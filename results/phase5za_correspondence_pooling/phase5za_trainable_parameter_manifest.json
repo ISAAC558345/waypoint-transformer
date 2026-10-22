@@ -1,0 +1,61 @@
+{
+  "trainable_groups": [
+    "CorrespondencePreservingPairPool.phi",
+    "Phase-5Y-shaped scalar value head"
+  ],
+  "frozen": [
+    "Phase-5L HGNN",
+    "Phase-5U REP",
+    "Phase-5V TEMP",
+    "global state branch",
+    "Residual MAPPO",
+    "candidate generator"
+  ],
+  "input_dim": 504,
+  "hidden_dim": 128,
+  "output_dim": 640,
+  "head_input_dim": 887,
+  "parameters": [
+    {
+      "name": "pool.phi.0.weight",
+      "numel": 64512,
+      "requires_grad": true
+    },
+    {
+      "name": "pool.phi.0.bias",
+      "numel": 128,
+      "requires_grad": true
+    },
+    {
+      "name": "pool.phi.2.weight",
+      "numel": 81920,
+      "requires_grad": true
+    },
+    {
+      "name": "pool.phi.2.bias",
+      "numel": 640,
+      "requires_grad": true
+    },
+    {
+      "name": "mlp.0.weight",
+      "numel": 113536,
+      "requires_grad": true
+    },
+    {
+      "name": "mlp.0.bias",
+      "numel": 128,
+      "requires_grad": true
+    },
+    {
+      "name": "mlp.2.weight",
+      "numel": 128,
+      "requires_grad": true
+    },
+    {
+      "name": "mlp.2.bias",
+      "numel": 1,
+      "requires_grad": true
+    }
+  ],
+  "trainable_count": 260993
+}

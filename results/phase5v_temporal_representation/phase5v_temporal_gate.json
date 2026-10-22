@@ -1,0 +1,19 @@
+{
+  "gate": "V-B",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "t15_regret_v0": 1900000.0,
+  "t15_regret_v1": 950000.0,
+  "case_rank_median": 6.0,
+  "delta_j": {
+    "mean": 316666.6666666667,
+    "low": 58333.333333333336,
+    "high": 675000.0
+  },
+  "n_scenarios_up": 4,
+  "n_scenarios_down": 0,
+  "n_seeds_up": 5,
+  "n_seeds_down": 0,
+  "candidate_ablation_used": true,
+  "keep_temp_aug": true
+}

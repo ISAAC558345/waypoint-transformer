@@ -1,0 +1,38 @@
+{
+  "round": "round_34",
+  "topic": "Benchmark Complexity, Relational-Decision Opportunity, and Method Suitability Audit",
+  "audit_only": true,
+  "training_performed": false,
+  "environment_modified": false,
+  "model_modified": false,
+  "planner_modified": false,
+  "fresh_rollout_count": 0,
+  "protected_data_accessed": true,
+  "protected_access_governance_exception": true,
+  "protected_access_exception_count": 1,
+  "development_test_access_count": 1,
+  "development_test_reuse_count": 1,
+  "development_test_used_for_scientific_analysis": false,
+  "development_test_used_for_model_training": false,
+  "development_test_used_for_model_selection": false,
+  "development_test_used_for_threshold_selection": false,
+  "development_test_used_for_gate_decision": false,
+  "development_test_used_for_figure": false,
+  "development_test_used_for_report_metric": false,
+  "formal_scientific_protected_records_used": 0,
+  "protected_split_fail_closed": true,
+  "untouched_eval_access_count": 0,
+  "frozen_sources": {
+    "round20_samples": "round_20/outputs/round20_multi_uav_dataset_20260828_2100/multi_uav_task_waypoint_samples.jsonl",
+    "round20_transitions": "round_20/outputs/round20_multi_uav_dataset_20260828_2100/multi_uav_transitions.jsonl",
+    "round33_output": "round_33/outputs/round33_long_episode_benchmark_20260830_2320"
+  },
+  "permitted_splits": ["train", "validation"],
+  "current_benchmark": {"num_uavs": 2, "num_buoys": [3, 5], "movement_action_dim_per_uav": 2, "episode_horizon": 12},
+  "scale_projection": [[2, 5], [4, 8], [4, 16], [8, 16]],
+  "planned_gate": {
+    "BCX_A": "high learned relational ownership, independently useful edges, and temporal decision value",
+    "BCX_B": "small movement-only interface plus deterministic matching externalizes relational decisions and H5 saturation",
+    "BCX_C": "mixed or insufficient frozen evidence"
+  }
+}

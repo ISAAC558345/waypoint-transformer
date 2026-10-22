@@ -1,0 +1,506 @@
+{
+  "allowed_degrade_rate": null,
+  "allowed_worst_case_delta_R": null,
+  "criterion_name": null,
+  "frozen_gate": {
+    "margin": "U_hat(argmax U_hat) - U_hat(argmax U_single)",
+    "rule": "if margin >= tau: use B2 else LOCAL",
+    "tau": 1534933.5944128654,
+    "tau_changed": false,
+    "tau_display": 1535000.0,
+    "tau_source": "HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md changed-state mean dU_hat"
+  },
+  "other_required_conditions": null,
+  "phase_status": "BLOCKED_ON_HUMAN_SPECIFICATION",
+  "planner_ready": false,
+  "pre_registered": false,
+  "required_mean_U_gain": null,
+  "required_mean_delta_R": null,
+  "requires_human_specification": true,
+  "search": {
+    "classify": {
+      "conclusion": "NO PRE-REGISTERED DEPLOYMENT CRITERION FOUND",
+      "keyword_positive_files": [
+        "HTW_Phase3B_HoldTrajectoryCredit_Audit_CN.md",
+        "HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md",
+        "HTW_Phase4C_IndependentValidation_Audit_CN.md",
+        "HTW_Phase4D2_DeploymentSafety_Audit_CN.md",
+        "HTW_Phase4D_DeploymentGate_Audit_CN.md",
+        "src/wt/lowlevel_v2/htw_phase4b_b2_shadow/outputs/b2_shadow_summary.json",
+        "src/wt/lowlevel_v2/htw_phase4b_b2_shadow/outputs/HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md",
+        "src/wt/lowlevel_v2/htw_phase4b_b2_validation/outputs/phase4b_b2_summary.json",
+        "src/wt/lowlevel_v2/phase4c_independent_validation/outputs/HTW_Phase4C_IndependentValidation_Audit_CN.md",
+        "src/wt/lowlevel_v2/phase4c_independent_validation/outputs/independent_summary.json",
+        "src/wt/lowlevel_v2/phase4d2_deployment_safety_audit/AGENTS.md",
+        "src/wt/lowlevel_v2/phase4d2_deployment_safety_audit/outputs/deployment_criterion.json",
+        "src/wt/lowlevel_v2/phase4d2_deployment_safety_audit/outputs/HTW_Phase4D2_DeploymentSafety_Audit_CN.md",
+        "src/wt/lowlevel_v2/phase4d2_deployment_safety_audit/outputs/phase4d2_safety_summary.json",
+        "src/wt/lowlevel_v2/phase4d_deployment_gate_audit/AGENTS.md",
+        "src/wt/lowlevel_v2/phase4d_deployment_gate_audit/outputs/HTW_Phase4D_DeploymentGate_Audit_CN.md",
+        "src/wt/lowlevel_v2/phase4d_deployment_gate_audit/outputs/phase4d_gate_summary.json"
+      ],
+      "near_misses": [
+        {
+          "path": "HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md",
+          "section": "C. Conservative deployment gate",
+          "why_not_criterion": "Gate-1/2 are scientific sanity checks (mean R > LOCAL; permutation drop>0.03). The same section states Gate-3 deployment threshold is undefined and planner_ready=False."
+        },
+        {
+          "path": "HTW_Phase4D_DeploymentGate_Audit_CN.md",
+          "section": "E/F",
+          "why_not_criterion": "Explicitly states the project has no predefined deployment-safety threshold."
+        },
+        {
+          "path": "HTW_Phase4D2_DeploymentSafety_Audit_CN.md",
+          "section": "\u65e2\u6709\u5de5\u7a0b\u9608\u503c\u68c0\u7d22",
+          "why_not_criterion": "Marks deployment criterion = NOT PRE-REGISTERED and leaves A-E thresholds null."
+        }
+      ],
+      "numeric_pattern_files_excluding_4d2_placeholders": [],
+      "pre_registered_criterion_found": false
+    },
+    "hits": [
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "AGENTS.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "FINAL_ABLATION_SUMMARY_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "FINAL_CODE_FREEZE.json",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "FINAL_PROJECT_MANIFEST.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "FINAL_README_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "FINAL_RESEARCH_SUMMARY_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase3_EvidenceMatrix_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase3_Failure_Diagnosis_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase3_goal_conditioned_controller_report.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase3_TrajectoryUtility_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "degradation"
+        ],
+        "path": "HTW_Phase3B_HoldTrajectoryCredit_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase3C_FirstHoldCredit_Counterfactual_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase3D_TrajectoryAwareFirstHold_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase3E_FutureValuePredictability_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase3F_FutureValueCeiling_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase3G_TrajectoryAwareCredit_StructuralAudit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase3H_CandidateConditionedDecisionCredit_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase4_high_level_planner_report.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase4A_HindsightCredit_DatasetAudit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase4B_B2_IndependentValidation_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "planner_ready",
+          "conservative deployment"
+        ],
+        "path": "HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "HTW_Phase4B_TrajectoryAwareCreditLearner_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "worst-case",
+          "planner_ready"
+        ],
+        "path": "HTW_Phase4C_IndependentValidation_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "deployment-safe",
+          "deployment safety",
+          "deployment_criterion",
+          "acceptance rule",
+          "degradation",
+          "worst-case",
+          "degrade rate",
+          "degrade_rate",
+          "planner_ready"
+        ],
+        "path": "HTW_Phase4D2_DeploymentSafety_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "deployment-safe",
+          "safety threshold",
+          "worst-case",
+          "planner_ready",
+          "conservative deployment"
+        ],
+        "path": "HTW_Phase4D_DeploymentGate_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "PLANS.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "src/wt/lowlevel_v2/htw_phase4a_hindsight_credit/AGENTS.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "src/wt/lowlevel_v2/htw_phase4a_hindsight_credit/outputs/HTW_Phase4A_HindsightCredit_DatasetAudit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "src/wt/lowlevel_v2/htw_phase4b_b2_shadow/AGENTS.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "planner_ready"
+        ],
+        "path": "src/wt/lowlevel_v2/htw_phase4b_b2_shadow/outputs/b2_shadow_summary.json",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "planner_ready",
+          "conservative deployment"
+        ],
+        "path": "src/wt/lowlevel_v2/htw_phase4b_b2_shadow/outputs/HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "src/wt/lowlevel_v2/htw_phase4b_b2_validation/AGENTS.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "src/wt/lowlevel_v2/htw_phase4b_b2_validation/outputs/HTW_Phase4B_B2_IndependentValidation_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "planner_ready"
+        ],
+        "path": "src/wt/lowlevel_v2/htw_phase4b_b2_validation/outputs/phase4b_b2_summary.json",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "src/wt/lowlevel_v2/htw_phase4b_credit_learner/AGENTS.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "src/wt/lowlevel_v2/htw_phase4b_credit_learner/outputs/HTW_Phase4B_TrajectoryAwareCreditLearner_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "src/wt/lowlevel_v2/htw_phase4b_credit_learner/outputs/phase4b_summary.json",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "src/wt/lowlevel_v2/phase4c_independent_validation/AGENTS.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "worst-case",
+          "planner_ready"
+        ],
+        "path": "src/wt/lowlevel_v2/phase4c_independent_validation/outputs/HTW_Phase4C_IndependentValidation_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "src/wt/lowlevel_v2/phase4c_independent_validation/outputs/independence_audit.json",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "planner_ready"
+        ],
+        "path": "src/wt/lowlevel_v2/phase4c_independent_validation/outputs/independent_summary.json",
+        "readable": true
+      },
+      {
+        "has_keyword": false,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [],
+        "path": "src/wt/lowlevel_v2/phase4c_independent_validation/outputs/ull_cache.json",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "deployment safety"
+        ],
+        "path": "src/wt/lowlevel_v2/phase4d2_deployment_safety_audit/AGENTS.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": true,
+        "keyword_hits": [
+          "deployment_criterion",
+          "acceptance rule",
+          "degrade_rate",
+          "planner_ready",
+          "max_degrade"
+        ],
+        "path": "src/wt/lowlevel_v2/phase4d2_deployment_safety_audit/outputs/deployment_criterion.json",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "deployment-safe",
+          "deployment safety",
+          "deployment_criterion",
+          "acceptance rule",
+          "degradation",
+          "worst-case",
+          "degrade rate",
+          "degrade_rate",
+          "planner_ready"
+        ],
+        "path": "src/wt/lowlevel_v2/phase4d2_deployment_safety_audit/outputs/HTW_Phase4D2_DeploymentSafety_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "deployment-safe",
+          "deployment_criterion",
+          "degradation",
+          "degrade_rate",
+          "planner_ready"
+        ],
+        "path": "src/wt/lowlevel_v2/phase4d2_deployment_safety_audit/outputs/phase4d2_safety_summary.json",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "conservative deployment"
+        ],
+        "path": "src/wt/lowlevel_v2/phase4d_deployment_gate_audit/AGENTS.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "deployment-safe",
+          "safety threshold",
+          "worst-case",
+          "planner_ready",
+          "conservative deployment"
+        ],
+        "path": "src/wt/lowlevel_v2/phase4d_deployment_gate_audit/outputs/HTW_Phase4D_DeploymentGate_Audit_CN.md",
+        "readable": true
+      },
+      {
+        "has_keyword": true,
+        "has_numeric_acceptance_pattern": false,
+        "keyword_hits": [
+          "deployment-safe",
+          "safety threshold",
+          "planner_ready"
+        ],
+        "path": "src/wt/lowlevel_v2/phase4d_deployment_gate_audit/outputs/phase4d_gate_summary.json",
+        "readable": true
+      }
+    ],
+    "keywords": [
+      "deployment-safe",
+      "deployment safety",
+      "deployment_criterion",
+      "safety threshold",
+      "acceptance criterion",
+      "acceptance rule",
+      "degradation",
+      "worst-case",
+      "degrade rate",
+      "degrade_rate",
+      "regression tolerance",
+      "planner_ready",
+      "deployment_ready",
+      "safety gate",
+      "conservative deployment",
+      "allowed_degrade",
+      "max_degrade"
+    ],
+    "n_files": 49,
+    "registry_status": "NOT_PRE_REGISTERED"
+  },
+  "search_conclusion": "NO PRE-REGISTERED DEPLOYMENT CRITERION FOUND",
+  "source": null,
+  "source_file": null,
+  "source_section": null,
+  "status": "NOT_PRE_REGISTERED"
+}

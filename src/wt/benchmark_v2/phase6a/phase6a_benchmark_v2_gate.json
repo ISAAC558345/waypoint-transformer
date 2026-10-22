@@ -1,0 +1,26 @@
+{
+  "gate": "BV2-E",
+  "gate_name": "ACCOUNTING_MODEL_INVALID",
+  "phase5zp_gate": "CONF-C",
+  "phase5zq_gate": "ATTR-C",
+  "phase5_revised": false,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "lambda_selected": false,
+  "bit_queue_exists": false,
+  "e0_e2_max_abs_error": 0.0,
+  "mean_rate_integral_minus_e0": 156442242.56815574,
+  "frozen_e0_saturation_ratio": 1.0,
+  "distinguish_fraction": {
+    "frozen_phase5_vs_random_legal": 0.8125,
+    "fly_toward_vs_instant_rate_diagnostic": 0.96875,
+    "frozen_phase5_vs_model_s": 0.0
+  },
+  "mean_pairwise_tie_fraction_on_e0": 0.40625,
+  "continuity_pattern_on_e0": true,
+  "spearman_switch_vs_e0": null,
+  "opened_reserved_pool": false,
+  "opened_historical_consumed": false,
+  "deployment_pass": false,
+  "lambda_status": "HUMAN_OR_NEXT_PHASE_SELECTION_REQUIRED"
+}

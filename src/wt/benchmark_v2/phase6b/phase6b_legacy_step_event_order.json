@@ -1,0 +1,33 @@
+{
+  "source": "L3BEnv.step 与 phase1b controller 的实际调用，不是推测",
+  "outside_env_before_step": [
+    "SafetyProjector.project",
+    "投影失败时执行动作改为 0",
+    "clip_unit_step"
+  ],
+  "inside_env_step": [
+    "动作范数裁剪",
+    "UAV 位置积分",
+    "assignment 合法性检查并写入",
+    "目标变化时清零该 UAV 的 progress",
+    "active_links：距离、队列为正、无冲突",
+    "SINR",
+    "rate = bandwidth_hz * log2(1+SINR)",
+    "按当前 t 读取到达，此时尚未加到队列",
+    "progress 增加；满 1 则 payload 加一个块，并记录 service 块",
+    "队列先减去本步完成块",
+    "到达加入后按容量计算 drop",
+    "t 加 1",
+    "终止判断",
+    "info"
+  ],
+  "outside_env_after_step": [
+    "reward = payload 增量 / PAYLOAD_SCALE - 投影惩罚 - residual 惩罚"
+  ],
+  "v2_differences": [
+    "队列扣减量改为 served_bits，仍在到达之前",
+    "payload 累加 served_bits，不再等 progress 满 1",
+    "completed blocks 只更新浮标余数，不再次扣队列",
+    "progress 仍在原位置更新，但只作诊断"
+  ]
+}

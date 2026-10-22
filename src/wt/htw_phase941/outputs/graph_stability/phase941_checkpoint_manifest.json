@@ -1,0 +1,75 @@
+{
+  "rows": [
+    {
+      "encoder": "deepsets",
+      "model_seed": 0,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase94\\outputs\\autoregressive_assignment\\deepsets_ar.pt",
+      "rule": "last_epoch_fixed_phase94",
+      "source": "phase94_official"
+    },
+    {
+      "encoder": "hgnn",
+      "model_seed": 0,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase94\\outputs\\autoregressive_assignment\\hgnn_ar.pt",
+      "rule": "last_epoch_fixed_phase94",
+      "source": "phase94_official"
+    },
+    {
+      "encoder": "deepsets",
+      "model_seed": 1,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase941\\outputs\\graph_stability\\deepsets_seed1.pt",
+      "rule": "last_epoch_fixed_phase94",
+      "source": "phase941_last_epoch"
+    },
+    {
+      "encoder": "hgnn",
+      "model_seed": 1,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase941\\outputs\\graph_stability\\hgnn_seed1.pt",
+      "rule": "last_epoch_fixed_phase94",
+      "source": "phase941_last_epoch"
+    },
+    {
+      "encoder": "deepsets",
+      "model_seed": 2,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase941\\outputs\\graph_stability\\deepsets_seed2.pt",
+      "rule": "last_epoch_fixed_phase94",
+      "source": "phase941_last_epoch"
+    },
+    {
+      "encoder": "hgnn",
+      "model_seed": 2,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase941\\outputs\\graph_stability\\hgnn_seed2.pt",
+      "rule": "last_epoch_fixed_phase94",
+      "source": "phase941_last_epoch"
+    },
+    {
+      "encoder": "deepsets",
+      "model_seed": 3,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase941\\outputs\\graph_stability\\deepsets_seed3.pt",
+      "rule": "last_epoch_fixed_phase94",
+      "source": "phase941_last_epoch"
+    },
+    {
+      "encoder": "hgnn",
+      "model_seed": 3,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase941\\outputs\\graph_stability\\hgnn_seed3.pt",
+      "rule": "last_epoch_fixed_phase94",
+      "source": "phase941_last_epoch"
+    },
+    {
+      "encoder": "deepsets",
+      "model_seed": 4,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase941\\outputs\\graph_stability\\deepsets_seed4.pt",
+      "rule": "last_epoch_fixed_phase94",
+      "source": "phase941_last_epoch"
+    },
+    {
+      "encoder": "hgnn",
+      "model_seed": 4,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase941\\outputs\\graph_stability\\hgnn_seed4.pt",
+      "rule": "last_epoch_fixed_phase94",
+      "source": "phase941_last_epoch"
+    }
+  ],
+  "rule": "last_epoch_fixed_phase94"
+}

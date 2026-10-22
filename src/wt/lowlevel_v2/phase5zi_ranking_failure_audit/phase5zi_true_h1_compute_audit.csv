@@ -1,0 +1,11 @@
+path,component,mean_ms,share_of_515ms,per_candidate_ms,status,note,mappo_action_ms,response_predictor_ms,value_ms
+TRUE-H1,env_clone_ms,17.374528037616983,0.03372006436699685,0.1447877336468082,MEASURED,environment copy before the one-step transition,,,
+TRUE-H1,mappo_action_ms,138.5131510149222,0.26882297797018845,1.154276258457685,MEASURED,"executor.act, including MAPPO forward, residual lock, and safety projection",,,
+TRUE-H1,env_step_ms,294.8455399979139,0.5722291025992803,2.4570461666492824,MEASURED,one environment step on the cloned state,,,
+TRUE-H1,response_extract_ms,58.857861991855316,0.11422991695499261,0.49048218326546095,MEASURED,response assembly after the step,,,
+TRUE-H1,encoder_ms,2.1439320011995733,0.004160891445361497,2.1439320011995733,MEASURED,"encoder features, once per timed call",,,
+TRUE-H1,value_ms,3.5228419984923676,0.00683704666318034,0.029357016654103063,MEASURED,frozen value forward,,,
+TRUE-H1,pure_mappo_forward_only,,,,NOT_MEASURED,action timer wraps the whole executor call,,,
+PREDICTED-H1,total_ms,118.37922999693546,,,MEASURED,"100 repeats on one saved confirmation state, 120 serial calls",109.09552200173493,3.581003001309,3.400181999313645
+TRUE-H1,pool_size_scaling,,,,NOT_MEASURED,timed only at 120 candidates; the code loops once per candidate,,,
+TRUE-H1,batched_mappo_speedup,,,,NOT_MEASURED,current code calls act once per assignment,,,

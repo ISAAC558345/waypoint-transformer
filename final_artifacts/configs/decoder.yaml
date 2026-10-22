@@ -1,0 +1,9 @@
+{
+  "env_idle": -1,
+  "idle_token": 12,
+  "name": "OrderFreeSetDecoder",
+  "permutation_equivariant": true,
+  "phys_dim": 4,
+  "tie_atol": 1e-06,
+  "width": 128
+}

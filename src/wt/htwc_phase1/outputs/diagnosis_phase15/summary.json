@@ -1,0 +1,252 @@
+{
+  "fresh_access": 0,
+  "horizon": [
+    {
+      "horizon": 1,
+      "mean_first_action_vs_Hstep_cos": 1.0,
+      "mean_label_consistency_error": 6.652797180757428e-09,
+      "mean_planner_span_m": 10.0
+    },
+    {
+      "horizon": 3,
+      "mean_first_action_vs_Hstep_cos": 0.7400939451776418,
+      "mean_label_consistency_error": 5.046187154342677e-09,
+      "mean_planner_span_m": 20.208268007365902
+    },
+    {
+      "horizon": 5,
+      "mean_first_action_vs_Hstep_cos": 0.7324106667640209,
+      "mean_label_consistency_error": 3.876942545590539e-09,
+      "mean_planner_span_m": 26.693744110649128
+    },
+    {
+      "horizon": 10,
+      "mean_first_action_vs_Hstep_cos": 0.6410265769061294,
+      "mean_label_consistency_error": 4.105953528746106e-09,
+      "mean_planner_span_m": 32.651603604544626
+    }
+  ],
+  "horizon_ppo": {
+    "oracle_h1": {
+      "action_rho": {
+        "count": 96.0,
+        "mean_rho": -0.0779031495296121,
+        "median_rho": -0.1865636533823029
+      },
+      "ade": 0.10210685269297448,
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "oracle_h1",
+      "future_displacement_error": 0.10210685269297448,
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.644042762465162,
+      "target_consistency_cos": -0.07790314952961223,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_goal_nonzero": true,
+        "any_waypoint_nonzero": true
+      }
+    },
+    "oracle_h10": {
+      "action_rho": {
+        "count": 24.0,
+        "mean_rho": -0.41545590917471653,
+        "median_rho": -0.5193461679801109
+      },
+      "ade": 0.4418626697798671,
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "oracle_h10",
+      "future_displacement_error": 0.44893284468996786,
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.6924960232027164,
+      "target_consistency_cos": -0.40348683582054573,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_goal_nonzero": true,
+        "any_waypoint_nonzero": true
+      }
+    },
+    "oracle_h3": {
+      "action_rho": {
+        "count": 80.0,
+        "mean_rho": -0.26334986412206135,
+        "median_rho": -0.2116977398489584
+      },
+      "ade": 0.2289976255765509,
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "oracle_h3",
+      "future_displacement_error": 0.23000480031112272,
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.693938347699807,
+      "target_consistency_cos": -0.25574352641050657,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_goal_nonzero": true,
+        "any_waypoint_nonzero": true
+      }
+    },
+    "oracle_h5": {
+      "action_rho": {
+        "count": 64.0,
+        "mean_rho": -0.27325700592438107,
+        "median_rho": -0.24632386207246618
+      },
+      "ade": 0.32886517628274536,
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "oracle_h5",
+      "future_displacement_error": 0.3306784840822893,
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.694729738005164,
+      "target_consistency_cos": -0.25945114356713683,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_goal_nonzero": true,
+        "any_waypoint_nonzero": true
+      }
+    }
+  },
+  "label_audit": {
+    "default_policy": "independent_queue_rate",
+    "generation_type": "queue_weighted_direct_rate_direction",
+    "is_joint_optimization": false,
+    "is_nearest_target": false,
+    "is_shortest_path": false,
+    "joint_beam_available_but_unused_in_phase1": true,
+    "nearest_unsatisfied_is_separate_candidate": true,
+    "note": "Phase-1 labels call independent_queue_rate_action: per-UAV argmax of (queue/capacity)*rate, then unit vector toward that buoy. It is a myopic queue-rate heuristic, not reward search and not joint_plan beam search.",
+    "optimizes_discounted_return": false,
+    "optimizes_reward": false,
+    "scenarios_inspected": [
+      "r30_training_k3_eta00_000",
+      "r30_training_k5_eta00_001",
+      "r30_training_k3_eta025_002",
+      "r30_training_k5_eta025_003"
+    ],
+    "waypoint_from_planner": true
+  },
+  "old_tw": {
+    "action_rho": {
+      "count": 56.0,
+      "mean_rho": -0.23631568809986433,
+      "median_rho": -0.564132469724175
+    },
+    "mean_payload_bits": null,
+    "target_consistency_cos": -0.22956745717290947
+  },
+  "ppo": {
+    "oracle_goal_waypoint": {
+      "action_rho": {
+        "count": 64.0,
+        "mean_rho": 0.02312815297015184,
+        "median_rho": 0.06614176568072883
+      },
+      "ade": 0.3326847734295175,
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "oracle_goal_waypoint",
+      "future_displacement_error": 0.33470108869466375,
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.6683158705594314,
+      "target_consistency_cos": 0.03203421420969629,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_goal_nonzero": true,
+        "any_waypoint_nonzero": true
+      }
+    },
+    "predicted_goal": {
+      "action_rho": {
+        "count": 64.0,
+        "mean_rho": -0.41722735114019305,
+        "median_rho": -0.5771915133056764
+      },
+      "ade": 0.5814123409292107,
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "predicted_goal",
+      "future_displacement_error": 0.5936084813085878,
+      "mean_payload_bits": 34303322.70990177,
+      "mean_residual_queue_bits": 2932591.0547377323,
+      "mean_return": 3.6623555812812985,
+      "target_consistency_cos": -0.41924824907081604,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_goal_nonzero": true,
+        "any_waypoint_nonzero": false
+      }
+    },
+    "predicted_goal_waypoint": {
+      "action_rho": {
+        "count": 64.0,
+        "mean_rho": -0.266271499124766,
+        "median_rho": -0.5664639547993151
+      },
+      "ade": 0.4328037370834071,
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "predicted_goal_waypoint",
+      "future_displacement_error": 0.44661992765949055,
+      "mean_payload_bits": 34281305.51661155,
+      "mean_residual_queue_bits": 2954608.248027959,
+      "mean_return": 3.645514336948456,
+      "target_consistency_cos": -0.2738807130826105,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_goal_nonzero": true,
+        "any_waypoint_nonzero": true
+      }
+    },
+    "predicted_waypoint": {
+      "action_rho": {
+        "count": 64.0,
+        "mean_rho": -0.3466009748948076,
+        "median_rho": -0.6585638496322149
+      },
+      "ade": 0.4527203409147075,
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "predicted_waypoint",
+      "future_displacement_error": 0.4744620514446432,
+      "mean_payload_bits": 34300358.90724704,
+      "mean_residual_queue_bits": 2935554.857392473,
+      "mean_return": 3.631614223299205,
+      "target_consistency_cos": -0.35054464748991127,
+      "tw_enters_actor": {
+        "any_conditioned_width": true,
+        "any_goal_nonzero": false,
+        "any_waypoint_nonzero": true
+      }
+    },
+    "state_only": {
+      "action_rho": {
+        "count": 64.0,
+        "mean_rho": -0.1652878644251351,
+        "median_rho": -0.17354415220750827
+      },
+      "ade": 0.5558045597569166,
+      "environment_steps": 256,
+      "episodes": 4,
+      "family": "state_only",
+      "future_displacement_error": 0.5595281573776378,
+      "mean_payload_bits": 34310913.764639504,
+      "mean_residual_queue_bits": 2925000.0,
+      "mean_return": 3.6754366948361534,
+      "target_consistency_cos": -0.1422532021824703,
+      "tw_enters_actor": {
+        "any_conditioned_width": false,
+        "any_goal_nonzero": false,
+        "any_waypoint_nonzero": false
+      }
+    }
+  },
+  "predictor_warmup_last": 1.3263938575983047,
+  "untouched_access": 0
+}

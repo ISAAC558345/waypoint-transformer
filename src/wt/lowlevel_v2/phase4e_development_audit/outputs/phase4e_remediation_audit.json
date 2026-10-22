@@ -1,0 +1,159 @@
+{
+  "b2_frozen": true,
+  "criterion_frozen": "CONSERVATIVE_WITH_FALLBACK_V1",
+  "deployment_rerun": false,
+  "deployment_verified": false,
+  "eligible": {
+    "absent_pools": [
+      "LLV2_confirmation",
+      "LLV2_final_untouched"
+    ],
+    "consumed_holdout_pool": {
+      "ids": "230000-230127",
+      "n": 128,
+      "role": "DEPLOYMENT_HOLDOUT_CONSUMED"
+    },
+    "development_pool": null,
+    "eligible_scenario_ids": [],
+    "other_blocked_historical_seed_count": 1353,
+    "other_blocked_not_a_development_pool": true,
+    "remediation_status": "B2_REMEDIATION_BLOCKED_BY_NO_ELIGIBLE_DEVELOPMENT_DATA",
+    "status": "NO_ELIGIBLE_DEVELOPMENT_DATA",
+    "validation_pool": null
+  },
+  "eligible_count": 0,
+  "failure_direction": {
+    "A_candidate_ranking_error": "EVIDENCE_FROM_COMPLETED_PHASE4E_ATTRIBUTION",
+    "B_U_hat_calibration_error": "NOT ESTABLISHED",
+    "C_geometry_long_horizon_mismatch": "NOT ESTABLISHED",
+    "D_margin_delta_R_relation": "SEE_DIAGNOSTICS_NOT_A_NEW_THRESHOLD",
+    "E_training_coverage": "NOT ESTABLISHED",
+    "F_feature_insufficiency": "NOT ESTABLISHED"
+  },
+  "gate1_frozen": true,
+  "lineage": {
+    "confirmation_pool": null,
+    "criterion_source": "HUMAN_SPECIFICATION Candidate-C; no scenario pool selected C1-C8",
+    "extratrees": {
+      "max_depth": 8,
+      "min_samples_leaf": 5,
+      "n_estimators": 300,
+      "n_jobs": 1,
+      "random_state": 0
+    },
+    "feature_comparison_scenario_ids": [
+      221000,
+      221001,
+      221002,
+      221003,
+      221004,
+      221005,
+      221006,
+      221007,
+      221008,
+      221009,
+      221010,
+      221011,
+      221012,
+      221013,
+      221014,
+      221015
+    ],
+    "features": [
+      "U_single",
+      "idle_count",
+      "idle_frac",
+      "n_unique_buoys",
+      "competition_count",
+      "mean_uav_target_dist",
+      "max_uav_target_dist",
+      "n_in_range",
+      "assigned_queue_mean",
+      "cand_mean_sinr",
+      "cand_mean_rate",
+      "cand_mean_interference",
+      "assign_0",
+      "assign_1",
+      "assign_2",
+      "assign_3",
+      "assign_4",
+      "assign_5"
+    ],
+    "final_untouched_pool": null,
+    "fit_family": "EXEC",
+    "fit_rows_per_scenario": 24,
+    "fit_scenario_ids": [
+      221000,
+      221001,
+      221002,
+      221003,
+      221004,
+      221005,
+      221006,
+      221007,
+      221008,
+      221009,
+      221010,
+      221011,
+      221012,
+      221013,
+      221014,
+      221015
+    ],
+    "groupkfold": {
+      "group": "scenario_id",
+      "hyperparameter_search": false,
+      "n_splits": 5,
+      "validation_fold": []
+    },
+    "label_file": "src/wt/lowlevel_v2/htw_phase4a_hindsight_credit/outputs/phase4a_hindsight_credit.csv",
+    "model": "frozen Phase-4C B2",
+    "random_seed": 0,
+    "reconstruction": "fit ExtraTrees on Phase-4A EXEC rows for 221000-221015",
+    "saved_model_artifact": null,
+    "target": "C_abs = U_traj - U_single",
+    "tau": 1534933.5944128654,
+    "tau_source": "Phase-4B shadow changed-state mean dU_hat on LLV2_design"
+  },
+  "margin_diagnostics": {
+    "design": {
+      "P_delta_R_negative_given_margin_ge_tau": 0.2,
+      "n": 16,
+      "n_margin_ge_tau": 5,
+      "n_negative_delta_R_given_margin_ge_tau": 1,
+      "pearson_margin_delta_R": 0.25329578666559965,
+      "role": "in_sample_design_diagnostic",
+      "source": "src/wt/lowlevel_v2/htw_phase4b_b2_shadow/outputs/b2_shadow_decisions.csv",
+      "spearman_margin_delta_R": 0.18452707852737105,
+      "used_to_fit_threshold": false
+    },
+    "phase4c_validation": {
+      "P_delta_R_negative_given_margin_ge_tau": 0.11538461538461539,
+      "n": 64,
+      "n_margin_ge_tau": 26,
+      "n_negative_delta_R_given_margin_ge_tau": 3,
+      "pearson_margin_delta_R": 0.5499106163528429,
+      "role": "consumed_phase4c_validation_diagnostic",
+      "source": "src/wt/lowlevel_v2/phase4c_independent_validation/outputs/independent_decisions.csv",
+      "spearman_margin_delta_R": 0.5301279482919675,
+      "used_to_fit_threshold": false
+    },
+    "phase4e_external_record": {
+      "P_delta_R_negative_given_margin_ge_tau": 0.08,
+      "n": 128,
+      "n_margin_ge_tau": 50,
+      "n_negative_delta_R_given_margin_ge_tau": 4,
+      "note": "Phase-4E delta_R is the realized Gate-1 outcome. Below tau it is zero because LOCAL was selected. This record is not a tuning set.",
+      "pearson_margin_delta_R": 0.6292045486971233,
+      "role": "EXTERNAL_RECORD_NOT_USED_FOR_SELECTION",
+      "source": "src/wt/lowlevel_v2/phase4e_deployment_verification/outputs/deployment_verification_results.csv",
+      "spearman_margin_delta_R": 0.6634627812124765,
+      "used_to_fit_threshold": false
+    }
+  },
+  "matrix_rows": 528,
+  "model_modified": false,
+  "planner_ready": false,
+  "status": "DEPLOYMENT_VERIFICATION_FAILED",
+  "tau_frozen": 1534933.5944128654
+}

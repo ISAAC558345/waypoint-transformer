@@ -1,0 +1,74 @@
+{
+  "amendment_type": "legal_round36_successor_governance_extension",
+  "authoritative_source": "round_35/ROUND_LOCK.json",
+  "original_round35_lock_sha256": "8506179FF0F8E450125FF97FA42FC822D05DDFB9CD1F39CACC655079F972CD82",
+  "authorized_successor_round": "round_36",
+  "round36_creation_allowed": true,
+  "round37_creation_allowed": false,
+  "affected_paths": {
+    "src/wt/governance_state_sync.py": {
+      "prior_amended_sha256": "D6312A3B5C9BD3C3DAED11A383D040F6ABC175EAEA39B88C35EF65EACFD88806",
+      "amended_sha256": "C0241D716D7DB9CDC485EE08B94E67D720C54505AF6B9431507B8122F838E002"
+    },
+    "tests/test_governance_state_sync.py": {
+      "prior_amended_sha256": "25927DB78F4535EFE37ECC9F67B3BD1EB60F7916A300BA5446938BBAA0D00EFD",
+      "amended_sha256": "F609C49F39FA8BCD0DC26490A433353C20628C7E7106BA11050EADE197FCB29D"
+    },
+    "tests/test_round21_hgnn_task_waypoint.py": {
+      "prior_amended_sha256": "0302E2B45E3F31D0008852396DD957F082E892EF2477F2E51BEA7555D4DB6FBF",
+      "amended_sha256": "7594411505F4C8CE4FA4FF412D0E2B0B89CE3D1220142CC92C2E952D0FAD4CFE"
+    },
+    "tests/test_round24_seed_extension.py": {
+      "prior_amended_sha256": "980EE96BABD81C376D9EACF42233B655AB09BD7B2403617FBF9F6959A19A7D8B",
+      "amended_sha256": "CA92BD7F06A33DA0319B0680C0282BD9B3F510D6D32F945A2EA094319B30F03A"
+    },
+    "tests/test_round30_deepsets_ppo.py": {
+      "prior_amended_sha256": "EB39EBE1889C141D9FE1BD2D4DCF6B6E972EF6A81549EC9BAC61CC37492DDBC1",
+      "amended_sha256": "201464F329D4DCDFCDE3DBBCAC3ABC2F06561D9D08B16A67BC00DAEAD156F50A"
+    },
+    "tests/test_round33_long_episode.py": {
+      "prior_amended_sha256": "28BE50695ACE1B8EEF512673EFD2F16B1F9E7C68A03D945C4734045EB4A980C6",
+      "amended_sha256": "C9318C49377C61B7397AA4DF9110330A7E7D10C6ABE5158B32A4D41E74B0380C"
+    },
+    "tests/test_round34_governance_lifecycle.py": {
+      "prior_amended_sha256": "6A10400F1FD28D4F0F7B13345B68BA0B10D231CF16D8475034787DA3E265B310",
+      "amended_sha256": "13709A088BEC937CB2243C7BBF645C8648A48866CDD7959CD482E5C2E57551D6"
+    },
+    "tests/test_round34_lock.py": {
+      "prior_amended_sha256": "9D47F8D067161292A0B864B572B6B4658D83A1A87BD5858C83FFB7C97B2D9111",
+      "amended_sha256": "C2897FD7668735BD8B41D81E86E08869E517DB36759A6F4924B0D721930C3DD0"
+    }
+  },
+  "governance_path_transitions": {
+    "CURRENT_ROUND.txt": {
+      "prior_amended_sha256": "8AB4418539FB185C67D048BB850916DE7900AB2BAD599B3D85E429D429FA3213",
+      "amended_sha256": "01E9D7B70758C5CA3841366712626C4FD204A5B841A131D1CC8588F12D1942EB"
+    },
+    "PLANS.md": {
+      "prior_amended_sha256": "CF3AC2B1551D4958B491A1984587DCB7409C040B08601664CCE8476571E7C155",
+      "amended_sha256": "1696EE6E18DD583375A1AB5B747B961D97D4253A6995C262D9567F171C7B2FB2"
+    },
+    "ROUND_VERSIONING.md": {
+      "prior_amended_sha256": "CA37E57D83140419CC552ACDB3774E3F42604BB31567A99B4B07BA655CC6F90F",
+      "amended_sha256": "13CB700E08FEA830ABCB482AFD18D8700AD7ACEE3DEDAC4E52DB0DDC6BE383B9"
+    },
+    "round_manifest.json": {
+      "prior_amended_sha256": "47B004D50C12ABB4EA05F85840C135C0E444BB00196DF3510464EA5DABF89295",
+      "amended_sha256": "F687FFF83FFE0BE819F6E05D2D5BB162D7B7CDA8042500FB0C819B81D4096BCE"
+    }
+  },
+  "semantic_correction": "Authorize the explicitly instructed non-learning Round-36 successor after the immutable Round-35 Level-2 structural-validation lock. This append-only lifecycle repair makes historical tests evaluate their locks through the authorized amendment overlay; it neither alters historical locks nor their scientific outputs.",
+  "round35_scientific_artifacts_modified": false,
+  "round35_metrics_modified": false,
+  "round35_figures_modified": false,
+  "round35_reports_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "neural_training_performed": false,
+  "round36_protected_access_count": 0,
+  "round36_untouched_access_count": 0,
+  "round36_training_performed": false,
+  "round36_model_inference_performed": false,
+  "original_round35_lock_modified": false,
+  "approved_at": "2026-09-05T00:00:00+08:00"
+}

@@ -1,0 +1,19 @@
+{
+  "checkpoint_rule": "best_validation_mean_candidate_regret",
+  "frozen_before_confirmation": true,
+  "hold": 15,
+  "lambda_rank": 0.25,
+  "lambda_ref": 0.1,
+  "model_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "no_confirmation_payload": true,
+  "normalization": "median_mad",
+  "pool_seed": 94501,
+  "pool_size": 24,
+  "tau": 1.0
+}

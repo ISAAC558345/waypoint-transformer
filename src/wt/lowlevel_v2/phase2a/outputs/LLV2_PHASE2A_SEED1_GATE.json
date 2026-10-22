@@ -1,0 +1,42 @@
+{
+  "S1": "B",
+  "curve_type": "B",
+  "evidence": {
+    "critic_worse_than_seed2": false,
+    "idle_fraction_worse": true,
+    "idle_residual_big": true,
+    "nav_mean_arrival_worse": true,
+    "opt_mid_grad_spike": true,
+    "rel_unique": false,
+    "res_big_vs_seed2": true,
+    "reverse_high_vs_seed2": false,
+    "time_in_range_worse": true
+  },
+  "extra_related_mechanisms": [
+    "HIGHLEVEL_FEEDBACK",
+    "OPT"
+  ],
+  "labels_allowed": [
+    "OPT",
+    "CRITIC",
+    "ACTION",
+    "NAV",
+    "REL",
+    "SHIELD",
+    "HIGHLEVEL_FEEDBACK",
+    "INIT",
+    "NONE"
+  ],
+  "minimal_method_change": "uniform residual-norm cap plus freeze residual when ||a_base||\u22480 (idle/base-zero), all seeds; do not add relation modules",
+  "phase2_conclusion_unchanged": {
+    "LLV2_MS": "B",
+    "REL": 1,
+    "stable_residual_advantage": false
+  },
+  "primary_mechanism": "ACTION",
+  "secondary_mechanism": "NAV",
+  "seed1_train_payload_u100": 8562500.0,
+  "seed1_train_payload_u20": 11625000.0,
+  "service_lock_ok_all_seeds": true,
+  "trained": false
+}

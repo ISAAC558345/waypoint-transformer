@@ -1,0 +1,21 @@
+round_36
+status=in_progress
+topic=Level-2 Relational Benchmark Non-Learning Planning Necessity, Association-Action Headroom, and Task-Waypoint Action-Relevance Validation
+started_at=2026-09-02T16:10:00+08:00
+previous_round=round_35
+previous_lock_file=round_35/ROUND_LOCK.json
+previous_lock_sha256=8506179FF0F8E450125FF97FA42FC822D05DDFB9CD1F39CACC655079F972CD82
+snapshot=backup/snapshots/before_round_36_20260902_1610
+formal_output=round_36/outputs/round36_level2_planning_validation_20260902_1610
+figure_directory=round_36/figures/round36_level2_planning_validation_20260902_1610
+training_performed=false
+model_inference_performed=false
+protected_access_count=0
+untouched_access_count=0
+round37_created=false
+formal_worker_count=4
+candidate_count=3393
+state_anchors=0,8
+candidate_pruning=false
+batch_approximation=false
+status_note=governance_synced_before_formal_design_fao

@@ -1,0 +1,7 @@
+{
+  "planned": true,
+  "executed": false,
+  "unit": "model_seed x scenario independent env copies",
+  "shared_assignment_dependent_physics": false,
+  "note": "Starts after all 10 frozen-dataset checkpoints exist."
+}

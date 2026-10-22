@@ -1,0 +1,58 @@
+{
+  "execution_order": [
+    "actor deterministic mean",
+    "delta = alpha * tanh(mean)",
+    "desired = clip_unit_step(fly_toward + delta)",
+    "SafetyProjector",
+    "zero the step on projector failure",
+    "clip_unit_step(executed)",
+    "env.step multiplies by step_length_m"
+  ],
+  "actor_output": "two unbounded world-frame residual logits; dimension 0 is +x and dimension 1 is +y",
+  "alpha_role": "multiplies tanh(pre) before addition to fly_toward",
+  "official_alpha": 0.25,
+  "phase6im_difference": "phase6im reinterpreted the same two outputs as a turn angle and a speed; this scan keeps the additive world-frame residual",
+  "limits": {
+    "0.25": {
+      "alpha": 0.25,
+      "max_heading_deg": 18.43494882292201,
+      "min_speed_fraction": 0.75,
+      "speed_at_max_heading": 0.7905694150420949,
+      "can_stop": false,
+      "can_reverse": false,
+      "max_step_fraction": 1.0,
+      "component_limit": 0.25
+    },
+    "0.35": {
+      "alpha": 0.35,
+      "max_heading_deg": 28.300755766006375,
+      "min_speed_fraction": 0.65,
+      "speed_at_max_heading": 0.73824115301167,
+      "can_stop": false,
+      "can_reverse": false,
+      "max_step_fraction": 1.0,
+      "component_limit": 0.35
+    },
+    "0.50": {
+      "alpha": 0.5,
+      "max_heading_deg": 45.0,
+      "min_speed_fraction": 0.5,
+      "speed_at_max_heading": 0.7071067811865476,
+      "can_stop": false,
+      "can_reverse": false,
+      "max_step_fraction": 1.0,
+      "component_limit": 0.5
+    },
+    "0.75": {
+      "alpha": 0.75,
+      "max_heading_deg": 71.56505117707799,
+      "min_speed_fraction": 0.25,
+      "speed_at_max_heading": 0.7905694150420949,
+      "can_stop": false,
+      "can_reverse": false,
+      "max_step_fraction": 1.0,
+      "component_limit": 0.75
+    }
+  },
+  "official_match": true
+}

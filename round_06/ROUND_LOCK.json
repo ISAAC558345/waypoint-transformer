@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "round": "round_06",
+  "status": "completed",
+  "locked_at": "2026-08-09T16:20:00+08:00",
+  "topic": "frozen-model, paired, reference-goal closed-loop evaluation in the existing single-UAV/static-buoy maritime environment",
+  "snapshot": {
+    "path": "backup/snapshots/before_round_06_20260809_1200",
+    "file_count": 15,
+    "byte_count": 234299,
+    "tree_sha256": "123BF198C40113DE64EC972253B35EC4D7B33D52075EE01FF0148335AA67500C"
+  },
+  "previous_round": {
+    "round": "round_05",
+    "lock_file": "round_05/ROUND_LOCK.json",
+    "lock_sha256": "50124434E0CC9B2B4A3D954A27C97AA139F498C8AE023DA11DE602E533FDD380"
+  },
+  "frozen_inputs": {
+    "round03_dataset": "round_03/outputs/round03_pilot_canonical_20260730_230000",
+    "round04_waypoint_checkpoint": "round_04/outputs/round04_formal_canonical_20260802_173717/horizon_030/goal_conditioned/seed_001/checkpoints/best.pt",
+    "round04_waypoint_checkpoint_sha256": "F92133AACA1FF6F0839EE7C817F40B696F7FD8FB15973A6118D222F83F01368D",
+    "round05_policy_output": "round_05/outputs/round05_formal_canonical_20260803_1500",
+    "all_inputs_read_only": true
+  },
+  "training_scope": {
+    "training_performed": false,
+    "waypoint_training_performed": false,
+    "policy_training_performed": false,
+    "optimizer_created": false,
+    "backward_called": false,
+    "checkpoint_created": false,
+    "reinforcement_learning_performed": false,
+    "ppo_training_performed": false,
+    "hgnn_training_performed": false,
+    "next_round_created": false
+  },
+  "formal_protocol": {
+    "scenario_seeds": "1000..1029",
+    "scenario_scales_num_buoys": [3, 5],
+    "physical_scenarios": 60,
+    "scenario_seeds_disjoint_from_round03": true,
+    "reference_policies": ["max_queue", "nearest_buoy", "queue_rate_energy", "random_valid"],
+    "reference_goals": 240,
+    "reference_goal": "frozen achieved terminal 13-D goal from the reference policy before tested rollout",
+    "deployable_controls": ["wt_transformer_hc10", "direct_goal_transformer_hc10", "wt_transformer_hc1", "state_only_transformer_hc10", "mlp_waypoint_h1", "mlp_state_h1"],
+    "policy_training_seeds": [0, 1, 2],
+    "neural_episodes": 4320,
+    "waypoint_horizon": 30,
+    "causal_context_only": true,
+    "reference_future_not_exposed_to_tested_policy": true,
+    "same_snapshot_and_trace_within_pair": true,
+    "common_radial_safety_projection": true,
+    "environment_step_calls_per_action": 1
+  },
+  "acceptance": {
+    "focused_round06_tests": "6/6 PASS",
+    "repository_tests": "253/253 PASS",
+    "compileall": "PASS",
+    "formal_scenarios": 60,
+    "formal_reference_goals": 240,
+    "formal_neural_episodes": 4320,
+    "environment_steps": 375824,
+    "nan_inf_or_environment_exceptions": 0,
+    "reproducibility_audit": "5/5 exact deterministic paired reruns PASS",
+    "formal_output_files": 16,
+    "figure_png_files": 20,
+    "figure_svg_files": 20,
+    "failures": 0,
+    "blockers": 0
+  },
+  "main_paired_result": {
+    "comparison": "WT Transformer Hc=10 minus Direct-Goal Transformer Hc=10",
+    "aggregation": "paired by scenario, reference policy, and saved model seed; bootstrap resampling unit is scenario",
+    "pairs": 720,
+    "payload_delta_mbit": -2.693,
+    "payload_95pct_bootstrap_ci_mbit": [-6.276, 1.045],
+    "return_delta": -0.091,
+    "return_95pct_bootstrap_ci": [-0.934, 0.769],
+    "wt_hc10": {"mean_return": 35.198, "mean_payload_mbit": 157.169, "mean_goal_error": 0.644, "success_rate": 0.729167},
+    "direct_goal_hc10": {"mean_return": 35.288, "mean_payload_mbit": 159.862, "mean_goal_error": 0.566, "success_rate": 0.697222},
+    "interpretation": "Neither primary communication metric establishes a reliable closed-loop Waypoint advantage; both confidence intervals cross zero and seed rankings are mixed."
+  },
+  "diagnostics": {
+    "waypoint_action_error_correlation": {"wt_hc10": 0.08099, "wt_hc1": 0.11879, "mlp_waypoint_h1": 0.10733},
+    "mean_normalized_training_state_distance": {"wt_hc10": 0.89119, "direct_goal_hc10": 0.92824, "state_only_hc10": 0.99546},
+    "interpretation": "No strong error-compounding or conspicuous rollout OOD mechanism accounts for the non-significant primary comparison."
+  },
+  "decision": {
+    "gate": "B_no_reliable_closed_loop_waypoint_difference",
+    "gate_a_reliable_advantage": false,
+    "gate_b_no_reliable_difference": true,
+    "gate_c_model_failure": false,
+    "next_round_started": false
+  },
+  "canonical_outputs": {
+    "smoke_output": "round_06/outputs/round06_smoke_20260809_1230",
+    "formal_output": "round_06/outputs/round06_formal_20260809_1300",
+    "formal_figures": "round_06/figures/round06_formal_20260809_1300",
+    "completion_report": "report/round_06_report_20260809_1600.md",
+    "implementation_log": "logs/codex/round_06_implementation_20260809_1200.md"
+  },
+  "tree_digest_algorithm": "SHA256 over UTF-8 records sorted by relative POSIX path; each record is relative_path + NUL + uppercase_file_SHA256 + LF",
+  "canonical_tree_sha256": {
+    "round_06/outputs/round06_formal_20260809_1300": {"file_count": 16, "byte_count": 549170585, "sha256": "05ED0FC8F68F07A93BF6FB47921BC58943AFA52A75F5DBDB01B1A1726DD64E89"},
+    "round_06/figures/round06_formal_20260809_1300": {"file_count": 40, "byte_count": 115037651, "sha256": "BD3DE3B449B11ACB863BA1F31B5052D41C1D5D0C8654D69118AC88F5E6D17ADB"}
+  },
+  "implementation_sha256": {
+    "AGENTS.md": "73D0D3F7BC502234BEEE8807ECD97C29A6CCA9FB117B269AB9CB9C5392D592BA",
+    "CURRENT_ROUND.txt": "02EB1ED6BECCFC79FF1902D3C7515C435EF817F8D3F2ACC74187670B7B4F617B",
+    "PLANS.md": "E06672A922D2B33DCE6EB50AAC829FF4FBFFAD50AECFB31BE1A3CAE704302678",
+    "README.md": "861D5DC876EE887E585C6EF630AF7BDDB43364F8B65DDE4610F5A0168C33B7ED",
+    "round_manifest.json": "D3E8E86FE6663685FB9F312AF9F618B7C4E0E5EE3A1685D8C87F410736622253",
+    "round_06/AGENTS.md": "061A2534CC25B465C16D7AEAA0C34D07DB9DC3E7D7D08DDDB91819A03F1F6FAF",
+    "round_06/configs/closed_loop_eval_v1.json": "88CDC8F37278515FE6C6A4148145C93DC35884CCD7002853B356DABD7B191D26",
+    "round_06/round_manifest.json": "DE143050C6D48CA8D11AE08A9753F686858F945E66B3E369128A4556E5906D12",
+    "src/wt/round6/closed_loop.py": "B419DCE13F5200195B349877A365224B45926ACDF64932E87DFDA3919E97F751",
+    "src/wt/round6/figures.py": "C198D84EC56C32BBD72A9E55F5E574637691A65A3C9F4AB1E526347F4D1C662C",
+    "experiments/run_round06.py": "6F094FE292FB5B94C3D73EBF2DD17996C05A440269DCF830C80D123358A47AC2",
+    "tests/test_round06_closed_loop.py": "35AB702DE72BEB36D95901183278F8AE80C145E928257BCBD2ABA98A2FEA6389",
+    "report/round_06_report_20260809_1600.md": "895311730200BCF54AC2D13899DE0056CD021C24C39D57B4C6D48BC3BC530FCE",
+    "logs/codex/round_06_implementation_20260809_1200.md": "326DE0392ECD9EF4CBA19FBAC28343365CD0A0F9A94EA68AFAB212088BA462C1"
+  },
+  "known_limitations": [
+    "single UAV and static buoys only",
+    "the reference achieved-terminal goal is an explicit offline evaluation target, not an online goal-generation mechanism",
+    "the evaluation uses fixed synthetic arrival traces and a simplified communication environment",
+    "three policy seeds vary initialization but do not resample the Round-3 training dataset",
+    "Gate B does not establish a Waypoint benefit or prove a general policy equivalence outside this protocol"
+  ],
+  "unresolved_blockers": []
+}

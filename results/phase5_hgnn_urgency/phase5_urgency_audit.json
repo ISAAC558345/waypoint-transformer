@@ -1,0 +1,20 @@
+{
+  "formal_urgency_exists": false,
+  "classification": {
+    "A_explicit_urgency": [],
+    "B_observable_proxy": ["queue"],
+    "C_forbidden_future": ["remaining_arrivals", "future_trajectory", "U_traj", "oracle_assignment"]
+  },
+  "features": [
+    {"feature_name": "explicit_urgency", "exists": false, "observable_at_current_time": false, "used_by_high_level": false, "used_by_low_level": false, "future_leakage": false, "recommended_for_urgency": false, "class": "A"},
+    {"feature_name": "queue", "exists": true, "observable_at_current_time": true, "used_by_high_level": true, "used_by_low_level": true, "future_leakage": false, "recommended_for_urgency": true, "class": "B", "note": "High-level buoy feature uses queue/capacity. Low-level task vector uses the assigned buoy queue. Neither is a shared urgency field."},
+    {"feature_name": "remaining_data", "exists": false, "observable_at_current_time": false, "used_by_high_level": false, "used_by_low_level": false, "future_leakage": false, "recommended_for_urgency": false, "class": "A"},
+    {"feature_name": "waiting_time", "exists": false, "observable_at_current_time": false, "used_by_high_level": false, "used_by_low_level": false, "future_leakage": false, "recommended_for_urgency": false, "class": "A"},
+    {"feature_name": "AoI", "exists": false, "observable_at_current_time": false, "used_by_high_level": false, "used_by_low_level": false, "future_leakage": false, "recommended_for_urgency": false, "class": "A"},
+    {"feature_name": "deadline", "exists": false, "observable_at_current_time": false, "used_by_high_level": false, "used_by_low_level": false, "future_leakage": false, "recommended_for_urgency": false, "class": "A"},
+    {"feature_name": "priority", "exists": false, "observable_at_current_time": false, "used_by_high_level": false, "used_by_low_level": false, "future_leakage": false, "recommended_for_urgency": false, "class": "A", "note": "Round-13 continuous priority is a different maritime diagnostic, not the L3-B hierarchical contract."},
+    {"feature_name": "service_progress", "exists": true, "observable_at_current_time": true, "used_by_high_level": true, "used_by_low_level": true, "future_leakage": false, "recommended_for_urgency": false, "class": "B", "note": "Execution progress, not task urgency."},
+    {"feature_name": "current_arrival", "exists": true, "observable_at_current_time": true, "used_by_high_level": true, "used_by_low_level": false, "future_leakage": false, "recommended_for_urgency": false, "class": "B", "note": "Last observed arrival only. Future arrivals are forbidden."},
+    {"feature_name": "task_age", "exists": false, "observable_at_current_time": false, "used_by_high_level": false, "used_by_low_level": false, "future_leakage": false, "recommended_for_urgency": false, "class": "A"}
+  ]
+}

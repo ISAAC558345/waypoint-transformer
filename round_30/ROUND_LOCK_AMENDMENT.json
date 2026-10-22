@@ -1,0 +1,70 @@
+{
+  "amendment_type": "legal_round31_successor_governance_extension",
+  "authoritative_source": "round_30/ROUND_LOCK.json",
+  "original_round30_lock_sha256": "7A2591574DC52C286018A19B12C7787546C0C0E3983FA5664A8C6CB19D338125",
+  "affected_paths": {
+    "src/wt/governance_state_sync.py": {
+      "prior_amended_sha256": "A9FA2E30157A61097EFEE0939C8AB49FF52DFE2E5E57087E4DCE0D1C20B2748F",
+      "amended_sha256": "2CDD273AF04AAF49887BFF3BF41CADA99974EB428D506B9F9AF66799ADCA0DBC"
+    },
+    "tests/test_governance_state_sync.py": {
+      "prior_amended_sha256": "744109937BA79E4C4FDF0D79C0B0567A16E6480D643A0D486BA372C66DC2CEE0",
+      "amended_sha256": "DDC59317E75CC4E9525387237A75FF34AF41E184ABED11E5A72C88689538EB10"
+    },
+    "tests/test_round28_planning_need_representation.py": {
+      "prior_amended_sha256": "163027B8D68F2A6A6EA05E577C734CD903675CF2568CCB60F4DC8D96B4381DFF",
+      "amended_sha256": "0A51CA024A7252CBC92335F1943413D40A264643996C4E0264CE9A174F723995"
+    },
+    "tests/test_round29_cross_scale_deferred_service.py": {
+      "prior_amended_sha256": "51610883A0E243C974EC9B3E48752F8E6D53698540F382036632C056C2C8DB45",
+      "amended_sha256": "9230465649E7B8E0DEFDA182F0F0878E7158E9E687FF082F9049308A3A108BDE"
+    },
+    "tests/test_round30_deepsets_ppo.py": {
+      "prior_locked_sha256": "2E1896F66674555DA7118D8E6682BB94D9DC82D388CE19ED4CE382602B3F22E8",
+      "amended_sha256": "05C73BF710DE0C65C2306097931783E7FB2F830E1B1747482917B41C84D6B0C3"
+    },
+    "src/wt/round26/audit.py": {
+      "prior_locked_sha256": "4B0A75646B619EE773918E44758CE59479C063F538536D55D979F64DC27CC88F",
+      "amended_sha256": "02250CF5AE56C8B3DBA7C51FC2E2D5F76B2C48FB753A13483F9422C560535AC1"
+    },
+    "src/wt/round25/audit.py": {
+      "prior_locked_sha256": "6E2A9BA1095A0A2533EA210E995EE1960FDD0399158C719CA2409C909334C857",
+      "amended_sha256": "CCE4C7B8D2DFC2A58F082ABFA62D7D65DBCD0873255FEE0C020604B060BA9E75"
+    },
+    "src/wt/round27/audit.py": {
+      "prior_locked_sha256": "971926B2FA035996460694686C2445E78C4E47176B0FBEA7385FA846B22AF8D5",
+      "amended_sha256": "3FF6F6D88CFED453BDD0796CB8C4B11749CDAC6B134BD0C3359D966E9602A6C6"
+    },
+    "src/wt/round28/audit.py": {
+      "prior_locked_sha256": "651E0C29462D4E317A43E0A10F8A0EFF9869457BF4B901AD4A8539FB21C10790",
+      "amended_sha256": "984941F342895CACD6A7EA39C8AE7BD97C8F7043811CBAB27DE1811292C00321"
+    },
+    "src/wt/round29/audit.py": {
+      "prior_locked_sha256": "1529DB6CD3AFEBA25FFCAC2B1FB815B46220F2AEBED05B08015FC1ACAE481937",
+      "amended_sha256": "F12D672595EBA9CAEC3EF295A11EB07656B6BBA9935A56317856CD33CDC36E7D"
+    },
+    "tests/test_round21_hgnn_task_waypoint.py": {
+      "prior_amended_sha256": "0AAAB8F01574516C5752F0806B80AFCB033AF047AF3430AD10F7A3A38AF7017F",
+      "amended_sha256": "195307DB14FB5D4B1FA8F0B1658EC026813A2F72DF1233CBDA2BCEB1616B51AD"
+    },
+    "tests/test_round24_seed_extension.py": {
+      "prior_amended_sha256": "E68C63BF05282C8DB5B562A8E9B20414B0B8B7C8B7897AC3DE27BC16871E947F",
+      "amended_sha256": "445BE7926F104BC97EBECA36AF4D7239EF71DE5E3AA026B75FB90116AD59751F"
+    },
+    "src/wt/round22/governance.py": {
+      "prior_locked_sha256": "AB26E474C50D53D57612C7AEEA6ACB504E4F5BD0B16D91BC28B83D1C8E9ECC11",
+      "amended_sha256": "2CA92F06CE5A9AF556D6E7171D83FD5556864761DFB7B4E23DF25FE8F68BEACE"
+    }
+  },
+  "semantic_correction": "Permit Round-31 only as the explicitly authorized, hash-linked successor of locked Round-30. The historical Round-30 field round31_created=false remains immutable lock-time evidence; this overlay changes only successor lifecycle guards and the historical audits' hash-chain verifier, while continuing to prohibit Round-32.",
+  "scientific_artifacts_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "metrics_modified": false,
+  "fresh_outcome_rerun": false,
+  "neural_training_performed": false,
+  "untouched_eval_accessed": false,
+  "original_round30_lock_modified": false,
+  "round31_created_at_amendment": false,
+  "approved_at": "2026-08-30T21:16:00+08:00"
+}

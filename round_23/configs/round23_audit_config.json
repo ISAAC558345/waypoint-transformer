@@ -1,0 +1,10 @@
+{
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 23023,
+  "head_shuffle": "deterministic within-current-validation-state UAV permutation",
+  "offline_split": "validation",
+  "payload_tie_tolerance_bits": 1.0,
+  "policy_seeds": [0, 1, 2],
+  "round22_formal_output": "round_22/outputs/round22_deepsets_task_waypoint_policy_20260829_1153",
+  "validation_head_conditions": ["normal", "zero_service", "zero_progress", "zero_return", "zero_full", "shuffle_full"]
+}

@@ -1,0 +1,45 @@
+{
+  "amendment_type": "legal_round28_successor_governance_extension",
+  "authoritative_source": "round_27/ROUND_LOCK.json",
+  "original_round27_lock_sha256": "84B1F2993F2DA19C88874C92F33C287E174C3CD9830A7E43E78C73818B8A7267",
+  "affected_paths": {
+    "src/wt/governance_state_sync.py": {
+      "prior_amended_sha256": "BCF86D81A9D45EEC5651857CFA0EB5FD29C0E715B6D49FBBA18D5DBC81772792",
+      "amended_sha256": "A9FA2E30157A61097EFEE0939C8AB49FF52DFE2E5E57087E4DCE0D1C20B2748F"
+    },
+    "tests/test_round24_seed_extension.py": {
+      "prior_amended_sha256": "88D208E6CD65F1647375CA59FD0CE3B3AD1AFC7DF153D8FE3879875A5CA0C5E4",
+      "amended_sha256": "E68C63BF05282C8DB5B562A8E9B20414B0B8B7C8B7897AC3DE27BC16871E947F"
+    },
+    "tests/test_round21_hgnn_task_waypoint.py": {
+      "prior_amended_sha256": "A89358EB9580B89538445108BDD5FA6655B4CF868980D03001720F121B870530",
+      "amended_sha256": "0AAAB8F01574516C5752F0806B80AFCB033AF047AF3430AD10F7A3A38AF7017F"
+    },
+    "tests/test_governance_state_sync.py": {
+      "prior_amended_sha256": "7291FE7364005071DB21E898193F536D0273107DD1194AB1EB494B5232E7F032",
+      "amended_sha256": "744109937BA79E4C4FDF0D79C0B0567A16E6480D643A0D486BA372C66DC2CEE0"
+    },
+    "tests/test_round27_conditional_planner_utility.py": {
+      "prior_locked_sha256": "395DDB52B3E8CB85391FCA02BAF02BBF19A7306A4230619B0BEF6A463AAE95BE",
+      "amended_sha256": "869C78906932BE575F3A975FE053A37C8A2956B0BD1F195B3DE511D752B6AC22"
+    }
+  },
+  "semantic_correction": "Allow the expressly authorized Round-28 and Round-29 successors while preserving the historical Round-27 field round28_created=false as immutable lock-time evidence. The overlay updates only lifecycle checks and never Round-27 scientific evidence.",
+  "scientific_artifacts_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "metrics_modified": false,
+  "fresh_dev_rerun": false,
+  "untouched_eval_accessed": false,
+  "original_round27_lock_modified": false,
+  "round28_created_at_amendment": false,
+  "approved_at": "2026-08-30T16:24:00+08:00"
+  ,
+  "round30_successor_lifecycle_clarification": {
+    "reason": "Permit the expressly authorized Round-30 successor while preserving all Round-27 immutable scientific evidence.",
+    "scientific_artifacts_modified": false,
+    "original_round27_lock_modified": false,
+    "authorized_by": "Round-30 creation instruction",
+    "approved_at": "2026-08-30T18:45:00+08:00"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "gate": "T-E",
+  "gate_condition_met": true,
+  "priority": [
+    "REP",
+    "TEMP"
+  ],
+  "planner_ready": false,
+  "deployment_verified": false,
+  "data_strong": false,
+  "objective_strong": false,
+  "representation_strong": true,
+  "optimization_strong": false,
+  "temporal_strong": true,
+  "temporal_state_missing": true,
+  "ood_spearman": 0.22169581123411708,
+  "allpair_spearman": 0.6813258620977419,
+  "top1_margin_spearman": 0.8250215598748057,
+  "fisher_median": 4.089204362670432,
+  "collision_mean": 0.3260802469135802,
+  "frac_top5": 0.7037037037037037,
+  "seed_score_spearman": 0.9990737010495269,
+  "time_concentrated_at_15": true,
+  "case_gap_step1": 0.0,
+  "case_gap_step15": 5000000.0
+}

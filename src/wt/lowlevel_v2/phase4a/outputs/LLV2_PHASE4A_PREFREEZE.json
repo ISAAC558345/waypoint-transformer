@@ -1,0 +1,45 @@
+{
+  "REL2": "0",
+  "a_max": 1.0,
+  "alpha_residual": 0.25,
+  "beta_residual": 0.25,
+  "clip": 0.2,
+  "d_safe_m": 1.0,
+  "distill_events": [
+    "PAIRWISE",
+    "MULTI_containing_PAIRWISE"
+  ],
+  "entropy_coef": 0.01,
+  "epsilon_base": 0.05,
+  "forbidden_distill_events": [
+    "pure_SERVICE_SAFE_ENVELOPE",
+    "pure_STEP_LIMIT"
+  ],
+  "high_sha": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "lambda_collision_distill": 0.1,
+  "lambda_project": 0.05,
+  "lambda_residual": 0.01,
+  "mappo_lr": 0.0003,
+  "method": "SafetyProjectorCollisionDistillation",
+  "no_interference_enhancement": true,
+  "no_lambda_grid": true,
+  "no_new_independent_validation": true,
+  "no_phase3_validation": true,
+  "num_envs": 4,
+  "payload_drop_tolerance": 0.05,
+  "phase3_gate": "A",
+  "pilot_seeds": [
+    0,
+    1
+  ],
+  "ppo_log_prob": "sampled raw residual only",
+  "reward_unchanged": true,
+  "rollout_steps": 48,
+  "safety_projector_sha": "79e014ed8101b16a5425d084282499ef9fee229af35decc27adc5203d9282679",
+  "service_safety_margin_m": 0.5,
+  "stable_residual_advantage": true,
+  "teacher": "a_projected - a_base from actual SafetyProjector, detached",
+  "teacher_min_active_fraction": 0.005,
+  "unique_new_mechanism": "Safety-Projector Collision Distillation",
+  "updates": 100
+}

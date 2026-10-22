@@ -1,0 +1,238 @@
+{
+  "ABS_closed_loop": 8440000.0,
+  "COLREL": "C",
+  "COMM": "B",
+  "EXEC": "C",
+  "EXEC_DecodeNR": {
+    "0": {
+      "mean": 0.5451522065934689,
+      "median": 0.5599998730000292,
+      "n": 32,
+      "p10": 0.0,
+      "p25": 0.22307684650890336,
+      "p75": 0.9999958333527776,
+      "p90": 0.9999997500000625
+    },
+    "1": {
+      "mean": 0.44448123326605615,
+      "median": 0.4799999040000192,
+      "n": 32,
+      "p10": 0.0,
+      "p25": 0.0,
+      "p75": 0.8680950554059343,
+      "p90": 0.999999450000325
+    },
+    "2": {
+      "mean": 0.6469576661759184,
+      "median": 0.7499998125000469,
+      "n": 32,
+      "p10": 0.0,
+      "p25": 0.5865382527737447,
+      "p75": 0.9699986060062787,
+      "p90": 0.9999997250000813
+    },
+    "3": {
+      "mean": 0.40824164508731786,
+      "median": 0.35909083293390054,
+      "n": 32,
+      "p10": 0.0,
+      "p25": 0.07249998487500318,
+      "p75": 0.6799998806666878,
+      "p90": 0.9999989333345111
+    },
+    "4": {
+      "mean": 0.4763428950558187,
+      "median": 0.499999740000212,
+      "n": 32,
+      "p10": 0.0,
+      "p25": 0.0,
+      "p75": 0.9999958333527776,
+      "p90": 0.9999997500000625
+    }
+  },
+  "EXEC_DecodeNR_aggregate": 0.499999740000212,
+  "EXEC_closed_loop": 8692500.0,
+  "EXEC_closed_loop_seed": {
+    "0": 5550000.0,
+    "1": 10562500.0,
+    "2": 7275000.0,
+    "3": 10575000.0,
+    "4": 9500000.0
+  },
+  "EXEC_closed_loop_std": 2212316.376561002,
+  "EXEC_spearman": {
+    "0": 0.3797826086956521,
+    "1": 0.4069293478260869,
+    "2": 0.36839673913043475,
+    "3": 0.4138586956521738,
+    "4": 0.419266304347826
+  },
+  "EXEC_spearman_mean": 0.39764673913043475,
+  "OLD_closed_loop": 10912500.0,
+  "PREFIX_DecodeNR": {
+    "0": 0.2249999487500118,
+    "1": 0.24999993750001562
+  },
+  "PREFIX_DecodeNR_aggregate": 0.2374999431250137,
+  "PREFIX_closed_loop": 11287500.0,
+  "PREFIX_closed_loop_std": 106066.01717798212,
+  "PREFIX_spearman_mean": 0.4239402173913043,
+  "U_LL": {
+    "max": 7000000.0,
+    "mean": 1645225.6944444445,
+    "min": 0.0,
+    "n": 2304,
+    "n_nonpositive": 629,
+    "std": 1521690.323987628
+  },
+  "best_epochs": [
+    {
+      "best_epoch": "reused",
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase3\\outputs\\deepsets_exec_seed0.pt",
+      "high_seed": 0
+    },
+    {
+      "best_epoch": "reused",
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase3\\outputs\\deepsets_exec_seed1.pt",
+      "high_seed": 1
+    },
+    {
+      "best_epoch": "reused",
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase3\\outputs\\deepsets_exec_seed2.pt",
+      "high_seed": 2
+    },
+    {
+      "best_epoch": "reused",
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase3\\outputs\\deepsets_exec_seed3.pt",
+      "high_seed": 3
+    },
+    {
+      "best_epoch": 70,
+      "best_val_regret": 318750.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase3\\outputs\\deepsets_exec_seed4.pt",
+      "high_seed": 4
+    }
+  ],
+  "collision_enhancement": false,
+  "executor_conditioned_supervision_confirmed": false,
+  "fail_reasons": [
+    "closed-loop 8.692e+06 < OLD 1.091e+07",
+    "DecodeNR 0.5000 > PREFIX 0.2375",
+    "seed std 2.212e+06 not < PREFIX 1.061e+05",
+    "Spearman 0.3976 not > PREFIX 0.4239"
+  ],
+  "gate_loop_ok": false,
+  "gate_nr_ok": false,
+  "gate_spearman_ok": false,
+  "gate_var_ok": false,
+  "idle_ok": true,
+  "in_pool_EXEC": {
+    "0": 0.03125,
+    "1": 0.0,
+    "2": 0.09375,
+    "3": 0.03125,
+    "4": 0.03125
+  },
+  "interference_enhancement": false,
+  "legal_ok": true,
+  "next_step": "Stop. Do not retune q, pool, decoder, beam, or checkpoint rule. Do not start the next phase.",
+  "pretests": {
+    "grad": true,
+    "identity": true,
+    "q": true
+  },
+  "text": "Executor-conditioned supervision did not pass. closed-loop 8.692e+06 < OLD 1.091e+07; DecodeNR 0.5000 > PREFIX 0.2375; seed std 2.212e+06 not < PREFIX 1.061e+05; Spearman 0.3976 not > PREFIX 0.4239",
+  "training_low_level": false,
+  "within_EXEC": {
+    "0": {
+      "best_observed": 3506250.0,
+      "conflict_rate": 0.0,
+      "entropy": 1.7961492277681828,
+      "expected_utility": 2625130.9378432217,
+      "family": "EXEC",
+      "high_seed": 0,
+      "hit_top10": 0.71875,
+      "hit_top20": 0.84375,
+      "hit_top25": 0.875,
+      "idle_fraction": 0.6406249999999999,
+      "nom5": 0.460353925440026,
+      "pearson": 0.46970247960349026,
+      "set_nll": NaN,
+      "spearman": 0.3797826086956521,
+      "top1_regret": 275000.0,
+      "top1_utility": 3231250.0
+    },
+    "1": {
+      "best_observed": 3506250.0,
+      "conflict_rate": 0.0,
+      "entropy": 1.7835600636899471,
+      "expected_utility": 2601946.940274778,
+      "family": "EXEC",
+      "high_seed": 1,
+      "hit_top10": 0.65625,
+      "hit_top20": 0.75,
+      "hit_top25": 0.8125,
+      "idle_fraction": 0.625,
+      "nom5": 0.43161916224045094,
+      "pearson": 0.498963118188248,
+      "set_nll": NaN,
+      "spearman": 0.4069293478260869,
+      "top1_regret": 406250.0,
+      "top1_utility": 3100000.0
+    },
+    "2": {
+      "best_observed": 3506250.0,
+      "conflict_rate": 0.0,
+      "entropy": 2.141597378998995,
+      "expected_utility": 2368323.782677988,
+      "family": "EXEC",
+      "high_seed": 2,
+      "hit_top10": 0.71875,
+      "hit_top20": 0.84375,
+      "hit_top25": 0.875,
+      "idle_fraction": 0.6354166666666665,
+      "nom5": 0.3769687902753664,
+      "pearson": 0.4842029380034937,
+      "set_nll": NaN,
+      "spearman": 0.36839673913043475,
+      "top1_regret": 350000.0,
+      "top1_utility": 3156250.0
+    },
+    "3": {
+      "best_observed": 3506250.0,
+      "conflict_rate": 0.0,
+      "entropy": 1.680217320099473,
+      "expected_utility": 2681419.3281736257,
+      "family": "EXEC",
+      "high_seed": 3,
+      "hit_top10": 0.65625,
+      "hit_top20": 0.78125,
+      "hit_top25": 0.84375,
+      "idle_fraction": 0.6249999999999999,
+      "nom5": 0.46195605521313987,
+      "pearson": 0.4983765166611613,
+      "set_nll": NaN,
+      "spearman": 0.4138586956521738,
+      "top1_regret": 368750.0,
+      "top1_utility": 3137500.0
+    },
+    "4": {
+      "best_observed": 3506250.0,
+      "conflict_rate": 0.0,
+      "entropy": 1.807092573493719,
+      "expected_utility": 2654483.967253643,
+      "family": "EXEC",
+      "high_seed": 4,
+      "hit_top10": 0.71875,
+      "hit_top20": 0.84375,
+      "hit_top25": 0.875,
+      "idle_fraction": 0.6197916666666665,
+      "nom5": 0.454994941493179,
+      "pearson": 0.49095221018789365,
+      "set_nll": NaN,
+      "spearman": 0.419266304347826,
+      "top1_regret": 318750.0,
+      "top1_utility": 3187500.0
+    }
+  }
+}

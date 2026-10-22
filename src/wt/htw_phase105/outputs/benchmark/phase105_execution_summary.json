@@ -1,0 +1,122 @@
+{
+  "ci_vs": {
+    "M3_minus_M0": {
+      "high": 2890625.0,
+      "low": 1468359.375
+    },
+    "M3_minus_M1": {
+      "high": 9250000.0,
+      "low": 8155859.375
+    },
+    "M3_minus_M2": {
+      "high": 4484375.0,
+      "low": 2921484.375
+    }
+  },
+  "delta_vs": {
+    "M3_minus_M0": 2203125.0,
+    "M3_minus_M1": 8718750.0,
+    "M3_minus_M2": 3718750.0
+  },
+  "high_sha": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "high_sha_unchanged": true,
+  "m2_legal": true,
+  "main_table": [
+    {
+      "completed_blocks": 8.40625,
+      "dropped": 78.0,
+      "flight_distance": 81.125,
+      "high_decisions": 4.0,
+      "idle": 0.5252278645833333,
+      "in_range": 0.9997632575757576,
+      "legality": 1.0,
+      "mean_rate": 1093190.0104556554,
+      "mean_sinr": 4.8852260793104625,
+      "method": "Myopic",
+      "method_id": "M0",
+      "na": false,
+      "payload": 8406250.0,
+      "residual_queue": 30.59375,
+      "switch_loss": 1.1875,
+      "terminal_rho": 1.0516196380400444
+    },
+    {
+      "completed_blocks": 1.890625,
+      "dropped": 77.984375,
+      "flight_distance": 145.40625,
+      "high_decisions": 4.0,
+      "idle": 0.0,
+      "in_range": 0.9934710906556856,
+      "legality": 1.0,
+      "mean_rate": 391633.6550055328,
+      "mean_sinr": 2.293961804102482,
+      "method": "Exclusive",
+      "method_id": "M1",
+      "na": false,
+      "payload": 1890625.0,
+      "residual_queue": 37.125,
+      "switch_loss": 0.296875,
+      "terminal_rho": 1.6320107003659343
+    },
+    {
+      "completed_blocks": 6.890625,
+      "dropped": 76.6875,
+      "flight_distance": 300.4375,
+      "high_decisions": 4.0,
+      "idle": 0.18684895833333331,
+      "in_range": 0.9998355263157894,
+      "legality": 1.0,
+      "mean_rate": 1033136.7388497265,
+      "mean_sinr": 3.2832069859036688,
+      "method": "DeepSets-Old",
+      "method_id": "M2",
+      "na": false,
+      "payload": 6890625.0,
+      "residual_queue": 33.421875,
+      "switch_loss": 0.25,
+      "terminal_rho": 1.1027747215419204
+    },
+    {
+      "completed_blocks": 10.609375,
+      "dropped": 75.703125,
+      "flight_distance": 442.75,
+      "high_decisions": 4.0,
+      "idle": 0.55224609375,
+      "in_range": 0.9995404411764706,
+      "legality": 1.0,
+      "mean_rate": 1407368.2051085788,
+      "mean_sinr": 54.151772893704944,
+      "method": "FINAL-HIER",
+      "method_id": "M3",
+      "na": false,
+      "payload": 10609375.0,
+      "residual_queue": 30.6875,
+      "switch_loss": 0.71875,
+      "terminal_rho": 1.2082147712171953
+    }
+  ],
+  "markdown_table": "| Method | Payload | Gain vs FINAL-HIER | Completed Blocks | Residual Queue | Drop | Flight Distance | Legality |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Myopic | 8406250 | 0.2621 | 8.406 | 30.594 | 78.000 | 81.1 | 1.000 |\n| Exclusive | 1890625 | 4.6116 | 1.891 | 37.125 | 77.984 | 145.4 | 1.000 |\n| DeepSets-Old | 6890625 | 0.5397 | 6.891 | 33.422 | 76.688 | 300.4 | 1.000 |\n| FINAL-HIER | 10609375 | \u2014 | 10.609 | 30.688 | 75.703 | 442.8 | 1.000 |",
+  "next": "\u5efa\u8bae Phase-10.6 Final Untouched Evaluation \u4e00\u6b21\u3002\u672c\u8f6e\u4e0d\u81ea\u52a8\u6267\u884c\u3002",
+  "overlap_count": 0,
+  "plots": {
+    "blocks": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase105\\outputs\\benchmark\\phase105_completed_blocks.png",
+    "flight": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase105\\outputs\\benchmark\\phase105_flight_distance.png",
+    "paired": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase105\\outputs\\benchmark\\phase105_paired_delta.png",
+    "payload": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase105\\outputs\\benchmark\\phase105_main_payload.png",
+    "queue": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase105\\outputs\\benchmark\\phase105_residual_queue.png"
+  },
+  "sys": {
+    "SYS": "A",
+    "completed_blocks_not_worse": true,
+    "legality_not_worse": true,
+    "m2_note": "M2 present; require mean>0 and not clearly negative",
+    "not_idle_or_drop_cheat": true,
+    "ok_vs_m0": true,
+    "ok_vs_m1": true,
+    "ok_vs_m2": true,
+    "system_advantage_confirmed": true,
+    "text": "FINAL-HIER shows a confirmed system advantage on this pre-final set (not untouched)."
+  },
+  "trained": false,
+  "wall_s": 68.05842000001576
+}

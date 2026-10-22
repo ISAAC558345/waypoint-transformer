@@ -1,0 +1,12 @@
+{
+  "batch_1_exists": false,
+  "batch_2_exists": false,
+  "criterion_id": "CONSERVATIVE_WITH_FALLBACK_V1",
+  "criterion_evaluated": false,
+  "deployment_verification": "NOT_RUN",
+  "leakage_check": "NOT_APPLICABLE_NO_NEW_BATCH",
+  "planner_ready": false,
+  "rollout_executed": false,
+  "status": "BLOCKED_ON_INDEPENDENT_HOLDOUT_DATA",
+  "why_stopped": "No registered Batch-1 or Batch-2 exists outside 220000-220063 that is unused by B2 fit, feature selection, hyperparameter selection, tau/Gate-1 selection, criterion selection, and prior Phase-4C/4D validation. LLV2_confirmation and LLV2_final_untouched are null."
+}

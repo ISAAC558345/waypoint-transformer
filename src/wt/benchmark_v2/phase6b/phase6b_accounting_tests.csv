@@ -1,0 +1,12 @@
+test,passed
+Test-1-zero-rate,True
+Test-2-empty-queue,True
+Test-3-partial-transmission,True
+Test-4-switch-persistence,True
+Test-5-cross-uav-continuation,True
+Test-6-queue-clipping,True
+Test-7-arrival-conservation,True
+Test-8-capacity-overflow,True
+Test-9-multi-step-rate-integral,True
+Test-10-block-diagnostic,True
+NO_DOUBLE_DECREMENT,True

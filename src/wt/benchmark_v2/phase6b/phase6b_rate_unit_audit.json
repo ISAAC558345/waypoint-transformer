@@ -1,0 +1,13 @@
+{
+  "formula": "bandwidth_hz * log2(1 + SINR)",
+  "bandwidth_hz": 1000000.0,
+  "delta_t_s": 1.0,
+  "already_multiplied_by_delta_t": false,
+  "unit": "bit/s",
+  "slot_bits": "R * delta_t",
+  "reference_rate_bps": 9967226.258835994,
+  "reference_rate_same_formula": true,
+  "info_field_name": "rate_bps",
+  "dtype": "float64",
+  "ambiguous": false
+}

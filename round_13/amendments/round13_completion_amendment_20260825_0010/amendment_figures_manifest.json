@@ -1,0 +1,20 @@
+{
+  "amendment_figure_pairs": 6,
+  "new_figure_files": [
+    "13_difficulty_controllability.png",
+    "13_difficulty_controllability.svg",
+    "14_completion_comparison.png",
+    "14_completion_comparison.svg",
+    "15_continuous_priority_allocation.png",
+    "15_continuous_priority_allocation.svg",
+    "16_reward_communication_alignment.png",
+    "16_reward_communication_alignment.svg",
+    "17_continuous_vs_current_payload.png",
+    "17_continuous_vs_current_payload.svg",
+    "18_continuous_vs_discrete_payload.png",
+    "18_continuous_vs_discrete_payload.svg"
+  ],
+  "original_figure_pairs": 12,
+  "total_figure_pairs": 18,
+  "white_background": true
+}

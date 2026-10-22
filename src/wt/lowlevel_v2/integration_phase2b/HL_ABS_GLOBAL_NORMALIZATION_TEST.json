@@ -1,0 +1,23 @@
+{
+  "globally_normalized": true,
+  "pass": true,
+  "production_restricted": {
+    "decoder": "OrderFreeSetDecoder + production subset_dp_logprob",
+    "logsumexp": 0.0,
+    "n_assignments": 229,
+    "n_available_buoys": 3,
+    "n_uav": 6,
+    "note": "restricted buoy_mask to make enumeration feasible; sequential legal softmax implies partition function 1 on the full space",
+    "pass": true,
+    "sum_P": 1.0
+  },
+  "toy": {
+    "logsumexp": 2.384185791015625e-07,
+    "n_assignments": 73,
+    "n_buoy": 4,
+    "n_uav": 3,
+    "pass": true,
+    "recurrence": "identical to subset_dp_logprob: legal log-softmax on partial then order-marginalized DP",
+    "sum_P": 1.000000238418579
+  }
+}

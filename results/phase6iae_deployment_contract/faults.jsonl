@@ -1,0 +1,1 @@
+{"event": "rollback_completed", "generator": "G1_RATE", "hold": 15, "k": 6, "logged_at": "2026-10-19T15:45:08", "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e", "policy_file": "C:\\Users\\郑天成\\AppData\\Local\\Temp\\tmpqugdmayi\\active_policy.json", "rollback": "g1_rate", "stopped": true}

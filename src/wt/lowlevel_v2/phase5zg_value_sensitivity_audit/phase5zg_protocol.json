@@ -1,0 +1,58 @@
+{
+  "phase": "5ZG",
+  "mode": "inference-only value sensitivity audit",
+  "optimizer_steps": 0,
+  "new_checkpoints": 0,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "scenarios": [
+    310110,
+    310111,
+    310112,
+    310113,
+    310114,
+    310115,
+    310116,
+    310117
+  ],
+  "groups": {
+    "sinr": [
+      0,
+      1
+    ],
+    "interference": [
+      2,
+      3
+    ],
+    "progress": [
+      4,
+      5
+    ],
+    "rate": [
+      6
+    ],
+    "motion": [
+      7,
+      8,
+      12,
+      13
+    ],
+    "binary": [
+      9,
+      10,
+      11
+    ]
+  },
+  "path_points": 16,
+  "explain_sign": 0.7,
+  "explain_spearman": 0.7,
+  "margin_sign": 0.7,
+  "stable_scenarios": 6,
+  "stable_seeds": 4,
+  "interaction_ratio": 0.25,
+  "ordering_pairwise_max": 0.8,
+  "align_abs": 0.001,
+  "hybrid_responses_are_diagnostic_counterfactuals": true,
+  "opened_310118_310125": false
+}

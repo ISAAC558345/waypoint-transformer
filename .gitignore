@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.test-tmp/
+.venv/
+**/test_tmp/
+**/torchinductor_*/
+.vscode/
+backup/
+logs/
+_tmp_round19_full_tests/
+round_*/outputs/
+round_*/figures/

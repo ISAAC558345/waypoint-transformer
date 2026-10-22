@@ -1,0 +1,8 @@
+{
+  "L0": "gated fly-toward (FINAL-HIER low-level)",
+  "L1": "non-residual MAPPO",
+  "L2": "Residual MAPPO without neighbor/interference features",
+  "L3": "Collision-aware Residual MAPPO + neighbor encoder + SafetyProjector",
+  "L4": "ICAR-MAPPO = task-conditioned + residual MAPPO + neighbor-aware + interference-aware + SafetyProjector + ServiceSafeEnvelope",
+  "ran": false
+}

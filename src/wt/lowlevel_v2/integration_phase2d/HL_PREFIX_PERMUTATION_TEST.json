@@ -1,0 +1,40 @@
+{
+  "buoy_pass": true,
+  "candidate_enumeration_pass": true,
+  "n": 20,
+  "pass": true,
+  "rows": [
+    {
+      "buoy_delta": 0.0,
+      "candidate_delta": 0.0,
+      "i": 0,
+      "uav_delta": 0.0
+    },
+    {
+      "buoy_delta": 0.0,
+      "candidate_delta": 0.0,
+      "i": 1,
+      "uav_delta": 0.0
+    },
+    {
+      "buoy_delta": 0.0,
+      "candidate_delta": 0.0,
+      "i": 2,
+      "uav_delta": 4.3528344662036034e-07
+    },
+    {
+      "buoy_delta": 0.0,
+      "candidate_delta": 8.881784197001252e-16,
+      "i": 3,
+      "uav_delta": 2.0937427702705236e-07
+    },
+    {
+      "buoy_delta": 8.31074222773509e-08,
+      "candidate_delta": 0.0,
+      "i": 4,
+      "uav_delta": 5.031040979375234e-07
+    }
+  ],
+  "tolerance": 1e-05,
+  "uav_pass": true
+}

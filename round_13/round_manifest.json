@@ -1,0 +1,28 @@
+{
+  "completion_amendments": [
+    {
+      "amendment_lock": "round_13/ROUND_LOCK_AMENDMENT.json",
+      "amendment_only": true,
+      "formal_amendment_output": "round_13/amendments/round13_completion_amendment_20260825_0040",
+      "original_round13_results_modified": false,
+      "status": "completed_and_locked"
+    }
+  ],
+  "controllability_audit_performed": true,
+  "hgnn_training_performed": false,
+  "lock_file": "round_13/ROUND_LOCK.json",
+  "next_round_created": false,
+  "old_development_test_accessed": false,
+  "policy_training_performed": false,
+  "ppo_training_performed": false,
+  "previous_lock": "round_12/ROUND_LOCK.json",
+  "protocol": "round_13/configs/round13_controllability_protocol.json",
+  "round": "round_13",
+  "service_action_extension_ready": false,
+  "service_action_headroom_gate": "SA-C",
+  "service_action_implemented": false,
+  "snapshot": "backup/snapshots/before_round_13_20260811_0025",
+  "status": "completed",
+  "training_performed": false,
+  "untouched_holdout_accessed": false
+}

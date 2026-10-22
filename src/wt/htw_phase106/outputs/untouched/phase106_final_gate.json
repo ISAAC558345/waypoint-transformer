@@ -1,0 +1,15 @@
+{
+  "FINAL": "A",
+  "completed_blocks_not_below_m0_m2": true,
+  "final_system_confirmed": true,
+  "legality_not_worse": true,
+  "m3_m1_not_reverse": true,
+  "not_drop_or_idle_cheat": true,
+  "not_for_further_tuning": true,
+  "ok_m3_m0_ci": true,
+  "ok_m3_m0_mean": true,
+  "ok_m3_m2_ci": true,
+  "ok_m3_m2_mean": true,
+  "text": "Final untouched confirmation of FINAL-HIER vs primary frozen baselines.",
+  "trained": false
+}

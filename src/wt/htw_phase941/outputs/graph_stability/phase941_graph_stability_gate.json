@@ -1,0 +1,12 @@
+{
+  "allow_ppo": false,
+  "dec_sanity_deepsets_not_worse_than_hungarian": true,
+  "dec_sanity_hgnn_not_worse_than_hungarian": true,
+  "graph_gate": "GRAPH-B",
+  "graph_value_suggestive": true,
+  "idle_collapse": false,
+  "n_positive_seeds": 3,
+  "reason": "\u5747\u503c HGNN>DeepSets\uff0c\u4f46 CI \u8de8 0 \u6216 training-seed \u65b9\u5411\u4e0d\u7a33\u5b9a\u3002",
+  "sinr_worse": false,
+  "stable_graph_advantage": false
+}

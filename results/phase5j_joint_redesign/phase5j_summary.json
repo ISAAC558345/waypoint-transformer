@@ -1,0 +1,92 @@
+{
+  "planner_ready": false,
+  "deployment_verified": false,
+  "decide_called": false,
+  "deployment_model_trained": false,
+  "mappo_modified": false,
+  "lambda_conflict": 1.0,
+  "ranking": {
+    "similarity": {
+      "all": {
+        "spearman": 0.3546024590462009,
+        "kendall": 0.27283726641796996,
+        "top1": 0.5,
+        "top3": 0.6666666666666666,
+        "n_states": 6.0
+      },
+      "payload_separated": {
+        "spearman": 0.5112372365697267,
+        "kendall": 0.32740471970156393,
+        "top1": 0.4,
+        "top3": 0.6,
+        "n_states": 5.0
+      }
+    },
+    "individual": {
+      "all": {
+        "spearman": 0.47273478952593173,
+        "kendall": 0.02594515832502102,
+        "top1": 0.3333333333333333,
+        "top3": 0.5,
+        "n_states": 6.0
+      },
+      "payload_separated": {
+        "spearman": 0.367281747431118,
+        "kendall": 0.031134189990025225,
+        "top1": 0.2,
+        "top3": 0.4,
+        "n_states": 5.0
+      }
+    },
+    "joint": {
+      "all": {
+        "spearman": 0.7910104486718291,
+        "kendall": 0.21492939427722035,
+        "top1": 0.6666666666666666,
+        "top3": 0.6666666666666666,
+        "n_states": 6.0
+      },
+      "payload_separated": {
+        "spearman": 0.749212538406195,
+        "kendall": 0.25791527313266444,
+        "top1": 0.6,
+        "top3": 0.6,
+        "n_states": 5.0
+      }
+    }
+  },
+  "readout": {
+    "decoder": {
+      "fly": 0.0,
+      "mappo": 0.0,
+      "duplicate_targets": 0.0,
+      "conflict_rate": 0.0
+    },
+    "global_joint": {
+      "fly": 833333.3333333334,
+      "mappo": 2333333.3333333335,
+      "duplicate_targets": 0.0,
+      "conflict_rate": 0.0
+    },
+    "matching": {
+      "fly": 333333.3333333333,
+      "mappo": 500000.0,
+      "duplicate_targets": 0.0,
+      "conflict_rate": 0.0
+    },
+    "raw": {
+      "fly": 333333.3333333333,
+      "mappo": 500000.0,
+      "duplicate_targets": 2.6666666666666665,
+      "conflict_rate": 0.5555555555555556
+    }
+  },
+  "diagnostics": {
+    "communication_drop": 2275675.6756756757,
+    "interference": 0.5650383453469167,
+    "duplicate_targets": 0.08648648648648649
+  },
+  "enter_training": true,
+  "decoder_text": "冻结 OrderFreeSetDecoder 的联合 MAPPO payload 低于按 J(A) 选出的分配，也低于排他匹配。现有解码没有读出联合效用。",
+  "head_text": "不增加 global assignment head。按测得 J(A) 选取的离线上界高于排他匹配，差距来自联合标签。本阶段没有训练新的头。"
+}

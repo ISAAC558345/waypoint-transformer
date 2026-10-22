@@ -1,0 +1,22 @@
+{
+  "round": "round_33",
+  "topic": "Long-Episode Multi-UAV Benchmark Design and Non-Learning Planning-Horizon Separation Validation",
+  "episode_horizon": 20,
+  "historical_compatibility_episode_horizon": 12,
+  "num_uavs": 2,
+  "primary_comparison": "joint_h10_vs_joint_h5",
+  "secondary_comparison": "joint_h5_vs_joint_h1",
+  "h20_role": "secondary descriptive diagnostic only",
+  "common_anchor_slots": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "state_generator": "frozen_joint_h1_receding_horizon",
+  "counterfactual_continuation": "first-action intervention followed by frozen_joint_h1_receding_horizon",
+  "bootstrap": {"cluster": "scenario_id", "resamples": 1000, "seed": 3301},
+  "design": {"scenario_count": 64, "namespace": "round33_long_episode_design_v1"},
+  "confirmation": {"scenario_count": 64, "namespace": "round33_long_episode_confirmation_v1", "access_count": 1},
+  "training_performed": false,
+  "task_waypoint_used": false,
+  "hgnn_used": false,
+  "physics_modified": false,
+  "reward_modified": false,
+  "planner_modified_only_for_authorized_h20_support": true
+}

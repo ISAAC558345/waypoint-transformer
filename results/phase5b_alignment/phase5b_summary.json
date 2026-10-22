@@ -1,0 +1,106 @@
+{
+  "planner_ready": false,
+  "deployment_verified": false,
+  "training": false,
+  "decide_called": false,
+  "holdout_used": false,
+  "reference_oracle_fly": {
+    "n": 2,
+    "payload": 4500000.0,
+    "trajectory_reward": 4.5,
+    "residual_queue": 35.0,
+    "completion_time": 48.0,
+    "path_length_m": 3696.0,
+    "oracle_agreement": 1.0
+  },
+  "experiment_1_oracle_high_mappo": {
+    "n": 2,
+    "payload": 6000000.0,
+    "trajectory_reward": 5.999985718535173,
+    "residual_queue": 35.5,
+    "completion_time": 48.0,
+    "path_length_m": 141.0493609583882,
+    "oracle_agreement": 1.0,
+    "regret": -0.3333333333333333
+  },
+  "experiment_2_deepsets_fly": {
+    "n": 2,
+    "payload": 7000000.0,
+    "trajectory_reward": 7.0,
+    "residual_queue": 33.0,
+    "completion_time": 48.0,
+    "path_length_m": 2838.0,
+    "oracle_agreement": 0.3333333333333333,
+    "regret": -0.5555555555555556
+  },
+  "experiment_2_hgnn_fly": {
+    "n": 2,
+    "payload": 0.0,
+    "trajectory_reward": 0.0,
+    "residual_queue": 39.0,
+    "completion_time": 48.0,
+    "path_length_m": 6336.0,
+    "oracle_agreement": 0.20833333333333331,
+    "regret": 1.0
+  },
+  "experiment_3_deepsets": {
+    "n": 24,
+    "spearman": -0.6987179487179488,
+    "kendall": -0.6623931623931624,
+    "top1": 0.4166666666666667,
+    "top3": 0.4166666666666667
+  },
+  "experiment_3_hgnn": {
+    "n": 24,
+    "spearman": 0.5586080586080585,
+    "kendall": 0.3477564102564103,
+    "top1": 0.2916666666666667,
+    "top3": 0.4583333333333333
+  },
+  "feature_table": [
+    {
+      "feature": "UAV-UAV edge",
+      "current": "yes",
+      "required": "yes",
+      "note": "Distance and current interference power ratio. No buoy-buoy edge."
+    },
+    {
+      "feature": "UAV-Buoy edge",
+      "current": "yes",
+      "required": "yes",
+      "note": "Distance, hypothetical rate, and ETA."
+    },
+    {
+      "feature": "interference feature",
+      "current": "yes, UAV-UAV channel",
+      "required": "yes",
+      "note": "Taken from active links. It is zero when no UAV is in service."
+    },
+    {
+      "feature": "channel quality",
+      "current": "yes, rate_if_assigned on UAV-Buoy",
+      "required": "yes",
+      "note": "Current hypothetical rate, not a future channel."
+    },
+    {
+      "feature": "energy cost",
+      "current": "slot exists but is filled with 0",
+      "required": "not available in L3-B",
+      "note": "The environment does not expose energy. The diagnosis does not invent one."
+    },
+    {
+      "feature": "queue state",
+      "current": "yes, buoy queue/capacity and assigned-queue on the UAV",
+      "required": "yes",
+      "note": "Current queue only."
+    },
+    {
+      "feature": "urgency",
+      "current": "queue ratio appended only on the Phase-5 full checkpoint; measured assignment did not change when it was zeroed",
+      "required": "a shared score that can change the assignment",
+      "note": "Plain HGNN checkpoint has no urgency channel."
+    }
+  ],
+  "route": "Option-1",
+  "phase5c_started": false
+}

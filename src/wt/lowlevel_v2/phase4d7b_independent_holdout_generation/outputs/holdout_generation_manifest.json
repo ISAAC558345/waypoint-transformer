@@ -1,0 +1,23 @@
+{
+  "batch_size_status": "BATCH_SIZE_SPECIFICATION_REQUIRED",
+  "batches_created": false,
+  "data_registered": false,
+  "deployment_verified": false,
+  "existing_size_constants": {
+    "LLV2_DESIGN_N": 16,
+    "LLV2_TRAIN_N": 64,
+    "phase2_VALIDATION_N": 64,
+    "phase3_VALIDATION_N": 64,
+    "LLV2_CONFIRMATION_N": null,
+    "deployment_holdout_N": null
+  },
+  "generator": {
+    "entry": "src/wt/htw_phase945/candidate_pool.py:generate_pool",
+    "scenario_realization": "L3BEnv.reset(seed=scenario_id)",
+    "pool_seed_key": "scenario_id * 1009 + 0 for first hold",
+    "invented_generator": false
+  },
+  "planner_ready": false,
+  "status": "BLOCKED_ON_INDEPENDENT_HOLDOUT_DATA",
+  "why_stopped": "No formal deployment-holdout batch size exists. Train N=64 and design N=16 are different pool roles. Choosing 64 would violate the instruction not to assume N=64."
+}

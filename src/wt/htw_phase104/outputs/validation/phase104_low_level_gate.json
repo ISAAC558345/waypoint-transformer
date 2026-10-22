@@ -1,0 +1,15 @@
+{
+  "LLEXEC": "C",
+  "criteria": {
+    "LLEXEC": "C",
+    "completed_blocks_not_systematically_worse": false,
+    "legality_not_worse": true,
+    "n_positive_seeds": 3,
+    "n_seeds": 5,
+    "stable_low_level_advantage": false,
+    "text": "Current learned low-level does not stably beat gated fly-toward."
+  },
+  "not_untouched": true,
+  "stable_low_level_advantage": false,
+  "text": "Current learned low-level does not stably beat gated fly-toward."
+}

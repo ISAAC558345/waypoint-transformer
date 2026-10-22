@@ -1,0 +1,43 @@
+{
+  "status": "draft_not_authorized",
+  "pool": "310118-310125",
+  "execution": "one_shot_frozen_system_after_human_authorization",
+  "forbidden_after_seeing_results": [
+    "modify_model",
+    "modify_aggregation",
+    "modify_timeout",
+    "modify_candidates",
+    "select_seed",
+    "select_checkpoint"
+  ],
+  "metrics": [
+    "cumulative_payload",
+    "residual_queue",
+    "completion",
+    "normalized_regret",
+    "selected_j15_or_realized_payload",
+    "assignment_legality",
+    "conflict_rate",
+    "sinr",
+    "inference_latency",
+    "seed_consensus_strength"
+  ],
+  "primary_comparison": "frozen_rank_mean_true_h1_versus_frozen_model_s",
+  "secondary_comparison": "official_deepsets_only_from_existing_artifacts_without_a_new_rollout",
+  "oracle_is_deployment_baseline": false,
+  "performance_criterion_draft": "mean_paired_payload_improvement > 0",
+  "also_report": [
+    "scenario_cluster_95_ci",
+    "median_improvement",
+    "positive_tie_negative_scenario_count"
+  ],
+  "hard_conditions_draft": {
+    "illegal_assignment": 0,
+    "state_contamination": 0,
+    "crash": 0,
+    "nan_inf_final_decision": 0
+  },
+  "percent_improvement_threshold": null,
+  "latency_gate": "LATENCY_GATE_PENDING_HUMAN_SPECIFICATION",
+  "criterion_approved": false
+}

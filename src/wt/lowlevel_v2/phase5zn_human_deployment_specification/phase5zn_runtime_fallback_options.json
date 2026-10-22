@@ -1,0 +1,25 @@
+{
+  "runtime_fallback_policy": "HUMAN_SPECIFICATION_REQUIRED",
+  "selected_option": null,
+  "cases": [
+    "true_h1_candidate_evaluation_exception",
+    "model_r1_nan",
+    "model_r1_inf",
+    "candidate_pool_empty",
+    "invalid_joint_assignment",
+    "safety_projector_failure",
+    "checkpoint_missing",
+    "taskoption_construction_failure"
+  ],
+  "forbidden_fallbacks": [
+    "deepsets_direct_assignment",
+    "b2",
+    "oracle",
+    "single_r1_seed",
+    "phase5l_direct_hgnn",
+    "fly_toward"
+  ],
+  "non_catastrophic_candidate": "KEEP_CURRENT_VALID_TASKOPTION",
+  "when_no_current_legal_option": "NO_VALID_FALLBACK_DEFINED",
+  "safety_projector_zero_action": "frozen executor behavior, not a new deployment fallback"
+}

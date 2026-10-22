@@ -1,0 +1,186 @@
+{
+  "accel_note_L": "Phase-9.4.5 froze L=24 before confirmation (allowed runtime clause). Acceleration did not change L.",
+  "artifacts": {
+    "candidate_pool_manifest": {
+      "bytes": 111,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_candidate_pool_manifest.json",
+      "sha256": "79c25a7b8ec28b2a998bf2d9c59e4e795b762dbca2a16f4097961b45f4927f17"
+    },
+    "checkpoint_selection_csv": {
+      "bytes": 2518,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_checkpoint_selection.csv",
+      "sha256": "a3e1c8c3762b95e3f62ee4ba1c66490cab0fba8b18754e024dad1878dfb84885"
+    },
+    "compute_accel": {
+      "bytes": 1344,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\PHASE945_COMPUTE_ACCELERATION_AMENDMENT.json",
+      "sha256": "bba9efe281b58dadb4609ccef87b489a5f8bb56f965f8a995b836c261a427530"
+    },
+    "compute_equivalence": {
+      "bytes": 454,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_compute_equivalence_gate.json",
+      "sha256": "5612e18be31c87e4231f263a38918afec0acf232f643d4b21bc356cd30f56c18"
+    },
+    "confirmation_manifest": {
+      "bytes": 14680,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_confirmation_manifest.json",
+      "sha256": "79f874a08c6c1e3f10eb871b2f4dc5efb5a4a0f0242ba8be72a0796da93f23ff"
+    },
+    "freeze": {
+      "bytes": 361,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_prefinal_freeze.json",
+      "sha256": "3be99bbcbd63c1d809f8589cf17cfc84cfeed18d2fdcfdfd963c8008429b72c9"
+    },
+    "graph_u": {
+      "bytes": 61,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_graph_gate.json",
+      "sha256": "ec805431e8f7c52c9565caab2661dff31c168c620b44da935488c8c35cae7715"
+    },
+    "protocol": {
+      "bytes": 14790,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_protocol.json",
+      "sha256": "e3d6155a9116caccb98f94e593d06ce9551dd54846321f1875863c753142c47b"
+    },
+    "summary": {
+      "bytes": 2907,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\summary.json",
+      "sha256": "93baa1ae87474197a6dce36a21066ea264481a3814e80c21cbcc405b4ff24744"
+    },
+    "train_npz": {
+      "keys": [
+        "uav",
+        "buoy",
+        "uav_mask",
+        "buoy_mask",
+        "global",
+        "edge",
+        "edge_uu",
+        "assignment",
+        "candidates",
+        "utility",
+        "sinr_utility",
+        "queue_reduction",
+        "idle",
+        "completion",
+        "uav_positions",
+        "buoy_positions"
+      ],
+      "n": 64,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_train.npz",
+      "pool_size": 24,
+      "sha256": "9f2580cb1bf9a3bc4a56ee2443db400225a55ca1ad928794a518b80371229b8f"
+    },
+    "training_seed_manifest": {
+      "bytes": 118,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_training_seed_manifest.json",
+      "sha256": "b08ceeb5b17a4563f446cefd04236be6eefa20513487f8eb734cb43786aa9eab"
+    },
+    "uobj": {
+      "bytes": 68,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_objective_gate.json",
+      "sha256": "77d5df55035c979f3d662e59c59920aa2fd5ed720de9eaf587219e20550b9e23"
+    },
+    "utility_dataset_manifest": {
+      "bytes": 172,
+      "exists": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_candidate_utility_dataset_manifest.json",
+      "sha256": "255e5d8c49c56c34e1c32f8536559b4f47051d3f709903c75df55925c3fa1276"
+    },
+    "val_npz": {
+      "keys": [
+        "uav",
+        "buoy",
+        "uav_mask",
+        "buoy_mask",
+        "global",
+        "edge",
+        "edge_uu",
+        "assignment",
+        "candidates",
+        "utility",
+        "sinr_utility",
+        "queue_reduction",
+        "idle",
+        "completion",
+        "uav_positions",
+        "buoy_positions"
+      ],
+      "n": 32,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_val.npz",
+      "pool_size": 24,
+      "sha256": "5ae672a675a259e17d30edef254071600d6c00e34cf67b38eeeb5aec2b8c529c"
+    }
+  },
+  "checkpoint_rules_equal": false,
+  "checkpoint_selection_csv": {
+    "all_best_epoch_minus_one": true,
+    "note": "CSV lists best_epoch=-1/nan (skip-train leftover). Official .pt files are still the train() best-val-regret state_dicts; recover epoch from phase945_train_history_*.csv. Not rewritten.",
+    "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_checkpoint_selection.csv"
+  },
+  "confirmation_n_seeds": 64,
+  "disk_payloads": {
+    "d_per_seed": [
+      4578125.0,
+      4109375.0,
+      3500000.0,
+      5296875.0,
+      1265625.0
+    ],
+    "deepsets_old": 3200000.0,
+    "deepsets_util": 6950000.0,
+    "g_per_seed": [
+      281250.0,
+      953125.0,
+      1781250.0,
+      5062500.0,
+      5578125.0
+    ],
+    "graph_u": "GRAPH-U-C",
+    "hgnn_old": 3393750.0,
+    "hgnn_util": 6125000.0,
+    "next_action": "retain DeepSets",
+    "uobj": "UOBJ-A"
+  },
+  "gain_wording": "\u6536\u76ca\u5bf9\u9f50\u8bad\u7ec3\u6d41\u7a0b\u6574\u4f53\u6539\u8fdb",
+  "graph_u_gate_file": {
+    "gate": "GRAPH-U-C",
+    "stable_graph_value": false
+  },
+  "hold": 15,
+  "l32_in_phase945_source": [],
+  "matches_user_table": {
+    "deepsets_old": true,
+    "deepsets_util": true,
+    "graph_u": true,
+    "hgnn_old": true,
+    "hgnn_util": true,
+    "next_action": true,
+    "uobj": true
+  },
+  "new_checkpoint_rule": "best_validation_mean_candidate_regret",
+  "old_checkpoint_rule": "last_epoch_fixed_phase94",
+  "pool_seed": 94501,
+  "pool_size_accel": 24,
+  "pool_size_candidate_manifest": 24,
+  "pool_size_code": 24,
+  "pool_size_freeze": 24,
+  "pool_size_protocol_json": 24,
+  "pool_size_protocol_note": "Disk freeze is L=24 in protocol.py, prefinal_freeze.json, candidate/utility manifests, and acceleration amendment note_L. No POOL_SIZE=32 remains in Phase-9.4.5 source or JSON. An earlier acceleration instruction mentioning 32 was never written as a frozen scientific L. Recorded as oral-vs-disk discrepancy / protocol deviation; history not rewritten; no rerun.",
+  "pool_size_utility_manifest": 24,
+  "uobj_gate_file": {
+    "gate": "UOBJ-A",
+    "objective_alignment_confirmed": true
+  },
+  "utility_executor": "fly-toward"
+}

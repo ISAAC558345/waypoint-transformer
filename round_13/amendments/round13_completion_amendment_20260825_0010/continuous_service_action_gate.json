@@ -1,0 +1,14 @@
+{
+  "completion_mean_delta": -0.002962253659305547,
+  "decoder_violations": 0,
+  "definition": "SA-A-continuous requires positive payload CI excluding zero, non-degrading completion/residual queue, and zero decoder violations; SA-C-continuous has payload CI entirely below zero or systematic core communication deterioration; otherwise SA-B-continuous.",
+  "gate": "SA-C-continuous",
+  "payload_95_CI": [
+    -956936.8194447262,
+    154234.6180300747
+  ],
+  "payload_mean_delta": -424089.2655060768,
+  "primary_comparison": "continuous_masked_simplex_queue_times_rate_minus_current_fixed_parallel_1_over_K",
+  "residual_queue_improvement_mean_delta": -527256.5915920784,
+  "service_action_extension_ready": false
+}

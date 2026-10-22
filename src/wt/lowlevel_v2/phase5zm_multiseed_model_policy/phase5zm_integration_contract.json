@@ -1,0 +1,22 @@
+{
+  "status": "draft_not_installed",
+  "flow": [
+    "current_state",
+    "frozen_stage1_encoder_and_candidate_generator",
+    "120_joint_assignments",
+    "optimized_true_h1_one_step_value_evaluator",
+    "five_frozen_model_r1_heads",
+    "rank_mean_consensus_v1",
+    "selected_joint_assignment",
+    "taskoption_association_hold_15",
+    "frozen_residual_mappo_executes_option"
+  ],
+  "true_h1_role": "high-level assignment value evaluator",
+  "true_h1_is_planner": false,
+  "true_h1_is_trajectory_planner": false,
+  "true_h1_is_15_step_rollout": false,
+  "low_level_reselects_buoy": false,
+  "installed_in_official_planner": false,
+  "aggregation": "RANK_MEAN_CONSENSUS_V1",
+  "aggregation_approved": false
+}

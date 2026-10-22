@@ -1,0 +1,21 @@
+{
+  "round": "round_24",
+  "status": "locked",
+  "topic": "Pre-Registered Multi-Seed Stability Confirmation for Multi-UAV Task-Waypoint Policy",
+  "snapshot": "backup/snapshots/before_round_24_20260829_1515",
+  "previous_round_lock": "round_23/ROUND_LOCK.json",
+  "previous_round_lock_sha256": "948E89F9197E8204B147FA2F3B9543CD878D4380680254DCB1190E7E9015F22A",
+  "formal_output": "round_24/outputs/round24_multiseed_stability_20260829_1515",
+  "figure_directory": "round_24/figures/round24_multiseed_stability_20260829_1515",
+  "training_performed": true,
+  "seed_extension_performed": true,
+  "algorithm_modified": false,
+  "predictor_training_performed": false,
+  "hgnn_training_performed": false,
+  "ppo_training_performed": false,
+  "fresh_dev_new_rollout_count": 0,
+  "round24_fresh_access_count": 1,
+  "untouched_eval_accessed": false,
+  "untouched_eval_access_count": 0,
+  "round25_created": false
+}

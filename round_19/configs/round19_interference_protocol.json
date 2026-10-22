@@ -1,0 +1,14 @@
+{
+  "namespace": "round19_interference_coordination_diagnostic",
+  "primary_num_uavs": 2,
+  "num_buoys": [3, 5],
+  "buoy_drift_mode": "static",
+  "channel_variation_mode": "static",
+  "movement_candidates": ["zero", "+x", "-x", "+y", "-y", "queue_rate_direction", "nearest_unsatisfied_buoy_direction"],
+  "planning_horizons": [1, 5, 10],
+  "beam_width": 7,
+  "minimum_uav_separation_m": 15.0,
+  "interference_tiers": {"orthogonal": 0.0, "low": 0.25, "medium": 0.5, "full": 1.0},
+  "interference_conflict_isr_threshold": 0.25,
+  "protected_data_access": {"old_development": 0, "fresh_development": 0, "untouched_holdout": 0}
+}

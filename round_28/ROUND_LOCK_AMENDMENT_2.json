@@ -1,0 +1,21 @@
+{
+  "amendment_type": "legal_round30_successor_lifecycle_test_extension",
+  "authoritative_source": "round_28/ROUND_LOCK.json",
+  "original_round28_lock_sha256": "9E3F10B893891B6E0E0415D886E00AEC234CD1376B3146E5704093A210384C91",
+  "affected_paths": {
+    "tests/test_round28_planning_need_representation.py": {
+      "prior_amended_sha256": "163027B8D68F2A6A6EA05E577C734CD903675CF2568CCB60F4DC8D96B4381DFF",
+      "amended_sha256": "69D13E0F8FEB61DCF587B062FD527CB790A4F704A9FE730FB0E310E1D513D977"
+    }
+  },
+  "semantic_correction": "The immutable Round-28 lock still records round29_created=false at lock time. Its lifecycle test now recognizes the explicitly authorized downstream Round-30 successor while continuing to require no Round-31.",
+  "scientific_artifacts_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "metrics_modified": false,
+  "fresh_dev_rerun": false,
+  "untouched_eval_accessed": false,
+  "original_round28_lock_modified": false,
+  "round30_created_at_amendment": false,
+  "approved_at": "2026-08-30T18:45:00+08:00"
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "round": "round_08",
+  "status": "completed",
+  "locked_at": "2026-08-09T23:50:00+08:00",
+  "topic": "V2 deployable-goal waypoint and causal-policy retraining with isolated holdout",
+  "previous_round_lock_sha256": "DA8D56393689B4AD0CA1FEB8DE2D5213AA3945488823F23F02CD337986DBBF69",
+  "frozen_round_locks": {
+    "round_03": "601C6679D17EE25534C9A415C75BBF0DC28A167E2ED5EFE11BA0FB3A5C984375",
+    "round_04": "A47895852DD03365DE168DD552961E24D33CAD3C13C3EF5E646507F19C4E3679",
+    "round_05": "50124434E0CC9B2B4A3D954A27C97AA139F498C8AE023DA11DE602E533FDD380",
+    "round_06": "E77A83EE903739AB6EB327238E632BAEB8FE93E7298258429BA471295AA71772",
+    "round_07": "DA8D56393689B4AD0CA1FEB8DE2D5213AA3945488823F23F02CD337986DBBF69"
+  },
+  "scope": {
+    "training_performed": true,
+    "waypoint_training_performed": true,
+    "transformer_training_performed": true,
+    "development_closed_loop_performed": true,
+    "development_test_access_count": 1,
+    "untouched_holdout_accessed": false,
+    "ppo_training_performed": false,
+    "hgnn_training_performed": false
+  },
+  "formal_matrix": {"waypoint_runs": 6, "transformer_runs": 18, "total_runs": 24, "waypoint_horizons": [10, 20], "context_length": 10, "seeds": [0, 1, 2]},
+  "selection": {"selected_waypoint": "wt_h20", "selection_split": "validation", "test_used_for_selection": false},
+  "gate": {"result": "B", "candidate_ready_for_next_phase": false, "reason": "paired validation payload bootstrap confidence intervals are not reliably positive across seeds"},
+  "holdout_access_audit": {"path": "round_08/outputs/round08_formal_20260809_2330/holdout_access_audit.json", "access_count": 0, "content_read": false, "hash_unchanged": true},
+  "acceptance": {"round08_smoke_tests": "47/47 PASS", "repository_tests": "307/307 PASS", "compileall": "PASS", "figure_png_files": 20, "figure_svg_files": 20},
+  "canonical_outputs": {
+    "formal": {"path": "round_08/outputs/round08_formal_20260809_2330", "file_count": 35, "byte_count": 33038186, "tree_sha256": "3E8091815235CAD0AF7A22B2F960E8C12389CA0A04CD328C522BB1214249CE61"},
+    "figures": {"path": "round_08/figures/round08_formal_20260809_2330", "file_count": 40, "byte_count": 1204564, "tree_sha256": "0C2A53F169334EE4BE014B3F8ED3AFBC809CD594864750E7DE969EFF6108B740"},
+    "report": "report/round_08_report_20260809_2350.md",
+    "audit": "docs/stage0_8_training_closure_audit.md"
+  },
+  "next_round_created": false
+}

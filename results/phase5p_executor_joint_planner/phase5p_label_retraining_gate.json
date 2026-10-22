@@ -1,0 +1,31 @@
+{
+  "gate": "LABELTRAIN-C",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "development_evaluation_only": true,
+  "epochs": 10,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "n_seeds_improved": 0,
+  "delta": {
+    "spearman": null,
+    "spearman_median": null,
+    "spearman_std": null,
+    "top1": 0.0,
+    "top1_median": 0.0,
+    "top1_std": 0.0,
+    "j_mappo": -66666.66666666666,
+    "j_mappo_median": 0.0,
+    "j_mappo_std": 149071.19849998594,
+    "regret": 0.022222214814817277,
+    "regret_median": 0.0,
+    "regret_std": 0.04969038293653433
+  },
+  "fly_positive_pairs": 684.0,
+  "mappo_positive_pairs": 10301.0
+}

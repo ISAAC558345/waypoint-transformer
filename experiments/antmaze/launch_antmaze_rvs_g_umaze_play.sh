@@ -9,9 +9,9 @@ use_gpu=true
 for env in "${envs[@]}"; do
   for seed in $(seq 1 $((seeds))); do
     if [ "$use_gpu" = true ]; then
-      python src/rvs/train.py --configs "$config" --env_name "$env" --seed "$seed" --use_gpu
+      PYTHONPATH=src python -m wt.train --configs "$config" --env_name "$env" --seed "$seed" --use_gpu
     else
-      python src/rvs/train.py --configs "$config" --env_name "$env" --seed "$seed"
+      PYTHONPATH=src python -m wt.train --configs "$config" --env_name "$env" --seed "$seed"
     fi
   done
 done

@@ -1,0 +1,19 @@
+{
+  "best_epoch": 60,
+  "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\final_artifacts\\checkpoints\\deepsets_util_seed0.pt",
+  "encoder": "deepsets",
+  "input_schema": {
+    "buoy_dim": 7,
+    "global_dim": 3,
+    "max_buoys": 12,
+    "max_uavs": 6,
+    "norm_eps": 1.0,
+    "normalization": "median_mad",
+    "uav_dim": 8
+  },
+  "n_parameters": 382723,
+  "sha256": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "source_checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase100\\outputs\\handoff\\frozen_deepsets_util\\deepsets_util_seed0.pt",
+  "train_phase": "9.4.5 utility-aligned, archived in 10.0, used in 10.5/10.6",
+  "train_seed": 0
+}

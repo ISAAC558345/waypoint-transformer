@@ -1,0 +1,13 @@
+{
+  "training": false,
+  "new_j15_rollout": false,
+  "trace_seed": 0,
+  "cosine_limit": 0.99,
+  "value_gap_blocks": 0.1,
+  "pool_fraction": 0.25,
+  "phy_spearman": 0.4,
+  "opened_310118": false,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "note": "Pooling collision means ordered pre-pool cosine < 0.99 and pooled cosine >= 0.99. PHY_NOW is the sum of current joint rates, with no fitted weight."
+}

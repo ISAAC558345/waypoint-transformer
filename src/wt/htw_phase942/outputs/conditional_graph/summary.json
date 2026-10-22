@@ -1,0 +1,208 @@
+{
+  "advantage_grows_with_complexity": true,
+  "answer_q1": "\u5426\u3002\u603b\u4f53 paired delta \u672a\u5f62\u6210\u7a33\u5b9a\u666e\u904d\u4f18\u52bf\u3002",
+  "answer_q2": "suggestive\uff1aR4 \u5747\u503c\u6b63\u5411\u4f46\u4e0d\u7a33\u5b9a\u3002",
+  "cgraph": {
+    "conditional_graph_advantage_confirmed": false,
+    "conditional_graph_advantage_suggestive": true,
+    "gate": "CGRAPH-B",
+    "reason": "R4 \u5747\u503c HGNN>DeepSets\uff0c\u4f46 CI \u8de8 0 \u6216 training-seed \u4e0d\u7a33\u5b9a\u3002"
+  },
+  "comp": {
+    "competition_q33": 0.5,
+    "competition_q67": 0.5,
+    "high": "C(s) > q67",
+    "low": "C(s) <= q33",
+    "medium": "q33 < C(s) <= q67",
+    "metric": "same-top-buoy fraction under myopic preference, episode-mean (Phase-9.4.1 C(s))",
+    "n": 16,
+    "phase941_competition_q50_reference": 0.5,
+    "source": "COLLECT_SEEDS only; not confirmation outcomes"
+  },
+  "comp_ix": {
+    "ci_hi": 1087812.4999999984,
+    "ci_lo": -975000.0,
+    "mean": 100000.0,
+    "n_boot": 2000
+  },
+  "confirmation_sha256": "d81ec5ac4f6b6563907b29806a6895cda4074d4e57914066b3d03b218946cd09",
+  "direct_ppo": false,
+  "inter": {
+    "high": "I(s) > q66",
+    "interference_q33": 0.05585927433314956,
+    "interference_q66": 0.0649851835524602,
+    "low": "I(s) <= q33",
+    "medium": "q33 < I(s) <= q66",
+    "metric": "episode-mean interference_uav_uav under exclusive matching (Phase-9.4.1 I(s))",
+    "source": "reused phase941_strata_lock.json; COLLECT_SEEDS only"
+  },
+  "inter_ix": {
+    "ci_hi": 1475000.0,
+    "ci_lo": -812500.0,
+    "mean": 250000.0,
+    "n_boot": 2000
+  },
+  "n_scenarios": 32,
+  "neg_seed_reason": "\u8d1f seed [2, 3, 4] \u5728 R1 \u4e0e R4 \u5747\u5931\u8d25\uff0c\u504f\u5168\u5c40\u8bad\u7ec3\u5931\u8d25\u800c\u975e\u5355\u4e00 regime\u3002",
+  "next_step": "fix decoder order dependence",
+  "order_gate": {
+    "gate": "ORDER-C",
+    "reason": "HGNN vs DeepSets \u4f18\u52a3\u968f UAV decode order \u9891\u7e41\u53cd\u8f6c\u3002"
+  },
+  "order_reverses": true,
+  "osr_deep": 0.39056608620894695,
+  "osr_hgnn": 0.5545473918575642,
+  "overall_mean_delta": -112500.0,
+  "r1_hgnn_worse": true,
+  "regimes": {
+    "R1": {
+      "conflict_deep": 0.0,
+      "conflict_hgnn": 0.0,
+      "deepsets_payload": 4225000.0,
+      "delta": {
+        "ci_hi": 575000.0,
+        "ci_lo": -1000000.0,
+        "mean": -250000.0,
+        "median": 0.0,
+        "n_pos_seeds": 2,
+        "per_seed_mean": [
+          125000.0,
+          1000000.0,
+          -875000.0,
+          -1000000.0,
+          -500000.0
+        ],
+        "positive_scenario_frac": 0.35,
+        "positive_seed_frac": 0.4
+      },
+      "hgnn_payload": 3975000.0,
+      "idle_deep": 0.4333333333333334,
+      "idle_hgnn": 0.4239583333333333,
+      "n": 8,
+      "sinr_deep": 807810.3063355756,
+      "sinr_hgnn": 884133.4190872852
+    },
+    "R2": {
+      "conflict_deep": 0.0,
+      "conflict_hgnn": 0.0,
+      "deepsets_payload": 3875000.0,
+      "delta": {
+        "ci_hi": 1375000.0,
+        "ci_lo": -1325000.0,
+        "mean": -75000.0,
+        "median": -500000.0,
+        "n_pos_seeds": 1,
+        "per_seed_mean": [
+          2625000.0,
+          -750000.0,
+          -250000.0,
+          -1125000.0,
+          -875000.0
+        ],
+        "positive_scenario_frac": 0.45,
+        "positive_seed_frac": 0.2
+      },
+      "hgnn_payload": 3800000.0,
+      "idle_deep": 0.4145833333333333,
+      "idle_hgnn": 0.39374999999999993,
+      "n": 8,
+      "sinr_deep": 825625.7955329908,
+      "sinr_hgnn": 832488.8416231917
+    },
+    "R3": {
+      "conflict_deep": 0.0,
+      "conflict_hgnn": 0.0,
+      "deepsets_payload": 3725000.0,
+      "delta": {
+        "ci_hi": 675000.0,
+        "ci_lo": -1125625.0,
+        "mean": -225000.0,
+        "median": 0.0,
+        "n_pos_seeds": 3,
+        "per_seed_mean": [
+          -1375000.0,
+          750000.0,
+          625000.0,
+          -1125000.0,
+          0.0
+        ],
+        "positive_scenario_frac": 0.3,
+        "positive_seed_frac": 0.6
+      },
+      "hgnn_payload": 3500000.0,
+      "idle_deep": 0.403125,
+      "idle_hgnn": 0.43125,
+      "n": 8,
+      "sinr_deep": 808322.5250288803,
+      "sinr_hgnn": 840232.2276729485
+    },
+    "R4": {
+      "conflict_deep": 0.0,
+      "conflict_hgnn": 0.0,
+      "deepsets_payload": 3925000.0,
+      "delta": {
+        "ci_hi": 950000.0,
+        "ci_lo": -750000.0,
+        "mean": 100000.0,
+        "median": 0.0,
+        "n_pos_seeds": 2,
+        "per_seed_mean": [
+          500000.0,
+          625000.0,
+          -125000.0,
+          -125000.0,
+          -375000.0
+        ],
+        "positive_scenario_frac": 0.45,
+        "positive_seed_frac": 0.4
+      },
+      "hgnn_payload": 4025000.0,
+      "idle_deep": 0.3729166666666667,
+      "idle_hgnn": 0.42708333333333337,
+      "n": 8,
+      "sinr_deep": 837671.2209608859,
+      "sinr_hgnn": 878453.6081933638
+    }
+  },
+  "rel_ix": {
+    "ci_hi": 1300000.0,
+    "ci_lo": -675000.0,
+    "mean": 350000.0,
+    "n_boot": 2000
+  },
+  "reversal_rate": 0.49767441860465117,
+  "seeds": [
+    52,
+    59,
+    63,
+    71,
+    73,
+    79,
+    84,
+    89,
+    44,
+    46,
+    64,
+    66,
+    67,
+    74,
+    75,
+    77,
+    115,
+    202,
+    218,
+    258,
+    263,
+    355,
+    378,
+    598,
+    41,
+    47,
+    48,
+    49,
+    51,
+    56,
+    58,
+    60
+  ]
+}

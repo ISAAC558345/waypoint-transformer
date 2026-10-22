@@ -1,0 +1,10 @@
+{
+  "confirmation": false,
+  "did_not_delete_existing": true,
+  "did_not_regenerate_utility": true,
+  "frozen_pool_size": 24,
+  "hold": 15,
+  "phase_state": "D_training",
+  "training": "in_progress_or_partial",
+  "utility_dataset": "complete"
+}

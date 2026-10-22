@@ -1,0 +1,48 @@
+{
+  "architecture": "frozen Phase-5L encoder + AssignmentConditionedSetScorer",
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "epochs": 10,
+  "checkpoint": "epoch_10",
+  "early_stopping": false,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "loss": "assignment-level pairwise ranking; pair kept only when the block gap is at least 1e6 bit",
+  "payload_block_bits": 1000000.0,
+  "candidate_k": 3,
+  "expanded_k_audit_only": 5,
+  "train_scenarios": [
+    310100,
+    310101,
+    310102,
+    310103,
+    310104,
+    310105,
+    310106,
+    310107,
+    310108,
+    310109
+  ],
+  "confirmation_scenarios": [
+    310110,
+    310111,
+    310112,
+    310113,
+    310114,
+    310115,
+    310116,
+    310117
+  ],
+  "confirmation_opened": false,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 0,
+  "tie_abs_bits": 1000000.0,
+  "close_oracle_bits": 1000000.0
+}

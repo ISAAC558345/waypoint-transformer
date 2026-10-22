@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "model_seed": 0,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase3\\outputs\\ckpt_seed0_update100.pt",
+      "primary": true,
+      "reused_phase2d": true,
+      "update": 100
+    },
+    {
+      "model_seed": 1,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase3\\outputs\\ckpt_seed1_update100.pt",
+      "primary": true,
+      "reused_phase2d": true,
+      "update": 100
+    },
+    {
+      "model_seed": 2,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase3\\outputs\\ckpt_seed2_update100.pt",
+      "primary": true,
+      "reused_phase2d": false,
+      "update": 100
+    },
+    {
+      "model_seed": 3,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase3\\outputs\\ckpt_seed3_update100.pt",
+      "primary": true,
+      "reused_phase2d": false,
+      "update": 100
+    },
+    {
+      "model_seed": 4,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase3\\outputs\\ckpt_seed4_update100.pt",
+      "primary": true,
+      "reused_phase2d": false,
+      "update": 100
+    }
+  ],
+  "primary": "update100"
+}

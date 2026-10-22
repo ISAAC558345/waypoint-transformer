@@ -1,0 +1,107 @@
+{
+  "planner_ready": false,
+  "deployment_verified": false,
+  "decide_called": false,
+  "hgnn_retrained": false,
+  "mappo_modified": false,
+  "joint_training_started": false,
+  "holdout_used": false,
+  "scenarios": [
+    310102,
+    310103
+  ],
+  "pool_width": 3,
+  "search_limit": 500,
+  "search": {
+    "mean_assignments": 27.666666666666668,
+    "spearman_sum_vs_joint_fly": 0.8307874940152555,
+    "kendall_sum_vs_joint_fly": 0.31975173420956554,
+    "spearman_score_vs_joint_fly": 0.4751605223288364,
+    "top1_same_assignment": 0.16666666666666666
+  },
+  "executed": {
+    "sum_individual": {
+      "fly": 166666.66666666666,
+      "mappo": 833333.3333333334
+    },
+    "utility_greedy": {
+      "fly": 0.0,
+      "mappo": 333333.3333333333
+    },
+    "utility_decoder": {
+      "fly": 0.0,
+      "mappo": 166666.66666666666
+    },
+    "deepsets_greedy": {
+      "fly": 666666.6666666666,
+      "mappo": 1500000.0
+    },
+    "raw_argmax": {
+      "fly": 0.0,
+      "mappo": 0.0
+    },
+    "best_joint": {
+      "fly": 1000000.0,
+      "mappo": 1833333.3333333333
+    }
+  },
+  "coupling": {
+    "raw_duplicate_targets": 5.0,
+    "greedy_duplicate_targets": 0.0,
+    "greedy_coverage": 0.3333333333333333
+  },
+  "conflict_matrix": [
+    [
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0
+    ]
+  ],
+  "matrix_text": "| UAV | 0 | 1 | 2 | 3 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 0 | 0.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |\n| 1 | 1.00 | 0.00 | 1.00 | 1.00 | 1.00 | 1.00 |\n| 2 | 1.00 | 1.00 | 0.00 | 1.00 | 1.00 | 1.00 |\n| 3 | 1.00 | 1.00 | 1.00 | 0.00 | 1.00 | 1.00 |\n| 4 | 1.00 | 1.00 | 1.00 | 1.00 | 0.00 | 1.00 |\n| 5 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.00 |",
+  "decoder_text": "\u73b0\u6709 OrderFreeSetDecoder \u7684\u8054\u5408\u89e3\u7801\u548c\u5916\u90e8\u8d2a\u5fc3\u4e00\u6837\uff0c\u90fd\u4f4e\u4e8e\u6c60\u5185\u6700\u597d\u7684\u8054\u5408 fly-toward\u3002\u7f3a\u7684\u662f\u8054\u5408\u6807\u7b7e\uff0c\u4e0d\u662f\u5148\u6362\u4e00\u4e2a decoder\u3002",
+  "head_text": "\u73b0\u6709 decoder \u5df2\u7ecf\u80fd\u8f93\u51fa\u4e00\u6761\u5b8c\u6574\u5206\u914d\u3002\u672c\u9636\u6bb5\u4e0d\u589e\u52a0 global assignment head\u3002",
+  "enter_joint_training": true
+}

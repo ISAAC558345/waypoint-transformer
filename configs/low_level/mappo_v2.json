@@ -1,0 +1,11 @@
+{
+  "policy": "residual_mappo_v2",
+  "actor": "src/wt/lowlevel_v2/residual_policy.py:ResidualActor",
+  "critic": "src/wt/lowlevel_v2/residual_policy.py:CentralizedCritic",
+  "checkpoint": "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt",
+  "sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "seed": 0,
+  "observation": {"self": 5, "task": 8, "comm": 4, "neighbor": 16},
+  "action": "2d residual added to fly-toward, then SafetyProjector",
+  "controls": "motion only"
+}

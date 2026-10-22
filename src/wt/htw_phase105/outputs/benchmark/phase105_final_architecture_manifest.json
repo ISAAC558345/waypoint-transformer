@@ -1,0 +1,64 @@
+{
+  "architecture_frozen": true,
+  "environment": {
+    "K": 12,
+    "M": 6,
+    "T": 48,
+    "env_sha256": "de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba",
+    "hold": 15,
+    "name": "L3BEnv",
+    "service_radius_m": 16.0,
+    "sinr": {
+      "bandwidth_hz": 1000000.0,
+      "kappa_cross_cluster": 0.08,
+      "kappa_same_cluster": 1.0,
+      "noise_power": 0.001,
+      "path_loss_exp": 2.2,
+      "tx_power": 1.0
+    }
+  },
+  "executor": {
+    "gate": "InRangeZeroMotionGate",
+    "gate_rule": "non-idle AND valid AND queue>0 AND env._in_range -> movement (0,0)",
+    "movement": "fly-toward",
+    "not_ppo": true
+  },
+  "high_level": {
+    "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase100\\outputs\\handoff\\frozen_deepsets_util\\deepsets_util_seed0.pt",
+    "decoder": "Permutation-Equivariant Order-Free Global Assignment Decoder",
+    "encoder": "DeepSets-util",
+    "file_sha256": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+    "high_model_seed": 0,
+    "normalization": {
+      "eps": 1.0,
+      "method": "median_mad"
+    },
+    "objective": "utility_aligned_set_supervision",
+    "param_sha256": "3e2cf600d87bd282528ae923f2d6d3ab73ea9d42af55536dabc31ca38b7ec14e",
+    "utility": {
+      "lambda_rank": 0.25,
+      "lambda_ref": 0.1,
+      "pool_seed": 94501,
+      "pool_size": 24,
+      "tau": 1.0
+    }
+  },
+  "hyperparameters_frozen": true,
+  "name": "FINAL-HIER",
+  "retired_from_primary": [
+    "HGNN",
+    "low-level PPO",
+    "old Task-Waypoint predictor",
+    "spatial waypoint predictor",
+    "Transformer",
+    "Hungarian decoder",
+    "fixed-order AR decoder"
+  ],
+  "task_option": {
+    "association_semantics": "env association int64; decoder idle token=12",
+    "hold": 15,
+    "idle_index": 12,
+    "interface": "per-UAV target buoy / idle=-1"
+  },
+  "training_frozen": true
+}

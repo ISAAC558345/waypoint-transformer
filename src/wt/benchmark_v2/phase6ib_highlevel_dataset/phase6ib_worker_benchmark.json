@@ -1,0 +1,59 @@
+{
+  "cores": 12,
+  "logical_processors": 24,
+  "note": "Each setting runs four disjoint unfinished scenarios. Per-scenario time is the group wall clock because four tasks fit in every pool. Projected time uses that per-scenario time for the scenarios after this benchmark.",
+  "rows": [
+    {
+      "cpu_percent_max": 96.0,
+      "cpu_percent_mean": 46.883495145631066,
+      "failed": false,
+      "free_gb_min": 9240.1640625,
+      "mean_scenario_seconds": 2277.279023199997,
+      "oom": false,
+      "projected_seconds": 11386.395115999985,
+      "scenarios": [
+        322012,
+        322013,
+        322014,
+        322015
+      ],
+      "wall_seconds": 2277.279023199997,
+      "workers": 8
+    },
+    {
+      "cpu_percent_max": 77.0,
+      "cpu_percent_mean": 39.339285714285715,
+      "failed": false,
+      "free_gb_min": 9784.08984375,
+      "mean_scenario_seconds": 2467.3269192000007,
+      "oom": false,
+      "projected_seconds": 9869.307676800003,
+      "scenarios": [
+        322016,
+        322017,
+        322018,
+        322019
+      ],
+      "wall_seconds": 2467.3269192000007,
+      "workers": 12
+    },
+    {
+      "cpu_percent_max": 90.0,
+      "cpu_percent_mean": 62.043010752688176,
+      "failed": false,
+      "free_gb_min": 10593.61328125,
+      "mean_scenario_seconds": 2059.570940000005,
+      "oom": false,
+      "projected_seconds": 6178.712820000015,
+      "scenarios": [
+        322020,
+        322021,
+        322022,
+        322023
+      ],
+      "wall_seconds": 2059.570940000005,
+      "workers": 16
+    }
+  ],
+  "selected_workers": 16
+}

@@ -1,0 +1,11 @@
+{
+  "train_scenarios": [322000, 322047],
+  "validation_scenarios": [322048, 322063],
+  "reserved_test_scenarios": [322064, 322079],
+  "validation_summary": "results/phase6iab_planner_stability/summary.json",
+  "reserved_test_summary": "results/phase6iac_independent_holdout/summary.json",
+  "statistic_unit": "scenario",
+  "bootstrap": {"draws": 10000, "seed": 0, "percentiles": [2.5, 97.5]},
+  "bit_tie": 1.0,
+  "do_not_reuse_reserved_test_for_tuning": true
+}

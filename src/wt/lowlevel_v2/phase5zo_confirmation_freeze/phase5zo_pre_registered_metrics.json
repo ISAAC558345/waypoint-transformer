@@ -1,0 +1,34 @@
+{
+  "primary_endpoint": "paired cumulative communication payload",
+  "secondary_metrics_pre_registered": [
+    "cumulative_payload",
+    "residual_queue",
+    "completed_service_blocks",
+    "normalized_regret",
+    "assignment_legality",
+    "duplicate_target_rate",
+    "conflict_rate",
+    "sinr",
+    "service_progress",
+    "seed_consensus_strength",
+    "inference_latency",
+    "runtime_exception_count",
+    "fallback_count",
+    "timeout_count"
+  ],
+  "latency_statistics_diagnostic_only": [
+    "mean",
+    "median",
+    "p95",
+    "p99"
+  ],
+  "safety_requirements": {
+    "illegal_assignment": 0,
+    "state_contamination": 0,
+    "nan_final_decision": 0,
+    "inf_final_decision": 0,
+    "unhandled_runtime_exception": 0
+  },
+  "fallback_must_be_reported_even_if_episode_completes": true,
+  "may_redefine_after_confirmation": false
+}

@@ -1,0 +1,102 @@
+{
+  "planner_ready": false,
+  "deployment_verified": false,
+  "decide_called": false,
+  "hgnn_retrained": false,
+  "mappo_retrained": false,
+  "tau_modified": false,
+  "reward_modified": false,
+  "joint_optimization_started": false,
+  "holdout_used": false,
+  "scenarios": [
+    310102,
+    310103
+  ],
+  "primary": "A_joint_target_selection",
+  "flags": {
+    "A_joint_target_selection": true,
+    "B_low_level_execution": false,
+    "C_joint_execution": false,
+    "C_multi_uav_composition": true
+  },
+  "single_swap": {
+    "n": 36,
+    "fly_payload": 694444.4444444445,
+    "mappo_payload": 1277777.7777777778,
+    "execution_loss": 111111.11111111111,
+    "u_exec": 583333.3333333334,
+    "spearman": 0.49781209781209784,
+    "kendall": 0.25873015873015875,
+    "conflict_rate": NaN,
+    "conflict_pairs": NaN,
+    "interference": NaN,
+    "min_uav_distance_m": NaN,
+    "duplicate_targets": 0.0
+  },
+  "joint": {
+    "utility_hgnn": {
+      "n": 6,
+      "fly_payload": 0.0,
+      "mappo_payload": 333333.3333333333,
+      "execution_loss": 0.0,
+      "u_exec": 0.0,
+      "spearman": 0.5428571428571429,
+      "kendall": 0.0,
+      "conflict_rate": 0.0,
+      "conflict_pairs": 0.0,
+      "interference": 0.39190319330191553,
+      "min_uav_distance_m": 1.07275124738654,
+      "duplicate_targets": 0.0
+    },
+    "deepsets": {
+      "n": 6,
+      "fly_payload": 666666.6666666666,
+      "mappo_payload": 1500000.0,
+      "execution_loss": 0.0,
+      "u_exec": 666666.6666666666,
+      "spearman": 0.08571428571428573,
+      "kendall": 0.26666666666666666,
+      "conflict_rate": 0.0,
+      "conflict_pairs": 0.0,
+      "interference": 0.6679263042880054,
+      "min_uav_distance_m": 1.1138191972770422,
+      "duplicate_targets": 0.0
+    },
+    "oracle": {
+      "n": 6,
+      "fly_payload": 333333.3333333333,
+      "mappo_payload": 1000000.0,
+      "execution_loss": 0.0,
+      "u_exec": 333333.3333333333,
+      "spearman": 0.942857142857143,
+      "kendall": 0.5333333333333333,
+      "conflict_rate": 0.0,
+      "conflict_pairs": 0.0,
+      "interference": 1.9471641449074297,
+      "min_uav_distance_m": 1.3932435569105064,
+      "duplicate_targets": 0.0
+    }
+  },
+  "solo": {
+    "n": 36,
+    "fly_payload": 694444.4444444445,
+    "mappo_payload": 694444.4444444445,
+    "execution_loss": 416666.6666666667,
+    "u_exec": 277777.77777777775,
+    "spearman": 0.34877734877734884,
+    "kendall": 0.09206349206349207,
+    "conflict_rate": 0.0,
+    "conflict_pairs": 0.0,
+    "interference": 0.0,
+    "min_uav_distance_m": 1.8720786979329493,
+    "duplicate_targets": 0.0
+  },
+  "candidate_alignment": {
+    "n": 252,
+    "spearman": 0.5762247452876242,
+    "kendall": 0.3666919623094922,
+    "execution_loss": 43650.793650793654
+  },
+  "reward_text": "\u540c\u4e00\u6761\u5355\u76ee\u6807\u5206\u914d\u4e0a\uff0cMAPPO payload \u4e0d\u4f4e\u4e8e fly-toward\u3002\u8054\u5408\u5206\u914d\u4e0a MAPPO \u4e5f\u4e0d\u4f4e\u4e8e fly-toward\u3002\u6536\u76ca\u4e0b\u964d\u4e0d\u662f\u5f53\u524d reward \u6ca1\u8ba9\u4f4e\u5c42\u8ddf\u8e2a\u76ee\u6807\u3002\u672c\u9636\u6bb5\u4e0d\u4fee\u6539 reward\u3002",
+  "joint_text": "utility \u8054\u5408\u5206\u914d\u7684 fly-toward payload \u4f4e\u4e8e DeepSets\uff0c\u670d\u52a1\u51b2\u7a81\u7387\u662f 0\u3002\u516d\u67b6\u76ee\u6807\u540c\u65f6\u66ff\u6362\u4e4b\u540e\uff0c\u76ee\u6807\u7ec4\u5408\u672c\u8eab\u7684\u901a\u4fe1\u6536\u76ca\u5c31\u4f4e\u3002\u672c\u9636\u6bb5\u4e0d\u5f00\u59cb\u9ad8\u4f4e\u5c42\u8054\u5408\u8bad\u7ec3\u3002"
+}

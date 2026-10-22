@@ -1,0 +1,51 @@
+{
+  "allowed_splits": [
+    "train",
+    "validation"
+  ],
+  "bootstrap": {
+    "confidence": 0.95,
+    "replicates": 4000,
+    "seed": 14014,
+    "unit": "scenario_id; retain all paired snapshot states within each resample"
+  },
+  "counterfactual": {
+    "continuation_policy": "queue_rate_energy",
+    "formal_scenario_split": "validation",
+    "reference_actions": [
+      "queue_rate_energy",
+      "opposite_guidance",
+      "zero"
+    ],
+    "snapshot_timesteps": [
+      0,
+      16,
+      32,
+      48
+    ]
+  },
+  "forbidden_splits": [
+    "test",
+    "old_development_test",
+    "fresh_development",
+    "holdout",
+    "untouched_holdout"
+  ],
+  "magnitude": {
+    "fractional_step": "median(train recorded action norm / configured max_step_distance), clipped to [0,1]",
+    "return_modulation": "sigmoid(predicted standardized H_step_return); current prediction only"
+  },
+  "mapping_variants": {
+    "A_service": "normalize(sum_k masked_service_k * unit_vector(uav_to_buoy_k))",
+    "B_service_progress": "normalize(sum_k normalized(masked_service_k * positive(masked_progress_k)) * unit_vector(uav_to_buoy_k))",
+    "C_service_progress_rate": "normalize(sum_k normalized(masked_service_k * positive(masked_progress_k) * normalized_current_rate_k) * unit_vector(uav_to_buoy_k))"
+  },
+  "quality_strata": [
+    "difficulty_tier",
+    "num_buoys",
+    "queue_level"
+  ],
+  "schema_version": "round14_task_to_motion_mapping_protocol_v1",
+  "task_horizon": 10,
+  "training_performed": false
+}

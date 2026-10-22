@@ -1,0 +1,12 @@
+{
+  "caller_fingerprint": 0.0,
+  "baseline_decoder_fingerprint": 0.0,
+  "actor_checksum_unchanged": true,
+  "recurrent_hidden_state": false,
+  "counterfactual_step_on_clone": true,
+  "candidates_share_one_snapshot": true,
+  "interference_span_across_candidates": 1.65337136598006,
+  "shadow_option_steps_caller": false,
+  "rng_included_in_fingerprint": true,
+  "timing_fingerprint": 0.0
+}

@@ -1,0 +1,20 @@
+{
+  "pool": "310118-310125",
+  "historical_role": "FRESH_CONFIRMATION_CONSUMED",
+  "used_for": [
+    "final frozen algorithm independent confirmation"
+  ],
+  "not_for_future": [
+    "training",
+    "feature_selection",
+    "hyperparameter_tuning",
+    "architecture_tuning",
+    "loss_design",
+    "threshold_tuning",
+    "candidate_redesign",
+    "aggregation_redesign",
+    "fallback_redesign"
+  ],
+  "eligible_for_future_development": false,
+  "rerun_label": "REPRODUCTION_ON_CONSUMED_CONFIRMATION_DATA"
+}

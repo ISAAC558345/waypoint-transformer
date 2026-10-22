@@ -1,0 +1,7 @@
+{
+  "L": "L_utility + 0.25 L_rank + 0.10 L_ref",
+  "L_utility": "soft CE q||p",
+  "lambda_rank": 0.25,
+  "lambda_ref": 0.1,
+  "tau": 1.0
+}

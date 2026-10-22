@@ -1,0 +1,23 @@
+{
+  "status": "TRAINED_BOUNDED_PROBE",
+  "encoder_replaced": true,
+  "decoder_unchanged": "OrderFreeSetDecoder class and joint greedy decode_assignment",
+  "official_decide_replaced": false,
+  "nodes": [
+    "UAV",
+    "Buoy"
+  ],
+  "edges": [
+    "UAV-UAV",
+    "UAV-Buoy"
+  ],
+  "buoy_buoy": false,
+  "buoy_feature_extension": "append shared u_k for the full variant",
+  "forbidden_inputs": [
+    "future_trajectory",
+    "future_reward",
+    "oracle",
+    "U_traj",
+    "low_level_rollout"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "best_epoch": "reused",
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase3\\outputs\\deepsets_exec_seed0.pt",
+      "high_seed": 0
+    },
+    {
+      "best_epoch": "reused",
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase3\\outputs\\deepsets_exec_seed1.pt",
+      "high_seed": 1
+    },
+    {
+      "best_epoch": "reused",
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase3\\outputs\\deepsets_exec_seed2.pt",
+      "high_seed": 2
+    },
+    {
+      "best_epoch": "reused",
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase3\\outputs\\deepsets_exec_seed3.pt",
+      "high_seed": 3
+    },
+    {
+      "best_epoch": 70,
+      "best_val_regret": 318750.0,
+      "checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\integration_phase3\\outputs\\deepsets_exec_seed4.pt",
+      "high_seed": 4
+    }
+  ],
+  "rule": "best_validation_mean_candidate_regret"
+}

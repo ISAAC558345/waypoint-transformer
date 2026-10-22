@@ -1,0 +1,90 @@
+{
+  "a_max": 1.0,
+  "all_pass": true,
+  "epsilon_base": 0.05,
+  "n": 16,
+  "n_pass": 16,
+  "projector_sha": "79e014ed8101b16a5425d084282499ef9fee229af35decc27adc5203d9282679",
+  "tests": [
+    {
+      "detail": "used0=[0. 0.]",
+      "name": "1_service_lock_zero",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "2_base_norm_zero",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "3_base_below_epsilon",
+      "pass": true
+    },
+    {
+      "detail": "freeze=False used=[[1.e-06 0.e+00]]",
+      "name": "4_just_above_epsilon_enters_tr",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "5_under_cap_identity",
+      "pass": true
+    },
+    {
+      "detail": "n=0.20000000000000004 cap=0.2",
+      "name": "6_over_cap_equals_cap",
+      "pass": true
+    },
+    {
+      "detail": "cos=1.0000000000000002",
+      "name": "7_direction_preserved",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "8_service_lock_masks_policy",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "9_base_zero_masks_policy",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "10_critic_unmasked",
+      "pass": true
+    },
+    {
+      "detail": "79e014ed8101b16a5425d084282499ef9fee229af35decc27adc5203d9282679",
+      "name": "11_projector_hash_unchanged",
+      "pass": true
+    },
+    {
+      "detail": "9000000.0 vs 9000000.0",
+      "name": "12_zero_residual_is_L0",
+      "pass": true
+    },
+    {
+      "detail": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+      "name": "13_high_sha",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "14_phase2_val_blocked",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "extra_euclidean_not_axis_clip",
+      "pass": true
+    },
+    {
+      "detail": "1.0",
+      "name": "extra_a_max_from_contract",
+      "pass": true
+    }
+  ]
+}

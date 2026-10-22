@@ -1,0 +1,90 @@
+{
+  "phase": "5ZF",
+  "mode": "inference-only diagnostic audit",
+  "optimizer_steps": 0,
+  "new_checkpoints": 0,
+  "checkpoint_selection": false,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "scenarios": [
+    310110,
+    310111,
+    310112,
+    310113,
+    310114,
+    310115,
+    310116,
+    310117
+  ],
+  "times": [
+    0,
+    15,
+    30
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "groups": {
+    "sinr": [
+      0,
+      1
+    ],
+    "interference": [
+      2,
+      3
+    ],
+    "progress": [
+      4,
+      5
+    ],
+    "rate": [
+      6
+    ],
+    "motion": [
+      7,
+      8,
+      12,
+      13
+    ],
+    "binary": [
+      9,
+      10,
+      11
+    ]
+  },
+  "combinations": {
+    "C1": [
+      "sinr",
+      "interference"
+    ],
+    "C2": [
+      "sinr",
+      "progress"
+    ],
+    "C3": [
+      "sinr",
+      "interference",
+      "progress"
+    ]
+  },
+  "primary_scalar": {
+    "sinr": "mean_sinr_1",
+    "interference": "mean_interference_1",
+    "progress": "sum_service_progress_1",
+    "rate": "mean_rate_1",
+    "motion": "mean_delta_distance_to_target",
+    "binary": "mean_service_active_1"
+  },
+  "align_abs": 0.001,
+  "recovery_bar": 0.7,
+  "combined_recovery_bar": 0.75,
+  "near_progress": 0.8,
+  "case_top_rank": 3,
+  "affine_diagnostic_used_for_gate": false,
+  "opened_310118_310125": false
+}

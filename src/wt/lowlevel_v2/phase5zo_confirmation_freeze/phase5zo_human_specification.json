@@ -1,0 +1,83 @@
+{
+  "source": "human_approved_not_modified_by_cursor",
+  "h1_model_r1_aggregation": {
+    "approved": true,
+    "rule": "RANK_MEAN_CONSENSUS_V1",
+    "definition": "R_mean(A) = mean_s rank_s(A); A* = argmin_A R_mean(A)",
+    "tie_break": [
+      "majority_top1_count",
+      "canonical candidate order = lexicographic assignment tuple"
+    ],
+    "rank_definition": "competition rank from Phase-5ZM, rank 1 is best",
+    "forbidden": [
+      "seed_weighting",
+      "best_seed_selection",
+      "j15_dependent_selection",
+      "scenario_dependent_weighting",
+      "checkpoint_selection"
+    ],
+    "model_r1_aggregation_approved": true
+  },
+  "h2_latency": {
+    "deployment_latency_requirement": "NOT_YET_SPECIFIED",
+    "prototype_latency_ms": {
+      "median": 334.28,
+      "p95": 450.93,
+      "p99": 458.34
+    },
+    "prototype_is_uav_sla": false,
+    "latency_gate_active": false,
+    "latency_diagnostic_only": true,
+    "threshold_500ms_created": false
+  },
+  "h3_timeout": {
+    "policy": "KEEP_CURRENT_TASKOPTION_NO_HOLD_RESET",
+    "if_valid_option_exists": {
+      "keep_association": true,
+      "create_new_taskoption": false,
+      "reset_remaining_hold_to_15": false,
+      "decrement_remaining_hold_by_existing_rule": true,
+      "call_other_planner": false
+    },
+    "if_option_missing_or_invalid": {
+      "action": "ABORT_NEW_DECISION",
+      "construct_assignment": false,
+      "forbidden_fallbacks": [
+        "deepsets",
+        "b2",
+        "oracle",
+        "single_r1_seed",
+        "phase5l_direct_assignment",
+        "fly_toward"
+      ]
+    },
+    "recreating_same_option_resets_hold": false
+  },
+  "h4_runtime_fallback": {
+    "primary": "KEEP_CURRENT_VALID_TASKOPTION",
+    "secondary": "ABORT_DECISION_IF_NO_VALID_TASKOPTION",
+    "applies_to": [
+      "true_h1_exception",
+      "model_r1_nan_inf",
+      "candidate_pool_empty",
+      "invalid_assignment",
+      "checkpoint_missing",
+      "taskoption_construction_failure",
+      "high_level_inference_exception"
+    ],
+    "safety_projector_failure": "keep the existing safety path; if it has no legal recovery, record the error and stop the current decision; the high level must not invent a new target",
+    "forbidden_new_fallbacks": [
+      "deepsets",
+      "b2",
+      "oracle",
+      "single_r1_seed",
+      "phase5l_direct_hgnn",
+      "fly_toward"
+    ]
+  },
+  "h5_fresh_confirmation": {
+    "pool": "310118-310125",
+    "human_approved_for_next_phase_only": true,
+    "opened_in_phase5zo": false
+  }
+}

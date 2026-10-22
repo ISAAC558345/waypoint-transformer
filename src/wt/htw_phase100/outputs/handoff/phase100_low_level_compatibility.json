@@ -1,0 +1,85 @@
+{
+  "action_dim": 2,
+  "action_range": "unit disk then env clips by step_length_m; same as L3-B env.step",
+  "idle_encoding_phase62": "one-hot index 12 on OPTION_DIM=13; assignment -1",
+  "issues": [
+    {
+      "item": "num_uavs",
+      "l3b": 6,
+      "ok": false,
+      "phase62": 5
+    },
+    {
+      "item": "num_buoys",
+      "l3b": 12,
+      "ok": true,
+      "phase62": 12
+    },
+    {
+      "item": "option_uav_dim",
+      "l3b_needed": 21,
+      "ok": true,
+      "phase62": 21
+    },
+    {
+      "item": "actor_max_uavs",
+      "l3b": 6,
+      "ok": false,
+      "phase62": 5
+    },
+    {
+      "item": "sinr_in_low_level_reward",
+      "l3b": true,
+      "ok": false,
+      "phase62": false
+    },
+    {
+      "item": "checkpoint_on_disk",
+      "ok": true,
+      "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase63\\outputs\\checkpoints\\low_level_c05_d005.pt"
+    },
+    {
+      "item": "hardcoded_MAX_UAVS_in_phase61_features",
+      "ok": false,
+      "value": 5
+    },
+    {
+      "item": "trained_env",
+      "l3b": "L3BEnv M=6 SINR",
+      "ok": false,
+      "phase62": "L2AEnv M=5 no SINR"
+    },
+    {
+      "item": "phase62_association_source",
+      "l3b_required": "frozen high-level association; low-level movement only",
+      "ok": false,
+      "phase62": "oracle_option_assignment inside GoalOptionVector"
+    },
+    {
+      "item": "goal_reward",
+      "l3b": "SINR-scaled service; D=3 not a fixed three-step finish",
+      "ok": false,
+      "phase62": "r_comm + lambda_c * in_range_completion - lambda_d * dist_slots on L2-A"
+    }
+  ],
+  "must_adapt": [
+    "MAX_UAVS 5 -> L3-B M=6 (hard-coded pads and actor sharing)",
+    "option feature attachment currently rejects non-(5,21) UAV stacks",
+    "SINR-aware service: D=3 is not a guaranteed three-step completion",
+    "Phase-6.2 checkpoint exists on disk but must not be loaded into an L3-B M=6 actor",
+    "refuse silent fly-toward fallback labeled as PPO",
+    "utility labels in 9.4.5 were generated under fly-toward, not a learned executor"
+  ],
+  "phase62_ckpt": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase63\\outputs\\checkpoints\\low_level_c05_d005.pt",
+  "phase62_ckpt_exists": true,
+  "probe_class": "L2AOptionActorCritic",
+  "random_init_eval_forbidden": true,
+  "reusable": [
+    "Round-30 PPO core (GAE/clip/Adam) as an algorithm, not as loaded weights",
+    "goal-conditioned idea: concatenate option one-hot onto UAV features",
+    "completion + distance auxiliary reward template from Phase-6.2"
+  ],
+  "trained_this_phase": false,
+  "verdict": "needs_independent_adapter",
+  "verdict_zh": "\u7ed3\u6784/\u8f93\u5165\u9700\u8981\u72ec\u7acb\u9002\u914d\u540e\u624d\u80fd\u8bad\u7ec3"
+}

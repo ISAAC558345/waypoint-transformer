@@ -1,0 +1,28 @@
+{
+  "atol": 1e-06,
+  "rtol": 1e-05,
+  "baseline_value_abs": 0.001,
+  "median_speedup": 0.2,
+  "warmup": 1,
+  "repeats": 3,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 0,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "scenarios": [
+    310110,
+    310111,
+    310112,
+    310113,
+    310114,
+    310115,
+    310116,
+    310117
+  ],
+  "times": [
+    0,
+    15,
+    30
+  ]
+}

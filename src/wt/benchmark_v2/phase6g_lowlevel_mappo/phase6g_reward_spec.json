@@ -1,0 +1,10 @@
+{
+  "r_comm": "sum served_bits / B_block",
+  "r_low": "r_comm - lambda_project * projection_penalty - lambda_residual * residual_penalty",
+  "lambda_project": 0.05,
+  "lambda_residual": 0.01,
+  "action_scale": 1.0,
+  "distance_reward": false,
+  "progress_completion_reward": false,
+  "partial_bits_count": true
+}

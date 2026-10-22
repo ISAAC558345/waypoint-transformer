@@ -1,0 +1,4 @@
+progress_bin,n_state_seeds,p1_disagreement,p1_normalized_regret,mean_progress
+ZERO,0,nan,nan,nan
+PARTIAL,105,0.7428571428571429,0.2809522528572191,0.05691932479820605
+NEAR_COMPLETION,15,0.0,0.0,0.09354383208017535

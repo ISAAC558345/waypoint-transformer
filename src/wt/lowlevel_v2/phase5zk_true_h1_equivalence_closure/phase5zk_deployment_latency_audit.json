@@ -1,0 +1,16 @@
+{
+  "deployment_latency_requirement": "NOT_SPECIFIED",
+  "delta_t_s": 1.0,
+  "option_hold_steps": 15,
+  "episode_horizon_steps": 48,
+  "simulation_time_is_not_wall_clock": true,
+  "this_machine_is_deployment_target": false,
+  "serial_traced_peak_bytes": 805631,
+  "shipped_traced_peak_bytes": 844921,
+  "serial_median_ms": 956.1061999993399,
+  "optimized_median_ms": 357.5475500081666,
+  "serial_p95_ms": 2174.057805010816,
+  "serial_p99_ms": 2347.099746209802,
+  "optimized_p95_ms": 431.8621789920144,
+  "optimized_p99_ms": 696.1083241684827
+}

@@ -1,0 +1,24 @@
+{
+  "deepsets": {
+    "buoy_hits": 640,
+    "buoy_rate": 1.0,
+    "buoy_tot": 640,
+    "joint_hits": 320,
+    "joint_rate": 1.0,
+    "joint_tot": 320,
+    "uav_hits": 640,
+    "uav_rate": 1.0,
+    "uav_tot": 640
+  },
+  "hgnn": {
+    "buoy_hits": 640,
+    "buoy_rate": 1.0,
+    "buoy_tot": 640,
+    "joint_hits": 320,
+    "joint_rate": 1.0,
+    "joint_tot": 320,
+    "uav_hits": 640,
+    "uav_rate": 1.0,
+    "uav_tot": 640
+  }
+}

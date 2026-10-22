@@ -1,0 +1,22 @@
+{
+  "architecture_frozen": true,
+  "families": [
+    "M0",
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "historical": {
+    "GRAPH_U": "GRAPH-U-C",
+    "LLEXEC": "C",
+    "UOBJ": "UOBJ-A",
+    "gate_b2_minus_b1_seeds": "5/5",
+    "stable_low_level_advantage": false
+  },
+  "hold": 15,
+  "label": "Pre-Final Independent Benchmark, not final untouched test",
+  "n_scenarios": 64,
+  "no_phase106": true,
+  "phase": "10.5",
+  "training": false
+}

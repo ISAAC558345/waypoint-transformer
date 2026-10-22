@@ -37,9 +37,12 @@ def create_data_module(
     unconditional_policy: bool = False,
     reward_conditioning: bool = False,
     average_reward_to_go: bool = True,
+    reward_representation: Optional[str] = None,
     seed: Optional[int] = None,
     K = 20,
-    train_goal_net = False
+    train_goal_net = False,
+    waypoint_horizon: int = 30,
+    reward_episode_horizon: Optional[int] = None,
 ) -> AbstractDataModule:
     """Creates the data module used for training."""
     if unconditional_policy and reward_conditioning:
@@ -59,9 +62,12 @@ def create_data_module(
                 batch_size=batch_size,
                 val_frac=val_frac,
                 average_reward_to_go=average_reward_to_go,
+                reward_representation=reward_representation,
                 seed=seed,
                 train_goal_net = train_goal_net,
-                K = K
+                K = K,
+                waypoint_horizon=waypoint_horizon,
+                reward_episode_horizon=reward_episode_horizon,
             )
         else:
             data_module = D4RLRvSGDataModule(
@@ -70,7 +76,8 @@ def create_data_module(
                 seed=seed,
                 train_goal_net = train_goal_net,
                 val_frac=val_frac,
-                K = K
+                K = K,
+                waypoint_horizon=waypoint_horizon,
             )
     else:
         if unconditional_policy:
@@ -153,6 +160,91 @@ def seed_worker(worker_id: int) -> None:
     np.random.seed(worker_seed)
     random.seed(worker_seed)
 
+
+def _environment_flag(name: str) -> bool:
+    """Parse a legacy boolean environment variable without truthy-string bugs."""
+    value = os.environ.get(name)
+    return (
+        value is not None
+        and value.strip().lower() not in ("", "0", "false", "no", "off")
+    )
+
+
+def environment_episode_horizon(env: gym.Env) -> Optional[int]:
+    """Read an episode horizon from Gym without depending on one wrapper type."""
+    horizon = getattr(env, "_max_episode_steps", None)
+    if horizon is None:
+        horizon = getattr(getattr(env, "spec", None), "max_episode_steps", None)
+    if horizon is None:
+        return None
+    horizon = int(horizon)
+    if horizon <= 0:
+        raise ValueError("Environment episode horizon must be positive.")
+    return horizon
+
+
+def resolve_reward_episode_horizon(
+    explicit_horizon: Optional[int] = None,
+    checkpoint_horizon: Optional[int] = None,
+    environment_horizon: Optional[int] = None,
+) -> int:
+    """Resolve reward horizon metadata and reject silent distribution shifts."""
+    horizons = {
+        name: None if value is None else int(value)
+        for name, value in {
+            "explicit": explicit_horizon,
+            "checkpoint": checkpoint_horizon,
+            "environment": environment_horizon,
+        }.items()
+    }
+    for name, value in horizons.items():
+        if value is not None and value <= 0:
+            raise ValueError(f"{name} reward episode horizon must be positive.")
+    if (
+        horizons["explicit"] is not None
+        and horizons["checkpoint"] is not None
+        and horizons["explicit"] != horizons["checkpoint"]
+    ):
+        raise ValueError(
+            "Explicit reward_episode_horizon conflicts with the policy "
+            f"checkpoint: {horizons['explicit']} != "
+            f"{horizons['checkpoint']}."
+        )
+    if (
+        horizons["checkpoint"] is not None
+        and horizons["environment"] is not None
+        and horizons["checkpoint"] != horizons["environment"]
+    ):
+        raise ValueError(
+            "Policy reward_episode_horizon conflicts with the evaluation "
+            f"environment: {horizons['checkpoint']} != "
+            f"{horizons['environment']}."
+        )
+    if (
+        horizons["explicit"] is not None
+        and horizons["environment"] is not None
+        and horizons["explicit"] != horizons["environment"]
+    ):
+        raise ValueError(
+            "Explicit reward_episode_horizon conflicts with the evaluation "
+            f"environment: {horizons['explicit']} != "
+            f"{horizons['environment']}."
+        )
+    resolved = (
+        horizons["explicit"]
+        if horizons["explicit"] is not None
+        else horizons["checkpoint"]
+    )
+    if resolved is None:
+        resolved = horizons["environment"]
+    if resolved is None:
+        raise ValueError(
+            "Reward-conditioned evaluation needs reward_episode_horizon "
+            "metadata or an environment TimeLimit."
+        )
+    return resolved
+
+
 class D4RLIterableDataset(data.IterableDataset):
     """Used for goal-conditioned learning in D4RL."""
 
@@ -164,6 +256,7 @@ class D4RLIterableDataset(data.IterableDataset):
         goal_columns: Optional[Union[Tuple[int], List[int], np.ndarray]] = None,
         config: Optional[Dict] = None,
         augment: bool = True,
+        normalization_const: Optional[float] = None,
         **kwargs
     ):
         """Initializes the dataset.
@@ -180,29 +273,64 @@ class D4RLIterableDataset(data.IterableDataset):
         """
         super().__init__()
 
+        if len(trajectories) == 0:
+            raise ValueError("D4RLIterableDataset requires at least one trajectory.")
         self.trajectories = trajectories
-        self.lengths = np.array([len(self.trajectories[i]['observations']) for i in range(len(trajectories))])
         self.epoch_size = epoch_size
         self.index_batch_size = index_batch_size
         self.goal_columns = goal_columns
         self.augment = augment
         self.config = config if config is not None else defaultdict(bool)
         self.config.update(kwargs)
+        if "waypoint_horizon" not in self.config:
+            self.config["waypoint_horizon"] = 30
+        if int(self.config["waypoint_horizon"]) < 0:
+            raise ValueError("waypoint_horizon must be non-negative.")
         self.lengths = np.array([len(self.trajectories[i]['observations']) for i in range(len(trajectories))])
+        if np.any(self.lengths <= 0):
+            raise ValueError("D4RLIterableDataset trajectories must be non-empty.")
+        configured_episode_horizon = self.config.get(
+            "reward_episode_horizon",
+            self.config.get("max_ep_len"),
+        )
+        self.reward_episode_horizon = (
+            int(self.lengths.max())
+            if configured_episode_horizon is None
+            else int(configured_episode_horizon)
+        )
+        if self.reward_episode_horizon <= 0:
+            raise ValueError("reward_episode_horizon must be positive.")
+        if np.any(self.lengths > self.reward_episode_horizon):
+            raise ValueError(
+                "reward_episode_horizon cannot be shorter than a trajectory: "
+                f"{self.reward_episode_horizon} < {int(self.lengths.max())}."
+            )
         self.rewards = np.array([sum(self.trajectories[i]['rewards']) for i in range(len(trajectories))])
-        self.normalization_const = round(self.rewards.max(), -3)
+        self.normalization_const = (
+            round(self.rewards.max(), -3)
+            if normalization_const is None
+            else float(normalization_const)
+        )
+        if not np.isfinite(self.normalization_const):
+            raise ValueError("normalization_const must be finite.")
+        if self.normalization_const == 0:
+            self.normalization_const = 1.0
         print("Normalization constant:", self.normalization_const)
 
 
-    def _sample_indices(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    def _sample_indices(
+        self,
+        batch_size: Optional[int] = None,
+    ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         # Credit to Dibya Ghosh's GCSL codebase for the logic in the following block:
         # https://github.com/dibyaghosh/gcsl/blob/
         # cfae5609cee79e5a2228fb7653451023c41a64cb/gcsl/algo/buffer.py#L78
-        trajectory_indices = np.random.choice(len(self.trajectories), self.index_batch_size,
+        sample_size = self.index_batch_size if batch_size is None else batch_size
+        trajectory_indices = np.random.choice(len(self.trajectories), sample_size,
                                               p = self.lengths / sum(self.lengths))
         lengths = np.array([len(self.trajectories[i]['observations']) for i in trajectory_indices])
-        proportional_indices_1 = np.random.rand(self.index_batch_size)
-        proportional_indices_2 = np.random.rand(self.index_batch_size)
+        proportional_indices_1 = np.random.rand(sample_size)
+        proportional_indices_2 = np.random.rand(sample_size)
         time_indices_1 = np.floor(
             proportional_indices_1 * lengths,
         ).astype(int)
@@ -221,57 +349,172 @@ class D4RLIterableDataset(data.IterableDataset):
 
         return trajectory_indices, start_indices, goal_indices
 
-    def _fetch_trajectories(self, trajectory_indices, start_indices, goal_indices):
-        K, max_ep_len = self.config['K'], self.config['max_ep_len']
+    @staticmethod
+    def _left_pad(array: np.ndarray, target_length: int, value: float = 0) -> np.ndarray:
+        """Left-pad a [1, T, ...] sequence to target_length."""
+        pad_length = target_length - array.shape[1]
+        if pad_length < 0:
+            raise ValueError("Cannot pad a sequence longer than the target length.")
+        if pad_length == 0:
+            return array
+        padding = np.full(
+            (array.shape[0], pad_length, *array.shape[2:]),
+            value,
+            dtype=array.dtype,
+        )
+        return np.concatenate([padding, array], axis=1)
+
+    def _fetch_trajectory_components(
+        self,
+        trajectory_indices: np.ndarray,
+        start_indices: np.ndarray,
+        goal_indices: np.ndarray,
+    ) -> Dict[str, torch.Tensor]:
+        """Build a structured batch while keeping the legacy DataLoader tuple intact.
+
+        Every returned sequence is left-padded to ``K``. ``goals`` contains the
+        global condition and ``waypoints`` contains the achieved target
+        ``waypoint_horizon`` steps in the future. Future indices are clamped to
+        the final observation of the selected trajectory, so labels never cross
+        an episode boundary.
+        """
+        K = int(self.config['K'])
+        if K <= 0:
+            raise ValueError("K must be positive.")
+        waypoint_horizon = int(self.config["waypoint_horizon"])
         state_dim, act_dim = self.trajectories[0]['observations'].shape[-1], self.trajectories[0]['actions'].shape[-1]
-        goal_dim = len(self.goal_columns) if self.goal_columns else state_dim
-        # state_mean, state_std = self.config['state_mean'], self.config['state_std']
+        goal_dim = len(self.goal_columns) if self.goal_columns is not None else state_dim
         trajs = [self.trajectories[i] for i in trajectory_indices]
-        s, a, r, d, rtg, timesteps, mask, g = [], [], [], [], [], [], [], []
+        states, actions, rewards, masks = [], [], [], []
+        goals, waypoints = [], []
+
         for (si, gi), traj in zip(zip(start_indices, goal_indices), trajs):
-            # get sequences from dataset
-            s.append(traj['observations'][si:si + K].reshape(1, -1, state_dim))
-            a.append(traj['actions'][si:si + K].reshape(1, -1, act_dim))
+            observations = np.asarray(traj['observations'])
+            trajectory_actions = np.asarray(traj['actions'])
+            trajectory_rewards = np.asarray(traj['rewards'])
+            if not 0 <= si < len(observations):
+                raise IndexError(f"start index {si} is outside a trajectory of length {len(observations)}.")
+            if not 0 <= gi < len(observations):
+                raise IndexError(f"goal index {gi} is outside a trajectory of length {len(observations)}.")
+
+            state_sequence = observations[si:si + K].reshape(1, -1, state_dim)
+            action_sequence = trajectory_actions[si:si + K].reshape(1, -1, act_dim)
+            reward_sequence = trajectory_rewards[si:si + K].reshape(1, -1, 1)
+            sequence_length = state_sequence.shape[1]
+            future_indices = np.minimum(
+                si + np.arange(sequence_length) + waypoint_horizon,
+                len(observations) - 1,
+            )
+
             if self.config['goal_conditioned']:
-                g.append(np.hstack([traj['observations'][gi, self.goal_columns].reshape(1, -1, goal_dim)] * s[-1].shape[1]))
+                global_goal = (
+                    observations[gi]
+                    if self.goal_columns is None
+                    else observations[gi, self.goal_columns]
+                )
+                future_observations = observations[future_indices]
+                future_goals = (
+                    future_observations
+                    if self.goal_columns is None
+                    else future_observations[:, self.goal_columns]
+                )
+                goal_sequence = np.repeat(
+                    global_goal.reshape(1, 1, goal_dim),
+                    sequence_length,
+                    axis=1,
+                )
+                waypoint_sequence = future_goals.reshape(1, sequence_length, goal_dim)
             elif self.config['reward_conditioned']:
-                rtg.append(discount_cumsum(traj['rewards'][si:], normalize = self.normalization_const, trim = s[-1].shape[1]).reshape(1, -1, 2))
+                full_rtg = np.asarray(
+                    discount_cumsum(
+                        trajectory_rewards[si:],
+                        normalize=self.normalization_const,
+                        trim=len(trajectory_rewards) - si,
+                        representation=self.config.get("reward_representation"),
+                        remaining_horizon=self.reward_episode_horizon - si,
+                    )
+                )
+                if full_rtg.ndim == 1:
+                    full_rtg = full_rtg[:, None]
+                reward_dim = full_rtg.shape[-1]
+                goal_sequence = np.repeat(
+                    full_rtg[0].reshape(1, 1, reward_dim),
+                    sequence_length,
+                    axis=1,
+                )
+                relative_future_indices = np.minimum(
+                    np.arange(sequence_length) + waypoint_horizon,
+                    len(full_rtg) - 1,
+                )
+                waypoint_sequence = full_rtg[relative_future_indices].reshape(
+                    1,
+                    sequence_length,
+                    reward_dim,
+                )
+            else:
+                raise ValueError("Dataset must be goal-conditioned or reward-conditioned.")
 
-            # padding and state + reward normalization
-            tlen = s[-1].shape[1]
-            if self.augment:
-                pass
-            s[-1] = np.concatenate([np.zeros((1, K - tlen, state_dim)), s[-1]], axis=1)
-            # s[-1] = (s[-1] - state_mean) / state_std
-            a[-1] = np.concatenate([np.ones((1, K - tlen, act_dim)) * -10., a[-1]], axis=1)
-            if self.config['goal_conditioned']:
-                # g[-1] = (g[-1] - state_mean[:goal_dim]) / state_std[:goal_dim]
-                g[-1] = np.concatenate([np.zeros((1, K - tlen, goal_dim)), g[-1]], axis=1)
-            elif self.config['reward_conditioned']:
-                rtg[-1] = np.concatenate([np.zeros((1, K - tlen, 2)), rtg[-1]], axis=1) #/ scale
-            mask.append(np.concatenate([np.zeros((1, K - tlen)), np.ones((1, tlen))], axis=1))
+            states.append(self._left_pad(state_sequence, K))
+            actions.append(self._left_pad(action_sequence, K, value=-10.0))
+            rewards.append(self._left_pad(reward_sequence, K))
+            goals.append(self._left_pad(goal_sequence, K))
+            waypoints.append(self._left_pad(waypoint_sequence, K))
+            masks.append(
+                np.concatenate(
+                    [np.zeros((1, K - sequence_length)), np.ones((1, sequence_length))],
+                    axis=1,
+                )
+            )
 
-        s = torch.from_numpy(np.concatenate(s, axis=0)).to(dtype=torch.float32)
-        a = torch.from_numpy(np.concatenate(a, axis=0)).to(dtype=torch.float32)
+        components = {
+            "states": torch.from_numpy(np.concatenate(states, axis=0)).to(dtype=torch.float32),
+            "actions": torch.from_numpy(np.concatenate(actions, axis=0)).to(dtype=torch.float32),
+            "rewards": torch.from_numpy(np.concatenate(rewards, axis=0)).to(dtype=torch.float32),
+            "goals": torch.from_numpy(np.concatenate(goals, axis=0)).to(dtype=torch.float32),
+            "waypoints": torch.from_numpy(np.concatenate(waypoints, axis=0)).to(dtype=torch.float32),
+            "mask": torch.from_numpy(np.concatenate(masks, axis=0)).to(dtype=torch.bool),
+        }
+        return components
 
+    def sample_components(self, batch_size: Optional[int] = None) -> Dict[str, torch.Tensor]:
+        """Sample a structured batch for tests and data-pipeline inspection."""
+        trajectory_indices, start_indices, goal_indices = self._sample_indices(batch_size)
+        return self._fetch_trajectory_components(
+            trajectory_indices,
+            start_indices,
+            goal_indices,
+        )
+
+    def _fetch_trajectories(self, trajectory_indices, start_indices, goal_indices):
+        """Return the original four-tensor training tuple."""
+        components = self._fetch_trajectory_components(
+            trajectory_indices,
+            start_indices,
+            goal_indices,
+        )
+        if self.config.get('train_goal_net'):
+            return (
+                components["states"],
+                components["waypoints"],
+                components["goals"],
+                components["mask"],
+            )
         if self.config['goal_conditioned']:
-            g = torch.from_numpy(np.concatenate(g, axis=0)).to(dtype=torch.float32)
-        elif self.config['reward_conditioned']:
-            rtg = torch.from_numpy(np.concatenate(rtg, axis=0)).to(dtype=torch.float32, )
-            artg = rtg[:, 0:1]
-            artg = artg.repeat(1, s.shape[1], 1)
- 
-        mask = torch.from_numpy(np.concatenate(mask, axis=0))
-
-        if self.config['goal_conditioned']:
-            return s, a, g, mask
-        elif self.config['reward_conditioned'] and self.config.get('train_goal_net'):
-            return s, rtg, artg, mask
-        else:
-            return s, a, artg, mask
+            return (
+                components["states"],
+                components["actions"],
+                components["goals"],
+                components["mask"],
+            )
+        return (
+            components["states"],
+            components["actions"],
+            components["goals"],
+            components["mask"],
+        )
 
     def _sample_batch(self, batch_size = None) -> Tuple:
-        trajectory_indices, start_indices, goal_indices = self._sample_indices()
+        trajectory_indices, start_indices, goal_indices = self._sample_indices(batch_size)
         s, a, cond, mask = self._fetch_trajectories(trajectory_indices,
                                                                      start_indices,
                                                                      goal_indices)
@@ -282,7 +525,7 @@ class D4RLIterableDataset(data.IterableDataset):
         examples_yielded = 0
         while examples_yielded < self.epoch_size:
             s, a, cond, mask = self._sample_batch()
-            for i in range(self.index_batch_size):
+            for i in range(s.shape[0]):
                 yield torch.cat([s[i], cond[i]], dim = -1), a[i], mask[i]
                 examples_yielded += 1
                 if examples_yielded >= self.epoch_size:
@@ -292,14 +535,157 @@ class D4RLIterableDataset(data.IterableDataset):
         """The number of examples in an epoch. Used by the trainer to count epochs."""
         return self.epoch_size
 
-def discount_cumsum(x, normalize = 1, trim = 1e8):
+REWARD_REPRESENTATIONS = ("average", "cumulative", "both")
+
+
+def resolve_reward_representation(
+    representation: Optional[str] = None,
+    *,
+    average_reward_to_go: Optional[bool] = None,
+) -> str:
+    """Resolve reward channels with explicit configuration taking precedence."""
+    if representation is not None:
+        if representation not in REWARD_REPRESENTATIONS:
+            raise ValueError(
+                "reward_representation must be average, cumulative, or both."
+            )
+        return representation
+    if average_reward_to_go is False:
+        return "cumulative"
+
+    average_flag = _environment_flag("AVG_REWARD")
+    cumulative_flag = _environment_flag("CM_REWARD")
+    if average_flag and cumulative_flag:
+        raise ValueError(
+            "AVG_REWARD and CM_REWARD cannot both be set; use "
+            "reward_representation instead."
+        )
+    if average_flag:
+        return "average"
+    if cumulative_flag:
+        return "cumulative"
+    return "both"
+
+
+def reward_target_channels(
+    target: float,
+    representation: str,
+    normalization_const: float,
+    episode_horizon: int,
+    *,
+    target_is_average: bool = True,
+) -> np.ndarray:
+    """Convert one scalar return command to the dataset's reward channels."""
+    representation = resolve_reward_representation(representation)
+    normalization_const = float(normalization_const)
+    remaining_horizon = int(episode_horizon)
+    if not np.isfinite(normalization_const) or normalization_const == 0:
+        raise ValueError("normalization_const must be finite and non-zero.")
+    if remaining_horizon <= 0:
+        raise ValueError("remaining_horizon must be positive.")
+
+    target = float(target)
+    if target_is_average:
+        average_target = target
+        cumulative_target = target * remaining_horizon
+    else:
+        cumulative_target = target
+        average_target = target / remaining_horizon
+    cumulative_target /= normalization_const
+
+    if representation == "average":
+        channels = [average_target]
+    elif representation == "cumulative":
+        channels = [cumulative_target]
+    else:
+        channels = [average_target, cumulative_target]
+    return np.asarray(channels, dtype=np.float32)
+
+
+def reward_window_command(
+    initial_cumulative_target: float,
+    reward_before_window: float,
+    representation: str,
+    normalization_const: float,
+    episode_horizon: int,
+    window_start: int,
+) -> np.ndarray:
+    """Build the fixed command repeated within one sliding context window."""
+    episode_horizon = int(episode_horizon)
+    window_start = int(window_start)
+    if window_start < 0:
+        raise ValueError("window_start must be non-negative.")
+    if episode_horizon <= 0:
+        raise ValueError("episode_horizon must be positive.")
+    if window_start >= episode_horizon:
+        raise ValueError(
+            "window_start must be smaller than episode_horizon."
+        )
+    remaining_horizon = episode_horizon - window_start
+    remaining_target = (
+        float(initial_cumulative_target) - float(reward_before_window)
+    )
+    return reward_target_channels(
+        remaining_target,
+        representation,
+        normalization_const,
+        remaining_horizon,
+        target_is_average=False,
+    )
+
+
+def flat_reward_normalization(dataset_dict: Dict[str, np.ndarray]) -> float:
+    """Compute the official rounded max-return scale from flat trajectories."""
+    rewards = np.asarray(dataset_dict["rewards"])
+    terminals = np.asarray(dataset_dict["terminals"], dtype=bool)
+    if rewards.ndim != 1 or terminals.shape != rewards.shape:
+        raise ValueError("rewards and terminals must be matching 1-D arrays.")
+    timeouts = np.asarray(
+        dataset_dict.get("timeouts", np.zeros_like(terminals)), dtype=bool
+    )
+    if timeouts.shape != rewards.shape:
+        raise ValueError("timeouts must match rewards when provided.")
+
+    returns, running_return, open_steps = [], 0.0, 0
+    for index, reward in enumerate(rewards):
+        running_return += float(reward)
+        open_steps += 1
+        if terminals[index] or timeouts[index]:
+            returns.append(running_return)
+            running_return, open_steps = 0.0, 0
+    if open_steps or not returns:
+        returns.append(running_return)
+    normalization_const = float(round(max(returns), -3))
+    return 1.0 if normalization_const == 0 else normalization_const
+
+
+def discount_cumsum(
+    x,
+    normalize=1,
+    trim=None,
+    representation: Optional[str] = None,
+    remaining_horizon: Optional[int] = None,
+):
+    trim = len(x) if trim is None else int(trim)
     csum = np.cumsum(x[::-1])[::-1][:trim]
-    avg, norm = csum / (x.shape[0] - np.arange(min(x.shape[0], trim))), csum / normalize
-    if os.environ.get('AVG_REWARD'):
+    output_length = len(csum)
+    if remaining_horizon is None:
+        remaining_horizon = x.shape[0]
+    remaining_horizon = int(remaining_horizon)
+    if remaining_horizon < x.shape[0]:
+        raise ValueError(
+            "remaining_horizon cannot be shorter than the reward suffix."
+        )
+    denominators = remaining_horizon - np.arange(output_length)
+    avg, norm = csum / denominators, csum / normalize
+    representation = resolve_reward_representation(representation)
+    if representation == "average":
         return avg
-    elif os.environ.get('CM_REWARD'):
+    elif representation == "cumulative":
         return norm
-    return np.vstack([avg[None], norm[None]]).T
+    elif representation == "both":
+        return np.vstack([avg[None], norm[None]]).T
+    raise AssertionError("unreachable reward representation")
 
 class AbstractDataModule(pl.LightningDataModule, ABC):
     """Abstract class that serves as parent for all DataModules."""
@@ -332,8 +718,9 @@ class AbstractDataModule(pl.LightningDataModule, ABC):
 
         if seed is None:
             seed = np.random.randint(2**31 - 1)
+        self.seed = int(seed)
         self.generator = torch.Generator()
-        self.generator.manual_seed(seed)
+        self.generator.manual_seed(self.seed)
 
     @abstractmethod
     def setup(self, *args, **kwargs) -> None:
@@ -369,38 +756,94 @@ class AbstractDataModule(pl.LightningDataModule, ABC):
 def d4rl_trajectory_split(
     paths: List[Dict],
     val_frac: float,
+    seed: int = 0,
 ) -> Tuple[np.ndarray, np.ndarray]:
     """Divides the D4RL trajectories into training and validation splits.
 
     Args:
-        dones: Flags indicating the ends of trajectories.
+        paths: Complete trajectories (or another indexable collection).
         val_frac: What fraction of the trajectories to put in the validation set.
+        seed: Seed used only for this deterministic split.
 
     Returns:
-        Indices indicating which timesteps go in the training set and which go in the
-            validation set.
+        Indices indicating which trajectories go in the training set and which go in
+            the validation set.
     """
-    assert 0 <= val_frac <= 1
+    if not 0 <= val_frac < 1:
+        raise ValueError("val_frac must be between 0 (inclusive) and 1 (exclusive).")
+    if len(paths) == 0:
+        raise ValueError("Cannot split an empty trajectory collection.")
+    if val_frac > 0 and len(paths) < 2:
+        raise ValueError(
+            "An independent validation split requires at least two trajectories."
+        )
 
     n_val = int(val_frac * len(paths))
+    if 0 < val_frac < 1 and len(paths) > 1:
+        # A requested validation split must contain a trajectory, while still
+        # leaving at least one independent trajectory for training.
+        n_val = min(max(n_val, 1), len(paths) - 1)
     n_train = len(paths) - n_val
 
-    traj_indices = np.random.permutation(len(paths))
+    rng = np.random.default_rng(seed)
+    traj_indices = rng.permutation(len(paths))
     train_traj_indices = traj_indices[:n_train]
     val_traj_indices = traj_indices[n_train:]
 
     return train_traj_indices, val_traj_indices
 
 
-def reward_to_go(dataset: Dict[str, np.ndarray], average: bool = True) -> np.ndarray:
+def d4rl_timestep_split(
+    dones: np.ndarray,
+    val_frac: float,
+    seed: int = 0,
+) -> Tuple[np.ndarray, np.ndarray]:
+    """Split flat D4RL arrays by whole trajectories, then return timesteps."""
+    dones = np.asarray(dones, dtype=bool).copy()
+    if dones.ndim != 1 or len(dones) == 0:
+        raise ValueError("dones must be a non-empty one-dimensional array.")
+    # Some datasets omit a terminal marker on the final truncated episode.
+    dones[-1] = True
+    _, _, lengths = util.extract_done_markers(dones)
+    train_trajectories, val_trajectories = d4rl_trajectory_split(
+        list(range(len(lengths))),
+        val_frac,
+        seed=seed,
+    )
+    train_timesteps = util.collect_timestep_indices(dones, train_trajectories)
+    val_timesteps = util.collect_timestep_indices(dones, val_trajectories)
+    return train_timesteps.astype(np.int64), val_timesteps.astype(np.int64)
+
+
+def reward_to_go(
+    dataset: Dict[str, np.ndarray],
+    average: bool = True,
+    episode_horizon: Optional[int] = None,
+) -> np.ndarray:
     """Compute the reward to go for each timestep.
 
     The implementation is iterative because when I wrote a vectorized version, np.cumsum
     cauased numerical instability.
     """
-    dones = np.logical_or(dataset["terminals"], dataset["timeouts"])
+    terminals = np.asarray(dataset["terminals"], dtype=bool)
+    timeouts = np.asarray(
+        dataset.get("timeouts", np.zeros_like(terminals)),
+        dtype=bool,
+    )
+    if terminals.shape != timeouts.shape:
+        raise ValueError("terminals and timeouts must have matching shapes.")
+    dones = np.logical_or(terminals, timeouts)
+    dones[-1] = True
     _, _, lengths = util.extract_done_markers(dones)
-    max_episode_steps = np.max(lengths)
+    max_trajectory_length = int(np.max(lengths))
+    if episode_horizon is None:
+        episode_horizon = max_trajectory_length
+    episode_horizon = int(episode_horizon)
+    if episode_horizon < max_trajectory_length:
+        raise ValueError(
+            "episode_horizon cannot be shorter than a trajectory: "
+            f"{episode_horizon} < {max_trajectory_length}."
+        )
 
     reverse_reward_to_go = np.inf * np.ones_like(dataset["rewards"])
     running_reward = 0
@@ -414,7 +857,9 @@ def reward_to_go(dataset: Dict[str, np.ndarray], average: bool = True) -> np.nda
     avg_reward_to_go = np.inf * np.ones_like(cum_reward_to_go)
     elapsed_time = 0
     for i, (cum_reward, done) in enumerate(zip(cum_reward_to_go, dones)):
-        avg_reward_to_go[i] = cum_reward / (max_episode_steps - elapsed_time)
+        avg_reward_to_go[i] = cum_reward / (
+            episode_horizon - elapsed_time
+        )
         elapsed_time += 1
         if done:
             elapsed_time = 0
@@ -449,7 +894,11 @@ class D4RLTensorDatasetDataModule(AbstractDataModule):
         action_tensor = torch.tensor(dataset["actions"])
         dones = np.logical_or(dataset["terminals"], dataset["timeouts"])
 
-        train_indices, val_indices = d4rl_trajectory_split(dones, self.val_frac)
+        train_indices, val_indices = d4rl_timestep_split(
+            dones,
+            self.val_frac,
+            seed=self.seed,
+        )
         train_dataset = data.TensorDataset(
             observation_tensor[train_indices],
             action_tensor[train_indices],
@@ -488,9 +937,12 @@ class D4RLRvSRDataModule(D4RLTensorDatasetDataModule):
         val_frac: float = 0.1,
         num_workers: Optional[int] = None,
         average_reward_to_go: bool = True,
+        reward_representation: Optional[str] = None,
         seed: Optional[int] = None,
         train_goal_net = False,
-        K = 20
+        K = 20,
+        waypoint_horizon: int = 30,
+        reward_episode_horizon: Optional[int] = None,
     ):
         """Custom initialization that sets the average_reward_to_go."""
         super().__init__(
@@ -500,38 +952,90 @@ class D4RLRvSRDataModule(D4RLTensorDatasetDataModule):
             num_workers=num_workers,
             seed=seed,
         )
+        self.average_reward_to_go = average_reward_to_go
+        self.reward_representation = resolve_reward_representation(
+            reward_representation,
+            average_reward_to_go=average_reward_to_go,
+        )
         self.train_goal_net = train_goal_net
         self.K = K
+        self.waypoint_horizon = waypoint_horizon
+        environment_horizon = environment_episode_horizon(env)
+        if (
+            reward_episode_horizon is not None
+            and environment_horizon is not None
+            and int(reward_episode_horizon) != environment_horizon
+        ):
+            raise ValueError(
+                "Explicit reward_episode_horizon conflicts with the "
+                f"environment: {reward_episode_horizon} != "
+                f"{environment_horizon}."
+            )
+        self.reward_episode_horizon = (
+            environment_horizon
+            if reward_episode_horizon is None
+            else int(reward_episode_horizon)
+        )
+        if (
+            self.reward_episode_horizon is not None
+            and self.reward_episode_horizon <= 0
+        ):
+            raise ValueError("reward_episode_horizon must be positive.")
+        self.state_dim = int(np.prod(env.observation_space.shape))
+        self.action_dim = int(np.prod(env.action_space.shape))
+        self.goal_dim = (
+            2 if self.reward_representation == "both" else 1
+        )
+        self.waypoint_dim = self.goal_dim
 
     def setup(self, stage: Optional[str] = None) -> None:
         """Create the training and validation data."""
+        if self.data_train is not None:
+            return
         dataset = self.env.get_dataset()
         paths = self._get_paths(dataset)
-        train_indices, val_indices = d4rl_trajectory_split(paths, self.val_frac)
+        train_indices, val_indices = d4rl_trajectory_split(
+            paths,
+            self.val_frac,
+            seed=self.seed,
+        )
+        self.train_trajectory_indices = train_indices.copy()
+        self.val_trajectory_indices = val_indices.copy()
+        if self.reward_episode_horizon is None:
+            self.reward_episode_horizon = max(
+                len(paths[index]["observations"])
+                for index in train_indices
+            )
 
         train_dataset = D4RLIterableDataset(
             paths[train_indices],
             goal_columns=None,
             K=self.K,
-            max_ep_len=1000,
+            reward_episode_horizon=self.reward_episode_horizon,
             goal_conditioned=False,
             reward_conditioned=True,
-            train_goal_net = self.train_goal_net
+            train_goal_net = self.train_goal_net,
+            reward_representation=self.reward_representation,
+            waypoint_horizon=self.waypoint_horizon,
         )
         val_dataset = (
             D4RLIterableDataset(
-                paths[train_indices],
+                paths[val_indices],
                 goal_columns=None, #self.goal_columns,
                 K=self.K,
-                max_ep_len=1000,
+                reward_episode_horizon=self.reward_episode_horizon,
                 goal_conditioned=False,
                 reward_conditioned=True,
-                train_goal_net = self.train_goal_net
+                train_goal_net = self.train_goal_net,
+                reward_representation=self.reward_representation,
+                waypoint_horizon=self.waypoint_horizon,
+                normalization_const=train_dataset.normalization_const,
 
             )
             if self.val_frac > 0
             else None
         )
+        self.reward_normalization_const = train_dataset.normalization_const
 
         if stage == "fit" or stage is None:
             self.data_train, self.data_val = train_dataset, val_dataset
@@ -540,17 +1044,17 @@ class D4RLRvSRDataModule(D4RLTensorDatasetDataModule):
         N = dataset['rewards'].shape[0]
         data_ = collections.defaultdict(list)
 
-        use_timeouts = False
-        if 'timeouts' in dataset:
-            use_timeouts = True
+        use_timeouts = 'timeouts' in dataset
 
         episode_step = 0
         paths = []
         for i in range(N):
-            if step.is_antmaze_env(self.env):
-                done_bool = dataset["timeouts"][i]
+            terminal_bool = bool(dataset["terminals"][i])
+            timeout_bool = bool(dataset["timeouts"][i]) if use_timeouts else False
+            if step.is_antmaze_env(self.env) and use_timeouts:
+                done_bool = timeout_bool
             else:
-                done_bool = np.logical_or(dataset["terminals"][i], dataset["timeouts"][i])
+                done_bool = terminal_bool or timeout_bool
 
             for k in ['observations', 'actions', 'rewards', 'terminals']:
                 data_[k].append(dataset[k][i])
@@ -562,12 +1066,18 @@ class D4RLRvSRDataModule(D4RLTensorDatasetDataModule):
                 paths.append(episode_data)
                 data_ = collections.defaultdict(list)
             episode_step += 1
+        if data_["observations"]:
+            paths.append({key: np.array(values) for key, values in data_.items()})
         return np.array(paths)
 
     def _get_observation_tensor(self, dataset: Dict[str, np.ndarray]) -> torch.Tensor:
         return make_s_g_tensor(
             dataset["observations"],
-            reward_to_go(dataset, average=self.average_reward_to_go).reshape(-1, 1),
+            reward_to_go(
+                dataset,
+                average=self.average_reward_to_go,
+                episode_horizon=self.reward_episode_horizon,
+            ).reshape(-1, 1),
         )
 
 
@@ -582,7 +1092,8 @@ class D4RLRvSGDataModule(AbstractDataModule):
         num_workers: Optional[int] = None,
         seed: Optional[int] = None,
         K = 20,
-        train_goal_net = False
+        train_goal_net = False,
+        waypoint_horizon: int = 30,
     ):
         """Custom initialization.
 
@@ -599,29 +1110,47 @@ class D4RLRvSGDataModule(AbstractDataModule):
         self.goal_columns = (0, 1) if step.is_antmaze_env(env) else None
         self.K = K
         self.train_goal_net = train_goal_net
+        self.waypoint_horizon = waypoint_horizon
+        self.state_dim = int(np.prod(env.observation_space.shape))
+        self.action_dim = int(np.prod(env.action_space.shape))
+        self.goal_dim = (
+            len(self.goal_columns)
+            if self.goal_columns is not None
+            else self.state_dim
+        )
+        self.waypoint_dim = self.goal_dim
 
     def setup(self, stage: Optional[str] = None) -> None:
         """Create the training and validation data."""
         dataset = self.env.get_dataset()
         paths = self._get_paths(dataset)
-        train_indices, val_indices = d4rl_trajectory_split(paths, self.val_frac)
+        train_indices, val_indices = d4rl_trajectory_split(
+            paths,
+            self.val_frac,
+            seed=self.seed,
+        )
+        self.train_trajectory_indices = train_indices.copy()
+        self.val_trajectory_indices = val_indices.copy()
 
         train_dataset = D4RLIterableDataset(
             paths[train_indices],
             goal_columns=self.goal_columns,
             K=self.K,
-            max_ep_len=1000,
             goal_conditioned=True,
-            reward_conditioned=False
+            reward_conditioned=False,
+            train_goal_net=self.train_goal_net,
+            waypoint_horizon=self.waypoint_horizon,
         )
         val_dataset = (
             D4RLIterableDataset(
-                paths[train_indices],
+                paths[val_indices],
                 goal_columns=self.goal_columns,
                 K=self.K,
-                max_ep_len=1000,
                 goal_conditioned=True,
-                reward_conditioned=False
+                reward_conditioned=False,
+                train_goal_net=self.train_goal_net,
+                waypoint_horizon=self.waypoint_horizon,
+                normalization_const=train_dataset.normalization_const,
             )
             if self.val_frac > 0
             else None
@@ -634,17 +1163,17 @@ class D4RLRvSGDataModule(AbstractDataModule):
         N = dataset['rewards'].shape[0]
         data_ = collections.defaultdict(list)
 
-        use_timeouts = False
-        if 'timeouts' in dataset:
-            use_timeouts = True
+        use_timeouts = 'timeouts' in dataset
 
         episode_step = 0
         paths = []
         for i in range(N):
-            if step.is_antmaze_env(self.env):
-                done_bool = dataset["timeouts"][i]
+            terminal_bool = bool(dataset["terminals"][i])
+            timeout_bool = bool(dataset["timeouts"][i]) if use_timeouts else False
+            if step.is_antmaze_env(self.env) and use_timeouts:
+                done_bool = timeout_bool
             else:
-                done_bool = np.logical_or(dataset["terminals"][i], dataset["timeouts"][i])
+                done_bool = terminal_bool or timeout_bool
 
             for k in ['observations', 'actions', 'rewards', 'terminals']:
                 data_[k].append(dataset[k][i])
@@ -656,4 +1185,6 @@ class D4RLRvSGDataModule(AbstractDataModule):
                 paths.append(episode_data)
                 data_ = collections.defaultdict(list)
             episode_step += 1
+        if data_["observations"]:
+            paths.append({key: np.array(values) for key, values in data_.items()})
         return np.array(paths)

@@ -1,0 +1,22 @@
+{
+  "H": 15,
+  "candidate_count_per_state": 24,
+  "candidate_generator_sha": "93bf0a4917e6968e6b4416cb4a1daa1816e9b672b39c6703faf42be0b157fe84",
+  "environment_sha": "de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba",
+  "from_scratch": true,
+  "low_level_checkpoint_sha": {
+    "0": "d6cc1560bce7ef365956276660f666974ec5a6e0f239457f56498d01b01eb50c",
+    "1": "6d9978bff9a2c121ad5fbfe48aa4cf56b8589a3dd22f0f3bc98a20501b1fb11f",
+    "2": "b0a499e654d9e7b7f68303c4155c6431712d904263236b6a8cad48469d18c6a7",
+    "3": "cfbbba27cdb942929e4a8c2abccaa36fb3d73c3d14372d0e27dd968aca77cf87",
+    "4": "b89f1b3627e16d9c7b17c37e5a576aa9b9c0028c1ff196c0ca7847982f687f92"
+  },
+  "low_level_seed_count": 5,
+  "primary_utility": "mean_five_frozen_rl_h15_payload",
+  "shared_by_all_high_seeds": true,
+  "train_state_count": 64,
+  "unique_candidate_count": 1515,
+  "utility_code_sha": "5bbc3066ea4ed9428ba7dac9f463d1fb6a2e4130870e4ac50de8d554032ca40c",
+  "utility_dataset_sha": "ff493cf0828e3fa8232b4d5d54cfcee7d34dddc1f42976bc6e9670beaefa3f57",
+  "validation_state_count": 32
+}

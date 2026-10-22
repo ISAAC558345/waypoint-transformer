@@ -1,0 +1,47 @@
+{
+  "direct_ppo": false,
+  "epochs": 80,
+  "hgnn_beats_deepsets": false,
+  "hold": 15,
+  "modified_l3b": false,
+  "modified_low_level_ppo": false,
+  "phase92_deepsets": {
+    "assignment_accuracy": 0.3042534722222222,
+    "conflict_rate": 0.0,
+    "hold": 15,
+    "interference_utility": 544931.2491947303,
+    "mean_payload_bits": 4000000.0,
+    "name": "deepsets",
+    "service_success_rate": 0.04774305555555555
+  },
+  "phase92_hgnn": {
+    "assignment_accuracy": 0.41449652777777773,
+    "conflict_rate": 0.0,
+    "hold": 15,
+    "interference_utility": 385541.5576158706,
+    "mean_payload_bits": 2250000.0,
+    "name": "hgnn",
+    "service_success_rate": 0.046875
+  },
+  "phase92_hgnn_locked": {
+    "assignment_accuracy": 0.41449652777777773,
+    "conflict_rate": 0.0,
+    "hold": 15,
+    "interference_utility": 385541.5576158706,
+    "mean_payload_bits": 2250000.0,
+    "name": "hgnn",
+    "service_success_rate": 0.046875
+  },
+  "rank_acc_92": 0.9789229954282442,
+  "rank_acc_93": 0.9920319591959318,
+  "relational": {
+    "assignment_accuracy": 0.40755208333333337,
+    "conflict_rate": 0.0,
+    "hold": 15,
+    "interference_utility": 559363.3124850239,
+    "mean_payload_bits": 2625000.0,
+    "name": "hgnn",
+    "service_success_rate": 0.02256944444444444,
+    "train_ranking_accuracy": 0.9926071986556053
+  }
+}

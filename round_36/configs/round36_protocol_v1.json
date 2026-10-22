@@ -1,0 +1,67 @@
+{
+  "schema_version": "round36_protocol_v1",
+  "topic": "Level-2 Relational Benchmark Non-Learning Planning Necessity, Association-Action Headroom, and Task-Waypoint Action-Relevance Validation",
+  "round": 36,
+  "status": "frozen_pre_outcome",
+  "benchmark": {
+    "source_round": 35,
+    "source_lock_sha256": "8506179FF0F8E450125FF97FA42FC822D05DDFB9CD1F39CACC655079F972CD82",
+    "num_uavs": 4,
+    "num_buoys": 8,
+    "episode_length": 20,
+    "matching_mode": "external_preference",
+    "physical_model": "frozen_round35_level2"
+  },
+  "prohibitions": {
+    "training": false,
+    "model_fitting": false,
+    "optimizer": false,
+    "backward_pass": false,
+    "reward_or_environment_redesign": false,
+    "decoder_redesign": false,
+    "dynamic_channels_or_drift": false,
+    "protected_access": false,
+    "round37": false
+  },
+  "clean_namespaces": {
+    "design": "round36_design_v1",
+    "confirmation": "round36_confirmation_v1",
+    "scenarios_per_namespace": 64,
+    "seeds": {
+      "design_start": 36000,
+      "confirmation_start": 36100
+    }
+  },
+  "state_anchors": [0, 8],
+  "anchor_selection": {
+    "pre_outcome": true,
+    "minimum_count": 2,
+    "reason": "Both anchors retain a complete H=10 future while bounding the exact audit runtime."
+  },
+  "first_action_oracle": {
+    "horizons": [1, 5, 10],
+    "first_movement": "frozen_round19_independent_queue_rate_action",
+    "continuation": "same_frozen_current_state_movement_plus_legacy_deterministic_association",
+    "first_association": "all_legal_partial_injective_assignments",
+    "tie_break": ["utility_descending", "served_uav_count_descending", "lexicographic_assignment_with_idle_after_buoy_indices"],
+    "utility": "cumulative_actual_payload_bits",
+    "secondary_robustness_first_movement": "zero_only_not_a_gate"
+  },
+  "task_waypoint": {
+    "horizon": 5,
+    "epsilon": 1e-12,
+    "mapping": "A_assoc_TW=log(Phi+epsilon)",
+    "service_target_semantics": "Per-UAV normalized H5 future service over buoys; a zero-service UAV receives the zero vector and service_valid_uav_mask=0."
+  },
+  "runtime_gate": {
+    "max_projected_seconds": 1800,
+    "policy": "Before formal confirmation, stop in design if the exact, unpruned formal workload projects above this limit.  Do not approximate or prune candidates."
+  },
+  "gates": {
+    "aao_a": "confirmation mean association headroom > 0, scenario-cluster CI low > 0, median >= 0, and no catastrophic eta reversal",
+    "aph_a": "H10 assignment divergence is nonzero, H10 utility exceeds H5 utility, and clustered CI low > 0",
+    "aph_b": "H5 exceeds H1 stably while H10 is approximately H5",
+    "twar_a": "association target reduces cross-scenario action ambiguity by at least 0.05 with bootstrap CI low above zero",
+    "reo_a": "state-only pooled similarity coexists with materially different U-B relations and differing Gamma_H5 actions"
+  }
+}

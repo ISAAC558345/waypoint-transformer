@@ -1,0 +1,108 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "A",
+      "independent_holdout_required": true,
+      "max_degradation_rate": 0.0,
+      "max_worst_case_delta_R": 0.0,
+      "min_mean_U_gain": 0.0,
+      "min_mean_delta_R": 0.0,
+      "name": "Strict Safety",
+      "principle": "Single-scenario safety first. Any regression versus LOCAL is a deployment defect.",
+      "rationale": {
+        "C1": "Zero allowed degrade rate: a planner change must not make any scenario worse than LOCAL.",
+        "C2": "Zero allowed worst-case ΔR: the worst scenario must stay non-negative versus LOCAL.",
+        "C3": "Mean ΔR >= 0 is implied by strict non-inferiority; recorded explicitly as a floor of 0.",
+        "C4": "Mean U_traj must not fall below LOCAL. No positive bit-margin is invented from current gain.",
+        "C5": "forbid_all: fallback to LOCAL is not an excuse to accept a harmful B2 substitution.",
+        "C6": "strict non-inferiority: for every scenario, R_selected >= R_LOCAL.",
+        "C7": "A second unseen batch is required before a strict-safety claim can be treated as deployable.",
+        "C8": "One additional independently generated batch beyond 220000-220063.",
+        "not_from_observed_64": true
+      },
+      "require_all_scenarios_noninferior": true,
+      "required_independent_batches": 1,
+      "scenario_degradation_policy": "forbid_all"
+    },
+    {
+      "candidate_id": "B",
+      "independent_holdout_required": true,
+      "max_degradation_rate": 0.01,
+      "max_worst_case_delta_R": -0.1,
+      "min_mean_U_gain": 0.0,
+      "min_mean_delta_R": 0.0,
+      "name": "Balanced Deployment",
+      "principle": "Allow only rare, bounded losses; require non-negative average gain and one extra unseen batch.",
+      "rationale": {
+        "C1": "1-in-100 rare-event cap. Decimal 0.01 is a conventional reliability quota, not 3/64 or 0.047.",
+        "C2": "At most 0.10 of the R unit interval [0, 1]. A one-tenth score drop is the design loss bound, not -0.214.",
+        "C3": "Average rank-normalized score must not decline. Floor is 0, not 0.111.",
+        "C4": "Average payload must not decline versus LOCAL. Floor is 0 bits, not the current 1.34e6 gain.",
+        "C5": "A rare degradation is allowed only if it also respects the C2 loss bound.",
+        "C6": "aggregate non-inferiority: summary statistics may pass even if a rare scenario does not.",
+        "C7": "One new unseen batch is required so Gate-1 safety is not judged only on 220000-220063.",
+        "C8": "One additional independently generated batch.",
+        "not_from_observed_64": true
+      },
+      "require_all_scenarios_noninferior": false,
+      "required_independent_batches": 1,
+      "scenario_degradation_policy": "allow_only_if_worst_case_bound_holds"
+    },
+    {
+      "candidate_id": "C",
+      "independent_holdout_required": true,
+      "max_degradation_rate": 0.02,
+      "max_worst_case_delta_R": -0.125,
+      "min_mean_U_gain": 0.0,
+      "min_mean_delta_R": 0.02,
+      "name": "Conservative-with-Fallback",
+      "principle": "Use LOCAL fallback as a risk control; allow limited degradation if average gain, bounded loss, and repeated unseen batches all hold.",
+      "rationale": {
+        "C1": "2-in-100 limited-tolerance cap. Decimal 0.02 is a conventional minority quota, not 3/64.",
+        "C2": "At most 1/8 of the R unit interval. Dyadic 0.125 is a design constant, not a pad around -0.214.",
+        "C3": "At least 0.02 of the R unit interval as a minimum average improvement that can justify changing planner defaults.",
+        "C4": "Average payload must still not fall below LOCAL. No bit-margin is copied from current U gain.",
+        "C5": "allow_some: fallback already withholds B2 when margin < tau; residual degradations are tolerated only inside C1/C2.",
+        "C6": "aggregate non-inferiority; strict per-scenario non-inferiority is not required because fallback is part of the system.",
+        "C7": "Independent hold-out is mandatory for this candidate by design.",
+        "C8": "Two additional independently generated batches, because fallback-plus-B2 is a system claim, not a single-table claim.",
+        "not_from_observed_64": true
+      },
+      "require_all_scenarios_noninferior": false,
+      "required_independent_batches": 2,
+      "scenario_degradation_policy": "allow_some"
+    }
+  ],
+  "deployment_criterion": "HUMAN_SPECIFICATION_REQUIRED",
+  "gate_vs_criterion": {
+    "Gate-1": "Per-scenario switch: use B2 iff score margin >= frozen tau. Does not decide planner integration.",
+    "deployment_criterion": "System-level acceptance of frozen B2 + frozen Gate-1. Does not change the per-scenario switch.",
+    "frozen_gate": {
+      "margin": "U_hat(argmax U_hat) - U_hat(argmax U_single)",
+      "role": "per-scenario B2 vs LOCAL switch",
+      "rule": "if margin >= tau: B2 else LOCAL",
+      "tau": 1534933.5944128654,
+      "tau_display": 1535000.0,
+      "tau_source": "HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md changed-state mean dU_hat"
+    }
+  },
+  "observed_reference": {
+    "degrade": "3/64",
+    "degrade_rate": 0.047,
+    "disclaimer": "These are observed evaluation results and are NOT a source of candidate thresholds.",
+    "mean_R": 0.874,
+    "mean_delta_R": 0.111,
+    "n_B2": "26/64",
+    "worst_case_delta_R": -0.214
+  },
+  "official_criterion": null,
+  "pass_fail_computed": false,
+  "phase_status": "BLOCKED_ON_HUMAN_SPECIFICATION",
+  "planner_ready": false,
+  "pre_registered": false,
+  "selected_candidate": null,
+  "selection_rule": "This file does not select a candidate. A human owner must confirm one.",
+  "status": "HUMAN_SPECIFICATION_REQUIRED",
+  "thresholds_fit_from_independent_64": false,
+  "wrote_registry": false
+}

@@ -1,0 +1,48 @@
+{
+  "design_label": "design evaluation, not confirmation",
+  "design_val_seeds": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "env_sha256": "de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba",
+  "families": [
+    "B0",
+    "B1",
+    "B2",
+    "B3"
+  ],
+  "gate": "in_range AND nonempty queue AND non-idle valid target -> movement (0,0)",
+  "high_ckpt": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase100\\outputs\\handoff\\frozen_deepsets_util\\deepsets_util_seed0.pt",
+  "high_file_sha256": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "high_param_sha256": "3e2cf600d87bd282528ae923f2d6d3ab73ea9d42af55536dabc31ca38b7ec14e",
+  "low_ckpt": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase101\\outputs\\pilot\\checkpoints\\pilot_final.pt",
+  "low_sha256": "8cb0529e7f9c2851e0a102da5793b29d317e9c48c900e10ac976791b678aebb7",
+  "no_training": true,
+  "phase": "10.3",
+  "phase102_caliber": {
+    "b0": 8500000.0,
+    "b1": 7250000.0,
+    "ratio": 0.8529411764705882
+  },
+  "ppo": {
+    "checkpoint_interval_steps": 192,
+    "clip_eps": 0.2,
+    "device": "cpu",
+    "entropy_coef": 0.01,
+    "gae_lambda": 0.95,
+    "gamma": 0.99,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 0.5,
+    "num_envs": 4,
+    "num_minibatches": 4,
+    "rollout_length": 48,
+    "update_epochs": 4,
+    "value_coef": 0.5
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "prototype_latency": {
+    "median_ms": 334.28,
+    "p95_ms": 450.93,
+    "p99_ms": 458.34,
+    "source": "phase5zm_model_selection_gate.json"
+  },
+  "deployment_latency_requirement": "HUMAN_SPECIFICATION_REQUIRED",
+  "options_not_selected": [
+    "500 ms",
+    "750 ms",
+    "1000 ms",
+    "NOT_YET_SPECIFIED"
+  ],
+  "selected_option": null,
+  "note_500ms": "500 ms is only slightly above the consumed development P99 on this computer. It is not a UAV deployment SLA."
+}

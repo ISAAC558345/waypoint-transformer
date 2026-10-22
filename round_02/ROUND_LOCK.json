@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "round": "round_02",
+  "status": "completed",
+  "locked_at": "2026-07-30T21:30:00+08:00",
+  "topic": "non-learning baselines, offline trajectory collection, and data quality audit",
+  "snapshot": "backup/snapshots/before_round_02_20260730_2049",
+  "training_performed": false,
+  "next_round_created": false,
+  "acceptance": {
+    "focused_tests": "22/22 PASS",
+    "repository_tests": "100/100 PASS",
+    "compileall": "PASS",
+    "public_import": "PASS",
+    "canonical_run_id": "round02_smoke_20260730_212701_283649",
+    "episodes": 24,
+    "transitions": 192,
+    "train_episodes": 8,
+    "validation_episodes": 8,
+    "test_episodes": 8,
+    "data_files": 54,
+    "figures": 6,
+    "exact_reload": true,
+    "checksums_valid": true,
+    "all_values_finite": true,
+    "illegal_actions": 0,
+    "boundary_violations": 0,
+    "k_step_boundary_violations": 0,
+    "visual_qa": "PASS"
+  },
+  "k_step_valid_samples": {
+    "1": 192,
+    "5": 96,
+    "10": 0,
+    "20": 0,
+    "30": 0
+  },
+  "unchanged_round01_environment_sha256": {
+    "src/wt/maritime/config.py": "0CF1804F1A47C8F0B061F7C68641630AB63AF053F0F5A3DF5A83FD359ED7BC45",
+    "src/wt/maritime/channel.py": "E1E6A9BECA193245D7FF75DE6D0C5D4D45DA71A032A700A53DF4AD39DC1749CD",
+    "src/wt/maritime/env.py": "BFBB73AAC8213AA75418682BC6BB610A3F4F7875DA19FACE4496197982AB126D",
+    "src/wt/maritime/smoke.py": "3818D6301D28CC9DD2C2AAE6461C7CAE7EEC60887D1A9EBB75C71D717344ECAE"
+  },
+  "implementation_sha256": {
+    "src/wt/maritime/__init__.py": "80F7CE94D61E77892FFD9DAD189E0532B57AAA5041B21697E23F06892F193C6E",
+    "src/wt/maritime/baselines.py": "8855CA4793BC9204323E4ADB4917A25C1C1108BC235EA25521B81C090C3FB4D6",
+    "src/wt/maritime/trajectory.py": "0609B996073F5E80FF7E3EA41F7C19D2AD3E31FB0980B14AA3EC4AEF54787AAE",
+    "src/wt/maritime/dataset_io.py": "1B4FADA3FFD57747FD6A03E956EB19D3F81AD39340957F42166404A9DDC24CE0",
+    "src/wt/maritime/k_step_audit.py": "02C37794653D1E79128CD9BCF0FE5DA7ABB7B44D5130D1AE20481661B98406C3",
+    "src/wt/maritime/metrics.py": "13E85D07CDB81AB8B428DDD9A21E758AAF445C8EB436995DC467312A8981044A",
+    "src/wt/maritime/plotting.py": "53AE82129A4D905F377A89C534A45B27D551ED27B151E7C7048BC450DE95E03B",
+    "src/wt/maritime/runner.py": "9533F28548FBE84266184A55B10397C1DAEE82761886F8CD8656AF51C9BBB035",
+    "tests/test_round02_offline_pipeline.py": "6D18A623BF702AEE2FB7FF0808C0CEEA3E323413474322DE09BEC4C056C48CE3",
+    "docs/round02_non_learning_offline_data.md": "4E0F324F972FB25C231AFEA27EB4F1466905D2C55F465E70CED7AD2C1591966E",
+    "README.md": "90CBB0AF85727A2AA9C263203DE8742CF5D36191DC0838C1F48AEBD6130A42C3",
+    "report/round_02_report_20260730_2130.md": "161F20898F8F3239FC06529DAD1DE373C6C7CB111B7F8C02BB6DE836BFF7B8CC"
+  },
+  "canonical_output_sha256": {
+    "baseline_episode_metrics.csv": "824A4D8176744FF56C3AE06FD7CD2EE0310C4E2CF53E853D7B9409D1CAD6D8D3",
+    "baseline_summary.csv": "0926C4F52F4EF3E5C95633EA5CD009B35CA527E752FCA017F33AF8F56E7C77CB",
+    "dataset_manifest.json": "FC4E45E9D69970E7936823D6619BBA4FFFB869AB20A6E906FD37AE00D4910AF8",
+    "dataset_schema.json": "E637122147B47A9CCC8CDD223432192B3B56D6543CF34F9F2B4BB9F4BC215DF3",
+    "k_step_audit.csv": "EC3038EE6446FD9BFA6CD7C5B1A373BEEB08EAD039656077DD0AE7F1D4C133D6",
+    "run_config.json": "8875528AD61F44D40398D2157A4C377FE54927DC58FD29827CCA3C45958DE895",
+    "cumulative_energy_comparison.png": "D97FA65E01B333F25A5847E39F8BBE2151894C2EA642F6CA3C034DA13EF600D1",
+    "cumulative_link_capacity_proxy.png": "A936F68B37E6F14F42921FB0185928047870217F8A88E095C7236DEC29498224",
+    "episode_return_comparison.png": "75BD072322442C0ADA7C7770C8369A48B9352526A57647E71CABD6ECBF44FB9D",
+    "final_remaining_queue_unavailable.png": "702992CCA6653C895ECC860BF2F369951FDBC7A42D135CD9AD56022C8BFF804D",
+    "queue_over_time_unavailable.png": "2EC89A5772ED7D5DAACDE6790979D5D57EA6348AE2118D29DBD10D8E294BC78D",
+    "representative_uav_trajectories.png": "87EDC16490C5FA2F156D70AA92E83DFC48CF59E06E0A0EC1D825F945346F5853"
+  },
+  "canonical_outputs": {
+    "data": "round_02/outputs/round02_smoke_20260730_212701_283649",
+    "figures": "round_02/figures/round02_smoke_20260730_212701_283649",
+    "documentation": "docs/round02_non_learning_offline_data.md",
+    "report": "report/round_02_report_20260730_2130.md"
+  },
+  "data_sufficiency": {
+    "pipeline_validated": true,
+    "ready_for_substantive_waypoint_sample_construction": false,
+    "reason": "short smoke episodes have no K=10,20,30 targets and the current environment has no desired goal, queue, urgency, task completion, or actual payload"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "checkpoints": {
+    "phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "phase6g_seed1.pt": "6412690edcb0eeec5f579d08ab5d054e21e7791e6a5efd478ceabdb4c6159111",
+    "phase6g_seed2.pt": "85fd4a163d1edc673486ae04e92d1a103e1edefb7f74e21623c80088c27ff088",
+    "phase6g_seed3.pt": "dddde5976645a6fa18afdafd98fcd36ebf1a178fc4db68f66f3859c13e3798d2",
+    "phase6g_seed4.pt": "aa3201250f65ddd0fecb428b6c1a9a0abf5de66d2a7e80da383879048ee5768c"
+  },
+  "primary": "phase6g_seed0.pt",
+  "robustness_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

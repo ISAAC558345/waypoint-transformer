@@ -1,0 +1,36 @@
+{
+  "COMPAT": "B",
+  "HLALIGN": "C",
+  "architecture_changed": false,
+  "beam_utility_k": 8,
+  "beam_width": 32,
+  "checkpoint_rule": "best_validation_mean_candidate_regret",
+  "collision_enhancement": false,
+  "hold": 15,
+  "interference_enhancement": false,
+  "lambda_rank": 0.25,
+  "lambda_ref": 0.1,
+  "low_level_sha": {
+    "0": "d6cc1560bce7ef365956276660f666974ec5a6e0f239457f56498d01b01eb50c",
+    "1": "6d9978bff9a2c121ad5fbfe48aa4cf56b8589a3dd22f0f3bc98a20501b1fb11f",
+    "2": "b0a499e654d9e7b7f68303c4155c6431712d904263236b6a8cad48469d18c6a7",
+    "3": "cfbbba27cdb942929e4a8c2abccaa36fb3d73c3d14372d0e27dd968aca77cf87",
+    "4": "b89f1b3627e16d9c7b17c37e5a576aa9b9c0028c1ff196c0ca7847982f687f92"
+  },
+  "name": "HL-RL-SUPPORT-AUDIT",
+  "new_hl_sha": {
+    "0": "f2dc53c368c24178bceb3a6b532138a4a2405494c530513f91934277c63fabdb",
+    "1": "4d25c5b58053b0741993fd0e307d036d801958a241844e4f6bc1f8326b8a7423",
+    "2": "a5627754d848d7796d4b7034743733041a22494a0a1f8f97460815757c437819",
+    "3": "c8f7b8490992b3fd1697c59dc502b535597a5af7655d6d9b5d12bf9cb06279c4",
+    "4": "cf82a66a111909feafd465e6f93bcb7a3bc7479140858a577b66ebecf6c381f7"
+  },
+  "old_hl": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\final_artifacts\\checkpoints\\deepsets_util_seed0.pt",
+  "old_hl_sha": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "pool_size": 24,
+  "set_probability_space": "order-marginalized complete legal assignments; PoolMass sums unique candidate P_theta",
+  "tau": 1.0,
+  "training": false,
+  "training_low_level": false,
+  "val_n": 32
+}

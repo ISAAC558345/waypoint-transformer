@@ -1,0 +1,11 @@
+{
+  "order": "service, then arrival, then admission/drop",
+  "reason": "legacy step 先用完成块得到 residual，再把 incoming 加到 residual 上计算 overflow",
+  "served_bits": "min(Q_before, sum_m association_mk * R_m * delta_t)",
+  "admitted_arrival_bits": "min(generated_arrival_bits, Q_max - (Q_before - served_bits))",
+  "dropped_bits": "generated_arrival_bits - admitted_arrival_bits",
+  "q_after": "Q_before - served_bits + admitted_arrival_bits",
+  "conservation": "Q_before + generated_arrival = Q_after + served + dropped + float_snap",
+  "payload_increment": "sum_k served_bits",
+  "completed_blocks": "floor((remainder + served) / block_bits)，不反向扣队列"
+}

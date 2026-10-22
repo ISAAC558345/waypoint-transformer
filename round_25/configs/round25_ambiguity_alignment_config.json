@@ -1,0 +1,33 @@
+{
+  "round": "round_25",
+  "topic": "Multi-UAV Task-Waypoint Supervision Ambiguity and Expert-Plan Alignment Audit",
+  "previous_round_lock": "round_24/ROUND_LOCK.json",
+  "previous_round_lock_sha256": "B14A668DB825590C6E850C168008DBCB8FAEE4BDB5C56C82B5C906241887043B",
+  "round20_formal_output": "round_20/outputs/round20_multi_uav_dataset_20260828_2100",
+  "round21_predictor_checkpoint_sha256": "645F235032DE9639A6D42318A41CC8F0E2175E86E38545DA98E0BE5CAEB80221",
+  "round22_formal_output": "round_22/outputs/round22_deepsets_task_waypoint_policy_20260829_1153",
+  "round24_formal_output": "round_24/outputs/round24_multiseed_stability_20260829_1515",
+  "allowed_splits": ["train", "validation"],
+  "task_horizon": 5,
+  "planner_horizons": [5, 10],
+  "knn_neighbors": 5,
+  "exact_state_timestep": 0,
+  "ambiguity_definition": {
+    "service": "mean pairwise Jensen-Shannon divergence of valid-UAV service distributions, natural logarithms",
+    "progress": "mean pairwise RMSE of queue-capacity-normalized per-UAV gross service progress",
+    "return": "mean pairwise absolute H5 train-z-scored team-return difference",
+    "task": "unweighted mean of service, progress, and return components"
+  },
+  "pre_registered_gates": {
+    "strong_ambiguity_min_task_score": 0.15,
+    "subgroup_amplification_ratio": 1.05,
+    "predictor_mean_distance_ratio_max": 1.0,
+    "seed_instability_spearman_abs_min": 0.2,
+    "planner_mean_distance_min": 0.05,
+    "planner_high_quality_distance_ratio_max": 1.0
+  },
+  "round24_fresh_new_rollout_count": 0,
+  "round20_development_test_reuse_count": 0,
+  "untouched_eval_access_count": 0,
+  "round26_created": false
+}

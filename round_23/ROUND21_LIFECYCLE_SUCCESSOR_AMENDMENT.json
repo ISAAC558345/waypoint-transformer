@@ -1,0 +1,21 @@
+{
+  "amendment_type": "historical_lifecycle_successor_clarification",
+  "round": "round_23",
+  "target_test": "tests/test_round21_hgnn_task_waypoint.py",
+  "round21_original_lock": "round_21/ROUND_LOCK.json",
+  "round21_original_lock_sha256": "F754D441B0A8A3DF77EDAD7EAF2E2CA3062A32025444524270795897E9958BD6",
+  "prior_amended_test_sha256": "A1D28501A3C031A914ACEA35B7C586895D776D60EFCEC200912B70EEFDAB712C",
+  "successor_amended_test_sha256": "BE73FC2348C76F1FCA5B7A4B8E76AE8E32424271F3B1CDF40C84D56C32FF3481",
+  "semantic_correction": "The test preserves the historical fact that Round-22 was created after Round-21 while permitting the currently authorized Round-23 as a later legal successor.",
+  "scientific_artifacts_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "metrics_modified": false,
+  "training_performed": false,
+  "fresh_dev_rerun": false,
+  "untouched_eval_accessed": false,
+  "original_round21_lock_modified": false,
+  "original_round22_lock_modified": false,
+  "round24_created": false,
+  "approved_at": "2026-08-29T15:05:00+08:00"
+}

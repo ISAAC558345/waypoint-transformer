@@ -1,0 +1,29 @@
+{
+  "training": true,
+  "value_models_frozen": true,
+  "encoder_frozen": true,
+  "mappo_frozen": true,
+  "j15_in_predictor_loss": false,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "epochs": 10,
+  "checkpoint": "epoch_10",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "batch": "one state per optimizer step; every assignment and every UAV has equal weight",
+  "hidden": 128,
+  "loss": "mean Huber on Phase-5ZD-normalized continuous channels + mean BCE on binary channels",
+  "confirmation_read_before_checkpoints": false,
+  "opened_310118": false,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "option_hold": 15,
+  "h_dyn": 1
+}

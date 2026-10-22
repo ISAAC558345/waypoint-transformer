@@ -1,0 +1,20 @@
+{
+  "schema_version": "round13_controllability_protocol_v1",
+  "task_horizon": 10,
+  "episode_horizon": 128,
+  "allowed_source_splits": ["train", "validation"],
+  "formal_scenario_split": "validation",
+  "snapshot_timesteps": [0, 16, 32, 48],
+  "continuation_policy": "queue_rate_energy",
+  "continuation_uses_future": false,
+  "action_perturbations": ["queue_rate_energy", "zero", "+x", "-x", "+y", "-y", "radial_0", "radial_45", "radial_90", "radial_135", "radial_180", "radial_225", "radial_270", "radial_315"],
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 13013,
+  "bootstrap_unit": "scenario_id",
+  "headroom_service_heuristic": "argmax(current_queue_bits * full_bandwidth_current_rate_bps)",
+  "training_performed": false,
+  "service_action_implemented": false,
+  "policy_training_performed": false,
+  "old_development_test_accessed": false,
+  "untouched_holdout_accessed": false
+}

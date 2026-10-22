@@ -1,0 +1,70 @@
+{
+  "deterministic_action_shape": [
+    1,
+    6,
+    2
+  ],
+  "environment_steps": 384,
+  "estimated_pilot_seconds": 59.45520999994187,
+  "high_frozen": true,
+  "history": [
+    {
+      "action_std": 0.9754351563751698,
+      "advantage_mean": -0.1036861464381218,
+      "advantage_std": 0.2160790115594864,
+      "approx_kl": 0.049186889656994026,
+      "clip_fraction": 0.3763020848855376,
+      "completed_episodes": 4,
+      "entropy": 16.7124342918396,
+      "environment_steps": 192,
+      "explained_variance": -0.058507680892944336,
+      "gradient_norm_preclip": 1.2028111182153225,
+      "label": "smoke",
+      "mean_action_std": 0.9724417518203458,
+      "mean_completed_env_return": 0.0,
+      "mean_completed_payload_bits": 0.0,
+      "mean_r_aux": -0.01609033131212528,
+      "mean_r_env": 0.0,
+      "mean_r_train": -0.01609033131212528,
+      "mean_raw_reward": -0.016090331599116325,
+      "policy_loss": -0.023535601270850748,
+      "seconds": 0.6426175999986299,
+      "update": 1,
+      "value_loss": 0.020065206772414967
+    },
+    {
+      "action_std": 0.9817517213523388,
+      "advantage_mean": -0.012477007694542408,
+      "advantage_std": 0.1318109780550003,
+      "approx_kl": 0.01961253903573379,
+      "clip_fraction": 0.27604166441597044,
+      "completed_episodes": 4,
+      "entropy": 16.795447945594788,
+      "environment_steps": 384,
+      "explained_variance": 0.39442455768585205,
+      "gradient_norm_preclip": 1.4397066198289394,
+      "label": "smoke",
+      "mean_action_std": 0.9690770084659258,
+      "mean_completed_env_return": 0.0,
+      "mean_completed_payload_bits": 0.0,
+      "mean_r_aux": -0.012787984921027925,
+      "mean_r_env": 0.0,
+      "mean_r_train": -0.012787984921027925,
+      "mean_raw_reward": -0.012787985615432262,
+      "policy_loss": -0.025453953334363177,
+      "seconds": 0.5464866000002075,
+      "update": 2,
+      "value_loss": 0.006979328638408333
+    }
+  ],
+  "loaded_m5": false,
+  "mean_seconds_per_update": 0.5945520999994187,
+  "not_for_ranking": true,
+  "passed": true,
+  "reload_ok": true,
+  "seconds": [
+    0.6426175999986299,
+    0.5464866000002075
+  ],
+  "updates": 2
+}

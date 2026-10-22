@@ -1,0 +1,11 @@
+{
+  "role": "REPRODUCTION_ON_CONSUMED_CONFIRMATION_DATA",
+  "phase5zp_gate": "CONF-C",
+  "phase5zp_gate_revised": false,
+  "pool": "310118-310125",
+  "pool_still_consumed": true,
+  "changes_models": false,
+  "changes_benchmark": false,
+  "planner_ready": false,
+  "deployment_verified": false
+}

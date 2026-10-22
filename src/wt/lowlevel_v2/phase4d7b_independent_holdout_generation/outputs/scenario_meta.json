@@ -1,0 +1,898 @@
+{
+  "230000": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:29:42.174774+00:00",
+    "scenario_id": 230000,
+    "seed": 230000
+  },
+  "230001": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:30:02.158659+00:00",
+    "scenario_id": 230001,
+    "seed": 230001
+  },
+  "230002": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:30:23.262401+00:00",
+    "scenario_id": 230002,
+    "seed": 230002
+  },
+  "230003": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:30:42.295186+00:00",
+    "scenario_id": 230003,
+    "seed": 230003
+  },
+  "230004": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:31:01.060430+00:00",
+    "scenario_id": 230004,
+    "seed": 230004
+  },
+  "230005": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:31:20.096323+00:00",
+    "scenario_id": 230005,
+    "seed": 230005
+  },
+  "230006": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:31:37.431801+00:00",
+    "scenario_id": 230006,
+    "seed": 230006
+  },
+  "230007": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:31:56.638031+00:00",
+    "scenario_id": 230007,
+    "seed": 230007
+  },
+  "230008": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:32:14.446715+00:00",
+    "scenario_id": 230008,
+    "seed": 230008
+  },
+  "230009": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:32:35.062393+00:00",
+    "scenario_id": 230009,
+    "seed": 230009
+  },
+  "230010": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:32:52.483179+00:00",
+    "scenario_id": 230010,
+    "seed": 230010
+  },
+  "230011": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:33:11.151471+00:00",
+    "scenario_id": 230011,
+    "seed": 230011
+  },
+  "230012": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:33:29.543280+00:00",
+    "scenario_id": 230012,
+    "seed": 230012
+  },
+  "230013": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:33:47.511790+00:00",
+    "scenario_id": 230013,
+    "seed": 230013
+  },
+  "230014": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:34:05.258361+00:00",
+    "scenario_id": 230014,
+    "seed": 230014
+  },
+  "230015": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:34:23.175308+00:00",
+    "scenario_id": 230015,
+    "seed": 230015
+  },
+  "230016": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:34:40.352817+00:00",
+    "scenario_id": 230016,
+    "seed": 230016
+  },
+  "230017": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:34:57.657762+00:00",
+    "scenario_id": 230017,
+    "seed": 230017
+  },
+  "230018": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:35:15.361995+00:00",
+    "scenario_id": 230018,
+    "seed": 230018
+  },
+  "230019": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:35:33.478819+00:00",
+    "scenario_id": 230019,
+    "seed": 230019
+  },
+  "230020": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:35:51.053866+00:00",
+    "scenario_id": 230020,
+    "seed": 230020
+  },
+  "230021": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:36:08.828234+00:00",
+    "scenario_id": 230021,
+    "seed": 230021
+  },
+  "230022": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:36:28.943593+00:00",
+    "scenario_id": 230022,
+    "seed": 230022
+  },
+  "230023": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:36:48.005545+00:00",
+    "scenario_id": 230023,
+    "seed": 230023
+  },
+  "230024": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:37:04.944639+00:00",
+    "scenario_id": 230024,
+    "seed": 230024
+  },
+  "230025": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:37:25.326841+00:00",
+    "scenario_id": 230025,
+    "seed": 230025
+  },
+  "230026": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:37:42.976119+00:00",
+    "scenario_id": 230026,
+    "seed": 230026
+  },
+  "230027": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:38:00.873325+00:00",
+    "scenario_id": 230027,
+    "seed": 230027
+  },
+  "230028": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:38:18.281508+00:00",
+    "scenario_id": 230028,
+    "seed": 230028
+  },
+  "230029": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:38:37.505318+00:00",
+    "scenario_id": 230029,
+    "seed": 230029
+  },
+  "230030": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:38:56.735887+00:00",
+    "scenario_id": 230030,
+    "seed": 230030
+  },
+  "230031": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:39:15.206228+00:00",
+    "scenario_id": 230031,
+    "seed": 230031
+  },
+  "230032": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:39:34.539587+00:00",
+    "scenario_id": 230032,
+    "seed": 230032
+  },
+  "230033": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:39:51.799699+00:00",
+    "scenario_id": 230033,
+    "seed": 230033
+  },
+  "230034": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:40:08.700270+00:00",
+    "scenario_id": 230034,
+    "seed": 230034
+  },
+  "230035": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:40:29.290433+00:00",
+    "scenario_id": 230035,
+    "seed": 230035
+  },
+  "230036": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:40:47.941368+00:00",
+    "scenario_id": 230036,
+    "seed": 230036
+  },
+  "230037": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:41:06.599916+00:00",
+    "scenario_id": 230037,
+    "seed": 230037
+  },
+  "230038": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:41:25.092363+00:00",
+    "scenario_id": 230038,
+    "seed": 230038
+  },
+  "230039": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:41:43.397246+00:00",
+    "scenario_id": 230039,
+    "seed": 230039
+  },
+  "230040": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:42:02.832610+00:00",
+    "scenario_id": 230040,
+    "seed": 230040
+  },
+  "230041": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:42:20.273210+00:00",
+    "scenario_id": 230041,
+    "seed": 230041
+  },
+  "230042": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:42:41.630268+00:00",
+    "scenario_id": 230042,
+    "seed": 230042
+  },
+  "230043": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:43:01.916780+00:00",
+    "scenario_id": 230043,
+    "seed": 230043
+  },
+  "230044": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:43:23.918569+00:00",
+    "scenario_id": 230044,
+    "seed": 230044
+  },
+  "230045": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:43:45.760248+00:00",
+    "scenario_id": 230045,
+    "seed": 230045
+  },
+  "230046": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:44:04.070506+00:00",
+    "scenario_id": 230046,
+    "seed": 230046
+  },
+  "230047": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:44:22.783150+00:00",
+    "scenario_id": 230047,
+    "seed": 230047
+  },
+  "230048": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:44:45.081870+00:00",
+    "scenario_id": 230048,
+    "seed": 230048
+  },
+  "230049": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:45:04.194154+00:00",
+    "scenario_id": 230049,
+    "seed": 230049
+  },
+  "230050": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:45:23.093431+00:00",
+    "scenario_id": 230050,
+    "seed": 230050
+  },
+  "230051": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:45:41.555986+00:00",
+    "scenario_id": 230051,
+    "seed": 230051
+  },
+  "230052": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:45:59.893302+00:00",
+    "scenario_id": 230052,
+    "seed": 230052
+  },
+  "230053": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:46:23.646323+00:00",
+    "scenario_id": 230053,
+    "seed": 230053
+  },
+  "230054": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:46:44.088839+00:00",
+    "scenario_id": 230054,
+    "seed": 230054
+  },
+  "230055": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:47:03.074529+00:00",
+    "scenario_id": 230055,
+    "seed": 230055
+  },
+  "230056": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:47:22.513872+00:00",
+    "scenario_id": 230056,
+    "seed": 230056
+  },
+  "230057": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:47:44.487180+00:00",
+    "scenario_id": 230057,
+    "seed": 230057
+  },
+  "230058": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:48:05.037183+00:00",
+    "scenario_id": 230058,
+    "seed": 230058
+  },
+  "230059": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:48:23.874649+00:00",
+    "scenario_id": 230059,
+    "seed": 230059
+  },
+  "230060": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:48:44.577908+00:00",
+    "scenario_id": 230060,
+    "seed": 230060
+  },
+  "230061": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:49:03.889442+00:00",
+    "scenario_id": 230061,
+    "seed": 230061
+  },
+  "230062": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:49:26.790829+00:00",
+    "scenario_id": 230062,
+    "seed": 230062
+  },
+  "230063": {
+    "batch_id": "deployment_holdout_batch_1",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:49:49.005710+00:00",
+    "scenario_id": 230063,
+    "seed": 230063
+  },
+  "230064": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:50:09.663167+00:00",
+    "scenario_id": 230064,
+    "seed": 230064
+  },
+  "230065": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:50:30.503245+00:00",
+    "scenario_id": 230065,
+    "seed": 230065
+  },
+  "230066": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:50:49.308154+00:00",
+    "scenario_id": 230066,
+    "seed": 230066
+  },
+  "230067": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:51:10.091511+00:00",
+    "scenario_id": 230067,
+    "seed": 230067
+  },
+  "230068": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:51:32.317193+00:00",
+    "scenario_id": 230068,
+    "seed": 230068
+  },
+  "230069": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:51:53.512422+00:00",
+    "scenario_id": 230069,
+    "seed": 230069
+  },
+  "230070": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:52:17.229123+00:00",
+    "scenario_id": 230070,
+    "seed": 230070
+  },
+  "230071": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:52:39.182881+00:00",
+    "scenario_id": 230071,
+    "seed": 230071
+  },
+  "230072": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:53:00.072897+00:00",
+    "scenario_id": 230072,
+    "seed": 230072
+  },
+  "230073": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:53:18.772318+00:00",
+    "scenario_id": 230073,
+    "seed": 230073
+  },
+  "230074": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:53:38.141120+00:00",
+    "scenario_id": 230074,
+    "seed": 230074
+  },
+  "230075": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:53:57.100470+00:00",
+    "scenario_id": 230075,
+    "seed": 230075
+  },
+  "230076": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:54:16.345186+00:00",
+    "scenario_id": 230076,
+    "seed": 230076
+  },
+  "230077": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:54:34.740789+00:00",
+    "scenario_id": 230077,
+    "seed": 230077
+  },
+  "230078": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:54:58.818821+00:00",
+    "scenario_id": 230078,
+    "seed": 230078
+  },
+  "230079": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:55:16.404095+00:00",
+    "scenario_id": 230079,
+    "seed": 230079
+  },
+  "230080": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:55:34.035411+00:00",
+    "scenario_id": 230080,
+    "seed": 230080
+  },
+  "230081": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:55:54.385569+00:00",
+    "scenario_id": 230081,
+    "seed": 230081
+  },
+  "230082": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:56:14.981173+00:00",
+    "scenario_id": 230082,
+    "seed": 230082
+  },
+  "230083": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:56:36.179649+00:00",
+    "scenario_id": 230083,
+    "seed": 230083
+  },
+  "230084": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:56:53.570179+00:00",
+    "scenario_id": 230084,
+    "seed": 230084
+  },
+  "230085": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:57:10.757280+00:00",
+    "scenario_id": 230085,
+    "seed": 230085
+  },
+  "230086": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:57:27.442003+00:00",
+    "scenario_id": 230086,
+    "seed": 230086
+  },
+  "230087": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:57:47.279585+00:00",
+    "scenario_id": 230087,
+    "seed": 230087
+  },
+  "230088": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:58:10.289881+00:00",
+    "scenario_id": 230088,
+    "seed": 230088
+  },
+  "230089": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:58:28.831674+00:00",
+    "scenario_id": 230089,
+    "seed": 230089
+  },
+  "230090": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:58:52.642220+00:00",
+    "scenario_id": 230090,
+    "seed": 230090
+  },
+  "230091": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:59:13.501667+00:00",
+    "scenario_id": 230091,
+    "seed": 230091
+  },
+  "230092": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:59:30.712318+00:00",
+    "scenario_id": 230092,
+    "seed": 230092
+  },
+  "230093": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T03:59:48.582078+00:00",
+    "scenario_id": 230093,
+    "seed": 230093
+  },
+  "230094": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:00:07.425683+00:00",
+    "scenario_id": 230094,
+    "seed": 230094
+  },
+  "230095": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:00:26.597637+00:00",
+    "scenario_id": 230095,
+    "seed": 230095
+  },
+  "230096": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:00:46.312142+00:00",
+    "scenario_id": 230096,
+    "seed": 230096
+  },
+  "230097": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:01:05.478174+00:00",
+    "scenario_id": 230097,
+    "seed": 230097
+  },
+  "230098": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:01:23.820997+00:00",
+    "scenario_id": 230098,
+    "seed": 230098
+  },
+  "230099": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:01:43.185514+00:00",
+    "scenario_id": 230099,
+    "seed": 230099
+  },
+  "230100": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:02:02.296138+00:00",
+    "scenario_id": 230100,
+    "seed": 230100
+  },
+  "230101": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:02:23.657000+00:00",
+    "scenario_id": 230101,
+    "seed": 230101
+  },
+  "230102": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:02:41.025772+00:00",
+    "scenario_id": 230102,
+    "seed": 230102
+  },
+  "230103": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:02:58.539482+00:00",
+    "scenario_id": 230103,
+    "seed": 230103
+  },
+  "230104": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:03:17.634126+00:00",
+    "scenario_id": 230104,
+    "seed": 230104
+  },
+  "230105": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:03:37.255983+00:00",
+    "scenario_id": 230105,
+    "seed": 230105
+  },
+  "230106": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:03:56.116416+00:00",
+    "scenario_id": 230106,
+    "seed": 230106
+  },
+  "230107": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:04:13.071404+00:00",
+    "scenario_id": 230107,
+    "seed": 230107
+  },
+  "230108": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:04:30.472936+00:00",
+    "scenario_id": 230108,
+    "seed": 230108
+  },
+  "230109": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:04:51.499475+00:00",
+    "scenario_id": 230109,
+    "seed": 230109
+  },
+  "230110": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:05:11.786618+00:00",
+    "scenario_id": 230110,
+    "seed": 230110
+  },
+  "230111": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:05:30.687424+00:00",
+    "scenario_id": 230111,
+    "seed": 230111
+  },
+  "230112": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:05:53.347976+00:00",
+    "scenario_id": 230112,
+    "seed": 230112
+  },
+  "230113": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:06:10.163230+00:00",
+    "scenario_id": 230113,
+    "seed": 230113
+  },
+  "230114": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:06:32.544485+00:00",
+    "scenario_id": 230114,
+    "seed": 230114
+  },
+  "230115": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:06:49.555422+00:00",
+    "scenario_id": 230115,
+    "seed": 230115
+  },
+  "230116": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:07:06.314559+00:00",
+    "scenario_id": 230116,
+    "seed": 230116
+  },
+  "230117": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:07:26.691437+00:00",
+    "scenario_id": 230117,
+    "seed": 230117
+  },
+  "230118": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:07:43.892790+00:00",
+    "scenario_id": 230118,
+    "seed": 230118
+  },
+  "230119": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:08:02.128111+00:00",
+    "scenario_id": 230119,
+    "seed": 230119
+  },
+  "230120": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:08:19.123376+00:00",
+    "scenario_id": 230120,
+    "seed": 230120
+  },
+  "230121": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:08:37.279237+00:00",
+    "scenario_id": 230121,
+    "seed": 230121
+  },
+  "230122": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:08:55.081115+00:00",
+    "scenario_id": 230122,
+    "seed": 230122
+  },
+  "230123": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:09:13.592630+00:00",
+    "scenario_id": 230123,
+    "seed": 230123
+  },
+  "230124": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:09:30.113075+00:00",
+    "scenario_id": 230124,
+    "seed": 230124
+  },
+  "230125": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:09:49.501686+00:00",
+    "scenario_id": 230125,
+    "seed": 230125
+  },
+  "230126": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:10:08.710723+00:00",
+    "scenario_id": 230126,
+    "seed": 230126
+  },
+  "230127": {
+    "batch_id": "deployment_holdout_batch_2",
+    "config_id": "L3BEnv.reset(seed=scenario_id); env_sha=de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba; M=6;K=12;T=48;hold=15",
+    "generation_timestamp": "2026-09-28T04:10:26.116719+00:00",
+    "scenario_id": 230127,
+    "seed": 230127
+  }
+}

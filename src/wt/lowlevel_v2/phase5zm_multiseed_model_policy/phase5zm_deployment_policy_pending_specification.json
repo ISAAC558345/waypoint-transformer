@@ -1,0 +1,28 @@
+{
+  "status": "pending_human_approval",
+  "max_high_level_latency_ms": "HUMAN_SPECIFICATION_REQUIRED",
+  "timeout_policy": "HUMAN_SPECIFICATION_REQUIRED",
+  "timeout_policy_options_not_selected": [
+    "KEEP_CURRENT_TASKOPTION",
+    "USE_LAST_VALID_ASSIGNMENT",
+    "ABORT_DECISION"
+  ],
+  "fallback_policy": "HUMAN_SPECIFICATION_REQUIRED",
+  "fallback_cases": [
+    "true_h1_exception",
+    "model_r1_non_finite",
+    "candidate_pool_empty",
+    "safety_projector_failure",
+    "checkpoint_missing"
+  ],
+  "deepsets_is_fallback": false,
+  "b2_is_fallback": false,
+  "oracle_is_fallback": false,
+  "hgnn_is_fallback": false,
+  "seed0_is_fallback": false,
+  "model_r1_aggregation": "RANK_MEAN_CONSENSUS_V1",
+  "model_r1_aggregation_approved": false,
+  "fresh_confirmation_pool": "310118-310125",
+  "fresh_confirmation_authorized": false,
+  "deployment_latency_requirement": "NOT_SPECIFIED"
+}

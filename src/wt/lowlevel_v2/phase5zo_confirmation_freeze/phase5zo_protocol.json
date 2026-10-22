@@ -1,0 +1,19 @@
+{
+  "human_decisions_are_fixed": true,
+  "model_r1_aggregation_rule": "RANK_MEAN_CONSENSUS_V1",
+  "model_r1_aggregation_approved": true,
+  "deployment_latency_requirement": "NOT_YET_SPECIFIED",
+  "latency_gate_active": false,
+  "latency_diagnostic_only": true,
+  "timeout_policy": "KEEP_CURRENT_TASKOPTION_NO_HOLD_RESET",
+  "runtime_fallback_primary": "KEEP_CURRENT_VALID_TASKOPTION",
+  "runtime_fallback_secondary": "ABORT_DECISION_IF_NO_VALID_TASKOPTION",
+  "fresh_confirmation_pool": "310118-310125",
+  "fresh_confirmation_authorized": true,
+  "frozen_for_fresh_confirmation": true,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "phase4e_status": "DEPLOYMENT_VERIFICATION_FAILED",
+  "opens_fresh_pool_in_this_phase": false,
+  "runs_fresh_confirmation_in_this_phase": false
+}

@@ -1,0 +1,44 @@
+{
+  "high_file_sha256": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "high_file_sha_after": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "high_param_sha256": "3e2cf600d87bd282528ae923f2d6d3ab73ea9d42af55536dabc31ca38b7ec14e",
+  "high_param_sha_after": "3e2cf600d87bd282528ae923f2d6d3ab73ea9d42af55536dabc31ca38b7ec14e",
+  "primary": "final",
+  "seeds": [
+    {
+      "copied_from": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase101\\outputs\\pilot\\checkpoints\\pilot_final.pt",
+      "final_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase104\\outputs\\validation\\checkpoints\\seed0_final.pt",
+      "low_seed": 0,
+      "retrained": false,
+      "sha256": "8cb0529e7f9c2851e0a102da5793b29d317e9c48c900e10ac976791b678aebb7"
+    },
+    {
+      "copied_from": null,
+      "final_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase104\\outputs\\validation\\checkpoints\\seed1_final.pt",
+      "low_seed": 1,
+      "retrained": false,
+      "sha256": "8fc1b5fa9c235906044f240b470902654684b18f1a76af3c7cb23a03ac760f90"
+    },
+    {
+      "copied_from": null,
+      "final_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase104\\outputs\\validation\\checkpoints\\seed2_final.pt",
+      "low_seed": 2,
+      "retrained": false,
+      "sha256": "657804766dc17b70d914dd33bae79fedce6534c0e54e1fda4f7c6d6b6805253a"
+    },
+    {
+      "copied_from": null,
+      "final_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase104\\outputs\\validation\\checkpoints\\seed3_final.pt",
+      "low_seed": 3,
+      "retrained": false,
+      "sha256": "d6f6542f6b67cfa3d9fb6ebd45b8b9621f5efdd63a38be41df14456404ea4bf3"
+    },
+    {
+      "copied_from": null,
+      "final_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase104\\outputs\\validation\\checkpoints\\seed4_final.pt",
+      "low_seed": 4,
+      "retrained": false,
+      "sha256": "13d23dee552485d283e20274ed5cf9ce99bfef41bae06d99428e3d08663920a9"
+    }
+  ]
+}

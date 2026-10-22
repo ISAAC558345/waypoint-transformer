@@ -1,0 +1,97 @@
+{
+  "arrays": {
+    "association": {
+      "dtype": "int64",
+      "shape": [
+        6
+      ]
+    },
+    "buoy_position_m": {
+      "dtype": "float64",
+      "shape": [
+        12,
+        2
+      ]
+    },
+    "current_mean_interference": {
+      "dtype": "float64",
+      "shape": [
+        1
+      ]
+    },
+    "current_rate_bps": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "current_sinr": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "q_bits": {
+      "dtype": "float64",
+      "shape": [
+        12
+      ]
+    },
+    "time_index": {
+      "dtype": "int64",
+      "shape": [
+        1
+      ]
+    },
+    "uav_buoy_distance_m": {
+      "dtype": "float64",
+      "shape": [
+        6,
+        12
+      ]
+    },
+    "uav_buoy_gain": {
+      "dtype": "float64",
+      "shape": [
+        6,
+        12
+      ]
+    },
+    "uav_buoy_hypothetical_rate": {
+      "dtype": "float64",
+      "shape": [
+        6,
+        12
+      ]
+    },
+    "uav_buoy_in_range": {
+      "dtype": "uint8",
+      "shape": [
+        6,
+        12
+      ]
+    },
+    "uav_position_m": {
+      "dtype": "float64",
+      "shape": [
+        6,
+        2
+      ]
+    },
+    "uav_uav_distance_m": {
+      "dtype": "float64",
+      "shape": [
+        6,
+        6
+      ]
+    }
+  },
+  "excluded": [
+    "j15",
+    "future_arrival",
+    "future_queue",
+    "future_sinr",
+    "future_trajectory",
+    "future_served_bits"
+  ]
+}

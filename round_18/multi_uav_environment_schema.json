@@ -1,0 +1,23 @@
+{
+  "schema_version": "round18_multi_uav_environment_v1",
+  "num_uavs": "configurable integer M >= 1; formal primary M=2",
+  "joint_action_shape": "[M, 2] normalized planar displacement commands",
+  "observation": {
+    "M_equals_1": "exact delegated single-UAV flat observation",
+    "M_greater_than_1": "flat structured layout with offsets in info['observation_schema']",
+    "uav_state_shape": "[M, 7]",
+    "buoy_state_shape": "[K, 5]",
+    "uav_buoy_relation_shape": "[M, K, 3]",
+    "uav_mask_shape": "[M]",
+    "buoy_mask_shape": "[K]"
+  },
+  "couplings": [
+    "one shared queue per buoy",
+    "exclusive deterministic matching",
+    "hard UAV-UAV minimum separation"
+  ],
+  "primary_dynamics": {
+    "buoy_drift_mode": "static",
+    "channel_variation_mode": "static"
+  }
+}

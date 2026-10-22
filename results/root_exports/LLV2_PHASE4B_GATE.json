@@ -1,0 +1,24 @@
+{
+  "COLREL": "C",
+  "COMFEAT": "B",
+  "COMM": "B",
+  "collision_module_touched": false,
+  "communication_trajectory_headroom": false,
+  "feat_notes": {
+    "duplicated_sinr_rate": true,
+    "interference_almost_zero": false,
+    "no_log_clip_scale": true
+  },
+  "high_frac_gt_5pct": 0.375,
+  "high_gt_low": false,
+  "high_mean_feasible": 4.5,
+  "high_median_rel": 0.0,
+  "interf_jacobian_mean": 0.002561852932150096,
+  "next_step": "do not train now; communication rate headroom exists but next-step/H3 payload impact is weak; no interference module this phase",
+  "phase3": "A",
+  "phase4a_COLREL": "C",
+  "sinr_jacobian_mean": 0.003120732762945397,
+  "text_comm": "Some communication headroom exists but it is small or H=3 payload impact is weak.",
+  "text_feat": "Feature scale is usable; residual communication headroom is limited and not payload-stable.",
+  "training": false
+}

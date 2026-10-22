@@ -1,0 +1,147 @@
+{
+  "acceptance_fields": {
+    "independent_holdout_required": null,
+    "max_degradation_rate": null,
+    "max_worst_case_delta_R": null,
+    "min_mean_U_gain": null,
+    "min_mean_delta_R": null,
+    "require_all_scenarios_noninferior": null,
+    "required_independent_batches": null
+  },
+  "auto_selected_criterion": null,
+  "deployment_criterion": "HUMAN_SPECIFICATION_REQUIRED",
+  "dimensions": [
+    {
+      "criterion_id": "C1",
+      "criterion_name": "degradation rate",
+      "definition": "Maximum fraction of scenarios allowed to have R_selected < R_LOCAL after the frozen Gate-1.",
+      "engineering_implication": "A lower cap rejects more B2 substitutions even when average gain is positive.",
+      "field": "max_degradation_rate",
+      "human_decision": "PENDING_HUMAN_DECISION",
+      "possible_policy": "choose a pre-registered fraction in [0, 1]; do not copy 3/64 or 0.047",
+      "requires_numeric_value": true,
+      "value": null
+    },
+    {
+      "criterion_id": "C2",
+      "criterion_name": "worst-case delta_R",
+      "definition": "Most negative allowed R_selected - R_LOCAL on any retained scenario.",
+      "engineering_implication": "A tighter floor can fail the current Gate-1 even if mean gain remains positive.",
+      "field": "max_worst_case_delta_R",
+      "human_decision": "PENDING_HUMAN_DECISION",
+      "possible_policy": "choose a pre-registered lower bound; do not copy -0.214",
+      "requires_numeric_value": true,
+      "value": null
+    },
+    {
+      "criterion_id": "C3",
+      "criterion_name": "mean delta_R",
+      "definition": "Whether the mean of R_selected - R_LOCAL must satisfy a pre-registered inequality.",
+      "engineering_implication": "A numeric floor is a project policy, not a statistic of the current 64 scenarios.",
+      "field": "min_mean_delta_R",
+      "human_decision": "PENDING_HUMAN_DECISION",
+      "possible_policy": "none | must_be_greater_than_0 | must_be_at_least_pre_specified_value",
+      "requires_numeric_value": "conditional",
+      "value": null
+    },
+    {
+      "criterion_id": "C4",
+      "criterion_name": "mean U_traj",
+      "definition": "Whether mean selected U_traj must beat LOCAL, optionally by a pre-specified margin.",
+      "engineering_implication": "Utility-margin policy is independent of the current 1.081e7 vs 9.469e6 observation.",
+      "field": "min_mean_U_gain",
+      "human_decision": "PENDING_HUMAN_DECISION",
+      "possible_policy": "none | must_exceed_LOCAL | must_exceed_LOCAL_by_pre_specified_margin",
+      "requires_numeric_value": "conditional",
+      "value": null
+    },
+    {
+      "criterion_id": "C5",
+      "criterion_name": "scenario degradation",
+      "definition": "Whether any individual scenario may be worse than LOCAL after the gate.",
+      "engineering_implication": "forbid_all is stricter than C1/C2 and would fail any remaining B2-used degradation.",
+      "field": "scenario_degradation_policy",
+      "human_decision": "PENDING_HUMAN_DECISION",
+      "possible_policy": "forbid_all | allow_some | allow_only_if_worst_case_bound_holds",
+      "requires_numeric_value": false,
+      "value": null
+    },
+    {
+      "criterion_id": "C6",
+      "criterion_name": "non-inferiority",
+      "definition": "strict: for every scenario R_selected >= R_LOCAL; aggregate: only summary statistics must pass.",
+      "engineering_implication": "Strict non-inferiority forbids the current 3 Gate-1 degradations if they remain after audit.",
+      "field": "require_all_scenarios_noninferior",
+      "human_decision": "PENDING_HUMAN_DECISION",
+      "possible_policy": "strict_non_inferiority | aggregate_non_inferiority",
+      "requires_numeric_value": false,
+      "value": null
+    },
+    {
+      "criterion_id": "C7",
+      "criterion_name": "independent hold-out",
+      "definition": "Whether a second unseen batch, not 220000-220063, must also be evaluated against the same criterion.",
+      "engineering_implication": "If required, planner_ready stays false until a new unseen batch is generated and audited.",
+      "field": "independent_holdout_required",
+      "human_decision": "PENDING_HUMAN_DECISION",
+      "possible_policy": "not_required | required_one_new_batch | required_multiple_independent_batches",
+      "requires_numeric_value": false,
+      "value": null
+    },
+    {
+      "criterion_id": "C8",
+      "criterion_name": "repeated batches",
+      "definition": "How many independent batches must pass, and whether each batch must be generated independently.",
+      "engineering_implication": "Repeated-batch policy is a project risk decision, not something the current 64 can decide.",
+      "field": "required_independent_batches",
+      "human_decision": "PENDING_HUMAN_DECISION",
+      "possible_policy": "required_batch_count is a human integer or null; each batch must be independently generated if required",
+      "requires_numeric_value": "conditional",
+      "value": null
+    }
+  ],
+  "frozen_gate": {
+    "margin": "U_hat(argmax U_hat) - U_hat(argmax U_single)",
+    "rule": "if margin >= tau: use B2 else LOCAL",
+    "tau": 1534933.5944128654,
+    "tau_changed": false,
+    "tau_display": 1535000.0,
+    "tau_source": "HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md changed-state mean dU_hat"
+  },
+  "next_audit_after_human_spec": {
+    "procedure": "After a human writes non-null acceptance fields, re-score the same frozen 64-scenario Gate-1 table against those fields. Do not search thresholds on that table. Do not enter Phase-4E until the audit is requested.",
+    "refit_B2": false,
+    "retune_tau": false,
+    "reuse_frozen_64": true
+  },
+  "observed_reference": {
+    "definition": "if margin >= tau: B2 else LOCAL",
+    "degrade": "3/64",
+    "degrade_rate": 0.047,
+    "disclaimer": "These are observed evaluation results and are NOT deployment acceptance criteria.",
+    "gate": "Gate-1",
+    "margin": "U_hat(argmax U_hat) - U_hat(argmax U_single)",
+    "mean_R": 0.874,
+    "mean_delta_R": 0.111,
+    "n_B2": "26/64",
+    "tau": 1534933.5944128654,
+    "tau_display": 1535000.0,
+    "tau_source": "HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md changed-state mean dU_hat",
+    "worst_case_delta_R": -0.214
+  },
+  "observed_reference_disclaimer": "These are observed evaluation results and are NOT deployment acceptance criteria.",
+  "official_standard": null,
+  "phase_status": "BLOCKED_ON_HUMAN_SPECIFICATION",
+  "planner_ready": false,
+  "policy_fields": {
+    "each_batch_independently_generated": null,
+    "holdout_policy": null,
+    "mean_U_traj_policy": null,
+    "mean_delta_R_policy": null,
+    "non_inferiority_policy": null,
+    "scenario_degradation_policy": null
+  },
+  "pre_registered": false,
+  "status": "HUMAN_SPECIFICATION_REQUIRED",
+  "thresholds_fit_from_independent_64": false
+}

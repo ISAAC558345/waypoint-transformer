@@ -1,0 +1,122 @@
+{
+  "cannot_declare_planner_ready": true,
+  "existing_criterion_search": {
+    "found_pre_registered_numeric_thresholds": false,
+    "reason": "Phase-4B/4C/4D summaries set planner_ready=false and do not define numeric acceptance rules for mean_dR / degrade_rate / worst_delta_R / mean utility gain. No prior deployment_criterion.json exists.",
+    "searched_known_artifacts": [
+      {
+        "exists": true,
+        "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md"
+      },
+      {
+        "exists": true,
+        "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\HTW_Phase4C_IndependentValidation_Audit_CN.md"
+      },
+      {
+        "exists": true,
+        "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\HTW_Phase4D_DeploymentGate_Audit_CN.md"
+      },
+      {
+        "exists": true,
+        "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase4d_deployment_gate_audit\\outputs\\phase4d_gate_summary.json"
+      },
+      {
+        "exists": true,
+        "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\phase4c_independent_validation\\outputs\\independent_summary.json"
+      },
+      {
+        "exists": true,
+        "path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\lowlevel_v2\\htw_phase4b_b2_shadow\\outputs\\b2_shadow_summary.json"
+      }
+    ],
+    "status": "NOT PRE-REGISTERED"
+  },
+  "frozen_gate": {
+    "margin": "U_hat(argmax U_hat) - U_hat(argmax U_single)",
+    "rule": "if margin >= tau: use B2 else LOCAL",
+    "tau": 1534933.5944128654,
+    "tau_changed": false,
+    "tau_display": 1535000.0,
+    "tau_source": "HTW_Phase4B_B2_ShadowIntegration_Audit_CN.md changed-state mean dU_hat",
+    "tuned_on_independent_U_traj": false
+  },
+  "frozen_model": {
+    "C_hat": "frozen ExtraTrees(U_single + Phase-3E candidate-conditioned geometry)",
+    "U_hat": "U_single + C_hat",
+    "features_changed": false,
+    "hyperparameters_changed": false,
+    "retrained": false
+  },
+  "metrics": {
+    "A_mean_dR": {
+      "acceptance_rule": "NOT PRE-REGISTERED",
+      "definition": "mean(R_selected - R_LOCAL)",
+      "needs_human_confirmation": true
+    },
+    "B_degrade_rate": {
+      "acceptance_rule": "NOT PRE-REGISTERED",
+      "definition": "N(R_selected < R_LOCAL) / N",
+      "needs_human_confirmation": true
+    },
+    "C_worst_delta_R": {
+      "acceptance_rule": "NOT PRE-REGISTERED",
+      "definition": "min(R_selected - R_LOCAL)",
+      "needs_human_confirmation": true
+    },
+    "D_mean_utility_gain": {
+      "acceptance_rule": "NOT PRE-REGISTERED",
+      "definition": "mean(U_selected - U_LOCAL)",
+      "needs_human_confirmation": true
+    },
+    "E_permutation_sanity": {
+      "acceptance_rule": "NOT PRE-REGISTERED",
+      "definition": "Phase-4C permutation of candidate-conditioned geometry; no retrain",
+      "needs_human_confirmation": true
+    },
+    "F_no_label_leak_in_gate": {
+      "acceptance_rule": "fixed: forbidden",
+      "definition": "deployment gate must not use independent U_traj / C / oracle",
+      "satisfied": true
+    }
+  },
+  "needs_human_confirmation": {
+    "A_min_mean_dR": null,
+    "B_max_degrade_rate": null,
+    "C_min_worst_delta_R": null,
+    "D_min_mean_utility_gain": null,
+    "E_min_perm_drop": null,
+    "note": "These acceptance thresholds are not pre-registered in the project. Do not fill them from the 64 independent U_traj outcomes. A human must pre-register them before PASS / planner_ready=True is possible."
+  },
+  "observed_on_independent_64": {
+    "A_mean_dR": {
+      "Gate-0": 0.12943033528971026,
+      "Gate-1": 0.11077581272893773
+    },
+    "B_degrade_rate": {
+      "Gate-0": 0.171875,
+      "Gate-1": 0.046875
+    },
+    "C_worst_delta_R": {
+      "Gate-0": -0.5,
+      "Gate-1": -0.2142857142857143
+    },
+    "D_mean_utility_gain": {
+      "Gate-0": 1562500.0,
+      "Gate-1": 1343750.0
+    },
+    "E_permutation": {
+      "perm_R": 0.671986153169747,
+      "perm_drop": 0.22048088500041618,
+      "retrained": false,
+      "source": "Phase-4C independent_summary.json"
+    },
+    "F_gate_input_restriction": {
+      "uses_independent_C": false,
+      "uses_independent_U_traj": false,
+      "uses_oracle": false
+    }
+  },
+  "planner_ready_requires": "all pre-registered acceptance rules must exist AND be satisfied",
+  "pre_registered": false,
+  "status": "NOT PRE-REGISTERED"
+}

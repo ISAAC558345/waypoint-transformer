@@ -70,10 +70,63 @@ def run_training(
     batch_size: int,
     val_frac: float,
     use_gpu: bool,
-    train_goal_net: bool = False
+    train_goal_net: bool = False,
+    waypoint_horizon: int = 30,
+    context_length: int = 20,
+    waypoint_context_length: int = 40,
+    waypoint_hidden_size: int = 1024,
+    reward_representation: Optional[str] = None,
+    reward_episode_horizon: Optional[int] = None,
+    goal_network_ckpt: Optional[str] = None,
 ) -> None:
     """Run the training with PyTorch Lightning and log to Weights & Biases."""
-    reward_conditioning = True if 'antmaze' not in env_name and 'kitchen' not in env_name else False
+    if waypoint_horizon < 0:
+        raise ValueError("waypoint_horizon must be non-negative.")
+    if context_length <= 0 or waypoint_context_length <= 0:
+        raise ValueError("Sequence context lengths must be positive.")
+    if waypoint_hidden_size <= 0:
+        raise ValueError("waypoint_hidden_size must be positive.")
+    if reward_episode_horizon is not None and reward_episode_horizon <= 0:
+        raise ValueError("reward_episode_horizon must be positive.")
+    if (
+        cumulative_reward_to_go
+        and reward_representation not in (None, "cumulative")
+    ):
+        raise ValueError(
+            "cumulative_reward_to_go conflicts with explicit "
+            f"reward_representation={reward_representation!r}."
+        )
+    if cumulative_reward_to_go:
+        reward_representation = "cumulative"
+    if reward_conditioning:
+        reward_representation = dataset.resolve_reward_representation(
+            reward_representation,
+            average_reward_to_go=not cumulative_reward_to_go,
+        )
+
+    data_module = dataset.create_data_module(
+        env,
+        env_name,
+        rollout_directory,
+        batch_size=batch_size,
+        val_frac=val_frac,
+        unconditional_policy=unconditional_policy,
+        reward_conditioning=reward_conditioning,
+        average_reward_to_go=not cumulative_reward_to_go,
+        reward_representation=reward_representation,
+        seed=seed,
+        train_goal_net=train_goal_net,
+        K=waypoint_context_length if train_goal_net else context_length,
+        waypoint_horizon=waypoint_horizon,
+        reward_episode_horizon=reward_episode_horizon,
+    )
+    if reward_conditioning and hasattr(
+        data_module, "reward_representation"
+    ):
+        # Reward normalization is training-split metadata and must be known
+        # before the policy checkpoint hyperparameters are captured.
+        data_module.setup(stage="fit")
+
     if not train_goal_net:
         model = policies.RvS(
             env.observation_space,
@@ -86,17 +139,76 @@ def run_training(
             unconditional_policy=unconditional_policy,
             reward_conditioning=reward_conditioning,
             env_name=env_name,
+            waypoint_horizon=waypoint_horizon,
+            context_length=context_length,
+            waypoint_hidden_size=waypoint_hidden_size,
+            goal_network_ckpt=goal_network_ckpt,
+            reward_condition_dim=(
+                data_module.goal_dim
+                if reward_conditioning and hasattr(data_module, "goal_dim")
+                else None
+            ),
+            reward_representation=(
+                data_module.reward_representation
+                if reward_conditioning
+                and hasattr(data_module, "reward_representation")
+                else None
+            ),
+            reward_normalization_const=(
+                data_module.reward_normalization_const
+                if reward_conditioning
+                and hasattr(data_module, "reward_normalization_const")
+                else None
+            ),
+            reward_episode_horizon=(
+                data_module.reward_episode_horizon
+                if reward_conditioning
+                and hasattr(data_module, "reward_episode_horizon")
+                else None
+            ),
         )
     else:
+        required_metadata = ("state_dim", "goal_dim", "waypoint_dim")
+        missing_metadata = [
+            name for name in required_metadata
+            if not hasattr(data_module, name)
+        ]
+        if missing_metadata:
+            raise ValueError(
+                "Waypoint training requires dataset dimensional metadata: "
+                + ", ".join(missing_metadata)
+            )
+        if data_module.goal_dim != data_module.waypoint_dim:
+            raise ValueError(
+                "The official waypoint network requires goal_dim == waypoint_dim."
+            )
         model = goal_net.KForwardGoalNetwork(
-                    obs_dim = env.observation_space.shape[-1],
-                    goal_dim = 2 if reward_conditioning else (env.observation_space.shape[-1] if 'antmaze' not in env_name else 2),
-                    hidden_dim = hidden_size,
-                    learning_rate=learning_rate,
-                    batch_size=batch_size,
-                    max_T = 30,
-                    reward = reward_conditioning
-                )
+            obs_dim=data_module.state_dim,
+            goal_dim=data_module.goal_dim,
+            hidden_dim=waypoint_hidden_size,
+            learning_rate=learning_rate,
+            batch_size=batch_size,
+            max_T=waypoint_horizon,
+            reward=reward_conditioning,
+            reward_representation=(
+                data_module.reward_representation
+                if reward_conditioning
+                and hasattr(data_module, "reward_representation")
+                else None
+            ),
+            reward_normalization_const=(
+                data_module.reward_normalization_const
+                if reward_conditioning
+                and hasattr(data_module, "reward_normalization_const")
+                else None
+            ),
+            reward_episode_horizon=(
+                data_module.reward_episode_horizon
+                if reward_conditioning
+                and hasattr(data_module, "reward_episode_horizon")
+                else None
+            ),
+        )
     wandb_logger.watch(model, log="all")
 
     monitor = "val_loss" if val_frac > 0 else "train_loss"
@@ -133,34 +245,6 @@ def run_training(
         limit_val_batches=1.0 if val_frac > 0 else 0,
         limit_test_batches=0,
     )
-
-    data_module = dataset.create_data_module(
-        env,
-        env_name,
-        rollout_directory,
-        batch_size=batch_size,
-        val_frac=val_frac,
-        unconditional_policy=unconditional_policy,
-        reward_conditioning=reward_conditioning,
-        average_reward_to_go=not cumulative_reward_to_go,
-        seed=seed,
-        train_goal_net = train_goal_net,
-        K = 40 if train_goal_net else 20
-    )
-    """
-    else:
-        data_module = dataset.create_goal_data_module(
-            env,
-            env_name,
-            rollout_directory,
-            batch_size=batch_size,
-            val_frac=val_frac,
-            unconditional_policy=unconditional_policy,
-            reward_conditioning=reward_conditioning,
-            average_reward_to_go=not cumulative_reward_to_go,
-            seed=seed,
-        )
-    """
 
     trainer.fit(model, data_module)
 
@@ -249,6 +333,53 @@ if __name__ == "__main__":
         type=int,
         required=True,
         help="batch size for each gradient step",
+    )
+    parser.add_argument(
+        "--context_length",
+        type=int,
+        default=20,
+        help="number of timesteps in each policy Transformer sequence",
+    )
+    parser.add_argument(
+        "--waypoint_context_length",
+        type=int,
+        default=40,
+        help="number of timesteps in each waypoint-network training sequence",
+    )
+    parser.add_argument(
+        "--waypoint_horizon",
+        type=int,
+        default=30,
+        help="future timestep offset used to construct waypoint targets",
+    )
+    parser.add_argument(
+        "--waypoint_hidden_size",
+        type=int,
+        default=1024,
+        help="hidden width of the learned waypoint network",
+    )
+    parser.add_argument(
+        "--reward_representation",
+        choices=("average", "cumulative", "both"),
+        default=None,
+        help="reward-to-go channels used by reward-conditioned datasets",
+    )
+    parser.add_argument(
+        "--reward_episode_horizon",
+        type=int,
+        default=None,
+        help=(
+            "episode horizon used by average reward-to-go; defaults to the "
+            "environment TimeLimit and is stored in checkpoints"
+        ),
+    )
+    parser.add_argument(
+        "--goal_network_ckpt",
+        default=os.environ.get("GOAL_NETWORK_CKPT"),
+        help=(
+            "waypoint-network checkpoint path, or 'manual'; the legacy "
+            "GOAL_NETWORK_CKPT environment variable is used only as a default"
+        ),
     )
     # training
     train_time_group = parser.add_mutually_exclusive_group(required=True)
@@ -396,9 +527,20 @@ if __name__ == "__main__":
         raise NotImplementedError
 
     args.seed = np.random.randint(2**31 - 1) if args.seed is None else args.seed
+    if (
+        args.cumulative_reward_to_go
+        and args.reward_representation not in (None, "cumulative")
+    ):
+        parser.error(
+            "--cumulative_reward_to_go conflicts with "
+            f"--reward_representation={args.reward_representation}"
+        )
+    if args.cumulative_reward_to_go:
+        args.reward_representation = "cumulative"
+    elif args.reward_conditioning and args.reward_representation is None:
+        args.reward_representation = dataset.resolve_reward_representation()
     util.set_seed(args.seed + 1)
     wandb_logger = pl.loggers.wandb.WandbLogger(project=wandb_project)
-    log_args(args, wandb_logger)
     device = util.configure_gpu(args.use_gpu, args.which_gpu)
     policy_env = step.create_env(
         args.env_name,
@@ -406,6 +548,11 @@ if __name__ == "__main__":
         args.discretize,
         seed=args.seed + 2,
     )
+    if args.reward_conditioning and args.reward_episode_horizon is None:
+        args.reward_episode_horizon = dataset.environment_episode_horizon(
+            policy_env
+        )
+    log_args(args, wandb_logger)
 
     if args.discretize_rollouts_only and args.env_name not in step.d4rl_env_names:
         rollout_env = step.create_env(
@@ -453,7 +600,14 @@ if __name__ == "__main__":
         batch_size=args.batch_size,
         val_frac=args.val_frac,
         use_gpu=args.use_gpu,
-        train_goal_net=args.train_goal_net
+        train_goal_net=args.train_goal_net,
+        waypoint_horizon=args.waypoint_horizon,
+        context_length=args.context_length,
+        waypoint_context_length=args.waypoint_context_length,
+        waypoint_hidden_size=args.waypoint_hidden_size,
+        reward_representation=args.reward_representation,
+        reward_episode_horizon=args.reward_episode_horizon,
+        goal_network_ckpt=args.goal_network_ckpt,
     )
     if args.visualize:
         visualize.visualize_performance(

@@ -5,7 +5,7 @@ Source: RvS GitHub repository (https://github.com/scottemmons/rvs)
 Edits by Anonymous Authors
 """
 
-from typing import Optional, Tuple, Type, List
+from typing import Dict, Optional, Tuple, Type, List
 
 import gym
 import os
@@ -20,11 +20,32 @@ from wt import dataset, layers, step, util
 from wt.transformer import TransformerExtractor
 
 
+def _flat_observation_dim(space: gym.Space) -> int:
+    """Return the flattened observation width represented in dataset tensors."""
+    if getattr(space, "shape", None):
+        return int(np.prod(space.shape))
+    return int(spaces.utils.flatdim(space))
+
+
+def _action_tensor_dim(space: gym.Space) -> int:
+    """Return the width of one action as consumed by the policy tensor."""
+    if isinstance(space, spaces.Discrete):
+        return 1
+    if isinstance(space, spaces.MultiDiscrete):
+        return int(len(space.nvec))
+    if isinstance(space, spaces.MultiBinary):
+        return int(np.prod(space.shape))
+    if getattr(space, "shape", None):
+        return int(np.prod(space.shape))
+    raise ValueError(f"Unsupported action space for Transformer actions: {space}")
+
+
 def make_obs_goal_space(
     observation_space: gym.Space,
     unconditional_policy: bool = False,
     reward_conditioning: bool = False,
     xy_conditioning: bool = False,
+    reward_condition_dim: Optional[int] = None,
 ) -> gym.Space:
     """Create the policy's input space.
 
@@ -52,9 +73,18 @@ def make_obs_goal_space(
     if unconditional_policy:
         return observation_space
     elif reward_conditioning:
-        if os.environ.get('CM_REWARD') or os.environ.get('AVG_REWARD'):
-            return util.add_scalar_to_space(observation_space)
-        return util.add_scalar_to_space(util.add_scalar_to_space(observation_space))
+        if reward_condition_dim is None:
+            reward_condition_dim = (
+                2
+                if dataset.resolve_reward_representation() == "both"
+                else 1
+            )
+        if reward_condition_dim <= 0:
+            raise ValueError("reward_condition_dim must be positive.")
+        conditioned_space = observation_space
+        for _ in range(int(reward_condition_dim)):
+            conditioned_space = util.add_scalar_to_space(conditioned_space)
+        return conditioned_space
     elif xy_conditioning:
         return util.add_scalar_to_space(util.add_scalar_to_space(observation_space))
     else:
@@ -77,6 +107,17 @@ class RvS(pl.LightningModule):
         unconditional_policy: bool = False,
         reward_conditioning: bool = False,
         env_name: Optional[str] = None,
+        goal_network_ckpt: Optional[str] = None,
+        goal_network_config: Optional[Dict] = None,
+        transformer_config: Optional[Dict] = None,
+        waypoint_horizon: int = 30,
+        context_length: int = 20,
+        waypoint_hidden_size: int = 1024,
+        reward_condition_dim: Optional[int] = None,
+        reward_representation: Optional[str] = None,
+        reward_normalization_const: Optional[float] = None,
+        reward_episode_horizon: Optional[int] = None,
+        _goal_network_restore_mode: Optional[str] = None,
     ):
         """Builds RvS.
 
@@ -100,17 +141,72 @@ class RvS(pl.LightningModule):
         self.learning_rate = learning_rate
         self.unconditional_policy = unconditional_policy
         self.batch_size = batch_size
-        self.save_hyperparameters(
-            "hidden_size",
-            "depth",
-            "learning_rate",
-            "batch_size",
-            "activation_fn",
-            "dropout_p",
-            "unconditional_policy",
-            "reward_conditioning",
-            "env_name",
-        )
+        self.context_length = int(context_length)
+        if self.context_length <= 0:
+            raise ValueError("context_length must be positive.")
+        self.reward_conditioning = bool(reward_conditioning)
+        if reward_conditioning:
+            if reward_representation is None:
+                if reward_condition_dim == 2:
+                    reward_representation = "both"
+                elif reward_condition_dim == 1:
+                    inferred_representation = (
+                        dataset.resolve_reward_representation()
+                    )
+                    if inferred_representation == "both":
+                        raise ValueError(
+                            "A one-channel reward-conditioned policy must specify "
+                            "reward_representation='average' or 'cumulative'."
+                        )
+                    reward_representation = inferred_representation
+                else:
+                    reward_representation = (
+                        dataset.resolve_reward_representation()
+                    )
+            reward_representation = dataset.resolve_reward_representation(
+                reward_representation
+            )
+            expected_reward_dim = (
+                2 if reward_representation == "both" else 1
+            )
+            if (
+                reward_condition_dim is not None
+                and int(reward_condition_dim) != expected_reward_dim
+            ):
+                raise ValueError(
+                    "reward_condition_dim conflicts with reward_representation: "
+                    f"{reward_condition_dim} != {expected_reward_dim}."
+                )
+            reward_condition_dim = expected_reward_dim
+            if reward_normalization_const is not None:
+                reward_normalization_const = float(
+                    reward_normalization_const
+                )
+                if (
+                    not np.isfinite(reward_normalization_const)
+                    or reward_normalization_const == 0
+                ):
+                    raise ValueError(
+                        "reward_normalization_const must be finite and non-zero."
+                    )
+            if reward_episode_horizon is not None:
+                reward_episode_horizon = int(reward_episode_horizon)
+                if reward_episode_horizon <= 0:
+                    raise ValueError(
+                        "reward_episode_horizon must be positive."
+                    )
+        else:
+            reward_representation = None
+            reward_normalization_const = None
+            reward_episode_horizon = None
+        self.reward_representation = reward_representation
+        self.reward_normalization_const = reward_normalization_const
+        self.reward_episode_horizon = reward_episode_horizon
+        self.goal_network_ckpt = goal_network_ckpt
+        if _goal_network_restore_mode not in (None, "embedded"):
+            raise ValueError(
+                "_goal_network_restore_mode must be None or 'embedded'."
+            )
 
         xy_conditioning = (
             env_name in step.d4rl_antmaze
@@ -122,6 +218,104 @@ class RvS(pl.LightningModule):
             unconditional_policy=unconditional_policy,
             reward_conditioning=reward_conditioning,
             xy_conditioning=xy_conditioning,
+            reward_condition_dim=reward_condition_dim,
+        )
+        state_dim = _flat_observation_dim(observation_space)
+        policy_input_dim = _flat_observation_dim(observation_goal_space)
+        condition_dim = policy_input_dim - state_dim
+        if condition_dim < 0:
+            raise ValueError(
+                "Conditioned observation space is smaller than the state space"
+            )
+        derived_goal_network_config = {
+            "state_dim": state_dim,
+            "goal_dim": condition_dim,
+            "waypoint_dim": condition_dim,
+            "hidden_dim": int(waypoint_hidden_size),
+            "max_T": int(waypoint_horizon),
+            "reward": reward_conditioning,
+            "reward_representation": reward_representation,
+            "reward_normalization_const": reward_normalization_const,
+            "reward_episode_horizon": reward_episode_horizon,
+            "network_type": (
+                "manual" if goal_network_ckpt == "manual" else "learned"
+            ),
+        }
+        if goal_network_config is not None:
+            protected_goal_fields = {
+                "state_dim",
+                "goal_dim",
+                "waypoint_dim",
+                "reward",
+                "reward_representation",
+                "reward_normalization_const",
+                "reward_episode_horizon",
+                "network_type",
+            }
+            supplied_state_dim = goal_network_config.get("obs_dim")
+            if (
+                supplied_state_dim is not None
+                and int(supplied_state_dim) != state_dim
+            ):
+                raise ValueError(
+                    "goal_network_config obs_dim conflicts with the "
+                    f"environment: {supplied_state_dim} != {state_dim}."
+                )
+            for name in protected_goal_fields & goal_network_config.keys():
+                supplied = goal_network_config[name]
+                expected = derived_goal_network_config[name]
+                matches = (
+                    np.isclose(supplied, expected)
+                    if name == "reward_normalization_const"
+                    and supplied is not None
+                    and expected is not None
+                    else supplied == expected
+                )
+                if not matches:
+                    raise ValueError(
+                        "goal_network_config conflicts with policy/dataset "
+                        f"metadata: {name}={supplied!r}, "
+                        f"expected {expected!r}."
+                    )
+            derived_goal_network_config.update(goal_network_config)
+        model_actions = dataset._environment_flag("MODEL_ACTIONS")
+        action_dim = _action_tensor_dim(action_space)
+        derived_transformer_config = {
+            "context_length": int(context_length),
+            "n_layer": int(os.environ.get("NUM_LAYERS", 2)),
+            "n_head": 16,
+            "n_embd": 128,
+            "model_actions": model_actions,
+            "action_dim": action_dim,
+            "resid_pdrop": float(os.environ.get("DROPOUT", 0.15)),
+            "attn_pdrop": float(os.environ.get("DROPOUT", 0.15)),
+        }
+        if transformer_config is not None:
+            derived_transformer_config.update(transformer_config)
+        goal_network_config = derived_goal_network_config
+        transformer_config = derived_transformer_config
+        self.goal_network_config = dict(derived_goal_network_config)
+        self.transformer_config = dict(derived_transformer_config)
+        self.save_hyperparameters(
+            "hidden_size",
+            "depth",
+            "learning_rate",
+            "batch_size",
+            "activation_fn",
+            "dropout_p",
+            "unconditional_policy",
+            "reward_conditioning",
+            "env_name",
+            "goal_network_ckpt",
+            "goal_network_config",
+            "transformer_config",
+            "waypoint_horizon",
+            "context_length",
+            "waypoint_hidden_size",
+            "reward_condition_dim",
+            "reward_representation",
+            "reward_normalization_const",
+            "reward_episode_horizon",
         )
         lr_schedule = utils.constant_fn(learning_rate)
         net_arch = [hidden_size] * depth
@@ -133,7 +327,36 @@ class RvS(pl.LightningModule):
             lr_schedule,
             net_arch=net_arch,
             activation_fn=layers.DropoutActivation,
-            features_extractor_class=layers.IdentityExtractor
+            features_extractor_class=layers.IdentityExtractor,
+            goal_network_ckpt=goal_network_ckpt,
+            goal_network_config=derived_goal_network_config,
+            transformer_config=derived_transformer_config,
+            goal_network_restore_mode=_goal_network_restore_mode,
+        )
+
+    @classmethod
+    def _load_model_state(cls, checkpoint, strict=True, **overrides):
+        """Restore embedded waypoint weights without reopening their source file.
+
+        Lightning 1.5 constructs the module before applying ``state_dict``.
+        Detecting registered waypoint keys here lets that constructor build only
+        the saved topology; strict outer loading then supplies the actual frozen
+        weights. Fresh policy construction still requires a valid source path.
+        """
+        state_dict = checkpoint.get("state_dict", {})
+        embedded_waypoint = any(
+            ".goal_network." in name
+            or name.startswith("goal_network.")
+            for name in state_dict
+        )
+        if embedded_waypoint:
+            overrides.setdefault(
+                "_goal_network_restore_mode", "embedded"
+            )
+        return super()._load_model_state(
+            checkpoint,
+            strict=strict,
+            **overrides,
         )
 
     def forward(
@@ -156,10 +379,19 @@ class RvS(pl.LightningModule):
         _, log_probs, _, prediction = self.model.evaluate_and_predict(
             obs_goal,
             action,
+            mask,
         )
         # dynamics_preds = self.model.predict_dynamics(cached = True)
 
-        log_probs = log_probs[mask.view(-1).bool()]
+        valid_mask = mask.view(-1).bool()
+        if valid_mask.numel() != log_probs.numel():
+            raise ValueError(
+                "Padding mask and action log-probabilities have different "
+                f"sizes: {valid_mask.numel()} != {log_probs.numel()}"
+            )
+        if not valid_mask.any():
+            raise ValueError("A training batch contains no valid timesteps")
+        log_probs = log_probs[valid_mask]
 
         prob_true_act = torch.exp(log_probs).mean()
         loss = -log_probs.mean()
@@ -172,7 +404,9 @@ class RvS(pl.LightningModule):
         except AttributeError:
             pass
         if prediction is not None:
-            self.log(f"{log_prefix}_mse", ((prediction - action) ** 2).mean())
+            prediction_error = (prediction - action) ** 2
+            prediction_error = prediction_error[valid_mask]
+            self.log(f"{log_prefix}_mse", prediction_error.mean())
 
         return loss
 
@@ -268,6 +502,9 @@ class ExtendedActorCriticPolicy(policies.ActorCriticPolicy):
         lr_schedule: type_aliases.Schedule,
         compute_values: bool = False,
         goal_network_ckpt: str = None,
+        goal_network_config: Optional[Dict] = None,
+        transformer_config: Optional[Dict] = None,
+        goal_network_restore_mode: Optional[str] = None,
         **kwargs,
     ):
         """Builds ExtendedActorCriticPolicy.
@@ -281,8 +518,18 @@ class ExtendedActorCriticPolicy(policies.ActorCriticPolicy):
         """
         self.compute_values = compute_values
         self.goal_network_ckpt = goal_network_ckpt
-        if 'GOAL_NETWORK_CKPT' in os.environ:
-            self.goal_network_ckpt = os.environ['GOAL_NETWORK_CKPT']
+        self.goal_network_config = (
+            None if goal_network_config is None else dict(goal_network_config)
+        )
+        if (
+            self.goal_network_ckpt == "manual"
+            and self.goal_network_config is not None
+        ):
+            # ``manual`` is an explicit network selector, not a source of
+            # dimensional metadata.
+            self.goal_network_config["network_type"] = "manual"
+        self.transformer_config = transformer_config
+        self.goal_network_restore_mode = goal_network_restore_mode
 
         super(ExtendedActorCriticPolicy, self).__init__(
             observation_space,
@@ -294,13 +541,27 @@ class ExtendedActorCriticPolicy(policies.ActorCriticPolicy):
         # self.dynamics_dist = DiagGaussianDistribution(self.features_dim)
         # self.dynamics_dist.proba_distribution_net(latent_dim = self.mlp_extractor.latent_dim_pi, 0.0)
 
+    @staticmethod
+    def init_weights(module: nn.Module, gain: float = 1) -> None:
+        """Keep eagerly registered, frozen waypoint weights pretrained."""
+        direct_parameters = list(module.parameters(recurse=False))
+        if direct_parameters and all(
+            not parameter.requires_grad for parameter in direct_parameters
+        ):
+            return
+        policies.ActorCriticPolicy.init_weights(module, gain=gain)
+
     def _build_mlp_extractor(self) -> None:
         self.mlp_extractor = TransformerExtractor(
             self.features_dim,
             net_arch=self.net_arch,
             activation_fn=self.activation_fn,
             device=self.device,
-            goal_network_ckpt=self.goal_network_ckpt
+            config=self.transformer_config,
+            goal_network_ckpt=self.goal_network_ckpt,
+            goal_network_config=self.goal_network_config,
+            goal_network_restore_mode=self.goal_network_restore_mode,
+            action_dim=_action_tensor_dim(self.action_space),
             #'wandb/goal_network_try3_30/files/checkpoints/gcsl-antmaze-large-play-v2-epoch=016-val_loss=1.9702e-01.ckpt'
         )
 
@@ -322,9 +583,12 @@ class ExtendedActorCriticPolicy(policies.ActorCriticPolicy):
         self,
         obs: torch.Tensor,
         actions: torch.Tensor,
+        attention_mask: Optional[torch.Tensor] = None,
     ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """Evaluate probability of actions and provide action and value prediction."""
-        latent_pi, latent_vf, latent_sde = self._get_latent([obs, actions])
+        latent_pi, latent_vf, latent_sde = self._get_latent(
+            [obs, actions, attention_mask]
+        )
         distribution = self._get_action_dist_from_latent(latent_pi, latent_sde)
         log_prob = distribution.log_prob(actions)
         values = self.value_net(latent_vf)

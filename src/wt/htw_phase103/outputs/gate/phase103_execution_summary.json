@@ -1,0 +1,61 @@
+{
+  "B2_minus_B0_payload": 4375000.0,
+  "B2_minus_B1_payload": 5625000.0,
+  "B2_minus_B3_payload": 2125000.0,
+  "B3_minus_B0_payload": 2250000.0,
+  "case": "B",
+  "case_text": "\u51fa\u73b0\u503c\u5f97\u590d\u6838\u7684\u5b66\u4e60\u578b\u6267\u884c\u4fe1\u53f7\uff1b\u53ea\u5efa\u8bae\u540e\u7eed\u591aseed\u72ec\u7acb\u9a8c\u8bc1\uff0c\u672c\u8f6e\u4e0d\u81ea\u52a8\u8fd0\u884c\u3002",
+  "high_sha_unchanged": true,
+  "label": "design evaluation, frozen single model",
+  "low_sha_unchanged": true,
+  "means": {
+    "B0": {
+      "active_queued_in_range_frac": 0.6971632430228764,
+      "completed_blocks": 8.5,
+      "flight_distance_m": 2846.25,
+      "gate_frac": 0.0,
+      "n_uav_never_completed": 2.5,
+      "normal_completion_resets": 8.5,
+      "payload_bits": 8500000.0,
+      "target_change_loss_events": 0.625,
+      "target_change_lost_rho": 0.26575531105233613
+    },
+    "B1": {
+      "active_queued_in_range_frac": 0.9853017136606709,
+      "completed_blocks": 7.25,
+      "flight_distance_m": 1774.5580163367217,
+      "gate_frac": 0.0,
+      "n_uav_never_completed": 3.25,
+      "normal_completion_resets": 7.25,
+      "payload_bits": 7250000.0,
+      "target_change_loss_events": 4.375,
+      "target_change_lost_rho": 0.8754109195554587
+    },
+    "B2": {
+      "active_queued_in_range_frac": 1.0,
+      "completed_blocks": 12.875,
+      "flight_distance_m": 451.41892976583824,
+      "gate_frac": 0.3758680555555555,
+      "n_uav_never_completed": 3.5,
+      "normal_completion_resets": 12.875,
+      "payload_bits": 12875000.0,
+      "target_change_loss_events": 0.125,
+      "target_change_lost_rho": 0.03173886512527017
+    },
+    "B3": {
+      "active_queued_in_range_frac": 1.0,
+      "completed_blocks": 10.75,
+      "flight_distance_m": 448.25,
+      "gate_frac": 0.37717013888888884,
+      "n_uav_never_completed": 2.625,
+      "normal_completion_resets": 10.75,
+      "payload_bits": 10750000.0,
+      "target_change_loss_events": 0.625,
+      "target_change_lost_rho": 0.19527125680373714
+    }
+  },
+  "n_episodes_run": 32,
+  "n_reused_from_phase102": 0,
+  "recovery_vs_B0_gap": 4.5,
+  "trained": false
+}

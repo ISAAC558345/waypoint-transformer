@@ -1,0 +1,34 @@
+{
+  "status": "HUMAN_SPECIFICATION_REQUIRED",
+  "eligible_development_data": 0,
+  "development_pool_created": false,
+  "scenarios_generated": false,
+  "rollout_executed": false,
+  "human_approved": false,
+  "source": null,
+  "required_human_fields": {
+    "development_pool_size": null,
+    "scenario_id_seed_allocation_policy": null,
+    "isolation_rule_against_existing_pools": null,
+    "allow_new_l3b_scenario_generation": null,
+    "independent_development_batch_required": null,
+    "allowed_b2_remediation_operations_after_pool": null
+  },
+  "must_not_reuse": [
+    "221000-221015",
+    "220000-220063",
+    "222000-222063",
+    "223000-223063",
+    "104000-104063",
+    "105000-105063",
+    "106000-106063",
+    "230000-230127"
+  ],
+  "absent_registered_sources": [
+    "LLV2_confirmation",
+    "LLV2_final_untouched"
+  ],
+  "deployment_verified": false,
+  "planner_ready": false,
+  "phase_status": "DEPLOYMENT_VERIFICATION_FAILED"
+}

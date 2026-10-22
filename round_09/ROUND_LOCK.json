@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "round": "round_09",
+  "status": "completed",
+  "locked_at": "2026-08-10T00:50:00+08:00",
+  "topic": "Waypoint mechanism diagnosis and conditional minimal correction",
+  "previous_round_lock_sha256": "26A9B1DD59B42C7677ED9674BFDCB07505CAF5B09A6D16B861EEC5BCE9F53FA3",
+  "scope": {"training_performed": false, "mechanism_diagnosis_performed": true, "minimal_variant_training_performed": false, "development_test_accessed": false, "untouched_holdout_accessed": false, "hgnn_training_performed": false, "ppo_training_performed": false},
+  "mechanism_gate": {"classification": "M3", "name": "Spatial Waypoint Not Useful", "minimal_variant_training_allowed": false, "reason": "no valid causal Oracle closed-loop gain overturns Gate-B, StateOnly is competitive, while predicted Phi is used rather than ignored"},
+  "frozen_inputs": {"round07_v2_dataset_manifest_sha256": "0FB681DCA6C18A791C3F183A3F952821BE4997B6E05E4F2397AF7F46744741F2", "round08_formal_tree_sha256": "3E8091815235CAD0AF7A22B2F960E8C12389CA0A04CD328C522BB1214249CE61", "round08_lock_sha256": "26A9B1DD59B42C7677ED9674BFDCB07505CAF5B09A6D16B861EEC5BCE9F53FA3"},
+  "holdout": {"access_count": 0, "content_read": false, "hash_unchanged": true},
+  "acceptance": {"round09_tests": "31/31 PASS", "repository_tests": "338/338 PASS", "compileall": "PASS", "png_files": 10, "svg_files": 10},
+  "canonical_outputs": {"formal": {"path": "round_09/outputs/round09_diagnosis_20260810_0030", "file_count": 10, "byte_count": 90556, "tree_sha256": "6752A2BAF97613677D65EB8C5241B2B800B5E583D88D3EA6905625DB594E5D7D"}, "figures": {"path": "round_09/figures/round09_diagnosis_20260810_0030", "file_count": 20, "byte_count": 586533, "tree_sha256": "E6F49BFD9CCB74C6634877A6065B1EC457A02073717C3B32F8B1C9DCE7FCD296"}, "report": "report/round_09_report_20260810_0050.md"},
+  "next_round_created": false
+}

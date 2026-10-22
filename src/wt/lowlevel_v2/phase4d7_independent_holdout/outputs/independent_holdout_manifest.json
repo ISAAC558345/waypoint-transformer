@@ -1,0 +1,72 @@
+{
+  "batch_1_exists": false,
+  "batch_2_exists": false,
+  "batch_1_scenario_ids": [],
+  "batch_2_scenario_ids": [],
+  "scenarios": [],
+  "searched_sources": [
+    {
+      "source": "src/wt/lowlevel_v2/outputs/phase0/LLV2_DATA_REGISTRY.json",
+      "LLV2_confirmation": null,
+      "LLV2_final_untouched": null,
+      "note": "confirmation and final untouched pools were never created"
+    },
+    {
+      "source": "src/wt/lowlevel_v2/data_registry.py",
+      "note": "build_registry sets LLV2_confirmation and LLV2_final_untouched to None"
+    },
+    {
+      "source": "src/wt/lowlevel_v2/phase4d_deployment_criterion_registry/deployment_criterion_registry.json",
+      "note": "registers Candidate-C and requires 2 new batches; it does not name any scenario IDs"
+    }
+  ],
+  "rejected_existing_pools": [
+    {
+      "pool": "LLV2_train",
+      "scenario_ids": "220000-220063",
+      "independent_status": "REJECTED_PREVIOUS_VALIDATION",
+      "used_in_B2_fit": false,
+      "used_in_feature_selection": false,
+      "used_in_threshold_selection": false,
+      "used_in_previous_validation": true,
+      "reason": "Already the Phase-4C/4D independent validation set. Must not be split into Batch-1 and Batch-2."
+    },
+    {
+      "pool": "LLV2_design",
+      "scenario_ids": "221000-221015",
+      "independent_status": "REJECTED_B2_FIT",
+      "used_in_B2_fit": true,
+      "used_in_feature_selection": true,
+      "used_in_threshold_selection": true,
+      "used_in_previous_validation": true,
+      "reason": "Entered Phase-4B GroupKFold, ExtraTrees fit, feature and hyperparameter selection."
+    },
+    {
+      "pool": "phase2_val",
+      "scenario_ids": "222000-222063",
+      "independent_status": "REJECTED_REFUSED_POOL",
+      "used_in_previous_validation": true,
+      "reason": "Consumed historical validation. refuse_compat blocks these seeds. Not a registered holdout batch."
+    },
+    {
+      "pool": "phase3_val",
+      "scenario_ids": "223000-223063",
+      "independent_status": "REJECTED_REFUSED_POOL",
+      "used_in_previous_validation": true,
+      "reason": "Consumed historical validation. refuse_compat blocks these seeds. Not a registered holdout batch."
+    },
+    {
+      "pool": "phase106_untouched",
+      "scenario_ids": "106000-106063",
+      "independent_status": "REJECTED_RESERVED_NOT_REGISTERED_AS_HOLDOUT",
+      "used_in_B2_fit": false,
+      "reason": "Reserved Phase-10.6 untouched seeds. Phase-4C refuse_compat blocks them. They were never registered as Deployment Batch-1 or Batch-2, so they are not consumed here."
+    }
+  ],
+  "fabrication_forbidden": {
+    "split_220000_220063": false,
+    "reseed_old_scenarios": false,
+    "invented_labels": false
+  },
+  "status": "BLOCKED_ON_INDEPENDENT_HOLDOUT_DATA"
+}

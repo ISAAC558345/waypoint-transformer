@@ -1,0 +1,52 @@
+{
+  "access_count": 1,
+  "access_output": "round_12\\outputs\\round12_formal_20260810_161000",
+  "accessed_at_utc": "2026-08-10T16:14:59.245534+00:00",
+  "accessed_for": "Round-12 frozen-checkpoint fresh-development evaluation",
+  "buoy_scales": [
+    3,
+    5
+  ],
+  "disjoint_from": [
+    "round7_train",
+    "round7_validation",
+    "round7_old_development_test",
+    "round7_untouched_holdout"
+  ],
+  "frozen_before_policy_training": true,
+  "name": "round12_fresh_policy_dev_v1",
+  "physical_scenario_count": 60,
+  "scenario_seeds": [
+    12000,
+    12001,
+    12002,
+    12003,
+    12004,
+    12005,
+    12006,
+    12007,
+    12008,
+    12009,
+    12010,
+    12011,
+    12012,
+    12013,
+    12014,
+    12015,
+    12016,
+    12017,
+    12018,
+    12019,
+    12020,
+    12021,
+    12022,
+    12023,
+    12024,
+    12025,
+    12026,
+    12027,
+    12028,
+    12029
+  ],
+  "selection_or_training_use": false
+}

@@ -1,0 +1,17 @@
+{
+  "gate": "ATTR-C",
+  "gate_name": "ENDPOINT_SATURATION_CONFIRMED",
+  "phase5zp_gate": "CONF-C",
+  "phase5zp_gate_revised": false,
+  "independent_algorithm_confirmation": false,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "breakpoint": "COMPLETION",
+  "completion_metric_saturation": true,
+  "sinr_or_rate_gain": true,
+  "progress_gain": true,
+  "confirmation_still_valid": true,
+  "fresh_confirmation_pool_role": "FRESH_CONFIRMATION_CONSUMED",
+  "reproduction_label": "REPRODUCTION_ON_CONSUMED_CONFIRMATION_DATA",
+  "deployment_pass": false
+}

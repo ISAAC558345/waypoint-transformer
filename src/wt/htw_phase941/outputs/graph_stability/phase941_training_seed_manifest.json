@@ -1,0 +1,29 @@
+{
+  "collect_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "identical_data_across_encoders": true,
+  "model_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "phase94_reused_seed": 0
+}

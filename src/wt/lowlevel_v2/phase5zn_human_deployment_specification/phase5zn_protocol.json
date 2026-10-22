@@ -1,0 +1,17 @@
+{
+  "aggregation_rule": "RANK_MEAN_CONSENSUS_V1",
+  "model_r1_aggregation_approved": false,
+  "model_r1_aggregation_approval": "HUMAN_APPROVAL_REQUIRED",
+  "recommend_approval": true,
+  "deployment_latency_requirement": "HUMAN_SPECIFICATION_REQUIRED",
+  "timeout_policy": "HUMAN_SPECIFICATION_REQUIRED",
+  "runtime_fallback_policy": "HUMAN_SPECIFICATION_REQUIRED",
+  "fresh_confirmation_pool": "310118-310125",
+  "fresh_confirmation_authorized": false,
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "phase4e_status": "DEPLOYMENT_VERIFICATION_FAILED",
+  "opens_fresh_pool": false,
+  "runs_fresh_confirmation": false
+}

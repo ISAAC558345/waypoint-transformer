@@ -1,0 +1,25 @@
+{
+  "schema_version": "maritime_observation_v1_channel_diagnostic",
+  "primary_buoy_drift_mode": "static",
+  "base_feature_count": 9,
+  "per_buoy_feature_count": 10,
+  "per_buoy_feature_names": [
+    "relative_x_over_area_width",
+    "relative_y_over_area_height",
+    "channel_phase_sin",
+    "channel_phase_cos",
+    "channel_frequency_over_registered_max",
+    "distance_3d_over_maximum_3d_distance",
+    "allocated_rate_over_configured_theoretical_max_single_buoy_rate",
+    "raw_queue_bits_over_queue_capacity_bits",
+    "last_arrival_bits_over_last_arrival_plus_queue_capacity",
+    "service_completion_ratio"
+  ],
+  "normalization": {
+    "channel_phase_sin": [-1.0, 1.0],
+    "channel_phase_cos": [-1.0, 1.0],
+    "channel_frequency_over_registered_max": [0.0, 1.0]
+  },
+  "future_channel_fields_forbidden": ["future_channel_multiplier", "future_rate", "future_sinr", "future_window_time"],
+  "padding_rule": "Any external padded buoy channel state is zero and excluded by the valid-node mask."
+}

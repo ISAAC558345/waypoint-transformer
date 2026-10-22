@@ -1,0 +1,89 @@
+{
+  "planner_ready": false,
+  "deployment_verified": false,
+  "training": false,
+  "hgnn_trained": false,
+  "mappo_retrained": false,
+  "decide_called": false,
+  "tau_modified": false,
+  "holdout_used": false,
+  "phase5f_started": false,
+  "seeds": [
+    310100,
+    310101
+  ],
+  "decision_times": [
+    0,
+    15,
+    30
+  ],
+  "n_rows": 252,
+  "n_groups": 36,
+  "n_separated": 23,
+  "travel_cost_std": 1.2258026759723504e-15,
+  "energy_cost_max": 0.0,
+  "interference_varies_within_group": 0.0,
+  "ranking": {
+    "assignment": {
+      "all": {
+        "n_groups": 36,
+        "spearman": -0.2390873015873017,
+        "kendall": -0.1534391534391534,
+        "top1": 0.3611111111111111,
+        "top3": 0.9444444444444444,
+        "discordant_pairs": 146
+      },
+      "payload_separated": {
+        "n_groups": 23,
+        "spearman": -0.4658385093167704,
+        "kendall": -0.24016563146997924,
+        "top1": 0.0,
+        "top3": 0.9130434782608695,
+        "discordant_pairs": 146
+      }
+    },
+    "utility": {
+      "all": {
+        "n_groups": 36,
+        "spearman": 1.0,
+        "kendall": 0.23280423280423282,
+        "top1": 1.0,
+        "top3": 1.0,
+        "discordant_pairs": 0
+      },
+      "payload_separated": {
+        "n_groups": 23,
+        "spearman": 1.0,
+        "kendall": 0.3643892339544514,
+        "top1": 1.0,
+        "top3": 1.0,
+        "discordant_pairs": 0
+      }
+    }
+  },
+  "failure_counts": {
+    "assignment_selection_error": 23,
+    "utility_selection_error": 0,
+    "payload_high_utility_low": 0
+  },
+  "utility_config": {
+    "name": "phase5e_baseline",
+    "weights_fitted": false,
+    "alpha": 1.0,
+    "beta": 0.0,
+    "gamma": 0.0,
+    "delta": 0.0,
+    "eta": 0.0,
+    "hold_steps": 15,
+    "executor": "fly_toward",
+    "energy_model_present": false,
+    "energy_cost_fixed": 0.0,
+    "rationale": {
+      "alpha": "payload_gain stays in bits and is the ranking target",
+      "beta": "urgency is only the current queue ratio; the coefficient is not fit",
+      "gamma": "distance/ETA equals the fixed step length, so it does not rank candidates",
+      "delta": "the 15-step payload already includes SINR, so a second penalty would double count",
+      "eta": "L3-B exposes no energy state"
+    }
+  }
+}

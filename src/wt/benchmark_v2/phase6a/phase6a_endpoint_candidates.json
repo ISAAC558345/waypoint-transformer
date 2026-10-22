@@ -1,0 +1,9 @@
+{
+  "E0": "1e6 times completed blocks; this is the environment payload",
+  "E1": "not computable as an environment transition; rate integral is diagnostic only",
+  "E2": "initial blocks + arrivals - dropped - residual; equals completed blocks when conservation holds",
+  "e1_matches_e2": false,
+  "recommended_primary_metric": "NOT_ADOPTED",
+  "reason": "no bit queue exists, so continuous delivered bits would be an invented state",
+  "phase5zp_unchanged": "CONF-C"
+}

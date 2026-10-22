@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "deployment_verified": false,
+  "requirements": {
+    "target_runtime_environment": "NOT_YET_SPECIFIED",
+    "target_operating_system": "NOT_YET_SPECIFIED",
+    "target_hardware": "NOT_YET_SPECIFIED",
+    "high_level_inference_latency_sla": "NOT_YET_SPECIFIED",
+    "mappo_step_latency_requirement": "NOT_YET_SPECIFIED",
+    "full_decision_chain_latency_requirement": "NOT_YET_SPECIFIED",
+    "memory_limit": "NOT_YET_SPECIFIED",
+    "compute_limit": "NOT_YET_SPECIFIED",
+    "alert_destination": "NOT_YET_SPECIFIED",
+    "restart_supervisor": "NOT_YET_SPECIFIED",
+    "on_call_owner": "NOT_YET_SPECIFIED",
+    "episode_abort_and_recovery": {
+      "status": "SPECIFIED",
+      "stop": "The episode loop records the fault and does not execute another unverified target.",
+      "recovery": "handle_episode_fault logs the fault, then rollback_to_baseline writes high_level_policy g1_rate only after G1_RATE k=6 and the frozen MAPPO-V2 hash both verify.",
+      "rollback_failure": "Raise RollbackError. Do not select any policy other than the explicit g1_rate rollback."
+    },
+    "model_load_failure": {
+      "status": "SPECIFIED",
+      "missing_checkpoint": "file_sha256 raises CheckpointError and appends a checkpoint_rejected log. Model weights are not replaced.",
+      "hash_mismatch": "verify_startup_hashes raises CheckpointError before FormalPlanner loads the actor or scheme C.",
+      "missing_or_illegal_policy": "read_policy raises PolicyError. It does not default to scheme_c."
+    },
+    "illegal_assignment": {
+      "status": "SPECIFIED",
+      "behavior": "An illegal candidate or a TaskOption that is no longer legal stops the new decision. The episode does not keep that target."
+    },
+    "nonfinite_output": {
+      "status": "SPECIFIED",
+      "behavior": "NaN or Inf scores are rejected. Non-finite served bits, SINR, or rate stop the episode and follow the same recovery rule."
+    },
+    "logging_and_trace": {
+      "status": "SPECIFIED",
+      "local_log": "phase6iae_deployment_contract/faults.jsonl",
+      "fields": ["logged_at", "event", "reason", "scenario_id", "time_index", "rollback", "mappo_sha256", "policy_file"],
+      "alert_destination": "NOT_YET_SPECIFIED"
+    },
+    "rollback": {
+      "status": "SPECIFIED",
+      "policy": "g1_rate",
+      "generator": "G1_RATE",
+      "k": 6,
+      "low_level": "frozen MAPPO-V2 phase6g_seed0.pt",
+      "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+      "failure": "Stop with RollbackError and do not switch to another strategy."
+    }
+  },
+  "observed_evidence": {
+    "note": "Phase-6I-AD measurements on one Windows process. They are not deployment limits.",
+    "measurement_platform": "Windows-11-10.0.26200-SP0",
+    "measurement_cpu_count": 24,
+    "measurement_torch_threads": 1,
+    "measurement_cuda_available": false,
+    "scheme_c_candidate_generation_mean_seconds": 0.18435,
+    "scheme_c_scoring_mean_seconds": 0.007842,
+    "mappo_step_mean_seconds": 0.003974,
+    "scheme_c_episode_seconds": 1.484,
+    "peak_working_set_mib": 316.83
+  },
+  "pending_confirmation": [
+    "target_runtime_environment",
+    "target_operating_system",
+    "target_hardware",
+    "high_level_inference_latency_sla",
+    "mappo_step_latency_requirement",
+    "full_decision_chain_latency_requirement",
+    "memory_limit",
+    "compute_limit",
+    "alert_destination",
+    "restart_supervisor",
+    "on_call_owner"
+  ]
+}

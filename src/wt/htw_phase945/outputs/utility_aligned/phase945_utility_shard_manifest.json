@@ -1,0 +1,9 @@
+{
+  "note": "Full utility NPZ already frozen before this amendment; no shard regeneration.",
+  "resume_reused_rows": true,
+  "shards": [],
+  "train_npz": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_train.npz",
+  "train_sha256": "9f2580cb1bf9a3bc4a56ee2443db400225a55ca1ad928794a518b80371229b8f",
+  "val_npz": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\htw_phase945\\outputs\\utility_aligned\\phase945_val.npz",
+  "val_sha256": "5ae672a675a259e17d30edef254071600d6c00e34cf67b38eeeb5aec2b8c529c"
+}

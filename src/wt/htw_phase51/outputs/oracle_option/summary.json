@@ -1,0 +1,35 @@
+{
+  "fresh_access": 0,
+  "hgnn": false,
+  "oracle_option": {
+    "action_efficiency_bits_per_m": 450868.33322173246,
+    "completion_coef": 0.25,
+    "environment_steps": 256,
+    "episodes": 4,
+    "family": "oracle_option",
+    "goal_completion_rate": 0.6041666666666666,
+    "mean_movement_m": 76.09037327574002,
+    "mean_payload_bits": 34306739.77305236,
+    "mean_residual_queue_bits": 2929173.9915871476,
+    "mean_return": 3.608003857686313,
+    "option_hold": 5,
+    "uav_dim": 14
+  },
+  "seed": 0,
+  "state_only": {
+    "action_efficiency_bits_per_m": 1167946.0888078033,
+    "completion_coef": 0.0,
+    "environment_steps": 256,
+    "episodes": 4,
+    "family": "state_only",
+    "goal_completion_rate": 0.9479166666666666,
+    "mean_movement_m": 29.377138288688336,
+    "mean_payload_bits": 34310913.764639504,
+    "mean_residual_queue_bits": 2925000.0,
+    "mean_return": 3.6669008613736125,
+    "uav_dim": 8
+  },
+  "task_waypoint": false,
+  "untouched_access": 0,
+  "updates": 8
+}

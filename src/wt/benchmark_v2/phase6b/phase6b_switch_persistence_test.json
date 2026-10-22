@@ -1,0 +1,9 @@
+{
+  "first_payload_increment_bits": 400000.0,
+  "payload_after_switch_away": 400000.0,
+  "served_on_other_buoy_during_switch": 0.0,
+  "third_payload_increment_bits": 600000.0,
+  "buoy_a_cumulative_served_bits": 1000000.0,
+  "buoy_a_final_queue_bits": 0.0,
+  "payload_was_not_rewound": true
+}

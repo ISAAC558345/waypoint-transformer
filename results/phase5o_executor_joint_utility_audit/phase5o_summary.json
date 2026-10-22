@@ -1,0 +1,49 @@
+{
+  "planner_ready": 0,
+  "deployment_verified": 0,
+  "decide_called": 0,
+  "trained": 0,
+  "mappo_weights_modified": 0,
+  "reward_modified": 0,
+  "label": "LABEL-A",
+  "payload_block_bits": 1000000.0,
+  "noise_bits": 1.0,
+  "n_rows": 720,
+  "discrimination_counts": {
+    "j_fly": 2,
+    "j_mappo": 6
+  },
+  "alignment": {
+    "pooled_spearman": 0.24016187048052032,
+    "pooled_kendall": 0.22956147909225208,
+    "pooled_top1": 1.0,
+    "pooled_top3": 1.0,
+    "pooled_regret": 0.0,
+    "pooled_normalized_regret": 0.0,
+    "mean_top1_discriminating": 0.16666666666666666,
+    "mean_normalized_regret_discriminating": 0.7222217592596358,
+    "mean_spearman_both_vary": 0.4844551512828442
+  },
+  "coverage": {
+    "n_outside_beats_pool": 0
+  },
+  "n_pairs": 10,
+  "focus_text": "310101 t=15 \u7684 J_FLY \u8303\u56f4\u662f 0.0000e+00 \u5230 0.0000e+00\uff0c\u72ec\u7acb\u53d6\u503c 1 \u4e2a\u3002J_MAPPO \u8303\u56f4\u662f 0.0000e+00 \u5230 3.0000e+06\uff0c\u72ec\u7acb\u53d6\u503c 4 \u4e2a\uff0c\u6807\u51c6\u5dee 1.1542e+06\u3002\u7a33\u5b9a J_FLY argmax \u7684\u6267\u884c regret \u662f 3.0000e+06\uff0c\u5f52\u4e00\u5316 regret \u662f 1.0000\u3002",
+  "state_lines": [
+    "| 310100 | 0 | 1 | 2 | NA | NA | 0.0000 | 1.0000e+06 | 1.0000 |",
+    "| 310100 | 15 | 1 | 4 | NA | NA | 0.0000 | 2.0000e+06 | 0.6667 |",
+    "| 310100 | 30 | 2 | 4 | 0.3131 | 0.3038 | 0.0000 | 2.0000e+06 | 0.6667 |",
+    "| 310101 | 0 | 1 | 2 | NA | NA | 0.0000 | 1.0000e+06 | 1.0000 |",
+    "| 310101 | 15 | 1 | 4 | NA | NA | 0.0000 | 3.0000e+06 | 1.0000 |",
+    "| 310101 | 30 | 3 | 4 | 0.6558 | 0.6386 | 1.0000 | 0.0000e+00 | 0.0000 |"
+  ],
+  "mechanism_notes": [
+    "310101 t=15 pair 0\uff1a\u9ad8\u6536\u76ca `4;5;3;-1;-1;-1` \u7684 J_MAPPO \u662f 3.0000e+06\uff0c\u4f4e\u6536\u76ca `-1;-1;-1;4;3;5` \u662f 0.0000e+00\uff0cJ_FLY \u90fd\u662f 0.0000e+00\u3002\u4e24\u7ec4\u6307\u6d3e\u7684\u90fd\u662f\u6d6e\u6807 3\u30014\u30015\uff0c\u8fd9\u4e9b\u6d6e\u6807\u7684 queue \u90fd\u662f 1.0\uff0curgency \u90fd\u662f 0.2500\u3002\u7b2c 1 \u6b65\u4e24\u7ec4\u5df2\u6307\u6d3e UAV \u90fd\u8fdb\u5165\u670d\u52a1\u534a\u5f84\uff0c\u8ddd\u79bb\u5206\u522b\u662f 1.12 m \u548c 2.77 m\u3002\u7b2c 5 \u6b65\u52a8\u4f5c\u5df2\u7ecf\u662f\u60ac\u505c\u3002\u9ad8\u6536\u76ca\u7ec4 SINR \u5747\u503c 4.229\uff0c\u5e72\u6270\u548c 0.534\uff0cprogress \u5747\u503c 0.403\uff1b\u4f4e\u6536\u76ca\u7ec4 SINR \u5747\u503c 0.891\uff0c\u5e72\u6270\u548c 1.234\uff0cprogress \u5747\u503c 0.143\u3002\u7b2c 10 \u6b65 progress \u5206\u522b\u662f 0.800 \u548c 0.285\u3002\u7b2c 15 \u6b65\u7d2f\u8ba1\u8f7d\u8377\u662f 3.0000e+06 \u548c 0.0000e+00\uff0c\u4f4e\u6536\u76ca\u7ec4\u7684 progress \u4ecd\u662f 0.428\uff0c\u6ca1\u6709\u5b8c\u6210\u4e00\u4e2a block\u3002"
+  ],
+  "answers": {
+    "q1": "\u4e0d\u9002\u5408\u3002\u5728\u56db\u4e2a\u72b6\u6001\u4e0a\u5b83\u7ed9 120 \u4e2a\u5206\u914d\u540c\u4e00\u4e2a\u503c\uff0c\u800c\u51bb\u7ed3 MAPPO \u7684 15 \u6b65\u8f7d\u8377\u53ef\u4ee5\u5dee\u5230\u4e00\u4e2a\u4ee5\u4e0a payload block\u3002",
+    "q2": "\u53ef\u4ee5\u3002J_MAPPO \u5728 6 \u4e2a\u72b6\u6001\u4e0a\u8d85\u8fc7\u4e00\u4e2a payload block \u7684\u5dee\u8ddd\uff0cJ_FLY \u53ea\u6709 2 \u4e2a\u3002",
+    "q5": "label mismatch\u3002J_MAPPO \u80fd\u533a\u5206\u5206\u914d\uff0cJ_FLY \u4e0e\u5b83\u4e0d\u5bf9\u9f50\u3002",
+    "q6": "\u7528\u79bb\u7ebf J_MAPPO \u91cd\u65b0\u76d1\u7763 Joint Planner\u3002\u5148\u4e0d\u6539 candidate\uff0c\u4e5f\u4e0d\u628a J_MAPPO \u9001\u8fdb\u7f51\u7edc\u3002"
+  }
+}

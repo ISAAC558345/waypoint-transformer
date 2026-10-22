@@ -1,0 +1,855 @@
+{
+  "planner_ready": false,
+  "deployment_verified": false,
+  "decide_called": false,
+  "encoder_frozen": true,
+  "decoder_trained": true,
+  "full_hgnn_retrain_started": false,
+  "mappo_modified": false,
+  "reward_modified": false,
+  "train_scenario": 310100,
+  "test_scenario": 310101,
+  "training": {
+    "global": {
+      "best_epoch": 5,
+      "best_val_spearman": 0.4285714285714286,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.7160162329673767,
+          "val_spearman": -0.028571428571428574
+        },
+        {
+          "epoch": 2,
+          "loss": 0.7077975273132324,
+          "val_spearman": 0.2571428571428572
+        },
+        {
+          "epoch": 3,
+          "loss": 0.711358904838562,
+          "val_spearman": 0.2571428571428572
+        },
+        {
+          "epoch": 4,
+          "loss": 0.7008883357048035,
+          "val_spearman": 0.2571428571428572
+        },
+        {
+          "epoch": 5,
+          "loss": 0.6957547664642334,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 6,
+          "loss": 0.6978824138641357,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 7,
+          "loss": 0.6942687630653381,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 8,
+          "loss": 0.6876823902130127,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 9,
+          "loss": 0.6840599775314331,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 10,
+          "loss": 0.6806870102882385,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 11,
+          "loss": 0.6743420958518982,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 12,
+          "loss": 0.666252076625824,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 13,
+          "loss": 0.6586710214614868,
+          "val_spearman": 0.2
+        }
+      ]
+    },
+    "matching": {
+      "best_epoch": 5,
+      "best_val_spearman": 0.4285714285714286,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.26807814836502075,
+          "val_spearman": -0.14285714285714288
+        },
+        {
+          "epoch": 2,
+          "loss": 0.21226656436920166,
+          "val_spearman": 0.2571428571428572
+        },
+        {
+          "epoch": 3,
+          "loss": 0.21241076290607452,
+          "val_spearman": 0.2571428571428572
+        },
+        {
+          "epoch": 4,
+          "loss": 0.19901546835899353,
+          "val_spearman": 0.2571428571428572
+        },
+        {
+          "epoch": 5,
+          "loss": 0.1821097731590271,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 6,
+          "loss": 0.17622219026088715,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 7,
+          "loss": 0.17053015530109406,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 8,
+          "loss": 0.15841299295425415,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 9,
+          "loss": 0.15283215045928955,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 10,
+          "loss": 0.14837373793125153,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 11,
+          "loss": 0.14181306958198547,
+          "val_spearman": 0.4285714285714286
+        },
+        {
+          "epoch": 12,
+          "loss": 0.13734863698482513,
+          "val_spearman": 0.2571428571428572
+        },
+        {
+          "epoch": 13,
+          "loss": 0.13554023206233978,
+          "val_spearman": 0.2571428571428572
+        }
+      ]
+    }
+  },
+  "models": {
+    "baseline": {
+      "test": {
+        "n_states": 3.0,
+        "mappo": 0.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 0.08451573985809709,
+        "kendall": -0.12339181286549707,
+        "top1": 0.3333333333333333
+      },
+      "train": {
+        "n_states": 2.0,
+        "mappo": 0.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 0.15560792089609082,
+        "kendall": -0.12318840579710146,
+        "top1": 0.5
+      },
+      "val": {
+        "n_states": 1.0,
+        "mappo": 0.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 0.4285714285714286,
+        "kendall": 0.0,
+        "top1": 1.0
+      },
+      "states": [
+        {
+          "scenario_id": 310100,
+          "time_step": 0,
+          "split": "train",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.666868015705225,
+          "top1": 1.0,
+          "assignment": [
+            7,
+            11,
+            9,
+            6,
+            10,
+            8
+          ]
+        },
+        {
+          "scenario_id": 310100,
+          "time_step": 15,
+          "split": "train",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": -0.3556521739130434,
+          "top1": 0.0,
+          "assignment": [
+            7,
+            9,
+            11,
+            8,
+            10,
+            6
+          ]
+        },
+        {
+          "scenario_id": 310100,
+          "time_step": 30,
+          "split": "val",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.4285714285714286,
+          "top1": 1.0,
+          "assignment": [
+            7,
+            6,
+            10,
+            11,
+            8,
+            9
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 0,
+          "split": "test",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.5318634853518573,
+          "top1": 1.0,
+          "assignment": [
+            7,
+            11,
+            9,
+            6,
+            10,
+            8
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 15,
+          "split": "test",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": -0.14008097165991903,
+          "top1": 0.0,
+          "assignment": [
+            6,
+            7,
+            11,
+            9,
+            10,
+            8
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 30,
+          "split": "test",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": -0.13823529411764704,
+          "top1": 0.0,
+          "assignment": [
+            6,
+            7,
+            11,
+            9,
+            10,
+            8
+          ]
+        }
+      ]
+    },
+    "global": {
+      "test": {
+        "n_states": 3.0,
+        "mappo": 0.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": -0.4844659360607233,
+        "kendall": -0.15515069725596042,
+        "top1": 0.3333333333333333
+      },
+      "train": {
+        "n_states": 2.0,
+        "mappo": 0.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": -0.41444880700694653,
+        "kendall": -0.007246376811594203,
+        "top1": 0.5
+      },
+      "val": {
+        "n_states": 1.0,
+        "mappo": 0.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 0.4285714285714286,
+        "kendall": 0.0,
+        "top1": 1.0
+      },
+      "states": [
+        {
+          "scenario_id": 310100,
+          "time_step": 0,
+          "split": "train",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": -0.6488976140138931,
+          "top1": 1.0,
+          "assignment": [
+            3,
+            4,
+            5,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "scenario_id": 310100,
+          "time_step": 15,
+          "split": "train",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": -0.18,
+          "top1": 0.0,
+          "assignment": [
+            3,
+            5,
+            4,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "scenario_id": 310100,
+          "time_step": 30,
+          "split": "val",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.4285714285714286,
+          "top1": 1.0,
+          "assignment": [
+            2,
+            4,
+            5,
+            1,
+            3,
+            0
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 0,
+          "split": "test",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": -0.5297493204469949,
+          "top1": 1.0,
+          "assignment": [
+            3,
+            4,
+            5,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 15,
+          "split": "test",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": -0.29129554655870443,
+          "top1": 0.0,
+          "assignment": [
+            2,
+            3,
+            4,
+            5,
+            0,
+            1
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 30,
+          "split": "test",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": -0.6323529411764706,
+          "top1": 0.0,
+          "assignment": [
+            4,
+            0,
+            1,
+            2,
+            5,
+            3
+          ]
+        }
+      ]
+    },
+    "matching": {
+      "test": {
+        "n_states": 3.0,
+        "mappo": 333333.3333333333,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 0.08026484399513419,
+        "kendall": 0.20085470085470084,
+        "top1": 1.0
+      },
+      "train": {
+        "n_states": 2.0,
+        "mappo": 0.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": -0.030839494176197968,
+        "kendall": 0.17391304347826086,
+        "top1": 0.5
+      },
+      "val": {
+        "n_states": 1.0,
+        "mappo": 0.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 0.4285714285714286,
+        "kendall": 0.0,
+        "top1": 1.0
+      },
+      "states": [
+        {
+          "scenario_id": 310100,
+          "time_step": 0,
+          "split": "train",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": -0.6208094231350045,
+          "top1": 1.0,
+          "assignment": [
+            1,
+            0,
+            2,
+            5,
+            4,
+            3
+          ]
+        },
+        {
+          "scenario_id": 310100,
+          "time_step": 15,
+          "split": "train",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.5591304347826086,
+          "top1": 0.0,
+          "assignment": [
+            4,
+            5,
+            3,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "scenario_id": 310100,
+          "time_step": 30,
+          "split": "val",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.4285714285714286,
+          "top1": 1.0,
+          "assignment": [
+            2,
+            4,
+            5,
+            0,
+            3,
+            1
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 0,
+          "split": "test",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": -0.4842947749924494,
+          "top1": 1.0,
+          "assignment": [
+            1,
+            0,
+            2,
+            5,
+            4,
+            3
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 15,
+          "split": "test",
+          "mappo": 1000000.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.18097165991902836,
+          "top1": 1.0,
+          "assignment": [
+            2,
+            4,
+            3,
+            5,
+            0,
+            1
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 30,
+          "split": "test",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.5441176470588236,
+          "top1": 1.0,
+          "assignment": [
+            5,
+            0,
+            1,
+            2,
+            4,
+            3
+          ]
+        }
+      ]
+    },
+    "individual_greedy": {
+      "test": {
+        "n_states": 3.0,
+        "mappo": 666666.6666666666,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 0.6672302929268873,
+        "kendall": 0.1941970310391363,
+        "top1": 0.6666666666666666
+      },
+      "train": {
+        "n_states": 2.0,
+        "mappo": 500000.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 0.5126086956521739,
+        "kendall": -0.09420289855072464,
+        "top1": 0.5
+      },
+      "val": {
+        "n_states": 1.0,
+        "mappo": 0.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 1.0,
+        "kendall": 0.0,
+        "top1": 1.0
+      },
+      "states": [
+        {
+          "scenario_id": 310100,
+          "time_step": 0,
+          "split": "train",
+          "mappo": 1000000.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 1.0,
+          "top1": 1.0,
+          "assignment": [
+            4,
+            3,
+            0,
+            2,
+            1,
+            5
+          ]
+        },
+        {
+          "scenario_id": 310100,
+          "time_step": 15,
+          "split": "train",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.025217391304347827,
+          "top1": 0.0,
+          "assignment": [
+            8,
+            6,
+            7,
+            9,
+            10,
+            11
+          ]
+        },
+        {
+          "scenario_id": 310100,
+          "time_step": 30,
+          "split": "val",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 1.0,
+          "top1": 1.0,
+          "assignment": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 0,
+          "split": "test",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 1.0,
+          "top1": 1.0,
+          "assignment": [
+            4,
+            2,
+            0,
+            3,
+            1,
+            5
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 15,
+          "split": "test",
+          "mappo": 1000000.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.2663967611336032,
+          "top1": 0.0,
+          "assignment": [
+            7,
+            10,
+            8,
+            9,
+            6,
+            11
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 30,
+          "split": "test",
+          "mappo": 1000000.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.7352941176470589,
+          "top1": 1.0,
+          "assignment": [
+            6,
+            4,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    "pool_joint": {
+      "test": {
+        "n_states": 3.0,
+        "mappo": 2000000.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 1.0,
+        "kendall": 0.30521817363922626,
+        "top1": 1.0
+      },
+      "train": {
+        "n_states": 2.0,
+        "mappo": 1500000.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 1.0,
+        "kendall": 0.32608695652173914,
+        "top1": 1.0
+      },
+      "val": {
+        "n_states": 1.0,
+        "mappo": 0.0,
+        "duplicate_rate": 0.0,
+        "conflict_rate": 0.0,
+        "spearman": 1.0,
+        "kendall": 0.0,
+        "top1": 1.0
+      },
+      "states": [
+        {
+          "scenario_id": 310100,
+          "time_step": 0,
+          "split": "train",
+          "mappo": 1000000.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 1.0,
+          "top1": 1.0,
+          "assignment": [
+            4,
+            3,
+            0,
+            2,
+            1,
+            5
+          ]
+        },
+        {
+          "scenario_id": 310100,
+          "time_step": 15,
+          "split": "train",
+          "mappo": 2000000.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 0.9999999999999999,
+          "top1": 1.0,
+          "assignment": [
+            4,
+            6,
+            8,
+            7,
+            -1,
+            -1
+          ]
+        },
+        {
+          "scenario_id": 310100,
+          "time_step": 30,
+          "split": "val",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 1.0,
+          "top1": 1.0,
+          "assignment": [
+            6,
+            7,
+            8,
+            -1,
+            9,
+            -1
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 0,
+          "split": "test",
+          "mappo": 0.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 1.0,
+          "top1": 1.0,
+          "assignment": [
+            4,
+            2,
+            0,
+            3,
+            1,
+            5
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 15,
+          "split": "test",
+          "mappo": 5000000.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 1.0,
+          "top1": 1.0,
+          "assignment": [
+            6,
+            10,
+            2,
+            7,
+            9,
+            8
+          ]
+        },
+        {
+          "scenario_id": 310101,
+          "time_step": 30,
+          "split": "test",
+          "mappo": 1000000.0,
+          "duplicate_rate": 0.0,
+          "conflict_rate": 0.0,
+          "spearman": 1.0,
+          "top1": 1.0,
+          "assignment": [
+            6,
+            4,
+            7,
+            8,
+            -1,
+            -1
+          ]
+        }
+      ]
+    }
+  },
+  "test_decoder_beats_baseline": true,
+  "test_decoder_beats_individual_greedy": false
+}

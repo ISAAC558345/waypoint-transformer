@@ -1,0 +1,42 @@
+{
+  "final": {
+    "b0_mean_completed_blocks": 8.5,
+    "b0_mean_flight_m": 2802.25,
+    "b0_mean_in_range_frac": 0.6454809725158562,
+    "b0_mean_payload_bits": 8500000.0,
+    "b0_mean_progress_resets": 9.125,
+    "b0_n_completed_uavs": 28,
+    "b0_n_never_completed_uavs": 20,
+    "b1_mean_completed_blocks": 7.25,
+    "b1_mean_flight_m": 1675.628029175367,
+    "b1_mean_in_range_frac": 0.963272543059777,
+    "b1_mean_payload_bits": 7250000.0,
+    "b1_mean_progress_resets": 11.625,
+    "b1_n_completed_uavs": 22,
+    "b1_n_never_completed_uavs": 26,
+    "mean_delta_bits": -1250000.0,
+    "mean_ratio": 0.8663194444444444,
+    "n_scenes": 8
+  },
+  "init": {
+    "b0_mean_completed_blocks": 8.5,
+    "b0_mean_flight_m": 2802.25,
+    "b0_mean_in_range_frac": 0.6454809725158562,
+    "b0_mean_payload_bits": 8500000.0,
+    "b0_mean_progress_resets": 9.125,
+    "b0_n_completed_uavs": 28,
+    "b0_n_never_completed_uavs": 20,
+    "b1_mean_completed_blocks": 0.0,
+    "b1_mean_flight_m": 288.3531810092727,
+    "b1_mean_in_range_frac": 0.0734126984126984,
+    "b1_mean_payload_bits": 0.0,
+    "b1_mean_progress_resets": 1.0,
+    "b1_n_completed_uavs": 0,
+    "b1_n_never_completed_uavs": 48,
+    "mean_delta_bits": -8500000.0,
+    "mean_ratio": 0.0,
+    "n_scenes": 8
+  },
+  "not_695e4_historical": true,
+  "not_confirmation": true
+}

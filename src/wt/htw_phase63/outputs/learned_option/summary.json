@@ -1,0 +1,59 @@
+{
+  "lambda_c": 0.5,
+  "lambda_d": 0.05,
+  "learned_option": {
+    "environment_steps": 15360,
+    "episodes": 8,
+    "family": "learned_option",
+    "goal_completion_rate": 0.803125,
+    "high_mode": "learned",
+    "last_update": {
+      "advantage_mean": -0.030624156817793846,
+      "advantage_std": 0.36194390058517456,
+      "approx_kl": 0.031902018818072975,
+      "clip_fraction": 0.4335937472060323,
+      "entropy": 8.35969352722168,
+      "explained_variance": 0.8352423012256622,
+      "gradient_norm_preclip": 3.136260464787483,
+      "mean_raw_reward": 0.0572916679084301,
+      "policy_loss": -0.006408296816516668,
+      "value_loss": 0.06425687717273831
+    },
+    "mean_payload_bits": 2625000.0,
+    "mean_return": 2.625,
+    "option_selection_accuracy": 0.020312499999999997,
+    "service_success_rate": 0.0546875,
+    "stage": 1
+  },
+  "learned_over_oracle": 0.25609756097560976,
+  "modified_env": false,
+  "modified_ppo_core": false,
+  "oracle_option": {
+    "episodes": 8,
+    "family": "oracle_option",
+    "goal_completion_rate": 0.5859375,
+    "high_mode": "oracle",
+    "mean_payload_bits": 10250000.0,
+    "mean_return": 10.25,
+    "option_selection_accuracy": 1.0,
+    "service_success_rate": 0.04270833333333334
+  },
+  "ran_stage2": false,
+  "seed": 0,
+  "stage1_effective": false,
+  "stage2": null,
+  "state_only": {
+    "environment_steps": 15360,
+    "episodes": 8,
+    "family": "state_only",
+    "goal_completion_rate": 0.1078125,
+    "high_mode": "myopic",
+    "mean_payload_bits": 2875000.0,
+    "mean_return": 2.875,
+    "option_selection_accuracy": 0.46249999999999997,
+    "service_success_rate": 0.01197916666666667
+  },
+  "updates": 80,
+  "uses_hgnn": false,
+  "uses_task_waypoint": false
+}

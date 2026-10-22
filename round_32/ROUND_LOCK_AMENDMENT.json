@@ -1,0 +1,49 @@
+{
+  "amendment_type": "legal_round33_successor_governance_extension",
+  "authoritative_source": "round_32/ROUND_LOCK.json",
+  "original_round32_lock_sha256": "8CAB303A04C3CF7799821D7887139EA2FE9AB97B2B0B21F74FA0F9C031064F7F",
+  "affected_paths": {
+    "src/wt/governance_state_sync.py": {
+      "prior_amended_sha256": "531C5610F10BDB0B2C4CDDEC4F581597DC1FE06A40FBA88AEBD51C4CC541C56F",
+      "amended_sha256": "F2BF42E69A438465E4043117954F58604CBAE143B3A442DACB353B73EF35EAA0"
+    },
+    "tests/test_governance_state_sync.py": {
+      "prior_amended_sha256": "2CDBE9B20A6BB84848734FCFCB7E6729865182D68064D875257A08C1725D38F1",
+      "amended_sha256": "D78D40B3189245B407743B75E40B63FAFF656E6AA217BF9F89AE46E32064F916"
+    },
+    "tests/test_round21_hgnn_task_waypoint.py": {
+      "prior_amended_sha256": "ED9BDFF8E2B584EA0D0F025FBDE85B036B714CF25B1AA514B2C67F8C2CC1073B",
+      "amended_sha256": "CCA9B28A0D6C027543DE8E72175AF25D83BD2802FE2EDD398CF71BEDA1F2F028"
+    },
+    "tests/test_round24_seed_extension.py": {
+      "prior_amended_sha256": "F706F048599231EFBC6CBEC97FB0360F8C88EC08C6AA17730AEFF7F30A0F1DF8",
+      "amended_sha256": "980EE96BABD81C376D9EACF42233B655AB09BD7B2403617FBF9F6959A19A7D8B"
+    },
+    "tests/test_round30_deepsets_ppo.py": {
+      "prior_amended_sha256": "9CA870BC203DAD347C68AB958DC50098D899E41AD9AC41B2EB3A3E119F3CDE16",
+      "amended_sha256": "EB39EBE1889C141D9FE1BD2D4DCF6B6E972EF6A81549EC9BAC61CC37492DDBC1"
+    },
+    "tests/test_round32_horizon_semantics.py": {
+      "prior_locked_sha256": "806D40EEC1C0C41D09A1FC5A6874FACE39A30F5B653B22A407CD3ECE8FFF46FB",
+      "amended_sha256": "361A22723EA5767CE1273F68ADBDB9DD9EC7A501DFA43533C04E12F1F8337E84"
+    },
+    "src/wt/round19/planner.py": {
+      "prior_locked_sha256": "C7B7A8F78E787BC5DECC77676985F5864E01AE9DE6C198E45D5A96CBCA419FA5",
+      "amended_sha256": "60F127FF9D496D5034EE1DC3E9F204B1391763EE8A087E8C35FACC9169324ED1"
+    }
+  },
+  "semantic_correction": "Permit the explicitly authorized Round-33 successor of locked Round-32. The Round-32 field round33_created=false remains immutable lock-time evidence. The only scientific-code exception is opening the existing finite beam loop at H=20; it neither changes the search algorithm nor any H1/H5/H10 behavior, which Round-33 T=12 regression verifies exactly.",
+  "h20_support_explicitly_authorized": true,
+  "h1_h5_h10_t12_exact_regression_required": true,
+  "scientific_artifacts_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "metrics_modified": false,
+  "fresh_outcome_rerun": false,
+  "neural_training_performed": false,
+  "untouched_eval_accessed": false,
+  "original_round32_lock_modified": false,
+  "round33_created_at_amendment": false,
+  "round34_creation_allowed": false,
+  "approved_at": "2026-08-30T23:20:00+08:00"
+}

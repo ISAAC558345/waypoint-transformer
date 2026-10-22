@@ -1,0 +1,10 @@
+{
+  "environment_computation_reuse": "IMPLEMENTED",
+  "unnecessary_table_elimination": "IMPLEMENTED",
+  "response_assembly_optimization": "IMPLEMENTED_BY_SKIPPING_UNUSED_PRESTEP_INFO",
+  "actor_observation_batching": "NOT_IMPLEMENTED",
+  "mappo_neural_forward_batching": "NOT_IMPLEMENTED",
+  "safety_projection_batching": "NOT_IMPLEMENTED",
+  "environment_step_vectorization": "NOT_IMPLEMENTED",
+  "note": "Deleting the unused counterfactual rate grid is not batched neural inference."
+}

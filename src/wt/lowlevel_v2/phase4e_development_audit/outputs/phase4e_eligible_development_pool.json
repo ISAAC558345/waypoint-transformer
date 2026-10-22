@@ -1,0 +1,18 @@
+{
+  "absent_pools": [
+    "LLV2_confirmation",
+    "LLV2_final_untouched"
+  ],
+  "consumed_holdout_pool": {
+    "ids": "230000-230127",
+    "n": 128,
+    "role": "DEPLOYMENT_HOLDOUT_CONSUMED"
+  },
+  "development_pool": null,
+  "eligible_scenario_ids": [],
+  "other_blocked_historical_seed_count": 1353,
+  "other_blocked_not_a_development_pool": true,
+  "remediation_status": "B2_REMEDIATION_BLOCKED_BY_NO_ELIGIBLE_DEVELOPMENT_DATA",
+  "status": "NO_ELIGIBLE_DEVELOPMENT_DATA",
+  "validation_pool": null
+}

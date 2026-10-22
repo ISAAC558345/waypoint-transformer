@@ -1,0 +1,21 @@
+{
+  "gate": "ZK-A",
+  "planner_ready": false,
+  "deployment_verified": false,
+  "frozen_for_fresh_confirmation": false,
+  "baseline_ok": true,
+  "baseline_value_max_abs": 0.0,
+  "behavioral_mismatch": false,
+  "numerical_exception_on_shipped_path": false,
+  "shipped_bitwise": true,
+  "speedup_ok": true,
+  "latency_ci_low": 847.8031316772103,
+  "latency_ci_high": 932.7892641692112,
+  "ci_statistic": "mean paired absolute improvement, scenario cluster",
+  "median_reduction": 0.6260378292616308,
+  "serial_median_ms": 956.1061999993399,
+  "optimized_median_ms": 357.5475500081666,
+  "j15_retained": true,
+  "phase5zj_gate_file_modified": false,
+  "deployment_latency_requirement": "NOT_SPECIFIED"
+}

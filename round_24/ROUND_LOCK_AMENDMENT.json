@@ -1,0 +1,65 @@
+{
+  "amendment_type": "legal_round25_successor_governance_extension",
+  "authoritative_source": "round_24/ROUND_LOCK.json",
+  "original_round24_lock_sha256": "B14A668DB825590C6E850C168008DBCB8FAEE4BDB5C56C82B5C906241887043B",
+  "affected_paths": {
+    "src/wt/governance_state_sync.py": {
+      "original_sha256": "5F88CC7563EC1EBC3A90B375017F997C4AEBAF218FFFD605B8BB38D642A57322",
+      "amended_sha256": "A9FA2E30157A61097EFEE0939C8AB49FF52DFE2E5E57087E4DCE0D1C20B2748F"
+    },
+    "tests/test_round24_seed_extension.py": {
+      "original_sha256": "16CE43A629306F9305D8E3379B1FC5203DDB0477C1FC33072A0A686697B5EE77",
+      "amended_sha256": "E68C63BF05282C8DB5B562A8E9B20414B0B8B7C8B7897AC3DE27BC16871E947F"
+    }
+  },
+  "semantic_correction": "Permit Round-25 only as the explicitly authorized successor of locked Round-24. The historical Round-24 lock-time field round25_created=false remains immutable evidence; the amended lifecycle test checks that field instead of forbidding a later authorized successor.",
+  "scientific_artifacts_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "metrics_modified": false,
+  "fresh_dev_rerun": false,
+  "untouched_eval_accessed": false,
+  "original_round24_lock_modified": false,
+  "round25_created_at_amendment": false,
+  "approved_at": "2026-08-30T12:05:53+08:00",
+  "round26_successor_lifecycle_clarification": {
+    "prior_governance_sha256": "2D1CD5B3A5C86F98133C4486781ECD58D0BDAC09EF817617190C2EE9EC43C704",
+    "amended_governance_sha256": "C2920CF431200E0F6D1A437242D30F7317CA43B44EDC4A5F76893BD35E378818",
+    "prior_amended_test_sha256": "80C9AC00E5AA61C5FB32A83D4C06366794F741DCCC3F31C87543036D8F0C0ED6",
+    "amended_test_sha256": "3EF8F5BDBB11B843E441338BF090730347142B2886ED964EEF9FF88B37EC2C69",
+    "reason": "Permit only the explicitly authorized Round-26 successor while retaining the historical Round-24 lock-time fact and all original scientific hashes.",
+    "scientific_artifacts_modified": false,
+    "original_round24_lock_modified": false,
+    "authorized_by": "Round-26 creation instruction",
+    "approved_at": "2026-08-30T13:22:00+08:00"
+  },
+  "round27_successor_lifecycle_clarification": {
+    "prior_governance_sha256": "C2920CF431200E0F6D1A437242D30F7317CA43B44EDC4A5F76893BD35E378818",
+    "amended_governance_sha256": "BCF86D81A9D45EEC5651857CFA0EB5FD29C0E715B6D49FBBA18D5DBC81772792",
+    "prior_amended_test_sha256": "3EF8F5BDBB11B843E441338BF090730347142B2886ED964EEF9FF88B37EC2C69",
+    "amended_test_sha256": "88D208E6CD65F1647375CA59FD0CE3B3AD1AFC7DF153D8FE3879875A5CA0C5E4",
+    "reason": "Permit only the explicitly authorized Round-27 successor while retaining the historical Round-24 lock-time fact and all original scientific hashes.",
+    "scientific_artifacts_modified": false,
+    "original_round24_lock_modified": false,
+    "authorized_by": "Round-27 creation instruction",
+    "approved_at": "2026-08-30T14:47:00+08:00"
+  },
+  "round28_successor_lifecycle_clarification": {
+    "prior_governance_sha256": "BCF86D81A9D45EEC5651857CFA0EB5FD29C0E715B6D49FBBA18D5DBC81772792",
+    "amended_governance_sha256": "6D8325BBE3C1040E8C5E7BB3FE6202C32208874B356D7656368004D6F8C7E231",
+    "prior_amended_test_sha256": "88D208E6CD65F1647375CA59FD0CE3B3AD1AFC7DF153D8FE3879875A5CA0C5E4",
+    "amended_test_sha256": "0A3CB4E2DE1076B06D4E840A1DEC3474646469BE0F29263566DC51FD80F3FC99",
+    "reason": "Permit only the explicitly authorized Round-28 successor while retaining the historical Round-24 lock-time fact and all original scientific hashes.",
+    "scientific_artifacts_modified": false,
+    "original_round24_lock_modified": false,
+    "authorized_by": "Round-28 creation instruction",
+    "approved_at": "2026-08-30T16:24:00+08:00"
+  },
+  "round30_successor_lifecycle_clarification": {
+    "reason": "Permit the expressly authorized Round-30 successor while preserving the locked Round-24 evidence and the historical round25_created=false field.",
+    "scientific_artifacts_modified": false,
+    "original_round24_lock_modified": false,
+    "authorized_by": "Round-30 creation instruction",
+    "approved_at": "2026-08-30T18:45:00+08:00"
+  }
+}

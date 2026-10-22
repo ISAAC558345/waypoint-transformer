@@ -1,0 +1,12 @@
+{
+  "current_behavior": "progress is stored per UAV and reset to 0 when that UAV changes target",
+  "half_served_buoy_after_switch": "the progress timer is discarded; the queue block is not decremented",
+  "second_uav_continues_same_buoy": "the new UAV starts progress at 0; earlier timer is not transferred",
+  "meaning": "consecutive dwell timer for one UAV, not a packet-bit transfer and not a handshake",
+  "candidates": {
+    "P0": "current UAV-owned reset timer",
+    "P1": "buoy-owned persistent timer that another UAV can continue",
+    "P2": "bit queue decremented by the physical rate, no artificial block timer"
+  },
+  "rule_changed_in_this_phase": false
+}

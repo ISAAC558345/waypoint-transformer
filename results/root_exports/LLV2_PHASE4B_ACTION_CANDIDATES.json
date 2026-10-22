@@ -1,0 +1,9 @@
+{
+  "C0": "base",
+  "C1": "Phase-3 RL desired",
+  "C2": "base + offset * left",
+  "C3": "base - offset * left",
+  "C4": "base - offset * forward",
+  "C5": "base + offset * forward then clip_unit_step",
+  "offset": 0.125
+}

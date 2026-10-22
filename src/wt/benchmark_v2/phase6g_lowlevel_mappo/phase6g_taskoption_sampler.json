@@ -1,0 +1,8 @@
+{
+  "name": "TASKOPTION_TRAIN_SAMPLER_V1",
+  "pool": "G1_RATE k=5 legal assignments",
+  "draw": "uniform",
+  "all_idle_policy": "natural 1/pool frequency",
+  "j15_argmax": false,
+  "hold": 15
+}

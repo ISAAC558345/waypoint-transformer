@@ -1,0 +1,1021 @@
+{
+  "audit": {
+    "checkpoint_input_dims": {
+      "buoy": [
+        128,
+        8
+      ],
+      "edge": [
+        128,
+        4
+      ],
+      "edge_uu": [
+        128,
+        2
+      ],
+      "uav": [
+        128,
+        8
+      ]
+    },
+    "scenario_id": 322000,
+    "state_count": 3,
+    "states": [
+      {
+        "buoy_feature_shape": [
+          12,
+          8
+        ],
+        "candidate_count": 13327,
+        "dimension_match": 1,
+        "feature_stats": {
+          "buoy": {
+            "finite": 1,
+            "max": 1.0,
+            "mean": 0.2009114582356771,
+            "min": -0.65625
+          },
+          "edge": {
+            "finite": 1,
+            "max": 1.0,
+            "mean": 0.20251590036249856,
+            "min": 0.0
+          },
+          "edge_uu": {
+            "finite": 1,
+            "max": 0.03384646502998317,
+            "mean": 0.008096711530009118,
+            "min": 0.0
+          },
+          "global": {
+            "finite": 1,
+            "max": 1.0,
+            "mean": 0.4375,
+            "min": 0.0
+          },
+          "uav": {
+            "finite": 1,
+            "max": 0.049462748460039396,
+            "mean": -0.0786024445820682,
+            "min": -0.6625
+          }
+        },
+        "fields": [
+          "association",
+          "buoy_position_m",
+          "current_mean_interference",
+          "current_rate_bps",
+          "current_sinr",
+          "q_bits",
+          "service_progress",
+          "time_index",
+          "uav_buoy_distance_m",
+          "uav_buoy_gain",
+          "uav_buoy_hypothetical_rate",
+          "uav_buoy_in_range",
+          "uav_position_m",
+          "uav_step_displacement_m",
+          "uav_uav_distance_m"
+        ],
+        "finite": 1,
+        "j15_max_abs_error_vs_frozen": 0.0,
+        "predecessor_time_step": null,
+        "service_progress_shape": [
+          6
+        ],
+        "service_progress_stats": {
+          "finite": 1,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0
+        },
+        "time_step": 0,
+        "uav_buoy_edge_shape": [
+          6,
+          12,
+          4
+        ],
+        "uav_feature_shape": [
+          6,
+          8
+        ],
+        "uav_step_displacement_stats": {
+          "finite": 1,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0
+        },
+        "uav_uav_edge_shape": [
+          6,
+          6,
+          2
+        ],
+        "uav_velocity_shape": [
+          6,
+          2
+        ],
+        "velocity_predecessor": "reset_pose_before_any_step"
+      },
+      {
+        "buoy_feature_shape": [
+          12,
+          8
+        ],
+        "candidate_count": 13327,
+        "dimension_match": 1,
+        "feature_stats": {
+          "buoy": {
+            "finite": 1,
+            "max": 1.0,
+            "mean": 0.3317794068414769,
+            "min": -0.65625
+          },
+          "edge": {
+            "finite": 1,
+            "max": 1.0,
+            "mean": 0.219356112511736,
+            "min": 0.0
+          },
+          "edge_uu": {
+            "finite": 1,
+            "max": 0.1901267840103733,
+            "mean": 0.03896561136672024,
+            "min": 0.0
+          },
+          "global": {
+            "finite": 1,
+            "max": 1.0,
+            "mean": 0.6041666666666666,
+            "min": 0.3125
+          },
+          "uav": {
+            "finite": 1,
+            "max": 1.0,
+            "mean": -0.04900717444389713,
+            "min": -0.9799739186023738
+          }
+        },
+        "fields": [
+          "association",
+          "buoy_position_m",
+          "current_mean_interference",
+          "current_rate_bps",
+          "current_sinr",
+          "q_bits",
+          "service_progress",
+          "time_index",
+          "uav_buoy_distance_m",
+          "uav_buoy_gain",
+          "uav_buoy_hypothetical_rate",
+          "uav_buoy_in_range",
+          "uav_position_m",
+          "uav_step_displacement_m",
+          "uav_uav_distance_m"
+        ],
+        "finite": 1,
+        "j15_max_abs_error_vs_frozen": 0.0,
+        "predecessor_time_step": 14,
+        "service_progress_shape": [
+          6
+        ],
+        "service_progress_stats": {
+          "finite": 1,
+          "max": 0.15696858882777598,
+          "mean": 0.0938871786302969,
+          "min": 0.034257359406661206
+        },
+        "time_step": 15,
+        "uav_buoy_edge_shape": [
+          6,
+          12,
+          4
+        ],
+        "uav_feature_shape": [
+          6,
+          8
+        ],
+        "uav_step_displacement_stats": {
+          "finite": 1,
+          "max": 19.397580737283654,
+          "mean": -7.900028760187024,
+          "min": -21.559426209252223
+        },
+        "uav_uav_edge_shape": [
+          6,
+          6,
+          2
+        ],
+        "uav_velocity_shape": [
+          6,
+          2
+        ],
+        "velocity_predecessor": "previous_environment_step"
+      },
+      {
+        "buoy_feature_shape": [
+          12,
+          8
+        ],
+        "candidate_count": 13327,
+        "dimension_match": 1,
+        "feature_stats": {
+          "buoy": {
+            "finite": 1,
+            "max": 1.0,
+            "mean": 0.30652334696139627,
+            "min": -0.65625
+          },
+          "edge": {
+            "finite": 1,
+            "max": 0.9566521256027873,
+            "mean": 0.21456367978948662,
+            "min": 0.0
+          },
+          "edge_uu": {
+            "finite": 1,
+            "max": 0.15617053046208923,
+            "mean": 0.037379993514189275,
+            "min": 0.0
+          },
+          "global": {
+            "finite": 1,
+            "max": 1.0,
+            "mean": 0.6898898049653841,
+            "min": 0.4446694148961523
+          },
+          "uav": {
+            "finite": 1,
+            "max": 1.0,
+            "mean": 0.4073351365975437,
+            "min": -0.8787973663373527
+          }
+        },
+        "fields": [
+          "association",
+          "buoy_position_m",
+          "current_mean_interference",
+          "current_rate_bps",
+          "current_sinr",
+          "q_bits",
+          "service_progress",
+          "time_index",
+          "uav_buoy_distance_m",
+          "uav_buoy_gain",
+          "uav_buoy_hypothetical_rate",
+          "uav_buoy_in_range",
+          "uav_position_m",
+          "uav_step_displacement_m",
+          "uav_uav_distance_m"
+        ],
+        "finite": 1,
+        "j15_max_abs_error_vs_frozen": 0.0,
+        "predecessor_time_step": 29,
+        "service_progress_shape": [
+          6
+        ],
+        "service_progress_stats": {
+          "finite": 1,
+          "max": 0.2159501632023742,
+          "mean": 0.12081479030544595,
+          "min": 0.07373919039657542
+        },
+        "time_step": 30,
+        "uav_buoy_edge_shape": [
+          6,
+          12,
+          4
+        ],
+        "uav_feature_shape": [
+          6,
+          8
+        ],
+        "uav_step_displacement_stats": {
+          "finite": 1,
+          "max": 21.65299214990293,
+          "mean": 6.117232803590383,
+          "min": -19.33354205942176
+        },
+        "uav_uav_edge_shape": [
+          6,
+          6,
+          2
+        ],
+        "uav_velocity_shape": [
+          6,
+          2
+        ],
+        "velocity_predecessor": "previous_environment_step"
+      }
+    ]
+  },
+  "replay_states": [
+    0,
+    15,
+    30
+  ],
+  "revision": "Phase-6I-B-HGNN-input-compatible",
+  "trace": [
+    {
+      "max_displacement_m": 0.0,
+      "predecessor_time_step": null,
+      "saved_dataset_row": 1,
+      "service_progress": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time_step": 0,
+      "velocity_predecessor": "reset_pose_before_any_step"
+    },
+    {
+      "max_displacement_m": 18.309377773133736,
+      "predecessor_time_step": 0,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.009727053701111535,
+        0.010413053313708998,
+        0.009726189104278351,
+        0.008779049677380702,
+        0.008224652202927568,
+        0.0087152323887582
+      ],
+      "time_step": 1,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.999999999999996,
+      "predecessor_time_step": 1,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.01420407343243712,
+        0.011249643310438066,
+        0.011637203338395742,
+        0.013999660654525082,
+        0.01895790018933856,
+        0.012605691468393795
+      ],
+      "time_step": 2,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.784862557705285,
+      "predecessor_time_step": 2,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.023675271302151434,
+        0.02041757879705781,
+        0.021156144505268964,
+        0.022988815603589906,
+        0.02697984429870929,
+        0.024150713362726346
+      ],
+      "time_step": 3,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.0,
+      "predecessor_time_step": 3,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.024994288044459106,
+        0.02161884239631263,
+        0.023432640696560862,
+        0.028791996477061554,
+        0.03638403788537202,
+        0.025964094596182444
+      ],
+      "time_step": 4,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 4,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.034257359406661206,
+        0.030860520103513762,
+        0.0343736015033696,
+        0.03952032319028279,
+        0.03638403788537202,
+        0.0431947617751811
+      ],
+      "time_step": 5,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 5,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.034257359406661206,
+        0.057064542922609485,
+        0.05014262193841114,
+        0.05535337066739243,
+        0.03638403788537202,
+        0.0431947617751811
+      ],
+      "time_step": 6,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 6,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.034257359406661206,
+        0.07514396915581258,
+        0.07072233888844053,
+        0.07404243473505907,
+        0.03638403788537202,
+        0.0431947617751811
+      ],
+      "time_step": 7,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 7,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.034257359406661206,
+        0.10072060525150692,
+        0.08615754608535259,
+        0.08837471523979518,
+        0.03638403788537202,
+        0.0431947617751811
+      ],
+      "time_step": 8,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.0,
+      "predecessor_time_step": 8,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.034257359406661206,
+        0.11863874971694148,
+        0.10763308131274509,
+        0.10802632847119756,
+        0.03638403788537202,
+        0.0431947617751811
+      ],
+      "time_step": 9,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 9,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.034257359406661206,
+        0.14303956820164637,
+        0.1230209514833862,
+        0.12200511835603584,
+        0.03638403788537202,
+        0.0431947617751811
+      ],
+      "time_step": 10,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.999999999999996,
+      "predecessor_time_step": 10,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.034257359406661206,
+        0.14303956820164637,
+        0.15696858882777598,
+        0.1494787556851447,
+        0.03638403788537202,
+        0.0431947617751811
+      ],
+      "time_step": 11,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 11,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.034257359406661206,
+        0.14303956820164637,
+        0.15696858882777598,
+        0.1494787556851447,
+        0.03638403788537202,
+        0.0431947617751811
+      ],
+      "time_step": 12,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.999999999999996,
+      "predecessor_time_step": 12,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.034257359406661206,
+        0.14303956820164637,
+        0.15696858882777598,
+        0.1494787556851447,
+        0.03638403788537202,
+        0.0431947617751811
+      ],
+      "time_step": 13,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 13,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.034257359406661206,
+        0.14303956820164637,
+        0.15696858882777598,
+        0.1494787556851447,
+        0.03638403788537202,
+        0.0431947617751811
+      ],
+      "time_step": 14,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.0,
+      "predecessor_time_step": 14,
+      "saved_dataset_row": 1,
+      "service_progress": [
+        0.034257359406661206,
+        0.14303956820164637,
+        0.15696858882777598,
+        0.1494787556851447,
+        0.03638403788537202,
+        0.0431947617751811
+      ],
+      "time_step": 15,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 15,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time_step": 16,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000007,
+      "predecessor_time_step": 16,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time_step": 17,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 17,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "time_step": 18,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 18,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.0,
+        0.0,
+        0.013571875978014694,
+        0.03854606884651869,
+        0.011661434210363591,
+        0.0
+      ],
+      "time_step": 19,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 19,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.014448164695396485,
+        0.12306744369785459,
+        0.013840408462889604,
+        0.03977871288392092,
+        0.012453113571434419,
+        0.018201910990726315
+      ],
+      "time_step": 20,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 20.415531958434467,
+      "predecessor_time_step": 20,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.015149946035500036,
+        0.1233595984689881,
+        0.02333607497885023,
+        0.07421117697863873,
+        0.02176116888912853,
+        0.021642488254931386
+      ],
+      "time_step": 21,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.00000000000001,
+      "predecessor_time_step": 21,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.02783838533719453,
+        0.14985551817623552,
+        0.024829622970136203,
+        0.07691909187675261,
+        0.02284222761156499,
+        0.031764866297095316
+      ],
+      "time_step": 22,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 20.811657669804756,
+      "predecessor_time_step": 22,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.028150362635552376,
+        0.15039734048401962,
+        0.034308058322829335,
+        0.1032931444075288,
+        0.033739991116892146,
+        0.03562424722956366
+      ],
+      "time_step": 23,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 23,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.04224833061574236,
+        0.1709546826137307,
+        0.037297484525522784,
+        0.10728472928546061,
+        0.03562285096326875,
+        0.04443147186354519
+      ],
+      "time_step": 24,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.321793348794788,
+      "predecessor_time_step": 24,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.0423653505041995,
+        0.17230190193856038,
+        0.043513817525556164,
+        0.1263866293526641,
+        0.05093081267180351,
+        0.04952046158904583
+      ],
+      "time_step": 25,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 25,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.056097019544073104,
+        0.18854510574752747,
+        0.04829949785574445,
+        0.13168932867011263,
+        0.053821207090020216,
+        0.05749209255401592
+      ],
+      "time_step": 26,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.722320031923786,
+      "predecessor_time_step": 26,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.05632411379040256,
+        0.19129483453521223,
+        0.05327638800742127,
+        0.1457184339454008,
+        0.06983104033222713,
+        0.06493779999182754
+      ],
+      "time_step": 27,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 27,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.06879155915372709,
+        0.20393282755335787,
+        0.059837017180481,
+        0.15261417938170155,
+        0.07429936346957733,
+        0.07194379440977484
+      ],
+      "time_step": 28,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.0,
+      "predecessor_time_step": 28,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.07039660843317556,
+        0.206350273988239,
+        0.06471653077403405,
+        0.16085951797286352,
+        0.0873292770876699,
+        0.08555208315342377
+      ],
+      "time_step": 29,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000014,
+      "predecessor_time_step": 29,
+      "saved_dataset_row": 1,
+      "service_progress": [
+        0.08106052364846035,
+        0.2159501632023742,
+        0.07373919039657542,
+        0.1695438911641327,
+        0.09324416910275998,
+        0.09135080431837303
+      ],
+      "time_step": 30,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 30,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.003573503134568753,
+        0.00039577916173168275,
+        0.003400588877336437,
+        0.00370293097349204,
+        0.01086029858218241,
+        0.04396312612556013
+      ],
+      "time_step": 31,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 31,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.01464384098560174,
+        0.012188046145203328,
+        0.019407071904019055,
+        0.013594296595266913,
+        0.0172011908179119,
+        0.05236540076571473
+      ],
+      "time_step": 32,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.0,
+      "predecessor_time_step": 32,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.021697559081993913,
+        0.015396326365323235,
+        0.022671214149783948,
+        0.015746716939972115,
+        0.03144807425037897,
+        0.05951890604845734
+      ],
+      "time_step": 33,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.999999999999996,
+      "predecessor_time_step": 33,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.029810900641233977,
+        0.026511824485907498,
+        0.04019227624894807,
+        0.028340670611568065,
+        0.037636775593520785,
+        0.06796070108888431
+      ],
+      "time_step": 34,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 34,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.04427548888012093,
+        0.030113558638439425,
+        0.0427790981073296,
+        0.029165578686412817,
+        0.04915535562013022,
+        0.07189993338839884
+      ],
+      "time_step": 35,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.555954081526533,
+      "predecessor_time_step": 35,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.05147852675314922,
+        0.04057597318247111,
+        0.060273946928454745,
+        0.04501426369089147,
+        0.05548787131081396,
+        0.0797613193761947
+      ],
+      "time_step": 36,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.0,
+      "predecessor_time_step": 36,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.0707018617260137,
+        0.04217505592500604,
+        0.06263282382199023,
+        0.04552301614998097,
+        0.06496518368045723,
+        0.08307913266148728
+      ],
+      "time_step": 37,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.57633022402357,
+      "predecessor_time_step": 37,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.07740459464839809,
+        0.051627897989677,
+        0.07844523400248496,
+        0.06562501529190512,
+        0.07167272799189495,
+        0.09058828180287311
+      ],
+      "time_step": 38,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 38,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.09623207751969944,
+        0.05310179438216316,
+        0.08039285912955038,
+        0.0659011072917856,
+        0.0791786158486007,
+        0.09428060327930526
+      ],
+      "time_step": 39,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.729030311912325,
+      "predecessor_time_step": 39,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.10222113677390332,
+        0.06139093096003634,
+        0.09303979000147503,
+        0.09171641789849802,
+        0.0863001426244245,
+        0.10180267673710044
+      ],
+      "time_step": 40,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000007,
+      "predecessor_time_step": 40,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.11889509919499994,
+        0.06551721311345252,
+        0.09414683374675367,
+        0.09211476117524382,
+        0.09135540234543504,
+        0.10490244308588477
+      ],
+      "time_step": 41,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.931429585322565,
+      "predecessor_time_step": 41,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.12405001082773001,
+        0.07264477514904348,
+        0.10253635541444633,
+        0.1254642409073395,
+        0.09884826834016643,
+        0.1124346471979345
+      ],
+      "time_step": 42,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.000000000000004,
+      "predecessor_time_step": 42,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.13677616966186476,
+        0.0814263413330336,
+        0.10278942253170657,
+        0.12625861149320367,
+        0.10138017761493374,
+        0.11476426498521836
+      ],
+      "time_step": 43,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 21.999999999999993,
+      "predecessor_time_step": 43,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.14097800704115657,
+        0.08749199750978423,
+        0.1070385271446836,
+        0.16757970238970576,
+        0.10880535953451835,
+        0.12213219362521643
+      ],
+      "time_step": 44,
+      "velocity_predecessor": "previous_environment_step"
+    },
+    {
+      "max_displacement_m": 22.0,
+      "predecessor_time_step": 44,
+      "saved_dataset_row": 0,
+      "service_progress": [
+        0.14914283632370853,
+        0.09848373008686816,
+        0.10723222330268338,
+        0.16902816894459594,
+        0.10951558188480871,
+        0.12418373300978562
+      ],
+      "time_step": 45,
+      "velocity_predecessor": "previous_environment_step"
+    }
+  ],
+  "verdict": {
+    "checks": {
+      "0_15_progress_abs": 0.15696858882777598,
+      "15_30_progress_abs": 0.08322939843120056,
+      "15_one_step_max_m": 22.0,
+      "30_one_step_max_m": 22.000000000000014
+    },
+    "failures": [],
+    "passed": 1,
+    "progress_changed": 1,
+    "trace_steps": 46
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "round05_policy_config_v1",
+  "dataset_root": "round_03/outputs/round03_pilot_canonical_20260730_230000",
+  "round03_lock": "round_03/ROUND_LOCK.json",
+  "round04_lock": "round_04/ROUND_LOCK.json",
+  "waypoint_checkpoint": "round_04/outputs/round04_formal_canonical_20260802_173717/horizon_030/goal_conditioned/seed_001/checkpoints/best.pt",
+  "waypoint_checkpoint_sha256": "F92133AACA1FF6F0839EE7C817F40B696F7FD8FB15973A6118D222F83F01368D",
+  "waypoint_horizon": 30,
+  "goal_source": "achieved_terminal_goal",
+  "device": "auto",
+  "output_root": "round_05/outputs",
+  "figure_root": "round_05/figures",
+  "checkpoint_subdirectory": "checkpoints",
+  "context_lengths": [1, 10],
+  "seeds": [0, 1, 2],
+  "variants": [
+    "wt_transformer",
+    "direct_goal_transformer",
+    "state_only_transformer",
+    "oracle_waypoint_transformer",
+    "mlp_state_only",
+    "mlp_waypoint"
+  ],
+  "transformer": {
+    "d_model": 128,
+    "n_layer": 2,
+    "n_head": 4,
+    "dropout": 0.1,
+    "maximum_context": 10,
+    "activation": "gelu",
+    "action_history_input": false,
+    "output_activation": "tanh"
+  },
+  "mlp": {
+    "hidden_dims": [128, 128],
+    "activation": "relu",
+    "output_activation": "tanh"
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "sampler": "policy_balanced",
+    "batch_size": 128,
+    "max_epochs": 200,
+    "patience": 20,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "selection_metric": "validation_action_rmse_m",
+    "test_used_for_selection": false
+  },
+  "evaluation": {
+    "action_near_zero_epsilon_m": 1e-06,
+    "action_magnitude_bands_m": [0.0, 3.3333333333, 6.6666666667, 10.0000001],
+    "interface_smoke_max_steps": 5,
+    "formal_closed_loop_evaluation": false
+  },
+  "formal_matrix": {
+    "wt_transformer": {"contexts": [1, 10], "seeds": [0, 1, 2]},
+    "direct_goal_transformer": {"contexts": [1, 10], "seeds": [0, 1, 2]},
+    "state_only_transformer": {"contexts": [1, 10], "seeds": [0, 1, 2]},
+    "oracle_waypoint_transformer": {"contexts": [10], "seeds": [0, 1, 2], "non_deployable": true},
+    "mlp_state_only": {"contexts": [1], "seeds": [0, 1, 2]},
+    "mlp_waypoint": {"contexts": [1], "seeds": [0, 1, 2]}
+  }
+}

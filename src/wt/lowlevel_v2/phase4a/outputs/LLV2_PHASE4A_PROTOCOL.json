@@ -1,0 +1,14 @@
+{
+  "REL2": "0",
+  "budget_env": 19200,
+  "high_sha": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "lambda_collision_distill": 0.1,
+  "name": "LL-V2.4A",
+  "payload_drop_tolerance": 0.05,
+  "phase3": "LLV2-MS2-A",
+  "phase3_validation_blocked": true,
+  "pilot_seeds": [
+    0,
+    1
+  ]
+}

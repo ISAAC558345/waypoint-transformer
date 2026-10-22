@@ -1,0 +1,11 @@
+{
+  "competition_q33": 0.5,
+  "competition_q67": 0.5,
+  "high": "C(s) > q67",
+  "low": "C(s) <= q33",
+  "medium": "q33 < C(s) <= q67",
+  "metric": "same-top-buoy fraction under myopic preference, episode-mean (Phase-9.4.1 C(s))",
+  "n": 16,
+  "phase941_competition_q50_reference": 0.5,
+  "source": "COLLECT_SEEDS only; not confirmation outcomes"
+}

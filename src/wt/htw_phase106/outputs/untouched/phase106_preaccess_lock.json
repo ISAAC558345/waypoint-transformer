@@ -1,0 +1,17 @@
+{
+  "architecture_sha256": "432af9b811a8a3ee34b14430d672ddb6c4f2bf466269ac7a882684803b399a55",
+  "baseline_definitions_sha256": "b944ac999dc74c6f7ab1077d2810ccdf91343e9f026ea4a488bb0fab6c50e875",
+  "boot_seed": 10501,
+  "bootstrap": "scenario-paired percentile 2.5/97.5; no invented model-seed CI",
+  "checkpoint_sha256": "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109",
+  "data_frozen": true,
+  "final_untouched_consumed": true,
+  "freeze_protocol_sha256": "15444a2d1e83520b168e65c6186be2dca241ada870ce689095f6b6b8db0698c7",
+  "high_param_sha256": "3e2cf600d87bd282528ae923f2d6d3ab73ea9d42af55536dabc31ca38b7ec14e",
+  "method_frozen": true,
+  "metric_definitions_sha256": "e98dd5fab3ed5249efb40d9a71d4614f9a0ae07a41d63a3b7cd4579224d29c8e",
+  "metrics_frozen": true,
+  "n_boot": 2000,
+  "scenario_manifest_sha256": "49c870b76aa3e3411d10bbe65ca2da34ebf5b60e70b4e04080605715a380d442",
+  "statistics_protocol_sha256": "41395e64137db04e43f1b768844c7754f9960b7cf4f195cd883265b2693e180e"
+}

@@ -1,0 +1,13 @@
+{
+  "H_task": 10,
+  "seed": 2,
+  "checkpoint": "round_11/checkpoints/H10/seed_2/best.pt",
+  "checkpoint_sha256": "A3E8B6C361CCA997A05766B847521EBB68E68985CAC273667DE95181ACCCEF65",
+  "validation_total_loss": 1.562029829248786,
+  "selection_rule": "minimum locked Round-11 H10 validation total loss with passed head guard; selected before policy training",
+  "schema_source": "round_10/outputs/round10_task_waypoint_20260810_0110/task_waypoint_schema_v1.json",
+  "normalization_source": "round_10/outputs/round10_task_waypoint_20260810_0110/task_waypoint_normalization_v1.json",
+  "frozen": true,
+  "requires_grad": false,
+  "eval_mode": true
+}

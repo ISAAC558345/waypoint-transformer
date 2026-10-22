@@ -1,0 +1,49 @@
+{
+  "BASEZERO": "A",
+  "MASK": "B",
+  "P2B": "B",
+  "REL": 1,
+  "cap_attribution": "A",
+  "cap_redundant_vs_beta": true,
+  "counterfactual": {
+    "pop_nonidle_fraction": 0.0,
+    "population_note": "non-service non-idle base-zero is empty on design u100; extra freeze is idle",
+    "seed0": {
+      "n": 0
+    },
+    "seed1": {
+      "n": 0
+    }
+  },
+  "exclusive_basezero_new0_design": {
+    "BASE_EXECUTOR_ZERO_OTHER": 0.0,
+    "EMPTY_QUEUE": 0.0,
+    "IDLE_OPTION": 0.5984510678244543,
+    "INVALID_TARGET": 0.0,
+    "SERVICE_LOCK": 0.40154893217554566,
+    "TARGET_ALREADY_REACHED": 0.0
+  },
+  "exclusive_basezero_new1_design": {
+    "BASE_EXECUTOR_ZERO_OTHER": 0.0,
+    "EMPTY_QUEUE": 0.0,
+    "IDLE_OPTION": 0.6113641812514985,
+    "INVALID_TARGET": 0.0,
+    "SERVICE_LOCK": 0.38863581874850156,
+    "TARGET_ALREADY_REACHED": 0.0
+  },
+  "frozen_cap_max_design": 0.0,
+  "frozen_cap_max_train16": 0.0,
+  "grad_ratio_current_over_active_mean": 1.0,
+  "lt5pct_minibatches": 4,
+  "mean_train_active_seed0": 0.07211805572806043,
+  "mean_train_active_seed1": 0.07375868061266373,
+  "minimal_method_change": "active-sample-aware minibatching (single change); do not retune beta",
+  "p99_ratio_design_seed0": 0.12326646041939338,
+  "p99_ratio_design_seed1": 0.09139561112671456,
+  "phase2b_mechanism": "A",
+  "phase2b_mechanism_text": "BaseZeroResidualFreeze is the operating constraint; residual norm cap did not bind.",
+  "relation_enhancement": false,
+  "trained": false,
+  "training_cap_activation_resolved": false,
+  "zero_active_minibatches": 0
+}

@@ -1,0 +1,16 @@
+ranking,k,edges,covered_edges,coverage
+instantaneous_rate,1,384,292,0.7604166666666666
+instantaneous_rate,2,384,354,0.921875
+instantaneous_rate,3,384,380,0.9895833333333334
+instantaneous_rate,4,384,384,1.0
+instantaneous_rate,5,384,384,1.0
+queue_rate,1,384,290,0.7552083333333334
+queue_rate,2,384,350,0.9114583333333334
+queue_rate,3,384,375,0.9765625
+queue_rate,4,384,384,1.0
+queue_rate,5,384,384,1.0
+individual_served_bits,1,384,134,0.3489583333333333
+individual_served_bits,2,384,266,0.6927083333333334
+individual_served_bits,3,384,370,0.9635416666666666
+individual_served_bits,4,384,375,0.9765625
+individual_served_bits,5,384,384,1.0

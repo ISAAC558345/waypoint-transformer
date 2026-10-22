@@ -1,0 +1,17 @@
+{
+  "output_dir": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\round_08\\outputs\\round08_formal_20260809_2330",
+  "run_count": 24,
+  "selected": {
+    "wt": "wt_h20",
+    "direct": "direct_goal",
+    "state": "state_only",
+    "oracle": "oracle_h20"
+  },
+  "holdout_audit": {
+    "access_count": 0,
+    "content_read": false,
+    "hash_unchanged": true,
+    "metadata_reads": 0,
+    "policy": "content access prohibited; manifest metadata only"
+  }
+}

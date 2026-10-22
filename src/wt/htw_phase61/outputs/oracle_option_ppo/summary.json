@@ -1,0 +1,96 @@
+{
+  "close_ratio": 0.8,
+  "eval_seeds": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "modified_env": false,
+  "modified_ppo_core": false,
+  "myopic_scripted": {
+    "mean_dropped_blocks": 77.375,
+    "mean_payload_bits": 13000000.0,
+    "mean_residual_queue_blocks": 29.625
+  },
+  "option_over_shadow": 0.018018018018018018,
+  "oracle_option": {
+    "action_efficiency_bits_per_m": 370.9021930182974,
+    "environment_steps": 15360,
+    "episodes": 8,
+    "family": "oracle_option",
+    "goal_completion_rate": 0.10989583333333333,
+    "last_update": {
+      "action_std": 1.0001157149672508,
+      "advantage_mean": 0.03447965905070305,
+      "advantage_std": 0.5765919089317322,
+      "approx_kl": 0.021894809637160506,
+      "clip_fraction": 0.2955729205859825,
+      "entropy": 13.7014240026474,
+      "explained_variance": 0.47614961862564087,
+      "gradient_norm_preclip": 1.8975002095103264,
+      "mean_action_std": 1.011194773639242,
+      "mean_raw_reward": 0.046875,
+      "policy_loss": -0.019614645978435874,
+      "value_loss": 0.16303239576518536
+    },
+    "mean_dropped_blocks": 77.875,
+    "mean_movement_m": 1348.064285981005,
+    "mean_payload_bits": 500000.0,
+    "mean_residual_queue_blocks": 41.625,
+    "mean_return": 0.5,
+    "service_success_rate": 0.0020833333333333333,
+    "uav_dim": 21
+  },
+  "oracle_shadow": {
+    "mean_dropped_blocks": 65.625,
+    "mean_payload_bits": 27750000.0,
+    "mean_residual_queue_blocks": 26.625
+  },
+  "seed": 0,
+  "state_only": {
+    "action_efficiency_bits_per_m": 3690.730205787838,
+    "environment_steps": 15360,
+    "episodes": 8,
+    "family": "state_only",
+    "goal_completion_rate": 0.1078125,
+    "last_update": {
+      "action_std": 1.0627734139561653,
+      "advantage_mean": 0.1464560478925705,
+      "advantage_std": 0.6190975904464722,
+      "approx_kl": 0.02517587084275874,
+      "clip_fraction": 0.2239583325572312,
+      "entropy": 14.497072756290436,
+      "explained_variance": 0.4616047143936157,
+      "gradient_norm_preclip": 2.1223240345716476,
+      "mean_action_std": 1.0611235688750942,
+      "mean_raw_reward": 0.0729166641831398,
+      "policy_loss": 0.0005348360718926415,
+      "value_loss": 0.1963347475975752
+    },
+    "mean_dropped_blocks": 78.0,
+    "mean_movement_m": 778.9786409993876,
+    "mean_payload_bits": 2875000.0,
+    "mean_residual_queue_blocks": 39.125,
+    "mean_return": 2.875,
+    "service_success_rate": 0.01197916666666667,
+    "uav_dim": 8
+  },
+  "train_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "trained_high_level": false,
+  "updates": 80,
+  "uses_hgnn": false
+}

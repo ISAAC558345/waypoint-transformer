@@ -1,0 +1,47 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.1587,
+    "top1": 0.5833,
+    "normalized_regret": 0.0434,
+    "grad_norm_max": 0.212,
+    "seconds": 433.6,
+    "source": "training_log"
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.1578,
+    "top1": 0.5417,
+    "normalized_regret": 0.046,
+    "grad_norm_max": 0.197,
+    "seconds": 434.5,
+    "source": "training_log"
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.1577,
+    "top1": 0.5208,
+    "normalized_regret": 0.0464,
+    "grad_norm_max": 0.199,
+    "seconds": 433.4,
+    "source": "training_log"
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.1576,
+    "top1": 0.5208,
+    "normalized_regret": 0.0464,
+    "grad_norm_max": 0.2,
+    "seconds": 435.1,
+    "source": "training_log"
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.1575,
+    "top1": 0.5208,
+    "normalized_regret": 0.0464,
+    "grad_norm_max": 0.2,
+    "seconds": 434.9,
+    "source": "training_log"
+  }
+]

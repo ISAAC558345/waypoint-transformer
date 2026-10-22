@@ -1,0 +1,21 @@
+{
+  "schema_version": "round06_manifest_v1",
+  "round": "round_06",
+  "status": "completed",
+  "previous_round_lock_sha256": "50124434E0CC9B2B4A3D954A27C97AA139F498C8AE023DA11DE602E533FDD380",
+  "snapshot": "backup/snapshots/before_round_06_20260809_1200",
+  "training_performed": false,
+  "waypoint_training_performed": false,
+  "transformer_training_performed": false,
+  "closed_loop_evaluation_performed": true,
+  "full_regression_tests_passed": 253,
+  "formal_scenarios": 60,
+  "reference_goals": 240,
+  "neural_episodes": 4320,
+  "figure_pairs": 20,
+  "reproducibility_audit": "5/5 deterministic paired reruns passed",
+  "formal_output": "round_06/outputs/round06_formal_20260809_1300",
+  "formal_figures": "round_06/figures/round06_formal_20260809_1300",
+  "gate": "B_no_reliable_closed_loop_waypoint_difference",
+  "next_round_created": false
+}

@@ -1,0 +1,50 @@
+{
+  "trainable_module": "OneStepExecutorResponsePredictor",
+  "parameter_count": 103694,
+  "hidden": 128,
+  "encoder_grad_abs_sum": 0.0,
+  "mappo_grad_abs_sum": 0.0,
+  "value_scorer_requires_grad": false,
+  "parameters": [
+    {
+      "name": "local.0.weight",
+      "numel": 52352,
+      "requires_grad": true
+    },
+    {
+      "name": "local.0.bias",
+      "numel": 128,
+      "requires_grad": true
+    },
+    {
+      "name": "local.2.weight",
+      "numel": 16384,
+      "requires_grad": true
+    },
+    {
+      "name": "local.2.bias",
+      "numel": 128,
+      "requires_grad": true
+    },
+    {
+      "name": "response.0.weight",
+      "numel": 32768,
+      "requires_grad": true
+    },
+    {
+      "name": "response.0.bias",
+      "numel": 128,
+      "requires_grad": true
+    },
+    {
+      "name": "response.2.weight",
+      "numel": 1792,
+      "requires_grad": true
+    },
+    {
+      "name": "response.2.bias",
+      "numel": 14,
+      "requires_grad": true
+    }
+  ]
+}

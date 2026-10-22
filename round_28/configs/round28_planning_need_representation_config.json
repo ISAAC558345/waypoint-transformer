@@ -1,0 +1,71 @@
+{
+  "round": "round_28",
+  "topic": "Current-State Planning-Need Representation and Causal Separability Audit",
+  "previous_round_lock": "round_27/ROUND_LOCK.json",
+  "previous_round_lock_sha256": "84B1F2993F2DA19C88874C92F33C287E174C3CD9830A7E43E78C73818B8A7267",
+  "allowed_splits": ["train", "validation"],
+  "state_sampling": {
+    "source_behavior_generator": "joint_h1",
+    "source": "stored Round-20 transition rows; no H1 trajectory regeneration",
+    "timesteps": [0, 2, 4, 6],
+    "selection_rule": "every existing eligible timestep in each allowed scenario, selected before utility labels",
+    "expected_total": 256,
+    "expected_train": 192,
+    "expected_validation": 64,
+    "cluster_unit": "scenario_id"
+  },
+  "counterfactual_protocol": {
+    "primary_horizon": 5,
+    "secondary_horizon": 10,
+    "planner_first_horizon": 5,
+    "reference_first_horizon": 1,
+    "continuation_horizon": 1,
+    "continuation_rule": "frozen causal joint_h1 recomputed from each branch current state",
+    "same_snapshot_required": true,
+    "only_first_action_differs": true,
+    "numerical_utility_tolerance_bits": 1e-06,
+    "secondary_h10_availability": "only sampled states with at least 10 remaining registered environment steps"
+  },
+  "normalization": {
+    "method": "train_minmax",
+    "epsilon": 1e-12,
+    "fit_split": "train",
+    "validation_used_for_fit": false
+  },
+  "composites": {
+    "coordination_pressure": {"components": ["preference_cosine_similarity", "assignment_regret"], "weights": [0.5, 0.5]},
+    "interference_queue_pressure": {"components": ["max_isr", "queue_to_h5_current_capacity_ratio"], "weights": [0.5, 0.5]},
+    "deferred_service_pressure": {"components": ["unserved_high_queue_mass", "distance_to_best_unassigned_high_value_buoy_m"], "weights": [0.5, 0.5]},
+    "unified_planning_pressure": {"components": ["coordination_pressure", "interference_queue_pressure", "deferred_service_pressure"], "weights": [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]}
+  },
+  "threshold_protocol": {
+    "primary": "train_p75",
+    "secondary_diagnostic": "train_median",
+    "validation_refit_allowed": false,
+    "minimum_validation_activation_rate": 0.1,
+    "minimum_validation_active_states": 7
+  },
+  "statistics": {
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 2801,
+    "bootstrap_cluster": "scenario_id",
+    "pca_fit_split": "train",
+    "pca_components": 2
+  },
+  "representation_gate": {
+    "auc_min": 0.6,
+    "directionally_stable_auc_min": 0.55,
+    "active_utility_min_bits": 0.0,
+    "active_utility_ci_lower_min_bits": 0.0,
+    "harmful_rate_max": 0.25,
+    "require_k3_k5_positive": true,
+    "require_eta_025_05_positive": true
+  },
+  "training_performed": false,
+  "trigger_model_training_performed": false,
+  "planning_need_representation_audit": true,
+  "planner_utility_replay_performed": true,
+  "fresh_new_rollout_count": 0,
+  "untouched_eval_accessed": false,
+  "round29_created": false
+}

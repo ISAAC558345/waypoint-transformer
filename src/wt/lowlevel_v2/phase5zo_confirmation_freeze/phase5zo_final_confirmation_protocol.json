@@ -1,0 +1,61 @@
+{
+  "status": "pre_registered_not_executed",
+  "open_once": true,
+  "pool": "310118-310125",
+  "partial_peek_then_modify_forbidden": true,
+  "primary_system": "Frozen Rank-Mean True-H1 Hierarchical Controller",
+  "primary_baseline": "Frozen Model-S",
+  "not_primary_baseline": [
+    "DeepSets",
+    "HGNN-direct",
+    "Oracle",
+    "best R1 seed"
+  ],
+  "deepsets_secondary_diagnostic_only": true,
+  "primary_endpoint": "paired cumulative communication payload",
+  "delta_definition": "Payload_candidate - Payload_ModelS",
+  "report": [
+    "mean_delta_payload",
+    "median_delta_payload",
+    "scenario_cluster_bootstrap_95_ci",
+    "positive_scenario_count",
+    "tie_count",
+    "negative_scenario_count"
+  ],
+  "bootstrap": {
+    "cluster": "scenario_id",
+    "draws": 10000,
+    "seed": 0,
+    "interval": [
+      2.5,
+      97.5
+    ],
+    "statistic": "mean paired delta"
+  },
+  "primary_success_requires": [
+    "mean_delta_payload > 0",
+    "scenario_cluster_95_ci_lower_bound > 0"
+  ],
+  "positive_mean_alone_is_not_success": true,
+  "latency_gate_active": false,
+  "latency_is_not_deployment_verification": true,
+  "frozen_after_this_phase": [
+    "architecture",
+    "candidate_generator",
+    "top3",
+    "true_h1",
+    "r1_checkpoints",
+    "aggregation",
+    "tie_breaking",
+    "taskoption",
+    "hold",
+    "mappo",
+    "reward",
+    "normalization",
+    "fallback",
+    "timeout_policy",
+    "primary_endpoint",
+    "statistical_criterion"
+  ],
+  "change_after_seeing_pool": "FRESH_CONFIRMATION_INVALIDATED"
+}

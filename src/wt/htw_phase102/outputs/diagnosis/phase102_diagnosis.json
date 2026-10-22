@@ -1,0 +1,197 @@
+{
+  "c0_aborted": 0,
+  "c0_match_ok": 16,
+  "c1_minus_c0_blocks": 1.0,
+  "c2_minus_c0_blocks": -0.875,
+  "caliber": {
+    "gap_frac": 0.1470588235294118,
+    "mean_b0": 8500000.0,
+    "mean_b1": 7250000.0,
+    "mean_b1_over_mean_b0": 0.8529411764705882,
+    "mean_delta_over_mean_b0": -0.14705882352941177,
+    "mean_of_per_scene_ratio": 0.8663194444444444,
+    "n": 8,
+    "per_scene_ratio_definition": "mean_i (payload_B1(i) / payload_B0(i)); this is what Phase-10.1 mean_ratio stored"
+  },
+  "env_note": "L3-B does not zero progress on leaving range; only target change and block completion zero rho",
+  "fact_vs_hypothesis": "\u78c1\u76d8 payload/\u91cd\u653e\u4e00\u81f4\u6027\u3001\u6307\u6807\u5206\u6bcd\u3001\u5b8c\u6210\u6e05\u96f6\u6df7\u5165 reset\u3001r_aux \u7a7a\u961f\u5217\u8ba1\u5206\u4e3a\u65e5\u5fd7\u4e8b\u5b9e\uff1b\u5206\u652f\u589e\u76ca\u4e0d\u53ef\u5916\u63a8\u6574 episode\uff0c\u4e5f\u4e0d\u53ef\u586b\u56de\u5168\u90e8 1.25e6\u3002",
+  "n_snapshots": 16,
+  "phase101_in_range_includes_empty_queue": true,
+  "recommendation": {
+    "item": "\u7814\u7a76\u5708\u5185\u52a8\u4f5c\u7a33\u5b9a\u6027\uff08\u63a5\u8fd1\u96f6\u4f4d\u79fb\uff09",
+    "reason": "\u540c\u5feb\u7167\u96f6\u4f4d\u79fb\u51cf\u5c11\u4e22\u5931\u6216\u63d0\u9ad8\u5b8c\u6210\u5757\u3002"
+  },
+  "resets": {
+    "B0": {
+      "NORMAL_COMPLETION": 68,
+      "TARGET_CHANGE": 5,
+      "label_EMPTY_QUEUE": 203,
+      "label_NONE": 1765,
+      "label_NORMAL_COMPLETION": 68,
+      "label_OUT_OF_RANGE": 367,
+      "label_TARGET_CHANGE": 5,
+      "label_TERMINAL_UNFINISHED": 22,
+      "lost_progress_mass_non_completion": 2.1260424884186895,
+      "mode": "B0",
+      "out_of_range_with_progress": 191
+    },
+    "B1": {
+      "NORMAL_COMPLETION": 58,
+      "TARGET_CHANGE": 35,
+      "label_EMPTY_QUEUE": 40,
+      "label_NONE": 2142,
+      "label_NORMAL_COMPLETION": 58,
+      "label_OUT_OF_RANGE": 40,
+      "label_TARGET_CHANGE": 35,
+      "label_TERMINAL_UNFINISHED": 15,
+      "lost_progress_mass_non_completion": 7.0032873564436695,
+      "mode": "B1",
+      "out_of_range_with_progress": 5
+    }
+  },
+  "reward": {
+    "B0": {
+      "frac_in_range_without_block": 0.8982035928143712,
+      "idle_flagged_in_range": 0,
+      "mode": "B0",
+      "n_team_steps": 384,
+      "note": "r_aux uses after-step positions and does not require nonempty queue; idle UAVs get no in-range term",
+      "sum_r_aux": 54.656645203734215,
+      "sum_r_env": 68.0,
+      "uav_empty_queue_in_range": 89,
+      "uav_in_range_steps": 668,
+      "uav_in_range_without_block": 600
+    },
+    "B1": {
+      "frac_in_range_without_block": 0.9459459459459459,
+      "idle_flagged_in_range": 0,
+      "mode": "B1",
+      "n_team_steps": 384,
+      "note": "r_aux uses after-step positions and does not require nonempty queue; idle UAVs get no in-range term",
+      "sum_r_aux": 88.98886763898835,
+      "sum_r_env": 58.0,
+      "uav_empty_queue_in_range": 15,
+      "uav_in_range_steps": 1073,
+      "uav_in_range_without_block": 1015
+    }
+  },
+  "slot_metrics": {
+    "B0": {
+      "active_in_range_frac": 0.6454106280193237,
+      "active_queued_in_range_frac": 0.6959134615384616,
+      "mode": "B0",
+      "n_active": 1035,
+      "n_active_queued": 832,
+      "n_completed_block_events": 68,
+      "n_uav_completed_service": 28,
+      "n_uav_episodes": 48,
+      "n_uav_never_completed": 20,
+      "n_uav_slots": 2304,
+      "raw_in_range_frac": 0.2899305555555556
+    },
+    "B1": {
+      "active_in_range_frac": 0.9640610961365679,
+      "active_queued_in_range_frac": 0.9860205032618826,
+      "mode": "B1",
+      "n_active": 1113,
+      "n_active_queued": 1073,
+      "n_completed_block_events": 58,
+      "n_uav_completed_service": 22,
+      "n_uav_episodes": 48,
+      "n_uav_never_completed": 26,
+      "n_uav_slots": 2304,
+      "raw_in_range_frac": 0.4657118055555556
+    }
+  },
+  "trained": false,
+  "window_tags_b0": {
+    "A_late_or_short_hold": {
+      "n_completed_blocks": 0,
+      "n_in_range_queued_slots": 0,
+      "n_unfinished": 0,
+      "n_windows": 0
+    },
+    "B_in_range_low_rate": {
+      "n_completed_blocks": 0,
+      "n_in_range_queued_slots": 0,
+      "n_unfinished": 0,
+      "n_windows": 0
+    },
+    "C_switch_or_leave_range": {
+      "n_completed_blocks": 46,
+      "n_in_range_queued_slots": 241,
+      "n_unfinished": 19,
+      "n_windows": 57
+    },
+    "D_queue_empty": {
+      "n_completed_blocks": 20,
+      "n_in_range_queued_slots": 144,
+      "n_unfinished": 8,
+      "n_windows": 27
+    },
+    "F_never_in_range_with_queue": {
+      "n_completed_blocks": 0,
+      "n_in_range_queued_slots": 0,
+      "n_unfinished": 2,
+      "n_windows": 2
+    },
+    "F_unexplained": {
+      "n_completed_blocks": 0,
+      "n_in_range_queued_slots": 33,
+      "n_unfinished": 7,
+      "n_windows": 7
+    },
+    "completed": {
+      "n_completed_blocks": 68,
+      "n_in_range_queued_slots": 430,
+      "n_unfinished": 0,
+      "n_windows": 53
+    },
+    "note": "tag counts may overlap; do not add across tags as a payload decomposition"
+  },
+  "window_tags_b1": {
+    "A_late_or_short_hold": {
+      "n_completed_blocks": 0,
+      "n_in_range_queued_slots": 0,
+      "n_unfinished": 0,
+      "n_windows": 0
+    },
+    "B_in_range_low_rate": {
+      "n_completed_blocks": 0,
+      "n_in_range_queued_slots": 105,
+      "n_unfinished": 7,
+      "n_windows": 7
+    },
+    "C_switch_or_leave_range": {
+      "n_completed_blocks": 15,
+      "n_in_range_queued_slots": 123,
+      "n_unfinished": 2,
+      "n_windows": 10
+    },
+    "D_queue_empty": {
+      "n_completed_blocks": 8,
+      "n_in_range_queued_slots": 80,
+      "n_unfinished": 0,
+      "n_windows": 8
+    },
+    "F_never_in_range_with_queue": {
+      "n_completed_blocks": 0,
+      "n_in_range_queued_slots": 0,
+      "n_unfinished": 1,
+      "n_windows": 1
+    },
+    "F_unexplained": {
+      "n_completed_blocks": 0,
+      "n_in_range_queued_slots": 495,
+      "n_unfinished": 45,
+      "n_windows": 45
+    },
+    "completed": {
+      "n_completed_blocks": 58,
+      "n_in_range_queued_slots": 447,
+      "n_unfinished": 0,
+      "n_windows": 33
+    },
+    "note": "tag counts may overlap; do not add across tags as a payload decomposition"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "round": "round_01",
+  "status": "completed",
+  "locked_at": "2026-07-30T20:49:00+08:00",
+  "acceptance": {
+    "maritime_tests": 45,
+    "repository_tests": 78,
+    "smoke_episode_steps": 20,
+    "core_wt_hashes_unchanged": 7
+  },
+  "artifacts": {
+    "documentation": "docs/stage1a_maritime_env.md",
+    "tests": "tests/test_stage1a_maritime_env.py"
+  },
+  "sha256": {
+    "src/wt/maritime/__init__.py": "AFA572D7C3638FDD1171E57FAC4B7688252DCBBB5688553D9BB6014E9F9C5F8F",
+    "src/wt/maritime/config.py": "0CF1804F1A47C8F0B061F7C68641630AB63AF053F0F5A3DF5A83FD359ED7BC45",
+    "src/wt/maritime/channel.py": "E1E6A9BECA193245D7FF75DE6D0C5D4D45DA71A032A700A53DF4AD39DC1749CD",
+    "src/wt/maritime/env.py": "BFBB73AAC8213AA75418682BC6BB610A3F4F7875DA19FACE4496197982AB126D",
+    "src/wt/maritime/smoke.py": "3818D6301D28CC9DD2C2AAE6461C7CAE7EEC60887D1A9EBB75C71D717344ECAE",
+    "tests/test_stage1a_maritime_env.py": "D7E94A63872E0B3A13F402228CDCE72B344F8C586C5C492712178E79A31AC0E4",
+    "docs/stage1a_maritime_env.md": "951C9457E3820AD2D62271F40273B4D9D4826CE26E3930ACD0BF9EB149BD3DBE"
+  }
+}

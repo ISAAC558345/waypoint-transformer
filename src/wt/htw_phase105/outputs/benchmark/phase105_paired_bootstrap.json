@@ -1,0 +1,50 @@
+{
+  "M3_minus_M0": {
+    "boot_seed": 10501,
+    "ci95": {
+      "high": 2890625.0,
+      "low": 1468359.375
+    },
+    "mean_delta": 2203125.0,
+    "median_delta": 2500000.0,
+    "model_seed_ci_invented": false,
+    "n": 64,
+    "n_boot": 2000,
+    "note": "scenario-paired percentile bootstrap; single frozen high-level seed",
+    "positive_scenario_frac": 0.703125,
+    "relative_gain": 0.2620817843866171,
+    "relative_gain_vs_abs_mean_ref": null
+  },
+  "M3_minus_M1": {
+    "boot_seed": 10502,
+    "ci95": {
+      "high": 9250000.0,
+      "low": 8155859.375
+    },
+    "mean_delta": 8718750.0,
+    "median_delta": 9000000.0,
+    "model_seed_ci_invented": false,
+    "n": 64,
+    "n_boot": 2000,
+    "note": "scenario-paired percentile bootstrap; single frozen high-level seed",
+    "positive_scenario_frac": 1.0,
+    "relative_gain": 4.6115702479338845,
+    "relative_gain_vs_abs_mean_ref": null
+  },
+  "M3_minus_M2": {
+    "boot_seed": 10503,
+    "ci95": {
+      "high": 4484375.0,
+      "low": 2921484.375
+    },
+    "mean_delta": 3718750.0,
+    "median_delta": 4000000.0,
+    "model_seed_ci_invented": false,
+    "n": 64,
+    "n_boot": 2000,
+    "note": "scenario-paired percentile bootstrap; single frozen high-level seed",
+    "positive_scenario_frac": 0.875,
+    "relative_gain": 0.5396825396825397,
+    "relative_gain_vs_abs_mean_ref": null
+  }
+}

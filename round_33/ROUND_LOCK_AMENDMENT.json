@@ -1,0 +1,60 @@
+{
+  "amendment_type": "legal_round34_successor_governance_extension",
+  "authoritative_source": "round_33/ROUND_LOCK.json",
+  "original_round33_lock_sha256": "40A4C92A3E085661D01B2D112B4525E2DDE2CC68D63D8718ED2F5BEF83DE8075",
+  "authorized_successor_round": "round_34",
+  "round34_creation_allowed": true,
+  "round35_creation_allowed": false,
+  "affected_paths": {
+    "src/wt/governance_state_sync.py": {
+      "prior_amended_sha256": "991EADA2B8020156D94C716A780CB85C04EFF8CFD3BEB54D0231DC4EA79967EC",
+      "amended_sha256": "05B6C38868B7CFD6C9DAE2AF3B2E7A35F0130C5213EEDE3963FE6CF849FF5098"
+    },
+    "tests/test_governance_state_sync.py": {
+      "prior_amended_sha256": "D78D40B3189245B407743B75E40B63FAFF656E6AA217BF9F89AE46E32064F916",
+      "amended_sha256": "8D4ED2C8B00F1790BFE6CB7DE8AE7C4D3D8EC2AC2B57F8BFB14589D9D2F13F87"
+    },
+    "tests/test_round21_hgnn_task_waypoint.py": {
+      "prior_amended_sha256": "3059D07BBC209397B45163A06699AAAC81081D67843E8C75F87DBAEEB81DE0CF",
+      "amended_sha256": "8916727C827B660516867E5BC53DA5E979A82059A173F3563B394FBEF160A02E"
+    }
+  },
+  "governance_path_transitions": {
+    "CURRENT_ROUND.txt": {
+      "prior_locked_sha256": "FF92717CF096FBECB19BF9918E66F55E1806EB4E9CA6882FCC31DE02B6003A4F",
+      "amended_sha256": "2FE4DF1C9419B128C80082115396DD501A339D973AF22CCB2BD520635A4697A7"
+    },
+    "PLANS.md": {
+      "prior_locked_sha256": "FFA6E3593589F4439DC1717B80A73B7639A614F9C14E173386DE7D446296D175",
+      "amended_sha256": "120FB61E75BC50057F16DEA82DCA83036A1426BD7F98DAD79E984F5342735D7B"
+    },
+    "ROUND_VERSIONING.md": {
+      "prior_locked_sha256": "2582212409BF8CED1578B79D313893DD887BA253816205D11D8234897E8CE315",
+      "amended_sha256": "0C203FEEE8723A42D2E9C14662C9B5B184C8742DC9F3A41328CA4B01FA19F1F5"
+    },
+    "round_manifest.json": {
+      "prior_locked_sha256": "9F653860023F453BB2A514521D2296021C049274D9E0ED0B6BC8A6EF1CB17985",
+      "amended_sha256": "F6C99FC8079BFAF529CA9F68EB6A3B34601998F446B02D5C2E1A693F2CE998C0"
+    }
+  },
+  "semantic_correction": "Authorize the explicitly instructed Round-34 frozen benchmark-complexity audit after locked Round-33. The Round-33 original lock, its scientific outputs, figures, reports, metrics, model checkpoints, dataset artifacts, and planner remain immutable. This amendment records one accidental preflight development_test decode, excludes it from all formal analysis, and adds a fail-closed clean-manifest restart. It does not authorize Round-35.",
+  "scientific_artifacts_modified": false,
+  "model_checkpoints_modified": false,
+  "dataset_modified": false,
+  "metrics_modified": false,
+  "neural_training_performed": false,
+  "untouched_eval_accessed": false,
+  "original_round33_lock_modified": false,
+  "protected_access_governance_exception": true,
+  "protected_split": "development_test",
+  "records_decoded": 1,
+  "development_test_access_count": 1,
+  "development_test_reuse_count": 1,
+  "formal_scientific_protected_records_used": 0,
+  "second_protected_access": false,
+  "exception_record": {
+    "path": "round_34/ROUND34_PROTECTED_ACCESS_EXCEPTION.json",
+    "sha256": "CA402A09D0EC1730157A35E3CB56EF66E09FF6B8F3AE05713096553AF659509C"
+  },
+  "approved_at": "2026-09-01T15:45:00+08:00"
+}

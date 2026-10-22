@@ -1,0 +1,15 @@
+{
+  "state": "Q_bits[k]",
+  "unit": "bit",
+  "dtype": "float64",
+  "block_bits": 1000000.0,
+  "block_bits_source": "L3BConfig.block_payload_bits",
+  "capacity_blocks": 4.0,
+  "capacity_is_uniform_across_buoys": true,
+  "q_max_bits": 4000000.0,
+  "queue_blocks_equivalent": "Q_bits / block_bits",
+  "queue_blocks_equivalent_is_primary_state": false,
+  "arrival_bits": "arrivals_at(t) * block_bits",
+  "arrival_process_changed": false,
+  "tolerance_bits": 1.0
+}

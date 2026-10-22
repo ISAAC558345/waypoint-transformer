@@ -1,0 +1,15 @@
+{
+  "conclusion": "MAPPO_RETRAINING_LIKELY_REQUIRED",
+  "observation_contains_queue": true,
+  "queue_feature": "目标浮标的块数，task 向量第 4 维，不是 queue/capacity",
+  "bit_queue_scale_adapter": "Q_bits / block_bits 可以恢复同一数值尺度",
+  "progress_channel_used": true,
+  "progress_locations": [
+    "task 向量第 5 维",
+    "邻居边第 9 维"
+  ],
+  "state_distribution_changed": true,
+  "reason": "队列随部分传输连续下降，链路在比特耗尽时关闭，payload 增量不再只在整块完成时跳动",
+  "retrained_in_this_phase": false,
+  "environment_changed_for_compatibility": false
+}

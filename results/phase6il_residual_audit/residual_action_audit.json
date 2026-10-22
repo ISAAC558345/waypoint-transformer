@@ -1,0 +1,64 @@
+{
+  "limits": {
+    "alpha": 0.25,
+    "max_heading_deg": 18.43494882292201,
+    "min_speed_fraction": 0.75,
+    "speed_at_max_heading": 0.7905694150420949,
+    "can_stop": false,
+    "can_reverse": false,
+    "max_step_fraction": 1.0
+  },
+  "frozen_rollout": {
+    "scenarios": [
+      321000,
+      321001
+    ],
+    "samples": 333,
+    "inside_radius": {
+      "count": 268,
+      "pre_abs": 0.2117735751028826,
+      "delta_norm": 0.07440721649736384,
+      "command_speed": 0.9790248784183482,
+      "heading_deg": 2.787587072698729,
+      "heading_deg_max": 6.234207498721844,
+      "executed_heading_deg": 2.7808487681225182,
+      "executed_heading_deg_max": 6.234207498721902,
+      "intervention_norm": 0.02143563588283776
+    },
+    "outside_radius": {
+      "count": 65,
+      "pre_abs": 0.24208208207900708,
+      "delta_norm": 0.08849258853548163,
+      "command_speed": 0.9935857330329856,
+      "heading_deg": 2.1193911892459476,
+      "heading_deg_max": 3.623665784070432,
+      "executed_heading_deg": 2.119388306857124,
+      "executed_heading_deg_max": 3.6717901500676864,
+      "intervention_norm": 0.005126611994537109
+    },
+    "all": {
+      "count": 333,
+      "pre_abs": 0.21768965003816215,
+      "delta_norm": 0.07715661344174118,
+      "command_speed": 0.9818670872770611,
+      "heading_deg": 2.6571584467995373,
+      "heading_deg_max": 6.234207498721844,
+      "executed_heading_deg": 2.651734864271916,
+      "executed_heading_deg_max": 6.234207498721902,
+      "intervention_norm": 0.01825219278151781
+    }
+  },
+  "restore": {
+    "inference_restores_actor_strict": true,
+    "checkpoint_contains_critic": true,
+    "inference_uses_critic": false,
+    "inference_uses_optimizer": false,
+    "phase6g_train_resumes_phase6g_checkpoint": false,
+    "phase6g_train_actor_init": "LEGACY_WARM_START",
+    "phase6g_observation_normalization": false,
+    "log_std_init": -2.2,
+    "alpha_residual": 0.25,
+    "source_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "source_actor": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\benchmark_v2\\phase6g_lowlevel_mappo\\checkpoints\\phase6g_seed0.pt"
+  }
+}
