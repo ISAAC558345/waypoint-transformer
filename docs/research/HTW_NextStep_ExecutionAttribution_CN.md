@@ -1,101 +1,63 @@
-# P1：完整 Episode 的高层目标—低层执行归因
+# P1 执行归因
 
-- 前置审计：`docs/research/HTW_NextStep_TemporalCreditAudit_CN.md`
-- 前置 Gate：`TEMPORAL_CREDIT_AUDIT_COMPLETE`、`TEMPORAL_CREDIT_IMPLEMENTATION_VALID`
-- 本阶段 Gate：`EXECUTION_ATTRIBUTION_COMPLETE` / `EXECUTION_ATTRIBUTION_INCONCLUSIVE` / `EXECUTION_ATTRIBUTION_BLOCKED`
-- 目标：只分析现有完整 episode 证据，判断低收益来自目标选择、目标可达性、低层运动执行、通信/干扰，还是服务窗口利用率。
-- 本阶段不训练、不修改模型/奖励/动作、不改正式 Planner、不覆盖 checkpoint。
+计划文本保留在提交 `318d9ce`。本文件是该计划要求的结论。没有训练，没有改奖励、动作、FormalPlanner、HGNN、候选生成、MAPPO、SafetyProjector 或正式权重。保留测试 `322064–322079` 没有读取。
 
-## 1. 先核对前置审计结论
+## Gate
 
-P0 报告认为：
-- 正式 `phase6g` 训练在 t=15/30/45 的高层切换处不终止 episode，GAE 可跨过这些边界。
-- `phase6ir` 是从独立记录快照训练固定窗口；窗口结束后切换到另一条记录，因此该路径使用 `done=True` 和零 bootstrap 符合窗口级训练目标。
-- 四项回归测试在报告中记录为通过；本阶段不重复训练，也不把窗口级 `phase6ir` 的目标误认为完整 episode 目标。
+`EXECUTION_ATTRIBUTION_COMPLETE`
 
-## 2. 数据范围与防泄漏
+验证集 16 个场景全部跑完。每条窗口都有记录。账目最大单步误差 `1.82e-8` bit，队列守恒最大误差 `4.66e-9` bit，异常 0 条，容差 1 bit。候选数恒为 13327，选择状态全部为 `selected`。安全违规率最大为 0。
 
-1. 先检查当前仓库中已有的完整 episode 逐场景结果、轨迹日志和 summary 文件，确认其来源、Git 状态、场景 ID、策略 checkpoint SHA-256、配置哈希及是否曾用于模型选择。
-2. 优先使用已有开发/验证场景日志。可引用已完成的独立保留测试作为描述性历史结果，但不得根据它调参、定义新阈值或选择模型。
-3. 如果日志没有保存逐步 UAV 位置、assignment、served bits、SINR、干扰、投影状态等字段，明确列出缺失字段；不得把 summary 均值推断成不存在的逐窗口数据。
-4. 不可为补齐数据而静默覆盖旧结果。确需重新评估时，只能使用预先登记的开发/验证池，写入全新输出目录，并先确认不会触及 reserved test。
-5. 不把 episode 内时间步当作独立统计样本。统计单位为场景；场景级差值采用配对分析。
+## 数据从哪里来
 
-## 3. 每个 15 步窗口必须核查的量
+仓库清理后没有留下逐步轨迹，所以这不是旧日志的重建。本次在已登记验证池 `322048–322063` 上重新回放正式闭环：`FormalPlanner("scheme_c")` 只读打分，低层使用冻结的 `phase6g_seed0.pt` 确定性均值。决策时刻为 0、15、30、45。前三个窗口 15 步，`t=45` 窗口 3 步。
 
-对决策时刻 t=0、15、30、45 分别建立记录；最后一个窗口长度按环境 horizon 计算，不要假设每个窗口都完整 15 步。
+| 对象 | SHA-256 |
+| --- | --- |
+| scheme C `epoch_001.pt` | `f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864` |
+| MAPPO-V2 `phase6g_seed0.pt` | `92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e` |
+| matching decoder | `de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5` |
+| 候选配置 | `3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63` |
 
-### 高层选择
-- scenario ID、决策时刻、前一 assignment、当前 assignment、候选池大小/哈希、选择状态与耗时。
-- 每架 UAV 的目标浮标 ID；idle 必须保留为 idle，不可当成真实浮标。
-- 决策时各 UAV 到所分配目标的距离、是否已在服务半径内。
-- 如果日志没有“同一状态下替代候选”的反事实评估，不得声称当前 assignment 是局部最优或高层选择错误。
+正式打分还需要 `results/phase5k_joint_decoder/matching_decoder.pt`。清理时把它删掉了，本次从提交 `8a34efc` 的原文件恢复，没有重训。
 
-### 低层运动与可达性
-- 每架已分配 UAV 的首次进入服务半径步数；窗口内始终未进入则明确记为未到达。
-- 实际路径长度、净位移、目标距离随时间变化、方向变化。
-- 低层动作意图与最终执行动作（若日志保存）、SafetyProjector 是否介入、介入范数或失败状态。
-- hold 剩余量、窗口结束时是否仍未到达、服务半径内的有效服务步数。
+16 个场景的回合交付均值为 `68917978.772` bit，中位数 `69133068.914` bit，范围 `61913710.626–73327351.191` bit。这个均值与先前记录的验证集 scheme C 均值一致，只作为回放核对，没有用来挑选模型。
 
-### 通信与队列
-- 每步真实 `served_bits`，窗口总和；完整 episode 的环境 `payload_bits`。
-- 平均/分位 SINR、干扰功率、队列初末值、到达量和剩余队列。
-- 检查每步计账：`payload_bits[t+1] - payload_bits[t] = sum(served_bits[t])`（容差遵循环境配置）。
-- 明确区分“已进入服务半径”与“本步实际产生服务”；不能把进入半径直接当成成功交付。
+原始表在 `results/phase6i_execution_attribution/`。图的单位写在标题里：16 个场景，点是 UAV-窗口或场景。
 
-## 4. 分析输出
+## 现有证据支持什么
 
-生成下列文件：
+384 条 UAV-窗口里，空闲为 0。按预先写死的规则，369 条进入服务半径并交付了比特。没有一条满保持窗口（15 步）出现“指派后直到窗口结束仍未进半径”。
 
-1. `docs/research/HTW_NextStep_ExecutionAttribution_CN.md`：结论、数据来源、局限、失败模式及下一步建议。
-2. `results/phase6i_execution_attribution/window_rows.csv`：每个场景 × 每个决策窗口的原始归因表。
-3. `results/phase6i_execution_attribution/uav_window_rows.csv`：每个场景 × 窗口 × UAV 的归因表。
-4. `results/phase6i_execution_attribution/summary.json`：样本数、缺失字段、计账检查、指标汇总、数据来源哈希及 Gate。
-5. 若数据足够，保存图到 `results/phase6i_execution_attribution/figures/`：目标距离/轨迹图、服务进入时间分布、窗口 payload 分布、投影率与 payload 的场景级关系、SINR/干扰与服务量关系。每张图标注场景数和统计单位。
+未进半径的 11 条全部发生在 `t=45` 的 3 步窗口。起始距离 `87.94–99.61` m，结束距离 `26.83–38.69` m，投影次数为 0，交付为 0。步长 22 m，3 步径直飞行为 66 m。从约 90 m 外出发，结束时仍在 16 m 服务半径之外。这是剩余步数和距离的几何关系。
 
-建议表格字段：
+另外两条 `t=45` 记录在第 2 步进半径，只服务了 1 步。短窗口的“进入偏晚”规则会把它们标成利用率，不能单独当成低层利用率问题。
 
-### window_rows.csv
-`scenario_id, decision_t, window_steps, assignment, candidate_count, pool_hash, selection_status, payload_before_bits, payload_after_bits, served_bits_sum, accounting_error_bits, mean_sinr, mean_interference, projection_rate, safety_violation_rate, mean_queue_before_bits, mean_queue_after_bits, episode_complete, source_log, config_hash, checkpoint_hash`
+`t=30` 有 2 条在第 4 步碰到半径、窗口结束时距离约 `16.08` m 和 `16.54` m，交付为 0，窗口平均 SINR 为 0。SINR 是整段窗口的平均，包含尚未进半径的步，所以不能把这两条说成干扰导致的失败。
 
-### uav_window_rows.csv
-`scenario_id, decision_t, uav_id, target_buoy_id, idle, initial_distance_m, first_entry_step, entered_service_radius, effective_service_steps, served_bits, path_length_m, net_displacement_m, end_distance_m, projection_count, projection_norm_mean, mean_sinr, mean_interference, hold_remaining`
+窗口级投影率均值是 `0.523`，但上面这些没有交付的 UAV 自身投影次数都是 0。投影很常见，却没有和这些服务损失出现在同一架 UAV 上。不能把投影写成瓶颈。
 
-若某字段在原始日志中不存在，留空并在 `summary.json` 的 `missing_fields` 说明原因，不允许填入估算值冒充观测值。
+`t=0` 的 16 个窗口服务比特都是 `15000000` bit，最大单机份额都是 `4/15`。初始队列不随场景种子变化。这个窗口不能用来区分轨迹。
 
-## 5. 归因规则
+高层分配错误：**未证实**。没有在同一状态下比较其他合法候选。
 
-- **可达性瓶颈候选**：被分配 UAV 在窗口结束前未进入服务半径，且日志能确认该事实。
-- **窗口利用率瓶颈候选**：进入服务半径较晚，导致窗口内有效服务步数较少。
-- **通信/干扰瓶颈候选**：已经进入服务半径，但真实 served bits 仍低，同时有 SINR/干扰日志支持。
-- **动作投影瓶颈候选**：投影频繁或投影范数较大，并与轨迹偏差/服务损失共同出现。
-- **高层分配瓶颈候选**：只有在同一状态的替代 assignment 被可靠评估、且有配对反事实证据时才可下此结论；否则标为“未证实”。
-- **不可归因**：关键字段缺失、样本不足或相关性无法区分因果方向时，必须明确报告，不得过度解释。
+因此，现有证据支持的首要瓶颈是：**没有**。满保持窗口里，冻结低层已经进入半径并交付比特。唯一成组出现的未到达，限制在最后 3 步。
 
-相关性不是因果证据。此阶段不根据观察到的相关性直接修改奖励或策略。
+## 还不能识别的部分
 
-## 6. Gate 判据
+- 清理前的逐步日志不在仓库里，本次数字是新回放。
+- 没有同一状态的对照分配，不能判断 scheme C 在 `t=45` 选远浮标是否劣于更近的合法目标。
+- 没有“仅在半径内”的逐步 SINR，不能把边界上的 0 交付归到干扰。
+- 相关不是因果。投影率与回合交付的散点只是描述。
 
-`EXECUTION_ATTRIBUTION_COMPLETE`：
-- 已核对数据来源、场景分割和 checkpoint/config 哈希；
-- 所有可用完整 episode 都生成逐窗口归因记录；
-- payload 计账检查通过，异常被单独列出；
-- 对缺失字段明确报告，没有以估算值填补；
-- 至少将可观察现象与尚未证实的因果解释分开。
+## 最值得先验证的一个低层假设
 
-`EXECUTION_ATTRIBUTION_INCONCLUSIVE`：
-- 关键轨迹或逐步服务字段缺失，无法区分目标可达性、运动和链路因素。
+保持现有权重、奖励和动作不变。假设是：`t=45` 的损失来自“剩余 3 步对约 90 m 的目标不够”，而不是满保持周期里的残差控制。
 
-`EXECUTION_ATTRIBUTION_BLOCKED`：
-- 数据来源或 split 无法核实、计账失败，或运行需要触及保留测试/修改正式模型。
+验证方式：仍用冻结的 `phase6g_seed0.pt`。只在 `t=45`，于同一场景比较两条轨迹的交付比特：正式 scheme C 分配，以及该状态下距离更近的一个合法目标。比较单位是场景，共 16 对。不训练，不读保留测试。
 
-## 7. 完成后唯一下一步
+## 下一阶段若要做，场景从哪里来
 
-完成 P1 后停止，不自动开始训练。汇报：
-1. Gate；
-2. 可由现有证据支持的首要瓶颈（若有）；
-3. 不可识别的问题与缺失数据；
-4. 最值得优先验证的一个低层改进假设；
-5. 下一阶段实验设计及其训练/验证场景来源。
+上面的对照只使用验证池 `322048–322063`。若以后真的改低层并训练，训练场景仍是 `321000–321095`，开发评估仍是 `321096–321127`。这次验证回放不作为选模依据。保留测试继续封存。
 
-在收到下一步授权前，不改高层 HGNN、候选生成器、低层 MAPPO、奖励函数、SafetyProjector 或正式 Planner。
+P1 到此停止，不开始该实验。

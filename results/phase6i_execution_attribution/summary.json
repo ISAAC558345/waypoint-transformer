@@ -1,0 +1,76 @@
+{
+  "gate": "EXECUTION_ATTRIBUTION_COMPLETE",
+  "n_scenarios": 16,
+  "n_windows": 64,
+  "n_uav_rows": 384,
+  "scenario_ids": [
+    322048,
+    322049,
+    322050,
+    322051,
+    322052,
+    322053,
+    322054,
+    322055,
+    322056,
+    322057,
+    322058,
+    322059,
+    322060,
+    322061,
+    322062,
+    322063
+  ],
+  "split": "validation_322048_322063",
+  "reserved_test_used": false,
+  "historical_step_logs_present": false,
+  "missing_fields": [
+    "No saved full-episode step log remained after the repository cleanup, so previous assignment traces, per-step positions, and counterfactual scores were not available to reuse.",
+    "high_level_counterfactual: not present. Scheme C alternatives at the same state were not re-scored, so a high-level assignment error is unconfirmed."
+  ],
+  "accounting_anomaly_count": 0,
+  "anomalies": [],
+  "max_accounting_error_bits": 4.6566128730773926e-09,
+  "payload_bits_mean": 68917978.77191152,
+  "payload_bits_median": 69133068.91436036,
+  "label_counts": {
+    "idle": 0,
+    "reachability": 11,
+    "communication_observation": 2,
+    "utilization": 2,
+    "projection": 0,
+    "delivered": 369
+  },
+  "primary_bottleneck_candidate": "unconfirmed",
+  "high_level_assignment_error": "unconfirmed",
+  "source": {
+    "policy_file": "results/phase6iaa_formal_planner/active_policy.json",
+    "scheme_c_sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
+    "matching_decoder_sha256": "de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5",
+    "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "config_sha256": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63",
+    "replay": "FormalPlanner scheme_c + frozen phase6g actor, validation pool only"
+  },
+  "figures": [
+    "target_distance.png",
+    "entry_time.png",
+    "window_served.png",
+    "projection_vs_payload.png",
+    "sinr_vs_served.png"
+  ],
+  "reachability_decision_times": [
+    45
+  ],
+  "window_served_bits_mean_by_decision_t": {
+    "0": 15000000.0,
+    "15": 23887531.864190027,
+    "30": 24491455.3408496,
+    "45": 5538991.566871885
+  },
+  "payload_bits_min": 61913710.625705965,
+  "payload_bits_max": 73327351.19132376,
+  "mean_window_projection_rate": 0.5229166666666666,
+  "safety_violation_rate_max": 0.0,
+  "t0_window_served_bits": 15000000.0,
+  "t0_top_uav_share": 0.2666666666666667
+}
