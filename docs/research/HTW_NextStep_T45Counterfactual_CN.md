@@ -1,103 +1,54 @@
-# P2：t=45 最后 3 步的同状态合法分配反事实评估
+# P2：t=45 最后 3 步的同状态反事实
 
-- 前置报告：`docs/research/HTW_NextStep_ExecutionAttribution_CN.md`
-- 前置 Gate：`EXECUTION_ATTRIBUTION_COMPLETE`
-- 本阶段 Gate：`T45_COUNTERFACTUAL_COMPLETE` / `T45_COUNTERFACTUAL_INCONCLUSIVE` / `T45_COUNTERFACTUAL_BLOCKED`
-- 本阶段性质：仅做受控评估；不训练、不改正式模型、不更新 Planner，不读取独立保留测试集。
+计划文本保留在提交 `fa48a6c`。本文件是该计划的结果。没有训练，没有改 FormalPlanner、奖励、动作或正式权重。保留测试 `322064–322079` 没有读取。
 
-## 1. P1 结论与本阶段问题
+## Gate
 
-P1 在验证场景 322048–322063 上重新回放正式 Scheme C + 冻结 MAPPO-V2，计账与队列守恒检查通过。没有确认普遍性的低层瓶颈。唯一成组出现的未进入服务半径事件集中在 t=45 的最后 3 步：11 条 UAV-window 的起始距离约 87.94–99.61 m，结束时仍在服务半径外，未发生 SafetyProjector 投影。P1 也明确指出，高层分配错误尚未证实，因为没有在同一状态比较替代合法 assignment。
+`T45_COUNTERFACTUAL_INCONCLUSIVE`
 
-因此，本阶段只检验一个具体假设：
+16 个验证场景都在同一个 `t=45` 状态上完成了两臂各 3 步。候选数都是 13327，分支前状态哈希一致，账目最大误差 `1.82e-8` bit，安全违规率为 0。配对差值的 95% bootstrap 区间跨过 0，所以统计结论是不确定。
 
-**在 t=45 只剩 3 步时，Scheme C 是否选择了一个相对于更近的合法 assignment 会导致更低 payload 的分配？**
+## 数据
 
-这不是低层策略训练，也不预设 Scheme C 有错。
+场景 `322048–322063`。正式方案沿用 P1 的 scheme C 轨迹，`t=45` 的分配与 P1 逐场景一致。对照只在该时刻的合法候选里选择，规则版本 `reachable_count_then_total_distance_then_pool_order_v1`：非空闲且 `max(距离 - 16 m, 0) <= 66 m` 的 UAV 数量必须严格多于 scheme C，才允许替换；数量相同则不换。平局再比总距离和候选池原顺序。选择时没有使用 3 步后的 payload。
 
-## 2. 场景与数据边界
+两臂都用冻结的 `phase6g_seed0.pt`，从同一快照和同一 last movement 出发。
 
-- 仅使用已登记验证池：322048–322063（16 个场景）。
-- 不读取 reserved/independent holdout 322064–322079。
-- 不使用这次评估结果训练或选择低层 checkpoint。
-- 运行前核实 split registry、active policy、Scheme C/MAPPO/decoder/config SHA-256。
-- 输出写入全新目录：`results/phase6i_t45_counterfactual/`，不得覆盖 P1 原始归因结果。
+| 对象 | SHA-256 |
+| --- | --- |
+| scheme C `epoch_001.pt` | `f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864` |
+| MAPPO-V2 `phase6g_seed0.pt` | `92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e` |
+| matching decoder | `de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5` |
+| 候选配置 | `3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63` |
 
-## 3. 反事实实验设计
+差值定义为距离规则臂减去 scheme C 臂。16 个场景、10000 次、种子 0：
 
-### A. 捕获同一状态
+| 统计 | 数值 |
+| --- | --- |
+| 均值 | `-60776.989` bit |
+| 中位数 | `0` bit |
+| 95% 区间 | `[-204861.511, 22530.546]` bit |
+| 正 / 负 / 持平 | `1 / 1 / 14` |
 
-对每个验证场景运行正式 Scheme C + 冻结 `phase6g_seed0.pt`，到达 t=45 前保存完整环境快照与当前状态，包括 UAV/浮标位置、队列、到达时钟、SINR/速率状态、服务余量、payload 计账状态、last movement、当前正式 assignment、候选池及其哈希。
+持平按 1 bit 容差计算。这 14 个场景的两臂分配相同，差值是 0。
 
-在同一状态记录：
-- Scheme C 原始 assignment；
-- 13,327 个合法候选的绑定关系与评分；
-- 每架 UAV 到原目标的距离；
-- t=45 仅剩 3 步这一时间约束。
+## 证据
 
-### B. 选择唯一的距离导向合法对照
+14 个场景里，scheme C 的几何可达 UAV 数已经不少于池中任何其他合法候选。这些场景没有另一条距离对照。
 
-只在当前同状态的既有合法候选池内选择一个对照 assignment，不修改候选生成器或正式策略。优先使用以下确定性规则：
+只有 2 个场景换了分配，几何可达数各增加 1：
 
-1. 对每个候选计算 t=45 当前 UAV 到被分配目标的距离；idle 不算作浮标目标。
-2. 计算 3 步可达性代理：`max(distance - service_radius, 0) <= 3 * step_length` 视为几何上可能进入服务半径；这只是必要的几何代理，不保证在动态约束下可达。
-3. 从合法候选中优先选择“可在剩余窗口内几何到达的非 idle UAV 数量最多”的 assignment。
-4. 若并列，选择总目标距离最小的 assignment；再并列时用候选池的稳定原始顺序打破平局。
-5. 记录该候选的原始索引、pool hash、距离分数和规则版本。不得使用任何反事实 rollout 的未来 payload 来挑选该候选，否则会构成结果泄漏。
+- `322048`：scheme C 索引 `13276`，分配 `11,10,7,0,6,9`，可达 5 架，总距离 `223.664` m。UAV 3 指向浮标 0，距离 `99.38` m，3 步交付 0。距离规则索引 `6258`，分配 `6,0,10,7,11,9`，可达 6 架，总距离 `67.814` m。3 步 payload 从 `5499826.505` bit 变为 `5619989.415` bit，差值 `+120162.910` bit。
+- `322061`：scheme C 索引 `5514`，分配 `0,11,7,1,10,9`，可达 4 架，总距离 `305.385` m。UAV 0、UAV 3 分别指向 `97.65` m 和 `96.65` m 外的浮标，交付为 0。距离规则索引 `7567`，分配 `7,-1,10,11,1,9`，可达 5 架，总距离 `49.237` m，其中 UAV 1 空闲。scheme C 里这架 UAV 指向浮标 11，3 步交付 `2002062.4` bit。替换后 3 步 payload 从 `7382924.363` bit 变为 `6290329.637` bit，差值 `-1092594.726` bit。
 
-若没有候选比 Scheme C 的几何可达性更好，则记录“无更好几何候选”，仍保留原始分配，不伪造对照优势。
+这两个场景单独做同样的 bootstrap，区间是 `[-1092594.726, 120162.910]` bit，同样跨过 0。距离规则的 scheme C 分数低于原分配（`22.386` 对 `22.623`，`20.093` 对 `22.566`）。分数只被记录，没有参与挑选。
 
-### C. 配对执行
+因此，这次预注册的距离规则没有给出稳定的 3 步增益。它在多数场景无候选可换；在可换的两处，一处多交付约 `1.20e5` bit，另一处少交付约 `1.09e6` bit，少交付的那次把一个正在服务的 UAV 设成了空闲。
 
-对每个场景，从同一个 t=45 快照创建两个独立副本：
+## 解释边界
 
-- Arm S：原始 Scheme C assignment；
-- Arm N：上一步按预注册规则选择的距离导向合法 assignment。
+这只比较 `t=45` 剩余 3 步。它不说明 48 步全程的最优分配，也不说明 scheme C 整体有误。窗口平均 SINR 只作描述。投影在若干臂上出现，安全违规为 0；本结果不把投影写成 payload 变化的原因。
 
-两臂均使用相同的冻结 MAPPO-V2 确定性 Actor、同一 SafetyProjector、相同到达时钟和相同 3 步 horizon。每臂只执行剩余 3 步。检查两个副本在分支前的状态哈希一致，且执行期间没有改变模型权重。
+## 下一步
 
-主要结果：3 步内实际增量 `served_bits` / payload。
-
-辅助结果：
-- 进入服务半径的 UAV 数量；
-- 每架 UAV 首次进入服务半径时间；
-- 有效服务步数；
-- 路径长度、投影触发率、安全违规；
-- SINR 与干扰（仅作描述，不据窗口平均 SINR 单独推断因果）。
-
-必须验证每臂的 payload 增量等于 3 步 `served_bits` 之和，误差不超过环境计账容差。
-
-## 4. 统计方法与解释边界
-
-- 统计单位是场景，共 16 个配对场景；不要把 UAV 或时间步当独立样本。
-- 报告每场景差值 `delta_payload = payload_N - payload_S`、均值/中位数、正负场景数和 95% 配对 bootstrap CI。
-- 报告有多少场景中距离导向候选确实增加几何可达 UAV 数。
-- 若候选只改变少数 UAV 任务，报告 assignment 差异明细。
-- 本实验只评估“t=45 的距离导向合法 assignment”与 Scheme C assignment 的 3 步局部反事实差异。它不证明整个 48 步最优分配，不证明 Scheme C 整体有误，也不直接证明低层需要改进。
-- 由于距离规则本身不是通信收益 oracle，即使距离导向方案胜出，也只能说明该启发式在这个窗口可能有用；若要声称高层分配有因果问题，需要进一步预注册更全面的同状态候选评估。
-
-## 5. 交付物
-
-生成：
-- `docs/research/HTW_NextStep_T45Counterfactual_CN.md`
-- `results/phase6i_t45_counterfactual/scenario_pairs.csv`
-- `results/phase6i_t45_counterfactual/uav_pairs.csv`
-- `results/phase6i_t45_counterfactual/summary.json`
-- 若可读性有帮助：`results/phase6i_t45_counterfactual/figures/` 中的场景配对差值图和几何可达数量对比图。
-
-报告必须包括每场景的原始 assignment、距离导向 assignment、候选索引与哈希、两臂 payload、差值、到达/服务指标、投影/安全指标、计账误差和 Gate。
-
-## 6. Gate
-
-`T45_COUNTERFACTUAL_COMPLETE`：
-- 16 个验证场景均成功捕获同状态并完成两臂 3 步评估；
-- 候选合法性、状态哈希和 payload 计账检查通过；
-- 每场景结果及配对区间已报告。
-
-`T45_COUNTERFACTUAL_INCONCLUSIVE`：
-- 对照方案平均收益区间跨 0，或差异不足以支持明确结论。
-
-`T45_COUNTERFACTUAL_BLOCKED`：
-- 无法可靠恢复同一状态、候选绑定不一致、计账/安全检查失败，或场景划分无法确认。
-
-完成后停止，不自动训练、不修改正式策略。只汇报证据，并推荐一个下一步方向。
+仍不训练。若要再做同状态评估，问题改成：只改那些当前还在服务半径外的 UAV，已经在半径内并正在交付的 UAV 保持原目标，看 3 步 payload 是否变化。场景仍只用 `322048–322063`。这一步没有开始。
