@@ -1,0 +1,46 @@
+{
+  "gate": "T45_ACTIVE_ASSIGNMENT_PRESERVED_INCONCLUSIVE",
+  "n_scenarios": 16,
+  "split": "validation_322048_322063",
+  "reserved_test_used": false,
+  "decision_t": 45,
+  "window_steps": 3,
+  "rule_version": "preserve_fixed_then_max_reach_then_min_distance_v1",
+  "min_changed_scenarios_for_complete": 3,
+  "changed_scenarios": 2,
+  "unchanged_scenarios": 14,
+  "paired_all_scenarios": {
+    "mean": -1.6593705294653773,
+    "median": 0.0,
+    "ci_low": -4.263494360260665,
+    "ci_high": 0.0,
+    "draws": 10000,
+    "seed": 0,
+    "positive": 0,
+    "negative": 2,
+    "tie": 14
+  },
+  "paired_changed_scenarios": {
+    "mean": -13.274964235723019,
+    "median": -13.274964235723019,
+    "ci_low": -15.116052821278572,
+    "ci_high": -11.433875650167465,
+    "draws": 10000,
+    "seed": 0,
+    "positive": 0,
+    "negative": 2,
+    "tie": 0
+  },
+  "max_accounting_error_bits": 1.816079020500183e-08,
+  "max_safety_violation_rate": 0.0,
+  "source": {
+    "config_hash": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63",
+    "scheme_c_sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
+    "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "decoder_sha256": "de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5"
+  },
+  "figures": [
+    "paired_delta.png",
+    "fixed_service.png"
+  ]
+}
