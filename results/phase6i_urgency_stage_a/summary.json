@@ -1,0 +1,58 @@
+{
+  "gates": [
+    "URGENCY_LEDGER_TESTS_PASS",
+    "URGENCY_LOGGING_INVARIANT_PASS"
+  ],
+  "split": "train_322000_322047",
+  "scenario_ids": [
+    322000,
+    322001
+  ],
+  "reserved_test_used": false,
+  "training_performed": false,
+  "instruction_commit": "cd383b0b7e42bd24e5d18968a475489d18953a70",
+  "git_head_at_smoke": "052792c14b0a1ff65964bd277a369515f623b113",
+  "schema_version": "episode_admission_age_v1",
+  "age_scale_steps": 48,
+  "policy_sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
+  "config_sha256": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63",
+  "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "actor_input_dim": 34,
+  "task_dim": 8,
+  "max_ledger_mismatch_bits": 1.862645149230957e-09,
+  "max_conservation_error_bits": 3.725290298461914e-09,
+  "max_sinr_recompute_gap": 0.0,
+  "max_rate_recompute_gap": 0.0,
+  "log_on_off_consistent": true,
+  "deterministic_repeat": true,
+  "unit_tests": {
+    "module": "tests.test_urgency_stage_a",
+    "ran": 14,
+    "failed": 0,
+    "status": "OK"
+  },
+  "scenarios": [
+    {
+      "scenario_id": 322000,
+      "split": "train_322000_322047",
+      "final_t": 48,
+      "payload_bits": 63785945.28984571,
+      "max_ledger_mismatch_bits": 1.862645149230957e-09,
+      "max_conservation_error_bits": 3.259629011154175e-09,
+      "log_on_off_match": true,
+      "repeat_match": true
+    },
+    {
+      "scenario_id": 322001,
+      "split": "train_322000_322047",
+      "final_t": 48,
+      "payload_bits": 68952073.58225587,
+      "max_ledger_mismatch_bits": 1.3969838619232178e-09,
+      "max_conservation_error_bits": 3.725290298461914e-09,
+      "log_on_off_match": true,
+      "repeat_match": true
+    }
+  ],
+  "snap_source": "cumulative_snap_bits delta; info does not expose float_snap_bits",
+  "reset_age_origin": "reset_convention"
+}
