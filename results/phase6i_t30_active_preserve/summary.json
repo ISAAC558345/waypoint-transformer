@@ -1,0 +1,72 @@
+{
+  "gate": "T30_ACTIVE_ASSIGNMENT_PRESERVED_COMPLETE",
+  "n_scenarios": 16,
+  "split": "validation_322048_322063",
+  "reserved_test_used": false,
+  "decision_t": 30,
+  "window_steps": 15,
+  "tail_steps": 3,
+  "rule_version": "t30_preserve_in_range_then_max_reach_then_min_distance_v1",
+  "min_changed_scenarios_for_complete": 3,
+  "changed_scenarios": 10,
+  "unchanged_scenarios": 6,
+  "no_reassignable_scenarios": 1,
+  "no_legal_preserving_scenarios": 0,
+  "paired_window_all_scenarios": {
+    "mean": -409993.66923201224,
+    "median": 0.0,
+    "ci_low": -782864.1131026752,
+    "ci_high": -99672.57030398493,
+    "draws": 10000,
+    "seed": 0,
+    "positive": 3,
+    "negative": 7,
+    "tie": 6
+  },
+  "paired_episode_all_scenarios": {
+    "mean": -466677.64691058407,
+    "median": 0.0,
+    "ci_low": -908245.6931969331,
+    "ci_high": -67179.51721081584,
+    "draws": 10000,
+    "seed": 0,
+    "positive": 3,
+    "negative": 7,
+    "tie": 6
+  },
+  "paired_window_changed_scenarios": {
+    "mean": -655989.8707712196,
+    "median": -665144.061903689,
+    "ci_low": -1179358.599051529,
+    "ci_high": -187971.64143682053,
+    "draws": 10000,
+    "seed": 0,
+    "positive": 3,
+    "negative": 7,
+    "tie": 0
+  },
+  "paired_episode_changed_scenarios": {
+    "mean": -746684.2350569345,
+    "median": -670663.1200568378,
+    "ci_low": -1372873.010115214,
+    "ci_high": -137866.00542307357,
+    "draws": 10000,
+    "seed": 0,
+    "positive": 3,
+    "negative": 7,
+    "tie": 0
+  },
+  "max_accounting_error_bits": 1.816079020500183e-08,
+  "max_safety_violation_rate": 0.0,
+  "source": {
+    "config_hash": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63",
+    "scheme_c_sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
+    "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "decoder_sha256": "de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5"
+  },
+  "figures": [
+    "window_delta.png",
+    "episode_delta.png",
+    "entered_uavs.png"
+  ]
+}
