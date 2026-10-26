@@ -17,7 +17,7 @@ from wt.benchmark_v2.phase6ib_highlevel_dataset.schema import state_arrays, stat
 from wt.benchmark_v2.phase6i_urgency_stage_a.ledger import AdmissionAgeLedger, AgeBucket, snap_vector
 from wt.benchmark_v2.phase6i_urgency_stage_a.protocol import AGE_ORIGIN_RESET
 
-from .protocol import assert_pilot_scenario
+from .protocol import assert_train_scenario
 from .shards import ShardError, load_manifest, load_npz
 
 
@@ -62,7 +62,7 @@ def _choose(env):
 
 def replay_scenario(scenario_id: int) -> dict:
     """Replay one train scenario through t=30. Real arrivals stay on this path."""
-    scenario = assert_pilot_scenario(scenario_id)
+    scenario = assert_train_scenario(scenario_id)
     started = time.perf_counter()
     actor = _frozen_actor()
     env = L3BBitQueueEnvV2()

@@ -10,12 +10,12 @@ from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import install_light_info
 from wt.benchmark_v2.phase6ib_highlevel_dataset.jobs import _key
 from wt.benchmark_v2.phase6ib_highlevel_dataset.protocol import GENERATOR, SELECTED_K
 
-from .protocol import CANDIDATE_KEYS, assert_pilot_scenario
+from .protocol import CANDIDATE_KEYS, assert_train_scenario
 from .shards import ShardError, load_npz
 
 
 def load_candidates(scenario_id: int, time_step: int, env_snap: dict, manifest: dict) -> dict:
-    scenario = assert_pilot_scenario(scenario_id)
+    scenario = assert_train_scenario(scenario_id)
     arrays, digest = load_npz(scenario, int(time_step), "candidates")
     if tuple(arrays) != CANDIDATE_KEYS and set(arrays) != set(CANDIDATE_KEYS):
         raise ShardError("frozen candidate schema does not match the pilot contract")

@@ -13,6 +13,7 @@ def select_candidates(
     *,
     scenario_id: int,
     time_step: int,
+    seed: int = PILOT_SEED,
 ) -> dict:
     """Take 32 stable top-J15 rows and 96 rank-quantile rows from the remainder."""
     ids = np.asarray(candidate_id, dtype=np.int64).reshape(-1)
@@ -36,7 +37,7 @@ def select_candidates(
     else:
         sorted_rest = rest
     cuts = np.linspace(0, int(sorted_rest.size), int(STRATA) + 1, dtype=int)
-    rng = np.random.default_rng(np.random.SeedSequence([int(PILOT_SEED), int(scenario_id), int(time_step)]))
+    rng = np.random.default_rng(np.random.SeedSequence([int(seed), int(scenario_id), int(time_step)]))
     sampled: list[np.ndarray] = []
     strata = []
     shortfall = 0
@@ -87,7 +88,7 @@ def select_candidates(
         "fill_count": int(fill_index.size),
         "shortfall_unfilled": int(shortfall - fill_index.size),
         "strata": strata,
-        "seed": int(PILOT_SEED),
+        "seed": int(seed),
     }
 
 

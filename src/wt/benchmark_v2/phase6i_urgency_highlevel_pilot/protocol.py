@@ -88,8 +88,17 @@ def assert_pilot_scenario(scenario_id: int) -> int:
     return value
 
 
+def assert_train_scenario(scenario_id: int) -> int:
+    """Any Phase-6I-B train id. Validation and reserved ids stay outside this loader."""
+    value = int(scenario_id)
+    assert_allowed(value, split="train")
+    if value in VALIDATION_POOL or value in DEV_TEST_RESERVED:
+        raise RuntimeError(f"train shard loader refuses scenario {value}")
+    return value
+
+
 def frozen_relpath(scenario_id: int, time_step: int, kind: str) -> str:
-    scenario = assert_pilot_scenario(scenario_id)
+    scenario = assert_train_scenario(scenario_id)
     if int(time_step) not in PRIMARY_TIMES:
         raise RuntimeError(f"stage D0 refuses time {time_step}")
     if kind not in {"state", "candidates", "manifest"}:
@@ -149,6 +158,7 @@ __all__ = [
     "USEFUL_REVERSAL_ABOVE",
     "USEFUL_SPEARMAN_BELOW",
     "assert_pilot_scenario",
+    "assert_train_scenario",
     "choose_gate",
     "config_sha256",
     "frozen_relpath",
