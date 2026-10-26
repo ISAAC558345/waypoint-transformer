@@ -1,0 +1,71 @@
+{
+  "inputs": {
+    "d0": "results/phase6i_urgency_highlevel_pilot labels for scenarios 322000-322003 at t=0,15,30",
+    "d1": "results/phase6i_urgency_highlevel_t30_pilot labels for scenarios 322004-322015 at t=30",
+    "sha256": {
+      "d0_labels": "241f1a4155a22e6ae9829067a1e7b38a09679675f665bd360b704c52691ff1db",
+      "d0_selected": "e1aab05367db302aab503c4cadcc9dbfefe867829d0fbb8ea897f5eddd1c256c",
+      "d1_labels": "012ce8cfb99aac93b208573768e9f6a60b82d910ab82da365228cb8a5ea40c02",
+      "d1_selected": "d7bab2cc62129f153cbc42606299cf96d4416a3e8e5ee6ad274d5f7bca234b62"
+    }
+  },
+  "candidate_scope": "128 sampled candidates per state, not the full 13327 pool",
+  "eps_bits": 1.0,
+  "normalized_eps": 1e-06,
+  "formulas": {
+    "payload_term": "payload_bits / 1e6",
+    "urgent_service_term": "urgent_service_bits / 1e6",
+    "dominates": "payload and urgent are no worse than the other, and at least one is better by more than 1 bit",
+    "lambda_cross": "(payload_i - payload_j) / (urgent_j - urgent_i) in the shared normalized units",
+    "material_payload_regret_bits": "0 when the absolute payload gap is at most 1 bit, otherwise payload - best_payload",
+    "utility": "payload_term + lambda_H * urgent_service_term"
+  },
+  "rules": {
+    "payload_first": "maximum payload, urgent service breaks ties within 1 bit",
+    "payload_constrained_urgency": "maximize urgent service subject to a payload-loss budget; the budget is not chosen",
+    "weighted_sum": "critical intervals of nonnegative lambda_H from the convex sampled front; no single weight is selected"
+  },
+  "lambda_H": null,
+  "lambda_H_decided": false,
+  "delta_payload_max": null,
+  "delta_payload_max_status": "needs_research_lead_confirmation",
+  "held_out_splits_read": false,
+  "rollouts_rerun": false,
+  "instruction_commit": "38c9b4586bdb3df782d97fbcfeba1b4c09dfc084",
+  "fields": {
+    "pareto_rows.csv": [
+      "source",
+      "scenario_id",
+      "time_step",
+      "candidate_id",
+      "assignment",
+      "payload_bits",
+      "payload_term",
+      "urgent_service_bits",
+      "urgent_service_term",
+      "is_payload_first",
+      "is_urgent_first",
+      "payload_regret_bits",
+      "material_payload_regret_bits",
+      "urgent_gap_vs_best_bits"
+    ],
+    "lambda_sensitivity.csv": [
+      "source",
+      "scenario_id",
+      "time_step",
+      "segment_index",
+      "lambda_low",
+      "lambda_high",
+      "lambda_high_unbounded",
+      "candidate_id",
+      "assignment",
+      "payload_bits",
+      "urgent_service_bits",
+      "payload_term",
+      "urgent_service_term",
+      "payload_regret_bits",
+      "urgent_gain_bits_vs_payload_first",
+      "material_payload_loss"
+    ]
+  }
+}
