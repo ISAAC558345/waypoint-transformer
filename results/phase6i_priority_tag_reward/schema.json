@@ -1,0 +1,18 @@
+{
+  "schema_version": "synthetic_priority_reward_experiment_v1",
+  "synthetic_tag": true,
+  "lambda_u": 0.0005,
+  "rho": 0.001,
+  "l1_lambda_u": 0.0,
+  "train_seeds": [
+    0,
+    1,
+    2
+  ],
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "thresholds_changed_after_results": false,
+  "trained_l0": false,
+  "formal_system_modified": false,
+  "held_out_splits_read": false,
+  "merged": false
+}

@@ -1,0 +1,58 @@
+{
+  "gate": "PRIORITY_TAG_EXPERIMENT_SMOKE_PASS",
+  "merged": false,
+  "smoke": {
+    "gate": "PRIORITY_TAG_EXPERIMENT_SMOKE_PASS",
+    "problems": [],
+    "scenarios": [
+      {
+        "scenario_id": 321000,
+        "steps": 16,
+        "payload_bits": 15000000.0,
+        "urgency_served_bits": 1610599.7178545794,
+        "served_tagged_bits": 0.0,
+        "max_ledger_gap_bits": 0.0,
+        "max_bonus": 0.00010956399037033952
+      },
+      {
+        "scenario_id": 321001,
+        "steps": 16,
+        "payload_bits": 11408434.797759712,
+        "urgency_served_bits": 1020532.5698379923,
+        "served_tagged_bits": 0.0,
+        "max_ledger_gap_bits": 0.0,
+        "max_bonus": 0.00015625
+      }
+    ],
+    "first_scenario_seconds": 0.5610104000006686,
+    "elapsed_seconds": 1.7451668999929097,
+    "watched_sha256": {
+      "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+      "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py": "79fc576924aaabc74df7b5badb4f23cd4fbbba915162ca646e6b819855f425b3",
+      "src/wt/lowlevel_v2/observation.py": "7311f0ff5c6f7ef9367fce7eba011bace123dfd9685f967e6794ad13df3dc679",
+      "src/wt/lowlevel_v2/residual_policy.py": "fabd7fff68d575b74de4e0be67d6a35e60990e10d82f135269a86664dcfe6927",
+      "src/wt/lowlevel_v2/safety_projector.py": "75478f547b5741b85735143cf2a0301bcd9b281d4dcd49c355e615a7e84fa6d7",
+      "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py": "dc67c0402a273400fc5490f72b0d8fda34713a0baadb1005de06f17e3be8bf9a",
+      "results/phase5_hgnn_urgency/checkpoints/mappo_original.pt": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14"
+    },
+    "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "legacy_actor_sha256": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14",
+    "smoke_steps": 16,
+    "lambda_u": 0.0005,
+    "rho": 0.001
+  },
+  "problems": [],
+  "watched_sha256": {
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py": "79fc576924aaabc74df7b5badb4f23cd4fbbba915162ca646e6b819855f425b3",
+    "src/wt/lowlevel_v2/observation.py": "7311f0ff5c6f7ef9367fce7eba011bace123dfd9685f967e6794ad13df3dc679",
+    "src/wt/lowlevel_v2/residual_policy.py": "fabd7fff68d575b74de4e0be67d6a35e60990e10d82f135269a86664dcfe6927",
+    "src/wt/lowlevel_v2/safety_projector.py": "75478f547b5741b85735143cf2a0301bcd9b281d4dcd49c355e615a7e84fa6d7",
+    "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py": "dc67c0402a273400fc5490f72b0d8fda34713a0baadb1005de06f17e3be8bf9a",
+    "results/phase5_hgnn_urgency/checkpoints/mappo_original.pt": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14"
+  },
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "training_text": "Smoke 已通过。L1/L2 训练尚未开始，预算仍是 300 次更新、种子 0/1/2。",
+  "decision_text": "评估尚未完成，不合并。",
+  "manifest": []
+}
