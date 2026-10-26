@@ -1,0 +1,899 @@
+{
+  "gate": "ARRIVAL_AWARE_URGENCY_LABEL_COMPLETE",
+  "reasons": [],
+  "failure_trace": "",
+  "effect": "material_consistent",
+  "scenario_effects": [
+    "material",
+    "material",
+    "material",
+    "material"
+  ],
+  "next_step": "下一步只提出 arrival-aware label 的小规模扩展方案，先不构建训练集，也不训练 HGNN。",
+  "learned_policy": false,
+  "trained_hgnn": false,
+  "trained_mappo": false,
+  "formal_system_modified": false,
+  "lambda_H": null,
+  "delta_payload_max": null,
+  "d4_gate_unchanged": "URGENCY_TIEBREAK_SINGLE_INTERVENTION_INCONCLUSIVE",
+  "instruction_commit": "a3d3a278638c6170851d8c23d9c518bb546e1cbb",
+  "frozen_shard_commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+  "label_seed": 604,
+  "seed_sequence": "[604, scenario_id, 30]",
+  "decision_time": 30,
+  "horizon": 15,
+  "generator": "G1_RATE",
+  "selected_k": 6,
+  "candidates_per_state": 128,
+  "rollouts": 1024,
+  "max_rollouts": 1024,
+  "first_state_seconds": 22.109087100000124,
+  "estimated_seconds": 88.4363484000005,
+  "max_seconds": 1200.0,
+  "scenarios": [
+    322000,
+    322001,
+    322002,
+    322003
+  ],
+  "states": [
+    {
+      "scenario_id": 322000,
+      "seconds": 22.109087100000124,
+      "state_hash": "02a8e08ed985ab75687f84e9768380d9626302036cb0c99b1e513a06be4c8c71",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "pool_count": 13327,
+      "subset_hash": "8291f5d6f848cd858218518b60f0e8dcd205f318f9b8344e6e1c11a790902f90",
+      "checksum_candidates": "ccb9788c17f575a84dd481145dc126f3378b891949e38d052a170bc93af317d6",
+      "q_bits": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3730207.330256999,
+        3823134.7989670443,
+        2542727.5881881313,
+        3740322.662459351,
+        3681131.0327326385,
+        3826608.5024111494
+      ],
+      "urgency": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.4583333333333333,
+        0.4583333333333333,
+        0.125,
+        0.20833333333333334,
+        0.4583333333333333,
+        0.4583333333333333
+      ],
+      "oldest_wait_age": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        22.0,
+        22.0,
+        6.0,
+        10.0,
+        22.0,
+        22.0
+      ],
+      "replay_ledger_gap_bits": 4.656612873077393e-10,
+      "replay_accounting_error_bits": 1.862645149230957e-09,
+      "ranking": {
+        "count": 128,
+        "payload_spearman": 0.33725313732728085,
+        "urgent_spearman": 0.9135746658121223,
+        "payload_inversion": {
+          "compared_pairs": 7329,
+          "inverted_pairs": 2698,
+          "tied_pairs": 799,
+          "inversion_rate": 0.36812662027561743
+        },
+        "urgent_inversion": {
+          "compared_pairs": 8128,
+          "inverted_pairs": 998,
+          "tied_pairs": 0,
+          "inversion_rate": 0.12278543307086615
+        },
+        "zero_payload_top1": 4744,
+        "real_payload_top1": 5035,
+        "payload_top1_changed": true,
+        "payload_top1_within_one_bit": false,
+        "payload_top1_regret_bits": 7130349.702733751,
+        "zero_urgent_top1": 5128,
+        "real_urgent_top1": 5178,
+        "urgent_top1_changed": true,
+        "urgent_top1_within_one_bit": false,
+        "urgent_top1_regret_bits": 643457.253033489,
+        "payload_delta_mean_bits": 8282683.602870397,
+        "urgent_delta_mean_bits": 1430040.2036063299,
+        "dropped_delta_mean_bits": 10217359.604036335,
+        "final_queue_delta_mean_bits": 5499956.793093268,
+        "max_abs_j15_gap_bits": 0.0
+      },
+      "effect": "material",
+      "payload_strata": [
+        {
+          "stratum": "q1",
+          "count": 33,
+          "payload_delta_mean_bits": 11033297.70116898,
+          "urgent_delta_mean_bits": 1494547.3338174291,
+          "dropped_delta_mean_bits": 11323012.909026355,
+          "urgent_inversion_rate": 0.04924242424242424,
+          "urgent_compared_pairs": 528
+        },
+        {
+          "stratum": "q2",
+          "count": 32,
+          "payload_delta_mean_bits": 10479294.640489997,
+          "urgent_delta_mean_bits": 1844698.8106478383,
+          "dropped_delta_mean_bits": 10220432.945367798,
+          "urgent_inversion_rate": 0.24193548387096775,
+          "urgent_compared_pairs": 496
+        },
+        {
+          "stratum": "q3",
+          "count": 56,
+          "payload_delta_mean_bits": 5986802.883020503,
+          "urgent_delta_mean_bits": 1256680.3104172084,
+          "dropped_delta_mean_bits": 9605927.753136573,
+          "urgent_inversion_rate": 0.3181818181818182,
+          "urgent_compared_pairs": 1540
+        },
+        {
+          "stratum": "q4",
+          "count": 7,
+          "payload_delta_mean_bits": 3640898.1548580523,
+          "urgent_delta_mean_bits": 617232.1030772262,
+          "dropped_delta_mean_bits": 9882399.270194782,
+          "urgent_inversion_rate": 0.8095238095238095,
+          "urgent_compared_pairs": 21
+        }
+      ],
+      "urgency_start_strata": [
+        {
+          "stratum": "q1",
+          "count": 35,
+          "payload_delta_mean_bits": 11105955.53043198,
+          "urgent_delta_mean_bits": 1545293.9843753043,
+          "dropped_delta_mean_bits": 11228480.968421442,
+          "urgent_inversion_rate": 0.09411764705882353,
+          "urgent_compared_pairs": 595
+        },
+        {
+          "stratum": "q2",
+          "count": 40,
+          "payload_delta_mean_bits": 9593085.50925209,
+          "urgent_delta_mean_bits": 1775571.0211491548,
+          "dropped_delta_mean_bits": 10141982.167520285,
+          "urgent_inversion_rate": 0.2935897435897436,
+          "urgent_compared_pairs": 780
+        },
+        {
+          "stratum": "q3",
+          "count": 53,
+          "payload_delta_mean_bits": 5429276.174192604,
+          "urgent_delta_mean_bits": 1093151.240802045,
+          "dropped_delta_mean_bits": 9606526.579643188,
+          "urgent_inversion_rate": 0.4143686502177068,
+          "urgent_compared_pairs": 1378
+        }
+      ],
+      "idle_strata": [
+        {
+          "stratum": "0",
+          "count": 38,
+          "payload_delta_mean_bits": 4105439.4783545122,
+          "urgent_delta_mean_bits": 849136.2811082616,
+          "dropped_delta_mean_bits": 9508035.296073733,
+          "urgent_inversion_rate": 0.6244665718349929,
+          "urgent_compared_pairs": 703
+        },
+        {
+          "stratum": "1",
+          "count": 31,
+          "payload_delta_mean_bits": 7586902.335640661,
+          "urgent_delta_mean_bits": 1570114.318013731,
+          "dropped_delta_mean_bits": 10065770.394828815,
+          "urgent_inversion_rate": 0.43010752688172044,
+          "urgent_compared_pairs": 465
+        },
+        {
+          "stratum": "2",
+          "count": 38,
+          "payload_delta_mean_bits": 11648840.055043131,
+          "urgent_delta_mean_bits": 2027023.387254851,
+          "dropped_delta_mean_bits": 10128518.946238603,
+          "urgent_inversion_rate": 0.15362731152204837,
+          "urgent_compared_pairs": 703
+        },
+        {
+          "stratum": "3",
+          "count": 19,
+          "payload_delta_mean_bits": 11312036.482806986,
+          "urgent_delta_mean_bits": 1284729.5814074352,
+          "dropped_delta_mean_bits": 11386896.25152912,
+          "urgent_inversion_rate": 0.05847953216374269,
+          "urgent_compared_pairs": 171
+        },
+        {
+          "stratum": "4",
+          "count": 1,
+          "payload_delta_mean_bits": 7398213.320107324,
+          "urgent_delta_mean_bits": 542672.7586450265,
+          "dropped_delta_mean_bits": 15722059.973987218,
+          "urgent_inversion_rate": 0.0,
+          "urgent_compared_pairs": 0
+        },
+        {
+          "stratum": "5",
+          "count": 1,
+          "payload_delta_mean_bits": 4000000.0000000005,
+          "urgent_delta_mean_bits": 124999.99999999977,
+          "dropped_delta_mean_bits": 17520997.11604827,
+          "urgent_inversion_rate": 0.0,
+          "urgent_compared_pairs": 0
+        }
+      ],
+      "problems": []
+    },
+    {
+      "scenario_id": 322001,
+      "seconds": 17.909783299999617,
+      "state_hash": "7837ad2d8efecc1814ba2d6b0f3b2a05b228c8ca8f6503e94df6fe94d3eeafcf",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "pool_count": 13327,
+      "subset_hash": "02d5f3b50351779b7b7ed9c77f4209dadcf4fa0d0abf79be6e2cacbc419cdd14",
+      "checksum_candidates": "9bc33ea4b4b3d301f4bc011e321c308a256bfdbc7d26b25a0506c5a06091d200",
+      "q_bits": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3696332.57862394,
+        3759761.4884003177,
+        3726369.591968852,
+        3820456.3967024004,
+        408579.22936757863,
+        3812518.113580988
+      ],
+      "urgency": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.4166666666666667,
+        0.4166666666666667,
+        0.4583333333333333,
+        0.4166666666666667,
+        0.041666666666666664,
+        0.4166666666666667
+      ],
+      "oldest_wait_age": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        20.0,
+        20.0,
+        22.0,
+        20.0,
+        2.0,
+        20.0
+      ],
+      "replay_ledger_gap_bits": 9.313225746154785e-10,
+      "replay_accounting_error_bits": 1.862645149230957e-09,
+      "ranking": {
+        "count": 128,
+        "payload_spearman": 0.04247584285090003,
+        "urgent_spearman": 0.8539530305804798,
+        "payload_inversion": {
+          "compared_pairs": 7306,
+          "inverted_pairs": 3500,
+          "tied_pairs": 822,
+          "inversion_rate": 0.4790583082398029
+        },
+        "urgent_inversion": {
+          "compared_pairs": 8128,
+          "inverted_pairs": 1392,
+          "tied_pairs": 0,
+          "inversion_rate": 0.17125984251968504
+        },
+        "zero_payload_top1": 4642,
+        "real_payload_top1": 10082,
+        "payload_top1_changed": true,
+        "payload_top1_within_one_bit": false,
+        "payload_top1_regret_bits": 7565730.454345491,
+        "zero_urgent_top1": 4642,
+        "real_urgent_top1": 9739,
+        "urgent_top1_changed": true,
+        "urgent_top1_within_one_bit": false,
+        "urgent_top1_regret_bits": 1014332.5909325331,
+        "payload_delta_mean_bits": 7717062.786739054,
+        "urgent_delta_mean_bits": 1275876.2925767554,
+        "dropped_delta_mean_bits": 9931317.143414145,
+        "final_queue_delta_mean_bits": 6351620.0698468,
+        "max_abs_j15_gap_bits": 0.0
+      },
+      "effect": "material",
+      "payload_strata": [
+        {
+          "stratum": "q1",
+          "count": 32,
+          "payload_delta_mean_bits": 11237049.968768673,
+          "urgent_delta_mean_bits": 1501504.89439845,
+          "dropped_delta_mean_bits": 10642966.331591249,
+          "urgent_inversion_rate": 0.17137096774193547,
+          "urgent_compared_pairs": 496
+        },
+        {
+          "stratum": "q2",
+          "count": 33,
+          "payload_delta_mean_bits": 10512594.58858838,
+          "urgent_delta_mean_bits": 1881578.7555994838,
+          "dropped_delta_mean_bits": 9339880.840102622,
+          "urgent_inversion_rate": 0.23674242424242425,
+          "urgent_compared_pairs": 528
+        },
+        {
+          "stratum": "q3",
+          "count": 38,
+          "payload_delta_mean_bits": 5447452.999133809,
+          "urgent_delta_mean_bits": 1039284.8447125325,
+          "dropped_delta_mean_bits": 9895821.251771117,
+          "urgent_inversion_rate": 0.31436699857752487,
+          "urgent_compared_pairs": 703
+        },
+        {
+          "stratum": "q4",
+          "count": 25,
+          "payload_delta_mean_bits": 2971184.092460009,
+          "urgent_delta_mean_bits": 547163.4318086044,
+          "dropped_delta_mean_bits": 9855055.858216066,
+          "urgent_inversion_rate": 0.5566666666666666,
+          "urgent_compared_pairs": 300
+        }
+      ],
+      "urgency_start_strata": [
+        {
+          "stratum": "q1",
+          "count": 40,
+          "payload_delta_mean_bits": 11265814.311689908,
+          "urgent_delta_mean_bits": 1580343.6307080218,
+          "dropped_delta_mean_bits": 10725371.418609524,
+          "urgent_inversion_rate": 0.18205128205128204,
+          "urgent_compared_pairs": 780
+        },
+        {
+          "stratum": "q2",
+          "count": 27,
+          "payload_delta_mean_bits": 9150482.555817343,
+          "urgent_delta_mean_bits": 1700359.5193006864,
+          "dropped_delta_mean_bits": 9246557.406791447,
+          "urgent_inversion_rate": 0.3333333333333333,
+          "urgent_compared_pairs": 351
+        },
+        {
+          "stratum": "q3",
+          "count": 46,
+          "payload_delta_mean_bits": 5360440.390170956,
+          "urgent_delta_mean_bits": 998661.8733791866,
+          "dropped_delta_mean_bits": 9710921.332225198,
+          "urgent_inversion_rate": 0.39516908212560387,
+          "urgent_compared_pairs": 1035
+        },
+        {
+          "stratum": "q4",
+          "count": 15,
+          "payload_delta_mean_bits": 2900545.152004687,
+          "urgent_delta_mean_bits": 550017.8016628474,
+          "dropped_delta_mean_bits": 9722287.089793425,
+          "urgent_inversion_rate": 0.5619047619047619,
+          "urgent_compared_pairs": 105
+        }
+      ],
+      "idle_strata": [
+        {
+          "stratum": "0",
+          "count": 38,
+          "payload_delta_mean_bits": 3011664.9459195347,
+          "urgent_delta_mean_bits": 513559.58569380455,
+          "dropped_delta_mean_bits": 9963393.446458243,
+          "urgent_inversion_rate": 0.5448079658605974,
+          "urgent_compared_pairs": 703
+        },
+        {
+          "stratum": "1",
+          "count": 30,
+          "payload_delta_mean_bits": 7060918.070715131,
+          "urgent_delta_mean_bits": 1409540.8515909729,
+          "dropped_delta_mean_bits": 9651697.604815623,
+          "urgent_inversion_rate": 0.3632183908045977,
+          "urgent_compared_pairs": 435
+        },
+        {
+          "stratum": "2",
+          "count": 41,
+          "payload_delta_mean_bits": 11546828.953851722,
+          "urgent_delta_mean_bits": 1986084.7920042872,
+          "dropped_delta_mean_bits": 9457172.445486926,
+          "urgent_inversion_rate": 0.17317073170731706,
+          "urgent_compared_pairs": 820
+        },
+        {
+          "stratum": "3",
+          "count": 13,
+          "payload_delta_mean_bits": 10839251.441681696,
+          "urgent_delta_mean_bits": 1337603.7012204009,
+          "dropped_delta_mean_bits": 10597571.27825135,
+          "urgent_inversion_rate": 0.10256410256410256,
+          "urgent_compared_pairs": 78
+        },
+        {
+          "stratum": "4",
+          "count": 6,
+          "payload_delta_mean_bits": 7863828.464403343,
+          "urgent_delta_mean_bits": 448725.17628166155,
+          "dropped_delta_mean_bits": 12922703.060816186,
+          "urgent_inversion_rate": 0.0,
+          "urgent_compared_pairs": 15
+        }
+      ],
+      "problems": []
+    },
+    {
+      "scenario_id": 322002,
+      "seconds": 18.66281190000018,
+      "state_hash": "482fee16e7d4a12451fb66b35ba58b753d9ddce69be77878d2146cd84b0d4287",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "pool_count": 13327,
+      "subset_hash": "6aaade753440f15b4afff386fd26831dffb7c2b28b8f1072240eedbd56020448",
+      "checksum_candidates": "509e494c156ddd5117bb5a99a2423ec54a87ea4ddf5da15bb08927ef62b3c72d",
+      "q_bits": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3756669.420291035,
+        3783758.7194022704,
+        3705562.803890561,
+        3782204.80297173,
+        120662.39437994664,
+        3805972.355989183
+      ],
+      "urgency": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.4583333333333333,
+        0.4166666666666667,
+        0.4583333333333333,
+        0.25,
+        0.041666666666666664,
+        0.4166666666666667
+      ],
+      "oldest_wait_age": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        22.0,
+        20.0,
+        22.0,
+        12.0,
+        2.0,
+        20.0
+      ],
+      "replay_ledger_gap_bits": 9.313225746154785e-10,
+      "replay_accounting_error_bits": 2.7939677238464355e-09,
+      "ranking": {
+        "count": 128,
+        "payload_spearman": 0.15944558927607064,
+        "urgent_spearman": 0.8726423731917232,
+        "payload_inversion": {
+          "compared_pairs": 7361,
+          "inverted_pairs": 3207,
+          "tied_pairs": 767,
+          "inversion_rate": 0.4356745007471811
+        },
+        "urgent_inversion": {
+          "compared_pairs": 8128,
+          "inverted_pairs": 1205,
+          "tied_pairs": 0,
+          "inversion_rate": 0.1482529527559055
+        },
+        "zero_payload_top1": 4642,
+        "real_payload_top1": 6568,
+        "payload_top1_changed": true,
+        "payload_top1_within_one_bit": false,
+        "payload_top1_regret_bits": 8002769.665416647,
+        "zero_urgent_top1": 4858,
+        "real_urgent_top1": 4508,
+        "urgent_top1_changed": true,
+        "urgent_top1_within_one_bit": false,
+        "urgent_top1_regret_bits": 658891.8113802522,
+        "payload_delta_mean_bits": 8329409.961382622,
+        "urgent_delta_mean_bits": 1357704.9036708472,
+        "dropped_delta_mean_bits": 9670265.839926269,
+        "final_queue_delta_mean_bits": 6000324.198691108,
+        "max_abs_j15_gap_bits": 0.0
+      },
+      "effect": "material",
+      "payload_strata": [
+        {
+          "stratum": "q1",
+          "count": 34,
+          "payload_delta_mean_bits": 11058691.883928243,
+          "urgent_delta_mean_bits": 1529023.6628831632,
+          "dropped_delta_mean_bits": 10725288.841507057,
+          "urgent_inversion_rate": 0.12299465240641712,
+          "urgent_compared_pairs": 561
+        },
+        {
+          "stratum": "q2",
+          "count": 34,
+          "payload_delta_mean_bits": 11024514.437936213,
+          "urgent_delta_mean_bits": 1908207.948700792,
+          "dropped_delta_mean_bits": 9023286.939997368,
+          "urgent_inversion_rate": 0.1836007130124777,
+          "urgent_compared_pairs": 561
+        },
+        {
+          "stratum": "q3",
+          "count": 35,
+          "payload_delta_mean_bits": 6200469.521082642,
+          "urgent_delta_mean_bits": 1187058.9256362396,
+          "dropped_delta_mean_bits": 9408073.460584017,
+          "urgent_inversion_rate": 0.24873949579831933,
+          "urgent_compared_pairs": 595
+        },
+        {
+          "stratum": "q4",
+          "count": 25,
+          "payload_delta_mean_bits": 3932761.0750276744,
+          "urgent_delta_mean_bits": 614931.6191498239,
+          "dropped_delta_mean_bits": 9482395.192758856,
+          "urgent_inversion_rate": 0.6033333333333334,
+          "urgent_compared_pairs": 300
+        }
+      ],
+      "urgency_start_strata": [
+        {
+          "stratum": "q1",
+          "count": 34,
+          "payload_delta_mean_bits": 11275846.826849656,
+          "urgent_delta_mean_bits": 1568786.0185640815,
+          "dropped_delta_mean_bits": 11065218.513458388,
+          "urgent_inversion_rate": 0.13368983957219252,
+          "urgent_compared_pairs": 561
+        },
+        {
+          "stratum": "q2",
+          "count": 34,
+          "payload_delta_mean_bits": 10298591.80419877,
+          "urgent_delta_mean_bits": 1789338.4541952014,
+          "dropped_delta_mean_bits": 9004159.669440687,
+          "urgent_inversion_rate": 0.1746880570409982,
+          "urgent_compared_pairs": 561
+        },
+        {
+          "stratum": "q3",
+          "count": 49,
+          "payload_delta_mean_bits": 5747105.883593985,
+          "urgent_delta_mean_bits": 1073051.2119208362,
+          "dropped_delta_mean_bits": 9270564.062081411,
+          "urgent_inversion_rate": 0.4030612244897959,
+          "urgent_compared_pairs": 1176
+        },
+        {
+          "stratum": "q4",
+          "count": 11,
+          "payload_delta_mean_bits": 4638670.300474901,
+          "urgent_delta_mean_bits": 639135.1101756232,
+          "dropped_delta_mean_bits": 9197957.295454957,
+          "urgent_inversion_rate": 0.5636363636363636,
+          "urgent_compared_pairs": 55
+        }
+      ],
+      "idle_strata": [
+        {
+          "stratum": "0",
+          "count": 36,
+          "payload_delta_mean_bits": 3937962.6755492473,
+          "urgent_delta_mean_bits": 602248.1272626154,
+          "dropped_delta_mean_bits": 9492896.902936809,
+          "urgent_inversion_rate": 0.5952380952380952,
+          "urgent_compared_pairs": 630
+        },
+        {
+          "stratum": "1",
+          "count": 33,
+          "payload_delta_mean_bits": 7536382.8656030465,
+          "urgent_delta_mean_bits": 1503805.9964753417,
+          "dropped_delta_mean_bits": 9414775.806782588,
+          "urgent_inversion_rate": 0.22537878787878787,
+          "urgent_compared_pairs": 528
+        },
+        {
+          "stratum": "2",
+          "count": 39,
+          "payload_delta_mean_bits": 11915980.990234435,
+          "urgent_delta_mean_bits": 2015732.1362158598,
+          "dropped_delta_mean_bits": 9445722.236930132,
+          "urgent_inversion_rate": 0.09851551956815115,
+          "urgent_compared_pairs": 741
+        },
+        {
+          "stratum": "3",
+          "count": 16,
+          "payload_delta_mean_bits": 11220164.21606582,
+          "urgent_delta_mean_bits": 1395434.3561627497,
+          "dropped_delta_mean_bits": 10215304.774400178,
+          "urgent_inversion_rate": 0.13333333333333333,
+          "urgent_compared_pairs": 120
+        },
+        {
+          "stratum": "4",
+          "count": 4,
+          "payload_delta_mean_bits": 7862824.524026535,
+          "urgent_delta_mean_bits": 384798.5484263771,
+          "dropped_delta_mean_bits": 13383523.437583454,
+          "urgent_inversion_rate": 0.0,
+          "urgent_compared_pairs": 6
+        }
+      ],
+      "problems": []
+    },
+    {
+      "scenario_id": 322003,
+      "seconds": 20.239376099999845,
+      "state_hash": "2666a3ee6a6bf4e0ca412f56ed01c06a52606f593f21c297e4ffd7adcb46c07b",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "pool_count": 13327,
+      "subset_hash": "766b272c832620d4a8f69dbc104fb6b378fdbbdf4f50caf123e35b39b0560d44",
+      "checksum_candidates": "85d3557279768d6f367ca9ec88ffd325538091f9db5719b2e634aa7d4f30460e",
+      "q_bits": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3772682.625122522,
+        3824997.862385973,
+        3164213.7877711426,
+        3756727.6968818367,
+        3741075.2617029995,
+        3832744.592627035
+      ],
+      "urgency": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.4166666666666667,
+        0.4166666666666667,
+        0.16666666666666666,
+        0.20833333333333334,
+        0.5,
+        0.4583333333333333
+      ],
+      "oldest_wait_age": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        20.0,
+        20.0,
+        8.0,
+        10.0,
+        24.0,
+        22.0
+      ],
+      "replay_ledger_gap_bits": 9.313225746154785e-10,
+      "replay_accounting_error_bits": 2.3283064365386963e-09,
+      "ranking": {
+        "count": 128,
+        "payload_spearman": 0.4288375869327132,
+        "urgent_spearman": 0.8991942867606665,
+        "payload_inversion": {
+          "compared_pairs": 7400,
+          "inverted_pairs": 2520,
+          "tied_pairs": 728,
+          "inversion_rate": 0.34054054054054056
+        },
+        "urgent_inversion": {
+          "compared_pairs": 8128,
+          "inverted_pairs": 1128,
+          "tied_pairs": 0,
+          "inversion_rate": 0.13877952755905512
+        },
+        "zero_payload_top1": 4651,
+        "real_payload_top1": 11771,
+        "payload_top1_changed": true,
+        "payload_top1_within_one_bit": false,
+        "payload_top1_regret_bits": 6840780.16186513,
+        "zero_urgent_top1": 4676,
+        "real_urgent_top1": 4692,
+        "urgent_top1_changed": true,
+        "urgent_top1_within_one_bit": false,
+        "urgent_top1_regret_bits": 1026464.7319283802,
+        "payload_delta_mean_bits": 7321103.228803037,
+        "urgent_delta_mean_bits": 1280189.5747203678,
+        "dropped_delta_mean_bits": 10848562.944673246,
+        "final_queue_delta_mean_bits": 5830333.826523718,
+        "max_abs_j15_gap_bits": 0.0
+      },
+      "effect": "material",
+      "payload_strata": [
+        {
+          "stratum": "q1",
+          "count": 32,
+          "payload_delta_mean_bits": 9967793.54837939,
+          "urgent_delta_mean_bits": 1479243.4277411979,
+          "dropped_delta_mean_bits": 12165514.191355221,
+          "urgent_inversion_rate": 0.14516129032258066,
+          "urgent_compared_pairs": 496
+        },
+        {
+          "stratum": "q2",
+          "count": 32,
+          "payload_delta_mean_bits": 10089573.0065714,
+          "urgent_delta_mean_bits": 1887540.336169279,
+          "dropped_delta_mean_bits": 10685530.620660216,
+          "urgent_inversion_rate": 0.16330645161290322,
+          "urgent_compared_pairs": 496
+        },
+        {
+          "stratum": "q3",
+          "count": 58,
+          "payload_delta_mean_bits": 4612279.072727797,
+          "urgent_delta_mean_bits": 880580.9105144024,
+          "dropped_delta_mean_bits": 10353360.553695114,
+          "urgent_inversion_rate": 0.29340592861464004,
+          "urgent_compared_pairs": 1653
+        },
+        {
+          "stratum": "q4",
+          "count": 6,
+          "payload_delta_mean_bits": 4625549.551691863,
+          "urgent_delta_mean_bits": 842248.718206084,
+          "dropped_delta_mean_bits": 9481285.136560788,
+          "urgent_inversion_rate": 0.6666666666666666,
+          "urgent_compared_pairs": 15
+        }
+      ],
+      "urgency_start_strata": [
+        {
+          "stratum": "q1",
+          "count": 33,
+          "payload_delta_mean_bits": 10365723.569182469,
+          "urgent_delta_mean_bits": 1562813.826992141,
+          "dropped_delta_mean_bits": 12002141.782118408,
+          "urgent_inversion_rate": 0.13068181818181818,
+          "urgent_compared_pairs": 528
+        },
+        {
+          "stratum": "q2",
+          "count": 31,
+          "payload_delta_mean_bits": 8478475.359151917,
+          "urgent_delta_mean_bits": 1592078.062986923,
+          "dropped_delta_mean_bits": 10957159.207845716,
+          "urgent_inversion_rate": 0.443010752688172,
+          "urgent_compared_pairs": 465
+        },
+        {
+          "stratum": "q3",
+          "count": 51,
+          "payload_delta_mean_bits": 5750016.025687997,
+          "urgent_delta_mean_bits": 1115382.0357784447,
+          "dropped_delta_mean_bits": 10339626.828167908,
+          "urgent_inversion_rate": 0.3035294117647059,
+          "urgent_compared_pairs": 1275
+        },
+        {
+          "stratum": "q4",
+          "count": 13,
+          "payload_delta_mean_bits": 2996060.158459222,
+          "urgent_delta_mean_bits": 465577.34585932153,
+          "dropped_delta_mean_bits": 9657882.6483452,
+          "urgent_inversion_rate": 0.6410256410256411,
+          "urgent_compared_pairs": 78
+        }
+      ],
+      "idle_strata": [
+        {
+          "stratum": "0",
+          "count": 38,
+          "payload_delta_mean_bits": 4009615.0363039146,
+          "urgent_delta_mean_bits": 711163.9832504581,
+          "dropped_delta_mean_bits": 9716769.281881643,
+          "urgent_inversion_rate": 0.5576102418207681,
+          "urgent_compared_pairs": 703
+        },
+        {
+          "stratum": "1",
+          "count": 30,
+          "payload_delta_mean_bits": 5555589.620544813,
+          "urgent_delta_mean_bits": 1137352.5143263664,
+          "dropped_delta_mean_bits": 10982394.069471361,
+          "urgent_inversion_rate": 0.3839080459770115,
+          "urgent_compared_pairs": 435
+        },
+        {
+          "stratum": "2",
+          "count": 41,
+          "payload_delta_mean_bits": 10231931.05717372,
+          "urgent_delta_mean_bits": 1924816.8865930948,
+          "dropped_delta_mean_bits": 11000139.33346326,
+          "urgent_inversion_rate": 0.18170731707317073,
+          "urgent_compared_pairs": 820
+        },
+        {
+          "stratum": "3",
+          "count": 17,
+          "payload_delta_mean_bits": 10787041.093296405,
+          "urgent_delta_mean_bits": 1352689.9716964993,
+          "dropped_delta_mean_bits": 12292677.539364927,
+          "urgent_inversion_rate": 0.11764705882352941,
+          "urgent_compared_pairs": 136
+        },
+        {
+          "stratum": "4",
+          "count": 2,
+          "payload_delta_mean_bits": 7589640.680367032,
+          "urgent_delta_mean_bits": 403118.4508706776,
+          "dropped_delta_mean_bits": 14962885.64066723,
+          "urgent_inversion_rate": 1.0,
+          "urgent_compared_pairs": 1
+        }
+      ],
+      "problems": []
+    }
+  ],
+  "checkpoint_sha256": {
+    "mappo_v2_seed0": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "scheme_c": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
+    "epoch6": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde",
+    "adapter_config": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63"
+  },
+  "watched_sha256": {
+    "d0_labels": "241f1a4155a22e6ae9829067a1e7b38a09679675f665bd360b704c52691ff1db",
+    "d1_labels": "012ce8cfb99aac93b208573768e9f6a60b82d910ab82da365228cb8a5ea40c02",
+    "d2_summary": "b430d5a1b0b79a814d3d8c187b0566d34d6b891254319f8bbe27948e0706a54a",
+    "d3_summary": "d3da9ac9dab80239868b606e4617d4800f21d5c4fb4b49cdb1a9408058f7563b",
+    "d4_summary": "c23479ee18f6fe40069341c60e4204697a217ae5b0a5d60d2687624a3e45872d",
+    "formal_planner": "dc67c0402a273400fc5490f72b0d8fda34713a0baadb1005de06f17e3be8bf9a"
+  },
+  "watched_unchanged": true,
+  "dataset_unchanged": true,
+  "arrival_pairing": "arrivals_at is a deterministic function of time; zero-arrival disables it only on the scratch copy"
+}
