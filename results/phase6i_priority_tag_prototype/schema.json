@@ -1,0 +1,36 @@
+{
+  "schema_version": "synthetic_priority_bucket_v1",
+  "synthetic_priority_tag": "binary 0 ordinary, 1 synthetic urgent; not a maritime business label",
+  "tag_rate": 0.25,
+  "beta_tag": 0.25,
+  "tag_seed_sequence": [
+    606,
+    "scenario_id",
+    "admission_step",
+    "buoy"
+  ],
+  "reset_stock": "tag 0, age_origin reset_convention, admission_step 0",
+  "urgency": "clip(clip(age/48,0,1)+beta_tag*tag,0,1), computed before service",
+  "fifo_key": [
+    "admission_step",
+    "insert_index"
+  ],
+  "tag_is_fifo_key": false,
+  "formal_step_fields": [
+    "served_bits",
+    "generated_arrival_bits",
+    "admitted_arrival_bits",
+    "dropped_bits_step"
+  ],
+  "snap_source": "cumulative_snap_bits delta because info does not contain float_snap_bits",
+  "tolerance_bits": 1.0,
+  "lambda_candidates": [
+    0.0,
+    0.0005,
+    0.001,
+    0.002
+  ],
+  "lambda_reference": 0.05,
+  "lambda_selected": null,
+  "old_buoy_urgency_ratio_used": false
+}
