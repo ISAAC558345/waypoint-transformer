@@ -1,0 +1,24 @@
+{
+  "schema_version": "frozen_mappo_priority_tag_reward_scale_v1",
+  "actor": "phase6g_seed0.pt mean action, eval mode, weights frozen",
+  "assignment": "phase6g sample_assignment G1_RATE hold 15, per-scenario numpy seed 6000000+scenario_id",
+  "synthetic_tag": "E1 protocol tag_rate 0.25 beta_tag 0.25 SeedSequence[606, scenario_id, admission_step, buoy]",
+  "lambda_candidates": [
+    0.0,
+    0.0005,
+    0.001,
+    0.002
+  ],
+  "lambda_reference": 0.05,
+  "lambda_selected": null,
+  "penalty_split": "c_project and c_residual recomputed with the formal low_level_reward formula",
+  "budget_seconds_for_eight_episodes": 600.0,
+  "preregistered_bounds": {
+    "urgency_fraction_span_max": 2.0,
+    "e1_relative_tolerance": 0.5,
+    "p95_bonus_over_penalty_max": 1.0,
+    "mean_bonus_over_payload_max": 0.01
+  },
+  "held_out_splits_read": false,
+  "trained": false
+}
