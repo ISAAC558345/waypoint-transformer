@@ -1,0 +1,30 @@
+{
+  "schema_version": "urgency_reward_protocol_review_v1",
+  "e2_gate": "URGENCY_REWARD_SCALE_INCONCLUSIVE",
+  "e3_gate": "URGENCY_REWARD_FORM_INCONCLUSIVE",
+  "e3_gate_rewritten": false,
+  "standards_loosened": false,
+  "candidate_status": "CONDITIONAL_CANDIDATE_NOT_APPROVED",
+  "candidate_form": "B",
+  "candidate_lambda_u": 0.0005,
+  "candidate_rho": 0.001,
+  "lambda_selected": null,
+  "rho_selected": null,
+  "lambda_h": "NOT_SELECTED",
+  "approved": false,
+  "training_authorized": false,
+  "reran_environment": false,
+  "resampled_tags": false,
+  "trained": false,
+  "formal_system_modified": false,
+  "closed_loop_claim": false,
+  "preferred_design": "B",
+  "preferred_design_is_performance_claim": false,
+  "formula_a": "r_base + lambda_u * urgency_term",
+  "formula_b": "r_base + min(lambda_u * urgency_term, rho * payload_term)",
+  "payload_term": "served_bits/1e6 for the current step, not cumulative payload_bits",
+  "owner_decisions_pending": [
+    "accept_stop_or_rollback_if_benchmark_payload_drops",
+    "approve_lambda_0_0005_rho_0_001_as_only_first_lowlevel_candidate"
+  ]
+}

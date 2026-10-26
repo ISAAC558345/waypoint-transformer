@@ -1,0 +1,632 @@
+{
+  "gate": "URGENCY_REWARD_PROTOCOL_WAITING_FOR_OWNER",
+  "e2_gate": "URGENCY_REWARD_SCALE_INCONCLUSIVE",
+  "e3_gate": "URGENCY_REWARD_FORM_INCONCLUSIVE",
+  "e3_gate_preserved": "URGENCY_REWARD_FORM_INCONCLUSIVE",
+  "e3_gate_rewritten": false,
+  "standards_loosened": false,
+  "instruction_commit": "fe2967115cbb86e97e1b2d92c2c6bc47399681d0",
+  "e2_commit": "5210dd7611befceed37c897a998cc1c5bd2a76bd",
+  "e3_commit": "6492e9960af094dc28e71748ea4a5b6c8d988f86",
+  "problems": [],
+  "sources_ok": true,
+  "e2_files": [
+    {
+      "path": "results/phase6i_priority_tag_reward_scale_e2/step_rows.csv",
+      "present": true,
+      "sha256": "7e5d5ab0ca360eee075ee637fe575a07603fe72947188ec792dec7b9086fa49f",
+      "git_commit": "5210dd7611befceed37c897a998cc1c5bd2a76bd",
+      "clean": true
+    },
+    {
+      "path": "results/phase6i_priority_tag_reward_scale_e2/episode_rows.csv",
+      "present": true,
+      "sha256": "876e162dc6ed6706e5d99a1cad147ea263e1e2ec9ddcc6d6570dc65f9830d719",
+      "git_commit": "5210dd7611befceed37c897a998cc1c5bd2a76bd",
+      "clean": true
+    },
+    {
+      "path": "results/phase6i_priority_tag_reward_scale_e2/summary.json",
+      "present": true,
+      "sha256": "0d5a2645e39a38673f7411f828ebd3d08b004f0d0968e70f312953595ae48995",
+      "git_commit": "5210dd7611befceed37c897a998cc1c5bd2a76bd",
+      "clean": true
+    },
+    {
+      "path": "results/phase6i_priority_tag_reward_scale_e2/schema.json",
+      "present": true,
+      "sha256": "e6cc0e20a10a88d208ad5169cec5a73956b5236b98a5822b6bd07676c7176358",
+      "git_commit": "5210dd7611befceed37c897a998cc1c5bd2a76bd",
+      "clean": true
+    },
+    {
+      "path": "docs/research/HTW_UrgencyAware_Reward_Scale_Replication_Report_CN.md",
+      "present": true,
+      "sha256": "06c1f2c939f3fd6154f10cb225269bb4303ddd7e64ddfa8e6754872c1e6c5d7f",
+      "git_commit": "5210dd7611befceed37c897a998cc1c5bd2a76bd",
+      "clean": true
+    }
+  ],
+  "e3_files": [
+    {
+      "path": "results/phase6i_priority_tag_reward_form_e3/form_rows.csv",
+      "present": true,
+      "sha256": "826d7a3b3f9a8f73be1db9b6c16c1d91e7f35adfda524efdaa616a5407d97a14",
+      "git_commit": "6492e9960af094dc28e71748ea4a5b6c8d988f86",
+      "clean": true
+    },
+    {
+      "path": "results/phase6i_priority_tag_reward_form_e3/summary.json",
+      "present": true,
+      "sha256": "78891052f1aef466b38a86a71fb3f6ce94e08a1b641248721f10e4ae49f94061",
+      "git_commit": "6492e9960af094dc28e71748ea4a5b6c8d988f86",
+      "clean": true
+    },
+    {
+      "path": "results/phase6i_priority_tag_reward_form_e3/schema.json",
+      "present": true,
+      "sha256": "125f31665dc3393aa8baba97a9fd915004b4b62afcb21ccc50786c7efbcf3413",
+      "git_commit": "6492e9960af094dc28e71748ea4a5b6c8d988f86",
+      "clean": true
+    },
+    {
+      "path": "docs/research/HTW_UrgencyAware_Reward_Form_Comparison_Report_CN.md",
+      "present": true,
+      "sha256": "845d9161ea7bf302e42db8bcc7cc2ea234d6b9c8396a927bd07ec8a238f0f6db",
+      "git_commit": "6492e9960af094dc28e71748ea4a5b6c8d988f86",
+      "clean": true
+    }
+  ],
+  "e1_schema_file": {
+    "path": "results/phase6i_priority_tag_prototype/schema.json",
+    "present": true,
+    "sha256": "79db45bfb9cf25664500f56de59d47800ec5aee42017ec4729d73899f67fad22",
+    "git_commit": "827f2ad51654ab984cb0326a2670693cd2793c7a",
+    "clean": true
+  },
+  "formal_files": [
+    {
+      "path": "src/wt/lowlevel_v2/phase1/protocol.py",
+      "present": true,
+      "sha256": "149292d9feccb64c62f01c5df617959f469a5b8cdabf42b7079db9cf7c4226a4",
+      "git_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "clean": true
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6g_lowlevel_mappo/protocol.py",
+      "present": true,
+      "sha256": "9b1c90a57607cbbc512a82663d20e21e8df0be158f5fceda70373159b825194e",
+      "git_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "clean": true
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py",
+      "present": true,
+      "sha256": "79fc576924aaabc74df7b5badb4f23cd4fbbba915162ca646e6b819855f425b3",
+      "git_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "clean": true
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py",
+      "present": true,
+      "sha256": "dc67c0402a273400fc5490f72b0d8fda34713a0baadb1005de06f17e3be8bf9a",
+      "git_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "clean": true
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt",
+      "present": true,
+      "sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+      "git_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "clean": true
+    }
+  ],
+  "formal_formula": "r_base = served_bits/1e6 - 0.05*c_project - 0.01*c_residual",
+  "formal_formula_ok": true,
+  "reward_constants": {
+    "lambda_project": 0.05,
+    "lambda_residual": 0.01,
+    "payload_scale": 1000000.0,
+    "action_scale": 1.0
+  },
+  "checkpoint": "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt",
+  "checkpoint_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "e2_lambda_rows": [
+    {
+      "lambda_u": 0.0,
+      "bonus_mean": 0.0,
+      "bonus_p95": 0.0,
+      "bonus_over_payload_mean": 0.0,
+      "bonus_over_payload_max": 0.0,
+      "bonus_over_penalty_p95": 0.0,
+      "episodes_with_material_reorder": 0,
+      "supported_by_preregistered_bound": false,
+      "selected": false
+    },
+    {
+      "lambda_u": 0.0005,
+      "bonus_mean": 0.00018620829089494584,
+      "bonus_p95": 0.0007226092121936707,
+      "bonus_over_payload_mean": 0.00012977092654096073,
+      "bonus_over_payload_max": 0.0004615682548849519,
+      "bonus_over_penalty_p95": 11.613369238438576,
+      "episodes_with_material_reorder": 0,
+      "supported_by_preregistered_bound": false,
+      "selected": false
+    },
+    {
+      "lambda_u": 0.001,
+      "bonus_mean": 0.0003724165817898917,
+      "bonus_p95": 0.0014452184243873413,
+      "bonus_over_payload_mean": 0.00025954185308192147,
+      "bonus_over_payload_max": 0.0009231365097699038,
+      "bonus_over_penalty_p95": 23.226738476877152,
+      "episodes_with_material_reorder": 1,
+      "supported_by_preregistered_bound": false,
+      "selected": false
+    },
+    {
+      "lambda_u": 0.002,
+      "bonus_mean": 0.0007448331635797834,
+      "bonus_p95": 0.0028904368487746826,
+      "bonus_over_payload_mean": 0.0005190837061638429,
+      "bonus_over_payload_max": 0.0018462730195398075,
+      "bonus_over_penalty_p95": 46.453476953754304,
+      "episodes_with_material_reorder": 2,
+      "supported_by_preregistered_bound": false,
+      "selected": false
+    },
+    {
+      "lambda_u": 0.05,
+      "bonus_mean": 0.018620829089494587,
+      "bonus_p95": 0.07226092121936707,
+      "bonus_over_payload_mean": 0.012977092654096072,
+      "bonus_over_payload_max": 0.04615682548849519,
+      "bonus_over_penalty_p95": 1161.3369238438577,
+      "episodes_with_material_reorder": 8,
+      "supported_by_preregistered_bound": false,
+      "selected": false
+    }
+  ],
+  "cited_forms": [
+    {
+      "form": "A",
+      "lambda_u": 0.0,
+      "rho": null,
+      "role": "candidate",
+      "bonus_mean": 0.0,
+      "bonus_p95": 0.0,
+      "bonus_max": 0.0,
+      "bonus_over_payload_mean": 0.0,
+      "bonus_over_payload_p95": 0.0,
+      "bonus_over_penalty_p50": 0.0,
+      "bonus_over_penalty_p95": 0.0,
+      "bonus_over_penalty_p99": 0.0,
+      "signal_retained_fraction": null,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [],
+      "payload_material_scenarios": [],
+      "all_scenarios_meet_conservative_standard": true,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": null
+    },
+    {
+      "form": "A",
+      "lambda_u": 0.0005,
+      "rho": null,
+      "role": "candidate",
+      "bonus_mean": 0.00018620829089494584,
+      "bonus_p95": 0.0007226092121936707,
+      "bonus_max": 0.0018291822167614327,
+      "bonus_over_payload_mean": 0.00012977092654096073,
+      "bonus_over_payload_p95": 0.00032672217155849315,
+      "bonus_over_penalty_p50": 1.5206867441377465,
+      "bonus_over_penalty_p95": 11.613369238438576,
+      "bonus_over_penalty_p99": 19.742464556497787,
+      "signal_retained_fraction": null,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000
+      ],
+      "payload_material_scenarios": [],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "A",
+      "lambda_u": 0.001,
+      "rho": null,
+      "role": "candidate",
+      "bonus_mean": 0.0003724165817898917,
+      "bonus_p95": 0.0014452184243873413,
+      "bonus_max": 0.0036583644335228655,
+      "bonus_over_payload_mean": 0.00025954185308192147,
+      "bonus_over_payload_p95": 0.0006534443431169863,
+      "bonus_over_penalty_p50": 3.041373488275493,
+      "bonus_over_penalty_p95": 23.226738476877152,
+      "bonus_over_penalty_p99": 39.48492911299557,
+      "signal_retained_fraction": null,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000
+      ],
+      "payload_material_scenarios": [
+        321000
+      ],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "A",
+      "lambda_u": 0.002,
+      "rho": null,
+      "role": "candidate",
+      "bonus_mean": 0.0007448331635797834,
+      "bonus_p95": 0.0028904368487746826,
+      "bonus_max": 0.007316728867045731,
+      "bonus_over_payload_mean": 0.0005190837061638429,
+      "bonus_over_payload_p95": 0.0013068886862339726,
+      "bonus_over_penalty_p50": 6.082746976550986,
+      "bonus_over_penalty_p95": 46.453476953754304,
+      "bonus_over_penalty_p99": 78.96985822599115,
+      "signal_retained_fraction": null,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000,
+        321007
+      ],
+      "payload_material_scenarios": [
+        321000,
+        321007
+      ],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "A",
+      "lambda_u": 0.05,
+      "rho": null,
+      "role": "high_risk_reference",
+      "bonus_mean": 0.018620829089494587,
+      "bonus_p95": 0.07226092121936707,
+      "bonus_max": 0.18291822167614327,
+      "bonus_over_payload_mean": 0.012977092654096072,
+      "bonus_over_payload_p95": 0.032672217155849316,
+      "bonus_over_penalty_p50": 152.06867441377466,
+      "bonus_over_penalty_p95": 1161.3369238438577,
+      "bonus_over_penalty_p99": 1974.2464556497787,
+      "signal_retained_fraction": null,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000,
+        321001,
+        321002,
+        321003,
+        321004,
+        321005,
+        321006,
+        321007
+      ],
+      "payload_material_scenarios": [
+        321000,
+        321001,
+        321002,
+        321003,
+        321004,
+        321005,
+        321006,
+        321007
+      ],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "B",
+      "lambda_u": 0.0005,
+      "rho": 0.001,
+      "role": "candidate",
+      "bonus_mean": 0.00018620829089494584,
+      "bonus_p95": 0.0007226092121936707,
+      "bonus_max": 0.0018291822167614327,
+      "bonus_over_payload_mean": 0.00012977092654096073,
+      "bonus_over_payload_p95": 0.00032672217155849315,
+      "bonus_over_penalty_p50": 1.5206867441377465,
+      "bonus_over_penalty_p95": 11.613369238438576,
+      "bonus_over_penalty_p99": 19.742464556497787,
+      "signal_retained_fraction": 1.0,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000
+      ],
+      "payload_material_scenarios": [],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "B",
+      "lambda_u": 0.0005,
+      "rho": 0.0025,
+      "role": "candidate",
+      "bonus_mean": 0.00018620829089494584,
+      "bonus_p95": 0.0007226092121936707,
+      "bonus_max": 0.0018291822167614327,
+      "bonus_over_payload_mean": 0.00012977092654096073,
+      "bonus_over_payload_p95": 0.00032672217155849315,
+      "bonus_over_penalty_p50": 1.5206867441377465,
+      "bonus_over_penalty_p95": 11.613369238438576,
+      "bonus_over_penalty_p99": 19.742464556497787,
+      "signal_retained_fraction": 1.0,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000
+      ],
+      "payload_material_scenarios": [],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "B",
+      "lambda_u": 0.0005,
+      "rho": 0.005,
+      "role": "candidate",
+      "bonus_mean": 0.00018620829089494584,
+      "bonus_p95": 0.0007226092121936707,
+      "bonus_max": 0.0018291822167614327,
+      "bonus_over_payload_mean": 0.00012977092654096073,
+      "bonus_over_payload_p95": 0.00032672217155849315,
+      "bonus_over_penalty_p50": 1.5206867441377465,
+      "bonus_over_penalty_p95": 11.613369238438576,
+      "bonus_over_penalty_p99": 19.742464556497787,
+      "signal_retained_fraction": 1.0,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000
+      ],
+      "payload_material_scenarios": [],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "B",
+      "lambda_u": 0.001,
+      "rho": 0.001,
+      "role": "candidate",
+      "bonus_mean": 0.0003724165817898917,
+      "bonus_p95": 0.0014452184243873413,
+      "bonus_max": 0.0036583644335228655,
+      "bonus_over_payload_mean": 0.00025954185308192147,
+      "bonus_over_payload_p95": 0.0006534443431169863,
+      "bonus_over_penalty_p50": 3.041373488275493,
+      "bonus_over_penalty_p95": 23.226738476877152,
+      "bonus_over_penalty_p99": 39.48492911299557,
+      "signal_retained_fraction": 1.0,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000
+      ],
+      "payload_material_scenarios": [
+        321000
+      ],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "B",
+      "lambda_u": 0.001,
+      "rho": 0.0025,
+      "role": "candidate",
+      "bonus_mean": 0.0003724165817898917,
+      "bonus_p95": 0.0014452184243873413,
+      "bonus_max": 0.0036583644335228655,
+      "bonus_over_payload_mean": 0.00025954185308192147,
+      "bonus_over_payload_p95": 0.0006534443431169863,
+      "bonus_over_penalty_p50": 3.041373488275493,
+      "bonus_over_penalty_p95": 23.226738476877152,
+      "bonus_over_penalty_p99": 39.48492911299557,
+      "signal_retained_fraction": 1.0,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000
+      ],
+      "payload_material_scenarios": [
+        321000
+      ],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "B",
+      "lambda_u": 0.001,
+      "rho": 0.005,
+      "role": "candidate",
+      "bonus_mean": 0.0003724165817898917,
+      "bonus_p95": 0.0014452184243873413,
+      "bonus_max": 0.0036583644335228655,
+      "bonus_over_payload_mean": 0.00025954185308192147,
+      "bonus_over_payload_p95": 0.0006534443431169863,
+      "bonus_over_penalty_p50": 3.041373488275493,
+      "bonus_over_penalty_p95": 23.226738476877152,
+      "bonus_over_penalty_p99": 39.48492911299557,
+      "signal_retained_fraction": 1.0,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000
+      ],
+      "payload_material_scenarios": [
+        321000
+      ],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "B",
+      "lambda_u": 0.002,
+      "rho": 0.001,
+      "role": "candidate",
+      "bonus_mean": 0.0006746800698976787,
+      "bonus_p95": 0.0020729166317503787,
+      "bonus_max": 0.0055200752259070875,
+      "bonus_over_payload_mean": 0.000480508543153283,
+      "bonus_over_payload_p95": 0.001,
+      "bonus_over_penalty_p50": 6.082746976550986,
+      "bonus_over_penalty_p95": 37.44464891197897,
+      "bonus_over_penalty_p99": 63.415288637517214,
+      "signal_retained_fraction": 0.905813681355247,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000,
+        321007
+      ],
+      "payload_material_scenarios": [
+        321000
+      ],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "B",
+      "lambda_u": 0.002,
+      "rho": 0.0025,
+      "role": "candidate",
+      "bonus_mean": 0.0007448331635797834,
+      "bonus_p95": 0.0028904368487746826,
+      "bonus_max": 0.007316728867045731,
+      "bonus_over_payload_mean": 0.0005190837061638429,
+      "bonus_over_payload_p95": 0.0013068886862339726,
+      "bonus_over_penalty_p50": 6.082746976550986,
+      "bonus_over_penalty_p95": 46.453476953754304,
+      "bonus_over_penalty_p99": 78.96985822599115,
+      "signal_retained_fraction": 1.0,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000,
+        321007
+      ],
+      "payload_material_scenarios": [
+        321000,
+        321007
+      ],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    },
+    {
+      "form": "B",
+      "lambda_u": 0.002,
+      "rho": 0.005,
+      "role": "candidate",
+      "bonus_mean": 0.0007448331635797834,
+      "bonus_p95": 0.0028904368487746826,
+      "bonus_max": 0.007316728867045731,
+      "bonus_over_payload_mean": 0.0005190837061638429,
+      "bonus_over_payload_p95": 0.0013068886862339726,
+      "bonus_over_penalty_p50": 6.082746976550986,
+      "bonus_over_penalty_p95": 46.453476953754304,
+      "bonus_over_penalty_p99": 78.96985822599115,
+      "signal_retained_fraction": 1.0,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000,
+        321007
+      ],
+      "payload_material_scenarios": [
+        321000,
+        321007
+      ],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    }
+  ],
+  "conditional_candidate": {
+    "status": "CONDITIONAL_CANDIDATE_NOT_APPROVED",
+    "form": "B",
+    "lambda_u": 0.0005,
+    "rho": 0.001,
+    "selected": false,
+    "approved": false,
+    "training_authorized": false,
+    "passed_e3_standard": false,
+    "evidence": {
+      "form": "B",
+      "lambda_u": 0.0005,
+      "rho": 0.001,
+      "role": "candidate",
+      "bonus_mean": 0.00018620829089494584,
+      "bonus_p95": 0.0007226092121936707,
+      "bonus_max": 0.0018291822167614327,
+      "bonus_over_payload_mean": 0.00012977092654096073,
+      "bonus_over_payload_p95": 0.00032672217155849315,
+      "bonus_over_penalty_p50": 1.5206867441377465,
+      "bonus_over_penalty_p95": 11.613369238438576,
+      "bonus_over_penalty_p99": 19.742464556497787,
+      "signal_retained_fraction": 1.0,
+      "positive_urgency_on_zero_payload_steps": 0,
+      "base_material_scenarios": [
+        321000
+      ],
+      "payload_material_scenarios": [],
+      "all_scenarios_meet_conservative_standard": false,
+      "cap_holds": true,
+      "usable_candidate": false,
+      "worst_scenario_id": 321002
+    }
+  },
+  "preferred_design": {
+    "name": "B",
+    "formula": "r_base + min(lambda_u * U_t, rho * payload_term)",
+    "performance_claim": false,
+    "reason": "The cap limits the urgency bonus to a fixed fraction of this step's successful payload term."
+  },
+  "lambda_selected": null,
+  "rho_selected": null,
+  "lambda_h": "NOT_SELECTED",
+  "delta_payload_max": "NOT_REQUIRED_FOR_THIS_PROTOCOL",
+  "high_level_rule": "payload-first; low-level bonus is not added to the high-level objective",
+  "scheme_c": "frozen",
+  "synthetic_schema": "synthetic_priority_bucket_v1",
+  "owner_decisions": {
+    "accept_stop_or_rollback_if_benchmark_payload_drops": null,
+    "approve_lambda_0_0005_rho_0_001_as_only_first_lowlevel_candidate": null,
+    "remain_untrained_unless_approved": true
+  },
+  "environment_rerun": false,
+  "tags_resampled": false,
+  "trained": false,
+  "formal_system_modified": false,
+  "held_out_splits_read": false,
+  "e5_started": false,
+  "closed_loop_claim": false,
+  "standards": {
+    "mean_bonus_over_payload_max": 0.01,
+    "p95_bonus_over_penalty_max": 1.0,
+    "payload_tie": 1e-06,
+    "signal_retained_min": 0.5
+  },
+  "reason": "审查完成，但首个低层训练候选尚未获准"
+}
