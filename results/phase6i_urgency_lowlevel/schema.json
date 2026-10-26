@@ -1,0 +1,21 @@
+{
+  "actor_in_dim": 36,
+  "formal_actor_in_dim": 34,
+  "task_dim": 10,
+  "formal_task_dim": 8,
+  "critic_in_dim": 200,
+  "formal_critic_in_dim": 188,
+  "critic_extra": "per-UAV target urgency and validity, fixed UAV order, appended to the formal critic",
+  "actor_extra": "current target urgency and validity inserted after the formal task block",
+  "new_columns": "zero at warm start",
+  "lambda_urgency": 1.0,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "updates": 300,
+  "checkpoint_hash_rows": "policy, config, MAPPO, and low-level hashes are stored only on UAV index 0",
+  "frozen_mappo": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\benchmark_v2\\phase6g_lowlevel_mappo\\checkpoints\\phase6g_seed0.pt",
+  "frozen_mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e"
+}

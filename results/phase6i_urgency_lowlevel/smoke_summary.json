@@ -1,0 +1,40 @@
+{
+  "unit_tests": "5 passed",
+  "reward_scale": {
+    "scenario_id": 321000,
+    "split": "train",
+    "lambda_urgency": 1.0,
+    "payload_bits": 67494462.2913622,
+    "urgent_service_bits": 18107587.31105499,
+    "urgency_over_payload": 0.2682825626921449,
+    "accepted_for_lambda_1": true,
+    "status": "ok",
+    "seconds": 2.1932161999866366,
+    "mean_idle_slots": 0.0,
+    "scheme_c_calls": 4
+  },
+  "one_update_timing": {
+    "variant": "L1",
+    "model_seed": 0,
+    "updates": 1,
+    "seconds": 12.06,
+    "scheme_c_calls": 16,
+    "mean_idle_slots": 0.0,
+    "gradient_norm_preclip": 55.02867740392685,
+    "projection_rate": 0.5520833333333334,
+    "safety_violation_rate": 0.0,
+    "mean_reward": 1.4705432653427124,
+    "communication_reward": 1.4707129520117694,
+    "urgency_reward": 0.0,
+    "note": "Timing probe only. The weights were not retained as a candidate."
+  },
+  "warm_start_closed_loop_scenario_321096": {
+    "L0_payload_bits": 72566566.7772592,
+    "L1_warm_start_payload_bits": 72566566.72127056,
+    "payload_gap_bits": 0.05598864,
+    "L0_urgent_service_bits": 17866104.635625474,
+    "L1_warm_start_urgent_service_bits": 17866104.60732454,
+    "status": "ok",
+    "mean_idle_slots": 0.0
+  }
+}
