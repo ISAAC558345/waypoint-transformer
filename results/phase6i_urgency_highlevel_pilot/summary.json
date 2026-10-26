@@ -1,0 +1,1871 @@
+{
+  "gate": "HIGHLEVEL_URGENCY_LABEL_PILOT_INCONCLUSIVE",
+  "recommendation": "payload 与紧急服务的排序差异尚未形成有用信号，先不构建完整高层紧急度数据集。",
+  "reasons": [],
+  "lambda_H": null,
+  "scenarios": [
+    322000,
+    322001,
+    322002,
+    322003
+  ],
+  "times": [
+    0,
+    15,
+    30
+  ],
+  "rollout_count": 1536,
+  "max_rollouts": 1536,
+  "determinism_rollouts": 128,
+  "determinism_abs_gap_bits": 0.0,
+  "candidate_cap_per_state": 128,
+  "timing": {
+    "first_state_seconds": 9.505067499994766,
+    "estimated_twelve_state_seconds": 114.06080999993719,
+    "label_seconds": 124.6293267000583
+  },
+  "mechanical": {
+    "checkpoint": true,
+    "replay": true,
+    "ledger": true,
+    "shards": true,
+    "legal": true,
+    "payload": true,
+    "determinism": true,
+    "dataset_unchanged": true,
+    "actor_unchanged": true
+  },
+  "budget_ok": true,
+  "coverage_complete": true,
+  "replay": [
+    {
+      "scenario_id": 322000,
+      "seconds": 0.8757111000013538,
+      "ledger_gap_bits": 4.656612873077393e-10,
+      "accounting_error_bits": 1.862645149230957e-09,
+      "states": [
+        {
+          "scenario_id": 322000,
+          "time_step": 0,
+          "state_hash": "4f8de3a5129c476d08b3cce110113bf50dfc10ac8c04f12ba5f93c2037af0b2b",
+          "manifest_state_hash": "4f8de3a5129c476d08b3cce110113bf50dfc10ac8c04f12ba5f93c2037af0b2b",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "93d7580c2b72f76e3826e902cfe9d587f98f3cb37c26c88e4f83ef7b0236add2",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 1250000.0,
+          "manifest_q_bits_mean": 1250000.0,
+          "ledger_gap_bits": 0.0,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "f5fb8b0e7e91cb5c763c0d71aec66de906e763662a383446af6a58021590b3b5",
+          "manifest_illegal": 0
+        },
+        {
+          "scenario_id": 322000,
+          "time_step": 15,
+          "state_hash": "2c08c3a9786628c392a11f0f82978d43642e995bc3f25c3cbf5bdc29e12580fa",
+          "manifest_state_hash": "2c08c3a9786628c392a11f0f82978d43642e995bc3f25c3cbf5bdc29e12580fa",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "38d8a474607c5f9666fc90aadcf4ab327d75cfc660b7fdc3f23a9b27bad9d445",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 2000000.0,
+          "manifest_q_bits_mean": 2000000.0,
+          "ledger_gap_bits": 0.0,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "8ab413571b80dec2e915b8718ba4eec9711b294f7ef64295aed2793d5e8d8db9",
+          "manifest_illegal": 0
+        },
+        {
+          "scenario_id": 322000,
+          "time_step": 30,
+          "state_hash": "02a8e08ed985ab75687f84e9768380d9626302036cb0c99b1e513a06be4c8c71",
+          "manifest_state_hash": "02a8e08ed985ab75687f84e9768380d9626302036cb0c99b1e513a06be4c8c71",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "6b0faea89f673a2fd1c9fc0918a508d488a06c77222b544b6d1563d0d2796c55",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 1778677.6595846096,
+          "manifest_q_bits_mean": 1778677.6595846096,
+          "ledger_gap_bits": 4.656612873077393e-10,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "ccb9788c17f575a84dd481145dc126f3378b891949e38d052a170bc93af317d6",
+          "manifest_illegal": 0
+        }
+      ]
+    },
+    {
+      "scenario_id": 322001,
+      "seconds": 0.8011499000131153,
+      "ledger_gap_bits": 9.313225746154785e-10,
+      "accounting_error_bits": 1.862645149230957e-09,
+      "states": [
+        {
+          "scenario_id": 322001,
+          "time_step": 0,
+          "state_hash": "e2ae28693259b29b0b6012a74f2664fd568fe9bce90918a189c5c91ec8bf4c1c",
+          "manifest_state_hash": "e2ae28693259b29b0b6012a74f2664fd568fe9bce90918a189c5c91ec8bf4c1c",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "8abb58ae27430396aef5992eab2ff3734b7ac229422aab9d7cd85e4d5687b8fd",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 1250000.0,
+          "manifest_q_bits_mean": 1250000.0,
+          "ledger_gap_bits": 0.0,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "e3bed96031f1aeb48aa0c76ad84f840f31030b94268f8e5d99b464ec49d9c2a6",
+          "manifest_illegal": 0
+        },
+        {
+          "scenario_id": 322001,
+          "time_step": 15,
+          "state_hash": "321cf765d409224362d7859f6201e8adf2b6b0b398ffba337c02105ba55da78b",
+          "manifest_state_hash": "321cf765d409224362d7859f6201e8adf2b6b0b398ffba337c02105ba55da78b",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "1e06e2fa35d44a9c75fe19f008d2f285c230d9a400b3be46662b4e64963ce0cd",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 2000000.0,
+          "manifest_q_bits_mean": 2000000.0,
+          "ledger_gap_bits": 0.0,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "270030995b9a412db854e92cb477ad39e11892dc47142201ded23eab1d77afb3",
+          "manifest_illegal": 0
+        },
+        {
+          "scenario_id": 322001,
+          "time_step": 30,
+          "state_hash": "7837ad2d8efecc1814ba2d6b0f3b2a05b228c8ca8f6503e94df6fe94d3eeafcf",
+          "manifest_state_hash": "7837ad2d8efecc1814ba2d6b0f3b2a05b228c8ca8f6503e94df6fe94d3eeafcf",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "848e6519c104278202db0eff5d6114eed92e66ef99f2b30c360c011d522818ee",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 1602001.4498870065,
+          "manifest_q_bits_mean": 1602001.4498870065,
+          "ledger_gap_bits": 4.656612873077393e-10,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "9bc33ea4b4b3d301f4bc011e321c308a256bfdbc7d26b25a0506c5a06091d200",
+          "manifest_illegal": 0
+        }
+      ]
+    },
+    {
+      "scenario_id": 322002,
+      "seconds": 0.9191157999448478,
+      "ledger_gap_bits": 9.313225746154785e-10,
+      "accounting_error_bits": 2.7939677238464355e-09,
+      "states": [
+        {
+          "scenario_id": 322002,
+          "time_step": 0,
+          "state_hash": "a19dd52c08be6b8e71c4d0d62732e55f3da8141bb2eb61f63ef9ee7429b2ff6a",
+          "manifest_state_hash": "a19dd52c08be6b8e71c4d0d62732e55f3da8141bb2eb61f63ef9ee7429b2ff6a",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "62e2573808f7439960f12bf737630fc237613faee3c8e22179dddc97f6c49acc",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 1250000.0,
+          "manifest_q_bits_mean": 1250000.0,
+          "ledger_gap_bits": 0.0,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "85da820c7063e77c1dae3b651f3a12936eb40642cbf9bb06a2f3bdc4894dcb31",
+          "manifest_illegal": 0
+        },
+        {
+          "scenario_id": 322002,
+          "time_step": 15,
+          "state_hash": "6c61ae409e555be50cbaad88481b5a4b8d77a56f2280ee0cb7333a4e6f3b7bc7",
+          "manifest_state_hash": "6c61ae409e555be50cbaad88481b5a4b8d77a56f2280ee0cb7333a4e6f3b7bc7",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "591e6815e1d23d2320921f186c0885cfdc108a0f94d4ef3013178cd406f99f0f",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 2000000.0,
+          "manifest_q_bits_mean": 2000000.0,
+          "ledger_gap_bits": 0.0,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "407a798283ee4a877e477b29cb4cd9e17add41d47c352766422b36b25f5b8396",
+          "manifest_illegal": 0
+        },
+        {
+          "scenario_id": 322002,
+          "time_step": 30,
+          "state_hash": "482fee16e7d4a12451fb66b35ba58b753d9ddce69be77878d2146cd84b0d4287",
+          "manifest_state_hash": "482fee16e7d4a12451fb66b35ba58b753d9ddce69be77878d2146cd84b0d4287",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "9ef3a9870e0b13092b7ad22925a0dbba1230016360b9c9d49a7f7c17c6332bf5",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 1579569.2080770608,
+          "manifest_q_bits_mean": 1579569.2080770608,
+          "ledger_gap_bits": 4.656612873077393e-10,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "509e494c156ddd5117bb5a99a2423ec54a87ea4ddf5da15bb08927ef62b3c72d",
+          "manifest_illegal": 0
+        }
+      ]
+    },
+    {
+      "scenario_id": 322003,
+      "seconds": 0.848037599993404,
+      "ledger_gap_bits": 9.313225746154785e-10,
+      "accounting_error_bits": 2.3283064365386963e-09,
+      "states": [
+        {
+          "scenario_id": 322003,
+          "time_step": 0,
+          "state_hash": "536effe47656d5fc23f4ab0cedaf6b1b9c9d8881bebb17db03e72966e8528966",
+          "manifest_state_hash": "536effe47656d5fc23f4ab0cedaf6b1b9c9d8881bebb17db03e72966e8528966",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "3f60b6f36f7d6c2cd8245c36ba5e01ffb3917bcdecf3e404826d68bee9db8d6a",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 1250000.0,
+          "manifest_q_bits_mean": 1250000.0,
+          "ledger_gap_bits": 0.0,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "25eb718c6531e83a44a4c1d26e8e762828ff4aae50c691b12137cd9c50a894bf",
+          "manifest_illegal": 0
+        },
+        {
+          "scenario_id": 322003,
+          "time_step": 15,
+          "state_hash": "b75626194d10aca873471dc7e633ab0bb99d0ebac90271e55030c6d4e0474577",
+          "manifest_state_hash": "b75626194d10aca873471dc7e633ab0bb99d0ebac90271e55030c6d4e0474577",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "8d5cc267581b129761ba17fadd54538549b36a8794e1d33f98d5a85db9d4270d",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 2000000.0,
+          "manifest_q_bits_mean": 2000000.0,
+          "ledger_gap_bits": 0.0,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "63846e4ebff15fe3d73202aa5f2540a9d4943e240dfa47c68197a09106f022cb",
+          "manifest_illegal": 0
+        },
+        {
+          "scenario_id": 322003,
+          "time_step": 30,
+          "state_hash": "2666a3ee6a6bf4e0ca412f56ed01c06a52606f593f21c297e4ffd7adcb46c07b",
+          "manifest_state_hash": "2666a3ee6a6bf4e0ca412f56ed01c06a52606f593f21c297e4ffd7adcb46c07b",
+          "state_hash_match": true,
+          "state_mismatch_key": "",
+          "checksum_state": "0ecc5ecf148e89cf4df2bd03bbe980982a0fe529316ec84417aa361270afe916",
+          "checksum_state_match": true,
+          "q_bits_max_abs_gap": 0.0,
+          "q_bits_mean": 1841036.818874292,
+          "manifest_q_bits_mean": 1841036.818874292,
+          "ledger_gap_bits": 4.656612873077393e-10,
+          "ledger_restore_independent": true,
+          "tol_bits": 1.0,
+          "manifest_candidate_count": 13327,
+          "manifest_checksum_candidates": "85d3557279768d6f367ca9ec88ffd325538091f9db5719b2e634aa7d4f30460e",
+          "manifest_illegal": 0
+        }
+      ]
+    }
+  ],
+  "selection": [
+    {
+      "scenario_id": 322000,
+      "time_step": 0,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "74b698f3aa54c3e21f168a793fe9ebe81788b0f35c1a8c6e39f7650339f22b48",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 1,
+          "rank_max": 2
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2,
+          "rank_max": 3
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3,
+          "rank_max": 5
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 5,
+          "rank_max": 6
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 6,
+          "rank_max": 6
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 6,
+          "rank_max": 7
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 7,
+          "rank_max": 9
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 9,
+          "rank_max": 16
+        }
+      ]
+    },
+    {
+      "scenario_id": 322000,
+      "time_step": 15,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 33,
+          "rank_max": 275
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 275,
+          "rank_max": 1051
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 1052,
+          "rank_max": 2578
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2578,
+          "rank_max": 2578
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2578,
+          "rank_max": 2578
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2578,
+          "rank_max": 2578
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2578,
+          "rank_max": 2765
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2765,
+          "rank_max": 2768
+        }
+      ]
+    },
+    {
+      "scenario_id": 322000,
+      "time_step": 30,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 1,
+          "rank_max": 204
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 204,
+          "rank_max": 207
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 207,
+          "rank_max": 210
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 210,
+          "rank_max": 222
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 222,
+          "rank_max": 227
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 227,
+          "rank_max": 231
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 231,
+          "rank_max": 243
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 243,
+          "rank_max": 274
+        }
+      ]
+    },
+    {
+      "scenario_id": 322001,
+      "time_step": 0,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "74b698f3aa54c3e21f168a793fe9ebe81788b0f35c1a8c6e39f7650339f22b48",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 1,
+          "rank_max": 2
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2,
+          "rank_max": 3
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3,
+          "rank_max": 5
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 5,
+          "rank_max": 6
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 6,
+          "rank_max": 6
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 6,
+          "rank_max": 7
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 7,
+          "rank_max": 9
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 9,
+          "rank_max": 16
+        }
+      ]
+    },
+    {
+      "scenario_id": 322001,
+      "time_step": 15,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 33,
+          "rank_max": 272
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 272,
+          "rank_max": 1859
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 1860,
+          "rank_max": 3473
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3473,
+          "rank_max": 3473
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3473,
+          "rank_max": 3473
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3473,
+          "rank_max": 3473
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3473,
+          "rank_max": 3552
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3552,
+          "rank_max": 3555
+        }
+      ]
+    },
+    {
+      "scenario_id": 322001,
+      "time_step": 30,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 1,
+          "rank_max": 29
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 29,
+          "rank_max": 31
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 31,
+          "rank_max": 33
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 33,
+          "rank_max": 38
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 38,
+          "rank_max": 43
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 43,
+          "rank_max": 47
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 47,
+          "rank_max": 59
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 59,
+          "rank_max": 90
+        }
+      ]
+    },
+    {
+      "scenario_id": 322002,
+      "time_step": 0,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "74b698f3aa54c3e21f168a793fe9ebe81788b0f35c1a8c6e39f7650339f22b48",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 1,
+          "rank_max": 2
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2,
+          "rank_max": 3
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3,
+          "rank_max": 5
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 5,
+          "rank_max": 6
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 6,
+          "rank_max": 6
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 6,
+          "rank_max": 7
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 7,
+          "rank_max": 9
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 9,
+          "rank_max": 16
+        }
+      ]
+    },
+    {
+      "scenario_id": 322002,
+      "time_step": 15,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 33,
+          "rank_max": 540
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 541,
+          "rank_max": 2198
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2199,
+          "rank_max": 3797
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3797,
+          "rank_max": 3797
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3797,
+          "rank_max": 3797
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3797,
+          "rank_max": 3797
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3797,
+          "rank_max": 3890
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3890,
+          "rank_max": 3893
+        }
+      ]
+    },
+    {
+      "scenario_id": 322002,
+      "time_step": 30,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 1,
+          "rank_max": 11
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 11,
+          "rank_max": 13
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 13,
+          "rank_max": 15
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 15,
+          "rank_max": 20
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 20,
+          "rank_max": 25
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 25,
+          "rank_max": 30
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 30,
+          "rank_max": 41
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 41,
+          "rank_max": 72
+        }
+      ]
+    },
+    {
+      "scenario_id": 322003,
+      "time_step": 0,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "74b698f3aa54c3e21f168a793fe9ebe81788b0f35c1a8c6e39f7650339f22b48",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 1,
+          "rank_max": 2
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2,
+          "rank_max": 3
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 3,
+          "rank_max": 5
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 5,
+          "rank_max": 6
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 6,
+          "rank_max": 6
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 6,
+          "rank_max": 7
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 7,
+          "rank_max": 9
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 9,
+          "rank_max": 16
+        }
+      ]
+    },
+    {
+      "scenario_id": 322003,
+      "time_step": 15,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 5,
+          "rank_max": 269
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 269,
+          "rank_max": 1041
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 1042,
+          "rank_max": 2578
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2578,
+          "rank_max": 2578
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2578,
+          "rank_max": 2578
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2578,
+          "rank_max": 2578
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2578,
+          "rank_max": 2790
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 2790,
+          "rank_max": 2793
+        }
+      ]
+    },
+    {
+      "scenario_id": 322003,
+      "time_step": 30,
+      "count": 128,
+      "top_count": 32,
+      "stratum_count": 96,
+      "fill_count": 0,
+      "shortfall_unfilled": 0,
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "candidate_count": 13327,
+      "strata": [
+        {
+          "stratum": 0,
+          "band_size": 1661,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 1,
+          "rank_max": 390
+        },
+        {
+          "stratum": 1,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 390,
+          "rank_max": 395
+        },
+        {
+          "stratum": 2,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 395,
+          "rank_max": 506
+        },
+        {
+          "stratum": 3,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 507,
+          "rank_max": 534
+        },
+        {
+          "stratum": 4,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 534,
+          "rank_max": 539
+        },
+        {
+          "stratum": 5,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 539,
+          "rank_max": 543
+        },
+        {
+          "stratum": 6,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 543,
+          "rank_max": 555
+        },
+        {
+          "stratum": 7,
+          "band_size": 1662,
+          "drawn": 12,
+          "shortfall": 0,
+          "rank_min": 555,
+          "rank_max": 586
+        }
+      ]
+    }
+  ],
+  "rank_by_state": [
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 11.53125,
+        "std": 3.1867339765816673,
+        "min": 2.0,
+        "p50": 11.0,
+        "max": 15.000000000000004
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 0.9567536297456873,
+        "std": 0.5034955664071719,
+        "min": 0.0,
+        "p50": 0.8417999248349977,
+        "max": 1.7322812394864995
+      },
+      "mean_urgent_over_mean_payload": 0.08297050447659077,
+      "spearman": 0.9762019820858908,
+      "reversal_rate": 0.0014671361502347417,
+      "payload_separated_pairs": 6816,
+      "reversed_pairs": 10,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 4921,
+      "top1_urgent_candidate_id": 9957,
+      "top1_changed": true,
+      "lambda_H": null,
+      "scenario_id": 322000,
+      "time_step": 0,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 18.02852321804217,
+        "std": 4.1712737828305215,
+        "min": 7.999999999999999,
+        "p50": 17.615248945944312,
+        "max": 24.000000000000004
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 5.988255369102035,
+        "std": 1.5963105526218733,
+        "min": 2.2373230926871854,
+        "p50": 6.37181122148742,
+        "max": 8.260241597435728
+      },
+      "mean_urgent_over_mean_payload": 0.3321545140818437,
+      "spearman": 0.9568897648532458,
+      "reversal_rate": 0.032826148210763594,
+      "payload_separated_pairs": 7098,
+      "reversed_pairs": 233,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 5337,
+      "top1_urgent_candidate_id": 5317,
+      "top1_changed": true,
+      "lambda_H": null,
+      "scenario_id": 322000,
+      "time_step": 15,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0
+      ]
+    },
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 16.438282049115664,
+        "std": 4.1556373063364624,
+        "min": 2.5427275881881313,
+        "p50": 17.517523412604163,
+        "max": 21.34413191501532
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 5.48889924590269,
+        "std": 1.7216088950846953,
+        "min": 0.3178409485235164,
+        "p50": 5.5685778927884435,
+        "max": 8.094457050608527
+      },
+      "mean_urgent_over_mean_payload": 0.3339095429499568,
+      "spearman": 0.9508293247193791,
+      "reversal_rate": 0.06868168938065039,
+      "payload_separated_pairs": 7411,
+      "reversed_pairs": 509,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 6438,
+      "top1_urgent_candidate_id": 5128,
+      "top1_changed": true,
+      "lambda_H": null,
+      "scenario_id": 322000,
+      "time_step": 30,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        22.0,
+        22.0,
+        6.0,
+        10.0,
+        22.0,
+        22.0
+      ]
+    },
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 11.6015625,
+        "std": 3.1083050137645363,
+        "min": 3.0,
+        "p50": 11.0,
+        "max": 15.000000000000004
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 0.9654154920863103,
+        "std": 0.5002488386024906,
+        "min": 0.024232915705929604,
+        "p50": 0.8304905785337009,
+        "max": 1.7849723238873174
+      },
+      "mean_urgent_over_mean_payload": 0.08321426463774256,
+      "spearman": 0.9690613577337724,
+      "reversal_rate": 0.0030964317310527866,
+      "payload_separated_pairs": 6782,
+      "reversed_pairs": 21,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 5548,
+      "top1_urgent_candidate_id": 11557,
+      "top1_changed": true,
+      "lambda_H": null,
+      "scenario_id": 322001,
+      "time_step": 0,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 17.65916006320236,
+        "std": 3.8601536930128586,
+        "min": 8.0,
+        "p50": 16.790810892888203,
+        "max": 23.176093753393147
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 5.943604908224453,
+        "std": 1.514217585341549,
+        "min": 2.283266480072652,
+        "p50": 6.062963627579618,
+        "max": 7.935680767279427
+      },
+      "mean_urgent_over_mean_payload": 0.3365734772748089,
+      "spearman": 0.9609300149668185,
+      "reversal_rate": 0.02844851512628365,
+      "payload_separated_pairs": 7206,
+      "reversed_pairs": 205,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 11537,
+      "top1_urgent_candidate_id": 11537,
+      "top1_changed": false,
+      "lambda_H": null,
+      "scenario_id": 322001,
+      "time_step": 15,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0
+      ]
+    },
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 14.855830860815487,
+        "std": 3.7072869226589136,
+        "min": 7.486131080369169,
+        "p50": 15.407530143502385,
+        "max": 19.224017398644083
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 4.592633089976563,
+        "std": 1.3749791133280387,
+        "min": 1.9002098491665396,
+        "p50": 4.603285070779158,
+        "max": 6.79301008298317
+      },
+      "mean_urgent_over_mean_payload": 0.3091468348694203,
+      "spearman": 0.9129913629662052,
+      "reversal_rate": 0.1075385031072683,
+      "payload_separated_pairs": 7402,
+      "reversed_pairs": 796,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 4656,
+      "top1_urgent_candidate_id": 4642,
+      "top1_changed": true,
+      "lambda_H": null,
+      "scenario_id": 322001,
+      "time_step": 30,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        20.0,
+        20.0,
+        22.0,
+        20.0,
+        2.0,
+        20.0
+      ]
+    },
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 11.59375,
+        "std": 3.1682938527699736,
+        "min": 3.0,
+        "p50": 11.000000000000002,
+        "max": 15.000000000000005
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 0.9432356511873996,
+        "std": 0.498915724102454,
+        "min": 0.03331730026836805,
+        "p50": 0.8620801510195408,
+        "max": 1.8158243412503856
+      },
+      "mean_urgent_over_mean_payload": 0.0813572529326059,
+      "spearman": 0.968019187560051,
+      "reversal_rate": 0.015274949083503055,
+      "payload_separated_pairs": 6874,
+      "reversed_pairs": 105,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 10220,
+      "top1_urgent_candidate_id": 9923,
+      "top1_changed": true,
+      "lambda_H": null,
+      "scenario_id": 322002,
+      "time_step": 0,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 17.579853645204032,
+        "std": 3.7953489542884156,
+        "min": 8.0,
+        "p50": 16.666915285779062,
+        "max": 22.95525288238301
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 5.922596024128524,
+        "std": 1.50118568860696,
+        "min": 2.206339885742146,
+        "p50": 5.9165929053559845,
+        "max": 7.882295079101134
+      },
+      "mean_urgent_over_mean_payload": 0.33689677648393107,
+      "spearman": 0.9659125596641261,
+      "reversal_rate": 0.024322830292979547,
+      "payload_separated_pairs": 7236,
+      "reversed_pairs": 176,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 9948,
+      "top1_urgent_candidate_id": 9941,
+      "top1_changed": true,
+      "lambda_H": null,
+      "scenario_id": 322002,
+      "time_step": 15,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0
+      ]
+    },
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 14.656088279180498,
+        "std": 3.6994580190534196,
+        "min": 7.487767606862291,
+        "p50": 15.148858140935547,
+        "max": 18.954830496924732
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 4.685305058239877,
+        "std": 1.4381291934213527,
+        "min": 1.593548586810165,
+        "p50": 4.771957645514485,
+        "max": 7.012456403259922
+      },
+      "mean_urgent_over_mean_payload": 0.3196831902886067,
+      "spearman": 0.9090747572093918,
+      "reversal_rate": 0.11723856209150327,
+      "payload_separated_pairs": 7344,
+      "reversed_pairs": 861,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 4642,
+      "top1_urgent_candidate_id": 4858,
+      "top1_changed": true,
+      "lambda_H": null,
+      "scenario_id": 322002,
+      "time_step": 30,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        22.0,
+        20.0,
+        22.0,
+        12.0,
+        2.0,
+        20.0
+      ]
+    },
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 11.5703125,
+        "std": 3.239607407131882,
+        "min": 2.0,
+        "p50": 11.000000000000002,
+        "max": 15.000000000000004
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 0.9539750804742335,
+        "std": 0.4982654643625626,
+        "min": 0.0,
+        "p50": 0.8870091851924689,
+        "max": 1.6874943934205195
+      },
+      "mean_urgent_over_mean_payload": 0.08245024328204044,
+      "spearman": 0.9723812186986586,
+      "reversal_rate": 0.0008645533141210375,
+      "payload_separated_pairs": 6940,
+      "reversed_pairs": 6,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 5130,
+      "top1_urgent_candidate_id": 5337,
+      "top1_changed": true,
+      "lambda_H": null,
+      "scenario_id": 322003,
+      "time_step": 0,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 18.22434551847011,
+        "std": 4.116425922834078,
+        "min": 8.000000000000002,
+        "p50": 16.434763841820278,
+        "max": 24.000000000000004
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 5.992898200291082,
+        "std": 1.5134575309274518,
+        "min": 2.348352091976001,
+        "p50": 5.8038681208946645,
+        "max": 8.365733112675148
+      },
+      "mean_urgent_over_mean_payload": 0.3288402425325709,
+      "spearman": 0.9279822931073651,
+      "reversal_rate": 0.029846106015855745,
+      "payload_separated_pairs": 6433,
+      "reversed_pairs": 192,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 8363,
+      "top1_urgent_candidate_id": 5305,
+      "top1_changed": true,
+      "lambda_H": null,
+      "scenario_id": 322003,
+      "time_step": 15,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0
+      ]
+    },
+    {
+      "count": 128,
+      "payload_term": {
+        "count": 128,
+        "mean": 17.017604580903157,
+        "std": 3.965971533468231,
+        "min": 7.573819854330034,
+        "p50": 18.259697233864475,
+        "max": 22.092441826491516
+      },
+      "urgent_service_term": {
+        "count": 128,
+        "mean": 5.547791870526652,
+        "std": 1.653614226412331,
+        "min": 2.2168635752405286,
+        "p50": 5.589890871990825,
+        "max": 8.199070998967432
+      },
+      "mean_urgent_over_mean_payload": 0.326003101326745,
+      "spearman": 0.9378208260413555,
+      "reversal_rate": 0.08792231976589518,
+      "payload_separated_pairs": 7518,
+      "reversed_pairs": 661,
+      "urgent_tie_pairs": 0,
+      "top1_payload_candidate_id": 4753,
+      "top1_urgent_candidate_id": 4676,
+      "top1_changed": true,
+      "lambda_H": null,
+      "scenario_id": 322003,
+      "time_step": 30,
+      "oldest_age_start": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        20.0,
+        20.0,
+        8.0,
+        10.0,
+        24.0,
+        22.0
+      ]
+    }
+  ],
+  "rank_macro": {
+    "states": 12,
+    "mean_spearman": 0.9506745541338547,
+    "min_spearman": 0.9090747572093918,
+    "mean_reversal_rate": 0.04312731202250927,
+    "max_reversal_rate": 0.11723856209150327,
+    "states_with_top1_change": 11,
+    "lambda_H": null
+  },
+  "payload_gap_max_bits": 0.0,
+  "ledger_gap_max_bits": 1.6298145055770874e-09,
+  "accounting_error_max_bits": 5.587935447692871e-09,
+  "checkpoint_hashes": {
+    "mappo_v2_seed0": {
+      "path": "E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt",
+      "exists": true,
+      "bytes": 199546,
+      "sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e"
+    },
+    "scheme_c": {
+      "path": "E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/results/phase6if_ranking_loss/runs/c/epoch_001.pt",
+      "exists": true,
+      "bytes": 8447435,
+      "sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864"
+    },
+    "epoch6": {
+      "path": "E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/results/phase6id_joint_utility_training/epoch_006.pt",
+      "exists": true,
+      "bytes": 8452363,
+      "sha256": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde"
+    },
+    "adapter_config": {
+      "sha256": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63"
+    }
+  },
+  "frozen_shard_commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+  "instruction_commit": "a83869d5155c485c8cc752a43d41d246130e784c",
+  "pilot_seed": 601,
+  "dataset_files": [
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322000/t000_manifest.json",
+      "bytes": 1439,
+      "sha256": "37952edf60484181c6ab30c60e916bd2b92bfe794fb6913594245232edf40074"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322000/t015_manifest.json",
+      "bytes": 1431,
+      "sha256": "ca2c5a75ca4bef8866047abc9e3168a10d02a61b311fae8416740b215cb7ec13"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322000/t030_manifest.json",
+      "bytes": 1466,
+      "sha256": "cae34b0a4872638b2e11510bae042984e8468bba313e62c04141bbbb7f946a73"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322001/t000_manifest.json",
+      "bytes": 1432,
+      "sha256": "5b5ce09b871ea3153a35acd5d0da5a03d21088da942af0ce5a75d38c27edc63c"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322001/t015_manifest.json",
+      "bytes": 1432,
+      "sha256": "07bf8aee0230395028dac2b0c47552a8b1b7d0dc4600c90ac41916357f128ed3"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322001/t030_manifest.json",
+      "bytes": 1465,
+      "sha256": "2ff031cb376bd4102818e29ecd44aa274448779f3e9c77a80cb3c57b7bab1a72"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322002/t000_manifest.json",
+      "bytes": 1407,
+      "sha256": "46eaf4afa306a2c32071e86434e69bd441707dbfb9e5dfc8207830d874cd0a86"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322002/t015_manifest.json",
+      "bytes": 1429,
+      "sha256": "5d20d44c905be04db86c659dbf1a8411de93ceda89f8f7fbe4b271442ccd3dd6"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322002/t030_manifest.json",
+      "bytes": 1415,
+      "sha256": "53bd64d3d4df2387c6d94e4a09baeb24e14112d1c75cb991acd2f138436f2c3d"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322003/t000_manifest.json",
+      "bytes": 1413,
+      "sha256": "51e0c432d354a809c614d61fb5379a4d0e923234e3b8654862bdc105b1e27681"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322003/t015_manifest.json",
+      "bytes": 1439,
+      "sha256": "c7e845389a2fa55d97597041684f17a5e658e1572608ded0d0df40753c76c2ef"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322003/t030_manifest.json",
+      "bytes": 1468,
+      "sha256": "ca24c5448453007e31b7c3271294973bf847373cc56dbcade165df9e0940f093"
+    }
+  ],
+  "seconds_total": 143.14863159996457
+}

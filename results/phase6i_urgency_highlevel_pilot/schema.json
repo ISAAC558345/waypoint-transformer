@@ -1,0 +1,102 @@
+{
+  "split": "train",
+  "scenarios": [
+    322000,
+    322001,
+    322002,
+    322003
+  ],
+  "times": [
+    0,
+    15,
+    30
+  ],
+  "generator": "G1_RATE",
+  "k": 6,
+  "hold": 15,
+  "label": "J15_MAPPO_CURRENT",
+  "pilot_seed": 601,
+  "top_k": 32,
+  "sample_k": 96,
+  "strata": 8,
+  "sampling": "32 stable top existing J15 labels, then 96 equal-count utility_rank quantiles from the remainder; short strata fill by candidate id",
+  "formulas": {
+    "payload_term": "payload_increment_bits / 1e6",
+    "urgent_service_term": "sum_t,k(urgency_k_before_service[t] * served_bits[k,t]) / 1e6",
+    "utility": "payload_term + lambda_H * urgent_service_term",
+    "urgency": "clip(oldest_wait_age / 48, 0, 1) when q_bits > 0 else 0"
+  },
+  "lambda_H": null,
+  "lambda_H_decided": false,
+  "signal_thresholds": {
+    "useful_spearman_below": 0.95,
+    "useful_reversal_above": 0.05,
+    "payload_scale": 1000000.0
+  },
+  "arrival_convention": "candidate label rollout zeros arrivals and arrivals_at on the scratch copy only",
+  "state_source": "MAX_RATE_INDEPENDENT held for 15 steps and executed by frozen MAPPO-V2 seed 0",
+  "ledger": "episode_admission_age_v1",
+  "age_scale_steps": 48,
+  "reset_origin": "reset_convention",
+  "frozen_shard_commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+  "instruction_commit": "a83869d5155c485c8cc752a43d41d246130e784c",
+  "checkpoint_sha256": {
+    "mappo_v2_seed0": {
+      "path": "E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt",
+      "exists": true,
+      "bytes": 199546,
+      "sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e"
+    },
+    "scheme_c": {
+      "path": "E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/results/phase6if_ranking_loss/runs/c/epoch_001.pt",
+      "exists": true,
+      "bytes": 8447435,
+      "sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864"
+    },
+    "epoch6": {
+      "path": "E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/results/phase6id_joint_utility_training/epoch_006.pt",
+      "exists": true,
+      "bytes": 8452363,
+      "sha256": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde"
+    },
+    "adapter_config": {
+      "sha256": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63"
+    }
+  },
+  "expected_checkpoint_sha256": {
+    "mappo_v2_seed0": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "scheme_c": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
+    "epoch6": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde",
+    "adapter_config": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63"
+  },
+  "fields": {
+    "selected_candidates.csv": [
+      "scenario_id",
+      "time_step",
+      "candidate_id",
+      "assignment",
+      "j15_bits",
+      "utility_rank",
+      "tie_group_id",
+      "selection",
+      "stratum",
+      "filled"
+    ],
+    "labels.csv": [
+      "scenario_id",
+      "time_step",
+      "candidate_id",
+      "payload_bits",
+      "payload_term",
+      "urgent_service_bits",
+      "urgent_service_term",
+      "payload_gap_bits",
+      "ledger_gap_bits",
+      "accounting_error_bits",
+      "served_bits",
+      "oldest_age_start",
+      "generated_bits",
+      "seconds"
+    ]
+  }
+}
