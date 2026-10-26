@@ -1,0 +1,36 @@
+{
+  "schema_version": "offline_urgency_reward_form_v1",
+  "source": "results/phase6i_priority_tag_reward_scale_e2 committed at 5210dd7611befceed37c897a998cc1c5bd2a76bd",
+  "reran_environment": false,
+  "resampled_tags": false,
+  "trained": false,
+  "form_a": "r_base + lambda_u * urgency_term",
+  "form_b": "r_base + min(lambda_u * urgency_term, rho * payload_term)",
+  "payload_term": "E2 step column payload_term, equal to served_bits/1e6; not cumulative payload_bits",
+  "lambda_form_a": [
+    0.0,
+    0.0005,
+    0.001,
+    0.002
+  ],
+  "lambda_reference": 0.05,
+  "lambda_form_b": [
+    0.0005,
+    0.001,
+    0.002
+  ],
+  "rho": [
+    0.001,
+    0.0025,
+    0.005
+  ],
+  "lambda_selected": null,
+  "rho_selected": null,
+  "conservative_standard": {
+    "mean_bonus_over_payload_max": 0.01,
+    "p95_bonus_over_penalty_max": 1.0,
+    "payload_gap_tie": 1e-06,
+    "signal_retained_min": 0.5
+  },
+  "closed_loop_claim": false
+}
