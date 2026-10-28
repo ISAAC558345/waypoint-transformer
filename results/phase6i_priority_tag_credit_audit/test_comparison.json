@@ -1,0 +1,1249 @@
+{
+  "related_ok": true,
+  "baseline_ran": 1762,
+  "repository_ran": 1770,
+  "baseline_failure_count": 206,
+  "repository_failure_count": 206,
+  "historical": [
+    {
+      "kind": "ERROR",
+      "test_id": "test_round22_original_lock_and_narrow_amendment_verify (test_governance_state_sync.GovernanceStateSyncTests.test_round22_original_lock_and_narrow_amendment_verify)",
+      "exception": "RuntimeError",
+      "detail": "RuntimeError: Round-22 lifecycle test is not the approved semantic correction"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_15_no_nan_inf_and_packed_config (test_htw_phase11.Phase11Tests.test_15_no_nan_inf_and_packed_config)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\FINAL_CODE_FREEZE.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_unnamed_limits_remain_explicit (test_phase6iae_fault_handling.Phase6IAEContractTests.test_unnamed_limits_remain_explicit)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\results\\\\phase6iae_deployment_contract\\\\deployment_requirements.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_graph_batch_excludes_labels_and_keeps_checkpoint_widths (test_phase6ic_hgnn_smoke.Phase6ICDatasetTests.test_graph_batch_excludes_labels_and_keeps_checkpoint_widths)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\src\\\\wt\\\\benchmark_v2\\\\phase6ib_highlevel_dataset\\\\revision_hgnn_input\\\\dataset\\\\train\\\\scenario_322000\\\\t000_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_32_v1_loader_rejects_round2_schema (test_round03_task_and_waypoint.Round3PipelineAndWaypointTests.test_32_v1_loader_rejects_round2_schema)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_02\\\\outputs\\\\round02_smoke_20260730_212701_283649\\\\dataset_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_01_locked_hashes_exist (test_round06_closed_loop.Round6ClosedLoopTests.test_01_locked_hashes_exist)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_04\\\\outputs\\\\round04_formal_canonical_20260802_173717\\\\horizon_030\\\\goal_conditioned\\\\seed_001\\\\checkpoints\\\\best.pt'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_02_gate_is_unique (test_round09_diagnostics.Round09Diagnostics.test_02_gate_is_unique)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_09\\\\outputs\\\\round09_diagnosis_20260810_0030\\\\round09_mechanism_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_03_m3_forbids_training (test_round09_diagnostics.Round09Diagnostics.test_03_m3_forbids_training)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_09\\\\outputs\\\\round09_diagnosis_20260810_0030\\\\round09_mechanism_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_04_holdout_zero (test_round09_diagnostics.Round09Diagnostics.test_04_holdout_zero)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_09\\\\outputs\\\\round09_diagnosis_20260810_0030\\\\holdout_access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_05_old_test_off (test_round09_diagnostics.Round09Diagnostics.test_05_old_test_off)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_09\\\\outputs\\\\round09_diagnosis_20260810_0030\\\\round09_mechanism_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_01_ready (test_round10_task_waypoint.Round10.test_01_ready)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_readiness_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_02_holdout (test_round10_task_waypoint.Round10.test_02_holdout)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\holdout_access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_03_goal_constant (test_round10_task_waypoint.Round10.test_03_goal_constant)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_goal_schema_v1.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_04_no_training (test_round10_task_waypoint.Round10.test_04_no_training)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_05_horizons (test_round10_task_waypoint.Round10.test_05_horizons)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_samples_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_01_gate (test_round11_full_audit.Round11Full.test_01_gate)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\task_waypoint_predictor_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_02_isolation (test_round11_full_audit.Round11Full.test_02_isolation)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_03_holdout (test_round11_full_audit.Round11Full.test_03_holdout)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_04_closed_loop (test_round11_full_audit.Round11Full.test_04_closed_loop)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_05_service_metrics (test_round11_full_audit.Round11Full.test_05_service_metrics)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\task_waypoint_service_metrics.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_06_progress_metrics (test_round11_full_audit.Round11Full.test_06_progress_metrics)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\task_waypoint_progress_metrics.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_07_return_metrics (test_round11_full_audit.Round11Full.test_07_return_metrics)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\task_waypoint_return_metrics.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_08_gradients_finite (test_round11_full_audit.Round11Full.test_08_gradients_finite)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\multitask_gradient_audit.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_09_horizon (test_round11_full_audit.Round11Full.test_09_horizon)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\recommended_task_horizon.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_10_no_training_in_audit (test_round11_full_audit.Round11Full.test_10_no_training_in_audit)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_13_no_spatial (test_round11_full_audit.Round11Full.test_13_no_spatial)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0220\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_14_no_goal (test_round11_full_audit.Round11Full.test_14_no_goal)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0220\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_15_checkpoints (test_round11_full_audit.Round11Full.test_15_checkpoints)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\model_checkpoint_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_04_shadow_reward_reconstructs_current_environment_exactly (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_04_shadow_reward_reconstructs_current_environment_exactly)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_05_hstep_alignment_reconstructs_immutable_raw_rows (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_05_hstep_alignment_reconstructs_immutable_raw_rows)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_08_generated_sidecars_have_identical_movement_and_no_violations (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_08_generated_sidecars_have_identical_movement_and_no_violations)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_05_round12_lock_predictor_and_policy_files_are_unchanged (test_round13_controllability.Round13ControllabilityContracts.test_05_round12_lock_predictor_and_policy_files_are_unchanged)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_12\\\\outputs\\\\round12_formal_20260810_161000\\\\formal_protocol_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_07_current_environment_action_is_two_dimensional_movement_only (test_round13_controllability.Round13ControllabilityContracts.test_07_current_environment_action_is_two_dimensional_movement_only)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_08_all_preregistered_perturbations_are_legal (test_round13_controllability.Round13ControllabilityContracts.test_08_all_preregistered_perturbations_are_legal)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_09_snapshot_is_restored_and_continuation_is_deterministic (test_round13_controllability.Round13ControllabilityContracts.test_09_snapshot_is_restored_and_continuation_is_deterministic)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_10_service_progress_is_actual_payload_and_finite (test_round13_controllability.Round13ControllabilityContracts.test_10_service_progress_is_actual_payload_and_finite)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_42_round19_preflight (test_round20_multi_uav_dataset.Round20MultiUAVDatasetTests.test_42_round19_preflight)",
+      "exception": "RuntimeError",
+      "detail": "RuntimeError: Round-19 lock changed"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_registered_interference_ablation_fields (test_round21_hgnn_task_waypoint.Round21HGNNTests.test_registered_interference_ablation_fields)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'round_20\\\\outputs\\\\round20_multi_uav_dataset_20260828_2100\\\\multi_uav_graph_schema_v1.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_fresh_manifest_is_registered_and_unaccessed (test_round22_governance.Round22GovernanceTests.test_fresh_manifest_is_registered_and_unaccessed)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_22\\\\outputs\\\\round22_deepsets_task_waypoint_policy_20260829_1153\\\\fresh_multi_uav_policy_dev_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_frozen_predictor_is_unchanged (test_round22_governance.Round22GovernanceTests.test_frozen_predictor_is_unchanged)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_22\\\\outputs\\\\round22_deepsets_task_waypoint_policy_20260829_1153\\\\selected_deepsets_task_waypoint_predictor.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_protected_accesses_follow_the_frozen_gate (test_round22_governance.Round22GovernanceTests.test_protected_accesses_follow_the_frozen_gate)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_22\\\\outputs\\\\round22_deepsets_task_waypoint_policy_20260829_1153\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_round21_amendment_overlay_is_narrow_and_exact (test_round22_governance.Round22GovernanceTests.test_round21_amendment_overlay_is_narrow_and_exact)",
+      "exception": "RuntimeError",
+      "detail": "RuntimeError: round_31 original lock was modified"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_round22_governance_state_sync_amendment_is_narrow_and_exact (test_round22_governance.Round22GovernanceTests.test_round22_governance_state_sync_amendment_is_narrow_and_exact)",
+      "exception": "RuntimeError",
+      "detail": "RuntimeError: Round-22 lifecycle test is not the approved semantic correction"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "setUpClass (test_round22_policy.Round22PolicyTests)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'round_22\\\\outputs\\\\round22_deepsets_task_waypoint_policy_20260829_1153\\\\selected_deepsets_task_waypoint_predictor.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_bootstrap_leave_one_seed_out_and_frozen_groups_are_registered (test_round23_audit.Round23AuditTests.test_bootstrap_leave_one_seed_out_and_frozen_groups_are_registered)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_23\\\\outputs\\\\round23_seed_stability_audit_20260829_1436\\\\hierarchical_seed_bootstrap.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_head_ablations_are_validation_paired_and_inference_only (test_round23_audit.Round23AuditTests.test_head_ablations_are_validation_paired_and_inference_only)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_23\\\\outputs\\\\round23_seed_stability_audit_20260829_1436\\\\seed_head_utilization.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_round22_frozen_lock_amendment_predictor_and_checkpoints_verify (test_round23_audit.Round23AuditTests.test_round22_frozen_lock_amendment_predictor_and_checkpoints_verify)",
+      "exception": "RuntimeError",
+      "detail": "RuntimeError: Round-22 lifecycle test is not the approved semantic correction"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_round23_is_a_frozen_inference_audit_with_protected_accesses_zero (test_round23_audit.Round23AuditTests.test_round23_is_a_frozen_inference_audit_with_protected_accesses_zero)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_23\\\\outputs\\\\round23_seed_stability_audit_20260829_1436\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_round23_lock_hashes_its_sources_outputs_figures_and_report (test_round23_audit.Round23AuditTests.test_round23_lock_hashes_its_sources_outputs_figures_and_report)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_23\\\\outputs\\\\round23_seed_stability_audit_20260829_1436\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_seed_identity_and_fresh_pairing_are_derived_from_locked_rows (test_round23_audit.Round23AuditTests.test_seed_identity_and_fresh_pairing_are_derived_from_locked_rows)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_23\\\\outputs\\\\round23_seed_stability_audit_20260829_1436\\\\seed_identity_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_eight_seed_coverage_uncertainty_and_conditional_availability (test_round24_seed_extension.Round24SeedExtensionTests.test_eight_seed_coverage_uncertainty_and_conditional_availability)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\eight_seed_validation_stability.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_exact_new_training_matrix_and_frozen_provenance (test_round24_seed_extension.Round24SeedExtensionTests.test_exact_new_training_matrix_and_frozen_provenance)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\round24_new_seed_training_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_exact_pretraining_fresh_registration_and_disjointness (test_round24_seed_extension.Round24SeedExtensionTests.test_exact_pretraining_fresh_registration_and_disjointness)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\round24_fresh_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_nonfinite_csv_values_and_lock_coverage (test_round24_seed_extension.Round24SeedExtensionTests.test_no_nonfinite_csv_values_and_lock_coverage)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_protected_accesses_gates_and_figures (test_round24_seed_extension.Round24SeedExtensionTests.test_protected_accesses_gates_and_figures)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_protocol_and_checkpoint_integrity (test_round24_seed_extension.Round24SeedExtensionTests.test_protocol_and_checkpoint_integrity)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\round24_protocol_equivalence_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_access_controls_gates_figures_and_finite_outputs (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_access_controls_gates_figures_and_finite_outputs)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_frozen_bridge_conflict_and_causal_planner_protocol (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_frozen_bridge_conflict_and_causal_planner_protocol)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\planner_task_waypoint_samples.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_lock_covers_completed_evidence_when_present (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_lock_covers_completed_evidence_when_present)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_metadata_are_diagnostic_and_knn_is_cross_episode (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_metadata_are_diagnostic_and_knn_is_cross_episode)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\knn_target_ambiguity.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_training_or_checkpoint_write_path (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_no_training_or_checkpoint_write_path)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_planner_targets_are_finite_nonnegative_and_horizon_is_recorded (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_planner_targets_are_finite_nonnegative_and_horizon_is_recorded)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\planner_task_waypoint_samples.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_predictor_and_policy_are_inference_only (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_predictor_and_policy_are_inference_only)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_required_outputs_and_exact_state_grouping (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_required_outputs_and_exact_state_grouping)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [WinError 3] \u7cfb\u7edf\u627e\u4e0d\u5230\u6307\u5b9a\u7684\u8def\u5f84\u3002: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_round24_lock_and_frozen_preconditions (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_round24_lock_and_frozen_preconditions)",
+      "exception": "RuntimeError",
+      "detail": "RuntimeError: round_31 original lock was modified"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_causal_planner_frozen_policy_and_access_controls (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_causal_planner_frozen_policy_and_access_controls)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322\\\\planner_action_coherence.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_exact_delivery_set_and_sample_coverage (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_exact_delivery_set_and_sample_coverage)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [WinError 3] \u7cfb\u7edf\u627e\u4e0d\u5230\u6307\u5b9a\u7684\u8def\u5f84\u3002: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_executed_action_only_and_no_training_path (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_executed_action_only_and_no_training_path)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322\\\\action_supervision_semantics_audit.md'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_knn_and_conditional_audits_are_cross_episode_and_finite (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_knn_and_conditional_audits_are_cross_episode_and_finite)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322\\\\knn_action_ambiguity.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_lock_covers_completed_evidence_when_present (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_lock_covers_completed_evidence_when_present)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322\\\\action_ambiguity_grouped.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_preregistered_gates_figures_and_finite_csv_values (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_preregistered_gates_figures_and_finite_csv_values)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322\\\\action_supervision_ambiguity_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_round25_lock_and_frozen_preconditions (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_round25_lock_and_frozen_preconditions)",
+      "exception": "RuntimeError",
+      "detail": "RuntimeError: round_31 original lock was modified"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_direct_utility_formula_and_three_way_label (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_direct_utility_formula_and_three_way_label)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\outputs\\\\round27_conditional_planner_utility_20260830_1447\\\\planner_state_utility_labels.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_figures_finite_outputs_and_historical_no_round28 (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_figures_finite_outputs_and_historical_no_round28)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [WinError 3] \u7cfb\u7edf\u627e\u4e0d\u5230\u6307\u5b9a\u7684\u8def\u5f84\u3002: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\figures\\\\round27_conditional_planner_utility_20260830_1447'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_frozen_policy_access_controls_and_expected_gates (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_frozen_policy_access_controls_and_expected_gates)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\logs\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_lock_covers_completed_evidence_when_present (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_lock_covers_completed_evidence_when_present)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\outputs\\\\round27_conditional_planner_utility_20260830_1447\\\\causal_planning_trigger_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_training_and_no_future_trigger_inputs (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_no_training_and_no_future_trigger_inputs)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\outputs\\\\round27_conditional_planner_utility_20260830_1447\\\\causal_trigger_feature_spec.md'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_required_delivery_and_registered_state_pool (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_required_delivery_and_registered_state_pool)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [WinError 3] \u7cfb\u7edf\u627e\u4e0d\u5230\u6307\u5b9a\u7684\u8def\u5f84\u3002: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\outputs\\\\round27_conditional_planner_utility_20260830_1447'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_round26_lock_and_frozen_preconditions (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_round26_lock_and_frozen_preconditions)",
+      "exception": "RuntimeError",
+      "detail": "RuntimeError: round_31 original lock was modified"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_trigger_threshold_is_train_only_and_oracle_is_nondeployable (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_trigger_threshold_is_train_only_and_oracle_is_nondeployable)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\outputs\\\\round27_conditional_planner_utility_20260830_1447\\\\causal_planning_trigger_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_09_train_validation_scenario_separation (test_round28_planning_need_representation.Round28PlanningNeedRepresentationTests.test_09_train_validation_scenario_separation)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_20\\\\outputs\\\\round20_multi_uav_dataset_20260828_2100\\\\multi_uav_transitions.jsonl'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_lock_covers_completed_evidence_when_present (test_round28_planning_need_representation.Round28PlanningNeedRepresentationTests.test_lock_covers_completed_evidence_when_present)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_28\\\\outputs\\\\round28_planning_need_representation_20260830_1624\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_06_frozen_round28_labels_unchanged (test_round29_cross_scale_deferred_service.Round29CrossScaleDeferredServiceTests.test_06_frozen_round28_labels_unchanged)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_28\\\\outputs\\\\round28_planning_need_representation_20260830_1624\\\\planning_need_feature_table.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_01_round30_lock_is_unchanged (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_01_round30_lock_is_unchanged)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_02_no_optimizer_update_or_backward (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_02_no_optimizer_update_or_backward)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_03_no_training_or_checkpoint_write (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_03_no_training_or_checkpoint_write)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_04_objective_audit_is_exact (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_04_objective_audit_is_exact)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\ppo_objective_semantics_audit.md'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_05_gae_reconstruction_exact (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_05_gae_reconstruction_exact)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\ppo_advantage_statistics.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_07_knn_excludes_same_episode_and_temporal_neighbors (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_07_knn_excludes_same_episode_and_temporal_neighbors)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\actor_representation_action_ambiguity.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_08_full_relational_features_are_current_only (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_08_full_relational_features_are_current_only)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\relational_information_loss_audit.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_09_k_and_eta_grouping_are_present (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_09_k_and_eta_grouping_are_present)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\relational_information_loss_audit.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_10_frozen_planner_references_are_used (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_10_frozen_planner_references_are_used)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\ppo_action_reference_alignment.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_11_no_fresh_new_rollout_or_untouched_access (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_11_no_fresh_new_rollout_or_untouched_access)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_04_source_horizons_are_recovered_exactly (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_04_source_horizons_are_recovered_exactly)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\cross_round_horizon_semantics.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_05_effective_horizon_formula_and_terminal_audit (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_05_effective_horizon_formula_and_terminal_audit)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\planner_effective_horizon_audit.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_06_utilization_statistics_are_exact (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_06_utilization_statistics_are_exact)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\planner_horizon_utilization.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_07_h5_h10_equality_is_exact_and_not_bug_claim (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_07_h5_h10_equality_is_exact_and_not_bug_claim)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\h5_h10_equivalence_audit.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_08_h5_h10_prefixes_are_identical (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_08_h5_h10_prefixes_are_identical)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\r18_r19_trajectory_prefix_equality.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_09_task_waypoint_labels_are_complete_windows (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_09_task_waypoint_labels_are_complete_windows)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\task_waypoint_label_semantics.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_10_task_waypoint_coverage_and_protected_split (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_10_task_waypoint_coverage_and_protected_split)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\task_waypoint_horizon_coverage.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_11_terminated_and_truncated_semantics_are_stated (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_11_terminated_and_truncated_semantics_are_stated)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\cross_round_horizon_semantics.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_12_ppo_gae_endpoint_and_rollout_are_correct (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_12_ppo_gae_endpoint_and_rollout_are_correct)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\ppo_credit_horizon_summary.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_13_historical_gate_is_reassessed_without_mutation (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_13_historical_gate_is_reassessed_without_mutation)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\historical_gate_horizon_reassessment.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_14_timescale_and_redesign_gate_are_data_derived (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_14_timescale_and_redesign_gate_are_data_derived)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\physical_queue_coordination_timescales.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_15_no_fresh_development_or_untouched_access (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_15_no_fresh_development_or_untouched_access)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_01_round32_original_lock_sha_is_unchanged (test_round33_governance_compatibility.Round33GovernanceCompatibilityTests.test_01_round32_original_lock_sha_is_unchanged)",
+      "exception": "RuntimeError",
+      "detail": "RuntimeError: Round-32 H20 exception is not the recorded planner integrity transition"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_07_existing_round33_scientific_outputs_are_unchanged (test_round33_governance_compatibility.Round33GovernanceCompatibilityTests.test_07_existing_round33_scientific_outputs_are_unchanged)",
+      "exception": "RuntimeError",
+      "detail": "RuntimeError: Round-33 existing scientific outputs were modified: [{'path': 'round_33/figures/round33_long_episode_benchmark_20260830_2320/01_benchmark_design.png', 'actual': 'MISSING', 'expected': '5AC85148978E9B3039DE2E91F3341A1B0E4086B3EF284F454EA42D756189D573'}, {'path': 'round_33/figures/round33_long_episode_benchmark_20260830_2320/01_benchmark_design.svg', 'actual': 'MISSING', 'expected': '0BF4E8872730A48D68FECF7AE0095D9BA49DDAC21BE13DA0ADDA6A514A0B59A5'}, {'path': 'round_33/figures/round33_long_episode_benchmark_20260830_2320/02_horizon_coverage.png', 'actual': 'MISSING', 'expected': '5AC85148978E9B3039DE2E91F3341A1B0E4086B3EF284F454EA42D756189D573'}]"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_02_snapshot_preserves_preextension_planner (test_round33_long_episode.Round33LongEpisodeTests.test_02_snapshot_preserves_preextension_planner)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\backup\\\\snapshots\\\\before_round_33_20260830_2320\\\\src\\\\wt\\\\round19\\\\planner.py'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_04_configuration_is_exactly_t20 (test_round33_long_episode.Round33LongEpisodeTests.test_04_configuration_is_exactly_t20)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_long_episode_config.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_06_planner_integrity_limits_the_authorized_change (test_round33_long_episode.Round33LongEpisodeTests.test_06_planner_integrity_limits_the_authorized_change)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_planner_integrity.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_07_t12_parameterization_regression_passes (test_round33_long_episode.Round33LongEpisodeTests.test_07_t12_parameterization_regression_passes)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_horizon_parameterization_regression.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_08_each_t12_regression_dimension_is_exact (test_round33_long_episode.Round33LongEpisodeTests.test_08_each_t12_regression_dimension_is_exact)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_horizon_parameterization_regression.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_09_design_manifest_is_preoutcome_and_has_64_scenarios (test_round33_long_episode.Round33LongEpisodeTests.test_09_design_manifest_is_preoutcome_and_has_64_scenarios)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_design_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_10_confirmation_manifest_is_preoutcome_and_has_64_scenarios (test_round33_long_episode.Round33LongEpisodeTests.test_10_confirmation_manifest_is_preoutcome_and_has_64_scenarios)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_confirmation_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_11_design_and_confirmation_seeds_are_disjoint (test_round33_long_episode.Round33LongEpisodeTests.test_11_design_and_confirmation_seeds_are_disjoint)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_design_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_12_every_new_stratum_has_four_seeds (test_round33_long_episode.Round33LongEpisodeTests.test_12_every_new_stratum_has_four_seeds)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_design_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_13_historical_population_collision_audit_is_empty (test_round33_long_episode.Round33LongEpisodeTests.test_13_historical_population_collision_audit_is_empty)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_confirmation_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_14_h5_t20_full_nominal_coverage_is_80_percent (test_round33_long_episode.Round33LongEpisodeTests.test_14_h5_t20_full_nominal_coverage_is_80_percent)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_horizon_coverage.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_15_h10_t20_full_nominal_coverage_is_55_percent (test_round33_long_episode.Round33LongEpisodeTests.test_15_h10_t20_full_nominal_coverage_is_55_percent)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_horizon_coverage.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_16_h20_is_full_only_at_the_earliest_slot (test_round33_long_episode.Round33LongEpisodeTests.test_16_h20_is_full_only_at_the_earliest_slot)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_horizon_coverage.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_17_primary_common_anchors_are_t0_through_t10 (test_round33_long_episode.Round33LongEpisodeTests.test_17_primary_common_anchors_are_t0_through_t10)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_common_anchor_protocol.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_18_primary_action_audit_covers_both_populations (test_round33_long_episode.Round33LongEpisodeTests.test_18_primary_action_audit_covers_both_populations)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\h5_h10_action_separation.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_19_every_primary_action_pair_shares_a_snapshot (test_round33_long_episode.Round33LongEpisodeTests.test_19_every_primary_action_pair_shares_a_snapshot)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\h5_h10_action_separation.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_20_primary_action_rows_execute_the_requested_shadow_depths (test_round33_long_episode.Round33LongEpisodeTests.test_20_primary_action_rows_execute_the_requested_shadow_depths)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\h5_h10_action_separation.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_21_same_snapshot_utility_is_branch_difference (test_round33_long_episode.Round33LongEpisodeTests.test_21_same_snapshot_utility_is_branch_difference)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\h10_vs_h5_same_snapshot_utility.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_22_counterfactual_changes_only_the_first_action (test_round33_long_episode.Round33LongEpisodeTests.test_22_counterfactual_changes_only_the_first_action)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\h10_vs_h5_same_snapshot_utility.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_23_closed_loop_h1_h5_h10_cover_every_t20_scenario (test_round33_long_episode.Round33LongEpisodeTests.test_23_closed_loop_h1_h5_h10_cover_every_t20_scenario)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_closed_loop_planner_metrics.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_24_h20_closed_loop_rows_are_prespecified_descriptions (test_round33_long_episode.Round33LongEpisodeTests.test_24_h20_closed_loop_rows_are_prespecified_descriptions)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_closed_loop_planner_metrics.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_25_pairwise_statistics_use_scenario_cluster_bootstrap (test_round33_long_episode.Round33LongEpisodeTests.test_25_pairwise_statistics_use_scenario_cluster_bootstrap)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_planner_pairwise_statistics.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_26_k_eta_robustness_is_reported (test_round33_long_episode.Round33LongEpisodeTests.test_26_k_eta_robustness_is_reported)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_K_eta_robustness.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_27_physical_timescale_validation_uses_only_existing_variables (test_round33_long_episode.Round33LongEpisodeTests.test_27_physical_timescale_validation_uses_only_existing_variables)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_physical_timescale_validation.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_28_access_audit_has_no_protected_reuse (test_round33_long_episode.Round33LongEpisodeTests.test_28_access_audit_has_no_protected_reuse)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_30_gates_are_consistent_and_round34_is_absent (test_round33_long_episode.Round33LongEpisodeTests.test_30_gates_are_consistent_and_round34_is_absent)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\horizon_separation_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_16_historical_gate_is_locked (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_16_historical_gate_is_locked)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\horizon_separation_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_33_formal_outputs_exclude_quarantine (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_33_formal_outputs_exclude_quarantine)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_34\\\\outputs\\\\round34_benchmark_complexity_audit_20260901_1540\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_34_formal_access_audit_has_zero_protected_scientific_records (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_34_formal_access_audit_has_zero_protected_scientific_records)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_34\\\\outputs\\\\round34_benchmark_complexity_audit_20260901_1540\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_35_all_required_formal_artifacts_are_present (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_35_all_required_formal_artifacts_are_present)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [WinError 3] \u7cfb\u7edf\u627e\u4e0d\u5230\u6307\u5b9a\u7684\u8def\u5f84\u3002: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_34\\\\outputs\\\\round34_benchmark_complexity_audit_20260901_1540'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_02_successor_amendment_verifies (test_round34_governance_lifecycle.Round34GovernanceLifecycleTests.test_02_successor_amendment_verifies)",
+      "exception": "RuntimeError",
+      "detail": "RuntimeError: Round-32 H20 exception is not the recorded planner integrity transition"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_07_formal_access_audit_is_clean_after_exception (test_round34_governance_lifecycle.Round34GovernanceLifecycleTests.test_07_formal_access_audit_is_clean_after_exception)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_34\\\\outputs\\\\round34_benchmark_complexity_audit_20260901_1540\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_03_no_second_protected_access (test_round35_level2.Round35Level2Tests.test_03_no_second_protected_access)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_07_legacy_m2k3_regression (test_round35_level2.Round35Level2Tests.test_07_legacy_m2k3_regression)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_legacy_scale_parameterization_regression.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_08_legacy_m2k5_regression (test_round35_level2.Round35Level2Tests.test_08_legacy_m2k5_regression)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_legacy_scale_parameterization_regression.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_09_t12_t20_compatibility (test_round35_level2.Round35Level2Tests.test_09_t12_t20_compatibility)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_legacy_scale_parameterization_regression.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_15_exclusivity_respected (test_round35_level2.Round35Level2Tests.test_15_exclusivity_respected)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\association_decoder_constraint_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_17_deterministic_tie_break (test_round35_level2.Round35Level2Tests.test_17_deterministic_tie_break)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\association_decoder_constraint_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_18_preference_affects_assignment (test_round35_level2.Round35Level2Tests.test_18_preference_affects_assignment)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\relational_action_ownership_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_19_no_hidden_heuristic_override (test_round35_level2.Round35Level2Tests.test_19_no_hidden_heuristic_override)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\relational_action_ownership_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_20_movement_channel_independent (test_round35_level2.Round35Level2Tests.test_20_movement_channel_independent)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\action_channel_separation.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_21_association_channel_independent (test_round35_level2.Round35Level2Tests.test_21_association_channel_independent)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\action_channel_separation.csv'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_22_permutation_equivariance (test_round35_level2.Round35Level2Tests.test_22_permutation_equivariance)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_permutation_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_26_safety_unchanged (test_round35_level2.Round35Level2Tests.test_26_safety_unchanged)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_legacy_scale_parameterization_regression.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_27_reward_unchanged (test_round35_level2.Round35Level2Tests.test_27_reward_unchanged)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_legacy_scale_parameterization_regression.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_32_untouched_access_zero (test_round35_level2.Round35Level2Tests.test_32_untouched_access_zero)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_36_engineering_scenario_count (test_round35_level2.Round35Level2Tests.test_36_engineering_scenario_count)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_level2_engineering_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_37_level2_gate (test_round35_level2.Round35Level2Tests.test_37_level2_gate)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\level2_relational_benchmark_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_anchors_are_preoutcome_and_sufficient (test_round36_runtime_stop.Round36RuntimeStopTests.test_anchors_are_preoutcome_and_sufficient)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_state_anchor_protocol.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_arr_excludes_unrun_confirmation (test_round36_runtime_stop.Round36RuntimeStopTests.test_arr_excludes_unrun_confirmation)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_confirmation_is_unaccessed (test_round36_runtime_stop.Round36RuntimeStopTests.test_confirmation_is_unaccessed)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_deterministic_tie_rule_frozen (test_round36_runtime_stop.Round36RuntimeStopTests.test_deterministic_tie_rule_frozen)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_state_anchor_protocol.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_direct_regression_passed (test_round36_runtime_stop.Round36RuntimeStopTests.test_direct_regression_passed)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\direct_assignment_executor_regression.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_environment_and_decoder_are_not_modified (test_round36_runtime_stop.Round36RuntimeStopTests.test_environment_and_decoder_are_not_modified)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\direct_assignment_executor_regression.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_h10_utility_not_run_after_runtime_stop (test_round36_runtime_stop.Round36RuntimeStopTests.test_h10_utility_not_run_after_runtime_stop)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_h1_utility_not_run_after_runtime_stop (test_round36_runtime_stop.Round36RuntimeStopTests.test_h1_utility_not_run_after_runtime_stop)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_h5_utility_not_run_after_runtime_stop (test_round36_runtime_stop.Round36RuntimeStopTests.test_h5_utility_not_run_after_runtime_stop)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_backward (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_backward)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_hgnn (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_hgnn)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_readiness_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_model_training (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_model_training)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_nan_or_inf_in_runtime_measurement (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_nan_or_inf_in_runtime_measurement)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_runtime_feasibility_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_optimizer (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_optimizer)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_outcome_dependent_anchor (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_outcome_dependent_anchor)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_state_anchor_protocol.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_ppo (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_ppo)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_protected_or_untouched_access (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_protected_or_untouched_access)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_protected_split (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_protected_split)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_clean_manifest_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_task_waypoint_training (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_task_waypoint_training)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_no_training_or_model_inference (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_training_or_model_inference)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_reo_not_evaluated (test_round36_runtime_stop.Round36RuntimeStopTests.test_reo_not_evaluated)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_round35_original_lock_unchanged (test_round36_runtime_stop.Round36RuntimeStopTests.test_round35_original_lock_unchanged)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_readiness_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_runtime_gate_stops_before_fao (test_round36_runtime_stop.Round36RuntimeStopTests.test_runtime_gate_stops_before_fao)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_runtime_feasibility_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_same_first_movement_and_continuation_specified (test_round36_runtime_stop.Round36RuntimeStopTests.test_same_first_movement_and_continuation_specified)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_readiness_gate.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_state_only_representation_has_no_future_evaluation (test_round36_runtime_stop.Round36RuntimeStopTests.test_state_only_representation_has_no_future_evaluation)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_task_waypoint_mapping_not_evaluated (test_round36_runtime_stop.Round36RuntimeStopTests.test_task_waypoint_mapping_not_evaluated)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_task_waypoint_target_not_constructed (test_round36_runtime_stop.Round36RuntimeStopTests.test_task_waypoint_target_not_constructed)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+    },
+    {
+      "kind": "ERROR",
+      "test_id": "test_untouched_zero (test_round36_runtime_stop.Round36RuntimeStopTests.test_untouched_zero)",
+      "exception": "FileNotFoundError",
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_01_frozen_round_hashes_are_unchanged (test_round07_data_audit.Round7DataAuditTests.test_01_frozen_round_hashes_are_unchanged)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: 'B48503E74E1E2575EB9163D1E23BAD33BF2C1E8842823CC23F13613E306BB1FF' != 'E77A83EE903739AB6EB327238E632BAEB8FE93E7298258429BA471295AA71772'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_11_figures_png (test_round11_full_audit.Round11Full.test_11_figures_png)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: 0 != 20"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_12_figures_svg (test_round11_full_audit.Round11Full.test_12_figures_svg)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: 0 != 20"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_06_original_round13_and_round12_frozen_evidence_is_unchanged (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_06_original_round13_and_round12_frozen_evidence_is_unchanged)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: {} != {'round_13/outputs/round13_formal_20260811[6226 chars]9D1'}"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_01_round17_lock_unchanged (test_round18_multi_uav.Round18MultiUAVTests.test_01_round17_lock_unchanged)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: 'B964AF33A4A0592218F99878FDC5091F46442589D2376CAB743B86ACEDF0C9C5' != 'A393148768835CB28296999D73490C77CAD51279B8060E9B99D10EC8581285FD'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_01_round18_lock_unchanged (test_round19_shared_spectrum.Round19SharedSpectrumTests.test_01_round18_lock_unchanged)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: '4ECF174BB9640AD1CD2B28E64C81281682FF16C91890760CA63154981FD95F8F' != '8A9462FC87F1DB546E30877DB8814FE591BF90CCB5DE81B0A6C9C63E96C0DA9B'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_01_round19_lock_unchanged (test_round20_multi_uav_dataset.Round20MultiUAVDatasetTests.test_01_round19_lock_unchanged)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: '0D1580EC8B62449B613BECFFA218CF64B02D9300762322EEAD8F92C02777D65E' != '1563785D59556B7FA747A1CADEBDBDB5EE82FCCA26892DD3E42A65ABB3B5AA46'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_07_matching_source_unchanged (test_round20_multi_uav_dataset.Round20MultiUAVDatasetTests.test_07_matching_source_unchanged)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: '887863083A8364996479BE9FC65BB2A8C2B9376629E32F02763FC237BC2A4324' != '4054D4C4F22F94634F1EF24A00DD90888E58A8C3FAD183130733D6C0A1D7B530'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_round20_registered_hashes_unchanged (test_round21_hgnn_task_waypoint.Round21HGNNTests.test_round20_registered_hashes_unchanged)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: '0F8D39C6DB4B204B9196D53583988565F45D5915A3056B509905D90533D3AA4E' != 'FD50F358BA274A1CA7D8445756F52C296D1EDF07A656210E4941AE8EF4435871'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_all_required_outputs_figures_and_completion_records_exist (test_round23_audit.Round23AuditTests.test_all_required_outputs_figures_and_completion_records_exist)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: Lists differ: ['seed_level_policy_summary.csv', 'seed_id[889 chars]son'] != []"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_18_required_dirs_and_only_legal_round31_successor (test_round30_deepsets_ppo.Round30DeepSetsPPOTests.test_18_required_dirs_and_only_legal_round31_successor)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: False is not true"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_14_required_artifacts_and_figures_exist (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_14_required_artifacts_and_figures_exist)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: False is not true"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_01_predecessor_lock_is_byte_stable (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_01_predecessor_lock_is_byte_stable)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: '6AEFE12E00DC9E724BFBB4D165F5AC98BE33DF126B0F2BA254DA256BE9D97E81' != '9B26D6129264A05A6BD7198FE283D839A70085C7A8D798D4470AD9302CB6E2D3'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_16_required_outputs_figures_and_compile (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_16_required_outputs_figures_and_compile)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: False is not true"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_17_round33_requires_a_narrow_successor_amendment (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_17_round33_requires_a_narrow_successor_amendment)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: '8CAB303A04C3CF7799821D7887139EA2FE9AB97B2B0B21F74FA0F9C031064F7F' != '9638D63395DB5C6072588509592F0CAEECA9A676A1A4B63B933E2B7FCD9A9735'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_01_round32_lock_is_immutable (test_round33_long_episode.Round33LongEpisodeTests.test_01_round32_lock_is_immutable)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: '9638D63395DB5C6072588509592F0CAEECA9A676A1A4B63B933E2B7FCD9A9735' != '8CAB303A04C3CF7799821D7887139EA2FE9AB97B2B0B21F74FA0F9C031064F7F'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_29_required_figure_pairs_exist (test_round33_long_episode.Round33LongEpisodeTests.test_29_required_figure_pairs_exist)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: 0 != 16"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_01_round33_original_lock_is_unchanged (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_01_round33_original_lock_is_unchanged)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: 'A5ABD49D8D045342F8086135B0EBDA5D79280F08283E0FE6B67205919BA33A3F' != '40A4C92A3E085661D01B2D112B4525E2DDE2CC68D63D8718ED2F5BEF83DE8075'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_36_twelve_png_and_svg_figures_are_present (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_36_twelve_png_and_svg_figures_are_present)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: 0 != 12"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_01_round33_original_lock_remains_unchanged (test_round34_governance_lifecycle.Round34GovernanceLifecycleTests.test_01_round33_original_lock_remains_unchanged)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: 'A5ABD49D8D045342F8086135B0EBDA5D79280F08283E0FE6B67205919BA33A3F' != '40A4C92A3E085661D01B2D112B4525E2DDE2CC68D63D8718ED2F5BEF83DE8075'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_round34_lock_rehashes_every_registered_artifact (test_round34_lock.Round34LockTests.test_round34_lock_rehashes_every_registered_artifact)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: 'F1BB02D8561960B11E9C0366BB7502183B6624E90B903703970576812199BF2C' != '01E9D7B70758C5CA3841366712626C4FD204A5B841A131D1CC8588F12D1942EB'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_01_round34_lock_unchanged (test_round35_level2.Round35Level2Tests.test_01_round34_lock_unchanged)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: '6C45FFF9744068E5469249681F8AB36E4AB2C1F64C2C1090EEF07FBE6DD4EE47' != '59A472D367BEE8364C2D5CC4468759685795E6CB7E2176DFFD2B12F56C489AF0'"
+    },
+    {
+      "kind": "FAIL",
+      "test_id": "test_38_required_figures_exist (test_round35_level2.Round35Level2Tests.test_38_required_figures_exist)",
+      "exception": "AssertionError",
+      "detail": "AssertionError: 0 != 12"
+    }
+  ],
+  "new_failures": [],
+  "new_failure_count": 0,
+  "baseline_commit": "fabe0406fe8127da1f2b9fb59a6da347adffe21a",
+  "baseline_tree": "E:\\srdp\\wt_e13_baseline"
+}

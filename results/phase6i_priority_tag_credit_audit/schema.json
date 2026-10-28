@@ -1,0 +1,27 @@
+{
+  "schema_version": "tag_credit_audit_v1",
+  "instruction_commit": "dbc1a90d8e082d498f92e04173030cb4274aa2a2",
+  "e12_result_commit": "fabe0406fe8127da1f2b9fb59a6da347adffe21a",
+  "e12_implementation_commit": "7067295c7d2d545eed22a3bab66bb48f3becd35b",
+  "registered_batches": 12,
+  "sample_updates": [
+    1,
+    150,
+    300
+  ],
+  "sample_env_index": 0,
+  "bit_abs": 1.0,
+  "reward_abs": 1e-05,
+  "lookahead_abs": 1e-05,
+  "float32_abs": 1e-06,
+  "logprob_abs": 0.0001,
+  "ratio_abs": 0.0001,
+  "verification_reruns": 0,
+  "terminal_scenarios": [
+    321000,
+    321001
+  ],
+  "diagnostic_process_seed": 9100000,
+  "diagnostic_assignment_seed": 9200000,
+  "no_parameter_update": true
+}

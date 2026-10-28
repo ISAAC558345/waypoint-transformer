@@ -1,0 +1,144 @@
+{
+  "registered_batches": 12,
+  "verification_passes": 0,
+  "rng_check": {
+    "second_execution_budgeted": false,
+    "restore_returns_captured_state": true,
+    "torch_rng_changed_during_batch": true,
+    "batch": "terminal_l4_c_seed0"
+  },
+  "batches": [
+    {
+      "role": "initial_reconstruction",
+      "variant": "L4_C",
+      "model_seed": 0,
+      "source": "reconstructed_pre_update_batch_env0_checked",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_c_seed0.npz",
+      "batch_sha256": "efbedee3b81afb2a120187068d3603dc1b72aa53b2ea857161dde54fbffc9c0d",
+      "parameters_unchanged": true,
+      "historical_gradient_published": true,
+      "diagnostic_gradient_published": false
+    },
+    {
+      "role": "initial_reconstruction",
+      "variant": "L4_Q",
+      "model_seed": 0,
+      "source": "reconstructed_pre_update_batch_env0_checked",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_q_seed0.npz",
+      "batch_sha256": "0d419e9444e5b0aa15dacbee6b3ddb18397dd858e88928a511b46e605d365e54",
+      "parameters_unchanged": true,
+      "historical_gradient_published": true,
+      "diagnostic_gradient_published": false
+    },
+    {
+      "role": "initial_reconstruction",
+      "variant": "L4_C",
+      "model_seed": 1,
+      "source": "reconstructed_pre_update_batch_env0_checked",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_c_seed1.npz",
+      "batch_sha256": "dbecafb989cff8b093be212585fbeece77ced8a459dd5f92d296d34b0ff977a5",
+      "parameters_unchanged": true,
+      "historical_gradient_published": true,
+      "diagnostic_gradient_published": false
+    },
+    {
+      "role": "initial_reconstruction",
+      "variant": "L4_Q",
+      "model_seed": 1,
+      "source": "reconstructed_pre_update_batch_env0_checked",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_q_seed1.npz",
+      "batch_sha256": "83b2d829e8c86cbd1ee6b3a1969b45938ec739bcdda04ae42de7eb29f4a0c744",
+      "parameters_unchanged": true,
+      "historical_gradient_published": true,
+      "diagnostic_gradient_published": false
+    },
+    {
+      "role": "initial_reconstruction",
+      "variant": "L4_C",
+      "model_seed": 2,
+      "source": "reconstructed_pre_update_batch_env0_checked",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_c_seed2.npz",
+      "batch_sha256": "b67f39e926756535531cf6821f8557d154178b685bb846dc4b0b241b50f22fea",
+      "parameters_unchanged": true,
+      "historical_gradient_published": true,
+      "diagnostic_gradient_published": false
+    },
+    {
+      "role": "initial_reconstruction",
+      "variant": "L4_Q",
+      "model_seed": 2,
+      "source": "reconstructed_pre_update_batch_env0_checked",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_q_seed2.npz",
+      "batch_sha256": "3c2902eb3bc47bd1eb75285e697dfab0f3c4c327da2a5d9189d410b2e7f18dc5",
+      "parameters_unchanged": true,
+      "historical_gradient_published": true,
+      "diagnostic_gradient_published": false
+    },
+    {
+      "role": "terminal_frozen_batch",
+      "variant": "L4_C",
+      "model_seed": 0,
+      "source": "diagnostic_proxy",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_c_seed0.npz",
+      "batch_sha256": "39594256bd943725187d9a218cdea430b95dd43213e4030bad74d277379b6d97",
+      "parameters_unchanged": true,
+      "historical_gradient_published": false,
+      "diagnostic_gradient_published": true
+    },
+    {
+      "role": "terminal_frozen_batch",
+      "variant": "L4_Q",
+      "model_seed": 0,
+      "source": "diagnostic_proxy",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_q_seed0.npz",
+      "batch_sha256": "fb69881c5071f76fef282ef806060dd98c90ca47627b1c813c6e7c70924bc527",
+      "parameters_unchanged": true,
+      "historical_gradient_published": false,
+      "diagnostic_gradient_published": true
+    },
+    {
+      "role": "terminal_frozen_batch",
+      "variant": "L4_C",
+      "model_seed": 1,
+      "source": "diagnostic_proxy",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_c_seed1.npz",
+      "batch_sha256": "bb34d0361bf7ecc20410d5c235124eca8bd180f3fe030bd9794cae957602cc70",
+      "parameters_unchanged": true,
+      "historical_gradient_published": false,
+      "diagnostic_gradient_published": true
+    },
+    {
+      "role": "terminal_frozen_batch",
+      "variant": "L4_Q",
+      "model_seed": 1,
+      "source": "diagnostic_proxy",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_q_seed1.npz",
+      "batch_sha256": "389b03f27e11d7ccd2938f5cfb91b498057d4ae8fd5cb3769ea6ed00fb0d1008",
+      "parameters_unchanged": true,
+      "historical_gradient_published": false,
+      "diagnostic_gradient_published": true
+    },
+    {
+      "role": "terminal_frozen_batch",
+      "variant": "L4_C",
+      "model_seed": 2,
+      "source": "diagnostic_proxy",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_c_seed2.npz",
+      "batch_sha256": "14c2b6a7355c460bcfee3eb7df8dfa77c1a4a47c0d5529a832866ddb9e5e827d",
+      "parameters_unchanged": true,
+      "historical_gradient_published": false,
+      "diagnostic_gradient_published": true
+    },
+    {
+      "role": "terminal_frozen_batch",
+      "variant": "L4_Q",
+      "model_seed": 2,
+      "source": "diagnostic_proxy",
+      "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_q_seed2.npz",
+      "batch_sha256": "3d1bc0e41f6064803638a988d89d45fe588233796a698e6b165c4fd792710662",
+      "parameters_unchanged": true,
+      "historical_gradient_published": false,
+      "diagnostic_gradient_published": true
+    }
+  ]
+}

@@ -1,0 +1,3036 @@
+{
+  "scientific_gate": "TAG_CREDIT_AUDIT_COMPLETE",
+  "e12_gate": "QUEUE_LOOKAHEAD_BENCHMARK_FAIL",
+  "training_updates": 0,
+  "merged": false,
+  "release_eligible": false,
+  "implementation_commit": "0787d8ddcbb900f659051d04162f4039b3ccfb91",
+  "instruction_commit": "dbc1a90d8e082d498f92e04173030cb4274aa2a2",
+  "e12_result_commit": "fabe0406fe8127da1f2b9fb59a6da347adffe21a",
+  "history": {
+    "ok": true,
+    "gaps": [
+      "\u4e3b\u5de5\u4f5c\u533a\u5b8c\u6574\u6d4b\u8bd5\u6267\u884c\u4e86 1906 \u9879\u3001\u5931\u8d25 16 \u9879\u3002\u8fd9\u4e9b\u6d4b\u8bd5 ID \u5728 fabe040 \u5e72\u51c0\u57fa\u7ebf\u4e0a\u4e5f\u5931\u8d25\uff0c\u4f46\u5f02\u5e38\u6587\u672c\u4e0d\u540c\uff0c\u56e0\u4e3a\u4e3b\u5de5\u4f5c\u533a\u6b8b\u7559\u4e86\u672c\u63d0\u4ea4\u4e4b\u5916\u7684\u6587\u4ef6\u3002\u767b\u8bb0\u5bf9\u7167\u662f\u540c\u4e00\u5e72\u51c0\u5de5\u4f5c\u533a\u4e0a\u7684 1762 \u9879\u5bf9\u52a0\u4e0a\u672c\u5ba1\u8ba1\u4ee3\u7801\u540e\u7684 1770 \u9879\uff0c\u65b0\u589e\u5931\u8d25\u4e3a 0\u3002\u6ca1\u6709\u628a\u672a\u6267\u884c\u7684\u6536\u96c6\u9879\u8bb0\u6210\u901a\u8fc7\u3002"
+    ],
+    "pairing": {
+      "rows": 320,
+      "unique_keys": 320,
+      "duplicate_keys": 0,
+      "expected_keys": 320,
+      "missing_keys": 0,
+      "unexpected_keys": 0,
+      "development_min": 321096,
+      "development_max": 321127,
+      "aligned": true
+    },
+    "gate": {
+      "gate": "QUEUE_LOOKAHEAD_BENCHMARK_FAIL",
+      "matches_published_fail": true,
+      "passing_seeds": 0,
+      "published_passing_seeds": 0,
+      "means": [
+        {
+          "model_seed": 0,
+          "versus_l4_c_tagged_mean": -11545.369680715405,
+          "versus_l4_c_ci_low": -619434.790013437,
+          "versus_l4_c_ci_high": 547003.0415620763,
+          "versus_l0_tagged_mean": -47837.037681775924,
+          "versus_l0_safety_diff_sum": 0.0,
+          "versus_l4_c_safety_diff_sum": 0.0,
+          "versus_l0_constraint_diff_sum": 0.0,
+          "versus_l4_c_constraint_diff_sum": 0.0,
+          "versus_l0_interference_mean": 0.001876079253013988,
+          "published_tagged_mean": -11545.369680715405,
+          "mean_gap": 0.0
+        },
+        {
+          "model_seed": 1,
+          "versus_l4_c_tagged_mean": -446241.87693334,
+          "versus_l4_c_ci_low": -1012532.141156427,
+          "versus_l4_c_ci_high": 119330.00493537962,
+          "versus_l0_tagged_mean": 121493.98941089053,
+          "versus_l0_safety_diff_sum": 0.0,
+          "versus_l4_c_safety_diff_sum": 0.0,
+          "versus_l0_constraint_diff_sum": 0.0,
+          "versus_l4_c_constraint_diff_sum": 0.0,
+          "versus_l0_interference_mean": 0.0020273434912205534,
+          "published_tagged_mean": -446241.87693334,
+          "mean_gap": 0.0
+        },
+        {
+          "model_seed": 2,
+          "versus_l4_c_tagged_mean": 102219.12245855635,
+          "versus_l4_c_ci_low": -505924.0565891265,
+          "versus_l4_c_ci_high": 743605.9947728505,
+          "versus_l0_tagged_mean": -264806.6124006298,
+          "versus_l0_safety_diff_sum": 0.0,
+          "versus_l4_c_safety_diff_sum": 0.0,
+          "versus_l0_constraint_diff_sum": 0.0,
+          "versus_l4_c_constraint_diff_sum": 0.0,
+          "versus_l0_interference_mean": 0.0008342414743995933,
+          "published_tagged_mean": 102219.12245855635,
+          "mean_gap": 0.0
+        }
+      ],
+      "negative_tagged_versus_l0": 2,
+      "all_versus_l4_c_intervals_cross_zero": true
+    },
+    "checkpoints": {
+      "checkpoints": [
+        {
+          "variant": "L4_C",
+          "model_seed": 0,
+          "sha256": "77ec956a8f6f3bfa9ca2e36f9326be65665d2abbcdac487cd10819047c1e6803",
+          "published_sha256": "77ec956a8f6f3bfa9ca2e36f9326be65665d2abbcdac487cd10819047c1e6803",
+          "actor_init_sha256": "4f632cc14181fdd6a9b49cb9dab0cb75af99e2beddf8f6b85c0af79d40ffc06c",
+          "critic_init_sha256": "9846220d1759ac4fbc9f998ca2d57074d2d74652dc4ad7f912e744a8c7f51d39",
+          "implementation_commit": "7067295c7d2d545eed22a3bab66bb48f3becd35b",
+          "updates": 300,
+          "use_lookahead": false
+        },
+        {
+          "variant": "L4_C",
+          "model_seed": 1,
+          "sha256": "d6341944493de19f788255a98568fc4679e835c6c8aefa2da06832b0a614b361",
+          "published_sha256": "d6341944493de19f788255a98568fc4679e835c6c8aefa2da06832b0a614b361",
+          "actor_init_sha256": "4f632cc14181fdd6a9b49cb9dab0cb75af99e2beddf8f6b85c0af79d40ffc06c",
+          "critic_init_sha256": "0521f4a754f3e812d100a4db350c65d55302e6fcdae9b43dcb0546edc83d39ad",
+          "implementation_commit": "7067295c7d2d545eed22a3bab66bb48f3becd35b",
+          "updates": 300,
+          "use_lookahead": false
+        },
+        {
+          "variant": "L4_C",
+          "model_seed": 2,
+          "sha256": "682deda7937e55456a31e5975b837fcf9f180e85aed1b4338a424493de6903ed",
+          "published_sha256": "682deda7937e55456a31e5975b837fcf9f180e85aed1b4338a424493de6903ed",
+          "actor_init_sha256": "4f632cc14181fdd6a9b49cb9dab0cb75af99e2beddf8f6b85c0af79d40ffc06c",
+          "critic_init_sha256": "34f567ee40553e91b2fae6d3617a51c105b711a2ee58e0e457ba4045b68d9053",
+          "implementation_commit": "7067295c7d2d545eed22a3bab66bb48f3becd35b",
+          "updates": 300,
+          "use_lookahead": false
+        },
+        {
+          "variant": "L4_Q",
+          "model_seed": 0,
+          "sha256": "4e1eb504b8cb0f14038fbed00e20a53a3e93bb5c5b03a5801e66a6725cc7b8a7",
+          "published_sha256": "4e1eb504b8cb0f14038fbed00e20a53a3e93bb5c5b03a5801e66a6725cc7b8a7",
+          "actor_init_sha256": "4f632cc14181fdd6a9b49cb9dab0cb75af99e2beddf8f6b85c0af79d40ffc06c",
+          "critic_init_sha256": "9846220d1759ac4fbc9f998ca2d57074d2d74652dc4ad7f912e744a8c7f51d39",
+          "implementation_commit": "7067295c7d2d545eed22a3bab66bb48f3becd35b",
+          "updates": 300,
+          "use_lookahead": true
+        },
+        {
+          "variant": "L4_Q",
+          "model_seed": 1,
+          "sha256": "9a532f887c9892c63b5c1cb1f86400804fb532ef72ac0585196011eac88523f2",
+          "published_sha256": "9a532f887c9892c63b5c1cb1f86400804fb532ef72ac0585196011eac88523f2",
+          "actor_init_sha256": "4f632cc14181fdd6a9b49cb9dab0cb75af99e2beddf8f6b85c0af79d40ffc06c",
+          "critic_init_sha256": "0521f4a754f3e812d100a4db350c65d55302e6fcdae9b43dcb0546edc83d39ad",
+          "implementation_commit": "7067295c7d2d545eed22a3bab66bb48f3becd35b",
+          "updates": 300,
+          "use_lookahead": true
+        },
+        {
+          "variant": "L4_Q",
+          "model_seed": 2,
+          "sha256": "d4a5bda9dae84c108fc8ad154829d3e22fc3a87b56cbe95650707fc5c8bec14f",
+          "published_sha256": "d4a5bda9dae84c108fc8ad154829d3e22fc3a87b56cbe95650707fc5c8bec14f",
+          "actor_init_sha256": "4f632cc14181fdd6a9b49cb9dab0cb75af99e2beddf8f6b85c0af79d40ffc06c",
+          "critic_init_sha256": "34f567ee40553e91b2fae6d3617a51c105b711a2ee58e0e457ba4045b68d9053",
+          "implementation_commit": "7067295c7d2d545eed22a3bab66bb48f3becd35b",
+          "updates": 300,
+          "use_lookahead": true
+        }
+      ],
+      "actor_init_unique": 1,
+      "actor_init_identical_across_seeds": true,
+      "critic_init_matches_within_seed": true,
+      "critic_init_differs_across_seeds": true,
+      "result_commit": "fabe0406fe8127da1f2b9fb59a6da347adffe21a"
+    },
+    "seed_effect": {
+      "update1_env0_reward_max_abs_seed0_vs_seed1": {
+        "L4_C": 2.9299462372154976,
+        "L4_Q": 2.9299462372154976
+      },
+      "note": "a nonzero gap shows the recorded first rollout differed by seed; identical actor-init hashes are the legacy transplant"
+    },
+    "exposure_totals": {
+      "positive_tag_bonus_steps": 110323,
+      "float32_distinguishable_tag_steps": 110320,
+      "l4_c_nonzero_input_uav_steps": 0,
+      "l4_q_nonzero_input_uav_steps": 157826,
+      "l4_q_tagged_backlog_valid_uav_steps": 157826,
+      "groups": 6,
+      "updates": 1800
+    },
+    "bit_tolerance": 1.0
+  },
+  "probes": {
+    "registered_batches": 12,
+    "verification_passes": 0,
+    "rng_check": {
+      "second_execution_budgeted": false,
+      "restore_returns_captured_state": true,
+      "torch_rng_changed_during_batch": true,
+      "batch": "terminal_l4_c_seed0"
+    },
+    "frozen_hashes_unchanged": true,
+    "frozen_hash_count": 27,
+    "gaps": [],
+    "batches": [
+      {
+        "role": "initial_reconstruction",
+        "source": "reconstructed_pre_update_batch_env0_checked",
+        "variant": "L4_C",
+        "model_seed": 0,
+        "historical_gradient_published": true,
+        "initialization_matches_checkpoint": true,
+        "sample_match": {
+          "ok": true,
+          "localized": true,
+          "first": null,
+          "max_abs": {
+            "reward": 0.0,
+            "base_reward": 0.0,
+            "bonus_age": 0.0,
+            "bonus_tag": 0.0,
+            "motion_penalty": 0.0,
+            "served_bits": 0.0,
+            "served_tagged_bits": 0.0,
+            "lookahead_input": 0.0,
+            "lookahead_true": 0.0,
+            "reward_float32": 0.0
+          },
+          "checked_steps": 48,
+          "checked_env_index": 0
+        },
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_c_seed0.npz",
+        "batch_sha256": "efbedee3b81afb2a120187068d3603dc1b72aa53b2ea857161dde54fbffc9c0d",
+        "parameters_unchanged": true,
+        "optimizer_state_entries": 0,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 1.7881393432617188e-07,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 2.099287748336792,
+          "policy_norm_no_tag_separate": 2.0993263721466064,
+          "policy_norm_base_separate": 2.0993261337280273,
+          "policy_norm_no_tag_shared": 2.0989463329315186,
+          "policy_norm_base_shared": 2.098787784576416,
+          "tag_difference_separate_norm": 0.0002447491860948503,
+          "tag_difference_shared_norm": 0.0007153426995500922,
+          "tag_difference_separate_cosine_vs_full": -0.1574716866016388,
+          "tag_difference_separate_cosine_vs_base": -0.1575852781534195,
+          "tag_difference_shared_cosine_vs_full": 0.4775068759918213,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 2.099228858947754,
+          "critic_weighted_norm": 29.881370544433594,
+          "joint_norm": 29.955017399694206,
+          "critic_squared_share": 0.9950888813799227,
+          "joint_clip_scale": 0.016691693970219836,
+          "separate_actor_clip_scale": 0.23818258770891657,
+          "separate_critic_clip_scale": 0.016732833004552687,
+          "new_input_column_grad_norm": 0.0,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 2.384185791015625e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.002940092235803604,
+            "q50_abs": 0.002868175506591797,
+            "q95_abs": 0.0058497428894042965
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 63,
+            "mean_abs": 0.003683472436571878,
+            "q50_abs": 0.0036487579345703125,
+            "q95_abs": 0.0060596466064453125
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 129,
+            "mean_abs": 0.002577046091242354,
+            "q50_abs": 0.0025730133056640625,
+            "q95_abs": 0.005533218383789062
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 9.677675095972321e-05,
+            "q50_abs": 7.452274116797469e-05,
+            "q95_abs": 0.00024888564412986475
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 63,
+            "mean_abs": 0.00010933774216917474,
+            "q50_abs": 8.157215144233287e-05,
+            "q95_abs": 0.00027023622000342805
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 129,
+            "mean_abs": 9.064231339231666e-05,
+            "q50_abs": 7.249208667858831e-05,
+            "q95_abs": 0.0002267140908793985
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 63,
+            "mean_abs": 0.0005619984689460107,
+            "q50_abs": 0.0005567019729599404,
+            "q95_abs": 0.0009245385091969319
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 129,
+            "mean_abs": 0.00039318767348491397,
+            "q50_abs": 0.0003925723792592575,
+            "q95_abs": 0.0008442197718540444
+          },
+          "float32_distinguishable_steps": 63,
+          "positive_tag_steps": 63,
+          "future_tag_advantage_on_zero_bonus": 106,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 171,
+          "served_uav_steps": 76,
+          "other_uav_steps": 1076,
+          "mean_abs_advantage_exposed": 15.778503738822993,
+          "mean_abs_advantage_not_exposed": 14.528889224100308,
+          "mean_abs_advantage_served": 16.500369100194227,
+          "mean_abs_advantage_not_served": 14.588230870414844,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      },
+      {
+        "role": "initial_reconstruction",
+        "source": "reconstructed_pre_update_batch_env0_checked",
+        "variant": "L4_Q",
+        "model_seed": 0,
+        "historical_gradient_published": true,
+        "initialization_matches_checkpoint": true,
+        "sample_match": {
+          "ok": true,
+          "localized": true,
+          "first": null,
+          "max_abs": {
+            "reward": 0.0,
+            "base_reward": 0.0,
+            "bonus_age": 0.0,
+            "bonus_tag": 0.0,
+            "motion_penalty": 0.0,
+            "served_bits": 0.0,
+            "served_tagged_bits": 0.0,
+            "lookahead_input": 0.0,
+            "lookahead_true": 0.0,
+            "reward_float32": 0.0
+          },
+          "checked_steps": 48,
+          "checked_env_index": 0
+        },
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_q_seed0.npz",
+        "batch_sha256": "0d419e9444e5b0aa15dacbee6b3ddb18397dd858e88928a511b46e605d365e54",
+        "parameters_unchanged": true,
+        "optimizer_state_entries": 0,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 1.7881393432617188e-07,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 2.099287748336792,
+          "policy_norm_no_tag_separate": 2.0993263721466064,
+          "policy_norm_base_separate": 2.0993263721466064,
+          "policy_norm_no_tag_shared": 2.0989463329315186,
+          "policy_norm_base_shared": 2.098787784576416,
+          "tag_difference_separate_norm": 0.0002447491860948503,
+          "tag_difference_shared_norm": 0.0007153426995500922,
+          "tag_difference_separate_cosine_vs_full": -0.1574716717004776,
+          "tag_difference_separate_cosine_vs_base": -0.1575852483510971,
+          "tag_difference_shared_cosine_vs_full": 0.47750693559646606,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 2.099228858947754,
+          "critic_weighted_norm": 29.881370544433594,
+          "joint_norm": 29.955017399694206,
+          "critic_squared_share": 0.9950888813799227,
+          "joint_clip_scale": 0.016691693970219836,
+          "separate_actor_clip_scale": 0.23818258770891657,
+          "separate_critic_clip_scale": 0.016732833004552687,
+          "new_input_column_grad_norm": 0.00028103371732868254,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 2.384185791015625e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.002940092235803604,
+            "q50_abs": 0.002868175506591797,
+            "q95_abs": 0.0058497428894042965
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 63,
+            "mean_abs": 0.003683472436571878,
+            "q50_abs": 0.0036487579345703125,
+            "q95_abs": 0.0060596466064453125
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 129,
+            "mean_abs": 0.002577046091242354,
+            "q50_abs": 0.0025730133056640625,
+            "q95_abs": 0.005533218383789062
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 9.677675095972321e-05,
+            "q50_abs": 7.452274116797469e-05,
+            "q95_abs": 0.00024888564412986475
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 63,
+            "mean_abs": 0.00010933774216917474,
+            "q50_abs": 8.157215144233287e-05,
+            "q95_abs": 0.00027023622000342805
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 129,
+            "mean_abs": 9.064231339231666e-05,
+            "q50_abs": 7.249208667858831e-05,
+            "q95_abs": 0.0002267140908793985
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 63,
+            "mean_abs": 0.0005619984689460107,
+            "q50_abs": 0.0005567019729599404,
+            "q95_abs": 0.0009245385091969319
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 129,
+            "mean_abs": 0.00039318767348491397,
+            "q50_abs": 0.0003925723792592575,
+            "q95_abs": 0.0008442197718540444
+          },
+          "float32_distinguishable_steps": 63,
+          "positive_tag_steps": 63,
+          "future_tag_advantage_on_zero_bonus": 106,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 171,
+          "served_uav_steps": 76,
+          "other_uav_steps": 1076,
+          "mean_abs_advantage_exposed": 15.778503738822993,
+          "mean_abs_advantage_not_exposed": 14.528889224100308,
+          "mean_abs_advantage_served": 16.500369100194227,
+          "mean_abs_advantage_not_served": 14.588230870414844,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      },
+      {
+        "role": "initial_reconstruction",
+        "source": "reconstructed_pre_update_batch_env0_checked",
+        "variant": "L4_C",
+        "model_seed": 1,
+        "historical_gradient_published": true,
+        "initialization_matches_checkpoint": true,
+        "sample_match": {
+          "ok": true,
+          "localized": true,
+          "first": null,
+          "max_abs": {
+            "reward": 0.0,
+            "base_reward": 0.0,
+            "bonus_age": 0.0,
+            "bonus_tag": 0.0,
+            "motion_penalty": 0.0,
+            "served_bits": 0.0,
+            "served_tagged_bits": 0.0,
+            "lookahead_input": 0.0,
+            "lookahead_true": 0.0,
+            "reward_float32": 0.0
+          },
+          "checked_steps": 48,
+          "checked_env_index": 0
+        },
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_c_seed1.npz",
+        "batch_sha256": "dbecafb989cff8b093be212585fbeece77ced8a459dd5f92d296d34b0ff977a5",
+        "parameters_unchanged": true,
+        "optimizer_state_entries": 0,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 1.1920928955078125e-07,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 1.3677276372909546,
+          "policy_norm_no_tag_separate": 1.3676936626434326,
+          "policy_norm_base_separate": 1.3677009344100952,
+          "policy_norm_no_tag_shared": 1.367140769958496,
+          "policy_norm_base_shared": 1.3669743537902832,
+          "tag_difference_separate_norm": 0.0002205983328167349,
+          "tag_difference_shared_norm": 0.0009395111119374633,
+          "tag_difference_separate_cosine_vs_full": 0.15416771173477173,
+          "tag_difference_separate_cosine_vs_base": 0.15400440990924835,
+          "tag_difference_shared_cosine_vs_full": 0.6248875260353088,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 1.3679450750350952,
+          "critic_weighted_norm": 28.944705963134766,
+          "joint_norm": 28.977012907141447,
+          "critic_squared_share": 0.9977714104389628,
+          "joint_clip_scale": 0.01725505608004605,
+          "separate_actor_clip_scale": 0.36551148405990513,
+          "separate_critic_clip_scale": 0.017274315495293204,
+          "new_input_column_grad_norm": 0.0,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 4.76837158203125e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.003920497993628184,
+            "q50_abs": 0.0035271644592285156,
+            "q95_abs": 0.007853412628173828
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 71,
+            "mean_abs": 0.004825400634550713,
+            "q50_abs": 0.005077362060546875,
+            "q95_abs": 0.008047103881835938
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 121,
+            "mean_abs": 0.003389522063830667,
+            "q50_abs": 0.0031280517578125,
+            "q95_abs": 0.0071659088134765625
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 0.0001552104730406332,
+            "q50_abs": 0.00013017731519160414,
+            "q95_abs": 0.0003873018764949221
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 71,
+            "mean_abs": 0.00018066891302341117,
+            "q50_abs": 0.00016895053929477655,
+            "q95_abs": 0.0003904305053547552
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 121,
+            "mean_abs": 0.0001402720495796643,
+            "q50_abs": 0.00011671833199056181,
+            "q95_abs": 0.000387050069585948
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 71,
+            "mean_abs": 0.0007247645239439823,
+            "q50_abs": 0.0007626085739606414,
+            "q95_abs": 0.0012086572402479137
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 121,
+            "mean_abs": 0.0005090987321135854,
+            "q50_abs": 0.00046982646930708187,
+            "q95_abs": 0.0010763036860894552
+          },
+          "float32_distinguishable_steps": 71,
+          "positive_tag_steps": 71,
+          "future_tag_advantage_on_zero_bonus": 110,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 171,
+          "served_uav_steps": 100,
+          "other_uav_steps": 1052,
+          "mean_abs_advantage_exposed": 16.155512505107456,
+          "mean_abs_advantage_not_exposed": 14.382638386508619,
+          "mean_abs_advantage_served": 15.24556727528572,
+          "mean_abs_advantage_not_served": 14.588787231948439,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      },
+      {
+        "role": "initial_reconstruction",
+        "source": "reconstructed_pre_update_batch_env0_checked",
+        "variant": "L4_Q",
+        "model_seed": 1,
+        "historical_gradient_published": true,
+        "initialization_matches_checkpoint": true,
+        "sample_match": {
+          "ok": true,
+          "localized": true,
+          "first": null,
+          "max_abs": {
+            "reward": 0.0,
+            "base_reward": 0.0,
+            "bonus_age": 0.0,
+            "bonus_tag": 0.0,
+            "motion_penalty": 0.0,
+            "served_bits": 0.0,
+            "served_tagged_bits": 0.0,
+            "lookahead_input": 0.0,
+            "lookahead_true": 0.0,
+            "reward_float32": 0.0
+          },
+          "checked_steps": 48,
+          "checked_env_index": 0
+        },
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_q_seed1.npz",
+        "batch_sha256": "83b2d829e8c86cbd1ee6b3a1969b45938ec739bcdda04ae42de7eb29f4a0c744",
+        "parameters_unchanged": true,
+        "optimizer_state_entries": 0,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 1.1920928955078125e-07,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 1.3677276372909546,
+          "policy_norm_no_tag_separate": 1.3676936626434326,
+          "policy_norm_base_separate": 1.3677010536193848,
+          "policy_norm_no_tag_shared": 1.367140769958496,
+          "policy_norm_base_shared": 1.3669744729995728,
+          "tag_difference_separate_norm": 0.00022059834736865014,
+          "tag_difference_shared_norm": 0.0009395111119374633,
+          "tag_difference_separate_cosine_vs_full": 0.15416774153709412,
+          "tag_difference_separate_cosine_vs_base": 0.15400438010692596,
+          "tag_difference_shared_cosine_vs_full": 0.6248875260353088,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 1.3679450750350952,
+          "critic_weighted_norm": 28.944705963134766,
+          "joint_norm": 28.977012907141447,
+          "critic_squared_share": 0.9977714104389628,
+          "joint_clip_scale": 0.01725505608004605,
+          "separate_actor_clip_scale": 0.36551148405990513,
+          "separate_critic_clip_scale": 0.017274315495293204,
+          "new_input_column_grad_norm": 0.0002725815575104207,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 4.76837158203125e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.003920497993628184,
+            "q50_abs": 0.0035271644592285156,
+            "q95_abs": 0.007853412628173828
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 71,
+            "mean_abs": 0.004825400634550713,
+            "q50_abs": 0.005077362060546875,
+            "q95_abs": 0.008047103881835938
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 121,
+            "mean_abs": 0.003389522063830667,
+            "q50_abs": 0.0031280517578125,
+            "q95_abs": 0.0071659088134765625
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 0.0001552104730406332,
+            "q50_abs": 0.00013017731519160414,
+            "q95_abs": 0.0003873018764949221
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 71,
+            "mean_abs": 0.00018066891302341117,
+            "q50_abs": 0.00016895053929477655,
+            "q95_abs": 0.0003904305053547552
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 121,
+            "mean_abs": 0.0001402720495796643,
+            "q50_abs": 0.00011671833199056181,
+            "q95_abs": 0.000387050069585948
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 71,
+            "mean_abs": 0.0007247645239439823,
+            "q50_abs": 0.0007626085739606414,
+            "q95_abs": 0.0012086572402479137
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 121,
+            "mean_abs": 0.0005090987321135854,
+            "q50_abs": 0.00046982646930708187,
+            "q95_abs": 0.0010763036860894552
+          },
+          "float32_distinguishable_steps": 71,
+          "positive_tag_steps": 71,
+          "future_tag_advantage_on_zero_bonus": 110,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 171,
+          "served_uav_steps": 100,
+          "other_uav_steps": 1052,
+          "mean_abs_advantage_exposed": 16.155512505107456,
+          "mean_abs_advantage_not_exposed": 14.382638386508619,
+          "mean_abs_advantage_served": 15.24556727528572,
+          "mean_abs_advantage_not_served": 14.588787231948439,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      },
+      {
+        "role": "initial_reconstruction",
+        "source": "reconstructed_pre_update_batch_env0_checked",
+        "variant": "L4_C",
+        "model_seed": 2,
+        "historical_gradient_published": true,
+        "initialization_matches_checkpoint": true,
+        "sample_match": {
+          "ok": true,
+          "localized": true,
+          "first": null,
+          "max_abs": {
+            "reward": 0.0,
+            "base_reward": 0.0,
+            "bonus_age": 0.0,
+            "bonus_tag": 0.0,
+            "motion_penalty": 0.0,
+            "served_bits": 0.0,
+            "served_tagged_bits": 0.0,
+            "lookahead_input": 0.0,
+            "lookahead_true": 0.0,
+            "reward_float32": 0.0
+          },
+          "checked_steps": 48,
+          "checked_env_index": 0
+        },
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_c_seed2.npz",
+        "batch_sha256": "b67f39e926756535531cf6821f8557d154178b685bb846dc4b0b241b50f22fea",
+        "parameters_unchanged": true,
+        "optimizer_state_entries": 0,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 1.1920928955078125e-07,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 1.5421868562698364,
+          "policy_norm_no_tag_separate": 1.5420780181884766,
+          "policy_norm_base_separate": 1.5420106649398804,
+          "policy_norm_no_tag_shared": 1.5410144329071045,
+          "policy_norm_base_shared": 1.5404186248779297,
+          "tag_difference_separate_norm": 0.0003690960875246674,
+          "tag_difference_shared_norm": 0.001430609030649066,
+          "tag_difference_separate_cosine_vs_full": 0.29488298296928406,
+          "tag_difference_separate_cosine_vs_base": 0.2946024537086487,
+          "tag_difference_shared_cosine_vs_full": 0.8197768330574036,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 1.5418394804000854,
+          "critic_weighted_norm": 27.382946014404297,
+          "joint_norm": 27.426319501732284,
+          "critic_squared_share": 0.9968395912022942,
+          "joint_clip_scale": 0.01823066276675427,
+          "separate_actor_clip_scale": 0.3242877628107528,
+          "separate_critic_clip_scale": 0.018259539403738544,
+          "new_input_column_grad_norm": 0.0,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 4.76837158203125e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.003496971602241198,
+            "q50_abs": 0.0033254623413085938,
+            "q95_abs": 0.00642266273498535
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 68,
+            "mean_abs": 0.0038240709725548237,
+            "q50_abs": 0.00370025634765625,
+            "q95_abs": 0.006679821014404296
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 124,
+            "mean_abs": 0.003317594528198242,
+            "q50_abs": 0.0031785964965820312,
+            "q95_abs": 0.006081962585449218
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 0.00017540358828318703,
+            "q50_abs": 0.00016558287330337151,
+            "q95_abs": 0.0004855570771272061
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 68,
+            "mean_abs": 0.0001431083412967149,
+            "q50_abs": 8.60548351655499e-05,
+            "q95_abs": 0.00047734128509261786
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 124,
+            "mean_abs": 0.00019311388501770403,
+            "q50_abs": 0.0001797517283246685,
+            "q95_abs": 0.00046967275995677104
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 68,
+            "mean_abs": 0.0006638086984197033,
+            "q50_abs": 0.0006423160991481118,
+            "q95_abs": 0.001159529549810082
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 124,
+            "mean_abs": 0.0005758910128637871,
+            "q50_abs": 0.0005517627727991382,
+            "q95_abs": 0.0010557491470894762
+          },
+          "float32_distinguishable_steps": 68,
+          "positive_tag_steps": 68,
+          "future_tag_advantage_on_zero_bonus": 123,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 196,
+          "served_uav_steps": 90,
+          "other_uav_steps": 1062,
+          "mean_abs_advantage_exposed": 14.64482296364648,
+          "mean_abs_advantage_not_exposed": 14.14037984971222,
+          "mean_abs_advantage_served": 13.860058791769875,
+          "mean_abs_advantage_not_served": 14.257234600697085,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      },
+      {
+        "role": "initial_reconstruction",
+        "source": "reconstructed_pre_update_batch_env0_checked",
+        "variant": "L4_Q",
+        "model_seed": 2,
+        "historical_gradient_published": true,
+        "initialization_matches_checkpoint": true,
+        "sample_match": {
+          "ok": true,
+          "localized": true,
+          "first": null,
+          "max_abs": {
+            "reward": 0.0,
+            "base_reward": 0.0,
+            "bonus_age": 0.0,
+            "bonus_tag": 0.0,
+            "motion_penalty": 0.0,
+            "served_bits": 0.0,
+            "served_tagged_bits": 0.0,
+            "lookahead_input": 0.0,
+            "lookahead_true": 0.0,
+            "reward_float32": 0.0
+          },
+          "checked_steps": 48,
+          "checked_env_index": 0
+        },
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/initial_l4_q_seed2.npz",
+        "batch_sha256": "3c2902eb3bc47bd1eb75285e697dfab0f3c4c327da2a5d9189d410b2e7f18dc5",
+        "parameters_unchanged": true,
+        "optimizer_state_entries": 0,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 1.1920928955078125e-07,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 1.5421868562698364,
+          "policy_norm_no_tag_separate": 1.5420780181884766,
+          "policy_norm_base_separate": 1.5420106649398804,
+          "policy_norm_no_tag_shared": 1.5410144329071045,
+          "policy_norm_base_shared": 1.5404186248779297,
+          "tag_difference_separate_norm": 0.00036909611662849784,
+          "tag_difference_shared_norm": 0.001430609030649066,
+          "tag_difference_separate_cosine_vs_full": 0.29488298296928406,
+          "tag_difference_separate_cosine_vs_base": 0.2946024239063263,
+          "tag_difference_shared_cosine_vs_full": 0.8197768330574036,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 1.5418394804000854,
+          "critic_weighted_norm": 27.382946014404297,
+          "joint_norm": 27.426319501732284,
+          "critic_squared_share": 0.9968395912022942,
+          "joint_clip_scale": 0.01823066276675427,
+          "separate_actor_clip_scale": 0.3242877628107528,
+          "separate_critic_clip_scale": 0.018259539403738544,
+          "new_input_column_grad_norm": 0.0001331031962763518,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 4.76837158203125e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.003496971602241198,
+            "q50_abs": 0.0033254623413085938,
+            "q95_abs": 0.00642266273498535
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 68,
+            "mean_abs": 0.0038240709725548237,
+            "q50_abs": 0.00370025634765625,
+            "q95_abs": 0.006679821014404296
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 124,
+            "mean_abs": 0.003317594528198242,
+            "q50_abs": 0.0031785964965820312,
+            "q95_abs": 0.006081962585449218
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 0.00017540358828318703,
+            "q50_abs": 0.00016558287330337151,
+            "q95_abs": 0.0004855570771272061
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 68,
+            "mean_abs": 0.0001431083412967149,
+            "q50_abs": 8.60548351655499e-05,
+            "q95_abs": 0.00047734128509261786
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 124,
+            "mean_abs": 0.00019311388501770403,
+            "q50_abs": 0.0001797517283246685,
+            "q95_abs": 0.00046967275995677104
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 68,
+            "mean_abs": 0.0006638086984197033,
+            "q50_abs": 0.0006423160991481118,
+            "q95_abs": 0.001159529549810082
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 124,
+            "mean_abs": 0.0005758910128637871,
+            "q50_abs": 0.0005517627727991382,
+            "q95_abs": 0.0010557491470894762
+          },
+          "float32_distinguishable_steps": 68,
+          "positive_tag_steps": 68,
+          "future_tag_advantage_on_zero_bonus": 123,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 196,
+          "served_uav_steps": 90,
+          "other_uav_steps": 1062,
+          "mean_abs_advantage_exposed": 14.64482296364648,
+          "mean_abs_advantage_not_exposed": 14.14037984971222,
+          "mean_abs_advantage_served": 13.860058791769875,
+          "mean_abs_advantage_not_served": 14.257234600697085,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      },
+      {
+        "role": "terminal_frozen_batch",
+        "source": "diagnostic_proxy",
+        "variant": "L4_C",
+        "model_seed": 0,
+        "scenarios": [
+          321000,
+          321001,
+          321000,
+          321001
+        ],
+        "process_seed": 9100000,
+        "historical_gradient_published": false,
+        "diagnostic_gradient_published": true,
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_c_seed0.npz",
+        "batch_sha256": "39594256bd943725187d9a218cdea430b95dd43213e4030bad74d277379b6d97",
+        "parameters_unchanged": true,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 1.4901161193847656e-07,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 1.172526240348816,
+          "policy_norm_no_tag_separate": 1.1725293397903442,
+          "policy_norm_base_separate": 1.1725456714630127,
+          "policy_norm_no_tag_shared": 1.1723188161849976,
+          "policy_norm_base_shared": 1.1721738576889038,
+          "tag_difference_separate_norm": 0.0002680598117876798,
+          "tag_difference_shared_norm": 0.00047923531383275986,
+          "tag_difference_separate_cosine_vs_full": -0.011045076884329319,
+          "tag_difference_separate_cosine_vs_base": -0.011277941055595875,
+          "tag_difference_shared_cosine_vs_full": 0.43319517374038696,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 1.1721049547195435,
+          "critic_weighted_norm": 192.46347045898438,
+          "joint_norm": 192.46703949284728,
+          "critic_squared_share": 0.999962913122362,
+          "joint_clip_scale": 0.002597847396206945,
+          "separate_actor_clip_scale": 0.42658259518836583,
+          "separate_critic_clip_scale": 0.0025978955705709293,
+          "new_input_column_grad_norm": 0.0,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 4.76837158203125e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.0025481740788867078,
+            "q50_abs": 0.0023751258850097656,
+            "q95_abs": 0.005229973793029784
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 46,
+            "mean_abs": 0.003510897574217423,
+            "q50_abs": 0.0037217140197753906,
+            "q95_abs": 0.005546092987060547
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 146,
+            "mean_abs": 0.0022448502378920984,
+            "q50_abs": 0.001979351043701172,
+            "q95_abs": 0.004943728446960449
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 0.00014927159425860408,
+            "q50_abs": 0.0001483241264916002,
+            "q95_abs": 0.0002706136268196296
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 46,
+            "mean_abs": 0.00016161582575978517,
+            "q50_abs": 0.0001567597998999859,
+            "q95_abs": 0.00029204382205516924
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 146,
+            "mean_abs": 0.00014538231584042372,
+            "q50_abs": 0.00014665027232348138,
+            "q95_abs": 0.000268202242304956
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 46,
+            "mean_abs": 0.0003585759104533593,
+            "q50_abs": 0.00038010707087786664,
+            "q95_abs": 0.0005664350213171642
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 146,
+            "mean_abs": 0.0002292716323582929,
+            "q50_abs": 0.00020215559913056046,
+            "q95_abs": 0.0005049141683656633
+          },
+          "float32_distinguishable_steps": 46,
+          "positive_tag_steps": 46,
+          "future_tag_advantage_on_zero_bonus": 132,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 127,
+          "served_uav_steps": 57,
+          "other_uav_steps": 1095,
+          "mean_abs_advantage_exposed": 8.576516920656669,
+          "mean_abs_advantage_not_exposed": 7.3510784344266105,
+          "mean_abs_advantage_served": 9.934889448316474,
+          "mean_abs_advantage_not_served": 7.358707164983227,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      },
+      {
+        "role": "terminal_frozen_batch",
+        "source": "diagnostic_proxy",
+        "variant": "L4_Q",
+        "model_seed": 0,
+        "scenarios": [
+          321000,
+          321001,
+          321000,
+          321001
+        ],
+        "process_seed": 9100000,
+        "historical_gradient_published": false,
+        "diagnostic_gradient_published": true,
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_q_seed0.npz",
+        "batch_sha256": "fb69881c5071f76fef282ef806060dd98c90ca47627b1c813c6e7c70924bc527",
+        "parameters_unchanged": true,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 1.043081283569336e-07,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 1.2061899900436401,
+          "policy_norm_no_tag_separate": 1.2061595916748047,
+          "policy_norm_base_separate": 1.2061976194381714,
+          "policy_norm_no_tag_shared": 1.2061705589294434,
+          "policy_norm_base_shared": 1.2062273025512695,
+          "tag_difference_separate_norm": 0.00021967713837511837,
+          "tag_difference_shared_norm": 0.0004077751946169883,
+          "tag_difference_separate_cosine_vs_full": 0.13811780512332916,
+          "tag_difference_separate_cosine_vs_base": 0.1379408985376358,
+          "tag_difference_shared_cosine_vs_full": 0.04790033772587776,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 1.2060209512710571,
+          "critic_weighted_norm": 43.53276824951172,
+          "joint_norm": 43.54947069713477,
+          "critic_squared_share": 0.9992330908079307,
+          "joint_clip_scale": 0.01148119553498272,
+          "separate_actor_clip_scale": 0.4145861519958549,
+          "separate_critic_clip_scale": 0.011485600585944994,
+          "new_input_column_grad_norm": 0.0007243770523928106,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 4.76837158203125e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.0023018986297150454,
+            "q50_abs": 0.002228856086730957,
+            "q95_abs": 0.005227130651473999
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 43,
+            "mean_abs": 0.0031068338904269906,
+            "q50_abs": 0.003204345703125,
+            "q95_abs": 0.005627250671386718
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 149,
+            "mean_abs": 0.0020696018766236785,
+            "q50_abs": 0.0019941329956054688,
+            "q95_abs": 0.00464324951171875
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 0.00012029965055535958,
+            "q50_abs": 0.00010804440494606438,
+            "q95_abs": 0.00027540831437596053
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 43,
+            "mean_abs": 0.00014964295526099055,
+            "q50_abs": 0.0001232852678975105,
+            "q95_abs": 0.00031430174571545896
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 149,
+            "mean_abs": 0.00011183144852621776,
+            "q50_abs": 0.00010591614002700145,
+            "q95_abs": 0.0002510398632681321
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 43,
+            "mean_abs": 0.00031549954598576307,
+            "q50_abs": 0.00032540188828004084,
+            "q95_abs": 0.0005714483279717884
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 149,
+            "mean_abs": 0.00021016844655196993,
+            "q50_abs": 0.00020250456797427544,
+            "q95_abs": 0.0004715228314457925
+          },
+          "float32_distinguishable_steps": 43,
+          "positive_tag_steps": 43,
+          "future_tag_advantage_on_zero_bonus": 129,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 108,
+          "served_uav_steps": 63,
+          "other_uav_steps": 1089,
+          "mean_abs_advantage_exposed": 8.738621200676318,
+          "mean_abs_advantage_not_exposed": 7.218859021120145,
+          "mean_abs_advantage_served": 9.903490425102294,
+          "mean_abs_advantage_not_served": 7.2142699824986485,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      },
+      {
+        "role": "terminal_frozen_batch",
+        "source": "diagnostic_proxy",
+        "variant": "L4_C",
+        "model_seed": 1,
+        "scenarios": [
+          321000,
+          321001,
+          321000,
+          321001
+        ],
+        "process_seed": 9100001,
+        "historical_gradient_published": false,
+        "diagnostic_gradient_published": true,
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_c_seed1.npz",
+        "batch_sha256": "bb34d0361bf7ecc20410d5c235124eca8bd180f3fe030bd9794cae957602cc70",
+        "parameters_unchanged": true,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 8.940696716308594e-08,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 1.440924882888794,
+          "policy_norm_no_tag_separate": 1.4410040378570557,
+          "policy_norm_base_separate": 1.440995454788208,
+          "policy_norm_no_tag_shared": 1.4409914016723633,
+          "policy_norm_base_shared": 1.4409785270690918,
+          "tag_difference_separate_norm": 0.00020216107077430934,
+          "tag_difference_shared_norm": 0.0003846235922537744,
+          "tag_difference_separate_cosine_vs_full": -0.3920338749885559,
+          "tag_difference_separate_cosine_vs_base": -0.39216500520706177,
+          "tag_difference_shared_cosine_vs_full": -0.17282305657863617,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 1.4417637586593628,
+          "critic_weighted_norm": 1664.8138427734375,
+          "joint_norm": 1664.8144670721706,
+          "critic_squared_share": 0.99999925000818,
+          "joint_clip_scale": 0.0003003337666683016,
+          "separate_actor_clip_scale": 0.34679721292739135,
+          "separate_critic_clip_scale": 0.00030033387929229903,
+          "new_input_column_grad_norm": 0.0,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 4.76837158203125e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.0029611579763392606,
+            "q50_abs": 0.0027691125869750977,
+            "q95_abs": 0.006255245208740234
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 64,
+            "mean_abs": 0.0037844255566596985,
+            "q50_abs": 0.0037894248962402344,
+            "q95_abs": 0.006399822235107422
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 128,
+            "mean_abs": 0.002549524186179042,
+            "q50_abs": 0.002078533172607422,
+            "q95_abs": 0.005912768840789794
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 0.00012109347172926206,
+            "q50_abs": 0.00011254893878570593,
+            "q95_abs": 0.0002659386324427414
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 64,
+            "mean_abs": 0.00011895857642319884,
+            "q50_abs": 0.00010327989110309188,
+            "q95_abs": 0.00027018770167944184
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 128,
+            "mean_abs": 0.00012216091938229367,
+            "q50_abs": 0.00011326139810191593,
+            "q95_abs": 0.0002504921112111508
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 64,
+            "mean_abs": 0.00034544555642501354,
+            "q50_abs": 0.00034590190035814147,
+            "q95_abs": 0.0005841811709408278
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 128,
+            "mean_abs": 0.00023272271786765251,
+            "q50_abs": 0.0001897302609363456,
+            "q95_abs": 0.000539722526348741
+          },
+          "float32_distinguishable_steps": 64,
+          "positive_tag_steps": 64,
+          "future_tag_advantage_on_zero_bonus": 126,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 177,
+          "served_uav_steps": 86,
+          "other_uav_steps": 1066,
+          "mean_abs_advantage_exposed": 9.197717830959686,
+          "mean_abs_advantage_not_exposed": 8.496176149906256,
+          "mean_abs_advantage_served": 10.47492754736612,
+          "mean_abs_advantage_not_served": 8.453024421355513,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      },
+      {
+        "role": "terminal_frozen_batch",
+        "source": "diagnostic_proxy",
+        "variant": "L4_Q",
+        "model_seed": 1,
+        "scenarios": [
+          321000,
+          321001,
+          321000,
+          321001
+        ],
+        "process_seed": 9100001,
+        "historical_gradient_published": false,
+        "diagnostic_gradient_published": true,
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_q_seed1.npz",
+        "batch_sha256": "389b03f27e11d7ccd2938f5cfb91b498057d4ae8fd5cb3769ea6ed00fb0d1008",
+        "parameters_unchanged": true,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 1.7881393432617188e-07,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 1.317895531654358,
+          "policy_norm_no_tag_separate": 1.3178753852844238,
+          "policy_norm_base_separate": 1.317874789237976,
+          "policy_norm_no_tag_shared": 1.3178937435150146,
+          "policy_norm_base_shared": 1.317944884300232,
+          "tag_difference_separate_norm": 0.00019860320026054978,
+          "tag_difference_shared_norm": 0.0005673081614077091,
+          "tag_difference_separate_cosine_vs_full": 0.10194680094718933,
+          "tag_difference_separate_cosine_vs_base": 0.10176766663789749,
+          "tag_difference_shared_cosine_vs_full": 0.0033406189177185297,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 1.3188544511795044,
+          "critic_weighted_norm": 928.5274658203125,
+          "joint_norm": 928.5284024518339,
+          "critic_squared_share": 0.9999979825473372,
+          "joint_clip_scale": 0.0005384864890952544,
+          "separate_actor_clip_scale": 0.37911660413795184,
+          "separate_critic_clip_scale": 0.0005384870322815764,
+          "new_input_column_grad_norm": 0.0007515583420172334,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 2.384185791015625e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.0034224651753902435,
+            "q50_abs": 0.0028873085975646973,
+            "q95_abs": 0.0077051639556884755
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 68,
+            "mean_abs": 0.004247509381350349,
+            "q50_abs": 0.003257155418395996,
+            "q95_abs": 0.008230113983154297
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 124,
+            "mean_abs": 0.0029700215785734116,
+            "q50_abs": 0.002482295036315918,
+            "q95_abs": 0.007052314281463623
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 0.00014405595620648335,
+            "q50_abs": 0.00013591968849198388,
+            "q95_abs": 0.000327839890117848
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 68,
+            "mean_abs": 0.0001316279112530511,
+            "q50_abs": 0.0001102721994136864,
+            "q95_abs": 0.0003695480002598075
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 124,
+            "mean_abs": 0.00015087133569707524,
+            "q50_abs": 0.00014439504711383222,
+            "q95_abs": 0.0003153076748128064
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 68,
+            "mean_abs": 0.00039130504737555253,
+            "q50_abs": 0.00030006793178636524,
+            "q95_abs": 0.0007582055395156179
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 124,
+            "mean_abs": 0.0002736155073872034,
+            "q50_abs": 0.0002286833269987733,
+            "q95_abs": 0.0006496998420137891
+          },
+          "float32_distinguishable_steps": 68,
+          "positive_tag_steps": 68,
+          "future_tag_advantage_on_zero_bonus": 119,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 159,
+          "served_uav_steps": 98,
+          "other_uav_steps": 1054,
+          "mean_abs_advantage_exposed": 8.885417107703551,
+          "mean_abs_advantage_not_exposed": 8.781774192328179,
+          "mean_abs_advantage_served": 9.342532517958661,
+          "mean_abs_advantage_not_served": 8.745270309626942,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      },
+      {
+        "role": "terminal_frozen_batch",
+        "source": "diagnostic_proxy",
+        "variant": "L4_C",
+        "model_seed": 2,
+        "scenarios": [
+          321000,
+          321001,
+          321000,
+          321001
+        ],
+        "process_seed": 9100002,
+        "historical_gradient_published": false,
+        "diagnostic_gradient_published": true,
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_c_seed2.npz",
+        "batch_sha256": "14c2b6a7355c460bcfee3eb7df8dfa77c1a4a47c0d5529a832866ddb9e5e827d",
+        "parameters_unchanged": true,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 1.1175870895385742e-07,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 1.466896653175354,
+          "policy_norm_no_tag_separate": 1.4668772220611572,
+          "policy_norm_base_separate": 1.4668711423873901,
+          "policy_norm_no_tag_shared": 1.4666935205459595,
+          "policy_norm_base_shared": 1.4666001796722412,
+          "tag_difference_separate_norm": 0.00013596046483144164,
+          "tag_difference_shared_norm": 0.00039126782212406397,
+          "tag_difference_separate_cosine_vs_full": 0.1435878723859787,
+          "tag_difference_separate_cosine_vs_base": 0.14347270131111145,
+          "tag_difference_shared_cosine_vs_full": 0.5193267464637756,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 1.4670788049697876,
+          "critic_weighted_norm": 705.4141235351562,
+          "joint_norm": 705.4156491056126,
+          "critic_squared_share": 0.9999956746953129,
+          "joint_clip_scale": 0.0007088019665074649,
+          "separate_actor_clip_scale": 0.3408130889037061,
+          "separate_critic_clip_scale": 0.0007088034994046693,
+          "new_input_column_grad_norm": 0.0,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 2.384185791015625e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.003840340611835321,
+            "q50_abs": 0.0034875869750976562,
+            "q95_abs": 0.007851886749267577
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 91,
+            "mean_abs": 0.004154652684599489,
+            "q50_abs": 0.0036149024963378906,
+            "q95_abs": 0.008056163787841797
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 101,
+            "mean_abs": 0.003557148546275526,
+            "q50_abs": 0.0033197402954101562,
+            "q95_abs": 0.007227897644042969
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 0.00011989250726748307,
+            "q50_abs": 0.00010043247201629857,
+            "q95_abs": 0.0002799065974041392
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 91,
+            "mean_abs": 0.00010559924429510447,
+            "q50_abs": 7.692002645987017e-05,
+            "q95_abs": 0.00028007553507530814
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 101,
+            "mean_abs": 0.00013277059568814103,
+            "q50_abs": 0.00011581105031977477,
+            "q95_abs": 0.00027395894116538644
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 91,
+            "mean_abs": 0.00035705701735790464,
+            "q50_abs": 0.00031067008517138614,
+            "q95_abs": 0.0006923586715434069
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 101,
+            "mean_abs": 0.0003057066249942346,
+            "q50_abs": 0.0002853034075930867,
+            "q95_abs": 0.0006211762499706993
+          },
+          "float32_distinguishable_steps": 91,
+          "positive_tag_steps": 91,
+          "future_tag_advantage_on_zero_bonus": 94,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 293,
+          "served_uav_steps": 144,
+          "other_uav_steps": 1008,
+          "mean_abs_advantage_exposed": 10.326177003847453,
+          "mean_abs_advantage_not_exposed": 9.482843130653478,
+          "mean_abs_advantage_served": 11.259158263603846,
+          "mean_abs_advantage_not_served": 9.474219564880643,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      },
+      {
+        "role": "terminal_frozen_batch",
+        "source": "diagnostic_proxy",
+        "variant": "L4_Q",
+        "model_seed": 2,
+        "scenarios": [
+          321000,
+          321001,
+          321000,
+          321001
+        ],
+        "process_seed": 9100002,
+        "historical_gradient_published": false,
+        "diagnostic_gradient_published": true,
+        "batch_path": "results/phase6i_priority_tag_credit_audit/batches/terminal_l4_q_seed2.npz",
+        "batch_sha256": "3d1bc0e41f6064803638a988d89d45fe588233796a698e6b165c4fd792710662",
+        "parameters_unchanged": true,
+        "credit": {
+          "logprob_max_abs": 0.0,
+          "ratio_max_abs_from_one": 0.0,
+          "per_uav_gradient_sum_max_abs": 1.6391277313232422e-07,
+          "within_step_policy_term_max_abs": 0.0,
+          "policy_norm_full": 1.3024671077728271,
+          "policy_norm_no_tag_separate": 1.3024972677230835,
+          "policy_norm_base_separate": 1.302496314048767,
+          "policy_norm_no_tag_shared": 1.302264928817749,
+          "policy_norm_base_shared": 1.3021647930145264,
+          "tag_difference_separate_norm": 0.0001294312096433714,
+          "tag_difference_shared_norm": 0.00037866493221372366,
+          "tag_difference_separate_cosine_vs_full": -0.23350469768047333,
+          "tag_difference_separate_cosine_vs_base": -0.23362044990062714,
+          "tag_difference_shared_cosine_vs_full": 0.5339474081993103,
+          "entropy_norm": 0.014142131432890892,
+          "actor_policy_entropy_norm": 1.3031491041183472,
+          "critic_weighted_norm": 15.110499382019043,
+          "joint_norm": 15.16658792087272,
+          "critic_squared_share": 0.9926173471817424,
+          "joint_clip_scale": 0.032967201960085096,
+          "separate_actor_clip_scale": 0.3836856540316034,
+          "separate_critic_clip_scale": 0.03308957263883744,
+          "new_input_column_grad_norm": 0.0004958747304044664,
+          "policy_zero_parameter_count": 0,
+          "tag_difference_zero_parameter_count": 0,
+          "mask_min": 1.0,
+          "mask_max": 1.0,
+          "parameters_unchanged": true,
+          "clip_applied": false,
+          "optimizer_step_called": false,
+          "float32_linear_gap": 0.0,
+          "shared_scale_additive_gap": 4.440892098500626e-16,
+          "float64_diagnostic_linear_gap": 0.0,
+          "component_float32_sum_gap": 4.76837158203125e-07,
+          "tag_advantage_all": {
+            "count": 192,
+            "mean_abs": 0.004004616290330887,
+            "q50_abs": 0.003848552703857422,
+            "q95_abs": 0.007913303375244138
+          },
+          "tag_advantage_positive_bonus": {
+            "count": 90,
+            "mean_abs": 0.004001821411980523,
+            "q50_abs": 0.003820657730102539,
+            "q95_abs": 0.008130455017089843
+          },
+          "tag_advantage_zero_bonus": {
+            "count": 102,
+            "mean_abs": 0.004007082359463561,
+            "q50_abs": 0.0038568973541259766,
+            "q95_abs": 0.007711911201477047
+          },
+          "tag_advantage_zero_reward": {
+            "count": 0,
+            "mean_abs": null,
+            "q50_abs": null,
+            "q95_abs": null
+          },
+          "separate_renorm_difference_all": {
+            "count": 192,
+            "mean_abs": 0.00010615869273474683,
+            "q50_abs": 8.97480905490966e-05,
+            "q95_abs": 0.0002485233519585516
+          },
+          "separate_renorm_difference_positive_bonus": {
+            "count": 90,
+            "mean_abs": 8.938892267140592e-05,
+            "q50_abs": 7.528327234276096e-05,
+            "q95_abs": 0.00020663459448261589
+          },
+          "separate_renorm_difference_zero_bonus": {
+            "count": 102,
+            "mean_abs": 0.0001209555486729888,
+            "q50_abs": 0.00011702687711037663,
+            "q95_abs": 0.0002694790586717066
+          },
+          "shared_tag_component_positive_bonus": {
+            "count": 90,
+            "mean_abs": 0.0003282471353479418,
+            "q50_abs": 0.0003133872869230457,
+            "q95_abs": 0.0006668959690318212
+          },
+          "shared_tag_component_zero_bonus": {
+            "count": 102,
+            "mean_abs": 0.0003286786615863074,
+            "q50_abs": 0.000316359821563439,
+            "q95_abs": 0.000632565149550173
+          },
+          "float32_distinguishable_steps": 90,
+          "positive_tag_steps": 90,
+          "future_tag_advantage_on_zero_bonus": 95,
+          "normalization_note": "shared_scale uses the full-advantage mean and population std; separate_renorm normalizes each stream by its own mean and std and is not additive",
+          "exposed_uav_steps": 279,
+          "served_uav_steps": 142,
+          "other_uav_steps": 1010,
+          "mean_abs_advantage_exposed": 9.926503305366817,
+          "mean_abs_advantage_not_exposed": 10.715044341682704,
+          "mean_abs_advantage_served": 9.90461571115843,
+          "mean_abs_advantage_not_served": 10.611161090595887,
+          "advantage_broadcast": true,
+          "team_credit_note": "one team advantage is broadcast; subset means select different steps and are not a within-step split",
+          "clipping_bottleneck": "unconfirmed",
+          "adam_update_inferred": false,
+          "published": true
+        }
+      }
+    ]
+  },
+  "tests": {
+    "related_ok": true,
+    "baseline_ran": 1762,
+    "repository_ran": 1770,
+    "baseline_failure_count": 206,
+    "repository_failure_count": 206,
+    "historical": [
+      {
+        "kind": "ERROR",
+        "test_id": "test_round22_original_lock_and_narrow_amendment_verify (test_governance_state_sync.GovernanceStateSyncTests.test_round22_original_lock_and_narrow_amendment_verify)",
+        "exception": "RuntimeError",
+        "detail": "RuntimeError: Round-22 lifecycle test is not the approved semantic correction"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_15_no_nan_inf_and_packed_config (test_htw_phase11.Phase11Tests.test_15_no_nan_inf_and_packed_config)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\FINAL_CODE_FREEZE.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_unnamed_limits_remain_explicit (test_phase6iae_fault_handling.Phase6IAEContractTests.test_unnamed_limits_remain_explicit)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\results\\\\phase6iae_deployment_contract\\\\deployment_requirements.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_graph_batch_excludes_labels_and_keeps_checkpoint_widths (test_phase6ic_hgnn_smoke.Phase6ICDatasetTests.test_graph_batch_excludes_labels_and_keeps_checkpoint_widths)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\src\\\\wt\\\\benchmark_v2\\\\phase6ib_highlevel_dataset\\\\revision_hgnn_input\\\\dataset\\\\train\\\\scenario_322000\\\\t000_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_32_v1_loader_rejects_round2_schema (test_round03_task_and_waypoint.Round3PipelineAndWaypointTests.test_32_v1_loader_rejects_round2_schema)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_02\\\\outputs\\\\round02_smoke_20260730_212701_283649\\\\dataset_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_01_locked_hashes_exist (test_round06_closed_loop.Round6ClosedLoopTests.test_01_locked_hashes_exist)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_04\\\\outputs\\\\round04_formal_canonical_20260802_173717\\\\horizon_030\\\\goal_conditioned\\\\seed_001\\\\checkpoints\\\\best.pt'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_02_gate_is_unique (test_round09_diagnostics.Round09Diagnostics.test_02_gate_is_unique)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_09\\\\outputs\\\\round09_diagnosis_20260810_0030\\\\round09_mechanism_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_03_m3_forbids_training (test_round09_diagnostics.Round09Diagnostics.test_03_m3_forbids_training)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_09\\\\outputs\\\\round09_diagnosis_20260810_0030\\\\round09_mechanism_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_04_holdout_zero (test_round09_diagnostics.Round09Diagnostics.test_04_holdout_zero)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_09\\\\outputs\\\\round09_diagnosis_20260810_0030\\\\holdout_access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_05_old_test_off (test_round09_diagnostics.Round09Diagnostics.test_05_old_test_off)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_09\\\\outputs\\\\round09_diagnosis_20260810_0030\\\\round09_mechanism_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_01_ready (test_round10_task_waypoint.Round10.test_01_ready)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_readiness_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_02_holdout (test_round10_task_waypoint.Round10.test_02_holdout)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\holdout_access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_03_goal_constant (test_round10_task_waypoint.Round10.test_03_goal_constant)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_goal_schema_v1.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_04_no_training (test_round10_task_waypoint.Round10.test_04_no_training)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_05_horizons (test_round10_task_waypoint.Round10.test_05_horizons)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_samples_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_01_gate (test_round11_full_audit.Round11Full.test_01_gate)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\task_waypoint_predictor_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_02_isolation (test_round11_full_audit.Round11Full.test_02_isolation)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_03_holdout (test_round11_full_audit.Round11Full.test_03_holdout)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_04_closed_loop (test_round11_full_audit.Round11Full.test_04_closed_loop)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_05_service_metrics (test_round11_full_audit.Round11Full.test_05_service_metrics)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\task_waypoint_service_metrics.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_06_progress_metrics (test_round11_full_audit.Round11Full.test_06_progress_metrics)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\task_waypoint_progress_metrics.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_07_return_metrics (test_round11_full_audit.Round11Full.test_07_return_metrics)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\task_waypoint_return_metrics.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_08_gradients_finite (test_round11_full_audit.Round11Full.test_08_gradients_finite)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\multitask_gradient_audit.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_09_horizon (test_round11_full_audit.Round11Full.test_09_horizon)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\recommended_task_horizon.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_10_no_training_in_audit (test_round11_full_audit.Round11Full.test_10_no_training_in_audit)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_13_no_spatial (test_round11_full_audit.Round11Full.test_13_no_spatial)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0220\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_14_no_goal (test_round11_full_audit.Round11Full.test_14_no_goal)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0220\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_15_checkpoints (test_round11_full_audit.Round11Full.test_15_checkpoints)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_11\\\\outputs\\\\round11_task_waypoint_20260810_0310\\\\model_checkpoint_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_04_shadow_reward_reconstructs_current_environment_exactly (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_04_shadow_reward_reconstructs_current_environment_exactly)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_05_hstep_alignment_reconstructs_immutable_raw_rows (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_05_hstep_alignment_reconstructs_immutable_raw_rows)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_08_generated_sidecars_have_identical_movement_and_no_violations (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_08_generated_sidecars_have_identical_movement_and_no_violations)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_05_round12_lock_predictor_and_policy_files_are_unchanged (test_round13_controllability.Round13ControllabilityContracts.test_05_round12_lock_predictor_and_policy_files_are_unchanged)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_12\\\\outputs\\\\round12_formal_20260810_161000\\\\formal_protocol_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_07_current_environment_action_is_two_dimensional_movement_only (test_round13_controllability.Round13ControllabilityContracts.test_07_current_environment_action_is_two_dimensional_movement_only)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_08_all_preregistered_perturbations_are_legal (test_round13_controllability.Round13ControllabilityContracts.test_08_all_preregistered_perturbations_are_legal)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_09_snapshot_is_restored_and_continuation_is_deterministic (test_round13_controllability.Round13ControllabilityContracts.test_09_snapshot_is_restored_and_continuation_is_deterministic)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_10_service_progress_is_actual_payload_and_finite (test_round13_controllability.Round13ControllabilityContracts.test_10_service_progress_is_actual_payload_and_finite)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_10\\\\outputs\\\\round10_task_waypoint_20260810_0110\\\\task_waypoint_metadata.jsonl'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_42_round19_preflight (test_round20_multi_uav_dataset.Round20MultiUAVDatasetTests.test_42_round19_preflight)",
+        "exception": "RuntimeError",
+        "detail": "RuntimeError: Round-19 lock changed"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_registered_interference_ablation_fields (test_round21_hgnn_task_waypoint.Round21HGNNTests.test_registered_interference_ablation_fields)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'round_20\\\\outputs\\\\round20_multi_uav_dataset_20260828_2100\\\\multi_uav_graph_schema_v1.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_fresh_manifest_is_registered_and_unaccessed (test_round22_governance.Round22GovernanceTests.test_fresh_manifest_is_registered_and_unaccessed)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_22\\\\outputs\\\\round22_deepsets_task_waypoint_policy_20260829_1153\\\\fresh_multi_uav_policy_dev_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_frozen_predictor_is_unchanged (test_round22_governance.Round22GovernanceTests.test_frozen_predictor_is_unchanged)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_22\\\\outputs\\\\round22_deepsets_task_waypoint_policy_20260829_1153\\\\selected_deepsets_task_waypoint_predictor.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_protected_accesses_follow_the_frozen_gate (test_round22_governance.Round22GovernanceTests.test_protected_accesses_follow_the_frozen_gate)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_22\\\\outputs\\\\round22_deepsets_task_waypoint_policy_20260829_1153\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_round21_amendment_overlay_is_narrow_and_exact (test_round22_governance.Round22GovernanceTests.test_round21_amendment_overlay_is_narrow_and_exact)",
+        "exception": "RuntimeError",
+        "detail": "RuntimeError: round_31 original lock was modified"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_round22_governance_state_sync_amendment_is_narrow_and_exact (test_round22_governance.Round22GovernanceTests.test_round22_governance_state_sync_amendment_is_narrow_and_exact)",
+        "exception": "RuntimeError",
+        "detail": "RuntimeError: Round-22 lifecycle test is not the approved semantic correction"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "setUpClass (test_round22_policy.Round22PolicyTests)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'round_22\\\\outputs\\\\round22_deepsets_task_waypoint_policy_20260829_1153\\\\selected_deepsets_task_waypoint_predictor.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_bootstrap_leave_one_seed_out_and_frozen_groups_are_registered (test_round23_audit.Round23AuditTests.test_bootstrap_leave_one_seed_out_and_frozen_groups_are_registered)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_23\\\\outputs\\\\round23_seed_stability_audit_20260829_1436\\\\hierarchical_seed_bootstrap.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_head_ablations_are_validation_paired_and_inference_only (test_round23_audit.Round23AuditTests.test_head_ablations_are_validation_paired_and_inference_only)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_23\\\\outputs\\\\round23_seed_stability_audit_20260829_1436\\\\seed_head_utilization.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_round22_frozen_lock_amendment_predictor_and_checkpoints_verify (test_round23_audit.Round23AuditTests.test_round22_frozen_lock_amendment_predictor_and_checkpoints_verify)",
+        "exception": "RuntimeError",
+        "detail": "RuntimeError: Round-22 lifecycle test is not the approved semantic correction"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_round23_is_a_frozen_inference_audit_with_protected_accesses_zero (test_round23_audit.Round23AuditTests.test_round23_is_a_frozen_inference_audit_with_protected_accesses_zero)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_23\\\\outputs\\\\round23_seed_stability_audit_20260829_1436\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_round23_lock_hashes_its_sources_outputs_figures_and_report (test_round23_audit.Round23AuditTests.test_round23_lock_hashes_its_sources_outputs_figures_and_report)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_23\\\\outputs\\\\round23_seed_stability_audit_20260829_1436\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_seed_identity_and_fresh_pairing_are_derived_from_locked_rows (test_round23_audit.Round23AuditTests.test_seed_identity_and_fresh_pairing_are_derived_from_locked_rows)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_23\\\\outputs\\\\round23_seed_stability_audit_20260829_1436\\\\seed_identity_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_eight_seed_coverage_uncertainty_and_conditional_availability (test_round24_seed_extension.Round24SeedExtensionTests.test_eight_seed_coverage_uncertainty_and_conditional_availability)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\eight_seed_validation_stability.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_exact_new_training_matrix_and_frozen_provenance (test_round24_seed_extension.Round24SeedExtensionTests.test_exact_new_training_matrix_and_frozen_provenance)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\round24_new_seed_training_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_exact_pretraining_fresh_registration_and_disjointness (test_round24_seed_extension.Round24SeedExtensionTests.test_exact_pretraining_fresh_registration_and_disjointness)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\round24_fresh_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_nonfinite_csv_values_and_lock_coverage (test_round24_seed_extension.Round24SeedExtensionTests.test_no_nonfinite_csv_values_and_lock_coverage)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_protected_accesses_gates_and_figures (test_round24_seed_extension.Round24SeedExtensionTests.test_protected_accesses_gates_and_figures)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_protocol_and_checkpoint_integrity (test_round24_seed_extension.Round24SeedExtensionTests.test_protocol_and_checkpoint_integrity)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_24\\\\outputs\\\\round24_multiseed_stability_20260829_1515\\\\round24_protocol_equivalence_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_access_controls_gates_figures_and_finite_outputs (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_access_controls_gates_figures_and_finite_outputs)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_frozen_bridge_conflict_and_causal_planner_protocol (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_frozen_bridge_conflict_and_causal_planner_protocol)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\planner_task_waypoint_samples.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_lock_covers_completed_evidence_when_present (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_lock_covers_completed_evidence_when_present)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_metadata_are_diagnostic_and_knn_is_cross_episode (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_metadata_are_diagnostic_and_knn_is_cross_episode)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\knn_target_ambiguity.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_training_or_checkpoint_write_path (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_no_training_or_checkpoint_write_path)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_planner_targets_are_finite_nonnegative_and_horizon_is_recorded (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_planner_targets_are_finite_nonnegative_and_horizon_is_recorded)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\planner_task_waypoint_samples.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_predictor_and_policy_are_inference_only (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_predictor_and_policy_are_inference_only)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_required_outputs_and_exact_state_grouping (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_required_outputs_and_exact_state_grouping)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [WinError 3] \u7cfb\u7edf\u627e\u4e0d\u5230\u6307\u5b9a\u7684\u8def\u5f84\u3002: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_25\\\\outputs\\\\round25_supervision_ambiguity_alignment_20260830_1203'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_round24_lock_and_frozen_preconditions (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_round24_lock_and_frozen_preconditions)",
+        "exception": "RuntimeError",
+        "detail": "RuntimeError: round_31 original lock was modified"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_causal_planner_frozen_policy_and_access_controls (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_causal_planner_frozen_policy_and_access_controls)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322\\\\planner_action_coherence.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_exact_delivery_set_and_sample_coverage (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_exact_delivery_set_and_sample_coverage)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [WinError 3] \u7cfb\u7edf\u627e\u4e0d\u5230\u6307\u5b9a\u7684\u8def\u5f84\u3002: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_executed_action_only_and_no_training_path (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_executed_action_only_and_no_training_path)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322\\\\action_supervision_semantics_audit.md'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_knn_and_conditional_audits_are_cross_episode_and_finite (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_knn_and_conditional_audits_are_cross_episode_and_finite)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322\\\\knn_action_ambiguity.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_lock_covers_completed_evidence_when_present (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_lock_covers_completed_evidence_when_present)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322\\\\action_ambiguity_grouped.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_preregistered_gates_figures_and_finite_csv_values (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_preregistered_gates_figures_and_finite_csv_values)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_26\\\\outputs\\\\round26_action_ambiguity_20260830_1322\\\\action_supervision_ambiguity_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_round25_lock_and_frozen_preconditions (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_round25_lock_and_frozen_preconditions)",
+        "exception": "RuntimeError",
+        "detail": "RuntimeError: round_31 original lock was modified"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_direct_utility_formula_and_three_way_label (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_direct_utility_formula_and_three_way_label)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\outputs\\\\round27_conditional_planner_utility_20260830_1447\\\\planner_state_utility_labels.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_figures_finite_outputs_and_historical_no_round28 (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_figures_finite_outputs_and_historical_no_round28)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [WinError 3] \u7cfb\u7edf\u627e\u4e0d\u5230\u6307\u5b9a\u7684\u8def\u5f84\u3002: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\figures\\\\round27_conditional_planner_utility_20260830_1447'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_frozen_policy_access_controls_and_expected_gates (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_frozen_policy_access_controls_and_expected_gates)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\logs\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_lock_covers_completed_evidence_when_present (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_lock_covers_completed_evidence_when_present)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\outputs\\\\round27_conditional_planner_utility_20260830_1447\\\\causal_planning_trigger_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_training_and_no_future_trigger_inputs (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_no_training_and_no_future_trigger_inputs)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\outputs\\\\round27_conditional_planner_utility_20260830_1447\\\\causal_trigger_feature_spec.md'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_required_delivery_and_registered_state_pool (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_required_delivery_and_registered_state_pool)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [WinError 3] \u7cfb\u7edf\u627e\u4e0d\u5230\u6307\u5b9a\u7684\u8def\u5f84\u3002: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\outputs\\\\round27_conditional_planner_utility_20260830_1447'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_round26_lock_and_frozen_preconditions (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_round26_lock_and_frozen_preconditions)",
+        "exception": "RuntimeError",
+        "detail": "RuntimeError: round_31 original lock was modified"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_trigger_threshold_is_train_only_and_oracle_is_nondeployable (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_trigger_threshold_is_train_only_and_oracle_is_nondeployable)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_27\\\\outputs\\\\round27_conditional_planner_utility_20260830_1447\\\\causal_planning_trigger_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_09_train_validation_scenario_separation (test_round28_planning_need_representation.Round28PlanningNeedRepresentationTests.test_09_train_validation_scenario_separation)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_20\\\\outputs\\\\round20_multi_uav_dataset_20260828_2100\\\\multi_uav_transitions.jsonl'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_lock_covers_completed_evidence_when_present (test_round28_planning_need_representation.Round28PlanningNeedRepresentationTests.test_lock_covers_completed_evidence_when_present)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_28\\\\outputs\\\\round28_planning_need_representation_20260830_1624\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_06_frozen_round28_labels_unchanged (test_round29_cross_scale_deferred_service.Round29CrossScaleDeferredServiceTests.test_06_frozen_round28_labels_unchanged)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_28\\\\outputs\\\\round28_planning_need_representation_20260830_1624\\\\planning_need_feature_table.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_01_round30_lock_is_unchanged (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_01_round30_lock_is_unchanged)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_02_no_optimizer_update_or_backward (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_02_no_optimizer_update_or_backward)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_03_no_training_or_checkpoint_write (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_03_no_training_or_checkpoint_write)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_04_objective_audit_is_exact (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_04_objective_audit_is_exact)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\ppo_objective_semantics_audit.md'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_05_gae_reconstruction_exact (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_05_gae_reconstruction_exact)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\ppo_advantage_statistics.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_07_knn_excludes_same_episode_and_temporal_neighbors (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_07_knn_excludes_same_episode_and_temporal_neighbors)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\actor_representation_action_ambiguity.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_08_full_relational_features_are_current_only (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_08_full_relational_features_are_current_only)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\relational_information_loss_audit.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_09_k_and_eta_grouping_are_present (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_09_k_and_eta_grouping_are_present)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\relational_information_loss_audit.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_10_frozen_planner_references_are_used (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_10_frozen_planner_references_are_used)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\ppo_action_reference_alignment.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_11_no_fresh_new_rollout_or_untouched_access (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_11_no_fresh_new_rollout_or_untouched_access)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_31\\\\outputs\\\\round31_ppo_failure_diagnosis_20260830_2116\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_04_source_horizons_are_recovered_exactly (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_04_source_horizons_are_recovered_exactly)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\cross_round_horizon_semantics.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_05_effective_horizon_formula_and_terminal_audit (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_05_effective_horizon_formula_and_terminal_audit)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\planner_effective_horizon_audit.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_06_utilization_statistics_are_exact (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_06_utilization_statistics_are_exact)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\planner_horizon_utilization.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_07_h5_h10_equality_is_exact_and_not_bug_claim (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_07_h5_h10_equality_is_exact_and_not_bug_claim)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\h5_h10_equivalence_audit.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_08_h5_h10_prefixes_are_identical (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_08_h5_h10_prefixes_are_identical)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\r18_r19_trajectory_prefix_equality.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_09_task_waypoint_labels_are_complete_windows (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_09_task_waypoint_labels_are_complete_windows)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\task_waypoint_label_semantics.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_10_task_waypoint_coverage_and_protected_split (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_10_task_waypoint_coverage_and_protected_split)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\task_waypoint_horizon_coverage.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_11_terminated_and_truncated_semantics_are_stated (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_11_terminated_and_truncated_semantics_are_stated)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\cross_round_horizon_semantics.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_12_ppo_gae_endpoint_and_rollout_are_correct (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_12_ppo_gae_endpoint_and_rollout_are_correct)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\ppo_credit_horizon_summary.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_13_historical_gate_is_reassessed_without_mutation (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_13_historical_gate_is_reassessed_without_mutation)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\historical_gate_horizon_reassessment.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_14_timescale_and_redesign_gate_are_data_derived (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_14_timescale_and_redesign_gate_are_data_derived)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\physical_queue_coordination_timescales.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_15_no_fresh_development_or_untouched_access (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_15_no_fresh_development_or_untouched_access)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_32\\\\outputs\\\\round32_horizon_semantics_audit_20260830_2231\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_01_round32_original_lock_sha_is_unchanged (test_round33_governance_compatibility.Round33GovernanceCompatibilityTests.test_01_round32_original_lock_sha_is_unchanged)",
+        "exception": "RuntimeError",
+        "detail": "RuntimeError: Round-32 H20 exception is not the recorded planner integrity transition"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_07_existing_round33_scientific_outputs_are_unchanged (test_round33_governance_compatibility.Round33GovernanceCompatibilityTests.test_07_existing_round33_scientific_outputs_are_unchanged)",
+        "exception": "RuntimeError",
+        "detail": "RuntimeError: Round-33 existing scientific outputs were modified: [{'path': 'round_33/figures/round33_long_episode_benchmark_20260830_2320/01_benchmark_design.png', 'actual': 'MISSING', 'expected': '5AC85148978E9B3039DE2E91F3341A1B0E4086B3EF284F454EA42D756189D573'}, {'path': 'round_33/figures/round33_long_episode_benchmark_20260830_2320/01_benchmark_design.svg', 'actual': 'MISSING', 'expected': '0BF4E8872730A48D68FECF7AE0095D9BA49DDAC21BE13DA0ADDA6A514A0B59A5'}, {'path': 'round_33/figures/round33_long_episode_benchmark_20260830_2320/02_horizon_coverage.png', 'actual': 'MISSING', 'expected': '5AC85148978E9B3039DE2E91F3341A1B0E4086B3EF284F454EA42D756189D573'}]"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_02_snapshot_preserves_preextension_planner (test_round33_long_episode.Round33LongEpisodeTests.test_02_snapshot_preserves_preextension_planner)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\backup\\\\snapshots\\\\before_round_33_20260830_2320\\\\src\\\\wt\\\\round19\\\\planner.py'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_04_configuration_is_exactly_t20 (test_round33_long_episode.Round33LongEpisodeTests.test_04_configuration_is_exactly_t20)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_long_episode_config.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_06_planner_integrity_limits_the_authorized_change (test_round33_long_episode.Round33LongEpisodeTests.test_06_planner_integrity_limits_the_authorized_change)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_planner_integrity.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_07_t12_parameterization_regression_passes (test_round33_long_episode.Round33LongEpisodeTests.test_07_t12_parameterization_regression_passes)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_horizon_parameterization_regression.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_08_each_t12_regression_dimension_is_exact (test_round33_long_episode.Round33LongEpisodeTests.test_08_each_t12_regression_dimension_is_exact)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_horizon_parameterization_regression.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_09_design_manifest_is_preoutcome_and_has_64_scenarios (test_round33_long_episode.Round33LongEpisodeTests.test_09_design_manifest_is_preoutcome_and_has_64_scenarios)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_design_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_10_confirmation_manifest_is_preoutcome_and_has_64_scenarios (test_round33_long_episode.Round33LongEpisodeTests.test_10_confirmation_manifest_is_preoutcome_and_has_64_scenarios)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_confirmation_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_11_design_and_confirmation_seeds_are_disjoint (test_round33_long_episode.Round33LongEpisodeTests.test_11_design_and_confirmation_seeds_are_disjoint)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_design_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_12_every_new_stratum_has_four_seeds (test_round33_long_episode.Round33LongEpisodeTests.test_12_every_new_stratum_has_four_seeds)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_design_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_13_historical_population_collision_audit_is_empty (test_round33_long_episode.Round33LongEpisodeTests.test_13_historical_population_collision_audit_is_empty)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_confirmation_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_14_h5_t20_full_nominal_coverage_is_80_percent (test_round33_long_episode.Round33LongEpisodeTests.test_14_h5_t20_full_nominal_coverage_is_80_percent)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_horizon_coverage.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_15_h10_t20_full_nominal_coverage_is_55_percent (test_round33_long_episode.Round33LongEpisodeTests.test_15_h10_t20_full_nominal_coverage_is_55_percent)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_horizon_coverage.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_16_h20_is_full_only_at_the_earliest_slot (test_round33_long_episode.Round33LongEpisodeTests.test_16_h20_is_full_only_at_the_earliest_slot)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_horizon_coverage.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_17_primary_common_anchors_are_t0_through_t10 (test_round33_long_episode.Round33LongEpisodeTests.test_17_primary_common_anchors_are_t0_through_t10)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_common_anchor_protocol.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_18_primary_action_audit_covers_both_populations (test_round33_long_episode.Round33LongEpisodeTests.test_18_primary_action_audit_covers_both_populations)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\h5_h10_action_separation.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_19_every_primary_action_pair_shares_a_snapshot (test_round33_long_episode.Round33LongEpisodeTests.test_19_every_primary_action_pair_shares_a_snapshot)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\h5_h10_action_separation.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_20_primary_action_rows_execute_the_requested_shadow_depths (test_round33_long_episode.Round33LongEpisodeTests.test_20_primary_action_rows_execute_the_requested_shadow_depths)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\h5_h10_action_separation.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_21_same_snapshot_utility_is_branch_difference (test_round33_long_episode.Round33LongEpisodeTests.test_21_same_snapshot_utility_is_branch_difference)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\h10_vs_h5_same_snapshot_utility.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_22_counterfactual_changes_only_the_first_action (test_round33_long_episode.Round33LongEpisodeTests.test_22_counterfactual_changes_only_the_first_action)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\h10_vs_h5_same_snapshot_utility.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_23_closed_loop_h1_h5_h10_cover_every_t20_scenario (test_round33_long_episode.Round33LongEpisodeTests.test_23_closed_loop_h1_h5_h10_cover_every_t20_scenario)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_closed_loop_planner_metrics.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_24_h20_closed_loop_rows_are_prespecified_descriptions (test_round33_long_episode.Round33LongEpisodeTests.test_24_h20_closed_loop_rows_are_prespecified_descriptions)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_closed_loop_planner_metrics.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_25_pairwise_statistics_use_scenario_cluster_bootstrap (test_round33_long_episode.Round33LongEpisodeTests.test_25_pairwise_statistics_use_scenario_cluster_bootstrap)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_planner_pairwise_statistics.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_26_k_eta_robustness_is_reported (test_round33_long_episode.Round33LongEpisodeTests.test_26_k_eta_robustness_is_reported)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_K_eta_robustness.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_27_physical_timescale_validation_uses_only_existing_variables (test_round33_long_episode.Round33LongEpisodeTests.test_27_physical_timescale_validation_uses_only_existing_variables)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\round33_physical_timescale_validation.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_28_access_audit_has_no_protected_reuse (test_round33_long_episode.Round33LongEpisodeTests.test_28_access_audit_has_no_protected_reuse)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_30_gates_are_consistent_and_round34_is_absent (test_round33_long_episode.Round33LongEpisodeTests.test_30_gates_are_consistent_and_round34_is_absent)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\horizon_separation_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_16_historical_gate_is_locked (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_16_historical_gate_is_locked)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_33\\\\outputs\\\\round33_long_episode_benchmark_20260830_2320\\\\horizon_separation_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_33_formal_outputs_exclude_quarantine (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_33_formal_outputs_exclude_quarantine)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_34\\\\outputs\\\\round34_benchmark_complexity_audit_20260901_1540\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_34_formal_access_audit_has_zero_protected_scientific_records (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_34_formal_access_audit_has_zero_protected_scientific_records)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_34\\\\outputs\\\\round34_benchmark_complexity_audit_20260901_1540\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_35_all_required_formal_artifacts_are_present (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_35_all_required_formal_artifacts_are_present)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [WinError 3] \u7cfb\u7edf\u627e\u4e0d\u5230\u6307\u5b9a\u7684\u8def\u5f84\u3002: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_34\\\\outputs\\\\round34_benchmark_complexity_audit_20260901_1540'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_02_successor_amendment_verifies (test_round34_governance_lifecycle.Round34GovernanceLifecycleTests.test_02_successor_amendment_verifies)",
+        "exception": "RuntimeError",
+        "detail": "RuntimeError: Round-32 H20 exception is not the recorded planner integrity transition"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_07_formal_access_audit_is_clean_after_exception (test_round34_governance_lifecycle.Round34GovernanceLifecycleTests.test_07_formal_access_audit_is_clean_after_exception)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_34\\\\outputs\\\\round34_benchmark_complexity_audit_20260901_1540\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_03_no_second_protected_access (test_round35_level2.Round35Level2Tests.test_03_no_second_protected_access)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_07_legacy_m2k3_regression (test_round35_level2.Round35Level2Tests.test_07_legacy_m2k3_regression)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_legacy_scale_parameterization_regression.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_08_legacy_m2k5_regression (test_round35_level2.Round35Level2Tests.test_08_legacy_m2k5_regression)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_legacy_scale_parameterization_regression.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_09_t12_t20_compatibility (test_round35_level2.Round35Level2Tests.test_09_t12_t20_compatibility)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_legacy_scale_parameterization_regression.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_15_exclusivity_respected (test_round35_level2.Round35Level2Tests.test_15_exclusivity_respected)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\association_decoder_constraint_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_17_deterministic_tie_break (test_round35_level2.Round35Level2Tests.test_17_deterministic_tie_break)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\association_decoder_constraint_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_18_preference_affects_assignment (test_round35_level2.Round35Level2Tests.test_18_preference_affects_assignment)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\relational_action_ownership_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_19_no_hidden_heuristic_override (test_round35_level2.Round35Level2Tests.test_19_no_hidden_heuristic_override)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\relational_action_ownership_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_20_movement_channel_independent (test_round35_level2.Round35Level2Tests.test_20_movement_channel_independent)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\action_channel_separation.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_21_association_channel_independent (test_round35_level2.Round35Level2Tests.test_21_association_channel_independent)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\action_channel_separation.csv'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_22_permutation_equivariance (test_round35_level2.Round35Level2Tests.test_22_permutation_equivariance)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_permutation_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_26_safety_unchanged (test_round35_level2.Round35Level2Tests.test_26_safety_unchanged)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_legacy_scale_parameterization_regression.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_27_reward_unchanged (test_round35_level2.Round35Level2Tests.test_27_reward_unchanged)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_legacy_scale_parameterization_regression.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_32_untouched_access_zero (test_round35_level2.Round35Level2Tests.test_32_untouched_access_zero)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_36_engineering_scenario_count (test_round35_level2.Round35Level2Tests.test_36_engineering_scenario_count)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\round35_level2_engineering_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_37_level2_gate (test_round35_level2.Round35Level2Tests.test_37_level2_gate)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_35\\\\outputs\\\\round35_level2_structural_validation_20260902_0001\\\\level2_relational_benchmark_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_anchors_are_preoutcome_and_sufficient (test_round36_runtime_stop.Round36RuntimeStopTests.test_anchors_are_preoutcome_and_sufficient)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_state_anchor_protocol.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_arr_excludes_unrun_confirmation (test_round36_runtime_stop.Round36RuntimeStopTests.test_arr_excludes_unrun_confirmation)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_confirmation_is_unaccessed (test_round36_runtime_stop.Round36RuntimeStopTests.test_confirmation_is_unaccessed)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_deterministic_tie_rule_frozen (test_round36_runtime_stop.Round36RuntimeStopTests.test_deterministic_tie_rule_frozen)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_state_anchor_protocol.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_direct_regression_passed (test_round36_runtime_stop.Round36RuntimeStopTests.test_direct_regression_passed)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\direct_assignment_executor_regression.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_environment_and_decoder_are_not_modified (test_round36_runtime_stop.Round36RuntimeStopTests.test_environment_and_decoder_are_not_modified)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\direct_assignment_executor_regression.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_h10_utility_not_run_after_runtime_stop (test_round36_runtime_stop.Round36RuntimeStopTests.test_h10_utility_not_run_after_runtime_stop)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_h1_utility_not_run_after_runtime_stop (test_round36_runtime_stop.Round36RuntimeStopTests.test_h1_utility_not_run_after_runtime_stop)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_h5_utility_not_run_after_runtime_stop (test_round36_runtime_stop.Round36RuntimeStopTests.test_h5_utility_not_run_after_runtime_stop)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_backward (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_backward)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_hgnn (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_hgnn)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_readiness_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_model_training (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_model_training)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_nan_or_inf_in_runtime_measurement (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_nan_or_inf_in_runtime_measurement)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_runtime_feasibility_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_optimizer (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_optimizer)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_outcome_dependent_anchor (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_outcome_dependent_anchor)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_state_anchor_protocol.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_ppo (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_ppo)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_protected_or_untouched_access (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_protected_or_untouched_access)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_protected_split (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_protected_split)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_clean_manifest_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_task_waypoint_training (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_task_waypoint_training)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_no_training_or_model_inference (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_training_or_model_inference)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_reo_not_evaluated (test_round36_runtime_stop.Round36RuntimeStopTests.test_reo_not_evaluated)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_round35_original_lock_unchanged (test_round36_runtime_stop.Round36RuntimeStopTests.test_round35_original_lock_unchanged)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_readiness_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_runtime_gate_stops_before_fao (test_round36_runtime_stop.Round36RuntimeStopTests.test_runtime_gate_stops_before_fao)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_runtime_feasibility_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_same_first_movement_and_continuation_specified (test_round36_runtime_stop.Round36RuntimeStopTests.test_same_first_movement_and_continuation_specified)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\round36_readiness_gate.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_state_only_representation_has_no_future_evaluation (test_round36_runtime_stop.Round36RuntimeStopTests.test_state_only_representation_has_no_future_evaluation)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_task_waypoint_mapping_not_evaluated (test_round36_runtime_stop.Round36RuntimeStopTests.test_task_waypoint_mapping_not_evaluated)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_task_waypoint_target_not_constructed (test_round36_runtime_stop.Round36RuntimeStopTests.test_task_waypoint_target_not_constructed)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\run_manifest.json'"
+      },
+      {
+        "kind": "ERROR",
+        "test_id": "test_untouched_zero (test_round36_runtime_stop.Round36RuntimeStopTests.test_untouched_zero)",
+        "exception": "FileNotFoundError",
+        "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'E:\\\\srdp\\\\wt_e13_baseline\\\\round_36\\\\outputs\\\\round36_level2_planning_validation_20260902_1610\\\\access_audit.json'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_01_frozen_round_hashes_are_unchanged (test_round07_data_audit.Round7DataAuditTests.test_01_frozen_round_hashes_are_unchanged)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: 'B48503E74E1E2575EB9163D1E23BAD33BF2C1E8842823CC23F13613E306BB1FF' != 'E77A83EE903739AB6EB327238E632BAEB8FE93E7298258429BA471295AA71772'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_11_figures_png (test_round11_full_audit.Round11Full.test_11_figures_png)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: 0 != 20"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_12_figures_svg (test_round11_full_audit.Round11Full.test_12_figures_svg)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: 0 != 20"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_06_original_round13_and_round12_frozen_evidence_is_unchanged (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_06_original_round13_and_round12_frozen_evidence_is_unchanged)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: {} != {'round_13/outputs/round13_formal_20260811[6226 chars]9D1'}"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_01_round17_lock_unchanged (test_round18_multi_uav.Round18MultiUAVTests.test_01_round17_lock_unchanged)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: 'B964AF33A4A0592218F99878FDC5091F46442589D2376CAB743B86ACEDF0C9C5' != 'A393148768835CB28296999D73490C77CAD51279B8060E9B99D10EC8581285FD'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_01_round18_lock_unchanged (test_round19_shared_spectrum.Round19SharedSpectrumTests.test_01_round18_lock_unchanged)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: '4ECF174BB9640AD1CD2B28E64C81281682FF16C91890760CA63154981FD95F8F' != '8A9462FC87F1DB546E30877DB8814FE591BF90CCB5DE81B0A6C9C63E96C0DA9B'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_01_round19_lock_unchanged (test_round20_multi_uav_dataset.Round20MultiUAVDatasetTests.test_01_round19_lock_unchanged)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: '0D1580EC8B62449B613BECFFA218CF64B02D9300762322EEAD8F92C02777D65E' != '1563785D59556B7FA747A1CADEBDBDB5EE82FCCA26892DD3E42A65ABB3B5AA46'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_07_matching_source_unchanged (test_round20_multi_uav_dataset.Round20MultiUAVDatasetTests.test_07_matching_source_unchanged)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: '887863083A8364996479BE9FC65BB2A8C2B9376629E32F02763FC237BC2A4324' != '4054D4C4F22F94634F1EF24A00DD90888E58A8C3FAD183130733D6C0A1D7B530'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_round20_registered_hashes_unchanged (test_round21_hgnn_task_waypoint.Round21HGNNTests.test_round20_registered_hashes_unchanged)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: '0F8D39C6DB4B204B9196D53583988565F45D5915A3056B509905D90533D3AA4E' != 'FD50F358BA274A1CA7D8445756F52C296D1EDF07A656210E4941AE8EF4435871'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_all_required_outputs_figures_and_completion_records_exist (test_round23_audit.Round23AuditTests.test_all_required_outputs_figures_and_completion_records_exist)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: Lists differ: ['seed_level_policy_summary.csv', 'seed_id[889 chars]son'] != []"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_18_required_dirs_and_only_legal_round31_successor (test_round30_deepsets_ppo.Round30DeepSetsPPOTests.test_18_required_dirs_and_only_legal_round31_successor)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: False is not true"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_14_required_artifacts_and_figures_exist (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_14_required_artifacts_and_figures_exist)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: False is not true"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_01_predecessor_lock_is_byte_stable (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_01_predecessor_lock_is_byte_stable)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: '6AEFE12E00DC9E724BFBB4D165F5AC98BE33DF126B0F2BA254DA256BE9D97E81' != '9B26D6129264A05A6BD7198FE283D839A70085C7A8D798D4470AD9302CB6E2D3'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_16_required_outputs_figures_and_compile (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_16_required_outputs_figures_and_compile)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: False is not true"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_17_round33_requires_a_narrow_successor_amendment (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_17_round33_requires_a_narrow_successor_amendment)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: '8CAB303A04C3CF7799821D7887139EA2FE9AB97B2B0B21F74FA0F9C031064F7F' != '9638D63395DB5C6072588509592F0CAEECA9A676A1A4B63B933E2B7FCD9A9735'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_01_round32_lock_is_immutable (test_round33_long_episode.Round33LongEpisodeTests.test_01_round32_lock_is_immutable)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: '9638D63395DB5C6072588509592F0CAEECA9A676A1A4B63B933E2B7FCD9A9735' != '8CAB303A04C3CF7799821D7887139EA2FE9AB97B2B0B21F74FA0F9C031064F7F'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_29_required_figure_pairs_exist (test_round33_long_episode.Round33LongEpisodeTests.test_29_required_figure_pairs_exist)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: 0 != 16"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_01_round33_original_lock_is_unchanged (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_01_round33_original_lock_is_unchanged)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: 'A5ABD49D8D045342F8086135B0EBDA5D79280F08283E0FE6B67205919BA33A3F' != '40A4C92A3E085661D01B2D112B4525E2DDE2CC68D63D8718ED2F5BEF83DE8075'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_36_twelve_png_and_svg_figures_are_present (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_36_twelve_png_and_svg_figures_are_present)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: 0 != 12"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_01_round33_original_lock_remains_unchanged (test_round34_governance_lifecycle.Round34GovernanceLifecycleTests.test_01_round33_original_lock_remains_unchanged)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: 'A5ABD49D8D045342F8086135B0EBDA5D79280F08283E0FE6B67205919BA33A3F' != '40A4C92A3E085661D01B2D112B4525E2DDE2CC68D63D8718ED2F5BEF83DE8075'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_round34_lock_rehashes_every_registered_artifact (test_round34_lock.Round34LockTests.test_round34_lock_rehashes_every_registered_artifact)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: 'F1BB02D8561960B11E9C0366BB7502183B6624E90B903703970576812199BF2C' != '01E9D7B70758C5CA3841366712626C4FD204A5B841A131D1CC8588F12D1942EB'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_01_round34_lock_unchanged (test_round35_level2.Round35Level2Tests.test_01_round34_lock_unchanged)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: '6C45FFF9744068E5469249681F8AB36E4AB2C1F64C2C1090EEF07FBE6DD4EE47' != '59A472D367BEE8364C2D5CC4468759685795E6CB7E2176DFFD2B12F56C489AF0'"
+      },
+      {
+        "kind": "FAIL",
+        "test_id": "test_38_required_figures_exist (test_round35_level2.Round35Level2Tests.test_38_required_figures_exist)",
+        "exception": "AssertionError",
+        "detail": "AssertionError: 0 != 12"
+      }
+    ],
+    "new_failures": [],
+    "new_failure_count": 0,
+    "baseline_commit": "fabe0406fe8127da1f2b9fb59a6da347adffe21a",
+    "baseline_tree": "E:\\srdp\\wt_e13_baseline"
+  },
+  "exposure_totals": {
+    "positive_tag_bonus_steps": 110323,
+    "float32_distinguishable_tag_steps": 110320,
+    "l4_c_nonzero_input_uav_steps": 0,
+    "l4_q_nonzero_input_uav_steps": 157826,
+    "l4_q_tagged_backlog_valid_uav_steps": 157826,
+    "groups": 6,
+    "updates": 1800
+  },
+  "recommendation": "no_single_component",
+  "evidence_gaps": [
+    "\u5386\u53f2\u6837\u672c\u6ca1\u6709\u5b8c\u6574\u89c2\u6d4b\u3001\u4ef7\u503c\u3001\u7ec8\u6b62\u6807\u5fd7\u3001\u65e7\u5bf9\u6570\u6982\u7387\u3001minibatch \u987a\u5e8f\u548c Adam \u77e9\uff0c\u4e0d\u80fd\u590d\u539f\u66f4\u65b0 150 \u6216 300 \u7684\u771f\u5b9e\u68af\u5ea6\u3002",
+    "\u73af\u5883 0 \u7684\u4fdd\u5b58\u5207\u7247\u4e0d\u80fd\u4ee3\u8868\u5176\u4f59\u73af\u5883\u3002",
+    "\u7ec8\u6001\u6279\u6b21\u662f diagnostic_proxy\uff0c\u4e0d\u662f\u6700\u540e\u4e00\u6b21\u771f\u5b9e\u8bad\u7ec3 rollout\u3002",
+    "float64 GAE \u53ea\u662f\u6570\u503c\u8bca\u65ad\u3002",
+    "\u5206\u5f00\u7684 actor/critic \u88c1\u526a\u6bd4\u4f8b\u6ca1\u6709\u5e94\u7528\u3002\u6ca1\u6709\u5386\u53f2 Adam \u77e9\uff0c\u8054\u5408\u88c1\u526a\u662f\u4e0d\u662f\u4e3b\u8981\u74f6\u9888\u5e76\u672a\u8bc1\u5b9e\u3002",
+    "\u56e2\u961f\u4f18\u52bf\u5e7f\u64ad\u662f\u539f MAPPO \u8bbe\u8ba1\u3002\u65e0\u5173 UAV \u7a00\u91ca\u4fe1\u7528\u53ea\u662f\u5047\u8bbe\u3002",
+    "\u540c\u914d\u7f6e\u7b2c\u4e8c\u6b21 rollout \u6ca1\u6709\u5217\u5165 12 \u4e2a\u6ce8\u518c\u6279\u6b21\u3002",
+    "phase3d\u3001phase3h \u548c\u65f6\u5e8f\u4fe1\u7528 oracle \u7684\u589e\u76ca\u4e0d\u4f5c\u4e3a\u672c synthetic-tag MAPPO \u7684\u8bc1\u636e\u3002",
+    "\u5f00\u53d1\u6c60\u5df2\u88ab\u524d\u671f\u5b9e\u9a8c\u4f7f\u7528\u3002\u6807\u7b7e\u662f synthetic tag\u3002",
+    "\u4e3b\u5de5\u4f5c\u533a\u5b8c\u6574\u6d4b\u8bd5\u6267\u884c\u4e86 1906 \u9879\u3001\u5931\u8d25 16 \u9879\u3002\u8fd9\u4e9b\u6d4b\u8bd5 ID \u5728 fabe040 \u5e72\u51c0\u57fa\u7ebf\u4e0a\u4e5f\u5931\u8d25\uff0c\u4f46\u5f02\u5e38\u6587\u672c\u4e0d\u540c\uff0c\u56e0\u4e3a\u4e3b\u5de5\u4f5c\u533a\u6b8b\u7559\u4e86\u672c\u63d0\u4ea4\u4e4b\u5916\u7684\u6587\u4ef6\u3002\u767b\u8bb0\u5bf9\u7167\u662f\u540c\u4e00\u5e72\u51c0\u5de5\u4f5c\u533a\u4e0a\u7684 1762 \u9879\u5bf9\u52a0\u4e0a\u672c\u5ba1\u8ba1\u4ee3\u7801\u540e\u7684 1770 \u9879\uff0c\u65b0\u589e\u5931\u8d25\u4e3a 0\u3002\u6ca1\u6709\u628a\u672a\u6267\u884c\u7684\u6536\u96c6\u9879\u8bb0\u6210\u901a\u8fc7\u3002"
+  ],
+  "release_blockers": [
+    "E12 \u79d1\u5b66 Gate \u4fdd\u6301 QUEUE_LOOKAHEAD_BENCHMARK_FAIL\u3002",
+    "\u672c\u5ba1\u8ba1\u4e0d\u662f\u6027\u80fd\u9a8c\u6536\uff0crelease_eligible \u4e3a false\uff0c\u672a\u5408\u5e76\u3002",
+    "\u5b8c\u6574\u6d4b\u8bd5\u4e2d\u7684\u65e2\u6709\u5931\u8d25\u4ecd\u662f\u53d1\u5e03\u963b\u65ad\u9879\u3002"
+  ],
+  "runtime": {
+    "python": "3.14.2",
+    "numpy": "2.4.1",
+    "torch": "2.12.0+cpu",
+    "cuda": false,
+    "torch_threads": 1,
+    "platform": "Windows-11-10.0.26200-SP0"
+  }
+}

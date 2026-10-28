@@ -1,0 +1,7 @@
+variant,model_seed,rows,expected_rows,reward_identity_max_abs,cap_violations,float32_max_abs,lookahead_input_max_abs,zero_reward_steps,positive_tag_steps,per_step_ratio_kind,per_step_ratio_mean,per_step_ratio_count,zero_reward_denominator_count,coverage_of_env0_steps,coverage_of_all_env_steps,coverage_note
+L4_C,0,144,144,8.881784197001252e-16,0,0.0,0.0,0,43,saved_sample_tag_bonus_over_reward,0.0001231863905901238,144,0,0.01,0.0025,"these 144 rows are env 0 at updates 1, 150, and 300 only"
+L4_C,1,144,144,8.881784197001252e-16,0,0.0,0.0,0,55,saved_sample_tag_bonus_over_reward,0.00015097874045403545,144,0,0.01,0.0025,"these 144 rows are env 0 at updates 1, 150, and 300 only"
+L4_C,2,144,144,8.881784197001252e-16,0,0.0,0.0,0,50,saved_sample_tag_bonus_over_reward,0.0001449761558210669,144,0,0.01,0.0025,"these 144 rows are env 0 at updates 1, 150, and 300 only"
+L4_Q,0,144,144,8.881784197001252e-16,0,0.0,0.0,0,51,saved_sample_tag_bonus_over_reward,0.0001429543135296482,144,0,0.01,0.0025,"these 144 rows are env 0 at updates 1, 150, and 300 only"
+L4_Q,1,144,144,2.220446049250313e-16,0,0.0,0.0,0,44,saved_sample_tag_bonus_over_reward,0.00012862099506300202,144,0,0.01,0.0025,"these 144 rows are env 0 at updates 1, 150, and 300 only"
+L4_Q,2,144,144,8.881784197001252e-16,0,0.0,0.0,0,58,saved_sample_tag_bonus_over_reward,0.0001467437447238588,144,0,0.01,0.0025,"these 144 rows are env 0 at updates 1, 150, and 300 only"

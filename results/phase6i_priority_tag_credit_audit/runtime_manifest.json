@@ -1,0 +1,8 @@
+{
+  "python": "3.14.2",
+  "numpy": "2.4.1",
+  "torch": "2.12.0+cpu",
+  "cuda": false,
+  "torch_threads": 1,
+  "platform": "Windows-11-10.0.26200-SP0"
+}

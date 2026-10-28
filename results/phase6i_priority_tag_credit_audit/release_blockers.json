@@ -1,0 +1,9 @@
+{
+  "release_eligible": false,
+  "merged": false,
+  "blockers": [
+    "E12 \u79d1\u5b66 Gate \u4fdd\u6301 QUEUE_LOOKAHEAD_BENCHMARK_FAIL\u3002",
+    "\u672c\u5ba1\u8ba1\u4e0d\u662f\u6027\u80fd\u9a8c\u6536\uff0crelease_eligible \u4e3a false\uff0c\u672a\u5408\u5e76\u3002",
+    "\u5b8c\u6574\u6d4b\u8bd5\u4e2d\u7684\u65e2\u6709\u5931\u8d25\u4ecd\u662f\u53d1\u5e03\u963b\u65ad\u9879\u3002"
+  ]
+}
