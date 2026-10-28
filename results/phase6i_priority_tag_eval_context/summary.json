@@ -1,0 +1,111 @@
+{
+  "instruction_commit": "88ceeab4dc2ac6f0e19fc2603d9fdf915ee0590d",
+  "source_e7_commit": "64ae1907eae2354d64625361c0a0afd866982d42",
+  "head": "88ceeab4dc2ac6f0e19fc2603d9fdf915ee0590d",
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "manifest_sha256": "6f82124f8b977dbcc675a795151dc68d105f0f7e4094d8e9ef2a27a33fb6132e",
+  "manifest_explicit": true,
+  "split_ok": true,
+  "split_error": "",
+  "accounting_tolerance_bits": 1.0,
+  "path_tolerance_m": 1e-09,
+  "tolerance_changed_after_results": false,
+  "retrained": false,
+  "merged": false,
+  "held_out_splits_read": false,
+  "processes": [
+    {
+      "name": "run_a",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "name": "run_b",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "applied": [
+    {
+      "torch_num_threads": 1,
+      "deterministic_algorithms": true,
+      "torch_initial_seed": 2,
+      "cuda_available": false,
+      "cudnn_applies": false,
+      "cudnn_available": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "interop_threads_recorded_not_set": 12
+    },
+    {
+      "torch_num_threads": 1,
+      "deterministic_algorithms": true,
+      "torch_initial_seed": 2,
+      "cuda_available": false,
+      "cudnn_applies": false,
+      "cudnn_available": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "interop_threads_recorded_not_set": 12
+    }
+  ],
+  "reset": [
+    {
+      "t": 0,
+      "payload": 0.0,
+      "q_sha256": "b71cd9220ff57294849f7a9acaedb836f395751a31229a3ecc9de0c2c9d06637",
+      "position_sha256": "562cfaa2c55951d533ec401974a4b6b3003663d40b9c29e93779aab4c9cf3ab0"
+    },
+    {
+      "t": 0,
+      "payload": 0.0,
+      "q_sha256": "b71cd9220ff57294849f7a9acaedb836f395751a31229a3ecc9de0c2c9d06637",
+      "position_sha256": "562cfaa2c55951d533ec401974a4b6b3003663d40b9c29e93779aab4c9cf3ab0"
+    }
+  ],
+  "reset_equal": true,
+  "process_comparison": {
+    "consistent": true,
+    "reason": "",
+    "max_payload_abs": 0.0,
+    "path_abs": 0.0
+  },
+  "saved_match": {
+    "run_a": {
+      "gaps": {
+        "payload_bits": 0.0,
+        "served_ordinary_bits": 0.0,
+        "served_tagged_bits": 0.0,
+        "dropped_ordinary_bits": 0.0,
+        "dropped_tagged_bits": 0.0,
+        "urgency_served_bits": 0.0,
+        "path_length_m": 0.0
+      },
+      "matches": true
+    },
+    "run_b": {
+      "gaps": {
+        "payload_bits": 0.0,
+        "served_ordinary_bits": 0.0,
+        "served_tagged_bits": 0.0,
+        "dropped_ordinary_bits": 0.0,
+        "dropped_tagged_bits": 0.0,
+        "urgency_served_bits": 0.0,
+        "path_length_m": 0.0
+      },
+      "matches": true
+    }
+  },
+  "ledger_ok": {
+    "run_a": true,
+    "run_b": true
+  },
+  "formal_actor_sha256_after": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "actor_training": [
+    false,
+    false
+  ],
+  "gate": "EVAL_CONTEXT_REPRO_PASS"
+}

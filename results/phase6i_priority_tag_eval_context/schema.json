@@ -1,0 +1,14 @@
+{
+  "schema_version": "explicit_eval_context_v1",
+  "scenario_id": 321101,
+  "accounting_tolerance_bits": 1.0,
+  "path_tolerance_m": 1e-09,
+  "tolerance_changed_after_results": false,
+  "historical_global_seed_role": "historical_inherited_process_seed",
+  "canonical_explicit_seed": null,
+  "retrained": false,
+  "formal_system_modified": false,
+  "held_out_splits_read": false,
+  "merged": false,
+  "gate": "EVAL_CONTEXT_REPRO_PASS"
+}
