@@ -1,0 +1,13 @@
+{
+  "schema_version": "synthetic_priority_reward_attribution_v1",
+  "synthetic_tag": true,
+  "source_result_commit": "f4ec753d7611d72dc25ace3aeaa8e877d8ef92bb",
+  "instruction_commit": "2d7572ac9a5a134c763d7780a853e858a297dd25",
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "next_design": "C",
+  "thresholds_changed_after_results": false,
+  "retrained": false,
+  "formal_system_modified": false,
+  "held_out_splits_read": false,
+  "merged": false
+}

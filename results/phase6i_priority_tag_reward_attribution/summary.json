@@ -1,0 +1,106 @@
+{
+  "source_result_commit": "f4ec753d7611d72dc25ace3aeaa8e877d8ef92bb",
+  "instruction_commit": "2d7572ac9a5a134c763d7780a853e858a297dd25",
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "reconciliation": {
+    "row_count": 224,
+    "expected_row_count": 224,
+    "max_abs_gap": 0.0,
+    "problems": [],
+    "matches": true,
+    "saved_gate": "PRIORITY_TAG_EXPERIMENT_NOT_MERGED",
+    "saved_l2_passing_seeds": 0,
+    "saved_l1_passing_seeds": 0,
+    "recomputed_l2_passing_seeds": 0,
+    "recomputed_l1_passing_seeds": 0
+  },
+  "probe": {
+    "scenario_id": 321096,
+    "first_scenario_seconds": 0.4453988000022946,
+    "estimated_seconds": 99.76933120051399,
+    "time_limit_seconds": 600.0,
+    "full_episode_count": 224,
+    "matches_saved": true,
+    "decomposition_ok": true,
+    "max_saved_gap_bits": 0.002673143520951271
+  },
+  "replay": {
+    "completed_episodes": 6,
+    "elapsed_seconds": 2.8846604999998817,
+    "stopped_early": true,
+    "max_saved_gap_bits": 1.5531670972704887,
+    "max_decomposition_gap_bits": 1.4901161193847656e-08
+  },
+  "watched_sha256_before": {
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py": "79fc576924aaabc74df7b5badb4f23cd4fbbba915162ca646e6b819855f425b3",
+    "src/wt/lowlevel_v2/observation.py": "7311f0ff5c6f7ef9367fce7eba011bace123dfd9685f967e6794ad13df3dc679",
+    "src/wt/lowlevel_v2/residual_policy.py": "fabd7fff68d575b74de4e0be67d6a35e60990e10d82f135269a86664dcfe6927",
+    "src/wt/lowlevel_v2/safety_projector.py": "75478f547b5741b85735143cf2a0301bcd9b281d4dcd49c355e615a7e84fa6d7",
+    "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py": "dc67c0402a273400fc5490f72b0d8fda34713a0baadb1005de06f17e3be8bf9a",
+    "results/phase5_hgnn_urgency/checkpoints/mappo_original.pt": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14",
+    "results/phase6i_priority_tag_reward/scenario_rows.csv": "39ed1e45a3436e8a659a3fa3c76456bebbee4014a4ce0fee495213e320ca7a9e",
+    "results/phase6i_priority_tag_reward/summary.json": "bfe5f116b787482acd7415aa1bc8f37d9db04b6d33d15189943e769adc2089a4",
+    "docs/research/HTW_UrgencyAware_Experiment_Report_CN.md": "2c98df8cea3ebb77aff018a62737340c978a8db67fb836d7febf94ee89d0f467",
+    "src/wt/benchmark_v2/phase6i_priority_tag/ledger.py": "9c42457e75402a2ee216af1fdb1471553f81cb37bfae0a464335f04270d3cda4",
+    "src/wt/benchmark_v2/phase6i_priority_tag/follow.py": "a84dabdd596af31fe22ca97c27f04db996b89dd22bc61fa61df1608e45c44381",
+    "results/phase6i_priority_tag_reward/checkpoints/l1_seed0.pt": "cedc9bc17b448639793a1d75d1a3c4681b7d060eb2659dfce5a66f2f675ac9c3",
+    "results/phase6i_priority_tag_reward/checkpoints/l1_seed1.pt": "b1574ddaec7ba4006dbcba0999031a60eea8e91323ac4c68f29ae08b8530aee7",
+    "results/phase6i_priority_tag_reward/checkpoints/l1_seed2.pt": "ee13fe4ba0b6fd4a9354b798eb1cd27ff5c4fb4f32459d1e3c5745c4c89f3583",
+    "results/phase6i_priority_tag_reward/checkpoints/l2_seed0.pt": "4a84fdc6db2f14b8dd29c57efcc861194ec3fbbc9e1e52c3047f8e2d77aab41f",
+    "results/phase6i_priority_tag_reward/checkpoints/l2_seed1.pt": "0a8f113de24a76a43bfd29246c39f3c6cd8dff85d9744b28a9d30f0c5c34eb7a",
+    "results/phase6i_priority_tag_reward/checkpoints/l2_seed2.pt": "55fe2acece8772f1bdbf4e02b228781c91892fc1228c292f7c86e5e78a1bea8c"
+  },
+  "attribution": null,
+  "next_design": "C",
+  "merged": false,
+  "retrained": false,
+  "problems": [
+    "L0 seed 0 scenario 321101 exceeds the 1-bit reproduction tolerance"
+  ],
+  "watched_sha256_after": {
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py": "79fc576924aaabc74df7b5badb4f23cd4fbbba915162ca646e6b819855f425b3",
+    "src/wt/lowlevel_v2/observation.py": "7311f0ff5c6f7ef9367fce7eba011bace123dfd9685f967e6794ad13df3dc679",
+    "src/wt/lowlevel_v2/residual_policy.py": "fabd7fff68d575b74de4e0be67d6a35e60990e10d82f135269a86664dcfe6927",
+    "src/wt/lowlevel_v2/safety_projector.py": "75478f547b5741b85735143cf2a0301bcd9b281d4dcd49c355e615a7e84fa6d7",
+    "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py": "dc67c0402a273400fc5490f72b0d8fda34713a0baadb1005de06f17e3be8bf9a",
+    "results/phase5_hgnn_urgency/checkpoints/mappo_original.pt": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14",
+    "results/phase6i_priority_tag_reward/scenario_rows.csv": "39ed1e45a3436e8a659a3fa3c76456bebbee4014a4ce0fee495213e320ca7a9e",
+    "results/phase6i_priority_tag_reward/summary.json": "bfe5f116b787482acd7415aa1bc8f37d9db04b6d33d15189943e769adc2089a4",
+    "docs/research/HTW_UrgencyAware_Experiment_Report_CN.md": "2c98df8cea3ebb77aff018a62737340c978a8db67fb836d7febf94ee89d0f467",
+    "src/wt/benchmark_v2/phase6i_priority_tag/ledger.py": "9c42457e75402a2ee216af1fdb1471553f81cb37bfae0a464335f04270d3cda4",
+    "src/wt/benchmark_v2/phase6i_priority_tag/follow.py": "a84dabdd596af31fe22ca97c27f04db996b89dd22bc61fa61df1608e45c44381",
+    "results/phase6i_priority_tag_reward/checkpoints/l1_seed0.pt": "cedc9bc17b448639793a1d75d1a3c4681b7d060eb2659dfce5a66f2f675ac9c3",
+    "results/phase6i_priority_tag_reward/checkpoints/l1_seed1.pt": "b1574ddaec7ba4006dbcba0999031a60eea8e91323ac4c68f29ae08b8530aee7",
+    "results/phase6i_priority_tag_reward/checkpoints/l1_seed2.pt": "ee13fe4ba0b6fd4a9354b798eb1cd27ff5c4fb4f32459d1e3c5745c4c89f3583",
+    "results/phase6i_priority_tag_reward/checkpoints/l2_seed0.pt": "4a84fdc6db2f14b8dd29c57efcc861194ec3fbbc9e1e52c3047f8e2d77aab41f",
+    "results/phase6i_priority_tag_reward/checkpoints/l2_seed1.pt": "0a8f113de24a76a43bfd29246c39f3c6cd8dff85d9744b28a9d30f0c5c34eb7a",
+    "results/phase6i_priority_tag_reward/checkpoints/l2_seed2.pt": "55fe2acece8772f1bdbf4e02b228781c91892fc1228c292f7c86e5e78a1bea8c"
+  },
+  "failure": {
+    "variant": "L0",
+    "model_seed": 0,
+    "scenario_id": 321101,
+    "field_gaps": {
+      "payload_bits": 1.5531670972704887,
+      "urgency_served_bits": 0.13525486178696156,
+      "served_tagged_bits": 0.2620436828583479,
+      "served_ordinary_bits": 1.291123427450657,
+      "dropped_tagged_bits": 0.05868951044976711,
+      "dropped_ordinary_bits": 1.4944775998592377,
+      "path_length_m": 5.744638656324241e-06
+    },
+    "decomposition_gap_bits": 1.4901161193847656e-08,
+    "uninstrumented_field_gaps": {
+      "payload_bits": 1.5531670972704887,
+      "urgency_served_bits": 0.13525486178696156,
+      "served_tagged_bits": 0.2620436828583479,
+      "served_ordinary_bits": 1.291123427450657,
+      "dropped_tagged_bits": 0.05868951044976711,
+      "dropped_ordinary_bits": 1.4944775998592377,
+      "path_length_m": 5.744638656324241e-06
+    }
+  },
+  "gate": "URGENCY_REWARD_ATTRIBUTION_BLOCKED"
+}
