@@ -1,0 +1,1432 @@
+{
+  "gate": "DIRECT_TAG_SIGNAL_AUDIT_COMPLETE",
+  "block_reasons": [],
+  "merged": false,
+  "trained": false,
+  "e10_scientific_gate": "DIRECT_TAG_REWARD_BENCHMARK_FAIL",
+  "instruction_commit": "2aa614df997d766dbb4820fe37a4ac1f7c42e0ed",
+  "parent_result_commit": "ddd397e03a9c02ed4e43022671e115531e842dd2",
+  "e10_source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b",
+  "inventory": {
+    "rows": 320,
+    "unique_keys": 320,
+    "problems": [],
+    "development_pool": [
+      321096,
+      321127
+    ]
+  },
+  "recomputed_gate": {
+    "gate": "DIRECT_TAG_REWARD_BENCHMARK_FAIL",
+    "matches_saved_fail_gate": true,
+    "passing_seeds": 0,
+    "interval_gaps": [],
+    "safety_events": [
+      {
+        "model_seed": 1,
+        "scenario_id": 321123,
+        "l3_safety_violations": 1.0,
+        "l0_safety_violations": 0.0,
+        "matches_reported_event": true
+      },
+      {
+        "model_seed": 2,
+        "scenario_id": 321104,
+        "l3_safety_violations": 1.0,
+        "l0_safety_violations": 0.0,
+        "matches_reported_event": true
+      }
+    ],
+    "seeds": [
+      {
+        "variant": "L3",
+        "model_seed": 0,
+        "passes_preregistered_criteria": false,
+        "tagged_versus_l0": {
+          "mean": -184854.38728510577,
+          "ci_low": -930299.6007851077,
+          "ci_high": 554210.2957846068,
+          "scenarios": 32
+        },
+        "payload_versus_l0": {
+          "mean": 1125235.7933864773,
+          "ci_low": -354225.8245959756,
+          "ci_high": 2593410.5568396556,
+          "scenarios": 32
+        },
+        "payload_ci_floor": -280317.26553793804,
+        "l0_payload_mean": 56063453.107587606,
+        "safety_diff_sum": 0.0,
+        "constraint_diff_sum": 0.0,
+        "sinr_versus_l0_mean": 0.9812237237729009,
+        "interference_versus_l0_mean": 0.002261063613682496,
+        "payload_negative_scenarios": [
+          321100,
+          321102,
+          321103,
+          321105,
+          321107,
+          321108,
+          321111,
+          321113,
+          321114,
+          321117,
+          321121,
+          321127
+        ],
+        "tagged_not_single_scenario": false,
+        "tagged_not_two_scenarios": false,
+        "age_versus_l0": {
+          "mean": 698933.4434822027,
+          "ci_low": -105289.3251121961,
+          "ci_high": 1479515.3721797888,
+          "scenarios": 32
+        },
+        "tagged_versus_l2": {
+          "mean": 54244.6388611859,
+          "ci_low": -484031.55384483753,
+          "ci_high": 590776.6604940221,
+          "scenarios": 32
+        },
+        "payload_versus_l2": {
+          "mean": 413066.7911645898,
+          "ci_low": -736500.9544923811,
+          "ci_high": 1710031.426766403,
+          "scenarios": 32
+        },
+        "ordinary_versus_l0": {
+          "mean": 1310090.1806715813,
+          "ci_low": 95437.33294977252,
+          "ci_high": 2528168.6487515345,
+          "scenarios": 32
+        },
+        "dropped_versus_l0": {
+          "mean": -184337.76298573217,
+          "ci_low": -1022361.0215840499,
+          "ci_high": 586524.7840696514,
+          "scenarios": 32
+        },
+        "queue_versus_l0_mean": -940898.0304007439
+      },
+      {
+        "variant": "L3",
+        "model_seed": 1,
+        "passes_preregistered_criteria": false,
+        "tagged_versus_l0": {
+          "mean": -136039.12632680117,
+          "ci_low": -932143.4156734778,
+          "ci_high": 701180.0154406368,
+          "scenarios": 32
+        },
+        "payload_versus_l0": {
+          "mean": 1282292.5967255456,
+          "ci_low": -441480.63707479043,
+          "ci_high": 2955235.698823276,
+          "scenarios": 32
+        },
+        "payload_ci_floor": -280317.26553793804,
+        "l0_payload_mean": 56063453.107587606,
+        "safety_diff_sum": 1.0,
+        "constraint_diff_sum": 0.0,
+        "sinr_versus_l0_mean": 1.0982287319547754,
+        "interference_versus_l0_mean": 0.0032655204569448258,
+        "payload_negative_scenarios": [
+          321100,
+          321102,
+          321103,
+          321105,
+          321107,
+          321111,
+          321113,
+          321114,
+          321118,
+          321121,
+          321122,
+          321127
+        ],
+        "tagged_not_single_scenario": false,
+        "tagged_not_two_scenarios": false,
+        "age_versus_l0": {
+          "mean": 794230.1976809362,
+          "ci_low": 51971.970498742165,
+          "ci_high": 1487270.7236201784,
+          "scenarios": 32
+        },
+        "tagged_versus_l2": {
+          "mean": 209962.75259124822,
+          "ci_low": -350156.38551476056,
+          "ci_high": 791713.3561990163,
+          "scenarios": 32
+        },
+        "payload_versus_l2": {
+          "mean": -129107.61484591034,
+          "ci_low": -1728043.454452156,
+          "ci_high": 1505253.4048011398,
+          "scenarios": 32
+        },
+        "ordinary_versus_l0": {
+          "mean": 1418331.7230523461,
+          "ci_low": -3396.2833507769824,
+          "ci_high": 2795074.5400504074,
+          "scenarios": 32
+        },
+        "dropped_versus_l0": {
+          "mean": -245483.74355110968,
+          "ci_low": -1431255.7745505616,
+          "ci_high": 972333.4648608728,
+          "scenarios": 32
+        },
+        "queue_versus_l0_mean": -1036808.8531744359
+      },
+      {
+        "variant": "L3",
+        "model_seed": 2,
+        "passes_preregistered_criteria": false,
+        "tagged_versus_l0": {
+          "mean": -357870.57796019793,
+          "ci_low": -1065835.1524168134,
+          "ci_high": 318761.32712901325,
+          "scenarios": 32
+        },
+        "payload_versus_l0": {
+          "mean": -557177.1973119143,
+          "ci_low": -2501468.5420574,
+          "ci_high": 1206871.6226793567,
+          "scenarios": 32
+        },
+        "payload_ci_floor": -280317.26553793804,
+        "l0_payload_mean": 56063453.107587606,
+        "safety_diff_sum": 1.0,
+        "constraint_diff_sum": 0.0,
+        "sinr_versus_l0_mean": 0.2814656149215791,
+        "interference_versus_l0_mean": -0.0007262176207274316,
+        "payload_negative_scenarios": [
+          321100,
+          321105,
+          321107,
+          321109,
+          321112,
+          321114,
+          321117,
+          321119,
+          321120,
+          321121,
+          321125,
+          321127
+        ],
+        "tagged_not_single_scenario": false,
+        "tagged_not_two_scenarios": false,
+        "age_versus_l0": {
+          "mean": 502366.0028577697,
+          "ci_low": -264906.25536027935,
+          "ci_high": 1241321.285027586,
+          "scenarios": 32
+        },
+        "tagged_versus_l2": {
+          "mean": -203437.10697571596,
+          "ci_low": -801120.2083265096,
+          "ci_high": 437784.944590043,
+          "scenarios": 32
+        },
+        "payload_versus_l2": {
+          "mean": -1122841.904843914,
+          "ci_low": -2744978.1800902532,
+          "ci_high": 381480.34754257486,
+          "scenarios": 32
+        },
+        "ordinary_versus_l0": {
+          "mean": -199306.6193517167,
+          "ci_low": -1869107.136849793,
+          "ci_high": 1325986.963823003,
+          "scenarios": 32
+        },
+        "dropped_versus_l0": {
+          "mean": 657174.81979489,
+          "ci_low": -361789.43341424025,
+          "ci_high": 1728472.3804645347,
+          "scenarios": 32
+        },
+        "queue_versus_l0_mean": -99997.62248297606
+      }
+    ]
+  },
+  "checkpoints": {
+    "hashes": {
+      "L0_seed0": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+      "L1_seed0": "cedc9bc17b448639793a1d75d1a3c4681b7d060eb2659dfce5a66f2f675ac9c3",
+      "L1_seed1": "b1574ddaec7ba4006dbcba0999031a60eea8e91323ac4c68f29ae08b8530aee7",
+      "L1_seed2": "ee13fe4ba0b6fd4a9354b798eb1cd27ff5c4fb4f32459d1e3c5745c4c89f3583",
+      "L2_seed0": "4a84fdc6db2f14b8dd29c57efcc861194ec3fbbc9e1e52c3047f8e2d77aab41f",
+      "L2_seed1": "0a8f113de24a76a43bfd29246c39f3c6cd8dff85d9744b28a9d30f0c5c34eb7a",
+      "L2_seed2": "55fe2acece8772f1bdbf4e02b228781c91892fc1228c292f7c86e5e78a1bea8c",
+      "L3_seed0": "d47290cc750b6397bdab6e1ce6856139b5da461166ea0e946ebe7026f27d7257",
+      "L3_seed1": "6072f7a5de388e27494dcbda3ba59ce2ed5c5575b1b5e52964730f88af641d80",
+      "L3_seed2": "d47b371462c31cef2b216f8851cef0de567ccc197df97c76fbea4858fd64258a",
+      "legacy": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14"
+    },
+    "problems": [],
+    "watched": {
+      "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+      "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py": "79fc576924aaabc74df7b5badb4f23cd4fbbba915162ca646e6b819855f425b3",
+      "src/wt/lowlevel_v2/observation.py": "7311f0ff5c6f7ef9367fce7eba011bace123dfd9685f967e6794ad13df3dc679",
+      "src/wt/lowlevel_v2/residual_policy.py": "fabd7fff68d575b74de4e0be67d6a35e60990e10d82f135269a86664dcfe6927",
+      "src/wt/lowlevel_v2/safety_projector.py": "75478f547b5741b85735143cf2a0301bcd9b281d4dcd49c355e615a7e84fa6d7",
+      "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py": "dc67c0402a273400fc5490f72b0d8fda34713a0baadb1005de06f17e3be8bf9a",
+      "results/phase5_hgnn_urgency/checkpoints/mappo_original.pt": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14"
+    }
+  },
+  "source_audit": {
+    "recorded_source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b",
+    "git_exit_code": 0,
+    "source_commit_paths": [
+      "docs/research/HTW_UrgencyAware_Direct_Tag_Reward_Experiment_Instructions_CN.md"
+    ],
+    "source_commit_is_instruction_only": true,
+    "checkpoint_keys": [
+      "actor",
+      "critic",
+      "feature_names",
+      "initialization",
+      "legacy_actor_sha256",
+      "model_seed",
+      "observation_schema",
+      "reward_config",
+      "reward_schema",
+      "source_commit",
+      "synthetic_tag",
+      "synthetic_tag_protocol",
+      "tag_rate",
+      "tag_seed",
+      "updates",
+      "variant",
+      "warm_start_from_l1_or_l2"
+    ],
+    "checkpoints": [
+      {
+        "model_seed": 0,
+        "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b",
+        "has_implementation_hash": false
+      },
+      {
+        "model_seed": 1,
+        "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b",
+        "has_implementation_hash": false
+      },
+      {
+        "model_seed": 2,
+        "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b",
+        "has_implementation_hash": false
+      }
+    ],
+    "implementation_bytes_at_training_time": "missing",
+    "result_commit_after_training": "ddd397e03a9c02ed4e43022671e115531e842dd2",
+    "note": "The checkpoint records the instruction commit and no implementation digest. Current source is not treated as proof of the bytes that ran."
+  },
+  "preflight": {
+    "scenario_id": 321101,
+    "matches_saved": true,
+    "max_bit_gap": 0.0,
+    "path_gap_m": 0.0
+  },
+  "protocol": {
+    "schema_version": "priority_tag_signal_audit_v1",
+    "written_before_trajectories": true,
+    "diagnostic_scenarios": [
+      321000,
+      321001
+    ],
+    "safety_cases": [
+      {
+        "variant": "L3",
+        "model_seed": 1,
+        "scenario_id": 321123,
+        "baseline_variant": "L0",
+        "baseline_seed": 0
+      },
+      {
+        "variant": "L3",
+        "model_seed": 2,
+        "scenario_id": 321104,
+        "baseline_variant": "L0",
+        "baseline_seed": 0
+      }
+    ],
+    "snapshot_indices_for_horizon_48": [
+      0,
+      6,
+      12,
+      18,
+      24,
+      30,
+      36,
+      42
+    ],
+    "counterfactual_steps": 4,
+    "candidate_offsets": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        -0.1,
+        0.0
+      ],
+      [
+        0.0,
+        0.1
+      ],
+      [
+        0.0,
+        -0.1
+      ]
+    ],
+    "perturbation": 0.1,
+    "opportunity_tag_bits": 1.0,
+    "opportunity_payload_bits": 1.0,
+    "counter_distance_tolerance_m": 1e-09,
+    "projector_distance_tolerance_m": 1e-06,
+    "bit_tolerance": 1.0,
+    "path_tolerance_m": 1e-09,
+    "assignment_seed": "7000000 + scenario_id",
+    "training_assignment_seed_not_used": "321000000 + model_seed * 10000 + env_index",
+    "historical_process_seed_role": "historical_inherited_process_context",
+    "canonical_explicit_eval_seed": null,
+    "policy_active_mask": "ExperimentWorker writes ones; it is not a learned gate",
+    "l0_tag_input": "not fabricated",
+    "gae_label": "diagnostic_estimate",
+    "does_not_train": true
+  },
+  "exposure": {
+    "episodes": [
+      {
+        "variant": "L0",
+        "model_seed": 0,
+        "scenario_id": 321000,
+        "uav_steps": 288,
+        "valid_assigned_uav_steps": 81,
+        "visible_tagged_uav_steps": 19,
+        "visible_and_policy_active_uav_steps": 19,
+        "policy_active_mask_min": 1.0,
+        "policy_active_mask_max": 1.0,
+        "occupied_buoy_steps": 323,
+        "head_tagged_buoy_steps": 54,
+        "generated_tagged_buckets": 27,
+        "queued_tagged_buckets": 16,
+        "positive_tag_service_steps": 13,
+        "steps": 48,
+        "visible_delay_observed": 10,
+        "visible_delay_median": 7.0,
+        "never_visible_queued_buckets": 6,
+        "served_delay_observed": 15,
+        "served_delay_median": 11.0,
+        "never_served_queued_buckets": 1,
+        "served_tagged_bits": 14536967.033675522,
+        "bonus_tag_sum": 0.0
+      },
+      {
+        "variant": "L3",
+        "model_seed": 0,
+        "scenario_id": 321000,
+        "uav_steps": 288,
+        "valid_assigned_uav_steps": 74,
+        "visible_tagged_uav_steps": 17,
+        "visible_and_policy_active_uav_steps": 17,
+        "policy_active_mask_min": 1.0,
+        "policy_active_mask_max": 1.0,
+        "occupied_buoy_steps": 302,
+        "head_tagged_buoy_steps": 67,
+        "generated_tagged_buckets": 27,
+        "queued_tagged_buckets": 12,
+        "positive_tag_service_steps": 12,
+        "steps": 48,
+        "visible_delay_observed": 7,
+        "visible_delay_median": 11.0,
+        "never_visible_queued_buckets": 5,
+        "served_delay_observed": 9,
+        "served_delay_median": 11.0,
+        "never_served_queued_buckets": 3,
+        "served_tagged_bits": 9000000.0,
+        "bonus_tag_sum": 0.008528806818841479
+      },
+      {
+        "variant": "L3",
+        "model_seed": 1,
+        "scenario_id": 321000,
+        "uav_steps": 288,
+        "valid_assigned_uav_steps": 76,
+        "visible_tagged_uav_steps": 14,
+        "visible_and_policy_active_uav_steps": 14,
+        "policy_active_mask_min": 1.0,
+        "policy_active_mask_max": 1.0,
+        "occupied_buoy_steps": 303,
+        "head_tagged_buoy_steps": 64,
+        "generated_tagged_buckets": 27,
+        "queued_tagged_buckets": 13,
+        "positive_tag_service_steps": 11,
+        "steps": 48,
+        "visible_delay_observed": 6,
+        "visible_delay_median": 5.5,
+        "never_visible_queued_buckets": 7,
+        "served_delay_observed": 10,
+        "served_delay_median": 10.5,
+        "never_served_queued_buckets": 3,
+        "served_tagged_bits": 10000000.0,
+        "bonus_tag_sum": 0.009793072192701573
+      },
+      {
+        "variant": "L3",
+        "model_seed": 2,
+        "scenario_id": 321000,
+        "uav_steps": 288,
+        "valid_assigned_uav_steps": 81,
+        "visible_tagged_uav_steps": 21,
+        "visible_and_policy_active_uav_steps": 21,
+        "policy_active_mask_min": 1.0,
+        "policy_active_mask_max": 1.0,
+        "occupied_buoy_steps": 308,
+        "head_tagged_buoy_steps": 56,
+        "generated_tagged_buckets": 27,
+        "queued_tagged_buckets": 17,
+        "positive_tag_service_steps": 17,
+        "steps": 48,
+        "visible_delay_observed": 11,
+        "visible_delay_median": 11.0,
+        "never_visible_queued_buckets": 6,
+        "served_delay_observed": 15,
+        "served_delay_median": 5.0,
+        "never_served_queued_buckets": 2,
+        "served_tagged_bits": 15000000.0,
+        "bonus_tag_sum": 0.01343594178080268
+      },
+      {
+        "variant": "L0",
+        "model_seed": 0,
+        "scenario_id": 321001,
+        "uav_steps": 288,
+        "valid_assigned_uav_steps": 113,
+        "visible_tagged_uav_steps": 12,
+        "visible_and_policy_active_uav_steps": 12,
+        "policy_active_mask_min": 1.0,
+        "policy_active_mask_max": 1.0,
+        "occupied_buoy_steps": 292,
+        "head_tagged_buoy_steps": 37,
+        "generated_tagged_buckets": 23,
+        "queued_tagged_buckets": 12,
+        "positive_tag_service_steps": 14,
+        "steps": 48,
+        "visible_delay_observed": 9,
+        "visible_delay_median": 1.0,
+        "never_visible_queued_buckets": 3,
+        "served_delay_observed": 12,
+        "served_delay_median": 1.0,
+        "never_served_queued_buckets": 0,
+        "served_tagged_bits": 12000000.0,
+        "bonus_tag_sum": 0.0
+      },
+      {
+        "variant": "L3",
+        "model_seed": 0,
+        "scenario_id": 321001,
+        "uav_steps": 288,
+        "valid_assigned_uav_steps": 105,
+        "visible_tagged_uav_steps": 18,
+        "visible_and_policy_active_uav_steps": 18,
+        "policy_active_mask_min": 1.0,
+        "policy_active_mask_max": 1.0,
+        "occupied_buoy_steps": 284,
+        "head_tagged_buoy_steps": 43,
+        "generated_tagged_buckets": 23,
+        "queued_tagged_buckets": 12,
+        "positive_tag_service_steps": 14,
+        "steps": 48,
+        "visible_delay_observed": 8,
+        "visible_delay_median": 1.0,
+        "never_visible_queued_buckets": 4,
+        "served_delay_observed": 10,
+        "served_delay_median": 1.0,
+        "never_served_queued_buckets": 2,
+        "served_tagged_bits": 10000000.0,
+        "bonus_tag_sum": 0.00952170198634065
+      },
+      {
+        "variant": "L3",
+        "model_seed": 1,
+        "scenario_id": 321001,
+        "uav_steps": 288,
+        "valid_assigned_uav_steps": 112,
+        "visible_tagged_uav_steps": 15,
+        "visible_and_policy_active_uav_steps": 15,
+        "policy_active_mask_min": 1.0,
+        "policy_active_mask_max": 1.0,
+        "occupied_buoy_steps": 291,
+        "head_tagged_buoy_steps": 55,
+        "generated_tagged_buckets": 23,
+        "queued_tagged_buckets": 12,
+        "positive_tag_service_steps": 15,
+        "steps": 48,
+        "visible_delay_observed": 6,
+        "visible_delay_median": 4.5,
+        "never_visible_queued_buckets": 6,
+        "served_delay_observed": 11,
+        "served_delay_median": 3.0,
+        "never_served_queued_buckets": 1,
+        "served_tagged_bits": 10658537.944591893,
+        "bonus_tag_sum": 0.009643037816893074
+      },
+      {
+        "variant": "L3",
+        "model_seed": 2,
+        "scenario_id": 321001,
+        "uav_steps": 288,
+        "valid_assigned_uav_steps": 103,
+        "visible_tagged_uav_steps": 15,
+        "visible_and_policy_active_uav_steps": 15,
+        "policy_active_mask_min": 1.0,
+        "policy_active_mask_max": 1.0,
+        "occupied_buoy_steps": 282,
+        "head_tagged_buoy_steps": 55,
+        "generated_tagged_buckets": 23,
+        "queued_tagged_buckets": 12,
+        "positive_tag_service_steps": 13,
+        "steps": 48,
+        "visible_delay_observed": 9,
+        "visible_delay_median": 1.0,
+        "never_visible_queued_buckets": 3,
+        "served_delay_observed": 9,
+        "served_delay_median": 1.0,
+        "never_served_queued_buckets": 3,
+        "served_tagged_bits": 8896686.282610958,
+        "bonus_tag_sum": 0.008390761254160413
+      }
+    ]
+  },
+  "sensitivity": {
+    "episodes": [
+      {
+        "variant": "L0",
+        "model_seed": 0,
+        "scenario_id": 321000,
+        "actor_accepts_tag": false,
+        "note": "L0 uses ResidualActor. No tag column was zeroed."
+      },
+      {
+        "variant": "L3",
+        "model_seed": 0,
+        "scenario_id": 321000,
+        "actor_accepts_tag": true,
+        "steps": 48,
+        "aligned_steps": 48,
+        "alignment_failed_steps": 0,
+        "aligned_nonzero_tag_input_steps": 17,
+        "mu_changed_steps": 8,
+        "executed_changed_steps": 8,
+        "median_mu_gap": 0.0,
+        "max_mu_gap": 0.001899421215057373,
+        "median_executed_gap": 0.0
+      },
+      {
+        "variant": "L3",
+        "model_seed": 1,
+        "scenario_id": 321000,
+        "actor_accepts_tag": true,
+        "steps": 48,
+        "aligned_steps": 48,
+        "alignment_failed_steps": 0,
+        "aligned_nonzero_tag_input_steps": 14,
+        "mu_changed_steps": 8,
+        "executed_changed_steps": 8,
+        "median_mu_gap": 0.0005377382040023804,
+        "max_mu_gap": 0.004725709557533264,
+        "median_executed_gap": 0.00011395936932245831
+      },
+      {
+        "variant": "L3",
+        "model_seed": 2,
+        "scenario_id": 321000,
+        "actor_accepts_tag": true,
+        "steps": 48,
+        "aligned_steps": 48,
+        "alignment_failed_steps": 0,
+        "aligned_nonzero_tag_input_steps": 17,
+        "mu_changed_steps": 5,
+        "executed_changed_steps": 5,
+        "median_mu_gap": 0.0,
+        "max_mu_gap": 0.0011429786682128906,
+        "median_executed_gap": 0.0
+      },
+      {
+        "variant": "L0",
+        "model_seed": 0,
+        "scenario_id": 321001,
+        "actor_accepts_tag": false,
+        "note": "L0 uses ResidualActor. No tag column was zeroed."
+      },
+      {
+        "variant": "L3",
+        "model_seed": 0,
+        "scenario_id": 321001,
+        "actor_accepts_tag": true,
+        "steps": 48,
+        "aligned_steps": 48,
+        "alignment_failed_steps": 0,
+        "aligned_nonzero_tag_input_steps": 14,
+        "mu_changed_steps": 7,
+        "executed_changed_steps": 7,
+        "median_mu_gap": 1.887977123260498e-05,
+        "max_mu_gap": 0.0021674782037734985,
+        "median_executed_gap": 4.6634980305909624e-07
+      },
+      {
+        "variant": "L3",
+        "model_seed": 1,
+        "scenario_id": 321001,
+        "actor_accepts_tag": true,
+        "steps": 48,
+        "aligned_steps": 48,
+        "alignment_failed_steps": 0,
+        "aligned_nonzero_tag_input_steps": 14,
+        "mu_changed_steps": 3,
+        "executed_changed_steps": 3,
+        "median_mu_gap": 0.0,
+        "max_mu_gap": 0.0018153786659240723,
+        "median_executed_gap": 0.0
+      },
+      {
+        "variant": "L3",
+        "model_seed": 2,
+        "scenario_id": 321001,
+        "actor_accepts_tag": true,
+        "steps": 48,
+        "aligned_steps": 48,
+        "alignment_failed_steps": 0,
+        "aligned_nonzero_tag_input_steps": 14,
+        "mu_changed_steps": 4,
+        "executed_changed_steps": 4,
+        "median_mu_gap": 0.0,
+        "max_mu_gap": 0.0011668801307678223,
+        "median_executed_gap": 0.0
+      }
+    ]
+  },
+  "reward_signal": {
+    "episodes": [
+      {
+        "variant": "L3",
+        "model_seed": 0,
+        "scenario_id": 321000,
+        "steps": 48,
+        "zero_payload_steps": 19,
+        "zero_motion_steps": 0,
+        "positive_tag_bonus_steps": 12,
+        "float32_distinguishable_tag_steps": 12,
+        "age_over_payload_median": 3.125e-05,
+        "tag_over_payload_median": 0.0,
+        "age_over_motion_median": 0.3420003447013885,
+        "tag_over_motion_median": 0.0,
+        "bonus_age_sum": 0.00549190428549554,
+        "bonus_tag_sum": 0.008528806818841479,
+        "payload_term_sum": 51.7194377116836,
+        "motion_penalty_sum": 0.004358992731402956
+      },
+      {
+        "variant": "L3",
+        "model_seed": 1,
+        "scenario_id": 321000,
+        "steps": 48,
+        "zero_payload_steps": 19,
+        "zero_motion_steps": 0,
+        "positive_tag_bonus_steps": 11,
+        "float32_distinguishable_tag_steps": 11,
+        "age_over_payload_median": 2.0833333333333336e-05,
+        "tag_over_payload_median": 0.0,
+        "age_over_motion_median": 0.507952482509984,
+        "tag_over_motion_median": 0.0,
+        "bonus_age_sum": 0.0053566100436114455,
+        "bonus_tag_sum": 0.009793072192701573,
+        "payload_term_sum": 53.21861403154843,
+        "motion_penalty_sum": 0.004043163511337022
+      },
+      {
+        "variant": "L3",
+        "model_seed": 2,
+        "scenario_id": 321000,
+        "steps": 48,
+        "zero_payload_steps": 17,
+        "zero_motion_steps": 0,
+        "positive_tag_bonus_steps": 17,
+        "float32_distinguishable_tag_steps": 17,
+        "age_over_payload_median": 6.757056345601841e-05,
+        "tag_over_payload_median": 0.00017032065872889227,
+        "age_over_motion_median": 0.6982675450153997,
+        "tag_over_motion_median": 0.0,
+        "bonus_age_sum": 0.005916875337309955,
+        "bonus_tag_sum": 0.01343594178080268,
+        "payload_term_sum": 52.08393146093154,
+        "motion_penalty_sum": 0.00289288852649737
+      },
+      {
+        "variant": "L3",
+        "model_seed": 0,
+        "scenario_id": 321001,
+        "steps": 48,
+        "zero_payload_steps": 11,
+        "zero_motion_steps": 0,
+        "positive_tag_bonus_steps": 14,
+        "float32_distinguishable_tag_steps": 14,
+        "age_over_payload_median": 5.208333333333333e-05,
+        "tag_over_payload_median": 0.0,
+        "age_over_motion_median": 0.9017275453738338,
+        "tag_over_motion_median": 0.0,
+        "bonus_age_sum": 0.005463025482418295,
+        "bonus_tag_sum": 0.00952170198634065,
+        "payload_term_sum": 57.76757152238934,
+        "motion_penalty_sum": 0.003699811168534136
+      },
+      {
+        "variant": "L3",
+        "model_seed": 1,
+        "scenario_id": 321001,
+        "steps": 48,
+        "zero_payload_steps": 10,
+        "zero_motion_steps": 0,
+        "positive_tag_bonus_steps": 15,
+        "float32_distinguishable_tag_steps": 15,
+        "age_over_payload_median": 7.727902211104051e-05,
+        "tag_over_payload_median": 0.0,
+        "age_over_motion_median": 1.830928840055965,
+        "tag_over_motion_median": 0.0,
+        "bonus_age_sum": 0.006387645046133645,
+        "bonus_tag_sum": 0.009643037816893074,
+        "payload_term_sum": 57.83192595731488,
+        "motion_penalty_sum": 0.0033934962463000955
+      },
+      {
+        "variant": "L3",
+        "model_seed": 2,
+        "scenario_id": 321001,
+        "steps": 48,
+        "zero_payload_steps": 11,
+        "zero_motion_steps": 0,
+        "positive_tag_bonus_steps": 13,
+        "float32_distinguishable_tag_steps": 13,
+        "age_over_payload_median": 7.181457866326216e-05,
+        "tag_over_payload_median": 0.0,
+        "age_over_motion_median": 1.8005913649499634,
+        "tag_over_motion_median": 0.0,
+        "bonus_age_sum": 0.005548347180831889,
+        "bonus_tag_sum": 0.008390761254160413,
+        "payload_term_sum": 55.89668628261096,
+        "motion_penalty_sum": 0.002580187542901954
+      }
+    ],
+    "label": "diagnostic_estimate"
+  },
+  "gae": {
+    "episodes": [
+      {
+        "variant": "L0",
+        "model_seed": 0,
+        "scenario_id": 321000,
+        "computed": false,
+        "reason": "L0 has no experiment critic; its value trace is not used as an L3 baseline"
+      },
+      {
+        "variant": "L3",
+        "model_seed": 0,
+        "scenario_id": 321000,
+        "computed": true,
+        "label": "diagnostic_estimate",
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "terminal_bootstrap": "last_value is zero because the recorded final done flag is the episode boundary",
+        "mean_abs_normalized_tag_effect": 0.00011515987762229672,
+        "max_abs_normalized_tag_effect": 0.00033900053662366814,
+        "mean_abs_normalized_age_effect": 6.247221208866931e-05,
+        "mean_abs_raw_tag_effect": 0.0023371840361505747,
+        "note": "The critic values stay on the frozen full-reward trajectory. This is not the advantage from the 300 training updates."
+      },
+      {
+        "variant": "L3",
+        "model_seed": 1,
+        "scenario_id": 321000,
+        "computed": true,
+        "label": "diagnostic_estimate",
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "terminal_bootstrap": "last_value is zero because the recorded final done flag is the episode boundary",
+        "mean_abs_normalized_tag_effect": 0.0001284207417241015,
+        "max_abs_normalized_tag_effect": 0.0003672571497260191,
+        "mean_abs_normalized_age_effect": 6.0459963275362645e-05,
+        "mean_abs_raw_tag_effect": 0.0026834725867956877,
+        "note": "The critic values stay on the frozen full-reward trajectory. This is not the advantage from the 300 training updates."
+      },
+      {
+        "variant": "L3",
+        "model_seed": 2,
+        "scenario_id": 321000,
+        "computed": true,
+        "label": "diagnostic_estimate",
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "terminal_bootstrap": "last_value is zero because the recorded final done flag is the episode boundary",
+        "mean_abs_normalized_tag_effect": 0.0001293659090834304,
+        "max_abs_normalized_tag_effect": 0.00035014679455619424,
+        "mean_abs_normalized_age_effect": 5.37583080789525e-05,
+        "mean_abs_raw_tag_effect": 0.0038447175174951553,
+        "note": "The critic values stay on the frozen full-reward trajectory. This is not the advantage from the 300 training updates."
+      },
+      {
+        "variant": "L0",
+        "model_seed": 0,
+        "scenario_id": 321001,
+        "computed": false,
+        "reason": "L0 has no experiment critic; its value trace is not used as an L3 baseline"
+      },
+      {
+        "variant": "L3",
+        "model_seed": 0,
+        "scenario_id": 321001,
+        "computed": true,
+        "label": "diagnostic_estimate",
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "terminal_bootstrap": "last_value is zero because the recorded final done flag is the episode boundary",
+        "mean_abs_normalized_tag_effect": 0.00015094457068694504,
+        "max_abs_normalized_tag_effect": 0.000337640258780747,
+        "mean_abs_normalized_age_effect": 4.092238314838515e-05,
+        "mean_abs_raw_tag_effect": 0.002801430644467473,
+        "note": "The critic values stay on the frozen full-reward trajectory. This is not the advantage from the 300 training updates."
+      },
+      {
+        "variant": "L3",
+        "model_seed": 1,
+        "scenario_id": 321001,
+        "computed": true,
+        "label": "diagnostic_estimate",
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "terminal_bootstrap": "last_value is zero because the recorded final done flag is the episode boundary",
+        "mean_abs_normalized_tag_effect": 0.00011054541065165021,
+        "max_abs_normalized_tag_effect": 0.0002906351925614503,
+        "mean_abs_normalized_age_effect": 5.567520839906866e-05,
+        "mean_abs_raw_tag_effect": 0.0028928618412464857,
+        "note": "The critic values stay on the frozen full-reward trajectory. This is not the advantage from the 300 training updates."
+      },
+      {
+        "variant": "L3",
+        "model_seed": 2,
+        "scenario_id": 321001,
+        "computed": true,
+        "label": "diagnostic_estimate",
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "terminal_bootstrap": "last_value is zero because the recorded final done flag is the episode boundary",
+        "mean_abs_normalized_tag_effect": 0.0001325228566228278,
+        "max_abs_normalized_tag_effect": 0.00027710056165886066,
+        "mean_abs_normalized_age_effect": 3.88004351506186e-05,
+        "mean_abs_raw_tag_effect": 0.002445691032335162,
+        "note": "The critic values stay on the frozen full-reward trajectory. This is not the advantage from the 300 training updates."
+      }
+    ]
+  },
+  "training_logs": {
+    "seeds": [
+      {
+        "model_seed": 0,
+        "updates": 300,
+        "missing": [],
+        "approx_kl_mean": 0.005050615650373278,
+        "approx_kl_max": 0.042079486534930766,
+        "clip_fraction_mean": 0.06023726861201188,
+        "clip_fraction_max": 0.28884548402857035,
+        "value_loss_mean": 56.86113509217898,
+        "value_loss_max": 126.84804105758667,
+        "explained_variance_mean": 0.3339824797709783,
+        "explained_variance_max": 0.6189562082290649,
+        "action_std_mean": 0.11918427869367103,
+        "action_std_max": 0.12502571241930127,
+        "projection_rate_mean": 0.2754340277777778,
+        "projection_rate_max": 0.4322916666666667,
+        "gradient_norm_preclip_mean": 277.7310530835887,
+        "gradient_norm_preclip_max": 6392.0448623895645,
+        "safety_violation_rate_mean": 0.00020833333333333335,
+        "safety_violation_rate_max": 0.005208333333333333,
+        "mean_bonus_only": true,
+        "step_bonus_tag_recorded": false
+      },
+      {
+        "model_seed": 1,
+        "updates": 300,
+        "missing": [],
+        "approx_kl_mean": 0.005370752997290538,
+        "approx_kl_max": 0.016673576331413642,
+        "clip_fraction_mean": 0.06497757536330027,
+        "clip_fraction_max": 0.18880208325572312,
+        "value_loss_mean": 57.94714981714885,
+        "value_loss_max": 126.87197256088257,
+        "explained_variance_mean": 0.33028383215268453,
+        "explained_variance_max": 0.5834079086780548,
+        "action_std_mean": 0.1153948611409093,
+        "action_std_max": 0.11875727400183678,
+        "projection_rate_mean": 0.27229166666666665,
+        "projection_rate_max": 0.4322916666666667,
+        "gradient_norm_preclip_mean": 235.50515534043313,
+        "gradient_norm_preclip_max": 7138.6126472353935,
+        "safety_violation_rate_mean": 0.0001909722222222222,
+        "safety_violation_rate_max": 0.010416666666666666,
+        "mean_bonus_only": true,
+        "step_bonus_tag_recorded": false
+      },
+      {
+        "model_seed": 2,
+        "updates": 300,
+        "missing": [],
+        "approx_kl_mean": 0.004947957443318488,
+        "approx_kl_max": 0.016028937403461896,
+        "clip_fraction_mean": 0.06111183459409707,
+        "clip_fraction_max": 0.19444444333203137,
+        "value_loss_mean": 58.065055167277656,
+        "value_loss_max": 123.77551746368408,
+        "explained_variance_mean": 0.31920096099376677,
+        "explained_variance_max": 0.5501733720302582,
+        "action_std_mean": 0.1176399368668596,
+        "action_std_max": 0.12172508146613836,
+        "projection_rate_mean": 0.24442708333333332,
+        "projection_rate_max": 0.40625,
+        "gradient_norm_preclip_mean": 212.08170203258595,
+        "gradient_norm_preclip_max": 3138.5644505023956,
+        "safety_violation_rate_mean": 0.00026041666666666666,
+        "safety_violation_rate_max": 0.005208333333333333,
+        "mean_bonus_only": true,
+        "step_bonus_tag_recorded": false
+      }
+    ],
+    "historical_step_bonus_tag": "missing",
+    "large_preclip_gradient_is_not_instability": true
+  },
+  "counterfactual": {
+    "rows": 320,
+    "snapshots": 64,
+    "snapshots_reproduced": 64,
+    "invalid_snapshots": 0,
+    "opportunity_rows": 18,
+    "statement": "在预定短时域筛选中观察到 18 个候选行满足诊断阈值。"
+  },
+  "safety": [
+    {
+      "case": {
+        "variant": "L3",
+        "model_seed": 1,
+        "scenario_id": 321123,
+        "baseline_variant": "L0",
+        "baseline_seed": 0
+      },
+      "matched_saved_rows": true,
+      "current_match": {
+        "matches_saved": true,
+        "bit_gaps": {
+          "payload_bits": 0.0,
+          "served_tagged_bits": 0.0,
+          "served_ordinary_bits": 0.0,
+          "dropped_bits": 0.0,
+          "safety_violations": 0.0,
+          "constraint_failures": 0.0
+        },
+        "path_gap_m": 0.0
+      },
+      "baseline_match": {
+        "matches_saved": true,
+        "bit_gaps": {
+          "payload_bits": 0.0,
+          "served_tagged_bits": 0.0,
+          "served_ordinary_bits": 0.0,
+          "dropped_bits": 0.0,
+          "safety_violations": 0.0,
+          "constraint_failures": 0.0
+        },
+        "path_gap_m": 0.0
+      },
+      "events": [
+        {
+          "variant": "L3",
+          "model_seed": 1,
+          "scenario_id": 321123,
+          "step": 3,
+          "uav_i": 0,
+          "uav_j": 1,
+          "distance_m": 0.9999999988795294,
+          "distance_before_m": 1.5158080566858099,
+          "threshold_m": 1.0,
+          "counter_tolerance_m": 1e-09,
+          "projector_tolerance_m": 1e-06,
+          "predicted_distance_m": 0.9999999988795294,
+          "projection_status": "ok",
+          "projection_intervention": 0.017443669411562276,
+          "constraint_failure": 0,
+          "labels": [
+            "counter_tolerance_1e-9_and_projector_tolerance_1e-6",
+            "policy_changed_positions_at_event",
+            "accepted_projection_then_realized_violation",
+            "predicted_safe_realized_violation",
+            "near_numeric_boundary"
+          ],
+          "event_step": {
+            "step": 3,
+            "uav_i": 0,
+            "uav_j": 1,
+            "distance_m": 0.9999999988795294,
+            "distance_before_m": 1.5158080566858099,
+            "predicted_distance_m": 0.9999999988795294,
+            "threshold_m": 1.0,
+            "projector_threshold_m": 1.0,
+            "projection_status": "ok",
+            "projection_intervention": 0.017443669411562276,
+            "constraint_failure": 0,
+            "safety_violation": 1,
+            "pre_tanh": [
+              0.17844460904598236,
+              -0.08149310201406479,
+              -0.22708217799663544,
+              -0.2688102424144745,
+              -0.11035321652889252,
+              -0.031045494601130486,
+              -0.1182543933391571,
+              -0.03903134539723396,
+              -0.011580206453800201,
+              -0.17934279143810272,
+              0.17844460904598236,
+              -0.08149310201406479
+            ],
+            "desired": [
+              -0.9466450716490624,
+              -0.1557454818142788,
+              -0.9464298994221603,
+              0.32290934560609974,
+              -0.02747685838651298,
+              -0.007758881081776157,
+              -0.02942655805083396,
+              -0.009752884188356795,
+              0.20133120479537253,
+              0.9345626333893832,
+              0.8749378144135477,
+              -0.48423529498503537
+            ],
+            "action": [
+              -0.9322495140376449,
+              -0.15807197143401422,
+              -0.9459999456155553,
+              0.32416678252925074,
+              -0.027476858386512957,
+              -0.007758881081776278,
+              -0.02243085161444146,
+              -0.016150622320680954,
+              0.20133120479537261,
+              0.934562633389383,
+              0.8749378144135475,
+              -0.4842352949850353
+            ]
+          },
+          "previous_step": {
+            "step": 2,
+            "uav_i": 2,
+            "uav_j": 3,
+            "distance_m": 1.5158080566858099,
+            "distance_before_m": 1.5064670124572554,
+            "predicted_distance_m": 1.5158080566858099,
+            "threshold_m": 1.0,
+            "projector_threshold_m": 1.0,
+            "projection_status": "ok",
+            "projection_intervention": 0.06499259401956661,
+            "constraint_failure": 0,
+            "safety_violation": 0,
+            "pre_tanh": [
+              0.17844460904598236,
+              -0.08149310201406479,
+              0.17844460904598236,
+              -0.08149310201406479,
+              -0.10957488417625427,
+              -0.016031118109822273,
+              -0.12253521382808685,
+              -0.027890346944332123,
+              0.17844460904598236,
+              -0.08149310201406479,
+              0.17844460904598236,
+              -0.08149310201406479
+            ],
+            "desired": [
+              0.9895263824256798,
+              0.14435213363004798,
+              0.9176542044554609,
+              -0.3973798699547013,
+              -0.02728460938575156,
+              -0.004007436233977428,
+              -0.030481397785742263,
+              -0.006970779373048292,
+              -0.22262909963674898,
+              -0.9749032177580145,
+              -0.8316415055198431,
+              0.4623729119315745
+            ],
+            "action": [
+              0.9484696356702931,
+              0.13874065527593063,
+              0.8730744034844288,
+              -0.3780557774194813,
+              -0.02728460938575158,
+              -0.00400743623397756,
+              -0.030481397785742267,
+              -0.006970779373048363,
+              -0.22016047180051082,
+              -0.963070263620645,
+              -0.8316415055198431,
+              0.4623729119315747
+            ]
+          }
+        }
+      ],
+      "causal_interpretation": "reported"
+    },
+    {
+      "case": {
+        "variant": "L3",
+        "model_seed": 2,
+        "scenario_id": 321104,
+        "baseline_variant": "L0",
+        "baseline_seed": 0
+      },
+      "matched_saved_rows": true,
+      "current_match": {
+        "matches_saved": true,
+        "bit_gaps": {
+          "payload_bits": 0.0,
+          "served_tagged_bits": 0.0,
+          "served_ordinary_bits": 0.0,
+          "dropped_bits": 0.0,
+          "safety_violations": 0.0,
+          "constraint_failures": 0.0
+        },
+        "path_gap_m": 0.0
+      },
+      "baseline_match": {
+        "matches_saved": true,
+        "bit_gaps": {
+          "payload_bits": 0.0,
+          "served_tagged_bits": 0.0,
+          "served_ordinary_bits": 0.0,
+          "dropped_bits": 0.0,
+          "safety_violations": 0.0,
+          "constraint_failures": 0.0
+        },
+        "path_gap_m": 0.0
+      },
+      "events": [
+        {
+          "variant": "L3",
+          "model_seed": 2,
+          "scenario_id": 321104,
+          "step": 1,
+          "uav_i": 3,
+          "uav_j": 5,
+          "distance_m": 0.9999999989652907,
+          "distance_before_m": 3.490255824766065,
+          "threshold_m": 1.0,
+          "counter_tolerance_m": 1e-09,
+          "projector_tolerance_m": 1e-06,
+          "predicted_distance_m": 0.9999999989652907,
+          "projection_status": "ok",
+          "projection_intervention": 0.006305113788995132,
+          "constraint_failure": 0,
+          "labels": [
+            "counter_tolerance_1e-9_and_projector_tolerance_1e-6",
+            "policy_changed_positions_at_event",
+            "accepted_projection_then_realized_violation",
+            "predicted_safe_realized_violation",
+            "near_numeric_boundary"
+          ],
+          "event_step": {
+            "step": 1,
+            "uav_i": 3,
+            "uav_j": 5,
+            "distance_m": 0.9999999989652907,
+            "distance_before_m": 3.490255824766065,
+            "predicted_distance_m": 0.9999999989652907,
+            "threshold_m": 1.0,
+            "projector_threshold_m": 1.0,
+            "projection_status": "ok",
+            "projection_intervention": 0.006305113788995132,
+            "constraint_failure": 0,
+            "safety_violation": 1,
+            "pre_tanh": [
+              -0.007328728213906288,
+              0.1740930825471878,
+              -0.007328728213906288,
+              0.1740930825471878,
+              -0.036281049251556396,
+              0.06966259330511093,
+              -0.007328728213906288,
+              0.1740930825471878,
+              -0.007328728213906288,
+              0.1740930825471878,
+              -0.05227327346801758,
+              0.07120434939861298
+            ],
+            "desired": [
+              -0.9759498788471997,
+              -0.18295242499509595,
+              -0.9971298068736273,
+              -0.0537748513432266,
+              -0.009066284634520697,
+              0.017387530905980067,
+              0.8665907696603647,
+              0.4990194765131483,
+              0.12443073415103541,
+              0.9922282965117627,
+              -0.013056428323911805,
+              0.017771064046232025
+            ],
+            "action": [
+              -0.9759498788471997,
+              -0.1829524249950958,
+              -0.9971298068736272,
+              -0.05377485134322671,
+              -0.00906628463452076,
+              0.01738753090598005,
+              0.8678021308896999,
+              0.4969099129855395,
+              0.12197907290484897,
+              0.9925326723958631,
+              -0.014388376893816002,
+              0.012676024198548934
+            ]
+          },
+          "previous_step": {
+            "step": 0,
+            "uav_i": 2,
+            "uav_j": 5,
+            "distance_m": 3.490255824766065,
+            "distance_before_m": 1.2212146950957452,
+            "predicted_distance_m": 3.490255824766065,
+            "threshold_m": 1.0,
+            "projector_threshold_m": 1.0,
+            "projection_status": "ok",
+            "projection_intervention": 0.24096779595815662,
+            "constraint_failure": 0,
+            "safety_violation": 0,
+            "pre_tanh": [
+              -0.011767050251364708,
+              0.13048678636550903,
+              -0.013388196006417274,
+              0.12408614158630371,
+              -0.028461648151278496,
+              0.08005186170339584,
+              -0.0678255632519722,
+              0.06675586849451065,
+              -0.07148506492376328,
+              0.05959922820329666,
+              -0.048509642481803894,
+              0.09634487330913544
+            ],
+            "desired": [
+              0.9765489861612066,
+              0.2152953265343205,
+              0.9950129974236962,
+              0.08811376900615993,
+              -0.0071134913437694266,
+              0.019970325024321695,
+              -0.8833885687567533,
+              -0.4686412664180301,
+              -0.12710939373383434,
+              -0.9791300798842799,
+              -0.012117906884046247,
+              0.024011968553576155
+            ],
+            "action": [
+              0.9363102185785359,
+              0.20595803470488636,
+              0.9194142587789738,
+              0.08075640002014918,
+              -0.007113491343769434,
+              0.0199703250243217,
+              -0.7417371415202383,
+              -0.394137619749938,
+              -0.10632017452239785,
+              -0.8224720981209,
+              -0.012117906884046258,
+              0.024011968553576034
+            ]
+          }
+        }
+      ],
+      "causal_interpretation": "reported"
+    }
+  ],
+  "tests": {
+    "related": {
+      "command": "py -3 -m unittest tests.test_priority_tag_signal_audit tests.test_priority_tag_direct_service_reward tests.test_priority_tag_prototype tests.test_priority_tag_eval_context tests.test_priority_tag_reward_attribution tests.test_priority_tag_attribution_full_replay",
+      "exit_code": 0,
+      "failures": [],
+      "log": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\phase6i_priority_tag_signal_audit\\related_tests.log"
+    },
+    "repository_suite": {
+      "command": "py -3 -m unittest discover -s tests",
+      "exit_code": 1,
+      "failures": [
+        "ERROR: test_round22_original_lock_and_narrow_amendment_verify (test_governance_state_sync.GovernanceStateSyncTests.test_round22_original_lock_and_narrow_amendment_verify)",
+        "ERROR: test_15_no_nan_inf_and_packed_config (test_htw_phase11.Phase11Tests.test_15_no_nan_inf_and_packed_config)",
+        "ERROR: test_unnamed_limits_remain_explicit (test_phase6iae_fault_handling.Phase6IAEContractTests.test_unnamed_limits_remain_explicit)",
+        "ERROR: test_graph_batch_excludes_labels_and_keeps_checkpoint_widths (test_phase6ic_hgnn_smoke.Phase6ICDatasetTests.test_graph_batch_excludes_labels_and_keeps_checkpoint_widths)",
+        "ERROR: test_round20_registered_hashes_unchanged (test_round21_hgnn_task_waypoint.Round21HGNNTests.test_round20_registered_hashes_unchanged)",
+        "ERROR: test_round21_amendment_overlay_is_narrow_and_exact (test_round22_governance.Round22GovernanceTests.test_round21_amendment_overlay_is_narrow_and_exact)",
+        "ERROR: test_round22_governance_state_sync_amendment_is_narrow_and_exact (test_round22_governance.Round22GovernanceTests.test_round22_governance_state_sync_amendment_is_narrow_and_exact)",
+        "ERROR: test_round22_frozen_lock_amendment_predictor_and_checkpoints_verify (test_round23_audit.Round23AuditTests.test_round22_frozen_lock_amendment_predictor_and_checkpoints_verify)",
+        "ERROR: test_round23_lock_hashes_its_sources_outputs_figures_and_report (test_round23_audit.Round23AuditTests.test_round23_lock_hashes_its_sources_outputs_figures_and_report)",
+        "ERROR: test_round24_lock_and_frozen_preconditions (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_round24_lock_and_frozen_preconditions)",
+        "ERROR: test_round25_lock_and_frozen_preconditions (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_round25_lock_and_frozen_preconditions)",
+        "ERROR: test_round26_lock_and_frozen_preconditions (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_round26_lock_and_frozen_preconditions)",
+        "ERROR: test_01_round32_original_lock_sha_is_unchanged (test_round33_governance_compatibility.Round33GovernanceCompatibilityTests.test_01_round32_original_lock_sha_is_unchanged)",
+        "ERROR: test_02_successor_amendment_verifies (test_round34_governance_lifecycle.Round34GovernanceLifecycleTests.test_02_successor_amendment_verifies)",
+        "ERROR: test_round34_lock_rehashes_every_registered_artifact (test_round34_lock.Round34LockTests.test_round34_lock_rehashes_every_registered_artifact)",
+        "FAIL: test_all_required_outputs_figures_and_completion_records_exist (test_round23_audit.Round23AuditTests.test_all_required_outputs_figures_and_completion_records_exist)",
+        "FAILED (failures=1, errors=15)"
+      ],
+      "log": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\phase6i_priority_tag_signal_audit\\repository_tests.log"
+    }
+  },
+  "runtime": {
+    "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.1",
+    "torch": "2.12.0+cpu",
+    "cuda": false,
+    "elapsed_seconds": 344.3452973999956,
+    "assignment_seed_offset": 7000000,
+    "deployment_verified": false
+  },
+  "source_file_sha256": {
+    "__init__.py": "b6b0d2e40b9fa18e747c8d8e99c8731d9c961fd136bd7f1930a51a7dd91d7edd",
+    "counterfactual.py": "35e9424ad56e461fe10bb7134e99f83aabd36a48afd83a52ce8c5b7a5999f764",
+    "episode.py": "1ebb22ee20d6fffa35205d0a5075f8781d5d67b0730f5b3f9f2afae836496840",
+    "integrity.py": "e5138d131daed6ce2d7ee55bc7a66f5e6468229a9f60c4764c3107b6e7f026cb",
+    "metrics.py": "ca3b9f0dedb0d23bbbfdbb34564d159d9a4c6170e722eae8f214e37755bd100e",
+    "protocol.py": "d51d5db12b8f368101c5e8ce495e4737a187fa3051fa4c17fec0557149f36558",
+    "report.py": "fdded55459354bc3276fd52f4fa6f0cce23c4266ef589ec8dd983445473e1194",
+    "run.py": "97fad0ae7cc1be1d449feda5cd9d994063fb4e3fc826cdf5402c7c92ac9a3c0e",
+    "safety.py": "341cd54d3e4c8cd7630db64a3d96650ef4d33a647cfe6ef1f1a64070544bc10d",
+    "tables.py": "8445f27d73a255da98e7a1c163a9daaef4a311d5500eb2e68468a55ace1a811a",
+    "trace.py": "256cc151c5045e4d524b07c540727a90f7ec1e594bd94d5760ff997ee4c4c146"
+  },
+  "evidence_gaps": [
+    "E10 training checkpoint has no implementation digest; current source is not the training-time proof.",
+    "Historical training logs do not record per-step bonus_tag.",
+    "A four-step residual screen does not prove long-horizon controllability.",
+    "The synthetic generation rate is not the actor visibility rate.",
+    "L0 has no tag input, so it is an interface control rather than a tag-sensitivity baseline.",
+    "policy_active_mask is identically one in ExperimentWorker.",
+    "The repository test suite reported failures. They are listed and were not deleted."
+  ],
+  "recommendation": "若继续做实验，应单独预先声明，并以本次未回答的问题为对照，而不是直接调大系数。短时域筛选看到了局部机会。这只说明这些冻结动作附近存在诊断意义上的差异，不能当作新策略已经更好。两处安全事件只有在重放匹配后才有证据标签；标签可以同时成立，不能收成单一原因。历史逐步 tag bonus 和训练当时的实现字节仍然缺失。"
+}

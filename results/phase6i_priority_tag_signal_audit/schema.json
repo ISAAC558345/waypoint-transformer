@@ -1,0 +1,72 @@
+{
+  "schema_version": "priority_tag_signal_audit_v1",
+  "written_before_trajectories": true,
+  "diagnostic_scenarios": [
+    321000,
+    321001
+  ],
+  "safety_cases": [
+    {
+      "variant": "L3",
+      "model_seed": 1,
+      "scenario_id": 321123,
+      "baseline_variant": "L0",
+      "baseline_seed": 0
+    },
+    {
+      "variant": "L3",
+      "model_seed": 2,
+      "scenario_id": 321104,
+      "baseline_variant": "L0",
+      "baseline_seed": 0
+    }
+  ],
+  "snapshot_indices_for_horizon_48": [
+    0,
+    6,
+    12,
+    18,
+    24,
+    30,
+    36,
+    42
+  ],
+  "counterfactual_steps": 4,
+  "candidate_offsets": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.1,
+      0.0
+    ],
+    [
+      -0.1,
+      0.0
+    ],
+    [
+      0.0,
+      0.1
+    ],
+    [
+      0.0,
+      -0.1
+    ]
+  ],
+  "perturbation": 0.1,
+  "opportunity_tag_bits": 1.0,
+  "opportunity_payload_bits": 1.0,
+  "counter_distance_tolerance_m": 1e-09,
+  "projector_distance_tolerance_m": 1e-06,
+  "bit_tolerance": 1.0,
+  "path_tolerance_m": 1e-09,
+  "assignment_seed": "7000000 + scenario_id",
+  "training_assignment_seed_not_used": "321000000 + model_seed * 10000 + env_index",
+  "historical_process_seed_role": "historical_inherited_process_context",
+  "canonical_explicit_eval_seed": null,
+  "policy_active_mask": "ExperimentWorker writes ones; it is not a learned gate",
+  "l0_tag_input": "not fabricated",
+  "gae_label": "diagnostic_estimate",
+  "does_not_train": true
+}

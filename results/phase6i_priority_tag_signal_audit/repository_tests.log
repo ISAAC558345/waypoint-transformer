@@ -1,0 +1,306 @@
+{"active_k": 6, "candidate_config": {"builder": "wt.benchmark_v2.phase6e.generators.build_pools", "candidate_count": 13327, "formal_planner_k_unchanged": 5, "generator": "G1_RATE", "hold": 15, "idle": "enumerate_legal allows idle and rejects duplicate buoys", "k": 6, "order": "jobs._score_current sorted unique _key", "tie_break": "np.argmax of normalized G1_RATE sums on the sorted keys"}, "candidate_config_sha256": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63", "epoch6_sha256": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde", "high_level_policy": "scheme_c", "hold": 15, "low_level": "frozen MAPPO-V2 deterministic mean", "mappo_checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\benchmark_v2\\phase6g_lowlevel_mappo\\checkpoints\\phase6g_seed0.pt", "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e", "scheme_c_checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\phase6if_ranking_loss\\runs\\c\\epoch_001.pt", "scheme_c_sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864"}
+Normalization constant: 27000.0
+Normalization constant: 27000.0
+Normalization constant: 27000.0
+Normalization constant: 27000.0
+Target: [2.25 0.9 ] Average: 6.0
+Normalization constant: 1.0
+Normalization constant: 1.0
+Normalization constant: 1.0
+Normalization constant: 1.0
+Normalization constant: 1.0
+Normalization constant: 1.0
+{"active_k": 6, "candidate_config": {"builder": "wt.benchmark_v2.phase6e.generators.build_pools", "candidate_count": 13327, "formal_planner_k_unchanged": 5, "generator": "G1_RATE", "hold": 15, "idle": "enumerate_legal allows idle and rejects duplicate buoys", "k": 6, "order": "jobs._score_current sorted unique _key", "tie_break": "np.argmax of normalized G1_RATE sums on the sorted keys"}, "candidate_config_sha256": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63", "epoch6_sha256": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde", "high_level_policy": "scheme_c", "hold": 15, "low_level": "frozen MAPPO-V2 deterministic mean", "mappo_checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\benchmark_v2\\phase6g_lowlevel_mappo\\checkpoints\\phase6g_seed0.pt", "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e", "scheme_c_checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\phase6if_ranking_loss\\runs\\c\\epoch_001.pt", "scheme_c_sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864"}
+{"active_k": 6, "candidate_config": {"builder": "wt.benchmark_v2.phase6e.generators.build_pools", "candidate_count": 13327, "formal_planner_k_unchanged": 5, "generator": "G1_RATE", "hold": 15, "idle": "enumerate_legal allows idle and rejects duplicate buoys", "k": 6, "order": "jobs._score_current sorted unique _key", "tie_break": "np.argmax of normalized G1_RATE sums on the sorted keys"}, "candidate_config_sha256": "3535008ed197f28ed3620a25493a9cc17fbb1fca9742d49a3d58957883319a63", "epoch6_sha256": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde", "high_level_policy": "scheme_c", "hold": 15, "low_level": "frozen MAPPO-V2 deterministic mean", "mappo_checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\benchmark_v2\\phase6g_lowlevel_mappo\\checkpoints\\phase6g_seed0.pt", "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e", "scheme_c_checkpoint": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\phase6if_ranking_loss\\runs\\c\\epoch_001.pt", "scheme_c_sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864"}
+L1 seed 0 update 1/1 reward=1.3270 idle=0.000
+L1 seed 0 finished 1 updates in 0.5s
+
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+..........E..........................................................E........................................................................................................................................................................................................................................................................................................................E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_phase5zh_ranking_response_distillation.py:49: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:839.)
+  self.assertEqual(float(loss), 0.0)
+............................................................................................................................E.........E..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................E..........E.E....................................F...E.E.................E......E......E....................................................................................................................E.........................................................................E........E.................................................................................
+Sampling trajectory rewards:   0%|          | 0/1 [00:00<?, ?it/s]
+Sampling trajectory rewards: 100%|鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅| 1/1 [00:00<00:00, 1846.90it/s]
+.........................................................................................................................
+======================================================================
+ERROR: test_round22_original_lock_and_narrow_amendment_verify (test_governance_state_sync.GovernanceStateSyncTests.test_round22_original_lock_and_narrow_amendment_verify)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_governance_state_sync.py", line 23, in test_round22_original_lock_and_narrow_amendment_verify
+    result = verify_round22_governance_state_sync_amendment()
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 512, in verify_round22_governance_state_sync_amendment
+    mismatches = _locked_artifact_mismatches(lock)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 460, in _locked_artifact_mismatches
+    checks.append((source, approved_lifecycle_overlay_sha256(relative, digest)))
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 409, in approved_lifecycle_overlay_sha256
+    verify_round32_round33_lifecycle()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 176, in verify_round32_round33_lifecycle
+    r32_evidence = verify_round32_locked_scientific_artifacts(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 118, in verify_round32_locked_scientific_artifacts
+    raise RuntimeError(f"Round-32 locked scientific evidence was modified: {mismatches[:3]}")
+RuntimeError: Round-32 locked scientific evidence was modified: [{'path': 'E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/round_32/report/round32_completion_report.md', 'actual': 'MISSING', 'expected': '88026102F4DDF2309936FBFE3974DA1CE226DA5B10F3F7101CC0E2D5A4EA4831'}]
+
+======================================================================
+ERROR: test_15_no_nan_inf_and_packed_config (test_htw_phase11.Phase11Tests.test_15_no_nan_inf_and_packed_config)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_htw_phase11.py", line 158, in test_15_no_nan_inf_and_packed_config
+    freeze = json.loads((ROOT / "FINAL_CODE_FREEZE.json").read_text(encoding="utf-8"))
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\閮戝ぉ鎴怽AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 787, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\閮戝ぉ鎴怽AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\FINAL_CODE_FREEZE.json'
+
+======================================================================
+ERROR: test_unnamed_limits_remain_explicit (test_phase6iae_fault_handling.Phase6IAEContractTests.test_unnamed_limits_remain_explicit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_phase6iae_fault_handling.py", line 49, in test_unnamed_limits_remain_explicit
+    document = load_requirements()
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\benchmark_v2\phase6iae_deployment_contract\protocol.py", line 39, in load_requirements
+    return json.loads(file.read_text(encoding="utf-8"))
+                      ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\閮戝ぉ鎴怽AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 787, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\閮戝ぉ鎴怽AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\phase6iae_deployment_contract\\deployment_requirements.json'
+
+======================================================================
+ERROR: test_graph_batch_excludes_labels_and_keeps_checkpoint_widths (test_phase6ic_hgnn_smoke.Phase6ICDatasetTests.test_graph_batch_excludes_labels_and_keeps_checkpoint_widths)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_phase6ic_hgnn_smoke.py", line 21, in test_graph_batch_excludes_labels_and_keeps_checkpoint_widths
+    sample = load_decision(322000, 0)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\benchmark_v2\phase6ic_hgnn_smoke\dataset.py", line 48, in load_decision
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\閮戝ぉ鎴怽AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 787, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\閮戝ぉ鎴怽AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\src\\wt\\benchmark_v2\\phase6ib_highlevel_dataset\\revision_hgnn_input\\dataset\\train\\scenario_322000\\t000_manifest.json'
+
+======================================================================
+ERROR: test_round20_registered_hashes_unchanged (test_round21_hgnn_task_waypoint.Round21HGNNTests.test_round20_registered_hashes_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round21_hgnn_task_waypoint.py", line 51, in test_round20_registered_hashes_unchanged
+    verify_round32_round33_lifecycle()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 176, in verify_round32_round33_lifecycle
+    r32_evidence = verify_round32_locked_scientific_artifacts(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 118, in verify_round32_locked_scientific_artifacts
+    raise RuntimeError(f"Round-32 locked scientific evidence was modified: {mismatches[:3]}")
+RuntimeError: Round-32 locked scientific evidence was modified: [{'path': 'E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/round_32/report/round32_completion_report.md', 'actual': 'MISSING', 'expected': '88026102F4DDF2309936FBFE3974DA1CE226DA5B10F3F7101CC0E2D5A4EA4831'}]
+
+======================================================================
+ERROR: test_round21_amendment_overlay_is_narrow_and_exact (test_round22_governance.Round22GovernanceTests.test_round21_amendment_overlay_is_narrow_and_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round22_governance.py", line 29, in test_round21_amendment_overlay_is_narrow_and_exact
+    result = verify_round21_amendment_overlay()
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\round22\governance.py", line 48, in verify_round21_amendment_overlay
+    if sha256(ROOT / TEST_PATH) != approved_lifecycle_overlay_sha256(TEST_PATH.as_posix(), amendment["amended_test_sha256"]):
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 409, in approved_lifecycle_overlay_sha256
+    verify_round32_round33_lifecycle()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 176, in verify_round32_round33_lifecycle
+    r32_evidence = verify_round32_locked_scientific_artifacts(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 118, in verify_round32_locked_scientific_artifacts
+    raise RuntimeError(f"Round-32 locked scientific evidence was modified: {mismatches[:3]}")
+RuntimeError: Round-32 locked scientific evidence was modified: [{'path': 'E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/round_32/report/round32_completion_report.md', 'actual': 'MISSING', 'expected': '88026102F4DDF2309936FBFE3974DA1CE226DA5B10F3F7101CC0E2D5A4EA4831'}]
+
+======================================================================
+ERROR: test_round22_governance_state_sync_amendment_is_narrow_and_exact (test_round22_governance.Round22GovernanceTests.test_round22_governance_state_sync_amendment_is_narrow_and_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round22_governance.py", line 68, in test_round22_governance_state_sync_amendment_is_narrow_and_exact
+    result = verify_round22_governance_state_sync_amendment()
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 512, in verify_round22_governance_state_sync_amendment
+    mismatches = _locked_artifact_mismatches(lock)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 460, in _locked_artifact_mismatches
+    checks.append((source, approved_lifecycle_overlay_sha256(relative, digest)))
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 409, in approved_lifecycle_overlay_sha256
+    verify_round32_round33_lifecycle()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 176, in verify_round32_round33_lifecycle
+    r32_evidence = verify_round32_locked_scientific_artifacts(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 118, in verify_round32_locked_scientific_artifacts
+    raise RuntimeError(f"Round-32 locked scientific evidence was modified: {mismatches[:3]}")
+RuntimeError: Round-32 locked scientific evidence was modified: [{'path': 'E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/round_32/report/round32_completion_report.md', 'actual': 'MISSING', 'expected': '88026102F4DDF2309936FBFE3974DA1CE226DA5B10F3F7101CC0E2D5A4EA4831'}]
+
+======================================================================
+ERROR: test_round22_frozen_lock_amendment_predictor_and_checkpoints_verify (test_round23_audit.Round23AuditTests.test_round22_frozen_lock_amendment_predictor_and_checkpoints_verify)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round23_audit.py", line 37, in test_round22_frozen_lock_amendment_predictor_and_checkpoints_verify
+    audit = verify_frozen_state()
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\round23\audit.py", line 125, in verify_frozen_state
+    governance = verify_round22_governance_state_sync_amendment()
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 512, in verify_round22_governance_state_sync_amendment
+    mismatches = _locked_artifact_mismatches(lock)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 460, in _locked_artifact_mismatches
+    checks.append((source, approved_lifecycle_overlay_sha256(relative, digest)))
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 409, in approved_lifecycle_overlay_sha256
+    verify_round32_round33_lifecycle()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 176, in verify_round32_round33_lifecycle
+    r32_evidence = verify_round32_locked_scientific_artifacts(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 118, in verify_round32_locked_scientific_artifacts
+    raise RuntimeError(f"Round-32 locked scientific evidence was modified: {mismatches[:3]}")
+RuntimeError: Round-32 locked scientific evidence was modified: [{'path': 'E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/round_32/report/round32_completion_report.md', 'actual': 'MISSING', 'expected': '88026102F4DDF2309936FBFE3974DA1CE226DA5B10F3F7101CC0E2D5A4EA4831'}]
+
+======================================================================
+ERROR: test_round23_lock_hashes_its_sources_outputs_figures_and_report (test_round23_audit.Round23AuditTests.test_round23_lock_hashes_its_sources_outputs_figures_and_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round23_audit.py", line 132, in test_round23_lock_hashes_its_sources_outputs_figures_and_report
+    self.assertEqual(sha256(ROOT / lock["report"]), lock["report_sha256"])
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\round23\audit.py", line 39, in sha256
+    return hashlib.sha256(path.read_bytes()).hexdigest().upper()
+                          ~~~~~~~~~~~~~~~^^
+  File "C:\Users\閮戝ぉ鎴怽AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 777, in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\閮戝ぉ鎴怽AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\round_23\\report\\round23_completion_report.md'
+
+======================================================================
+ERROR: test_round24_lock_and_frozen_preconditions (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_round24_lock_and_frozen_preconditions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round25_supervision_ambiguity.py", line 51, in test_round24_lock_and_frozen_preconditions
+    result = verify_frozen_state()
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\round25\audit.py", line 108, in verify_frozen_state
+    or _digest(ROOT / "src" / "wt" / "governance_state_sync.py") != approved_lifecycle_overlay_sha256("src/wt/governance_state_sync.py", governance.get("amended_sha256", ""))
+                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 409, in approved_lifecycle_overlay_sha256
+    verify_round32_round33_lifecycle()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 176, in verify_round32_round33_lifecycle
+    r32_evidence = verify_round32_locked_scientific_artifacts(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 118, in verify_round32_locked_scientific_artifacts
+    raise RuntimeError(f"Round-32 locked scientific evidence was modified: {mismatches[:3]}")
+RuntimeError: Round-32 locked scientific evidence was modified: [{'path': 'E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/round_32/report/round32_completion_report.md', 'actual': 'MISSING', 'expected': '88026102F4DDF2309936FBFE3974DA1CE226DA5B10F3F7101CC0E2D5A4EA4831'}]
+
+======================================================================
+ERROR: test_round25_lock_and_frozen_preconditions (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_round25_lock_and_frozen_preconditions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round26_action_supervision_ambiguity.py", line 54, in test_round25_lock_and_frozen_preconditions
+    result = verify_frozen_state()
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\round26\audit.py", line 98, in verify_frozen_state
+    or _digest(ROOT / "src" / "wt" / "governance_state_sync.py") != approved_lifecycle_overlay_sha256("src/wt/governance_state_sync.py", affected.get("src/wt/governance_state_sync.py", {}).get("amended_sha256", ""))
+                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 409, in approved_lifecycle_overlay_sha256
+    verify_round32_round33_lifecycle()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 176, in verify_round32_round33_lifecycle
+    r32_evidence = verify_round32_locked_scientific_artifacts(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 118, in verify_round32_locked_scientific_artifacts
+    raise RuntimeError(f"Round-32 locked scientific evidence was modified: {mismatches[:3]}")
+RuntimeError: Round-32 locked scientific evidence was modified: [{'path': 'E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/round_32/report/round32_completion_report.md', 'actual': 'MISSING', 'expected': '88026102F4DDF2309936FBFE3974DA1CE226DA5B10F3F7101CC0E2D5A4EA4831'}]
+
+======================================================================
+ERROR: test_round26_lock_and_frozen_preconditions (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_round26_lock_and_frozen_preconditions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round27_conditional_planner_utility.py", line 48, in test_round26_lock_and_frozen_preconditions
+    result = verify_frozen_state()
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\round27\audit.py", line 104, in verify_frozen_state
+    if any(_digest(path) != approved_lifecycle_overlay_sha256(name, affected.get(name, {}).get("amended_sha256", "")) for name, path in expected.items()):
+       ^^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\round27\audit.py", line 104, in <genexpr>
+    if any(_digest(path) != approved_lifecycle_overlay_sha256(name, affected.get(name, {}).get("amended_sha256", "")) for name, path in expected.items()):
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 409, in approved_lifecycle_overlay_sha256
+    verify_round32_round33_lifecycle()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 176, in verify_round32_round33_lifecycle
+    r32_evidence = verify_round32_locked_scientific_artifacts(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 118, in verify_round32_locked_scientific_artifacts
+    raise RuntimeError(f"Round-32 locked scientific evidence was modified: {mismatches[:3]}")
+RuntimeError: Round-32 locked scientific evidence was modified: [{'path': 'E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/round_32/report/round32_completion_report.md', 'actual': 'MISSING', 'expected': '88026102F4DDF2309936FBFE3974DA1CE226DA5B10F3F7101CC0E2D5A4EA4831'}]
+
+======================================================================
+ERROR: test_01_round32_original_lock_sha_is_unchanged (test_round33_governance_compatibility.Round33GovernanceCompatibilityTests.test_01_round32_original_lock_sha_is_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round33_governance_compatibility.py", line 34, in test_01_round32_original_lock_sha_is_unchanged
+    result = verify_round32_round33_lifecycle()
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 176, in verify_round32_round33_lifecycle
+    r32_evidence = verify_round32_locked_scientific_artifacts(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 118, in verify_round32_locked_scientific_artifacts
+    raise RuntimeError(f"Round-32 locked scientific evidence was modified: {mismatches[:3]}")
+RuntimeError: Round-32 locked scientific evidence was modified: [{'path': 'E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/round_32/report/round32_completion_report.md', 'actual': 'MISSING', 'expected': '88026102F4DDF2309936FBFE3974DA1CE226DA5B10F3F7101CC0E2D5A4EA4831'}]
+
+======================================================================
+ERROR: test_02_successor_amendment_verifies (test_round34_governance_lifecycle.Round34GovernanceLifecycleTests.test_02_successor_amendment_verifies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round34_governance_lifecycle.py", line 22, in test_02_successor_amendment_verifies
+    result = verify_round35_round36_lifecycle()
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 357, in verify_round35_round36_lifecycle
+    prior = verify_round34_round35_lifecycle(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 294, in verify_round34_round35_lifecycle
+    prior = verify_round33_round34_lifecycle(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 234, in verify_round33_round34_lifecycle
+    prior = verify_round32_round33_lifecycle(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 176, in verify_round32_round33_lifecycle
+    r32_evidence = verify_round32_locked_scientific_artifacts(root)
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\src\wt\governance_state_sync.py", line 118, in verify_round32_locked_scientific_artifacts
+    raise RuntimeError(f"Round-32 locked scientific evidence was modified: {mismatches[:3]}")
+RuntimeError: Round-32 locked scientific evidence was modified: [{'path': 'E:/srdp/NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference/waypoint_transformer_official/round_32/report/round32_completion_report.md', 'actual': 'MISSING', 'expected': '88026102F4DDF2309936FBFE3974DA1CE226DA5B10F3F7101CC0E2D5A4EA4831'}]
+
+======================================================================
+ERROR: test_round34_lock_rehashes_every_registered_artifact (test_round34_lock.Round34LockTests.test_round34_lock_rehashes_every_registered_artifact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round34_lock.py", line 41, in test_round34_lock_rehashes_every_registered_artifact
+    self.assertEqual(sha256(ROOT / relative), approved_hash(relative, expected), relative)
+                     ~~~~~~^^^^^^^^^^^^^^^^^
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round34_lock.py", line 15, in sha256
+    return hashlib.sha256(path.read_bytes()).hexdigest().upper()
+                          ~~~~~~~~~~~~~~~^^
+  File "C:\Users\閮戝ぉ鎴怽AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 777, in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\閮戝ぉ鎴怽AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\PLANS.md'
+
+======================================================================
+FAIL: test_all_required_outputs_figures_and_completion_records_exist (test_round23_audit.Round23AuditTests.test_all_required_outputs_figures_and_completion_records_exist)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\srdp\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\waypoint_transformer_official\tests\test_round23_audit.py", line 70, in test_all_required_outputs_figures_and_completion_records_exist
+    self.assertTrue((ROOT / "round_23" / "report" / "round23_completion_report.md").is_file())
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1890 tests in 251.738s
+
+FAILED (failures=1, errors=15)

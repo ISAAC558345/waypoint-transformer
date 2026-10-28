@@ -1,0 +1,9 @@
+[
+  "E10 training checkpoint has no implementation digest; current source is not the training-time proof.",
+  "Historical training logs do not record per-step bonus_tag.",
+  "A four-step residual screen does not prove long-horizon controllability.",
+  "The synthetic generation rate is not the actor visibility rate.",
+  "L0 has no tag input, so it is an interface control rather than a tag-sensitivity baseline.",
+  "policy_active_mask is identically one in ExperimentWorker.",
+  "The repository test suite reported failures. They are listed and were not deleted."
+]
