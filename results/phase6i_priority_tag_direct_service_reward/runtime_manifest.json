@@ -1,0 +1,18 @@
+{
+  "python": "3.14.2",
+  "numpy": "2.4.1",
+  "torch": "2.12.0+cpu",
+  "cuda": false,
+  "torch_num_threads": 1,
+  "deterministic_algorithms": true,
+  "process_rng_seed": 2,
+  "process_rng_role": "historical_inherited_process_seed",
+  "canonical_explicit_eval_seed": null,
+  "model_seeds": [
+    0,
+    1,
+    2
+  ],
+  "env_reset_seed": "scenario_id",
+  "assignment_rng_seed": "7000000 + scenario_id"
+}

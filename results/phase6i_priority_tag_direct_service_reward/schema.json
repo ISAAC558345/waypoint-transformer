@@ -1,0 +1,23 @@
+{
+  "schema_version": "separate_age_direct_tag_service_v1",
+  "reward_schema": "separate_age_and_direct_tag_service_v1",
+  "observation_schema": "synthetic_priority_observation_v1",
+  "synthetic_tag": true,
+  "tag_seed": 606,
+  "tag_rate": 0.25,
+  "lambda_age": 0.0005,
+  "rho_age": 0.00025,
+  "lambda_tag": 0.001,
+  "rho_tag": 0.00075,
+  "instruction_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b",
+  "attribution_commit": "88c0e0296d6f64998a856af47f9c55dc6667c04b",
+  "sinr_interference_rule": "paired SINR mean >= 0 and paired interference mean <= 0 versus L0",
+  "safety_rule": "any seed with a positive paired safety or constraint sum fails the stage",
+  "scenario_concentration_rule": "leave-one-out tagged mean > 0 on every subset and mean > 0 after removing the two largest tagged gains",
+  "payload_floor": "paired payload CI low >= -0.5 percent of that seed's L0 mean payload",
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 0,
+  "historical_process_seed": 2,
+  "historical_process_seed_role": "historical_inherited_process_seed",
+  "canonical_explicit_eval_seed": null
+}

@@ -1,0 +1,54 @@
+{
+  "l3": [
+    {
+      "path": "results/phase6i_priority_tag_direct_service_reward/checkpoints/l3_seed0.pt",
+      "sha256": "d47290cc750b6397bdab6e1ce6856139b5da461166ea0e946ebe7026f27d7257",
+      "log_path": "results/phase6i_priority_tag_direct_service_reward/training_logs/l3_seed0.json",
+      "log_sha256": "f0dab07e305a8f5034a5d560995ccec8e5014849cf673f6ae35fae28761fb25a",
+      "variant": "L3",
+      "model_seed": 0,
+      "updates": 300,
+      "elapsed_seconds": 756.7982873000001,
+      "final_policy_loss": -0.00472684130363632,
+      "final_value_loss": 48.14972734451294,
+      "final_gradient_norm": 79.28348070383072,
+      "mean_safety_violation_rate": 0.00020833333333333335,
+      "mean_constraint_failure_rate": 0.0,
+      "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b"
+    },
+    {
+      "path": "results/phase6i_priority_tag_direct_service_reward/checkpoints/l3_seed1.pt",
+      "sha256": "6072f7a5de388e27494dcbda3ba59ce2ed5c5575b1b5e52964730f88af641d80",
+      "log_path": "results/phase6i_priority_tag_direct_service_reward/training_logs/l3_seed1.json",
+      "log_sha256": "fdc29d9ddc1969085faaa2c5912ee8cb1554e0df937ab845a22ae46f82527ebe",
+      "variant": "L3",
+      "model_seed": 1,
+      "updates": 300,
+      "elapsed_seconds": 730.586717299986,
+      "final_policy_loss": -0.0034700336400419474,
+      "final_value_loss": 60.03302478790283,
+      "final_gradient_norm": 95.91873848438263,
+      "mean_safety_violation_rate": 0.0001909722222222222,
+      "mean_constraint_failure_rate": 0.0,
+      "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b"
+    },
+    {
+      "path": "results/phase6i_priority_tag_direct_service_reward/checkpoints/l3_seed2.pt",
+      "sha256": "d47b371462c31cef2b216f8851cef0de567ccc197df97c76fbea4858fd64258a",
+      "log_path": "results/phase6i_priority_tag_direct_service_reward/training_logs/l3_seed2.json",
+      "log_sha256": "74cc0d39768cc2aa1e07a1ad73342272c272c0946eee1eb31de58676170e2a52",
+      "variant": "L3",
+      "model_seed": 2,
+      "updates": 300,
+      "elapsed_seconds": 643.2864494000096,
+      "final_policy_loss": -0.0028799072024412453,
+      "final_value_loss": 51.5529283285141,
+      "final_gradient_norm": 657.7532051801682,
+      "mean_safety_violation_rate": 0.00026041666666666666,
+      "mean_constraint_failure_rate": 0.0,
+      "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b"
+    }
+  ],
+  "formal_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "legacy_sha256": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14"
+}

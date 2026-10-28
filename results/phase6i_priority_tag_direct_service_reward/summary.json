@@ -1,0 +1,410 @@
+{
+  "smoke": {
+    "passed": true,
+    "problems": [],
+    "scenarios": [
+      {
+        "scenario_id": 321000,
+        "steps": 16,
+        "served_bits": 15000000.0,
+        "served_tagged_bits": 0.0,
+        "max_bonus": 0.00015625
+      },
+      {
+        "scenario_id": 321001,
+        "steps": 16,
+        "served_bits": 11408434.849942528,
+        "served_tagged_bits": 0.0,
+        "max_bonus": 0.0002200679453035199
+      }
+    ]
+  },
+  "preflight": {
+    "scenario_id": 321101,
+    "matches_saved": true,
+    "max_bit_gap": 0.0,
+    "path_gap_m": 0.0
+  },
+  "training": [
+    {
+      "path": "results/phase6i_priority_tag_direct_service_reward/checkpoints/l3_seed0.pt",
+      "sha256": "d47290cc750b6397bdab6e1ce6856139b5da461166ea0e946ebe7026f27d7257",
+      "log_path": "results/phase6i_priority_tag_direct_service_reward/training_logs/l3_seed0.json",
+      "log_sha256": "f0dab07e305a8f5034a5d560995ccec8e5014849cf673f6ae35fae28761fb25a",
+      "variant": "L3",
+      "model_seed": 0,
+      "updates": 300,
+      "elapsed_seconds": 756.7982873000001,
+      "final_policy_loss": -0.00472684130363632,
+      "final_value_loss": 48.14972734451294,
+      "final_gradient_norm": 79.28348070383072,
+      "mean_safety_violation_rate": 0.00020833333333333335,
+      "mean_constraint_failure_rate": 0.0,
+      "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b"
+    },
+    {
+      "path": "results/phase6i_priority_tag_direct_service_reward/checkpoints/l3_seed1.pt",
+      "sha256": "6072f7a5de388e27494dcbda3ba59ce2ed5c5575b1b5e52964730f88af641d80",
+      "log_path": "results/phase6i_priority_tag_direct_service_reward/training_logs/l3_seed1.json",
+      "log_sha256": "fdc29d9ddc1969085faaa2c5912ee8cb1554e0df937ab845a22ae46f82527ebe",
+      "variant": "L3",
+      "model_seed": 1,
+      "updates": 300,
+      "elapsed_seconds": 730.586717299986,
+      "final_policy_loss": -0.0034700336400419474,
+      "final_value_loss": 60.03302478790283,
+      "final_gradient_norm": 95.91873848438263,
+      "mean_safety_violation_rate": 0.0001909722222222222,
+      "mean_constraint_failure_rate": 0.0,
+      "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b"
+    },
+    {
+      "path": "results/phase6i_priority_tag_direct_service_reward/checkpoints/l3_seed2.pt",
+      "sha256": "d47b371462c31cef2b216f8851cef0de567ccc197df97c76fbea4858fd64258a",
+      "log_path": "results/phase6i_priority_tag_direct_service_reward/training_logs/l3_seed2.json",
+      "log_sha256": "74cc0d39768cc2aa1e07a1ad73342272c272c0946eee1eb31de58676170e2a52",
+      "variant": "L3",
+      "model_seed": 2,
+      "updates": 300,
+      "elapsed_seconds": 643.2864494000096,
+      "final_policy_loss": -0.0028799072024412453,
+      "final_value_loss": 51.5529283285141,
+      "final_gradient_norm": 657.7532051801682,
+      "mean_safety_violation_rate": 0.00026041666666666666,
+      "mean_constraint_failure_rate": 0.0,
+      "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b"
+    }
+  ],
+  "score": {
+    "seeds": [
+      {
+        "variant": "L3",
+        "model_seed": 0,
+        "passes_preregistered_criteria": false,
+        "tagged_versus_l0": {
+          "mean": -184854.38728510577,
+          "ci_low": -930299.6007851077,
+          "ci_high": 554210.2957846068,
+          "scenarios": 32
+        },
+        "payload_versus_l0": {
+          "mean": 1125235.7933864773,
+          "ci_low": -354225.8245959756,
+          "ci_high": 2593410.5568396556,
+          "scenarios": 32
+        },
+        "payload_ci_floor": -280317.26553793804,
+        "l0_payload_mean": 56063453.107587606,
+        "safety_diff_sum": 0.0,
+        "constraint_diff_sum": 0.0,
+        "sinr_versus_l0_mean": 0.9812237237729009,
+        "interference_versus_l0_mean": 0.002261063613682496,
+        "payload_negative_scenarios": [
+          321100,
+          321102,
+          321103,
+          321105,
+          321107,
+          321108,
+          321111,
+          321113,
+          321114,
+          321117,
+          321121,
+          321127
+        ],
+        "tagged_not_single_scenario": false,
+        "tagged_not_two_scenarios": false,
+        "age_versus_l0": {
+          "mean": 698933.4434822027,
+          "ci_low": -105289.3251121961,
+          "ci_high": 1479515.3721797888,
+          "scenarios": 32
+        },
+        "tagged_versus_l2": {
+          "mean": 54244.6388611859,
+          "ci_low": -484031.55384483753,
+          "ci_high": 590776.6604940221,
+          "scenarios": 32
+        },
+        "payload_versus_l2": {
+          "mean": 413066.7911645898,
+          "ci_low": -736500.9544923811,
+          "ci_high": 1710031.426766403,
+          "scenarios": 32
+        },
+        "ordinary_versus_l0": {
+          "mean": 1310090.1806715813,
+          "ci_low": 95437.33294977252,
+          "ci_high": 2528168.6487515345,
+          "scenarios": 32
+        },
+        "dropped_versus_l0": {
+          "mean": -184337.76298573217,
+          "ci_low": -1022361.0215840499,
+          "ci_high": 586524.7840696514,
+          "scenarios": 32
+        },
+        "queue_versus_l0_mean": -940898.0304007439
+      },
+      {
+        "variant": "L3",
+        "model_seed": 1,
+        "passes_preregistered_criteria": false,
+        "tagged_versus_l0": {
+          "mean": -136039.12632680117,
+          "ci_low": -932143.4156734778,
+          "ci_high": 701180.0154406368,
+          "scenarios": 32
+        },
+        "payload_versus_l0": {
+          "mean": 1282292.5967255456,
+          "ci_low": -441480.63707479043,
+          "ci_high": 2955235.698823276,
+          "scenarios": 32
+        },
+        "payload_ci_floor": -280317.26553793804,
+        "l0_payload_mean": 56063453.107587606,
+        "safety_diff_sum": 1.0,
+        "constraint_diff_sum": 0.0,
+        "sinr_versus_l0_mean": 1.0982287319547754,
+        "interference_versus_l0_mean": 0.0032655204569448258,
+        "payload_negative_scenarios": [
+          321100,
+          321102,
+          321103,
+          321105,
+          321107,
+          321111,
+          321113,
+          321114,
+          321118,
+          321121,
+          321122,
+          321127
+        ],
+        "tagged_not_single_scenario": false,
+        "tagged_not_two_scenarios": false,
+        "age_versus_l0": {
+          "mean": 794230.1976809362,
+          "ci_low": 51971.970498742165,
+          "ci_high": 1487270.7236201784,
+          "scenarios": 32
+        },
+        "tagged_versus_l2": {
+          "mean": 209962.75259124822,
+          "ci_low": -350156.38551476056,
+          "ci_high": 791713.3561990163,
+          "scenarios": 32
+        },
+        "payload_versus_l2": {
+          "mean": -129107.61484591034,
+          "ci_low": -1728043.454452156,
+          "ci_high": 1505253.4048011398,
+          "scenarios": 32
+        },
+        "ordinary_versus_l0": {
+          "mean": 1418331.7230523461,
+          "ci_low": -3396.2833507769824,
+          "ci_high": 2795074.5400504074,
+          "scenarios": 32
+        },
+        "dropped_versus_l0": {
+          "mean": -245483.74355110968,
+          "ci_low": -1431255.7745505616,
+          "ci_high": 972333.4648608728,
+          "scenarios": 32
+        },
+        "queue_versus_l0_mean": -1036808.8531744359
+      },
+      {
+        "variant": "L3",
+        "model_seed": 2,
+        "passes_preregistered_criteria": false,
+        "tagged_versus_l0": {
+          "mean": -357870.57796019793,
+          "ci_low": -1065835.1524168134,
+          "ci_high": 318761.32712901325,
+          "scenarios": 32
+        },
+        "payload_versus_l0": {
+          "mean": -557177.1973119143,
+          "ci_low": -2501468.5420574,
+          "ci_high": 1206871.6226793567,
+          "scenarios": 32
+        },
+        "payload_ci_floor": -280317.26553793804,
+        "l0_payload_mean": 56063453.107587606,
+        "safety_diff_sum": 1.0,
+        "constraint_diff_sum": 0.0,
+        "sinr_versus_l0_mean": 0.2814656149215791,
+        "interference_versus_l0_mean": -0.0007262176207274316,
+        "payload_negative_scenarios": [
+          321100,
+          321105,
+          321107,
+          321109,
+          321112,
+          321114,
+          321117,
+          321119,
+          321120,
+          321121,
+          321125,
+          321127
+        ],
+        "tagged_not_single_scenario": false,
+        "tagged_not_two_scenarios": false,
+        "age_versus_l0": {
+          "mean": 502366.0028577697,
+          "ci_low": -264906.25536027935,
+          "ci_high": 1241321.285027586,
+          "scenarios": 32
+        },
+        "tagged_versus_l2": {
+          "mean": -203437.10697571596,
+          "ci_low": -801120.2083265096,
+          "ci_high": 437784.944590043,
+          "scenarios": 32
+        },
+        "payload_versus_l2": {
+          "mean": -1122841.904843914,
+          "ci_low": -2744978.1800902532,
+          "ci_high": 381480.34754257486,
+          "scenarios": 32
+        },
+        "ordinary_versus_l0": {
+          "mean": -199306.6193517167,
+          "ci_low": -1869107.136849793,
+          "ci_high": 1325986.963823003,
+          "scenarios": 32
+        },
+        "dropped_versus_l0": {
+          "mean": 657174.81979489,
+          "ci_low": -361789.43341424025,
+          "ci_high": 1728472.3804645347,
+          "scenarios": 32
+        },
+        "queue_versus_l0_mean": -99997.62248297606
+      }
+    ],
+    "passing_seeds": 0,
+    "merge": false,
+    "payload_ci_floor": -280317.26553793804
+  },
+  "replay": {
+    "compared": 224,
+    "matched": 224,
+    "mismatches": 0,
+    "mismatch_examples": [],
+    "max_bit_gap": 0.0,
+    "max_path_gap_m": 0.0
+  },
+  "scientific_gate": "DIRECT_TAG_REWARD_BENCHMARK_FAIL",
+  "gate": "DIRECT_TAG_REWARD_BENCHMARK_FAIL",
+  "merged": false,
+  "isolated_diff": false,
+  "unexpected_path_count": 88,
+  "unexpected_paths": [
+    "docs/research/HTW_UrgencyAware_Attribution_Full_Replay_Instructions_CN.md",
+    "docs/research/HTW_UrgencyAware_Eval_Context_Repro_Instructions_CN.md",
+    "docs/research/HTW_UrgencyAware_Eval_Context_Repro_Report_CN.md",
+    "docs/research/HTW_UrgencyAware_Experiment_Branch_Plan_CN.md",
+    "docs/research/HTW_UrgencyAware_Experiment_Report_CN.md",
+    "docs/research/HTW_UrgencyAware_Replay_Reproducibility_Instructions_CN.md",
+    "docs/research/HTW_UrgencyAware_Replay_Reproducibility_Report_CN.md",
+    "docs/research/HTW_UrgencyAware_Reward_Attribution_Instructions_CN.md",
+    "docs/research/HTW_UrgencyAware_Reward_Attribution_Report_CN.md",
+    "results/phase6i_priority_tag_attribution_full_replay/runtime_manifest.json",
+    "results/phase6i_priority_tag_attribution_full_replay/scenario_attribution.csv",
+    "results/phase6i_priority_tag_attribution_full_replay/schema.json"
+  ],
+  "prior_checkpoints_ok": true,
+  "prior_checkpoint_problems": [],
+  "watched_before": {
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py": "79fc576924aaabc74df7b5badb4f23cd4fbbba915162ca646e6b819855f425b3",
+    "src/wt/lowlevel_v2/observation.py": "7311f0ff5c6f7ef9367fce7eba011bace123dfd9685f967e6794ad13df3dc679",
+    "src/wt/lowlevel_v2/residual_policy.py": "fabd7fff68d575b74de4e0be67d6a35e60990e10d82f135269a86664dcfe6927",
+    "src/wt/lowlevel_v2/safety_projector.py": "75478f547b5741b85735143cf2a0301bcd9b281d4dcd49c355e615a7e84fa6d7",
+    "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py": "dc67c0402a273400fc5490f72b0d8fda34713a0baadb1005de06f17e3be8bf9a",
+    "results/phase5_hgnn_urgency/checkpoints/mappo_original.pt": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14"
+  },
+  "watched_unchanged": true,
+  "runtime": {
+    "python": "3.14.2",
+    "numpy": "2.4.1",
+    "torch": "2.12.0+cpu",
+    "cuda": false,
+    "torch_num_threads": 1,
+    "deterministic_algorithms": true,
+    "process_rng_seed": 2,
+    "process_rng_role": "historical_inherited_process_seed",
+    "canonical_explicit_eval_seed": null,
+    "model_seeds": [
+      0,
+      1,
+      2
+    ],
+    "env_reset_seed": "scenario_id",
+    "assignment_rng_seed": "7000000 + scenario_id"
+  },
+  "checkpoints": {
+    "l3": [
+      {
+        "path": "results/phase6i_priority_tag_direct_service_reward/checkpoints/l3_seed0.pt",
+        "sha256": "d47290cc750b6397bdab6e1ce6856139b5da461166ea0e946ebe7026f27d7257",
+        "log_path": "results/phase6i_priority_tag_direct_service_reward/training_logs/l3_seed0.json",
+        "log_sha256": "f0dab07e305a8f5034a5d560995ccec8e5014849cf673f6ae35fae28761fb25a",
+        "variant": "L3",
+        "model_seed": 0,
+        "updates": 300,
+        "elapsed_seconds": 756.7982873000001,
+        "final_policy_loss": -0.00472684130363632,
+        "final_value_loss": 48.14972734451294,
+        "final_gradient_norm": 79.28348070383072,
+        "mean_safety_violation_rate": 0.00020833333333333335,
+        "mean_constraint_failure_rate": 0.0,
+        "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b"
+      },
+      {
+        "path": "results/phase6i_priority_tag_direct_service_reward/checkpoints/l3_seed1.pt",
+        "sha256": "6072f7a5de388e27494dcbda3ba59ce2ed5c5575b1b5e52964730f88af641d80",
+        "log_path": "results/phase6i_priority_tag_direct_service_reward/training_logs/l3_seed1.json",
+        "log_sha256": "fdc29d9ddc1969085faaa2c5912ee8cb1554e0df937ab845a22ae46f82527ebe",
+        "variant": "L3",
+        "model_seed": 1,
+        "updates": 300,
+        "elapsed_seconds": 730.586717299986,
+        "final_policy_loss": -0.0034700336400419474,
+        "final_value_loss": 60.03302478790283,
+        "final_gradient_norm": 95.91873848438263,
+        "mean_safety_violation_rate": 0.0001909722222222222,
+        "mean_constraint_failure_rate": 0.0,
+        "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b"
+      },
+      {
+        "path": "results/phase6i_priority_tag_direct_service_reward/checkpoints/l3_seed2.pt",
+        "sha256": "d47b371462c31cef2b216f8851cef0de567ccc197df97c76fbea4858fd64258a",
+        "log_path": "results/phase6i_priority_tag_direct_service_reward/training_logs/l3_seed2.json",
+        "log_sha256": "74cc0d39768cc2aa1e07a1ad73342272c272c0946eee1eb31de58676170e2a52",
+        "variant": "L3",
+        "model_seed": 2,
+        "updates": 300,
+        "elapsed_seconds": 643.2864494000096,
+        "final_policy_loss": -0.0028799072024412453,
+        "final_value_loss": 51.5529283285141,
+        "final_gradient_norm": 657.7532051801682,
+        "mean_safety_violation_rate": 0.00026041666666666666,
+        "mean_constraint_failure_rate": 0.0,
+        "source_commit": "ac1545a2070aab767d5d609b12fd75c2e1ee4d2b"
+      }
+    ],
+    "formal_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "legacy_sha256": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14"
+  },
+  "block_reason": "",
+  "elapsed_seconds": 2340.9019699999917,
+  "reason": "3 \u4e2a L3 \u79cd\u5b50\u4e2d\u6709 0 \u4e2a\u540c\u65f6\u901a\u8fc7\u5168\u90e8\u9884\u6ce8\u518c\u68c0\u67e5\u3002 \u5b9e\u9645\u6807\u7b7e\u670d\u52a1\u914d\u5bf9\u5747\u503c\u4e3a\u8d1f\u7684\u79cd\u5b50\u6709 3 \u4e2a\u3002 \u603b\u8f7d\u8377\u914d\u5bf9\u5747\u503c\u4e3a\u8d1f\u7684\u79cd\u5b50\u6709 1 \u4e2a\u3002 \u5b89\u5168\u8fdd\u89c4\u6216\u7ea6\u675f\u5931\u8d25\u914d\u5bf9\u548c\u589e\u52a0\u7684\u79cd\u5b50\u662f [1, 2]\u3002 \u5e72\u6270\u914d\u5bf9\u5747\u503c\u4e3a\u6b63\u7684\u79cd\u5b50\u662f [0, 1]\u3002 \u8fd9\u4e9b\u6570\u5b57\u6765\u81ea\u573a\u666f CSV \u7684\u91cd\u65b0\u6c47\u603b\uff0c\u8bad\u7ec3\u5956\u52b1\u672c\u8eab\u4e0d\u4f5c\u4e3a\u8bc1\u636e\u3002 \u5f53\u524d\u5206\u652f\u76f8\u5bf9 feature/maritime-wt-stage1a \u8fd8\u5305\u542b\u6b64\u524d\u7684\u4f18\u5148\u7ea7\u6807\u7b7e\u5b9e\u9a8c\u5386\u53f2\uff0c\u56e0\u6b64\u4e0d\u5408\u5e76\u3002",
+  "next_step": "\u4e0d\u8981\u6839\u636e\u8fd9\u6b21\u7ed3\u679c\u56de\u5934\u4fee\u6539 0.0005/0.00025 \u4e0e 0.0010/0.00075\u3002\u4e0d\u8981\u91cd\u8bad\uff0c\u4e0d\u8981\u5408\u5e76\u3002\u82e5\u8981\u6362\u5956\u52b1\u5f62\u5f0f\uff0c\u9700\u8981\u53e6\u4e00\u4efd\u9884\u5148\u58f0\u660e\u7684\u5b9e\u9a8c\u8bf4\u660e\u3002"
+}
