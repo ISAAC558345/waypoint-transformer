@@ -1,0 +1,137 @@
+{
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "formal_actor_hash_ok": true,
+  "cases": [
+    {
+      "case": {
+        "variant": "L3",
+        "model_seed": 1,
+        "scenario_id": 321123,
+        "baseline_variant": "L0",
+        "baseline_seed": 0
+      },
+      "matched_saved_rows": true,
+      "current_match": {
+        "matches_saved": true,
+        "bit_gaps": {
+          "payload_bits": 0.0,
+          "served_tagged_bits": 0.0,
+          "served_ordinary_bits": 0.0,
+          "dropped_bits": 0.0,
+          "safety_violations": 0.0,
+          "constraint_failures": 0.0
+        },
+        "path_gap_m": 0.0
+      },
+      "baseline_match": {
+        "matches_saved": true,
+        "bit_gaps": {
+          "payload_bits": 0.0,
+          "served_tagged_bits": 0.0,
+          "served_ordinary_bits": 0.0,
+          "dropped_bits": 0.0,
+          "safety_violations": 0.0,
+          "constraint_failures": 0.0
+        },
+        "path_gap_m": 0.0
+      },
+      "events": [
+        {
+          "step": 3,
+          "uav_i": 0,
+          "uav_j": 1,
+          "before": {
+            "distance_m": 10.283217294361688,
+            "signed_margin_m": 9.283217294361688,
+            "counter_violation": false,
+            "projector_would_accept_distance": true
+          },
+          "after": {
+            "distance_m": 0.9999999988795294,
+            "signed_margin_m": -1.1204706051870517e-09,
+            "counter_violation": true,
+            "projector_would_accept_distance": true
+          },
+          "predicted_pair": {
+            "distance_m": 0.9999999988795294,
+            "signed_margin_m": -1.1204706051870517e-09,
+            "counter_violation": true,
+            "projector_would_accept_distance": true
+          },
+          "predicted_minus_after_m": 0.0,
+          "projector_minimum_predicted_distance_m": 0.9999999988795294,
+          "projection_status": "ok",
+          "constraint_failure": 0,
+          "numeric_boundary": true,
+          "same_pair_not_global_previous": true
+        }
+      ]
+    },
+    {
+      "case": {
+        "variant": "L3",
+        "model_seed": 2,
+        "scenario_id": 321104,
+        "baseline_variant": "L0",
+        "baseline_seed": 0
+      },
+      "matched_saved_rows": true,
+      "current_match": {
+        "matches_saved": true,
+        "bit_gaps": {
+          "payload_bits": 0.0,
+          "served_tagged_bits": 0.0,
+          "served_ordinary_bits": 0.0,
+          "dropped_bits": 0.0,
+          "safety_violations": 0.0,
+          "constraint_failures": 0.0
+        },
+        "path_gap_m": 0.0
+      },
+      "baseline_match": {
+        "matches_saved": true,
+        "bit_gaps": {
+          "payload_bits": 0.0,
+          "served_tagged_bits": 0.0,
+          "served_ordinary_bits": 0.0,
+          "dropped_bits": 0.0,
+          "safety_violations": 0.0,
+          "constraint_failures": 0.0
+        },
+        "path_gap_m": 0.0
+      },
+      "events": [
+        {
+          "step": 1,
+          "uav_i": 3,
+          "uav_j": 5,
+          "before": {
+            "distance_m": 21.453388217963195,
+            "signed_margin_m": 20.453388217963195,
+            "counter_violation": false,
+            "projector_would_accept_distance": true
+          },
+          "after": {
+            "distance_m": 0.9999999989652907,
+            "signed_margin_m": -1.0347093182261347e-09,
+            "counter_violation": true,
+            "projector_would_accept_distance": true
+          },
+          "predicted_pair": {
+            "distance_m": 0.9999999989652907,
+            "signed_margin_m": -1.0347093182261347e-09,
+            "counter_violation": true,
+            "projector_would_accept_distance": true
+          },
+          "predicted_minus_after_m": 0.0,
+          "projector_minimum_predicted_distance_m": 0.9999999989652907,
+          "projection_status": "ok",
+          "constraint_failure": 0,
+          "numeric_boundary": true,
+          "same_pair_not_global_previous": true
+        }
+      ]
+    }
+  ],
+  "matched": true
+}

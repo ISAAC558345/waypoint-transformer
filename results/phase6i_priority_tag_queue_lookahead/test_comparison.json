@@ -1,0 +1,1048 @@
+{
+  "related_ok": true,
+  "related_ran": 51,
+  "new_failure_count": 0,
+  "baseline_ran": 1754,
+  "repository_ran": 1762,
+  "baseline_failure_count": 206,
+  "repository_failure_count": 206,
+  "historical": [
+    {
+      "test_id": "test_round22_original_lock_and_narrow_amendment_verify (test_governance_state_sync.GovernanceStateSyncTests.test_round22_original_lock_and_narrow_amendment_verify)",
+      "kind": "ERROR",
+      "exception": "RuntimeError"
+    },
+    {
+      "test_id": "test_15_no_nan_inf_and_packed_config (test_htw_phase11.Phase11Tests.test_15_no_nan_inf_and_packed_config)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_unnamed_limits_remain_explicit (test_phase6iae_fault_handling.Phase6IAEContractTests.test_unnamed_limits_remain_explicit)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_graph_batch_excludes_labels_and_keeps_checkpoint_widths (test_phase6ic_hgnn_smoke.Phase6ICDatasetTests.test_graph_batch_excludes_labels_and_keeps_checkpoint_widths)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_32_v1_loader_rejects_round2_schema (test_round03_task_and_waypoint.Round3PipelineAndWaypointTests.test_32_v1_loader_rejects_round2_schema)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_01_locked_hashes_exist (test_round06_closed_loop.Round6ClosedLoopTests.test_01_locked_hashes_exist)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_02_gate_is_unique (test_round09_diagnostics.Round09Diagnostics.test_02_gate_is_unique)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_03_m3_forbids_training (test_round09_diagnostics.Round09Diagnostics.test_03_m3_forbids_training)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_04_holdout_zero (test_round09_diagnostics.Round09Diagnostics.test_04_holdout_zero)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_05_old_test_off (test_round09_diagnostics.Round09Diagnostics.test_05_old_test_off)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_01_ready (test_round10_task_waypoint.Round10.test_01_ready)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_02_holdout (test_round10_task_waypoint.Round10.test_02_holdout)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_03_goal_constant (test_round10_task_waypoint.Round10.test_03_goal_constant)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_04_no_training (test_round10_task_waypoint.Round10.test_04_no_training)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_05_horizons (test_round10_task_waypoint.Round10.test_05_horizons)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_01_gate (test_round11_full_audit.Round11Full.test_01_gate)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_02_isolation (test_round11_full_audit.Round11Full.test_02_isolation)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_03_holdout (test_round11_full_audit.Round11Full.test_03_holdout)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_04_closed_loop (test_round11_full_audit.Round11Full.test_04_closed_loop)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_05_service_metrics (test_round11_full_audit.Round11Full.test_05_service_metrics)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_06_progress_metrics (test_round11_full_audit.Round11Full.test_06_progress_metrics)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_07_return_metrics (test_round11_full_audit.Round11Full.test_07_return_metrics)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_08_gradients_finite (test_round11_full_audit.Round11Full.test_08_gradients_finite)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_09_horizon (test_round11_full_audit.Round11Full.test_09_horizon)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_10_no_training_in_audit (test_round11_full_audit.Round11Full.test_10_no_training_in_audit)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_13_no_spatial (test_round11_full_audit.Round11Full.test_13_no_spatial)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_14_no_goal (test_round11_full_audit.Round11Full.test_14_no_goal)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_15_checkpoints (test_round11_full_audit.Round11Full.test_15_checkpoints)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_04_shadow_reward_reconstructs_current_environment_exactly (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_04_shadow_reward_reconstructs_current_environment_exactly)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_05_hstep_alignment_reconstructs_immutable_raw_rows (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_05_hstep_alignment_reconstructs_immutable_raw_rows)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_08_generated_sidecars_have_identical_movement_and_no_violations (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_08_generated_sidecars_have_identical_movement_and_no_violations)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_05_round12_lock_predictor_and_policy_files_are_unchanged (test_round13_controllability.Round13ControllabilityContracts.test_05_round12_lock_predictor_and_policy_files_are_unchanged)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_07_current_environment_action_is_two_dimensional_movement_only (test_round13_controllability.Round13ControllabilityContracts.test_07_current_environment_action_is_two_dimensional_movement_only)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_08_all_preregistered_perturbations_are_legal (test_round13_controllability.Round13ControllabilityContracts.test_08_all_preregistered_perturbations_are_legal)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_09_snapshot_is_restored_and_continuation_is_deterministic (test_round13_controllability.Round13ControllabilityContracts.test_09_snapshot_is_restored_and_continuation_is_deterministic)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_10_service_progress_is_actual_payload_and_finite (test_round13_controllability.Round13ControllabilityContracts.test_10_service_progress_is_actual_payload_and_finite)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_42_round19_preflight (test_round20_multi_uav_dataset.Round20MultiUAVDatasetTests.test_42_round19_preflight)",
+      "kind": "ERROR",
+      "exception": "RuntimeError"
+    },
+    {
+      "test_id": "test_registered_interference_ablation_fields (test_round21_hgnn_task_waypoint.Round21HGNNTests.test_registered_interference_ablation_fields)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_fresh_manifest_is_registered_and_unaccessed (test_round22_governance.Round22GovernanceTests.test_fresh_manifest_is_registered_and_unaccessed)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_frozen_predictor_is_unchanged (test_round22_governance.Round22GovernanceTests.test_frozen_predictor_is_unchanged)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_protected_accesses_follow_the_frozen_gate (test_round22_governance.Round22GovernanceTests.test_protected_accesses_follow_the_frozen_gate)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_round21_amendment_overlay_is_narrow_and_exact (test_round22_governance.Round22GovernanceTests.test_round21_amendment_overlay_is_narrow_and_exact)",
+      "kind": "ERROR",
+      "exception": "RuntimeError"
+    },
+    {
+      "test_id": "test_round22_governance_state_sync_amendment_is_narrow_and_exact (test_round22_governance.Round22GovernanceTests.test_round22_governance_state_sync_amendment_is_narrow_and_exact)",
+      "kind": "ERROR",
+      "exception": "RuntimeError"
+    },
+    {
+      "test_id": "setUpClass (test_round22_policy.Round22PolicyTests)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_bootstrap_leave_one_seed_out_and_frozen_groups_are_registered (test_round23_audit.Round23AuditTests.test_bootstrap_leave_one_seed_out_and_frozen_groups_are_registered)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_head_ablations_are_validation_paired_and_inference_only (test_round23_audit.Round23AuditTests.test_head_ablations_are_validation_paired_and_inference_only)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_round22_frozen_lock_amendment_predictor_and_checkpoints_verify (test_round23_audit.Round23AuditTests.test_round22_frozen_lock_amendment_predictor_and_checkpoints_verify)",
+      "kind": "ERROR",
+      "exception": "RuntimeError"
+    },
+    {
+      "test_id": "test_round23_is_a_frozen_inference_audit_with_protected_accesses_zero (test_round23_audit.Round23AuditTests.test_round23_is_a_frozen_inference_audit_with_protected_accesses_zero)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_round23_lock_hashes_its_sources_outputs_figures_and_report (test_round23_audit.Round23AuditTests.test_round23_lock_hashes_its_sources_outputs_figures_and_report)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_seed_identity_and_fresh_pairing_are_derived_from_locked_rows (test_round23_audit.Round23AuditTests.test_seed_identity_and_fresh_pairing_are_derived_from_locked_rows)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_eight_seed_coverage_uncertainty_and_conditional_availability (test_round24_seed_extension.Round24SeedExtensionTests.test_eight_seed_coverage_uncertainty_and_conditional_availability)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_exact_new_training_matrix_and_frozen_provenance (test_round24_seed_extension.Round24SeedExtensionTests.test_exact_new_training_matrix_and_frozen_provenance)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_exact_pretraining_fresh_registration_and_disjointness (test_round24_seed_extension.Round24SeedExtensionTests.test_exact_pretraining_fresh_registration_and_disjointness)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_nonfinite_csv_values_and_lock_coverage (test_round24_seed_extension.Round24SeedExtensionTests.test_no_nonfinite_csv_values_and_lock_coverage)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_protected_accesses_gates_and_figures (test_round24_seed_extension.Round24SeedExtensionTests.test_protected_accesses_gates_and_figures)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_protocol_and_checkpoint_integrity (test_round24_seed_extension.Round24SeedExtensionTests.test_protocol_and_checkpoint_integrity)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_access_controls_gates_figures_and_finite_outputs (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_access_controls_gates_figures_and_finite_outputs)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_frozen_bridge_conflict_and_causal_planner_protocol (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_frozen_bridge_conflict_and_causal_planner_protocol)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_lock_covers_completed_evidence_when_present (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_lock_covers_completed_evidence_when_present)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_metadata_are_diagnostic_and_knn_is_cross_episode (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_metadata_are_diagnostic_and_knn_is_cross_episode)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_training_or_checkpoint_write_path (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_no_training_or_checkpoint_write_path)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_planner_targets_are_finite_nonnegative_and_horizon_is_recorded (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_planner_targets_are_finite_nonnegative_and_horizon_is_recorded)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_predictor_and_policy_are_inference_only (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_predictor_and_policy_are_inference_only)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_required_outputs_and_exact_state_grouping (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_required_outputs_and_exact_state_grouping)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_round24_lock_and_frozen_preconditions (test_round25_supervision_ambiguity.Round25SupervisionAmbiguityTests.test_round24_lock_and_frozen_preconditions)",
+      "kind": "ERROR",
+      "exception": "RuntimeError"
+    },
+    {
+      "test_id": "test_causal_planner_frozen_policy_and_access_controls (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_causal_planner_frozen_policy_and_access_controls)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_exact_delivery_set_and_sample_coverage (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_exact_delivery_set_and_sample_coverage)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_executed_action_only_and_no_training_path (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_executed_action_only_and_no_training_path)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_knn_and_conditional_audits_are_cross_episode_and_finite (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_knn_and_conditional_audits_are_cross_episode_and_finite)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_lock_covers_completed_evidence_when_present (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_lock_covers_completed_evidence_when_present)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_preregistered_gates_figures_and_finite_csv_values (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_preregistered_gates_figures_and_finite_csv_values)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_round25_lock_and_frozen_preconditions (test_round26_action_supervision_ambiguity.Round26ActionSupervisionAmbiguityTests.test_round25_lock_and_frozen_preconditions)",
+      "kind": "ERROR",
+      "exception": "RuntimeError"
+    },
+    {
+      "test_id": "test_direct_utility_formula_and_three_way_label (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_direct_utility_formula_and_three_way_label)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_figures_finite_outputs_and_historical_no_round28 (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_figures_finite_outputs_and_historical_no_round28)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_frozen_policy_access_controls_and_expected_gates (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_frozen_policy_access_controls_and_expected_gates)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_lock_covers_completed_evidence_when_present (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_lock_covers_completed_evidence_when_present)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_training_and_no_future_trigger_inputs (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_no_training_and_no_future_trigger_inputs)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_required_delivery_and_registered_state_pool (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_required_delivery_and_registered_state_pool)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_round26_lock_and_frozen_preconditions (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_round26_lock_and_frozen_preconditions)",
+      "kind": "ERROR",
+      "exception": "RuntimeError"
+    },
+    {
+      "test_id": "test_trigger_threshold_is_train_only_and_oracle_is_nondeployable (test_round27_conditional_planner_utility.Round27ConditionalPlannerUtilityTests.test_trigger_threshold_is_train_only_and_oracle_is_nondeployable)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_09_train_validation_scenario_separation (test_round28_planning_need_representation.Round28PlanningNeedRepresentationTests.test_09_train_validation_scenario_separation)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_lock_covers_completed_evidence_when_present (test_round28_planning_need_representation.Round28PlanningNeedRepresentationTests.test_lock_covers_completed_evidence_when_present)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_06_frozen_round28_labels_unchanged (test_round29_cross_scale_deferred_service.Round29CrossScaleDeferredServiceTests.test_06_frozen_round28_labels_unchanged)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_01_round30_lock_is_unchanged (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_01_round30_lock_is_unchanged)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_02_no_optimizer_update_or_backward (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_02_no_optimizer_update_or_backward)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_03_no_training_or_checkpoint_write (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_03_no_training_or_checkpoint_write)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_04_objective_audit_is_exact (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_04_objective_audit_is_exact)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_05_gae_reconstruction_exact (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_05_gae_reconstruction_exact)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_07_knn_excludes_same_episode_and_temporal_neighbors (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_07_knn_excludes_same_episode_and_temporal_neighbors)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_08_full_relational_features_are_current_only (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_08_full_relational_features_are_current_only)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_09_k_and_eta_grouping_are_present (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_09_k_and_eta_grouping_are_present)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_10_frozen_planner_references_are_used (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_10_frozen_planner_references_are_used)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_11_no_fresh_new_rollout_or_untouched_access (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_11_no_fresh_new_rollout_or_untouched_access)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_04_source_horizons_are_recovered_exactly (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_04_source_horizons_are_recovered_exactly)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_05_effective_horizon_formula_and_terminal_audit (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_05_effective_horizon_formula_and_terminal_audit)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_06_utilization_statistics_are_exact (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_06_utilization_statistics_are_exact)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_07_h5_h10_equality_is_exact_and_not_bug_claim (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_07_h5_h10_equality_is_exact_and_not_bug_claim)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_08_h5_h10_prefixes_are_identical (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_08_h5_h10_prefixes_are_identical)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_09_task_waypoint_labels_are_complete_windows (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_09_task_waypoint_labels_are_complete_windows)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_10_task_waypoint_coverage_and_protected_split (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_10_task_waypoint_coverage_and_protected_split)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_11_terminated_and_truncated_semantics_are_stated (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_11_terminated_and_truncated_semantics_are_stated)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_12_ppo_gae_endpoint_and_rollout_are_correct (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_12_ppo_gae_endpoint_and_rollout_are_correct)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_13_historical_gate_is_reassessed_without_mutation (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_13_historical_gate_is_reassessed_without_mutation)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_14_timescale_and_redesign_gate_are_data_derived (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_14_timescale_and_redesign_gate_are_data_derived)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_15_no_fresh_development_or_untouched_access (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_15_no_fresh_development_or_untouched_access)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_01_round32_original_lock_sha_is_unchanged (test_round33_governance_compatibility.Round33GovernanceCompatibilityTests.test_01_round32_original_lock_sha_is_unchanged)",
+      "kind": "ERROR",
+      "exception": "RuntimeError"
+    },
+    {
+      "test_id": "test_07_existing_round33_scientific_outputs_are_unchanged (test_round33_governance_compatibility.Round33GovernanceCompatibilityTests.test_07_existing_round33_scientific_outputs_are_unchanged)",
+      "kind": "ERROR",
+      "exception": "RuntimeError"
+    },
+    {
+      "test_id": "test_02_snapshot_preserves_preextension_planner (test_round33_long_episode.Round33LongEpisodeTests.test_02_snapshot_preserves_preextension_planner)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_04_configuration_is_exactly_t20 (test_round33_long_episode.Round33LongEpisodeTests.test_04_configuration_is_exactly_t20)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_06_planner_integrity_limits_the_authorized_change (test_round33_long_episode.Round33LongEpisodeTests.test_06_planner_integrity_limits_the_authorized_change)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_07_t12_parameterization_regression_passes (test_round33_long_episode.Round33LongEpisodeTests.test_07_t12_parameterization_regression_passes)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_08_each_t12_regression_dimension_is_exact (test_round33_long_episode.Round33LongEpisodeTests.test_08_each_t12_regression_dimension_is_exact)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_09_design_manifest_is_preoutcome_and_has_64_scenarios (test_round33_long_episode.Round33LongEpisodeTests.test_09_design_manifest_is_preoutcome_and_has_64_scenarios)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_10_confirmation_manifest_is_preoutcome_and_has_64_scenarios (test_round33_long_episode.Round33LongEpisodeTests.test_10_confirmation_manifest_is_preoutcome_and_has_64_scenarios)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_11_design_and_confirmation_seeds_are_disjoint (test_round33_long_episode.Round33LongEpisodeTests.test_11_design_and_confirmation_seeds_are_disjoint)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_12_every_new_stratum_has_four_seeds (test_round33_long_episode.Round33LongEpisodeTests.test_12_every_new_stratum_has_four_seeds)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_13_historical_population_collision_audit_is_empty (test_round33_long_episode.Round33LongEpisodeTests.test_13_historical_population_collision_audit_is_empty)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_14_h5_t20_full_nominal_coverage_is_80_percent (test_round33_long_episode.Round33LongEpisodeTests.test_14_h5_t20_full_nominal_coverage_is_80_percent)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_15_h10_t20_full_nominal_coverage_is_55_percent (test_round33_long_episode.Round33LongEpisodeTests.test_15_h10_t20_full_nominal_coverage_is_55_percent)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_16_h20_is_full_only_at_the_earliest_slot (test_round33_long_episode.Round33LongEpisodeTests.test_16_h20_is_full_only_at_the_earliest_slot)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_17_primary_common_anchors_are_t0_through_t10 (test_round33_long_episode.Round33LongEpisodeTests.test_17_primary_common_anchors_are_t0_through_t10)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_18_primary_action_audit_covers_both_populations (test_round33_long_episode.Round33LongEpisodeTests.test_18_primary_action_audit_covers_both_populations)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_19_every_primary_action_pair_shares_a_snapshot (test_round33_long_episode.Round33LongEpisodeTests.test_19_every_primary_action_pair_shares_a_snapshot)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_20_primary_action_rows_execute_the_requested_shadow_depths (test_round33_long_episode.Round33LongEpisodeTests.test_20_primary_action_rows_execute_the_requested_shadow_depths)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_21_same_snapshot_utility_is_branch_difference (test_round33_long_episode.Round33LongEpisodeTests.test_21_same_snapshot_utility_is_branch_difference)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_22_counterfactual_changes_only_the_first_action (test_round33_long_episode.Round33LongEpisodeTests.test_22_counterfactual_changes_only_the_first_action)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_23_closed_loop_h1_h5_h10_cover_every_t20_scenario (test_round33_long_episode.Round33LongEpisodeTests.test_23_closed_loop_h1_h5_h10_cover_every_t20_scenario)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_24_h20_closed_loop_rows_are_prespecified_descriptions (test_round33_long_episode.Round33LongEpisodeTests.test_24_h20_closed_loop_rows_are_prespecified_descriptions)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_25_pairwise_statistics_use_scenario_cluster_bootstrap (test_round33_long_episode.Round33LongEpisodeTests.test_25_pairwise_statistics_use_scenario_cluster_bootstrap)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_26_k_eta_robustness_is_reported (test_round33_long_episode.Round33LongEpisodeTests.test_26_k_eta_robustness_is_reported)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_27_physical_timescale_validation_uses_only_existing_variables (test_round33_long_episode.Round33LongEpisodeTests.test_27_physical_timescale_validation_uses_only_existing_variables)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_28_access_audit_has_no_protected_reuse (test_round33_long_episode.Round33LongEpisodeTests.test_28_access_audit_has_no_protected_reuse)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_30_gates_are_consistent_and_round34_is_absent (test_round33_long_episode.Round33LongEpisodeTests.test_30_gates_are_consistent_and_round34_is_absent)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_16_historical_gate_is_locked (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_16_historical_gate_is_locked)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_33_formal_outputs_exclude_quarantine (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_33_formal_outputs_exclude_quarantine)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_34_formal_access_audit_has_zero_protected_scientific_records (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_34_formal_access_audit_has_zero_protected_scientific_records)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_35_all_required_formal_artifacts_are_present (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_35_all_required_formal_artifacts_are_present)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_02_successor_amendment_verifies (test_round34_governance_lifecycle.Round34GovernanceLifecycleTests.test_02_successor_amendment_verifies)",
+      "kind": "ERROR",
+      "exception": "RuntimeError"
+    },
+    {
+      "test_id": "test_07_formal_access_audit_is_clean_after_exception (test_round34_governance_lifecycle.Round34GovernanceLifecycleTests.test_07_formal_access_audit_is_clean_after_exception)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_03_no_second_protected_access (test_round35_level2.Round35Level2Tests.test_03_no_second_protected_access)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_07_legacy_m2k3_regression (test_round35_level2.Round35Level2Tests.test_07_legacy_m2k3_regression)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_08_legacy_m2k5_regression (test_round35_level2.Round35Level2Tests.test_08_legacy_m2k5_regression)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_09_t12_t20_compatibility (test_round35_level2.Round35Level2Tests.test_09_t12_t20_compatibility)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_15_exclusivity_respected (test_round35_level2.Round35Level2Tests.test_15_exclusivity_respected)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_17_deterministic_tie_break (test_round35_level2.Round35Level2Tests.test_17_deterministic_tie_break)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_18_preference_affects_assignment (test_round35_level2.Round35Level2Tests.test_18_preference_affects_assignment)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_19_no_hidden_heuristic_override (test_round35_level2.Round35Level2Tests.test_19_no_hidden_heuristic_override)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_20_movement_channel_independent (test_round35_level2.Round35Level2Tests.test_20_movement_channel_independent)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_21_association_channel_independent (test_round35_level2.Round35Level2Tests.test_21_association_channel_independent)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_22_permutation_equivariance (test_round35_level2.Round35Level2Tests.test_22_permutation_equivariance)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_26_safety_unchanged (test_round35_level2.Round35Level2Tests.test_26_safety_unchanged)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_27_reward_unchanged (test_round35_level2.Round35Level2Tests.test_27_reward_unchanged)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_32_untouched_access_zero (test_round35_level2.Round35Level2Tests.test_32_untouched_access_zero)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_36_engineering_scenario_count (test_round35_level2.Round35Level2Tests.test_36_engineering_scenario_count)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_37_level2_gate (test_round35_level2.Round35Level2Tests.test_37_level2_gate)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_anchors_are_preoutcome_and_sufficient (test_round36_runtime_stop.Round36RuntimeStopTests.test_anchors_are_preoutcome_and_sufficient)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_arr_excludes_unrun_confirmation (test_round36_runtime_stop.Round36RuntimeStopTests.test_arr_excludes_unrun_confirmation)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_confirmation_is_unaccessed (test_round36_runtime_stop.Round36RuntimeStopTests.test_confirmation_is_unaccessed)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_deterministic_tie_rule_frozen (test_round36_runtime_stop.Round36RuntimeStopTests.test_deterministic_tie_rule_frozen)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_direct_regression_passed (test_round36_runtime_stop.Round36RuntimeStopTests.test_direct_regression_passed)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_environment_and_decoder_are_not_modified (test_round36_runtime_stop.Round36RuntimeStopTests.test_environment_and_decoder_are_not_modified)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_h10_utility_not_run_after_runtime_stop (test_round36_runtime_stop.Round36RuntimeStopTests.test_h10_utility_not_run_after_runtime_stop)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_h1_utility_not_run_after_runtime_stop (test_round36_runtime_stop.Round36RuntimeStopTests.test_h1_utility_not_run_after_runtime_stop)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_h5_utility_not_run_after_runtime_stop (test_round36_runtime_stop.Round36RuntimeStopTests.test_h5_utility_not_run_after_runtime_stop)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_backward (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_backward)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_hgnn (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_hgnn)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_model_training (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_model_training)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_nan_or_inf_in_runtime_measurement (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_nan_or_inf_in_runtime_measurement)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_optimizer (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_optimizer)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_outcome_dependent_anchor (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_outcome_dependent_anchor)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_ppo (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_ppo)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_protected_or_untouched_access (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_protected_or_untouched_access)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_protected_split (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_protected_split)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_task_waypoint_training (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_task_waypoint_training)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_no_training_or_model_inference (test_round36_runtime_stop.Round36RuntimeStopTests.test_no_training_or_model_inference)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_reo_not_evaluated (test_round36_runtime_stop.Round36RuntimeStopTests.test_reo_not_evaluated)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_round35_original_lock_unchanged (test_round36_runtime_stop.Round36RuntimeStopTests.test_round35_original_lock_unchanged)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_runtime_gate_stops_before_fao (test_round36_runtime_stop.Round36RuntimeStopTests.test_runtime_gate_stops_before_fao)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_same_first_movement_and_continuation_specified (test_round36_runtime_stop.Round36RuntimeStopTests.test_same_first_movement_and_continuation_specified)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_state_only_representation_has_no_future_evaluation (test_round36_runtime_stop.Round36RuntimeStopTests.test_state_only_representation_has_no_future_evaluation)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_task_waypoint_mapping_not_evaluated (test_round36_runtime_stop.Round36RuntimeStopTests.test_task_waypoint_mapping_not_evaluated)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_task_waypoint_target_not_constructed (test_round36_runtime_stop.Round36RuntimeStopTests.test_task_waypoint_target_not_constructed)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_untouched_zero (test_round36_runtime_stop.Round36RuntimeStopTests.test_untouched_zero)",
+      "kind": "ERROR",
+      "exception": "FileNotFoundError"
+    },
+    {
+      "test_id": "test_01_frozen_round_hashes_are_unchanged (test_round07_data_audit.Round7DataAuditTests.test_01_frozen_round_hashes_are_unchanged)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_11_figures_png (test_round11_full_audit.Round11Full.test_11_figures_png)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_12_figures_svg (test_round11_full_audit.Round11Full.test_12_figures_svg)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_06_original_round13_and_round12_frozen_evidence_is_unchanged (test_round13_completion_amendment.Round13CompletionAmendmentContracts.test_06_original_round13_and_round12_frozen_evidence_is_unchanged)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_01_round17_lock_unchanged (test_round18_multi_uav.Round18MultiUAVTests.test_01_round17_lock_unchanged)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_01_round18_lock_unchanged (test_round19_shared_spectrum.Round19SharedSpectrumTests.test_01_round18_lock_unchanged)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_01_round19_lock_unchanged (test_round20_multi_uav_dataset.Round20MultiUAVDatasetTests.test_01_round19_lock_unchanged)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_07_matching_source_unchanged (test_round20_multi_uav_dataset.Round20MultiUAVDatasetTests.test_07_matching_source_unchanged)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_round20_registered_hashes_unchanged (test_round21_hgnn_task_waypoint.Round21HGNNTests.test_round20_registered_hashes_unchanged)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_all_required_outputs_figures_and_completion_records_exist (test_round23_audit.Round23AuditTests.test_all_required_outputs_figures_and_completion_records_exist)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_18_required_dirs_and_only_legal_round31_successor (test_round30_deepsets_ppo.Round30DeepSetsPPOTests.test_18_required_dirs_and_only_legal_round31_successor)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_14_required_artifacts_and_figures_exist (test_round31_ppo_failure_diagnosis.Round31PPOFailureDiagnosisTests.test_14_required_artifacts_and_figures_exist)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_01_predecessor_lock_is_byte_stable (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_01_predecessor_lock_is_byte_stable)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_16_required_outputs_figures_and_compile (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_16_required_outputs_figures_and_compile)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_17_round33_requires_a_narrow_successor_amendment (test_round32_horizon_semantics.Round32HorizonSemanticsTests.test_17_round33_requires_a_narrow_successor_amendment)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_01_round32_lock_is_immutable (test_round33_long_episode.Round33LongEpisodeTests.test_01_round32_lock_is_immutable)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_29_required_figure_pairs_exist (test_round33_long_episode.Round33LongEpisodeTests.test_29_required_figure_pairs_exist)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_01_round33_original_lock_is_unchanged (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_01_round33_original_lock_is_unchanged)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_36_twelve_png_and_svg_figures_are_present (test_round34_benchmark_complexity.Round34BenchmarkComplexityTests.test_36_twelve_png_and_svg_figures_are_present)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_01_round33_original_lock_remains_unchanged (test_round34_governance_lifecycle.Round34GovernanceLifecycleTests.test_01_round33_original_lock_remains_unchanged)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_round34_lock_rehashes_every_registered_artifact (test_round34_lock.Round34LockTests.test_round34_lock_rehashes_every_registered_artifact)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_01_round34_lock_unchanged (test_round35_level2.Round35Level2Tests.test_01_round34_lock_unchanged)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "test_id": "test_38_required_figures_exist (test_round35_level2.Round35Level2Tests.test_38_required_figures_exist)",
+      "kind": "FAIL",
+      "exception": "AssertionError"
+    }
+  ],
+  "new_failures": [],
+  "controlled_log": "results/phase6i_priority_tag_queue_lookahead/repository_tests_clean.log",
+  "baseline_log": "results/phase6i_priority_tag_queue_lookahead/baseline_tests.log",
+  "workdir_ran": 1898,
+  "workdir_failure_count": 16,
+  "workdir_failure_ids_also_fail_on_clean_baseline": true,
+  "workdir_note": "开发工作区另一次完整测试执行了 1898 项，失败 16 项。这 16 个测试 ID 在干净基线上也同样失败，但异常文本不同，因为工作区还缺少 round_32 报告等既有文件。同一环境的对照是干净副本 1754 项对干净副本加本阶段代码 1762 项，新增失败为 0。发现器 countTestCases 在干净副本上是 1890，实际执行是 1754；两次执行只相差本阶段新增的 8 项测试。"
+}

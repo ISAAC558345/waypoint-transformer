@@ -1,0 +1,31 @@
+{
+  "schema_version": "queue_lookahead_observation_v1",
+  "instruction_commit": "ee356388b4b2ee4ba16347a9f5d0cedae9509ace",
+  "parent_result_commit": "bd9ffe66a4ecff5562ccb9d3f1629d58891687a9",
+  "actor_feature_count": 5,
+  "head_feature_count": 3,
+  "lookahead_names": [
+    "assigned_tagged_backlog_fraction",
+    "assigned_fifo_bits_before_next_tag_fraction"
+  ],
+  "critic_features": "three_head_features_only",
+  "updates": 300,
+  "sample_updates": [
+    1,
+    150,
+    300
+  ],
+  "sample_env_index": 0,
+  "diagnostic_scenarios": [
+    321000,
+    321001
+  ],
+  "payload_ci_floor_fraction": 0.005,
+  "distance_threshold_m": 1.0,
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "reward_formula": "r_base + min(0.0005*A, 0.00025*P) + min(0.0010*T, 0.00075*P)",
+  "groups": {
+    "L4_C": "lookahead columns always zero",
+    "L4_Q": "pre-service queue fractions"
+  }
+}
