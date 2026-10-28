@@ -1,0 +1,17 @@
+{
+  "schema_version": "synthetic_priority_full_replay_attribution_v1",
+  "synthetic_tag": true,
+  "gate": "PRIORITY_TAG_ATTRIBUTION_COMPLETE",
+  "instruction_commit": "9eca4e10fcc14f2194a61bc64ece3ab1014fdabd",
+  "e8_commit": "b3ff3842c2d6611f575a43002a6cc9a4482573d1",
+  "source_result_commit": "f4ec753d7611d72dc25ace3aeaa8e877d8ef92bb",
+  "process_rng_role": "historical_inherited_process_seed",
+  "canonical_explicit_seed": null,
+  "accounting_tolerance_bits": 1.0,
+  "path_tolerance_m": 1e-09,
+  "decomposition_tolerance_bits": 1e-06,
+  "retrained": false,
+  "merged": false,
+  "held_out_splits_read": false,
+  "thresholds_changed_after_results": false
+}

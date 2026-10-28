@@ -1,0 +1,851 @@
+{
+  "gate": "PRIORITY_TAG_ATTRIBUTION_COMPLETE",
+  "instruction_commit": "9eca4e10fcc14f2194a61bc64ece3ab1014fdabd",
+  "e8_commit": "b3ff3842c2d6611f575a43002a6cc9a4482573d1",
+  "source_result_commit": "f4ec753d7611d72dc25ace3aeaa8e877d8ef92bb",
+  "context_label": "historical_inherited_process_context",
+  "process_rng_role": "historical_inherited_process_seed",
+  "process_rng_seed": 2,
+  "canonical_explicit_seed": null,
+  "reconciliation": {
+    "row_count": 224,
+    "expected_row_count": 224,
+    "max_abs_gap": 0.0,
+    "problems": [],
+    "matches": true,
+    "saved_gate": "PRIORITY_TAG_EXPERIMENT_NOT_MERGED",
+    "saved_l2_passing_seeds": 0,
+    "saved_l1_passing_seeds": 0,
+    "recomputed_l2_passing_seeds": 0,
+    "recomputed_l1_passing_seeds": 0
+  },
+  "preflight": {
+    "scenario_id": 321101,
+    "seconds": 0.4090412999939872,
+    "estimated_seconds": 91.62525119865313,
+    "matches_saved": true,
+    "max_bit_gap": 0.0,
+    "path_gap_m": 0.0,
+    "identity_gap_bits": 3.725290298461914e-09,
+    "ledger_urgency_gap_bits": 0.0
+  },
+  "replay": {
+    "completed_episodes": 224,
+    "elapsed_seconds": 92.1512403000088,
+    "stopped_early": false,
+    "max_bit_gap": 0.0,
+    "max_path_gap_m": 0.0,
+    "max_identity_gap_bits": 7.450580596923828e-09,
+    "max_ledger_urgency_gap_bits": 7.450580596923828e-09
+  },
+  "formal_hash_unchanged": true,
+  "applied_context": {
+    "context_label": "historical_inherited_process_context",
+    "torch_num_threads": 1,
+    "deterministic_algorithms": true,
+    "torch_initial_seed": 2,
+    "process_rng_seed": 2,
+    "process_rng_role": "historical_inherited_process_seed",
+    "canonical_explicit_seed": null,
+    "actor_eval_required": true
+  },
+  "attribution": {
+    "l0_clipping": {
+      "tagged_served_bits": 350303432.19170356,
+      "full_saturation_fraction": 0.0,
+      "below_full_boost_fraction": 0.029433665091291254,
+      "boost_retained_fraction": 0.9922825647003203,
+      "boost_suppressed_fraction": 0.00771743529967972,
+      "tag_draw_rate_mean": 0.2509191176470588,
+      "served_age_mean_ordinary": 11.247174445763592,
+      "served_age_mean_tagged": 13.395267848145778,
+      "age_service_bits": 436047051.6620089,
+      "tag_increment_service_bits": 86899997.02962708,
+      "combined_urgency_served_bits": 522947048.69163597
+    },
+    "groups": [
+      {
+        "variant": "L1",
+        "model_seed": 0,
+        "age_delta_mean": 1208001.2687003438,
+        "tag_increment_delta_mean": -13207.360296062056,
+        "tagged_delta_mean": -8649.995762462,
+        "ordinary_age_delta_mean": 1041091.7392431272,
+        "combined_delta_mean": 1194793.9084042818,
+        "ordinary_share_of_combined_delta": 0.8713567519218164,
+        "tag_share_of_combined_delta": -0.011054090754196487,
+        "intervals": {
+          "payload_bits": {
+            "mean": 965549.2913725055,
+            "ci_low": -530797.5178161558,
+            "ci_high": 2547738.3611353342,
+            "scenarios": 32
+          },
+          "served_tagged_bits": {
+            "mean": -8649.995762462,
+            "ci_low": -719839.4067903071,
+            "ci_high": 667529.7332455764,
+            "scenarios": 32
+          },
+          "served_ordinary_bits": {
+            "mean": 974199.2871349675,
+            "ci_low": -322521.11994585674,
+            "ci_high": 2393765.566934706,
+            "scenarios": 32
+          },
+          "age_service_bits": {
+            "mean": 1208001.2687003438,
+            "ci_low": 602833.8882968514,
+            "ci_high": 1839531.7067891269,
+            "scenarios": 32
+          },
+          "age_service_ordinary_bits": {
+            "mean": 1041091.7392431272,
+            "ci_low": 511905.26098167256,
+            "ci_high": 1571725.2639926923,
+            "scenarios": 32
+          },
+          "age_service_tagged_bits": {
+            "mean": 166909.52945721662,
+            "ci_low": -126316.32776388276,
+            "ci_high": 469477.99433474534,
+            "scenarios": 32
+          },
+          "tag_increment_service_bits": {
+            "mean": -13207.360296062056,
+            "ci_low": -190433.66909596,
+            "ci_high": 154127.3055110799,
+            "scenarios": 32
+          },
+          "combined_urgency_served_bits": {
+            "mean": 1194793.9084042818,
+            "ci_low": 517431.37013465614,
+            "ci_high": 1903423.2184861342,
+            "scenarios": 32
+          },
+          "dropped_bits": {
+            "mean": 265385.3092184379,
+            "ci_low": -661965.5263058128,
+            "ci_high": 1168709.8475835698,
+            "scenarios": 32
+          },
+          "safety_violations": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "scenarios": 32
+          },
+          "constraint_failures": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "scenarios": 32
+          },
+          "sinr_mean": {
+            "mean": 1.3913376110915827,
+            "ci_low": 0.6449439301976974,
+            "ci_high": 2.29278527912868,
+            "scenarios": 32
+          },
+          "interference_mean": {
+            "mean": 0.004505284086536623,
+            "ci_low": 0.0012808971541586618,
+            "ci_high": 0.008142254820968841,
+            "scenarios": 32
+          },
+          "tagged_delta_buoy_entry_exit": {
+            "mean": 269558.94905144285,
+            "ci_low": -212505.66187159263,
+            "ci_high": 807916.9469302945,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_volume": {
+            "mean": -47421.18128723354,
+            "ci_low": -618149.5490304487,
+            "ci_high": 546287.0965389519,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_mix": {
+            "mean": -230787.76352667116,
+            "ci_low": -859694.8113157464,
+            "ci_high": 379514.0355373977,
+            "scenarios": 32
+          }
+        },
+        "clipping": {
+          "tagged_served_bits": 350026632.3273048,
+          "full_saturation_fraction": 0.0,
+          "below_full_boost_fraction": 0.042403282251567795,
+          "boost_retained_fraction": 0.9882375055311721,
+          "boost_suppressed_fraction": 0.011762494468827933,
+          "tag_draw_rate_mean": 0.2509191176470588,
+          "served_age_mean_ordinary": 12.093667109873032,
+          "served_age_mean_tagged": 14.138299439316356,
+          "age_service_bits": 474703092.2604199,
+          "tag_increment_service_bits": 86477361.5001531,
+          "combined_urgency_served_bits": 561180453.760573
+        },
+        "mechanism_sums": {
+          "tagged_delta_buoy_entry_exit": 8625886.369646171,
+          "tagged_delta_shared_volume": -1517477.8011914734,
+          "tagged_delta_shared_mix": -7385208.432853477,
+          "tagged_delta_split_gap_max": 9.313225746154785e-10
+        }
+      },
+      {
+        "variant": "L1",
+        "model_seed": 1,
+        "age_delta_mean": 694118.0608186118,
+        "tag_increment_delta_mean": 12118.59870970939,
+        "tagged_delta_mean": 69363.10614611907,
+        "ordinary_age_delta_mean": 634441.3752838369,
+        "combined_delta_mean": 706236.6595283215,
+        "ordinary_share_of_combined_delta": 0.8983410401090833,
+        "tag_share_of_combined_delta": 0.017159401945805407,
+        "intervals": {
+          "payload_bits": {
+            "mean": 764066.3044156819,
+            "ci_low": -773627.2850698881,
+            "ci_high": 2218590.711506596,
+            "scenarios": 32
+          },
+          "served_tagged_bits": {
+            "mean": 69363.10614611907,
+            "ci_low": -708260.7976820045,
+            "ci_high": 786458.3878777752,
+            "scenarios": 32
+          },
+          "served_ordinary_bits": {
+            "mean": 694703.1982695621,
+            "ci_low": -540467.4217383189,
+            "ci_high": 1910130.2506674496,
+            "scenarios": 32
+          },
+          "age_service_bits": {
+            "mean": 694118.0608186118,
+            "ci_low": -92373.77099574586,
+            "ci_high": 1445840.088020591,
+            "scenarios": 32
+          },
+          "age_service_ordinary_bits": {
+            "mean": 634441.3752838369,
+            "ci_low": -29923.130138519762,
+            "ci_high": 1245755.93282946,
+            "scenarios": 32
+          },
+          "age_service_tagged_bits": {
+            "mean": 59676.6855347754,
+            "ci_low": -215459.99381451475,
+            "ci_high": 317108.1111287594,
+            "scenarios": 32
+          },
+          "tag_increment_service_bits": {
+            "mean": 12118.59870970939,
+            "ci_low": -180529.0787493011,
+            "ci_high": 188239.68900052967,
+            "scenarios": 32
+          },
+          "combined_urgency_served_bits": {
+            "mean": 706236.6595283215,
+            "ci_low": -172626.28372220328,
+            "ci_high": 1529279.5869649113,
+            "scenarios": 32
+          },
+          "dropped_bits": {
+            "mean": -252663.37379254494,
+            "ci_low": -1183635.3245680206,
+            "ci_high": 734679.0067536774,
+            "scenarios": 32
+          },
+          "safety_violations": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "scenarios": 32
+          },
+          "constraint_failures": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "scenarios": 32
+          },
+          "sinr_mean": {
+            "mean": 0.6557164645350386,
+            "ci_low": 0.22506516395541032,
+            "ci_high": 1.127432013030019,
+            "scenarios": 32
+          },
+          "interference_mean": {
+            "mean": 0.0010535258573209432,
+            "ci_low": -0.0015472890715589,
+            "ci_high": 0.003780882223444444,
+            "scenarios": 32
+          },
+          "tagged_delta_buoy_entry_exit": {
+            "mean": 7345.986322867931,
+            "ci_low": -489872.7570673163,
+            "ci_high": 494010.207249861,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_volume": {
+            "mean": 395171.664559986,
+            "ci_low": -147982.08201279968,
+            "ci_high": 968465.0850274921,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_mix": {
+            "mean": -333154.5447367347,
+            "ci_low": -960422.3824033525,
+            "ci_high": 248991.08145271274,
+            "scenarios": 32
+          }
+        },
+        "clipping": {
+          "tagged_served_bits": 352523051.5883794,
+          "full_saturation_fraction": 0.0,
+          "below_full_boost_fraction": 0.034282527181866064,
+          "boost_retained_fraction": 0.9904350004351903,
+          "boost_suppressed_fraction": 0.009564999564809717,
+          "tag_draw_rate_mean": 0.2509191176470588,
+          "served_age_mean_ordinary": 11.741371296733023,
+          "served_age_mean_tagged": 13.570947118942275,
+          "age_service_bits": 458258829.6082045,
+          "tag_increment_service_bits": 87287792.18833779,
+          "combined_urgency_served_bits": 545546621.7965423
+        },
+        "mechanism_sums": {
+          "tagged_delta_buoy_entry_exit": 235071.5623317738,
+          "tagged_delta_shared_volume": 12645493.265919551,
+          "tagged_delta_shared_mix": -10660945.43157551,
+          "tagged_delta_split_gap_max": 1.3969838619232178e-09
+        }
+      },
+      {
+        "variant": "L1",
+        "model_seed": 2,
+        "age_delta_mean": 1294010.4989497,
+        "tag_increment_delta_mean": 23524.356512230508,
+        "tagged_delta_mean": 186135.14673679846,
+        "ordinary_age_delta_mean": 1179267.5196092033,
+        "combined_delta_mean": 1317534.8554619316,
+        "ordinary_share_of_combined_delta": 0.8950560318920358,
+        "tag_share_of_combined_delta": 0.017854826697531884,
+        "intervals": {
+          "payload_bits": {
+            "mean": 2666318.6273943465,
+            "ci_low": 550922.772100535,
+            "ci_high": 4659131.985751336,
+            "scenarios": 32
+          },
+          "served_tagged_bits": {
+            "mean": 186135.14673679846,
+            "ci_low": -650014.279783593,
+            "ci_high": 1031776.4726531507,
+            "scenarios": 32
+          },
+          "served_ordinary_bits": {
+            "mean": 2480183.4806575477,
+            "ci_low": 844258.0810312809,
+            "ci_high": 4071238.7013146705,
+            "scenarios": 32
+          },
+          "age_service_bits": {
+            "mean": 1294010.4989497,
+            "ci_low": 545423.2070724868,
+            "ci_high": 2061913.5533996047,
+            "scenarios": 32
+          },
+          "age_service_ordinary_bits": {
+            "mean": 1179267.5196092033,
+            "ci_low": 559061.3532674406,
+            "ci_high": 1824957.0218211345,
+            "scenarios": 32
+          },
+          "age_service_tagged_bits": {
+            "mean": 114742.97934049668,
+            "ci_low": -160358.34213603486,
+            "ci_high": 392189.9602216956,
+            "scenarios": 32
+          },
+          "tag_increment_service_bits": {
+            "mean": 23524.356512230508,
+            "ci_low": -196840.05020591946,
+            "ci_high": 241113.62080077737,
+            "scenarios": 32
+          },
+          "combined_urgency_served_bits": {
+            "mean": 1317534.8554619316,
+            "ci_low": 464433.63144567277,
+            "ci_high": 2202049.333728966,
+            "scenarios": 32
+          },
+          "dropped_bits": {
+            "mean": -784429.0369552013,
+            "ci_low": -1870372.2830963705,
+            "ci_high": 341668.206563338,
+            "scenarios": 32
+          },
+          "safety_violations": {
+            "mean": 0.03125,
+            "ci_low": 0.0,
+            "ci_high": 0.09375,
+            "scenarios": 32
+          },
+          "constraint_failures": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "scenarios": 32
+          },
+          "sinr_mean": {
+            "mean": 0.314915097660343,
+            "ci_low": 0.09944929916118339,
+            "ci_high": 0.5257354209117628,
+            "scenarios": 32
+          },
+          "interference_mean": {
+            "mean": 0.0028807589731901077,
+            "ci_low": 0.0005815753912359552,
+            "ci_high": 0.0054554469090561854,
+            "scenarios": 32
+          },
+          "tagged_delta_buoy_entry_exit": {
+            "mean": 175807.41811222053,
+            "ci_low": -309063.8256067607,
+            "ci_high": 707734.0705050905,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_volume": {
+            "mean": 335403.7942550111,
+            "ci_low": -438752.62580521865,
+            "ci_high": 1129573.4317365407,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_mix": {
+            "mean": -325076.06563043315,
+            "ci_low": -904634.7149447721,
+            "ci_high": 190957.13955544462,
+            "scenarios": 32
+          }
+        },
+        "clipping": {
+          "tagged_served_bits": 356259756.8872811,
+          "full_saturation_fraction": 0.0,
+          "below_full_boost_fraction": 0.045188362103441,
+          "boost_retained_fraction": 0.9841445714089045,
+          "boost_suppressed_fraction": 0.015855428591095455,
+          "tag_draw_rate_mean": 0.2509191176470588,
+          "served_age_mean_ordinary": 11.850363579108404,
+          "served_age_mean_tagged": 13.666021560049684,
+          "age_service_bits": 477455387.6283993,
+          "tag_increment_service_bits": 87652776.43801846,
+          "combined_urgency_served_bits": 565108164.0664178
+        },
+        "mechanism_sums": {
+          "tagged_delta_buoy_entry_exit": 5625837.379591057,
+          "tagged_delta_shared_volume": 10732921.416160354,
+          "tagged_delta_shared_mix": -10402434.10017386,
+          "tagged_delta_split_gap_max": 1.0477378964424133e-09
+        }
+      },
+      {
+        "variant": "L2",
+        "model_seed": 0,
+        "age_delta_mean": 859738.9742443538,
+        "tag_increment_delta_mean": -70035.01030669188,
+        "tagged_delta_mean": -239099.02614629167,
+        "ordinary_age_delta_mean": 922968.9426999008,
+        "combined_delta_mean": 789703.963937662,
+        "ordinary_share_of_combined_delta": 1.1687530832411506,
+        "tag_share_of_combined_delta": -0.08868514469330983,
+        "intervals": {
+          "payload_bits": {
+            "mean": 712169.0022218875,
+            "ci_low": -794255.8375541698,
+            "ci_high": 2117444.267246211,
+            "scenarios": 32
+          },
+          "served_tagged_bits": {
+            "mean": -239099.02614629167,
+            "ci_low": -805992.3930623843,
+            "ci_high": 327646.58169801504,
+            "scenarios": 32
+          },
+          "served_ordinary_bits": {
+            "mean": 951268.02836818,
+            "ci_low": -333523.48867513536,
+            "ci_high": 2219473.1082922462,
+            "scenarios": 32
+          },
+          "age_service_bits": {
+            "mean": 859738.9742443538,
+            "ci_low": 60057.57117733079,
+            "ci_high": 1631361.0993087832,
+            "scenarios": 32
+          },
+          "age_service_ordinary_bits": {
+            "mean": 922968.9426999008,
+            "ci_low": 306647.39637540816,
+            "ci_high": 1500898.4731611325,
+            "scenarios": 32
+          },
+          "age_service_tagged_bits": {
+            "mean": -63229.968455547925,
+            "ci_low": -348838.8806434383,
+            "ci_high": 234445.0089150058,
+            "scenarios": 32
+          },
+          "tag_increment_service_bits": {
+            "mean": -70035.01030669188,
+            "ci_low": -210279.05587126428,
+            "ci_high": 69516.6761137321,
+            "scenarios": 32
+          },
+          "combined_urgency_served_bits": {
+            "mean": 789703.963937662,
+            "ci_low": -65513.43775996901,
+            "ci_high": 1623717.5569070543,
+            "scenarios": 32
+          },
+          "dropped_bits": {
+            "mean": 200707.9141287615,
+            "ci_low": -635298.6390552592,
+            "ci_high": 1075128.833577115,
+            "scenarios": 32
+          },
+          "safety_violations": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "scenarios": 32
+          },
+          "constraint_failures": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "scenarios": 32
+          },
+          "sinr_mean": {
+            "mean": 0.8699366117946388,
+            "ci_low": 0.3388731836526854,
+            "ci_high": 1.4392544599968675,
+            "scenarios": 32
+          },
+          "interference_mean": {
+            "mean": 0.0026024640946128853,
+            "ci_low": 0.00029115291906631733,
+            "ci_high": 0.004959426457525501,
+            "scenarios": 32
+          },
+          "tagged_delta_buoy_entry_exit": {
+            "mean": 28318.72015128797,
+            "ci_low": -457449.8982420174,
+            "ci_high": 563826.6198796041,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_volume": {
+            "mean": 182491.11203449045,
+            "ci_low": -406453.62361080805,
+            "ci_high": 794217.8262561995,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_mix": {
+            "mean": -449908.8583320699,
+            "ci_low": -1008879.1770792303,
+            "ci_high": 40189.831065279745,
+            "scenarios": 32
+          }
+        },
+        "clipping": {
+          "tagged_served_bits": 342652263.35502225,
+          "full_saturation_fraction": 0.0,
+          "below_full_boost_fraction": 0.04218735622432241,
+          "boost_retained_fraction": 0.9882774550605881,
+          "boost_suppressed_fraction": 0.011722544939411939,
+          "tag_draw_rate_mean": 0.2509191176470588,
+          "served_age_mean_ordinary": 11.9766096775951,
+          "served_age_mean_tagged": 13.410934531092648,
+          "age_service_bits": 463558698.8378282,
+          "tag_increment_service_bits": 84658876.69981295,
+          "combined_urgency_served_bits": 548217575.5376412
+        },
+        "mechanism_sums": {
+          "tagged_delta_buoy_entry_exit": 906199.044841215,
+          "tagged_delta_shared_volume": 5839715.585103694,
+          "tagged_delta_shared_mix": -14397083.466626236,
+          "tagged_delta_split_gap_max": 9.313225746154785e-10
+        }
+      },
+      {
+        "variant": "L2",
+        "model_seed": 1,
+        "age_delta_mean": 845014.8865554011,
+        "tag_increment_delta_mean": -87600.9765331735,
+        "tagged_delta_mean": -346001.87891804933,
+        "ordinary_age_delta_mean": 923304.0945499005,
+        "combined_delta_mean": 757413.9100222283,
+        "ordinary_share_of_combined_delta": 1.2190218351321325,
+        "tag_share_of_combined_delta": -0.1156579980563106,
+        "intervals": {
+          "payload_bits": {
+            "mean": 1411400.211571456,
+            "ci_low": -126268.02270867725,
+            "ci_high": 2858177.8029009514,
+            "scenarios": 32
+          },
+          "served_tagged_bits": {
+            "mean": -346001.87891804933,
+            "ci_low": -982554.2658424336,
+            "ci_high": 319650.3609260716,
+            "scenarios": 32
+          },
+          "served_ordinary_bits": {
+            "mean": 1757402.0904895058,
+            "ci_low": 422696.2677730151,
+            "ci_high": 2954035.3172928244,
+            "scenarios": 32
+          },
+          "age_service_bits": {
+            "mean": 845014.8865554011,
+            "ci_low": 263398.7937712779,
+            "ci_high": 1392561.6408047138,
+            "scenarios": 32
+          },
+          "age_service_ordinary_bits": {
+            "mean": 923304.0945499005,
+            "ci_low": 417505.1013063329,
+            "ci_high": 1404361.8429180344,
+            "scenarios": 32
+          },
+          "age_service_tagged_bits": {
+            "mean": -78289.2079944996,
+            "ci_low": -294131.3424276451,
+            "ci_high": 132362.8843706421,
+            "scenarios": 32
+          },
+          "tag_increment_service_bits": {
+            "mean": -87600.9765331735,
+            "ci_low": -244054.24322794552,
+            "ci_high": 76508.74185266222,
+            "scenarios": 32
+          },
+          "combined_urgency_served_bits": {
+            "mean": 757413.9100222283,
+            "ci_low": 92595.79605426459,
+            "ci_high": 1387433.7874359272,
+            "scenarios": 32
+          },
+          "dropped_bits": {
+            "mean": -537165.1068372177,
+            "ci_low": -1541877.2324784105,
+            "ci_high": 430296.79323432693,
+            "scenarios": 32
+          },
+          "safety_violations": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "scenarios": 32
+          },
+          "constraint_failures": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "scenarios": 32
+          },
+          "sinr_mean": {
+            "mean": 0.38589974022505297,
+            "ci_low": 0.08272092654994334,
+            "ci_high": 0.7322411670626097,
+            "scenarios": 32
+          },
+          "interference_mean": {
+            "mean": 0.0014264821808218334,
+            "ci_low": -0.0007802263706100539,
+            "ci_high": 0.00372457243879703,
+            "scenarios": 32
+          },
+          "tagged_delta_buoy_entry_exit": {
+            "mean": -103804.97938560137,
+            "ci_low": -531906.9482284425,
+            "ci_high": 314638.3087067388,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_volume": {
+            "mean": 248874.51160191535,
+            "ci_low": -282031.5335815356,
+            "ci_high": 861076.8793661555,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_mix": {
+            "mean": -491071.4111343635,
+            "ci_low": -1092208.9705793317,
+            "ci_high": 61495.47936429717,
+            "scenarios": 32
+          }
+        },
+        "clipping": {
+          "tagged_served_bits": 339231372.066326,
+          "full_saturation_fraction": 0.0,
+          "below_full_boost_fraction": 0.03194920651537371,
+          "boost_retained_fraction": 0.9916154307110847,
+          "boost_suppressed_fraction": 0.008384569288915289,
+          "tag_draw_rate_mean": 0.2509191176470588,
+          "served_age_mean_ordinary": 11.770979864736452,
+          "served_age_mean_tagged": 13.477987165524151,
+          "age_service_bits": 463087528.03178173,
+          "tag_increment_service_bits": 84096765.78056553,
+          "combined_urgency_served_bits": 547184293.8123473
+        },
+        "mechanism_sums": {
+          "tagged_delta_buoy_entry_exit": -3321759.340339244,
+          "tagged_delta_shared_volume": 7963984.371261291,
+          "tagged_delta_shared_mix": -15714285.156299632,
+          "tagged_delta_split_gap_max": 9.313225746154785e-10
+        }
+      },
+      {
+        "variant": "L2",
+        "model_seed": 2,
+        "age_delta_mean": 939904.3098122457,
+        "tag_increment_delta_mean": -57347.86426272139,
+        "tagged_delta_mean": -154433.47098448197,
+        "ordinary_age_delta_mean": 828606.7945030401,
+        "combined_delta_mean": 882556.4455495244,
+        "ordinary_share_of_combined_delta": 0.9388711607982281,
+        "tag_share_of_combined_delta": -0.06497925945916548,
+        "intervals": {
+          "payload_bits": {
+            "mean": 565664.7075319998,
+            "ci_low": -1395309.8946612435,
+            "ci_high": 2498051.262971961,
+            "scenarios": 32
+          },
+          "served_tagged_bits": {
+            "mean": -154433.47098448197,
+            "ci_low": -989581.453090345,
+            "ci_high": 628951.7916245176,
+            "scenarios": 32
+          },
+          "served_ordinary_bits": {
+            "mean": 720098.1785164817,
+            "ci_low": -1005705.7888661656,
+            "ci_high": 2481006.206395742,
+            "scenarios": 32
+          },
+          "age_service_bits": {
+            "mean": 939904.3098122457,
+            "ci_low": 40298.80523544553,
+            "ci_high": 1812699.5630594543,
+            "scenarios": 32
+          },
+          "age_service_ordinary_bits": {
+            "mean": 828606.7945030401,
+            "ci_low": 88088.54697036951,
+            "ci_high": 1551245.0580806662,
+            "scenarios": 32
+          },
+          "age_service_tagged_bits": {
+            "mean": 111297.5153092052,
+            "ci_low": -201448.64661010774,
+            "ci_high": 401241.1300864251,
+            "scenarios": 32
+          },
+          "tag_increment_service_bits": {
+            "mean": -57347.86426272139,
+            "ci_low": -259416.30232463402,
+            "ci_high": 135453.70651057764,
+            "scenarios": 32
+          },
+          "combined_urgency_served_bits": {
+            "mean": 882556.4455495244,
+            "ci_low": -127194.70397985654,
+            "ci_high": 1843584.8279010805,
+            "scenarios": 32
+          },
+          "dropped_bits": {
+            "mean": -83982.22222408699,
+            "ci_low": -1033687.4053758733,
+            "ci_high": 884235.7712264621,
+            "scenarios": 32
+          },
+          "safety_violations": {
+            "mean": 0.0625,
+            "ci_low": 0.0,
+            "ci_high": 0.15625,
+            "scenarios": 32
+          },
+          "constraint_failures": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "scenarios": 32
+          },
+          "sinr_mean": {
+            "mean": 0.07853789733565329,
+            "ci_low": -0.09876484597689578,
+            "ci_high": 0.2899775669057948,
+            "scenarios": 32
+          },
+          "interference_mean": {
+            "mean": -0.0006658928927776792,
+            "ci_low": -0.0026292993624163295,
+            "ci_high": 0.0013876156364296276,
+            "scenarios": 32
+          },
+          "tagged_delta_buoy_entry_exit": {
+            "mean": 137550.95670420717,
+            "ci_low": -567891.6820326296,
+            "ci_high": 841343.5972030468,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_volume": {
+            "mean": -113136.6493039066,
+            "ci_low": -680227.0519858251,
+            "ci_high": 437798.22826365964,
+            "scenarios": 32
+          },
+          "tagged_delta_shared_mix": {
+            "mean": -178847.77838478237,
+            "ci_low": -960352.5550206768,
+            "ci_high": 492237.1161212479,
+            "scenarios": 32
+          }
+        },
+        "clipping": {
+          "tagged_served_bits": 345361561.12020016,
+          "full_saturation_fraction": 0.0,
+          "below_full_boost_fraction": 0.05175819903279129,
+          "boost_retained_fraction": 0.9852267878024086,
+          "boost_suppressed_fraction": 0.014773212197591423,
+          "tag_draw_rate_mean": 0.2509191176470588,
+          "served_age_mean_ordinary": 11.938195981068416,
+          "served_age_mean_tagged": 14.081941458895969,
+          "age_service_bits": 466123989.57600075,
+          "tag_increment_service_bits": 85064865.37322,
+          "combined_urgency_served_bits": 551188854.9492208
+        },
+        "mechanism_sums": {
+          "tagged_delta_buoy_entry_exit": 4401630.6145346295,
+          "tagged_delta_shared_volume": -3620372.777725011,
+          "tagged_delta_shared_mix": -5723128.908313036,
+          "tagged_delta_split_gap_max": 1.6298145055770874e-09
+        }
+      }
+    ],
+    "max_decomposition_gap_bits": 2.9802322387695312e-08,
+    "max_saved_gap_bits": 0.0,
+    "max_origin_split_gap_bits": 1.6298145055770874e-09
+  },
+  "locked_rule_letter": "B",
+  "failure": null,
+  "problems": [],
+  "retrained": false,
+  "merged": false,
+  "tolerances": {
+    "accounting_bits": 1.0,
+    "path_m": 1e-09,
+    "decomposition_bits": 1e-06
+  },
+  "l2_tagged_positive_seeds": 0
+}
