@@ -1,0 +1,16 @@
+{
+  "context_label": "historical_inherited_process_context",
+  "process_rng_seed": 2,
+  "process_rng_role": "historical_inherited_process_seed",
+  "canonical_explicit_seed": null,
+  "torch_num_threads": 1,
+  "deterministic_algorithms": true,
+  "training_seed_role": "mappo_model_seed",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.4.1",
+  "torch": "2.12.0+cpu",
+  "cuda_available": false,
+  "git_commit": "dfa8dcb1d51177f46450cac17a17314d05897566",
+  "instruction_commit": "dfa8dcb1d51177f46450cac17a17314d05897566"
+}

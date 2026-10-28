@@ -1,0 +1,10 @@
+{
+  "schema_version": "direct_tagged_service_reward_v1",
+  "synthetic_tag": true,
+  "gate": "DIRECT_TAG_REWARD_INCONCLUSIVE",
+  "merged": false,
+  "retrained_l0_l1_l2": false,
+  "lambda_tag": 0.002,
+  "rho_tag": 0.001,
+  "urgency_in_l3_bonus": false
+}
