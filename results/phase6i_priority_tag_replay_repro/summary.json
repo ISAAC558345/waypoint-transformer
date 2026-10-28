@@ -1,0 +1,174 @@
+{
+  "instruction_commit": "6e58a6dd4bc2beb4c644841dfde809d96cfa9b3b",
+  "source_experiment_commit": "f4ec753d7611d72dc25ace3aeaa8e877d8ef92bb",
+  "source_diagnostic_commit": "51adade38d8f3da5402e67506cf875d80224e82d",
+  "runtime_before": {
+    "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.1",
+    "torch": "2.12.0+cpu",
+    "cuda_available": false,
+    "torch_threads_before": 12,
+    "deterministic_algorithms_before": false,
+    "requirements_numpy": "1.21.6",
+    "requirements_torch": "1.13.0",
+    "head": "6e58a6dd4bc2beb4c644841dfde809d96cfa9b3b",
+    "worktree": "?? src/wt/benchmark_v2/phase6i_priority_tag_replay_repro/\n?? tests/test_priority_tag_replay_repro.py"
+  },
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "blobs_match_source_experiment": true,
+  "blob_pairs": {
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": {
+      "sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+      "matches_source": true
+    },
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py": {
+      "sha256": "79fc576924aaabc74df7b5badb4f23cd4fbbba915162ca646e6b819855f425b3",
+      "matches_source": true
+    },
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/train.py": {
+      "sha256": "3cca104fff10777a12fe2302c8195f4271dc254284d8d2b2f9813e0abd6ccfd2",
+      "matches_source": true
+    },
+    "src/wt/benchmark_v2/bit_queue_v2.py": {
+      "sha256": "8ec626b90ad0af4f63fe4314f10d13c4940500a7f60b8b1d36a59bb8bf1ab56e",
+      "matches_source": true
+    },
+    "src/wt/l3b/env.py": {
+      "sha256": "de22347ea625a330f61e8f62b2a973066f4669c7498fd58bac2fd8bf706632ba",
+      "matches_source": true
+    },
+    "src/wt/lowlevel_v2/observation.py": {
+      "sha256": "7311f0ff5c6f7ef9367fce7eba011bace123dfd9685f967e6794ad13df3dc679",
+      "matches_source": true
+    },
+    "src/wt/lowlevel_v2/residual_policy.py": {
+      "sha256": "fabd7fff68d575b74de4e0be67d6a35e60990e10d82f135269a86664dcfe6927",
+      "matches_source": true
+    },
+    "src/wt/lowlevel_v2/safety_projector.py": {
+      "sha256": "75478f547b5741b85735143cf2a0301bcd9b281d4dcd49c355e615a7e84fa6d7",
+      "matches_source": true
+    },
+    "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py": {
+      "sha256": "dc67c0402a273400fc5490f72b0d8fda34713a0baadb1005de06f17e3be8bf9a",
+      "matches_source": true
+    },
+    "src/wt/round30/ppo.py": {
+      "sha256": "6ded9a1ca6497cc372c8fc8f2fae31d8f2d1a7c258f9af039146df5e1d904feb",
+      "matches_source": true
+    },
+    "src/wt/benchmark_v2/phase6i_priority_tag_reward/evaluate.py": {
+      "sha256": "f246194aa6cb7d7e508c492dda6467262b2a05a4f8134f7a831a7c771e400cb1",
+      "matches_source": true
+    },
+    "src/wt/benchmark_v2/phase6i_priority_tag_reward/rollout.py": {
+      "sha256": "49f95c437b94d0de5437ec93202da4b9b489834b3a3268a09ee9d93022c0698a",
+      "matches_source": true
+    },
+    "src/wt/benchmark_v2/phase6i_priority_tag_reward/train.py": {
+      "sha256": "62ed2bb6b80fc1382d0fb680f1395a0ce9badab877532f3e19438e3450029d77",
+      "matches_source": true
+    },
+    "src/wt/benchmark_v2/phase6i_priority_tag/follow.py": {
+      "sha256": "a84dabdd596af31fe22ca97c27f04db996b89dd22bc61fa61df1608e45c44381",
+      "matches_source": true
+    },
+    "src/wt/benchmark_v2/phase6i_priority_tag/ledger.py": {
+      "sha256": "9c42457e75402a2ee216af1fdb1471553f81cb37bfae0a464335f04270d3cda4",
+      "matches_source": true
+    }
+  },
+  "split_ok": true,
+  "split_error": "",
+  "scenario_id": 321101,
+  "accounting_tolerance_bits": 1.0,
+  "tolerance_changed_after_results": false,
+  "retrained": false,
+  "merged": false,
+  "step_logs_in_saved_evaluation": false,
+  "inherited_process": {
+    "torch_threads": 1,
+    "process_seed": 2,
+    "source": "phase6i train_variant calls torch.set_num_threads(1) and seed_everything(model_seed); evaluate_all does not reset either flag"
+  },
+  "runtime_after_inherited_flags": {
+    "torch_threads": 1,
+    "deterministic_algorithms": true
+  },
+  "reset_equal": true,
+  "fresh_reset": {
+    "t": 0,
+    "payload": 0.0,
+    "q_sha256": "b71cd9220ff57294849f7a9acaedb836f395751a31229a3ecc9de0c2c9d06637",
+    "position_sha256": "562cfaa2c55951d533ec401974a4b6b3003663d40b9c29e93779aab4c9cf3ab0"
+  },
+  "inherited_reset": {
+    "t": 0,
+    "payload": 0.0,
+    "q_sha256": "b71cd9220ff57294849f7a9acaedb836f395751a31229a3ecc9de0c2c9d06637",
+    "position_sha256": "562cfaa2c55951d533ec401974a4b6b3003663d40b9c29e93779aab4c9cf3ab0"
+  },
+  "fresh_vs_instrumented": null,
+  "fresh_vs_inherited": {
+    "step_index": 0,
+    "field": "mu",
+    "diffs": {
+      "mu": 3.5390257835388184e-08,
+      "desired": 8.845707719258578e-09,
+      "projected": 6.987659420705505e-09,
+      "executed": 6.987659420705505e-09,
+      "position": 1.5372850725725584e-07,
+      "q_bits": 0.00043016986455768347,
+      "served": 0.0010257281828671694,
+      "dropped": 0.0,
+      "snap": 0.0,
+      "payload": 0.0010257281828671694,
+      "path_increment": 1.2099121704522986e-10
+    },
+    "nonzero": {
+      "mu": 3.5390257835388184e-08,
+      "desired": 8.845707719258578e-09,
+      "projected": 6.987659420705505e-09,
+      "executed": 6.987659420705505e-09,
+      "position": 1.5372850725725584e-07,
+      "q_bits": 0.00043016986455768347,
+      "served": 0.0010257281828671694,
+      "payload": 0.0010257281828671694,
+      "path_increment": 1.2099121704522986e-10
+    }
+  },
+  "fresh_gaps": {
+    "payload_bits": 1.5531670972704887,
+    "served_ordinary_bits": 1.291123427450657,
+    "served_tagged_bits": 0.2620436828583479,
+    "dropped_ordinary_bits": 1.4944775998592377,
+    "dropped_tagged_bits": 0.05868951044976711,
+    "urgency_served_bits": 0.13525486178696156,
+    "path_length_m": 5.744638656324241e-06
+  },
+  "instrumented_gaps": {
+    "payload_bits": 1.5531670972704887,
+    "served_ordinary_bits": 1.291123427450657,
+    "served_tagged_bits": 0.2620436828583479,
+    "dropped_ordinary_bits": 1.4944775998592377,
+    "dropped_tagged_bits": 0.05868951044976711,
+    "urgency_served_bits": 0.13525486178696156,
+    "path_length_m": 5.744638656324241e-06
+  },
+  "inherited_gaps": {
+    "payload_bits": 0.0,
+    "served_ordinary_bits": 0.0,
+    "served_tagged_bits": 0.0,
+    "dropped_ordinary_bits": 0.0,
+    "dropped_tagged_bits": 0.0,
+    "urgency_served_bits": 0.0,
+    "path_length_m": 0.0
+  },
+  "fresh_matches_saved": false,
+  "inherited_matches_saved": true,
+  "instrumented_same_as_fresh": true,
+  "formal_actor_sha256_after": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "cause_letter": "A",
+  "gate": "REPLAY_DIVERGENCE_LOCALIZED"
+}

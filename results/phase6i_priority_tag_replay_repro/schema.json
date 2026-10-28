@@ -1,0 +1,14 @@
+{
+  "schema_version": "replay_reproducibility_v1",
+  "scenario_id": 321101,
+  "model_seed": 0,
+  "accounting_tolerance_bits": 1.0,
+  "path_equal_meters": 1e-09,
+  "tolerance_changed_after_results": false,
+  "retrained": false,
+  "formal_system_modified": false,
+  "held_out_splits_read": false,
+  "merged": false,
+  "gate": "REPLAY_DIVERGENCE_LOCALIZED",
+  "cause_letter": "A"
+}
