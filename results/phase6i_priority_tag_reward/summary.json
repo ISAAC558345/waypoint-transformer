@@ -1,5 +1,5 @@
 {
-  "gate": "PRIORITY_TAG_EXPERIMENT_SMOKE_PASS",
+  "gate": "PRIORITY_TAG_EXPERIMENT_NOT_MERGED",
   "merged": false,
   "smoke": {
     "gate": "PRIORITY_TAG_EXPERIMENT_SMOKE_PASS",
@@ -24,8 +24,8 @@
         "max_bonus": 0.00015625
       }
     ],
-    "first_scenario_seconds": 0.5610104000006686,
-    "elapsed_seconds": 1.7451668999929097,
+    "first_scenario_seconds": 0.3902564000018174,
+    "elapsed_seconds": 1.5183981000009226,
     "watched_sha256": {
       "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
       "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py": "79fc576924aaabc74df7b5badb4f23cd4fbbba915162ca646e6b819855f425b3",
@@ -52,7 +52,303 @@
     "results/phase5_hgnn_urgency/checkpoints/mappo_original.pt": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14"
   },
   "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
-  "training_text": "Smoke 已通过。L1/L2 训练尚未开始，预算仍是 300 次更新、种子 0/1/2。",
-  "decision_text": "评估尚未完成，不合并。",
-  "manifest": []
+  "training_text": "L1 seed 0 sha256 cedc9bc17b448639793a1d75d1a3c4681b7d060eb2659dfce5a66f2f675ac9c3 用时 776.9 秒；L1 seed 1 sha256 b1574ddaec7ba4006dbcba0999031a60eea8e91323ac4c68f29ae08b8530aee7 用时 749.6 秒；L1 seed 2 sha256 ee13fe4ba0b6fd4a9354b798eb1cd27ff5c4fb4f32459d1e3c5745c4c89f3583 用时 771.6 秒；L2 seed 0 sha256 4a84fdc6db2f14b8dd29c57efcc861194ec3fbbc9e1e52c3047f8e2d77aab41f 用时 803.8 秒；L2 seed 1 sha256 0a8f113de24a76a43bfd29246c39f3c6cd8dff85d9744b28a9d30f0c5c34eb7a 用时 1331.8 秒；L2 seed 2 sha256 55fe2acece8772f1bdbf4e02b228781c91892fc1228c292f7c86e5e78a1bea8c 用时 800.1 秒",
+  "decision_text": "结果未达到预注册标准或统计上不充分，保留实验分支，不合并。",
+  "manifest": [
+    {
+      "path": "results/phase6i_priority_tag_reward/checkpoints/l1_seed0.pt",
+      "sha256": "cedc9bc17b448639793a1d75d1a3c4681b7d060eb2659dfce5a66f2f675ac9c3",
+      "variant": "L1",
+      "model_seed": 0,
+      "updates": 300,
+      "elapsed_seconds": 776.9131669999915,
+      "final_policy_loss": -0.0023461722303181887,
+      "final_value_loss": 46.07431936264038,
+      "final_gradient_norm": 102.41746181249619,
+      "mean_safety_violation_rate": 0.00010416666666666667,
+      "mean_constraint_failure_rate": 0.0
+    },
+    {
+      "path": "results/phase6i_priority_tag_reward/checkpoints/l1_seed1.pt",
+      "sha256": "b1574ddaec7ba4006dbcba0999031a60eea8e91323ac4c68f29ae08b8530aee7",
+      "variant": "L1",
+      "model_seed": 1,
+      "updates": 300,
+      "elapsed_seconds": 749.592831300004,
+      "final_policy_loss": -0.0031266211008187383,
+      "final_value_loss": 61.81745219230652,
+      "final_gradient_norm": 406.5247768163681,
+      "mean_safety_violation_rate": 0.00012152777777777776,
+      "mean_constraint_failure_rate": 1.736111111111111e-05
+    },
+    {
+      "path": "results/phase6i_priority_tag_reward/checkpoints/l1_seed2.pt",
+      "sha256": "ee13fe4ba0b6fd4a9354b798eb1cd27ff5c4fb4f32459d1e3c5745c4c89f3583",
+      "variant": "L1",
+      "model_seed": 2,
+      "updates": 300,
+      "elapsed_seconds": 771.6033830000088,
+      "final_policy_loss": -0.0030970467487350106,
+      "final_value_loss": 54.73259735107422,
+      "final_gradient_norm": 34.87367284297943,
+      "mean_safety_violation_rate": 0.0001388888888888889,
+      "mean_constraint_failure_rate": 0.0
+    },
+    {
+      "path": "results/phase6i_priority_tag_reward/checkpoints/l2_seed0.pt",
+      "sha256": "4a84fdc6db2f14b8dd29c57efcc861194ec3fbbc9e1e52c3047f8e2d77aab41f",
+      "variant": "L2",
+      "model_seed": 0,
+      "updates": 300,
+      "elapsed_seconds": 803.8176229999954,
+      "final_policy_loss": -0.0035550250904634595,
+      "final_value_loss": 59.315494537353516,
+      "final_gradient_norm": 589.2554993629456,
+      "mean_safety_violation_rate": 0.0001736111111111111,
+      "mean_constraint_failure_rate": 0.0
+    },
+    {
+      "path": "results/phase6i_priority_tag_reward/checkpoints/l2_seed1.pt",
+      "sha256": "0a8f113de24a76a43bfd29246c39f3c6cd8dff85d9744b28a9d30f0c5c34eb7a",
+      "variant": "L2",
+      "model_seed": 1,
+      "updates": 300,
+      "elapsed_seconds": 1331.7625556999992,
+      "final_policy_loss": -0.0007581835961900651,
+      "final_value_loss": 70.02161288261414,
+      "final_gradient_norm": 62.64048594236374,
+      "mean_safety_violation_rate": 0.00015625,
+      "mean_constraint_failure_rate": 0.0
+    },
+    {
+      "path": "results/phase6i_priority_tag_reward/checkpoints/l2_seed2.pt",
+      "sha256": "55fe2acece8772f1bdbf4e02b228781c91892fc1228c292f7c86e5e78a1bea8c",
+      "variant": "L2",
+      "model_seed": 2,
+      "updates": 300,
+      "elapsed_seconds": 800.0870583999931,
+      "final_policy_loss": -0.002219656074885279,
+      "final_value_loss": 51.57170486450195,
+      "final_gradient_norm": 83.30122697353363,
+      "mean_safety_violation_rate": 0.00012152777777777776,
+      "mean_constraint_failure_rate": 1.736111111111111e-05
+    }
+  ],
+  "decision": {
+    "l2_seeds": [
+      {
+        "variant": "L2",
+        "model_seed": 0,
+        "passes_preregistered_criteria": false,
+        "urgency": {
+          "mean": 789703.9639376616,
+          "ci_low": -65513.43775997127,
+          "ci_high": 1623717.5569070543,
+          "scenarios": 32
+        },
+        "tagged": {
+          "mean": -239099.02614629167,
+          "ci_low": -805992.3930623843,
+          "ci_high": 327646.58169801504,
+          "scenarios": 32
+        },
+        "payload": {
+          "mean": 712169.0022218875,
+          "ci_low": -794255.8375541698,
+          "ci_high": 2117444.267246211,
+          "scenarios": 32
+        },
+        "payload_negative_scenarios": 12,
+        "safety_diff_sum": 0.0,
+        "constraint_diff_sum": 0.0,
+        "dropped_diff_mean": 200707.9141287615,
+        "sinr_diff_mean": 0.8699366117946388,
+        "interference_diff_mean": 0.0026024640946128853,
+        "urgency_not_single_scenario": true,
+        "payload_not_single_scenario": true
+      },
+      {
+        "variant": "L2",
+        "model_seed": 1,
+        "passes_preregistered_criteria": false,
+        "urgency": {
+          "mean": 757413.9100222278,
+          "ci_low": 92595.7960542634,
+          "ci_high": 1387433.787435928,
+          "scenarios": 32
+        },
+        "tagged": {
+          "mean": -346001.87891804933,
+          "ci_low": -982554.2658424336,
+          "ci_high": 319650.3609260716,
+          "scenarios": 32
+        },
+        "payload": {
+          "mean": 1411400.211571456,
+          "ci_low": -126268.02270867725,
+          "ci_high": 2858177.8029009514,
+          "scenarios": 32
+        },
+        "payload_negative_scenarios": 7,
+        "safety_diff_sum": 0.0,
+        "constraint_diff_sum": 0.0,
+        "dropped_diff_mean": -537165.1068372177,
+        "sinr_diff_mean": 0.38589974022505297,
+        "interference_diff_mean": 0.0014264821808218334,
+        "urgency_not_single_scenario": true,
+        "payload_not_single_scenario": true
+      },
+      {
+        "variant": "L2",
+        "model_seed": 2,
+        "passes_preregistered_criteria": false,
+        "urgency": {
+          "mean": 882556.4455495239,
+          "ci_low": -127194.70397985617,
+          "ci_high": 1843584.827901079,
+          "scenarios": 32
+        },
+        "tagged": {
+          "mean": -154433.47098448197,
+          "ci_low": -989581.453090345,
+          "ci_high": 628951.7916245176,
+          "scenarios": 32
+        },
+        "payload": {
+          "mean": 565664.7075319998,
+          "ci_low": -1395309.8946612435,
+          "ci_high": 2498051.262971961,
+          "scenarios": 32
+        },
+        "payload_negative_scenarios": 14,
+        "safety_diff_sum": 2.0,
+        "constraint_diff_sum": 0.0,
+        "dropped_diff_mean": -83982.22222408699,
+        "sinr_diff_mean": 0.07853789733565329,
+        "interference_diff_mean": -0.0006658928927776792,
+        "urgency_not_single_scenario": true,
+        "payload_not_single_scenario": true
+      }
+    ],
+    "l1_seeds": [
+      {
+        "variant": "L1",
+        "model_seed": 0,
+        "passes_preregistered_criteria": false,
+        "urgency": {
+          "mean": 1194793.908404282,
+          "ci_low": 517431.3701346564,
+          "ci_high": 1903423.2184861344,
+          "scenarios": 32
+        },
+        "tagged": {
+          "mean": -8649.995762462,
+          "ci_low": -719839.4067903071,
+          "ci_high": 667529.7332455764,
+          "scenarios": 32
+        },
+        "payload": {
+          "mean": 965549.2913725055,
+          "ci_low": -530797.5178161558,
+          "ci_high": 2547738.3611353342,
+          "scenarios": 32
+        },
+        "payload_negative_scenarios": 11,
+        "safety_diff_sum": 0.0,
+        "constraint_diff_sum": 0.0,
+        "dropped_diff_mean": 265385.3092184379,
+        "sinr_diff_mean": 1.3913376110915827,
+        "interference_diff_mean": 0.004505284086536623,
+        "urgency_not_single_scenario": true,
+        "payload_not_single_scenario": true
+      },
+      {
+        "variant": "L1",
+        "model_seed": 1,
+        "passes_preregistered_criteria": false,
+        "urgency": {
+          "mean": 706236.6595283216,
+          "ci_low": -172626.2837222037,
+          "ci_high": 1529279.5869649125,
+          "scenarios": 32
+        },
+        "tagged": {
+          "mean": 69363.10614611907,
+          "ci_low": -708260.7976820045,
+          "ci_high": 786458.3878777752,
+          "scenarios": 32
+        },
+        "payload": {
+          "mean": 764066.3044156819,
+          "ci_low": -773627.2850698881,
+          "ci_high": 2218590.711506596,
+          "scenarios": 32
+        },
+        "payload_negative_scenarios": 10,
+        "safety_diff_sum": 0.0,
+        "constraint_diff_sum": 0.0,
+        "dropped_diff_mean": -252663.37379254494,
+        "sinr_diff_mean": 0.6557164645350386,
+        "interference_diff_mean": 0.0010535258573209432,
+        "urgency_not_single_scenario": true,
+        "payload_not_single_scenario": true
+      },
+      {
+        "variant": "L1",
+        "model_seed": 2,
+        "passes_preregistered_criteria": false,
+        "urgency": {
+          "mean": 1317534.8554619309,
+          "ci_low": 464433.6314456724,
+          "ci_high": 2202049.333728965,
+          "scenarios": 32
+        },
+        "tagged": {
+          "mean": 186135.14673679846,
+          "ci_low": -650014.279783593,
+          "ci_high": 1031776.4726531507,
+          "scenarios": 32
+        },
+        "payload": {
+          "mean": 2666318.6273943465,
+          "ci_low": 550922.772100535,
+          "ci_high": 4659131.985751336,
+          "scenarios": 32
+        },
+        "payload_negative_scenarios": 8,
+        "safety_diff_sum": 1.0,
+        "constraint_diff_sum": 0.0,
+        "dropped_diff_mean": -784429.0369552013,
+        "sinr_diff_mean": 0.314915097660343,
+        "interference_diff_mean": 0.0028807589731901077,
+        "urgency_not_single_scenario": true,
+        "payload_not_single_scenario": true
+      }
+    ],
+    "l2_passing_seeds": 0,
+    "l1_passing_seeds": 0,
+    "merge_l2": false,
+    "l1_meets_same_criteria": false,
+    "thresholds": {
+      "min_passing_seeds": 2,
+      "urgency_ci_low_min": 0.0,
+      "tagged_ci_low_min": 0.0,
+      "payload_mean_min": 0.0,
+      "payload_ci_low_min": 0.0,
+      "safety_diff_max": 0.0,
+      "constraint_diff_max": 0.0,
+      "dropped_diff_max": 0.0,
+      "sinr_diff_min": 0.0,
+      "interference_diff_max": 0.0
+    }
+  },
+  "watched_sha256_after": {
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py": "79fc576924aaabc74df7b5badb4f23cd4fbbba915162ca646e6b819855f425b3",
+    "src/wt/lowlevel_v2/observation.py": "7311f0ff5c6f7ef9367fce7eba011bace123dfd9685f967e6794ad13df3dc679",
+    "src/wt/lowlevel_v2/residual_policy.py": "fabd7fff68d575b74de4e0be67d6a35e60990e10d82f135269a86664dcfe6927",
+    "src/wt/lowlevel_v2/safety_projector.py": "75478f547b5741b85735143cf2a0301bcd9b281d4dcd49c355e615a7e84fa6d7",
+    "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py": "dc67c0402a273400fc5490f72b0d8fda34713a0baadb1005de06f17e3be8bf9a",
+    "results/phase5_hgnn_urgency/checkpoints/mappo_original.pt": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14"
+  }
 }
