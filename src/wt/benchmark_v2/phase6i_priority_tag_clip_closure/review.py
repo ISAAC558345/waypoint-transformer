@@ -19,6 +19,7 @@ from .protocol import (
     E14_OUTPUT,
     E15_GATE,
     E15_OUTPUT,
+    E15_RESULT_COMMIT,
     FORMAL_ACTOR_SHA256,
     MBIT,
     PROJECTOR_ACCEPT_EPS_M,
@@ -420,20 +421,51 @@ def _published(score: dict) -> list[str]:
     return problems
 
 
+def _blob(relative: str) -> bytes:
+    import subprocess
+
+    proc = subprocess.run(
+        ["git", "-c", "core.longpaths=true", "show", f"{E15_RESULT_COMMIT}:{relative}"],
+        cwd=ROOT,
+        capture_output=True,
+        check=False,
+    )
+    if proc.returncode != 0:
+        raise RuntimeError(f"cannot read {relative} at the E15 result commit")
+    return proc.stdout
+
+
+def _same_committed_source(relative: str) -> bool:
+    current = (ROOT / relative).read_bytes()
+    blob = _blob(relative)
+    if current == blob:
+        return True
+    if relative.endswith(".py"):
+        return current.replace(b"\r\n", b"\n") == blob.replace(b"\r\n", b"\n")
+    return False
+
+
 def _formal() -> dict:
     problems = []
-    manifest = _load_json(E15_OUTPUT / "source_manifest.json")
-    recorded = manifest.get("files", {})
     current = {}
+    changed = []
     for relative in WATCHED_PATHS:
         digest = file_sha256(ROOT / relative)
         current[relative] = digest
-        if relative in recorded and recorded[relative] != digest:
+        if not _same_committed_source(relative):
+            changed.append(relative)
             problems.append(f"watched path changed after E15: {relative}")
     formal = "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt"
     if current.get(formal) != FORMAL_ACTOR_SHA256:
         problems.append("formal low-level checkpoint hash is not the registered SHA-256")
-    return {"problems": problems, "watched": current, "formal_actor_sha256": current.get(formal), "matches_e15_manifest": not problems}
+    return {
+        "problems": problems,
+        "watched": current,
+        "changed_after_e15": changed,
+        "formal_actor_sha256": current.get(formal),
+        "matches_e15_manifest": not problems,
+        "comparison": "working tree against the E15 result blob; Python sources ignore checkout newline conversion",
+    }
 
 
 def _lineage() -> dict:
