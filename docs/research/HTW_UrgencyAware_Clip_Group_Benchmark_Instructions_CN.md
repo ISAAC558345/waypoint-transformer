@@ -1,4 +1,4 @@
-# Stage E15：裁剪分组的全预算性能对照方案与前置指令
+# Stage E15：裁剪分组的全预算性能对照执行指令
 
 - 仓库：ISAAC558345/waypoint-transformer
 - 正式基线：feature/maritime-wt-stage1a
@@ -6,8 +6,8 @@
 - 固定来源提交：38ed6b91fc1df002f9eeb347c927f83a0791d00e
 - E14 实现提交：9c971f7cbaf86da7187e0bd90ba93727bc1a990d
 - 本阶段分支：experiment/priority-tag-clip-benchmark
-- 研究方向选择：PENDING；允许前置代码与测试准备，尚未启动训练
-- 唯一待定方向：A 做一次全预算对照（推荐） / B 暂停裁剪研究线
+- 研究方向选择：CHOSEN_A；用户于 2026-10-29（Asia/Shanghai）明确选择 A，完整对照已获授权
+- 已选方向：A 做一次全预算公平对照；常规代码、种子、参数和测试无需再次确认
 - E10/E12 FAIL、E13 审计结论、E14 机制结论全部保留
 - 当前不改变正式系统、不合并实验历史
 
@@ -41,11 +41,11 @@ E14 Gate 为 OPTIMIZER_INTERVENTION_COMPLETE，效应为 MEASURABLE_OPTIMIZER_EF
 - 相关测试通过；干净基线 1770 项、加入本阶段 1784 项，两边已有失败签名数均为 206，新增失败为零。不能写成完整测试全通过。
 - 既有文件哈希核对通过，正式 checkpoint 未改变；release_eligible=false，merged=false。
 
-## 3. 需要用户决定的一项研究投入
+## 3. 已记录的研究方向选择
 
-用户本轮要求明确方向性选择。鉴于“机制效应明确、短程服务收益尚不正向”，是否继续这条研究线涉及一次额外全预算投入，而不是普通实现参数审批。
+用户本轮要求明确方向性选择，并已回复“A：做一次完整公平对照（推荐）”。本节保留原先两项选择的含义以便追溯，执行状态以 CHOSEN_A 和 direction_decision.json 为准。
 
-### 选项 A：只做一次全预算公平对照（推荐）
+### 已选 A：只做一次全预算公平对照
 
 - 6 次全新训练，每次 300 PPO updates，共 1800 PPO updates；
 - 按当前配置每 PPO update 有 16 个 Adam steps，预计真实训练 Adam steps 为 28800；实际数量从配置与日志核算；
@@ -55,17 +55,16 @@ E14 Gate 为 OPTIMIZER_INTERVENTION_COMPLETE，效应为 MEASURABLE_OPTIMIZER_EF
 
 选择 A 的理由：现有干预已经确认“确实改变优化过程”，完整公平评估能直接回答该改变是否有用。它不意味着预计会成功。
 
-### 选项 B：暂停裁剪研究线
+### 未选 B：暂停裁剪研究线
 
 保留机制结论，继续使用现有正式 L0，不进行本方案的 1800 updates。整理这条研究线的得失；其他方向另行规划，不自动改奖励或转改高层。
 
-### 激活规则
+### 激活规则（用户选择已满足）
 
-- 在用户明确选择 A 前，只执行第 4 节的前置工作，不启动第 5 节训练或候选性能评估。
-- 用户选择 A 后记录选择消息及日期，再按本预登记方案执行；不再为常规代码、种子、参数或测试请求审批。
-- 用户选择 B 后记录 DIRECTION_CLOSED，不执行训练，也不把未运行方案标成科学 FAIL。
-- 没有答复不能当成选择 A。当前文件的提交仅表示方案已发布。
-- 普通技术准备无需等待该选择；禁止利用准备阶段试跑候选训练或查看候选 DEV 收益来反向修改本方案。
+- 已于 2026-10-29 收到用户的明确选择，结果记录在 results/phase6i_priority_tag_clip_benchmark/direction_decision.json。
+- 依次完成前置检查、真实实现提交、六次 300-update 训练和 224 条配对评估；不要再请求相同方向选择或常规参数审批。
+- 保持原预登记的奖励、预算、数据范围、门槛和停止规则，不因已获授权放宽标准。
+- 只有用户随后明确改变或撤回研究方向，才更新该方向记录；不能把未选择的 B 当成当前状态。
 
 ## 4. 可立即完成的前置工作
 
@@ -158,7 +157,7 @@ payload 的 -0.5% 是区间不确定性容忍，不是允许主动降低主要�
 - docs/research/HTW_UrgencyAware_Clip_Group_Benchmark_Report_CN.md；
 - 独立实现、注册配置与测试；
 - results/phase6i_priority_tag_clip_benchmark/ 下的：
-  - direction_decision.json（选择前 status=PENDING，不伪造用户答复）；
+  - direction_decision.json（已记录 CHOSEN_A、用户原话、日期和固定预算）；
   - preflight_summary.json、相关/完整测试日志、干净基线对照；
   - training_update_rows.csv、optimizer_step_rows.csv、安全事件明细；
   - 六个独立最终模型、checkpoint_manifest.json、初始化与冻结哈希；
@@ -166,4 +165,4 @@ payload 的 -0.5% 是区间不确定性容忍，不是允许主动降低主要�
   - source_manifest.json、runtime_manifest.json、完整状态快照清单；
   - evidence_gaps.json、release_blockers.json。
 
-报告开头明确：当前方向状态、实际投入、性能 Gate、发布资格，以及“分组裁剪是否提高了实际 tagged 服务并守住 payload”。未选择 A 时只交付准备状态，不运行候选训练或 benchmark，也不制造性能结论。
+报告开头明确：当前方向状态、实际投入、性能 Gate、发布资格，以及“分组裁剪是否提高了实际 tagged 服务并守住 payload”。用户已经选择 A；本轮应完成已授权的完整对照，交付后按原停止规则结束，不追加后续实验。

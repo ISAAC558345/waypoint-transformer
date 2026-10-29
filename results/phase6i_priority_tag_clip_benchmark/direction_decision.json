@@ -1,0 +1,37 @@
+{
+  "schema_version": "clip_group_benchmark_direction_v1",
+  "direction_status": "CHOSEN_A",
+  "decision_date": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "source": "explicit_user_reply_in_current_chat",
+  "user_choice": "A：做一次完整公平对照（推荐）",
+  "registered_instruction_commit": "4805370832cbcd03f92b295cbfe1381684e7768d",
+  "e14_result_commit": "38ed6b91fc1df002f9eeb347c927f83a0791d00e",
+  "scope": {
+    "variants": [
+      "FULL_J",
+      "FULL_S"
+    ],
+    "model_seeds": [
+      0,
+      1,
+      2
+    ],
+    "ppo_updates_per_run": 300,
+    "total_runs": 6,
+    "total_ppo_updates": 1800,
+    "evaluation_scenarios": [
+      321096,
+      321127
+    ],
+    "evaluation_episode_count": 224
+  },
+  "constraints": {
+    "reward_and_acceptance_criteria_unchanged": true,
+    "no_hyperparameter_search": true,
+    "no_reserved_or_test_split_access": true,
+    "formal_system_and_old_checkpoints_frozen": true,
+    "no_merge_on_fail_or_inconclusive": true
+  },
+  "execution_status": "authorized_not_a_training_completion_record"
+}
