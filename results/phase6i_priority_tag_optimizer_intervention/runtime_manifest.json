@@ -1,0 +1,16 @@
+{
+  "python": "3.14.2",
+  "numpy": "2.4.1",
+  "torch": "2.12.0+cpu",
+  "cuda": false,
+  "torch_threads": 1,
+  "deterministic_algorithms": true,
+  "device": "cpu",
+  "rng_roles": {
+    "model_seed": "seed_everything(model_seed) immediately before workers",
+    "scenario_assignment": "321000000 + model_seed * 10000 + env_index",
+    "pool": "TRAIN_POOL",
+    "eval_process_seed_used": false,
+    "shadow": "python, numpy, and torch RNG restored before the real clip"
+  }
+}

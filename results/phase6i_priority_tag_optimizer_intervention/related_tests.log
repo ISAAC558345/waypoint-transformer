@@ -1,0 +1,19 @@
+test_effect_rule_is_fixed (tests.test_priority_tag_optimizer_intervention.InterventionRules.test_effect_rule_is_fixed) ... ok
+test_joint_clip_respects_the_same_bound (tests.test_priority_tag_optimizer_intervention.InterventionRules.test_joint_clip_respects_the_same_bound) ... ok
+test_limits_keep_the_total_budget (tests.test_priority_tag_optimizer_intervention.InterventionRules.test_limits_keep_the_total_budget) ... ok
+test_new_sources_omit_forbidden_tokens (tests.test_priority_tag_optimizer_intervention.InterventionRules.test_new_sources_omit_forbidden_tokens) ... ok
+test_nonfinite_gradient_is_rejected (tests.test_priority_tag_optimizer_intervention.InterventionRules.test_nonfinite_gradient_is_rejected) ... ok
+test_parameter_sets_must_be_disjoint (tests.test_priority_tag_optimizer_intervention.InterventionRules.test_parameter_sets_must_be_disjoint) ... ok
+test_reward_identity_and_positive_tagged_service (tests.test_priority_tag_optimizer_intervention.InterventionRules.test_reward_identity_and_positive_tagged_service) ... ok
+test_separate_clip_respects_the_joint_bound (tests.test_priority_tag_optimizer_intervention.InterventionRules.test_separate_clip_respects_the_joint_bound) ... ok
+test_shadow_adam_copy_does_not_share_storage (tests.test_priority_tag_optimizer_intervention.InterventionRules.test_shadow_adam_copy_does_not_share_storage) ... ok
+test_zero_gradient_stays_finite (tests.test_priority_tag_optimizer_intervention.InterventionRules.test_zero_gradient_stays_finite) ... ok
+test_initial_states_match_and_new_columns_are_zero (tests.test_priority_tag_optimizer_intervention.PilotEquivalence.test_initial_states_match_and_new_columns_are_zero) ... ok
+test_joint_path_matches_the_frozen_update (tests.test_priority_tag_optimizer_intervention.PilotEquivalence.test_joint_path_matches_the_frozen_update) ... ok
+test_reseeded_first_rollout_matches_after_a_shadowed_update (tests.test_priority_tag_optimizer_intervention.PilotEquivalence.test_reseeded_first_rollout_matches_after_a_shadowed_update) ... ok
+test_shadow_hook_leaves_the_real_update_unchanged (tests.test_priority_tag_optimizer_intervention.PilotEquivalence.test_shadow_hook_leaves_the_real_update_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 10.517s
+
+OK

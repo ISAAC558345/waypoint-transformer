@@ -1,0 +1,30 @@
+{
+  "schema_version": "optimizer_clip_group_pilot_v1",
+  "instruction_commit": "1a82e56a9decd4727d68ceee51177c91268d50bb",
+  "e13_result_commit": "2bce391e226b0b22657dd93b4201fb630bbaf4bb",
+  "joint_limit": 0.5,
+  "separate_limit": 0.35355339059327373,
+  "updates": 32,
+  "shadow_updates": [
+    1,
+    16,
+    32
+  ],
+  "effect_updates": [
+    16,
+    32
+  ],
+  "r_threshold": 0.01,
+  "joint_bound_abs": 1e-06,
+  "repeat_abs": 1e-07,
+  "j_match_abs": 1e-06,
+  "variants": [
+    "PILOT_J",
+    "PILOT_S"
+  ],
+  "train_seeds": [
+    0,
+    1,
+    2
+  ]
+}

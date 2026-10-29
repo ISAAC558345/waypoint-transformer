@@ -1,0 +1,128 @@
+[
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 0,
+    "ppo_update": 1,
+    "source_state_sha256": "2ed4384532a6db1da83a1b0ec60a308f571e2171c85b240904ce662bd06a13e5",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_j_seed0_update1.pt"
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 0,
+    "ppo_update": 16,
+    "source_state_sha256": "f31c1df843500831e15f078500bbe734098c0983e3ff54f2b8b30fed37b29193",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_j_seed0_update16.pt"
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 0,
+    "ppo_update": 32,
+    "source_state_sha256": "113f0ba1b5e3f6b65f9a70c3fbb0639625dee6b9606bf9300eeba7bdcdf22427",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_j_seed0_update32.pt"
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 0,
+    "ppo_update": 1,
+    "source_state_sha256": "b2525603f3d7b9aa2f707f6993858139d2d3d679e29b5b6f8467c58dde553874",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_s_seed0_update1.pt"
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 0,
+    "ppo_update": 16,
+    "source_state_sha256": "01e4d602ed25019497590721fbfa793e048bfc4b39dc1ad9e3b6a6742bc6546e",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_s_seed0_update16.pt"
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 0,
+    "ppo_update": 32,
+    "source_state_sha256": "c815508fcdabff21bead879c59c199d31eac932594ab6d09f3f047fd1c0782db",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_s_seed0_update32.pt"
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 1,
+    "ppo_update": 1,
+    "source_state_sha256": "e654c49bfc7628a76421a78a59e944567376ea90cec042379ef96ed3e99eec03",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_j_seed1_update1.pt"
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 1,
+    "ppo_update": 16,
+    "source_state_sha256": "155b646144762b7ed9c96730c52dd699b328a39122e795c3331e8cd1dd32b90b",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_j_seed1_update16.pt"
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 1,
+    "ppo_update": 32,
+    "source_state_sha256": "87370b7d507e48831cb44d8ea8c3292a12d788c10ed24f9876f82cdffe3a3187",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_j_seed1_update32.pt"
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 1,
+    "ppo_update": 1,
+    "source_state_sha256": "379e4104251c03c1e5432d79845e1b2454d6c247742e7dbb3ae675f295f770d6",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_s_seed1_update1.pt"
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 1,
+    "ppo_update": 16,
+    "source_state_sha256": "62a34e618fb901f0dc801e2e12f0a2b21e2e3559ad98c14e4c7ce49a7d2c0fde",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_s_seed1_update16.pt"
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 1,
+    "ppo_update": 32,
+    "source_state_sha256": "fdaf9dd1ec07dbe8913c0347369c426ddd3fd5de66fb1710c2c49c1b6801112b",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_s_seed1_update32.pt"
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 2,
+    "ppo_update": 1,
+    "source_state_sha256": "7abc27133e25ed51689a9d79aa6972eb430729eee3665bb2f99e5382a91e591d",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_j_seed2_update1.pt"
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 2,
+    "ppo_update": 16,
+    "source_state_sha256": "370b7b195f77532d4281ee08ac56e073f905f89cc5e9cb6366192480c170012b",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_j_seed2_update16.pt"
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 2,
+    "ppo_update": 32,
+    "source_state_sha256": "7cc816aaf7d14569e0c4ae7a31ab2622f12978343947c89c690c692f7a0c627b",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_j_seed2_update32.pt"
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 2,
+    "ppo_update": 1,
+    "source_state_sha256": "9b243117a7ca8570c1ec11f3646fdb754b39d849dcb6f995d1a242995cc55366",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_s_seed2_update1.pt"
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 2,
+    "ppo_update": 16,
+    "source_state_sha256": "8a69b719f3c53a90256f26a0599bc80635acea483adb0485984ea17b59e61240",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_s_seed2_update16.pt"
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 2,
+    "ppo_update": 32,
+    "source_state_sha256": "348fc2bf5b2d53470259a8908c8d4bc5e4c1738d5b9ca5ee21a5820a374a3b5f",
+    "path": "results/phase6i_priority_tag_optimizer_intervention/shadow_states/pilot_s_seed2_update32.pt"
+  }
+]

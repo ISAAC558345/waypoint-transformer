@@ -1,0 +1,6 @@
+[
+  "E12 配对 benchmark 仍是 QUEUE_LOOKAHEAD_BENCHMARK_FAIL。",
+  "完整历史测试套件仍有既有失败，不能写成全绿。",
+  "本试点没有性能通过标准，release_eligible 保持 false。",
+  "没有合并。"
+]

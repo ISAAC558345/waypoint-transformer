@@ -1,0 +1,56 @@
+[
+  {
+    "variant": "PILOT_J",
+    "model_seed": 0,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_j_seed0.pt",
+    "sha256": "f69a01dbd647d6a9d136e97b593856639acae9d488b16cad0f3dcfc352f0923e",
+    "actor_sha256": "2b13548e5349b7ef2859a930b22468d6b3404dafd7f410a5ef1488708863774b",
+    "critic_sha256": "fe78455437a96e8c16a379ea62d2db43de88aee360ff6be9aff5274d98c51b47"
+  },
+  {
+    "variant": "PILOT_S",
+    "model_seed": 0,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_s_seed0.pt",
+    "sha256": "6533383e306ba7eeb210883777063a675e7c98602d3c40e8461f747434b40d97",
+    "actor_sha256": "db2a6c3ae9aea124bb1c0aeef64b51e223db2f26e567894445eafb3414f949a0",
+    "critic_sha256": "cd6e17003aea7f0c4183c80c0f626b0e7860464a17b758d19bdd594cb9cf4a7a"
+  },
+  {
+    "variant": "PILOT_J",
+    "model_seed": 1,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_j_seed1.pt",
+    "sha256": "0091a7950ebee33085c6e64ba3f7e26af2a1c100c304c764e64ec46a6c7ef269",
+    "actor_sha256": "e215be586cd152259bc0dcfd84174c34c33574293a952b9be5eaf2cade5269e7",
+    "critic_sha256": "82e66e4942885a988e138968bbb9c47f50593e71a0a482112a1a394789a6d572"
+  },
+  {
+    "variant": "PILOT_S",
+    "model_seed": 1,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_s_seed1.pt",
+    "sha256": "3e48b10014dbd36bd86c93eaa2acf9cc9c24f79cd181b4d4e84f4b6be2799d03",
+    "actor_sha256": "6bbb2563ae63ccfec8beff6543bc9d0d0f0a089e8308ebc31e2c4b1b05f0e2d5",
+    "critic_sha256": "7b071ef0cd75892f1ca228c5c1d0e8da282ee78717852c0275564044c9f04d28"
+  },
+  {
+    "variant": "PILOT_J",
+    "model_seed": 2,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_j_seed2.pt",
+    "sha256": "73b652994147360e121a8df0ef3471cacc98b3a09561c067940911ad2f8beab0",
+    "actor_sha256": "fad61282cc29b15811d74090e64aabd8f2ecc1a9058224368af81502d0a03a66",
+    "critic_sha256": "f78565ea98b095add7066994ad4f373ad0b200fcb297068221c8b26763b5bad8"
+  },
+  {
+    "variant": "PILOT_S",
+    "model_seed": 2,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_s_seed2.pt",
+    "sha256": "cbaf212e60e62d9c1426f0f3556e1c25f960608c5d91a0147b53ea3b0d1d6202",
+    "actor_sha256": "f7202e1cd14c35d0187869cd3dd98731a94f3f09446e2dc21505e833ac719a0b",
+    "critic_sha256": "a119ca05e1c1039b6a898a6ff90258bad347095c81d373fc49ba1e15a4234328"
+  }
+]

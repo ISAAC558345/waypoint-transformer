@@ -1,0 +1,182 @@
+[
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 0,
+    "ppo_update": 1,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.05979318919499444,
+    "cosine": 0.9982942342758179,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 0,
+    "ppo_update": 16,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 2.33958968620019,
+    "cosine": 0.4985741376876831,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 0,
+    "ppo_update": 32,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 3.553145604980053,
+    "cosine": 0.37340614199638367,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 0,
+    "ppo_update": 1,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.05979318919499444,
+    "cosine": 0.9982942342758179,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 0,
+    "ppo_update": 16,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.366136108554299,
+    "cosine": 0.9358077645301819,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 0,
+    "ppo_update": 32,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.41309432932331547,
+    "cosine": 0.9179589748382568,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 1,
+    "ppo_update": 1,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.09079752532017615,
+    "cosine": 0.9961115121841431,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 1,
+    "ppo_update": 16,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 3.7179274377493954,
+    "cosine": 0.4947777986526489,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 1,
+    "ppo_update": 32,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 4.562670891299488,
+    "cosine": 0.2351854145526886,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 1,
+    "ppo_update": 1,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.09079752532017615,
+    "cosine": 0.9961115121841431,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 1,
+    "ppo_update": 16,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.430190427595046,
+    "cosine": 0.9207996726036072,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 1,
+    "ppo_update": 32,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.5328488691043057,
+    "cosine": 0.8838194012641907,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 2,
+    "ppo_update": 1,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.08469712777974821,
+    "cosine": 0.9966058135032654,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 2,
+    "ppo_update": 16,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 1.8816915530391205,
+    "cosine": 0.6528792381286621,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_J",
+    "model_seed": 2,
+    "ppo_update": 32,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 3.3671515018286136,
+    "cosine": 0.4892182946205139,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 2,
+    "ppo_update": 1,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.08469712777974821,
+    "cosine": 0.9966058135032654,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 2,
+    "ppo_update": 16,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.31644501381467105,
+    "cosine": 0.9528598189353943,
+    "j_norm_zero": false
+  },
+  {
+    "source_variant": "PILOT_S",
+    "model_seed": 2,
+    "ppo_update": 32,
+    "repeat_ok": true,
+    "repeat_max_abs": 0.0,
+    "r": 0.4614043058240259,
+    "cosine": 0.9154247641563416,
+    "j_norm_zero": false
+  }
+]

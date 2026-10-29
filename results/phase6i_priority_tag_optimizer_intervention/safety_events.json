@@ -1,0 +1,34 @@
+[
+  {
+    "variant": "PILOT_J",
+    "model_seed": 0,
+    "ppo_update": 22,
+    "env_index": 1,
+    "safety_violation": 1,
+    "constraint_failure": 0
+  },
+  {
+    "variant": "PILOT_S",
+    "model_seed": 0,
+    "ppo_update": 7,
+    "env_index": 1,
+    "safety_violation": 1,
+    "constraint_failure": 0
+  },
+  {
+    "variant": "PILOT_J",
+    "model_seed": 1,
+    "ppo_update": 28,
+    "env_index": 2,
+    "safety_violation": 1,
+    "constraint_failure": 0
+  },
+  {
+    "variant": "PILOT_S",
+    "model_seed": 1,
+    "ppo_update": 20,
+    "env_index": 1,
+    "safety_violation": 1,
+    "constraint_failure": 0
+  }
+]
