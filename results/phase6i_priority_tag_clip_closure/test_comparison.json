@@ -1,0 +1,11 @@
+{
+  "baseline_ran": 1795,
+  "repository_ran": 1799,
+  "baseline_failure_count": 206,
+  "repository_failure_count": 206,
+  "historical_count": 206,
+  "new_failure_count": 0,
+  "new_failures": [],
+  "comparison_root": "E:/srdp/wt_e16_baseline",
+  "related_ok": true
+}

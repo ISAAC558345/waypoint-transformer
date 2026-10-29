@@ -1,0 +1,27 @@
+{
+  "e15_result_commit": "1936e57a72ec7e82692639ed98c96664daae23a7",
+  "e15_implementation_commit": "e2ca6806977aa05e36786a83e845562f543a448b",
+  "instruction_commit": "f36fc9f9e13bd32a9f731d0f73c2a8b76f66918c",
+  "implementation_commit": "eabfd03f6fe2b71b39df313f77c57ae4c6e286fa",
+  "files": {
+    "results/phase6i_priority_tag_clip_benchmark/summary.json": "6b7aa8f20e6583ecfe361dd470d20882dd917101cf2ae5cba80a1581392ab793",
+    "results/phase6i_priority_tag_clip_benchmark/scenario_rows.csv": "66fb45281967e2059ba260050ba352c080f0d52fed3ebc12d4103e42fc0e3403",
+    "results/phase6i_priority_tag_clip_benchmark/safety_events.json": "1d65924966ec128571cdad8ff8cd82351755f2ea5d1f7e30f6bb2789a885c191",
+    "results/phase6i_priority_tag_clip_benchmark/training_update_rows.csv": "0d4781b932f7db0d92e7887108d3468b65448f1112323b4995049476268921ca",
+    "results/phase6i_priority_tag_clip_benchmark/optimizer_step_rows.csv": "e7353e898bdece3d7a107d8723620108beb420068c4faef5e9be41bd42dab17e",
+    "results/phase6i_priority_tag_clip_benchmark/checkpoint_manifest.json": "b89b4aa622e32611a52794d779dc9d097c3aaa59abbdea1e030089671a70b3f3",
+    "results/phase6i_priority_tag_clip_benchmark/runtime_manifest.json": "f80afe79f7d18e1a6bf3ebdc99355834210f2fb70c8bb67928a042d6ed87984f",
+    "results/phase6i_priority_tag_clip_benchmark/source_manifest.json": "d521fb555420d95a9c4af90640f13ab9766bff573f87e7ea9cce418f98fe3a68",
+    "results/phase6i_priority_tag_clip_benchmark/direction_decision.json": "dce2a300d47e6db4d70b5d99b0fda8979229fe8a292fc1eb76ed725aeb74bfa7",
+    "results/phase6i_priority_tag_optimizer_intervention/summary.json": "583abeb6e617a0fbbbb889c958e6f897b5e50d2c43c120dfed94032c289cddd8",
+    "results/phase6i_priority_tag_optimizer_intervention/safety_events.json": "ef3cc7b14dc174bf9beefe8094b6bfe15db9191df7e7950b237f0e91b2a28594",
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e"
+  },
+  "adoption": {
+    "formal_baseline": "L0",
+    "full_j": "research_reference",
+    "full_s": "research_reference",
+    "pilot_checkpoints": "research_reference",
+    "new_formal_loader": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "matches_e15_manifest": true,
+  "watched": {
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py": "79fc576924aaabc74df7b5badb4f23cd4fbbba915162ca646e6b819855f425b3",
+    "src/wt/lowlevel_v2/observation.py": "7311f0ff5c6f7ef9367fce7eba011bace123dfd9685f967e6794ad13df3dc679",
+    "src/wt/lowlevel_v2/residual_policy.py": "fabd7fff68d575b74de4e0be67d6a35e60990e10d82f135269a86664dcfe6927",
+    "src/wt/lowlevel_v2/safety_projector.py": "75478f547b5741b85735143cf2a0301bcd9b281d4dcd49c355e615a7e84fa6d7",
+    "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py": "dc67c0402a273400fc5490f72b0d8fda34713a0baadb1005de06f17e3be8bf9a",
+    "results/phase5_hgnn_urgency/checkpoints/mappo_original.pt": "44d44cf96f666aa7810bcd9b6546e2956d35fbf280e5f312c983444b25dbce14"
+  },
+  "adopted_model": "L0",
+  "research_references": [
+    "FULL_J",
+    "FULL_S",
+    "E14_PILOT"
+  ],
+  "default_config_changed": false,
+  "formal_checkpoint_replaced": false
+}

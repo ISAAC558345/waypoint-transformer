@@ -1,0 +1,19 @@
+{
+  "supported": true,
+  "source_event_index": 12,
+  "variant": "FULL_J",
+  "model_seed": 1,
+  "ppo_update": 119,
+  "env_index": 2,
+  "env_t": "unrecorded",
+  "scenario_id": "unrecorded",
+  "constraint_status": "failure",
+  "predicted_distance_m": 0.9999192009856496,
+  "predicted_distance_scope": "projector_global_minimum_of_the_rejected_candidate",
+  "executed_action_max_abs": 0.0,
+  "executed_action": "all_zero_fallback",
+  "distance_after_m": 8.75938528785752,
+  "distance_after_scope": "closest_saved_pair_after_the_zero_action",
+  "not_a_prediction_error": true,
+  "reason": "the rejected projection was not executed; the zero fallback and its later distance are a different action from the predicted candidate"
+}
