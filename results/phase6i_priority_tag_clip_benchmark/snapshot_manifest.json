@@ -1,0 +1,20 @@
+[
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed0_update1.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed0_update150.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed0_update300.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed0_update1.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed0_update150.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed0_update300.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed1_update1.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed1_update150.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed1_update300.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed1_update1.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed1_update150.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed1_update300.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed2_update1.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed2_update150.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed2_update300.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed2_update1.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed2_update150.pt",
+  "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed2_update300.pt"
+]

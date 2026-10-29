@@ -1,0 +1,30 @@
+{
+  "schema_version": "clip_group_full_budget_v1",
+  "direction_status": "CHOSEN_A",
+  "instruction_commit": "46e965f673791f80a3b4161d3c760d48513abacc",
+  "prepare_commit": "4805370832cbcd03f92b295cbfe1381684e7768d",
+  "e14_result_commit": "38ed6b91fc1df002f9eeb347c927f83a0791d00e",
+  "joint_limit": 0.5,
+  "separate_limit": 0.35355339059327373,
+  "updates": 300,
+  "snapshot_updates": [
+    1,
+    150,
+    300
+  ],
+  "variants": [
+    "FULL_J",
+    "FULL_S"
+  ],
+  "train_seeds": [
+    0,
+    1,
+    2
+  ],
+  "expected_ppo_updates": 1800,
+  "expected_adam_steps": 28800,
+  "evaluation_episodes": 224,
+  "payload_ci_floor_fraction": 0.005,
+  "min_passing_seeds": 2,
+  "seamless_resume": false
+}

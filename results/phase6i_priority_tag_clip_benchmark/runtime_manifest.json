@@ -1,0 +1,17 @@
+{
+  "python": "3.14.2",
+  "numpy": "2.4.1",
+  "torch": "2.12.0+cpu",
+  "cuda": false,
+  "torch_threads": 1,
+  "deterministic_algorithms": true,
+  "device": "cpu",
+  "rng_roles": {
+    "model_seed": "seed_everything(model_seed) immediately before each group's workers",
+    "scenario_assignment_train": "321000000 + model_seed * 10000 + env_index",
+    "scenario_assignment_eval": "7000000 + scenario_id",
+    "env_reset_seed": "scenario_id",
+    "process_seed": 2,
+    "process_seed_role": "historical_inherited_process_context"
+  }
+}

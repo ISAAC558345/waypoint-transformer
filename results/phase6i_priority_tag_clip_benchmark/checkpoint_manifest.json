@@ -1,0 +1,86 @@
+[
+  {
+    "variant": "FULL_J",
+    "model_seed": 0,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_clip_benchmark/checkpoints/full_j_seed0.pt",
+    "sha256": "0f4e3e1162e0e051d46d651cfcec63573ff05653dbd85ab7263f904377c7959a",
+    "actor_sha256": "85ca8b72f3ae7a7bdd6bbaadedf47ac8edbc38d035d998e5e4481089d02896c1",
+    "seamless_resume": false,
+    "snapshots": [
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed0_update1.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed0_update150.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed0_update300.pt"
+    ]
+  },
+  {
+    "variant": "FULL_S",
+    "model_seed": 0,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_clip_benchmark/checkpoints/full_s_seed0.pt",
+    "sha256": "7c82102ec950cde8f2bc00f85f5d04e321815d1446aade9e1e83bb14d6b523df",
+    "actor_sha256": "939c2890a17f56d08c5012e2830ac67454ae074062a53eb1c54edea7a7042580",
+    "seamless_resume": false,
+    "snapshots": [
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed0_update1.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed0_update150.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed0_update300.pt"
+    ]
+  },
+  {
+    "variant": "FULL_J",
+    "model_seed": 1,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_clip_benchmark/checkpoints/full_j_seed1.pt",
+    "sha256": "60f615f92e2e8d0c05e2ca0426cb6cdc30259611f02ae446fbaed9c4dbe2acbf",
+    "actor_sha256": "43d845260075a9c88de983bec64d020ae1fb44199f1f7ab836e7566cd8eb49bc",
+    "seamless_resume": false,
+    "snapshots": [
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed1_update1.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed1_update150.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed1_update300.pt"
+    ]
+  },
+  {
+    "variant": "FULL_S",
+    "model_seed": 1,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_clip_benchmark/checkpoints/full_s_seed1.pt",
+    "sha256": "0010d19bb2399fbd0a0c28854b27f2efd49ed1527923dd2e5d565c34ffa8bcff",
+    "actor_sha256": "c79e5c95dc85b2cdf152d48d1d44e07efb1bf42745f510fbe4771047944d959a",
+    "seamless_resume": false,
+    "snapshots": [
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed1_update1.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed1_update150.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed1_update300.pt"
+    ]
+  },
+  {
+    "variant": "FULL_J",
+    "model_seed": 2,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_clip_benchmark/checkpoints/full_j_seed2.pt",
+    "sha256": "4dc0b3c6f49eb050e3e588585de1ccbfdf4317fc7da2a7c8160155edb36d0f66",
+    "actor_sha256": "dfca93d9a2fb22eeb9cd37c8c2179594d2500bb3b9a29bc8a9ac2266aabb70df",
+    "seamless_resume": false,
+    "snapshots": [
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed2_update1.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed2_update150.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_j_seed2_update300.pt"
+    ]
+  },
+  {
+    "variant": "FULL_S",
+    "model_seed": 2,
+    "complete": true,
+    "path": "results/phase6i_priority_tag_clip_benchmark/checkpoints/full_s_seed2.pt",
+    "sha256": "09c61db9e67ff11da7e9ecd38e497eebaf50b02a004d54990ce0ebf46e0869dc",
+    "actor_sha256": "a8422c20fae72cbb9d9633cb3b2b87da037f7a7411ee138b54e3cbe5f3c5e440",
+    "seamless_resume": false,
+    "snapshots": [
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed2_update1.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed2_update150.pt",
+      "results/phase6i_priority_tag_clip_benchmark/snapshots/full_s_seed2_update300.pt"
+    ]
+  }
+]

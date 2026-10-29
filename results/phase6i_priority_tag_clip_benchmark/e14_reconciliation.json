@@ -1,0 +1,153 @@
+{
+  "e14_result_commit": "38ed6b91fc1df002f9eeb347c927f83a0791d00e",
+  "training_rows": 192,
+  "shadow_rows": 18,
+  "effect_comparisons": 12,
+  "effect_r_min": 0.31644501381467105,
+  "effect_r_max": 4.562670891299488,
+  "repeat_max_abs": 0.0,
+  "safety_events": 4,
+  "constraint_failures": 0,
+  "safety_geometry": "unknown",
+  "training_pool_table": [
+    {
+      "model_seed": 0,
+      "joint_tagged_mbit": 0.23028557780358566,
+      "separate_tagged_mbit": 0.22626902515743283,
+      "tagged_change": -0.017441616120565762,
+      "payload_change": -0.009392452633023695
+    },
+    {
+      "model_seed": 1,
+      "joint_tagged_mbit": 0.22955907498352418,
+      "separate_tagged_mbit": 0.22397344212307707,
+      "tagged_change": -0.02433200630751799,
+      "payload_change": -0.008393009693925563
+    },
+    {
+      "model_seed": 2,
+      "joint_tagged_mbit": 0.227663575847595,
+      "separate_tagged_mbit": 0.22728808610751552,
+      "tagged_change": -0.0016493184677501373,
+      "payload_change": 0.0017664877960845051
+    }
+  ],
+  "table_role": "correlated_training_rollout_not_a_development_benchmark",
+  "checkpoints": [
+    {
+      "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_j_seed0.pt",
+      "keys": [
+        "actor",
+        "critic",
+        "model_seed",
+        "name_role",
+        "optimizer",
+        "ppo_updates",
+        "use_lookahead",
+        "variant"
+      ],
+      "has_optimizer": true,
+      "has_env": false,
+      "has_worker": false,
+      "has_rng": false,
+      "seamless_resume": false,
+      "reason": "the pilot checkpoint has no environment, ledger, or worker cursor, so 32 plus 268 is not one continuous run"
+    },
+    {
+      "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_j_seed1.pt",
+      "keys": [
+        "actor",
+        "critic",
+        "model_seed",
+        "name_role",
+        "optimizer",
+        "ppo_updates",
+        "use_lookahead",
+        "variant"
+      ],
+      "has_optimizer": true,
+      "has_env": false,
+      "has_worker": false,
+      "has_rng": false,
+      "seamless_resume": false,
+      "reason": "the pilot checkpoint has no environment, ledger, or worker cursor, so 32 plus 268 is not one continuous run"
+    },
+    {
+      "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_j_seed2.pt",
+      "keys": [
+        "actor",
+        "critic",
+        "model_seed",
+        "name_role",
+        "optimizer",
+        "ppo_updates",
+        "use_lookahead",
+        "variant"
+      ],
+      "has_optimizer": true,
+      "has_env": false,
+      "has_worker": false,
+      "has_rng": false,
+      "seamless_resume": false,
+      "reason": "the pilot checkpoint has no environment, ledger, or worker cursor, so 32 plus 268 is not one continuous run"
+    },
+    {
+      "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_s_seed0.pt",
+      "keys": [
+        "actor",
+        "critic",
+        "model_seed",
+        "name_role",
+        "optimizer",
+        "ppo_updates",
+        "use_lookahead",
+        "variant"
+      ],
+      "has_optimizer": true,
+      "has_env": false,
+      "has_worker": false,
+      "has_rng": false,
+      "seamless_resume": false,
+      "reason": "the pilot checkpoint has no environment, ledger, or worker cursor, so 32 plus 268 is not one continuous run"
+    },
+    {
+      "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_s_seed1.pt",
+      "keys": [
+        "actor",
+        "critic",
+        "model_seed",
+        "name_role",
+        "optimizer",
+        "ppo_updates",
+        "use_lookahead",
+        "variant"
+      ],
+      "has_optimizer": true,
+      "has_env": false,
+      "has_worker": false,
+      "has_rng": false,
+      "seamless_resume": false,
+      "reason": "the pilot checkpoint has no environment, ledger, or worker cursor, so 32 plus 268 is not one continuous run"
+    },
+    {
+      "path": "results/phase6i_priority_tag_optimizer_intervention/checkpoints/pilot_s_seed2.pt",
+      "keys": [
+        "actor",
+        "critic",
+        "model_seed",
+        "name_role",
+        "optimizer",
+        "ppo_updates",
+        "use_lookahead",
+        "variant"
+      ],
+      "has_optimizer": true,
+      "has_env": false,
+      "has_worker": false,
+      "has_rng": false,
+      "seamless_resume": false,
+      "reason": "the pilot checkpoint has no environment, ledger, or worker cursor, so 32 plus 268 is not one continuous run"
+    }
+  ],
+  "fresh_start_required": true
+}
