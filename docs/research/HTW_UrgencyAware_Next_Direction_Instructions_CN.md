@@ -1,4 +1,4 @@
-# Stage E17：新研究方向选择与任务分配可行性诊断预登记
+# Stage E17：冻结低层的任务分配可行性诊断执行指令
 
 - 仓库：ISAAC558345/waypoint-transformer
 - 正式基线：feature/maritime-wt-stage1a；正式低层继续为 L0
@@ -7,11 +7,11 @@
 - 本阶段分支：experiment/priority-tag-next-direction
 - E16 Gate：CLIP_GROUP_LINE_CLOSED_UNADOPTED
 - E15 Gate：CLIP_GROUP_BENCHMARK_INCONCLUSIVE，保持原样
-- 方向状态：PENDING
-- 选项 A（推荐）：冻结低层的任务分配可行性诊断；零模型训练
-- 选项 B：基于既有轨迹规范安全测量定义；零新 rollout、零模型训练
-- 用户尚未选择时，只做第 3 节只读准备，不启动 A 的新场景仿真或 B 的独立测量研究
-- 此次需要选择的是新的研究方向，非普通实现参数审批；选择后常规实现和已登记检查直接完成
+- 方向状态：CHOSEN_A；用户于 2026-10-29（Asia/Shanghai）明确选择 A
+- 已选 A：冻结低层的任务分配可行性诊断；零模型训练
+- 未选 B：基于既有轨迹规范安全测量定义；本阶段不启动该替代研究
+- 执行范围：完成第 3 节前置核查后，直接执行第 4–8 节 A 诊断，不执行第 9 节 B
+- 方向性选择已经完成；常规实现、已登记检查及预算内诊断直接执行，不重复请求确认
 
 ## 1. 上一步结论及本阶段的区别
 
@@ -38,14 +38,14 @@ E14 的机制效应依然成立，E15 的性能证据依然不足。这不结束
 
 A 仅在原低层 benchmark 的 G1_RATE k=5 合法候选池中做有界任务分配反事实。它不是正式 Scheme C 的候选池实验，也不会把 TRAIN 场景强行送入不许可它们的正式 Planner 入口。
 
-## 3. 选择前允许完成的只读准备
+## 3. A 的前置身份与来源核查
 
 - 读取并核对 E16 结案、E15 原始结果、正式基线 manifest 与当前源码。
 - 形成 interface_identity.json，列明候选生成、任务抽样/评分、hold、低层动作、FIFO、账本、split guards 和正式 Scheme C 的区别。
 - 不修改 active_policy.json、正式候选生成器、Scheme C/HGNN checkpoint、正式奖励或 SafetyProjector。
-- 不运行新仿真、不训练、不读取保留集、不查看新候选的服务结果来反向修改本预登记。
-- 记录用户选择后再激活相应分支内容；未答复不视为选择 A。
-- 若用户选择 A，则只执行第 4–8 节；选择 B 则只执行第 9 节。不能同时启动两条方向。
+- 前置身份核查不运行新仿真。完成真实实现提交和必要测试后，按 A 的固定预算运行诊断；不训练、不读取保留集、不以新候选结果反向修改预登记。
+- 用户已回复“A：诊断任务分配能否改善标签服务（推荐；8 个训练场景）”，选择记录位于 results/phase6i_priority_tag_assignment_feasibility/direction_decision.json。
+- 本次只激活 A，不能同时启动 B；无需再次询问是否开始这项已登记诊断。
 
 ## 4. A 的研究问题与固定条件
 
@@ -176,8 +176,8 @@ opportunity_evidence：
 
 ## 10. 共同停止规则与方向记录
 
-- 用户选择前，direction_status=PENDING，记录文件不得假造答复。
-- 选择 A/B 后记录用户原话、日期、范围与固定预算，再激活对应内容。普通技术参数不再逐项请求确认。
+- direction_status=CHOSEN_A，依据为本聊天中用户于 2026-10-29 的明确答复；不是诊断已经完成的结果记录。
+- 已记录用户原话、日期、A 的范围和固定预算；按 A 执行。普通技术参数不再逐项请求确认。
 - 正式 Planner/Scheme C、奖励、SafetyProjector、L0–L4/FULL/pilot 模型及 E0–E16 历史保持冻结。
 - 不访问新的 DEV/保留/测试数据，不修改 split guards，不执行训练或模型参数更新。
 - 本阶段无论选择 A 或 B，都不采用新策略、不合并、不追加预算。完成后最多给一个有证据的新阶段建议，然后停止。

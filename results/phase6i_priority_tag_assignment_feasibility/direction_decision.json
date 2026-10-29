@@ -1,0 +1,49 @@
+{
+  "schema_version": "priority_tag_next_direction_choice_v1",
+  "direction_status": "CHOSEN_A",
+  "decision_date": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "source": "explicit_user_reply_in_current_chat",
+  "user_choice": "A：诊断任务分配能否改善标签服务（推荐；8 个训练场景）",
+  "registered_instruction_commit": "b73f0c1473cca6fbe26968f2d802b3a84c4f3174",
+  "e16_result_commit": "d54137679a3854d1f70b2cad091ef312df8a96bc",
+  "scope": {
+    "research": "frozen_low_level_assignment_feasibility",
+    "training_scenarios": [
+      321000,
+      321001,
+      321002,
+      321003,
+      321004,
+      321005,
+      321006,
+      321007
+    ],
+    "reference_episodes": 8,
+    "decision_times": [
+      0,
+      15,
+      30
+    ],
+    "snapshot_count": 24,
+    "candidate_generator": "G1_RATE",
+    "candidate_k": 5,
+    "max_unique_candidates_per_snapshot": 5,
+    "hold_steps": 15,
+    "max_simulator_steps": 2544,
+    "model_training_updates": 0,
+    "parameter_updates": 0,
+    "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e"
+  },
+  "constraints": {
+    "formal_planner_and_scheme_c_unchanged": true,
+    "formal_safety_projector_reward_and_checkpoints_frozen": true,
+    "no_new_dev_reserved_or_test_data": true,
+    "no_model_training": true,
+    "no_future_information_in_candidate_generation": true,
+    "hindsight_results_not_a_deployable_policy": true,
+    "alternative_b_not_activated": true,
+    "no_merge": true
+  },
+  "execution_status": "authorized_not_a_diagnostic_completion_record"
+}
