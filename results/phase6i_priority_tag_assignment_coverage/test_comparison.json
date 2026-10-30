@@ -1,0 +1,13 @@
+{
+  "baseline_ran": 1805,
+  "repository_ran": 1813,
+  "baseline_failure_count": 206,
+  "repository_failure_count": 206,
+  "historical_count": 206,
+  "new_failure_count": 0,
+  "new_failures": [],
+  "comparison_root": "E:/srdp/wt_e18_baseline",
+  "related_ok": true,
+  "repository_method": "clean worktree at the E17 result plus this stage package and test",
+  "historical_suite_is_green": false
+}

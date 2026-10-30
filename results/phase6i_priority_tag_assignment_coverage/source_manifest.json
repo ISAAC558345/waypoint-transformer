@@ -1,0 +1,18 @@
+{
+  "files": {
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/__init__.py": "dd1e6f2e51b64cad1c83b0f63f5918334ff083b76b726f73bea334bbacaac054",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/artifacts.py": "c5b4731e3e99757507178ced7ce81eeeb3ecc41536562f22dfad35f6ec1ca67d",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/codec.py": "27601a21cd04cc27816d776ca5b677b94682405564f39a48dc5bb6ce8a16a2a3",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/coverage.py": "c1dec7e03515b18ea1273e633c60d5b910ec813be753b9fa836635cee72968fe",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/criteria.py": "dbf4d213b7391a2c7b5466e8f80201027ba13cb0f0f4e493ba3932c8c2d72662",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/detail.py": "3e3d3345ca90bea87a173455e20148ff79cacddbc8335e8c9062d53e41055890",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/identity.py": "057acaed205486ab989d8db5dba867bda8d482694940239ab6b9b7f8bccd266d",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/prepare.py": "e1dd73c9fc859b887e8741661d588877a659bab547d321b2c2ce45b4f4f35328",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/protocol.py": "cddb5dc4be60fcc21e1a6f2543fa80f5475cd7753d9879d434fd61640a681c5f",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/replay.py": "6e7e15b830c93bce41c0460ec9d3c8d8e9baa45c5fb57214751d897c63ad530c",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/report.py": "7c86612f571f2eafc397cc8e2763403338a579504ec2fe324040397f98bafb68",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/run.py": "2404cc267f84c15930fc9b39b4a4de82a1a9ff21cf097f7deb7871d3a3a424df",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_coverage/selection.py": "a62dac24fcfce28f4cf6df2c5bd8db4922b8b21e60d5fddc97f9adee4617a7b2",
+    "tests/test_priority_tag_assignment_coverage.py": "261a8f993df4ac2e9ad858b301b918c7c6d0d649665db2ba2d4dc20aa811fc64"
+  }
+}

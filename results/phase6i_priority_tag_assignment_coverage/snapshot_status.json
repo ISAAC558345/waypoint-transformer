@@ -1,0 +1,422 @@
+[
+  {
+    "scenario_id": 321000,
+    "decision_time": 0,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 0,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      1,
+      0,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321000,
+    "decision_time": 15,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 4,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      4,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "scenario_id": 321000,
+    "decision_time": 30,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 4,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      4,
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "scenario_id": 321001,
+    "decision_time": 0,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 2,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      2,
+      0,
+      1,
+      3,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321001,
+    "decision_time": 15,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 3,
+      "known_tagged_delta_bits": 1000000.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321001,
+    "decision_time": 30,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 3,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      3,
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321002,
+    "decision_time": 0,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 2,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      1,
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321002,
+    "decision_time": 15,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 2,
+      "known_tagged_delta_bits": 1000000.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      0,
+      2,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321002,
+    "decision_time": 30,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 2,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      2
+    ]
+  },
+  {
+    "scenario_id": 321003,
+    "decision_time": 0,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 0,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      0
+    ]
+  },
+  {
+    "scenario_id": 321003,
+    "decision_time": 15,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 2,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      2
+    ]
+  },
+  {
+    "scenario_id": 321003,
+    "decision_time": 30,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 0,
+      "known_tagged_delta_bits": 9.313225746154785e-10,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      3,
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "scenario_id": 321004,
+    "decision_time": 0,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 2,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      1,
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321004,
+    "decision_time": 15,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 0,
+      "known_tagged_delta_bits": 2000000.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      2,
+      0,
+      1,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321004,
+    "decision_time": 30,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 3,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      3,
+      0,
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321005,
+    "decision_time": 0,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 0,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321005,
+    "decision_time": 15,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 1,
+      "known_tagged_delta_bits": 2000000.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      0,
+      1,
+      3,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321005,
+    "decision_time": 30,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 0,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      0,
+      3
+    ]
+  },
+  {
+    "scenario_id": 321006,
+    "decision_time": 0,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 1,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      2,
+      0,
+      1,
+      3
+    ]
+  },
+  {
+    "scenario_id": 321006,
+    "decision_time": 15,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 0,
+      "known_tagged_delta_bits": 2000000.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      0,
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321006,
+    "decision_time": 30,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 0,
+      "known_tagged_delta_bits": 9.313225746154785e-10,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      0,
+      4
+    ]
+  },
+  {
+    "scenario_id": 321007,
+    "decision_time": 0,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 2,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      2,
+      0
+    ]
+  },
+  {
+    "scenario_id": 321007,
+    "decision_time": 15,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 3,
+      "known_tagged_delta_bits": 0.0,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      3,
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "scenario_id": 321007,
+    "decision_time": 30,
+    "interpreted": true,
+    "interpretable_alternatives": 4,
+    "posthoc_best": {
+      "candidate_slot": 1,
+      "known_tagged_delta_bits": 6.984919309616089e-10,
+      "hindsight_diagnostic": true,
+      "deployable_policy": false
+    },
+    "pareto_slots": [
+      2,
+      1,
+      3,
+      4
+    ]
+  }
+]

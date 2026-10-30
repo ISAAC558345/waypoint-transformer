@@ -1,0 +1,508 @@
+{
+  "schema_version": "assignment_coverage_diag_v1",
+  "scientific_gate": "ASSIGNMENT_COVERAGE_DIAG_COMPLETE",
+  "opportunity_evidence": "REPLICATED_LOCAL_OPPORTUNITY",
+  "opportunity_published": true,
+  "measured_opportunity": "REPLICATED_LOCAL_OPPORTUNITY",
+  "e17_scientific_gate": "ASSIGNMENT_FEASIBILITY_COMPLETE",
+  "e17_opportunity_evidence": "NOT_OBSERVED_IN_REGISTERED_POOL",
+  "method_change": "activity-matched stratified sample replaced prefix truncation",
+  "problems": [],
+  "budget": {
+    "reference_steps": 384,
+    "candidate_steps": 1800,
+    "repeat_steps": 360,
+    "fixture_steps": 0,
+    "total_steps": 2544,
+    "max_reference_steps": 384,
+    "max_candidate_steps": 1800,
+    "max_repeat_steps": 360,
+    "max_steps": 2544,
+    "unused_steps_are_not_extra_room": true,
+    "training_updates": 0,
+    "parameter_updates": 0
+  },
+  "implementation_commit": "f79ad10139eacbb298b4a306a2b917057b32ef6b",
+  "selection_commit": "83fe1476f0dd109e49425db67dfa50ead5638445",
+  "instruction_commit": "2f2b72880df80183ac77d6875f9d69fbb761a02d",
+  "source_commit": "87509424b6b2119b422146ff0a64ec98c0d2656b",
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "selection_sha256": "34f8b1069b35d0812f3dcb280b883406f87136d49f74b58420718f0fc7650f4d",
+  "reconciliation_ok": true,
+  "coverage": {
+    "snapshots": 24,
+    "snapshots_with_same_mask_alternative": 24,
+    "snapshots_without_same_mask_alternative": 0,
+    "selected_alternatives": 96,
+    "matched_unique_alternatives": 2696,
+    "snapshots_with_interpretable_alternative": 24
+  },
+  "opportunity_counts": {
+    "rows": 120,
+    "s0": 11,
+    "s1": 11,
+    "s2": 5,
+    "s0_scenarios": [
+      321001,
+      321002,
+      321004,
+      321005,
+      321006
+    ],
+    "s2_scenarios": [
+      321002,
+      321006
+    ]
+  },
+  "t0_negative_control": true,
+  "process_seed": 2,
+  "process_seed_role": "historical_inherited_process_context",
+  "snapshot_status": [
+    {
+      "scenario_id": 321000,
+      "decision_time": 0,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 0,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        1,
+        0,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321000,
+      "decision_time": 15,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 4,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        4,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario_id": 321000,
+      "decision_time": 30,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 4,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        4,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "scenario_id": 321001,
+      "decision_time": 0,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 2,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        2,
+        0,
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321001,
+      "decision_time": 15,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 3,
+        "known_tagged_delta_bits": 1000000.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        0,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321001,
+      "decision_time": 30,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 3,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        3,
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321002,
+      "decision_time": 0,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 2,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        1,
+        0,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321002,
+      "decision_time": 15,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 2,
+        "known_tagged_delta_bits": 1000000.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321002,
+      "decision_time": 30,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 2,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        2
+      ]
+    },
+    {
+      "scenario_id": 321003,
+      "decision_time": 0,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 0,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        0
+      ]
+    },
+    {
+      "scenario_id": 321003,
+      "decision_time": 15,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 2,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        2
+      ]
+    },
+    {
+      "scenario_id": 321003,
+      "decision_time": 30,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 0,
+        "known_tagged_delta_bits": 9.313225746154785e-10,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        3,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "scenario_id": 321004,
+      "decision_time": 0,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 2,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        1,
+        0,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321004,
+      "decision_time": 15,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 0,
+        "known_tagged_delta_bits": 2000000.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        2,
+        0,
+        1,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321004,
+      "decision_time": 30,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 3,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        3,
+        0,
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321005,
+      "decision_time": 0,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 0,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        0,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321005,
+      "decision_time": 15,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 1,
+        "known_tagged_delta_bits": 2000000.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        0,
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321005,
+      "decision_time": 30,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 0,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        0,
+        3
+      ]
+    },
+    {
+      "scenario_id": 321006,
+      "decision_time": 0,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 1,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        2,
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "scenario_id": 321006,
+      "decision_time": 15,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 0,
+        "known_tagged_delta_bits": 2000000.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        0,
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321006,
+      "decision_time": 30,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 0,
+        "known_tagged_delta_bits": 9.313225746154785e-10,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        0,
+        4
+      ]
+    },
+    {
+      "scenario_id": 321007,
+      "decision_time": 0,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 2,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        2,
+        0
+      ]
+    },
+    {
+      "scenario_id": 321007,
+      "decision_time": 15,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 3,
+        "known_tagged_delta_bits": 0.0,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        3,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "scenario_id": 321007,
+      "decision_time": 30,
+      "interpreted": true,
+      "interpretable_alternatives": 4,
+      "posthoc_best": {
+        "candidate_slot": 1,
+        "known_tagged_delta_bits": 6.984919309616089e-10,
+        "hindsight_diagnostic": true,
+        "deployable_policy": false
+      },
+      "pareto_slots": [
+        2,
+        1,
+        3,
+        4
+      ]
+    }
+  ],
+  "release_eligible": false,
+  "merged": false,
+  "adopted": false,
+  "new_formal_loader": false,
+  "training_updates": 0,
+  "parameter_updates": 0,
+  "adam_updates": 0,
+  "deployment_verified": false,
+  "e17_rewritten": false,
+  "not_a_scheme_c_result": true,
+  "not_an_e17_rewrite": true,
+  "hindsight_diagnostic": true,
+  "deployable_policy": false,
+  "test_comparison": {
+    "baseline_ran": 1805,
+    "repository_ran": 1813,
+    "baseline_failure_count": 206,
+    "repository_failure_count": 206,
+    "historical_count": 206,
+    "new_failure_count": 0,
+    "new_failures": [],
+    "comparison_root": "E:/srdp/wt_e18_baseline",
+    "related_ok": true,
+    "repository_method": "clean worktree at the E17 result plus this stage package and test",
+    "historical_suite_is_green": false
+  }
+}

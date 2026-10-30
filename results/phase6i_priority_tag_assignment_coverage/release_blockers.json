@@ -1,0 +1,9 @@
+[
+  "release_eligible 保持 false。",
+  "没有合并。",
+  "没有训练，也没有新的正式加载路径。",
+  "E17 保持 ASSIGNMENT_FEASIBILITY_COMPLETE / NOT_OBSERVED_IN_REGISTERED_POOL。",
+  "E15 保持 CLIP_GROUP_BENCHMARK_INCONCLUSIVE。",
+  "E16 保持 CLIP_GROUP_LINE_CLOSED_UNADOPTED。",
+  "完整历史测试套件的既有失败仍是发布阻塞项。"
+]

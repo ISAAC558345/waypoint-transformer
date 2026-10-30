@@ -1,0 +1,9 @@
+{
+  "env_reset_seed": "scenario_id",
+  "assignment_rng_seed": "7000000 + scenario_id",
+  "candidate_seed": "9300000 + 100*scenario_id + decision_time",
+  "process_seed": 2,
+  "process_seed_role": "historical_inherited_process_context",
+  "model_seed": null,
+  "training_updates": 0
+}

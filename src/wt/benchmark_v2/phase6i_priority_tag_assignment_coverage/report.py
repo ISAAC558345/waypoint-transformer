@@ -1,7 +1,9 @@
 """Chinese report for the activity-matched coverage diagnosis."""
 from __future__ import annotations
 
-from .protocol import E15_GATE, E16_GATE, E17_GATE, E17_OPPORTUNITY, REPORT
+import csv
+
+from .protocol import E15_GATE, E16_GATE, E17_GATE, E17_OPPORTUNITY, OUTPUT, REPORT
 
 
 def _suggestion(summary: dict) -> str:
@@ -16,6 +18,32 @@ def _suggestion(summary: dict) -> str:
     if label == "NOT_OBSERVED_UNDER_MATCHED_MASK":
         return "这 24 个状态在各自至少一条同掩码替代上没有观察到已知标签服务差。这不是联合池的穷尽上界，也不是重开裁剪实验或增大 k 的理由。本阶段到此停止。"
     return "同掩码替代没有覆盖全部 24 个状态，或者有效回放不足以归入前两类。没有候选不等于没有机会。不要在本阶段补候选、增大 k 或换场景。本阶段到此停止。"
+
+
+def _measured_lines() -> list[str]:
+    path = OUTPUT / "candidate_rows.csv"
+    if not path.is_file():
+        return []
+    with path.open(encoding="utf-8", newline="") as handle:
+        rows = [row for row in csv.DictReader(handle) if row.get("s0") == "1"]
+    if not rows:
+        return ["登记替代里没有超过 1 bit 的已知标签服务差。", ""]
+    deltas = [float(row["known_tagged_delta_bits"]) for row in rows]
+    times = sorted({int(row["decision_time"]) for row in rows})
+    safety_path = OUTPUT / "safety_events.csv"
+    safety_rows = 0
+    if safety_path.is_file():
+        with safety_path.open(encoding="utf-8", newline="") as handle:
+            safety_rows = max(sum(1 for _ in handle) - 1, 0)
+    return [
+        "## 测量到的服务差",
+        "",
+        f"- 达到 S0 的替代有 {len(rows)} 条，已知标签服务差最小 {min(deltas):.1f} bit，最大 {max(deltas):.1f} bit。",
+        f"- 这些行的决策时刻是 {times}。全部 S0 行的安全差和约束差都没有上升，所以 S1 与 S0 计数相同。",
+        "- S2 只保留其中均值 SINR 不下降且均值干扰不上升的行。",
+        f"- 回放安全或约束事件行数: {safety_rows}。约束失败仍保留原始计数，没有被记成安全机会。",
+        "",
+    ]
 
 
 def write_report(summary: dict) -> None:
@@ -74,6 +102,7 @@ def write_report(summary: dict) -> None:
         f"- S0 场景: {counts.get('s0_scenarios', [])}",
         f"- S2 场景: {counts.get('s2_scenarios', [])}",
         "",
+        *_measured_lines(),
         "## 限制",
         "",
         "同掩码抽样会漏掉更换参与 UAV 才能出现的收益。k 仍是 5，场景仍是 321000–321007，决策时刻仍是 0、15、30，t=45 尾部没有进入比较。",
@@ -97,7 +126,7 @@ def write_report(summary: dict) -> None:
                 "## 测试",
                 "",
                 f"- 干净基线测试数: {comparison.get('baseline_ran')}",
-                f"- 当前仓库测试数: {comparison.get('repository_ran')}",
+                f"- 干净基线加上本阶段代码后的测试数: {comparison.get('repository_ran')}",
                 f"- 新增失败: {comparison.get('new_failure_count')}",
                 f"- 相关测试通过: {str(bool(comparison.get('related_ok'))).lower()}",
                 "- 历史失败仍是发布阻塞项。完整历史套件不记为全绿。",

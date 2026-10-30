@@ -1,0 +1,6 @@
+{
+  "schema_version": "assignment_coverage_diag_v1",
+  "training": false,
+  "max_simulator_steps": 2544,
+  "release_eligible": false
+}
