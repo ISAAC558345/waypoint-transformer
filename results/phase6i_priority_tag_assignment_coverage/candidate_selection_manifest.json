@@ -1,0 +1,3708 @@
+{
+  "schema_version": "assignment_coverage_diag_v1",
+  "rule": "activity_matched_stratified_sample",
+  "alternative_cap": 4,
+  "candidate_limit": 5,
+  "candidate_seed_formula": "9300000 + 100*scenario_id + decision_time",
+  "replay_authorized": true,
+  "reference_steps": 384,
+  "records": [
+    {
+      "scenario_id": 321000,
+      "decision_time": 0,
+      "candidate_seed": 41400000,
+      "pool_sha256": "e7f07051d7243798b499c51208af088cd56e40d15c82997616d50164a87867a7",
+      "dedup_sha256": "6127f5cca8131091f5f2c74511d7c070072e47e3706a3c3a3c7864374f51c786",
+      "pool_size": 6492,
+      "unique_count": 6492,
+      "duplicate_count": 0,
+      "baseline_pool_index": 2183,
+      "baseline_assignment": [
+        2,
+        -1,
+        -1,
+        -1,
+        3,
+        5
+      ],
+      "baseline_mask": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "matched_alternative_count": 70,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        18,
+        18,
+        17,
+        17
+      ],
+      "stratum_offsets": [
+        7,
+        5,
+        16,
+        8
+      ],
+      "stratum_pool_indices": [
+        2175,
+        3064,
+        4732,
+        5615
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 2175,
+          "assignment": [
+            2,
+            -1,
+            -1,
+            -1,
+            5,
+            1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 2183,
+          "assignment": [
+            2,
+            -1,
+            -1,
+            -1,
+            3,
+            5
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 3064,
+          "assignment": [
+            0,
+            -1,
+            -1,
+            -1,
+            4,
+            1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 4732,
+          "assignment": [
+            3,
+            -1,
+            -1,
+            -1,
+            5,
+            2
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 5615,
+          "assignment": [
+            1,
+            -1,
+            -1,
+            -1,
+            5,
+            0
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321000,
+      "decision_time": 15,
+      "candidate_seed": 41400015,
+      "pool_sha256": "2c2b5a285c309bebbd0181fa398c38d16e62de6971ea2277ad5cf376d5b1f687",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 3544,
+      "baseline_assignment": [
+        8,
+        10,
+        0,
+        1,
+        -1,
+        -1
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "matched_alternative_count": 119,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        30,
+        30,
+        30,
+        29
+      ],
+      "stratum_offsets": [
+        1,
+        10,
+        14,
+        1
+      ],
+      "stratum_pool_indices": [
+        1799,
+        2469,
+        3312,
+        3521
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 1799,
+          "assignment": [
+            0,
+            4,
+            1,
+            8,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 2469,
+          "assignment": [
+            4,
+            10,
+            8,
+            1,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 3312,
+          "assignment": [
+            8,
+            4,
+            0,
+            1,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 3521,
+          "assignment": [
+            8,
+            10,
+            1,
+            0,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 3544,
+          "assignment": [
+            8,
+            10,
+            0,
+            1,
+            -1,
+            -1
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321000,
+      "decision_time": 30,
+      "candidate_seed": 41400030,
+      "pool_sha256": "e72ea772a011be094e97b6d9bb6d37726d11765b9025dccd5d4af07ef29a0383",
+      "dedup_sha256": "90b1e6d7a6ca2f5075b9ccd22b5f8b848b0a553ae4182c7f7f53acf9872012fd",
+      "pool_size": 5723,
+      "unique_count": 5723,
+      "duplicate_count": 0,
+      "baseline_pool_index": 5444,
+      "baseline_assignment": [
+        8,
+        11,
+        -1,
+        -1,
+        -1,
+        7
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "matched_alternative_count": 67,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        17,
+        17,
+        17,
+        16
+      ],
+      "stratum_offsets": [
+        2,
+        11,
+        3,
+        8
+      ],
+      "stratum_pool_indices": [
+        2342,
+        3742,
+        4170,
+        5370
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 2342,
+          "assignment": [
+            11,
+            9,
+            -1,
+            -1,
+            -1,
+            6
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 3742,
+          "assignment": [
+            9,
+            7,
+            -1,
+            -1,
+            -1,
+            6
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 4170,
+          "assignment": [
+            7,
+            6,
+            -1,
+            -1,
+            -1,
+            9
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 5370,
+          "assignment": [
+            8,
+            6,
+            -1,
+            -1,
+            -1,
+            7
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 5444,
+          "assignment": [
+            8,
+            11,
+            -1,
+            -1,
+            -1,
+            7
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321001,
+      "decision_time": 0,
+      "candidate_seed": 41400100,
+      "pool_sha256": "6ea80400c7b30074d1d942ed6b97fad8cf450788c93d96261e14f26e308bcb69",
+      "dedup_sha256": "15f02f842ee172b194c9aaf7382eee8418be1eb1ac9f268e0ccfd6651f3bccbf",
+      "pool_size": 6388,
+      "unique_count": 6388,
+      "duplicate_count": 0,
+      "baseline_pool_index": 3621,
+      "baseline_assignment": [
+        2,
+        4,
+        1,
+        0,
+        -1,
+        5
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "matched_alternative_count": 297,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        75,
+        74,
+        74,
+        74
+      ],
+      "stratum_offsets": [
+        44,
+        0,
+        5,
+        53
+      ],
+      "stratum_pool_indices": [
+        2837,
+        3488,
+        4530,
+        6238
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 2837,
+          "assignment": [
+            4,
+            3,
+            1,
+            2,
+            -1,
+            5
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 3488,
+          "assignment": [
+            2,
+            0,
+            5,
+            3,
+            -1,
+            4
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 3621,
+          "assignment": [
+            2,
+            4,
+            1,
+            0,
+            -1,
+            5
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 4530,
+          "assignment": [
+            0,
+            4,
+            5,
+            2,
+            -1,
+            3
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 6238,
+          "assignment": [
+            3,
+            4,
+            1,
+            5,
+            -1,
+            0
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321001,
+      "decision_time": 15,
+      "candidate_seed": 41400115,
+      "pool_sha256": "42e03352f0a12d5fd788e97fef4cdeeb5a7a1d288eaf4e07545995d53c9430de",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 1903,
+      "baseline_assignment": [
+        3,
+        6,
+        -1,
+        -1,
+        -1,
+        8
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "matched_alternative_count": 59,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        15,
+        15,
+        15,
+        14
+      ],
+      "stratum_offsets": [
+        4,
+        11,
+        1,
+        4
+      ],
+      "stratum_pool_indices": [
+        1830,
+        2831,
+        2906,
+        3762
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 1830,
+          "assignment": [
+            3,
+            8,
+            -1,
+            -1,
+            -1,
+            6
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 1903,
+          "assignment": [
+            3,
+            6,
+            -1,
+            -1,
+            -1,
+            8
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 2831,
+          "assignment": [
+            8,
+            10,
+            -1,
+            -1,
+            -1,
+            3
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 2906,
+          "assignment": [
+            8,
+            6,
+            -1,
+            -1,
+            -1,
+            9
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 3762,
+          "assignment": [
+            9,
+            3,
+            -1,
+            -1,
+            -1,
+            6
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321001,
+      "decision_time": 30,
+      "candidate_seed": 41400130,
+      "pool_sha256": "fddbc6f8cfec6e42e59025073899e296bf23754b3f98e629c270136bb1508037",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 1359,
+      "baseline_assignment": [
+        -1,
+        9,
+        -1,
+        10,
+        -1,
+        11
+      ],
+      "baseline_mask": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "matched_alternative_count": 59,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        15,
+        15,
+        15,
+        14
+      ],
+      "stratum_offsets": [
+        11,
+        5,
+        2,
+        10
+      ],
+      "stratum_pool_indices": [
+        564,
+        760,
+        969,
+        1387
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 564,
+          "assignment": [
+            -1,
+            10,
+            -1,
+            9,
+            -1,
+            7
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 760,
+          "assignment": [
+            -1,
+            7,
+            -1,
+            11,
+            -1,
+            10
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 969,
+          "assignment": [
+            -1,
+            8,
+            -1,
+            11,
+            -1,
+            10
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 1359,
+          "assignment": [
+            -1,
+            9,
+            -1,
+            10,
+            -1,
+            11
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 1387,
+          "assignment": [
+            -1,
+            9,
+            -1,
+            7,
+            -1,
+            10
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321002,
+      "decision_time": 0,
+      "candidate_seed": 41400200,
+      "pool_sha256": "7dbdab928281326701d5c7f2fd23dd2e95bbc72d94564d70c0141bee9b29b1de",
+      "dedup_sha256": "15f02f842ee172b194c9aaf7382eee8418be1eb1ac9f268e0ccfd6651f3bccbf",
+      "pool_size": 6388,
+      "unique_count": 6388,
+      "duplicate_count": 0,
+      "baseline_pool_index": 617,
+      "baseline_assignment": [
+        -1,
+        4,
+        -1,
+        -1,
+        5,
+        0
+      ],
+      "baseline_mask": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "matched_alternative_count": 70,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        18,
+        18,
+        17,
+        17
+      ],
+      "stratum_offsets": [
+        5,
+        14,
+        5,
+        10
+      ],
+      "stratum_pool_indices": [
+        611,
+        1245,
+        1257,
+        1824
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 611,
+          "assignment": [
+            -1,
+            4,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 617,
+          "assignment": [
+            -1,
+            4,
+            -1,
+            -1,
+            5,
+            0
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 1245,
+          "assignment": [
+            -1,
+            2,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 1257,
+          "assignment": [
+            -1,
+            2,
+            -1,
+            -1,
+            3,
+            5
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 1824,
+          "assignment": [
+            -1,
+            3,
+            -1,
+            -1,
+            5,
+            1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321002,
+      "decision_time": 15,
+      "candidate_seed": 41400215,
+      "pool_sha256": "b91b5d95fb2da07884f6fc6981d931639cfa7cc8e0c29f0efe56fece4b7970f0",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 1611,
+      "baseline_assignment": [
+        1,
+        -1,
+        -1,
+        8,
+        3,
+        2
+      ],
+      "baseline_mask": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "matched_alternative_count": 119,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        30,
+        30,
+        30,
+        29
+      ],
+      "stratum_offsets": [
+        6,
+        20,
+        23,
+        22
+      ],
+      "stratum_pool_indices": [
+        1585,
+        2578,
+        3101,
+        3609
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 1585,
+          "assignment": [
+            1,
+            -1,
+            -1,
+            3,
+            2,
+            10
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 1611,
+          "assignment": [
+            1,
+            -1,
+            -1,
+            8,
+            3,
+            2
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 2578,
+          "assignment": [
+            3,
+            -1,
+            -1,
+            1,
+            10,
+            8
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 3101,
+          "assignment": [
+            10,
+            -1,
+            -1,
+            3,
+            2,
+            1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 3609,
+          "assignment": [
+            8,
+            -1,
+            -1,
+            3,
+            10,
+            1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321002,
+      "decision_time": 30,
+      "candidate_seed": 41400230,
+      "pool_sha256": "77a171a93886fd75b1cbaac37da06358eddceac45d62b3616d9b5d07160da3af",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 2997,
+      "baseline_assignment": [
+        9,
+        11,
+        -1,
+        6,
+        -1,
+        10
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "matched_alternative_count": 119,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        30,
+        30,
+        30,
+        29
+      ],
+      "stratum_offsets": [
+        20,
+        23,
+        16,
+        8
+      ],
+      "stratum_pool_indices": [
+        1995,
+        2786,
+        3287,
+        3781
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 1995,
+          "assignment": [
+            10,
+            11,
+            -1,
+            7,
+            -1,
+            6
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 2786,
+          "assignment": [
+            9,
+            10,
+            -1,
+            6,
+            -1,
+            11
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 2997,
+          "assignment": [
+            9,
+            11,
+            -1,
+            6,
+            -1,
+            10
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 3287,
+          "assignment": [
+            7,
+            10,
+            -1,
+            6,
+            -1,
+            11
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 3781,
+          "assignment": [
+            11,
+            10,
+            -1,
+            7,
+            -1,
+            9
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321003,
+      "decision_time": 0,
+      "candidate_seed": 41400300,
+      "pool_sha256": "636dbd5d26559df492256751773422ce577cd5e5c7325a33a205f6ac9179556f",
+      "dedup_sha256": "c9cedd3c6fe1030d820b683afa9df924cf2bcaef8be1904def7a9b2bdecc36b6",
+      "pool_size": 6240,
+      "unique_count": 6240,
+      "duplicate_count": 0,
+      "baseline_pool_index": 5143,
+      "baseline_assignment": [
+        3,
+        0,
+        2,
+        4,
+        -1,
+        -1
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "matched_alternative_count": 155,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        39,
+        39,
+        39,
+        38
+      ],
+      "stratum_offsets": [
+        35,
+        26,
+        38,
+        11
+      ],
+      "stratum_pool_indices": [
+        3416,
+        4240,
+        5410,
+        5846
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 3416,
+          "assignment": [
+            4,
+            0,
+            1,
+            5,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 4240,
+          "assignment": [
+            0,
+            4,
+            1,
+            5,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 5143,
+          "assignment": [
+            3,
+            0,
+            2,
+            4,
+            -1,
+            -1
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 5410,
+          "assignment": [
+            3,
+            1,
+            0,
+            4,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 5846,
+          "assignment": [
+            1,
+            4,
+            2,
+            5,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321003,
+      "decision_time": 15,
+      "candidate_seed": 41400315,
+      "pool_sha256": "ac34a8f3d2f956be3ebfd07eca21ab7e646390d580cfe44af16252084195d3ee",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 2747,
+      "baseline_assignment": [
+        8,
+        -1,
+        6,
+        5,
+        1,
+        10
+      ],
+      "baseline_mask": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "matched_alternative_count": 119,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        30,
+        30,
+        30,
+        29
+      ],
+      "stratum_offsets": [
+        10,
+        24,
+        16,
+        26
+      ],
+      "stratum_pool_indices": [
+        1684,
+        2672,
+        3155,
+        3751
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 1684,
+          "assignment": [
+            5,
+            -1,
+            10,
+            6,
+            1,
+            8
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 2672,
+          "assignment": [
+            8,
+            -1,
+            1,
+            5,
+            10,
+            6
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 2747,
+          "assignment": [
+            8,
+            -1,
+            6,
+            5,
+            1,
+            10
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 3155,
+          "assignment": [
+            10,
+            -1,
+            5,
+            6,
+            8,
+            1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 3751,
+          "assignment": [
+            6,
+            -1,
+            8,
+            5,
+            10,
+            1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321003,
+      "decision_time": 30,
+      "candidate_seed": 41400330,
+      "pool_sha256": "46c4e00ec6fc71eb81bd8e1defdf9d85fd7af63ac158dc9e80bd82c3d4b73d48",
+      "dedup_sha256": "1e0b6fb0f85cb203838c8f10866189fca7d395c2ec7a9fdc455846651d2c5ec6",
+      "pool_size": 5096,
+      "unique_count": 5096,
+      "duplicate_count": 0,
+      "baseline_pool_index": 518,
+      "baseline_assignment": [
+        -1,
+        -1,
+        8,
+        10,
+        11,
+        6
+      ],
+      "baseline_mask": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "matched_alternative_count": 155,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        39,
+        39,
+        39,
+        38
+      ],
+      "stratum_offsets": [
+        30,
+        33,
+        23,
+        36
+      ],
+      "stratum_pool_indices": [
+        233,
+        356,
+        436,
+        562
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 233,
+          "assignment": [
+            -1,
+            -1,
+            7,
+            11,
+            8,
+            9
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 356,
+          "assignment": [
+            -1,
+            -1,
+            11,
+            10,
+            7,
+            6
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 436,
+          "assignment": [
+            -1,
+            -1,
+            6,
+            10,
+            11,
+            9
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 518,
+          "assignment": [
+            -1,
+            -1,
+            8,
+            10,
+            11,
+            6
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 562,
+          "assignment": [
+            -1,
+            -1,
+            8,
+            11,
+            7,
+            6
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321004,
+      "decision_time": 0,
+      "candidate_seed": 41400400,
+      "pool_sha256": "bcd14cc76866e5044baaf086588c877befb7655084d94b8fe959c3e565cc67ac",
+      "dedup_sha256": "c73deb9000421e852c71ca442e3625aec54c48f130aaafd7ee87519daf188809",
+      "pool_size": 6146,
+      "unique_count": 6146,
+      "duplicate_count": 0,
+      "baseline_pool_index": 3195,
+      "baseline_assignment": [
+        2,
+        -1,
+        -1,
+        -1,
+        5,
+        3
+      ],
+      "baseline_mask": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "matched_alternative_count": 67,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        17,
+        17,
+        17,
+        16
+      ],
+      "stratum_offsets": [
+        1,
+        10,
+        13,
+        9
+      ],
+      "stratum_pool_indices": [
+        2026,
+        3196,
+        4627,
+        5346
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 2026,
+          "assignment": [
+            4,
+            -1,
+            -1,
+            -1,
+            1,
+            3
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 3195,
+          "assignment": [
+            2,
+            -1,
+            -1,
+            -1,
+            5,
+            3
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 3196,
+          "assignment": [
+            2,
+            -1,
+            -1,
+            -1,
+            5,
+            0
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 4627,
+          "assignment": [
+            1,
+            -1,
+            -1,
+            -1,
+            5,
+            0
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 5346,
+          "assignment": [
+            3,
+            -1,
+            -1,
+            -1,
+            0,
+            2
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321004,
+      "decision_time": 15,
+      "candidate_seed": 41400415,
+      "pool_sha256": "fb4f24c67b206658e7f34b6964ab008412434ded2b49c5930e048fbb4e896f8f",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 260,
+      "baseline_assignment": [
+        -1,
+        -1,
+        1,
+        10,
+        0,
+        -1
+      ],
+      "baseline_mask": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "matched_alternative_count": 59,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        15,
+        15,
+        15,
+        14
+      ],
+      "stratum_offsets": [
+        14,
+        1,
+        12,
+        8
+      ],
+      "stratum_pool_indices": [
+        240,
+        250,
+        409,
+        479
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 240,
+          "assignment": [
+            -1,
+            -1,
+            1,
+            0,
+            8,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 250,
+          "assignment": [
+            -1,
+            -1,
+            1,
+            4,
+            10,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 260,
+          "assignment": [
+            -1,
+            -1,
+            1,
+            10,
+            0,
+            -1
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 409,
+          "assignment": [
+            -1,
+            -1,
+            10,
+            4,
+            1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 479,
+          "assignment": [
+            -1,
+            -1,
+            8,
+            4,
+            0,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321004,
+      "decision_time": 30,
+      "candidate_seed": 41400430,
+      "pool_sha256": "f151c378f79deacc933c71aa93af6d7112309590d7a4952ca984b73242d2d9a3",
+      "dedup_sha256": "1e0b6fb0f85cb203838c8f10866189fca7d395c2ec7a9fdc455846651d2c5ec6",
+      "pool_size": 5096,
+      "unique_count": 5096,
+      "duplicate_count": 0,
+      "baseline_pool_index": 1472,
+      "baseline_assignment": [
+        -1,
+        9,
+        8,
+        -1,
+        -1,
+        6
+      ],
+      "baseline_mask": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "matched_alternative_count": 59,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        15,
+        15,
+        15,
+        14
+      ],
+      "stratum_offsets": [
+        6,
+        12,
+        4,
+        1
+      ],
+      "stratum_pool_indices": [
+        753,
+        1223,
+        1304,
+        1553
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 753,
+          "assignment": [
+            -1,
+            4,
+            9,
+            -1,
+            -1,
+            8
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 1223,
+          "assignment": [
+            -1,
+            6,
+            8,
+            -1,
+            -1,
+            4
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 1304,
+          "assignment": [
+            -1,
+            6,
+            7,
+            -1,
+            -1,
+            8
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 1472,
+          "assignment": [
+            -1,
+            9,
+            8,
+            -1,
+            -1,
+            6
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 1553,
+          "assignment": [
+            -1,
+            9,
+            7,
+            -1,
+            -1,
+            6
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321005,
+      "decision_time": 0,
+      "candidate_seed": 41400500,
+      "pool_sha256": "dce65a90bd2c49722dd2c10097c6f7a8ba4f3da47acac52755af08154cf8b12d",
+      "dedup_sha256": "c73deb9000421e852c71ca442e3625aec54c48f130aaafd7ee87519daf188809",
+      "pool_size": 6146,
+      "unique_count": 6146,
+      "duplicate_count": 0,
+      "baseline_pool_index": 2209,
+      "baseline_assignment": [
+        4,
+        -1,
+        2,
+        5,
+        -1,
+        3
+      ],
+      "baseline_mask": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "matched_alternative_count": 173,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        44,
+        43,
+        43,
+        43
+      ],
+      "stratum_offsets": [
+        6,
+        33,
+        16,
+        4
+      ],
+      "stratum_pool_indices": [
+        2147,
+        3771,
+        4457,
+        5181
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 2147,
+          "assignment": [
+            4,
+            -1,
+            0,
+            2,
+            -1,
+            1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 2209,
+          "assignment": [
+            4,
+            -1,
+            2,
+            5,
+            -1,
+            3
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 3771,
+          "assignment": [
+            0,
+            -1,
+            2,
+            5,
+            -1,
+            3
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 4457,
+          "assignment": [
+            1,
+            -1,
+            4,
+            0,
+            -1,
+            3
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 5181,
+          "assignment": [
+            3,
+            -1,
+            4,
+            0,
+            -1,
+            1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321005,
+      "decision_time": 15,
+      "candidate_seed": 41400515,
+      "pool_sha256": "2f675271ceed98e5d92333061f17d149299b316628e72027ba11bbc093828ce2",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 1217,
+      "baseline_assignment": [
+        -1,
+        8,
+        0,
+        1,
+        10,
+        -1
+      ],
+      "baseline_mask": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "matched_alternative_count": 119,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        30,
+        30,
+        30,
+        29
+      ],
+      "stratum_offsets": [
+        12,
+        23,
+        13,
+        12
+      ],
+      "stratum_pool_indices": [
+        658,
+        1024,
+        1224,
+        1462
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 658,
+          "assignment": [
+            -1,
+            1,
+            8,
+            0,
+            10,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 1024,
+          "assignment": [
+            -1,
+            10,
+            0,
+            6,
+            8,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 1217,
+          "assignment": [
+            -1,
+            8,
+            0,
+            1,
+            10,
+            -1
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 1224,
+          "assignment": [
+            -1,
+            8,
+            0,
+            10,
+            1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 1462,
+          "assignment": [
+            -1,
+            6,
+            1,
+            0,
+            8,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321005,
+      "decision_time": 30,
+      "candidate_seed": 41400530,
+      "pool_sha256": "6ade4ab9100669763a6c65289415feb4c84fbf0ca1e4946ef8a00ce83369b86a",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 1832,
+      "baseline_assignment": [
+        6,
+        11,
+        -1,
+        -1,
+        9,
+        -1
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "matched_alternative_count": 59,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        15,
+        15,
+        15,
+        14
+      ],
+      "stratum_offsets": [
+        7,
+        4,
+        0,
+        5
+      ],
+      "stratum_pool_indices": [
+        1911,
+        2412,
+        2910,
+        3836
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 1832,
+          "assignment": [
+            6,
+            11,
+            -1,
+            -1,
+            9,
+            -1
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 1911,
+          "assignment": [
+            6,
+            8,
+            -1,
+            -1,
+            7,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 2412,
+          "assignment": [
+            8,
+            6,
+            -1,
+            -1,
+            7,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 2910,
+          "assignment": [
+            7,
+            8,
+            -1,
+            -1,
+            11,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 3836,
+          "assignment": [
+            9,
+            8,
+            -1,
+            -1,
+            11,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321006,
+      "decision_time": 0,
+      "candidate_seed": 41400600,
+      "pool_sha256": "2bf8e4dd50420d8ff30e2bdbccbb1f2a5ab69844df59c4a3ccdd4841ceed85d9",
+      "dedup_sha256": "a97b56f40304ffffa49a71581bfbc2ef465293d8aee475c264309d0f1ff2a6af",
+      "pool_size": 6287,
+      "unique_count": 6287,
+      "duplicate_count": 0,
+      "baseline_pool_index": 376,
+      "baseline_assignment": [
+        -1,
+        -1,
+        1,
+        5,
+        -1,
+        -1
+      ],
+      "baseline_mask": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "matched_alternative_count": 19,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        5,
+        5,
+        5,
+        4
+      ],
+      "stratum_offsets": [
+        2,
+        2,
+        3,
+        0
+      ],
+      "stratum_pool_indices": [
+        219,
+        321,
+        470,
+        525
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 219,
+          "assignment": [
+            -1,
+            -1,
+            4,
+            5,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 321,
+          "assignment": [
+            -1,
+            -1,
+            0,
+            4,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 376,
+          "assignment": [
+            -1,
+            -1,
+            1,
+            5,
+            -1,
+            -1
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 470,
+          "assignment": [
+            -1,
+            -1,
+            2,
+            5,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 525,
+          "assignment": [
+            -1,
+            -1,
+            5,
+            0,
+            -1,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321006,
+      "decision_time": 15,
+      "candidate_seed": 41400615,
+      "pool_sha256": "ba2c7ddcc5e8fb2944f4ab86872e53325ed8516882192d2eac496f1a764f95cf",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 3336,
+      "baseline_assignment": [
+        3,
+        0,
+        -1,
+        -1,
+        4,
+        2
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "matched_alternative_count": 119,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        30,
+        30,
+        30,
+        29
+      ],
+      "stratum_offsets": [
+        20,
+        10,
+        4,
+        5
+      ],
+      "stratum_pool_indices": [
+        1982,
+        2413,
+        2914,
+        3764
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 1982,
+          "assignment": [
+            4,
+            10,
+            -1,
+            -1,
+            2,
+            0
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 2413,
+          "assignment": [
+            0,
+            3,
+            -1,
+            -1,
+            10,
+            4
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 2914,
+          "assignment": [
+            2,
+            3,
+            -1,
+            -1,
+            10,
+            0
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 3336,
+          "assignment": [
+            3,
+            0,
+            -1,
+            -1,
+            4,
+            2
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 3764,
+          "assignment": [
+            10,
+            4,
+            -1,
+            -1,
+            0,
+            3
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321006,
+      "decision_time": 30,
+      "candidate_seed": 41400630,
+      "pool_sha256": "d7c521c4aafd5605e26ebc9e1790be73c2ab1f28ec4d60c7a771042532414626",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 1119,
+      "baseline_assignment": [
+        -1,
+        6,
+        7,
+        8,
+        9,
+        -1
+      ],
+      "baseline_mask": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "matched_alternative_count": 119,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        30,
+        30,
+        30,
+        29
+      ],
+      "stratum_offsets": [
+        14,
+        24,
+        18,
+        19
+      ],
+      "stratum_pool_indices": [
+        665,
+        1042,
+        1253,
+        1501
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 665,
+          "assignment": [
+            -1,
+            10,
+            9,
+            6,
+            8,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 1042,
+          "assignment": [
+            -1,
+            6,
+            8,
+            10,
+            9,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 1119,
+          "assignment": [
+            -1,
+            6,
+            7,
+            8,
+            9,
+            -1
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 1253,
+          "assignment": [
+            -1,
+            9,
+            8,
+            10,
+            7,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 1501,
+          "assignment": [
+            -1,
+            7,
+            6,
+            8,
+            10,
+            -1
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321007,
+      "decision_time": 0,
+      "candidate_seed": 41400700,
+      "pool_sha256": "1620f4a81cba78adbf4fc9ebc05f7b46bae1ae72fc70925bfb093529f47d0927",
+      "dedup_sha256": "15f02f842ee172b194c9aaf7382eee8418be1eb1ac9f268e0ccfd6651f3bccbf",
+      "pool_size": 6388,
+      "unique_count": 6388,
+      "duplicate_count": 0,
+      "baseline_pool_index": 4422,
+      "baseline_assignment": [
+        0,
+        2,
+        5,
+        -1,
+        -1,
+        1
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "matched_alternative_count": 173,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        44,
+        43,
+        43,
+        43
+      ],
+      "stratum_offsets": [
+        1,
+        7,
+        41,
+        42
+      ],
+      "stratum_pool_indices": [
+        2521,
+        3638,
+        5460,
+        6364
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 2521,
+          "assignment": [
+            2,
+            4,
+            0,
+            -1,
+            -1,
+            5
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 3638,
+          "assignment": [
+            4,
+            2,
+            5,
+            -1,
+            -1,
+            3
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 4422,
+          "assignment": [
+            0,
+            2,
+            5,
+            -1,
+            -1,
+            1
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 5460,
+          "assignment": [
+            3,
+            1,
+            4,
+            -1,
+            -1,
+            0
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 6364,
+          "assignment": [
+            1,
+            5,
+            2,
+            -1,
+            -1,
+            4
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321007,
+      "decision_time": 15,
+      "candidate_seed": 41400715,
+      "pool_sha256": "6e6e524bc439084188aa11a7ec682606021961c31db690f62c4b6799f315a47a",
+      "dedup_sha256": "a5d6bbdad9922b57d4b14fdbe58926153acac3eaac32b2428dd20c92cc1beea9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "duplicate_count": 0,
+      "baseline_pool_index": 3086,
+      "baseline_assignment": [
+        10,
+        -1,
+        -1,
+        3,
+        -1,
+        6
+      ],
+      "baseline_mask": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "matched_alternative_count": 59,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        15,
+        15,
+        15,
+        14
+      ],
+      "stratum_offsets": [
+        0,
+        4,
+        8,
+        0
+      ],
+      "stratum_pool_indices": [
+        1568,
+        2096,
+        3073,
+        3111
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 1568,
+          "assignment": [
+            3,
+            -1,
+            -1,
+            4,
+            -1,
+            10
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 2096,
+          "assignment": [
+            4,
+            -1,
+            -1,
+            8,
+            -1,
+            10
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 3073,
+          "assignment": [
+            10,
+            -1,
+            -1,
+            4,
+            -1,
+            6
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 3086,
+          "assignment": [
+            10,
+            -1,
+            -1,
+            3,
+            -1,
+            6
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 3111,
+          "assignment": [
+            10,
+            -1,
+            -1,
+            6,
+            -1,
+            3
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": 321007,
+      "decision_time": 30,
+      "candidate_seed": 41400730,
+      "pool_sha256": "dabdf69653931fce1b83919f9961e707f3f825a135638d7c5e8717a694539b3b",
+      "dedup_sha256": "90b1e6d7a6ca2f5075b9ccd22b5f8b848b0a553ae4182c7f7f53acf9872012fd",
+      "pool_size": 5723,
+      "unique_count": 5723,
+      "duplicate_count": 0,
+      "baseline_pool_index": 4167,
+      "baseline_assignment": [
+        11,
+        7,
+        4,
+        -1,
+        6,
+        9
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "matched_alternative_count": 263,
+      "no_same_mask_alternative": false,
+      "layer_sizes": [
+        66,
+        66,
+        66,
+        65
+      ],
+      "stratum_offsets": [
+        38,
+        58,
+        57,
+        62
+      ],
+      "stratum_pool_indices": [
+        2448,
+        3904,
+        4792,
+        5710
+      ],
+      "selected": [
+        {
+          "slot": 0,
+          "pool_index": 2448,
+          "assignment": [
+            9,
+            7,
+            8,
+            -1,
+            6,
+            11
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 1,
+          "pool_index": 3904,
+          "assignment": [
+            11,
+            8,
+            7,
+            -1,
+            6,
+            9
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 2,
+          "pool_index": 4167,
+          "assignment": [
+            11,
+            7,
+            4,
+            -1,
+            6,
+            9
+          ],
+          "is_baseline": true,
+          "active_mask": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 3,
+          "pool_index": 4792,
+          "assignment": [
+            6,
+            4,
+            7,
+            -1,
+            9,
+            11
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "slot": 4,
+          "pool_index": 5710,
+          "assignment": [
+            7,
+            9,
+            6,
+            -1,
+            4,
+            11
+          ],
+          "is_baseline": false,
+          "active_mask": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "selection_sha256": "34f8b1069b35d0812f3dcb280b883406f87136d49f74b58420718f0fc7650f4d"
+}

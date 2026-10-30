@@ -1,0 +1,21 @@
+{
+  "replay_authorized": true,
+  "problems": [],
+  "budget": {
+    "reference_steps": 384,
+    "candidate_steps": 0,
+    "repeat_steps": 0,
+    "fixture_steps": 0,
+    "total_steps": 384,
+    "max_reference_steps": 384,
+    "max_candidate_steps": 1800,
+    "max_repeat_steps": 360,
+    "max_steps": 2544,
+    "unused_steps_are_not_extra_room": true,
+    "training_updates": 0,
+    "parameter_updates": 0
+  },
+  "selection_sha256": "34f8b1069b35d0812f3dcb280b883406f87136d49f74b58420718f0fc7650f4d",
+  "implementation_commit": "f79ad10139eacbb298b4a306a2b917057b32ef6b",
+  "records": 24
+}

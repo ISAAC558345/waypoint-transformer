@@ -1,0 +1,158 @@
+{
+  "ok": true,
+  "episodes": [
+    {
+      "scenario_id": 321000,
+      "problems": [],
+      "rebuilt": {
+        "scenario_id": 321000,
+        "steps": 48,
+        "payload_bits": 52114872.479325905,
+        "served_tagged_bits": 14536967.033675522,
+        "served_ordinary_bits": 37577905.445650384,
+        "safety_count": 0,
+        "constraint_count": 0,
+        "final_t": 48,
+        "decision_times": [
+          0,
+          15,
+          30
+        ]
+      }
+    },
+    {
+      "scenario_id": 321001,
+      "problems": [],
+      "rebuilt": {
+        "scenario_id": 321001,
+        "steps": 48,
+        "payload_bits": 59461523.38247538,
+        "served_tagged_bits": 12000000.0,
+        "served_ordinary_bits": 47461523.38247538,
+        "safety_count": 0,
+        "constraint_count": 0,
+        "final_t": 48,
+        "decision_times": [
+          0,
+          15,
+          30
+        ]
+      }
+    },
+    {
+      "scenario_id": 321002,
+      "problems": [],
+      "rebuilt": {
+        "scenario_id": 321002,
+        "steps": 48,
+        "payload_bits": 58271406.57252686,
+        "served_tagged_bits": 14520227.388010098,
+        "served_ordinary_bits": 43751179.18451676,
+        "safety_count": 0,
+        "constraint_count": 0,
+        "final_t": 48,
+        "decision_times": [
+          0,
+          15,
+          30
+        ]
+      }
+    },
+    {
+      "scenario_id": 321003,
+      "problems": [],
+      "rebuilt": {
+        "scenario_id": 321003,
+        "steps": 48,
+        "payload_bits": 64963669.648557544,
+        "served_tagged_bits": 15000000.0,
+        "served_ordinary_bits": 49963669.64855755,
+        "safety_count": 0,
+        "constraint_count": 0,
+        "final_t": 48,
+        "decision_times": [
+          0,
+          15,
+          30
+        ]
+      }
+    },
+    {
+      "scenario_id": 321004,
+      "problems": [],
+      "rebuilt": {
+        "scenario_id": 321004,
+        "steps": 48,
+        "payload_bits": 46000000.0,
+        "served_tagged_bits": 8000000.0,
+        "served_ordinary_bits": 38000000.0,
+        "safety_count": 0,
+        "constraint_count": 0,
+        "final_t": 48,
+        "decision_times": [
+          0,
+          15,
+          30
+        ]
+      }
+    },
+    {
+      "scenario_id": 321005,
+      "problems": [],
+      "rebuilt": {
+        "scenario_id": 321005,
+        "steps": 48,
+        "payload_bits": 63116707.35529913,
+        "served_tagged_bits": 15000000.0,
+        "served_ordinary_bits": 48116707.35529913,
+        "safety_count": 0,
+        "constraint_count": 0,
+        "final_t": 48,
+        "decision_times": [
+          0,
+          15,
+          30
+        ]
+      }
+    },
+    {
+      "scenario_id": 321006,
+      "problems": [],
+      "rebuilt": {
+        "scenario_id": 321006,
+        "steps": 48,
+        "payload_bits": 40804002.45263633,
+        "served_tagged_bits": 11000000.0,
+        "served_ordinary_bits": 29804002.452636335,
+        "safety_count": 0,
+        "constraint_count": 0,
+        "final_t": 48,
+        "decision_times": [
+          0,
+          15,
+          30
+        ]
+      }
+    },
+    {
+      "scenario_id": 321007,
+      "problems": [],
+      "rebuilt": {
+        "scenario_id": 321007,
+        "steps": 48,
+        "payload_bits": 63102179.3380943,
+        "served_tagged_bits": 7577332.395500975,
+        "served_ordinary_bits": 55524846.94259332,
+        "safety_count": 0,
+        "constraint_count": 0,
+        "final_t": 48,
+        "decision_times": [
+          0,
+          15,
+          30
+        ]
+      }
+    }
+  ],
+  "problems": []
+}

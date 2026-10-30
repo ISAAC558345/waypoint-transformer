@@ -1,0 +1,102 @@
+{
+  "e17_public_manifest_is_restorable": false,
+  "full_capture_saved": true,
+  "files": [
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321000_t_0.json",
+      "sha256": "02aec273ea63caf76fc6178ed23ae0c925ff4f05cccbf77859773e555af5bf46"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321000_t_15.json",
+      "sha256": "f31c6a531ddef56aee2289e7f5b3f06cf1e4c9131d411136896fb8c6ca3da252"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321000_t_30.json",
+      "sha256": "bb1d072cd297f0801e0e2a8e46285db6f2a70dcdd88f555444ef3b1317240336"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321001_t_0.json",
+      "sha256": "e4235a7cd76eb448f6af4202974875be6d310f248fa535a14b6e1995f67a8a1b"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321001_t_15.json",
+      "sha256": "b248b746cb5769e5685402f2ffb282976361f289c19cf72c1d9d67d81ae2b9a5"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321001_t_30.json",
+      "sha256": "249a32f4864cae02e235c3917ab4906ec91c3ea11db42f10526616f59ebc7ea3"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321002_t_0.json",
+      "sha256": "d9468abf0c8cb337eb8604b01381fde1584eef84b8facf7a60fb3e54c05fd8cb"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321002_t_15.json",
+      "sha256": "324866902201b846124d5d0e6c9d258332d67d24ed1a26a2e84366c4c49bc4e3"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321002_t_30.json",
+      "sha256": "fda46ff222827655fde9c28b8307878e123dcc7da43b5d5e4dda49d9094aa111"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321003_t_0.json",
+      "sha256": "7bd7e521940b6ff0da6ab86019332b513d09ee2ccf595b2c202d8f2e59442a75"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321003_t_15.json",
+      "sha256": "c9f4675f973ce39553f2355bba19d172db4047a75ef6641493f12aff0c62ebd3"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321003_t_30.json",
+      "sha256": "90cc71f0761d12d2465b1fd7e329d0fc68027f1417eb03177b1bf6120fd9e4f7"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321004_t_0.json",
+      "sha256": "6ff4603be8afee9ced29af78d5a737b26e370bf5ba728cbcdcc456d7b552903f"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321004_t_15.json",
+      "sha256": "3bd07d5ceeb2770bdeacca583a6cc6ebdaa0890796ef5034938bece7a75108fc"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321004_t_30.json",
+      "sha256": "9fae887ab11c37dc567eedd8e62eefa5150fb98535986ae1c632e0cce55209eb"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321005_t_0.json",
+      "sha256": "4f2c21a31cf8ef5daffa4df328b134d4c4e86fa418bc7d9d2913c4ef1aacfc08"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321005_t_15.json",
+      "sha256": "3e34da4ab7aa9d6045297837e37ad3d85d9691002826197c1624332f2faed668"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321005_t_30.json",
+      "sha256": "61ec0878d182ab92a88b60d1bcc7627838bf9eef47b5252bea5b5117d4902141"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321006_t_0.json",
+      "sha256": "a34b9de2a8bb7c6034113ec986f118c56629d808ca9e74f92329afa6130c5511"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321006_t_15.json",
+      "sha256": "1d2f6f166906582a8a68f8fa4668215667e0aa8a6707bd4bcde991eea534c6b6"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321006_t_30.json",
+      "sha256": "1aa0a4bc5c3cceee43ba94d1e383c861c0ac976a273604ccd5501e1846023172"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321007_t_0.json",
+      "sha256": "673ca1e73cc225c99c028fb641937b2a44a4918918527e6f99387811f3a57663"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321007_t_15.json",
+      "sha256": "04a62d75d34b493488c90e320f370636037f05e1829e4c5cd0cbc050a0192794"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/snapshots/scenario_321007_t_30.json",
+      "sha256": "cb532c554e941d508a0a312658b8e25baad37e666c03420d937aa741e253c668"
+    }
+  ]
+}
