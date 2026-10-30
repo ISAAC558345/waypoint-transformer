@@ -1,0 +1,18 @@
+{
+  "files": {
+    "docs/research/HTW_UrgencyAware_Next_Direction_Instructions_CN.md": "6942ab39b3c21dedc936682db8912dee23629ad34dfb16fc40724670dd70f6e0",
+    "results/phase6i_priority_tag_assignment_feasibility/direction_decision.json": "652a220222e667deaeb2536cd12a34c5b5770d84fa88e12ba52a3d303253707f",
+    "results/phase6i_priority_tag_clip_closure/summary.json": "341150dd4eb6a56f095cfe3b2440477a55093cda36fed4ec5b15af99d030e976",
+    "results/phase6i_priority_tag_clip_benchmark/summary.json": "6b7aa8f20e6583ecfe361dd470d20882dd917101cf2ae5cba80a1581392ab793",
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_feasibility/__init__.py": "a005d122e24b81361f17763d3d3057706cec1dcafa8681131cc1bd7d718b4ca1",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_feasibility/attribution.py": "5fdd93247fba9dd2b139cd2959f4842466a36526da4d5feb2abb9fefc0e7aef5",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_feasibility/candidates.py": "bf0c2e9a62845c275e186ba58427d1c346179f4d60e79ff581c49fb85c809bfd",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_feasibility/criteria.py": "2dc91f5ca02ea24c285f56fc194c716f00c852c518b45212679b2a6c36f1f5a5",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_feasibility/identity.py": "e8630298919e6b3664d652df153b4c2b68d191d9c20854932b7cbacafaee37f8",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_feasibility/protocol.py": "613e8e190efa8b566c39a74993357fa0e1b37092d5ec78c1889883c7c4816b8f",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_feasibility/report.py": "ac03c89cb226f2dc1b8a6355c3dab08c2ae01d92d16cd3eb2030b26a61f2a7ed",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_feasibility/run.py": "9249acbd8da7280eba98a41e1a1601dc55216e061e791b5a878caa15ca33d646",
+    "src/wt/benchmark_v2/phase6i_priority_tag_assignment_feasibility/session.py": "fb74b8155ff3a38ac5af51031ef7f280080e65b73b9f9274cf7b0d19b5cb58de"
+  }
+}

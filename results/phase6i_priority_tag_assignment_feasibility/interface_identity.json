@@ -1,0 +1,73 @@
+{
+  "diagnosis": "frozen L0 counterfactual inside the experiment G1_RATE k=5 pool",
+  "not_a_formal_scheme_c_evaluation": true,
+  "candidate_generation": {
+    "function": "build_pools",
+    "module": "wt.benchmark_v2.phase6e.generators",
+    "rule": "G1_RATE",
+    "k": 5,
+    "features": "current rate, distance, queue, and geometry only",
+    "future_arrivals_read": false
+  },
+  "assignment_draw": {
+    "function": "sample_assignment",
+    "module": "wt.benchmark_v2.phase6g_lowlevel_mappo.worker",
+    "rule": "one uniform index from the current pool",
+    "advance": "one integers draw, then the same post-draw state on every branch"
+  },
+  "option": {
+    "function": "make_option",
+    "module": "wt.benchmark_v2.phase6g_lowlevel_mappo.worker",
+    "hold": 15
+  },
+  "experiment_worker": {
+    "class": "ExperimentWorker",
+    "module": "wt.benchmark_v2.phase6i_priority_tag_reward.rollout",
+    "samples_when_pending_reaches_zero": true
+  },
+  "formal_scheme_c": {
+    "policy_file": {
+      "present": true,
+      "high_level_policy": "scheme_c",
+      "generator": "G1_RATE",
+      "k": 6,
+      "hold": 15,
+      "historical_formal_k": 5,
+      "path": "results/phase6iaa_formal_planner/active_policy.json"
+    },
+    "generator": "G1_RATE",
+    "k": 6,
+    "hold": 15,
+    "entry": "phase6iaa FormalPlanner",
+    "called_by_this_diagnosis": false,
+    "scenario_permission": "separate from the experiment train-pool sampler"
+  },
+  "low_level": {
+    "actor": "ResidualActor deterministic mean",
+    "critic_used": false,
+    "checkpoint": "phase6g_seed0.pt"
+  },
+  "fifo": {
+    "ledger": "PriorityTagLedger",
+    "tag_draw": "draw_tag",
+    "tag_depends_on_served_bits": false,
+    "service_order": "admission_step then insert_index"
+  },
+  "arrivals": {
+    "function": "L3BEnv.arrivals_at",
+    "depends_on_queue_state": false,
+    "clock": "deterministic in time_step"
+  },
+  "split_guard": "assert_allowed train split for 321000-321007 only",
+  "safety_projector_modified": false,
+  "formal_reward_modified": false,
+  "watched_paths": [
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt",
+    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py",
+    "src/wt/lowlevel_v2/observation.py",
+    "src/wt/lowlevel_v2/residual_policy.py",
+    "src/wt/lowlevel_v2/safety_projector.py",
+    "src/wt/benchmark_v2/phase6iaa_formal_planner/planner.py",
+    "results/phase5_hgnn_urgency/checkpoints/mappo_original.pt"
+  ]
+}

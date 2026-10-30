@@ -1,0 +1,5 @@
+{
+  "schema_version": "assignment_feasibility_v1",
+  "training": false,
+  "max_simulator_steps": 2544
+}
