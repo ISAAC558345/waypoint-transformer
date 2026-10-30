@@ -1,0 +1,53 @@
+"""Registered E17 limits. They are not retuned after the diagnostic runs."""
+from __future__ import annotations
+
+from pathlib import Path
+
+from wt.benchmark_v2.phase6g_lowlevel_mappo.protocol import HOLD, TRAIN_POOL
+from wt.benchmark_v2.phase6i_priority_tag.protocol import TOL_BITS
+from wt.benchmark_v2.phase6i_priority_tag_reward.protocol import (
+    EVAL_ASSIGNMENT_SEED,
+    EXPECTED_FORMAL_ACTOR_SHA256,
+)
+from wt.l3b.config import L3BConfig
+
+ROOT = Path(__file__).resolve().parents[4]
+OUTPUT = ROOT / "results" / "phase6i_priority_tag_assignment_feasibility"
+REPORT = ROOT / "docs" / "research" / "HTW_UrgencyAware_Assignment_Feasibility_Report_CN.md"
+INSTRUCTION_COMMIT = "161f0d73e66cdc5473f12225506988b0bbbbc25b"
+PREPARE_COMMIT = "b73f0c1473cca6fbe26968f2d802b3a84c4f3174"
+E16_RESULT_COMMIT = "d54137679a3854d1f70b2cad091ef312df8a96bc"
+
+SCHEMA_VERSION = "assignment_feasibility_v1"
+GATE_COMPLETE = "ASSIGNMENT_FEASIBILITY_COMPLETE"
+GATE_BLOCKED = "ASSIGNMENT_FEASIBILITY_BLOCKED"
+OPPORTUNITY_REPLICATED = "REPLICATED_LOCAL_OPPORTUNITY"
+OPPORTUNITY_LOCAL = "LOCAL_OR_CONSTRAINED_OPPORTUNITY"
+OPPORTUNITY_ABSENT = "NOT_OBSERVED_IN_REGISTERED_POOL"
+OPPORTUNITY_THIN = "INSUFFICIENT_COVERAGE"
+
+SCENARIOS = tuple(int(item) for item in TRAIN_POOL[:8])
+DECISION_TIMES = (0, 15, 30)
+EXCLUDED_TAIL_TIME = 45
+HOLD_STEPS = int(HOLD)
+HORIZON = int(L3BConfig.episode_horizon)
+CANDIDATE_LIMIT = 5
+GENERATOR = "G1_RATE"
+POOL_K = 5
+FORMAL_POOL_K = 6
+PROCESS_SEED = 2
+PROCESS_SEED_ROLE = "historical_inherited_process_context"
+ASSIGNMENT_SEED_BASE = int(EVAL_ASSIGNMENT_SEED)
+BIT_TOL = float(TOL_BITS)
+BUCKET_TOL = 1.0e-6
+PATH_TOL_M = 1.0e-9
+KNOWN_TAG_GAIN_BITS = 1.0
+PAYLOAD_FLOOR_BITS = -1.0
+MAX_REFERENCE_STEPS = len(SCENARIOS) * HORIZON
+MAX_CANDIDATE_STEPS = len(SCENARIOS) * len(DECISION_TIMES) * CANDIDATE_LIMIT * HOLD_STEPS
+MAX_REPEAT_STEPS = len(SCENARIOS) * len(DECISION_TIMES) * HOLD_STEPS
+MAX_SIMULATOR_STEPS = MAX_REFERENCE_STEPS + MAX_CANDIDATE_STEPS + MAX_REPEAT_STEPS
+FORMAL_ACTOR_SHA256 = EXPECTED_FORMAL_ACTOR_SHA256
+
+E15_GATE = "CLIP_GROUP_BENCHMARK_INCONCLUSIVE"
+E16_GATE = "CLIP_GROUP_LINE_CLOSED_UNADOPTED"
