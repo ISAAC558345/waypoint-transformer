@@ -1,0 +1,15 @@
+flowchart TD
+    subgraph HIGH["高层任务规划：每 15 步决策"]
+        direction LR
+        A["环境当前状态<br/>位置 · 队列 · 链路"] --> B["候选与图特征<br/>G1_RATE：每 UAV top-6 · 异构图"]
+        B --> C["高层 HGNN 评分<br/>Scheme C · 稳定排序与合法性检查"]
+        C --> D["TaskOption<br/>联合任务关联 · hold = 15"]
+    end
+    subgraph LOW["低层运动执行：每步执行"]
+        direction RL
+        E["低层观测与 Actor<br/>任务 + 实时状态 → 冻结 MAPPO-V2"] --> F["运动意图<br/>fly-toward + 二维残差"]
+        F --> G["动作裁剪与 SafetyProjector<br/>安全投影"]
+        G --> H["环境 step 与记账<br/>served_bits · payload · 新队列"]
+    end
+    D --> E
+    H -->|"状态更新"| A
