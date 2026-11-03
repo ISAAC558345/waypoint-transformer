@@ -2,9 +2,11 @@
 from __future__ import annotations
 
 import json
+import random
 import subprocess
 
 import numpy as np
+import torch
 
 from wt.benchmark_v2.phase6e.generators import feature_matrices
 from wt.benchmark_v2.phase6i_priority_tag_assignment_coverage.artifacts import write_csv, write_json
@@ -369,6 +371,11 @@ def replay() -> dict:
         print(f"scientific_gate={GATE_BLOCKED} problems={len(problems)}", flush=True)
         return summary
     by_score = {int(item["scenario_id"]): item for item in scores["scenarios"]}
+    random.seed(int(PROCESS_SEED))
+    np.random.seed(int(PROCESS_SEED))
+    torch.manual_seed(int(PROCESS_SEED))
+    torch.set_num_threads(1)
+    torch.use_deterministic_algorithms(True)
     actor = load_actor()
     strategies = []
     paired = []
