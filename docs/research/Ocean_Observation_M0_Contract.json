@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "study": "ocean_observation",
+  "stage": "M0",
+  "date": "2026-11-03",
+  "status": "instructions_prepared_not_executed",
+  "formal_source_commit": "e58e5d190109e5a0e860cb5c6a412321c0d74e31",
+  "parallel_e19_instruction_commit": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+  "solution_path": "docs/research/Ocean_Observation_Solution_CN.md",
+  "instructions_path": "docs/research/Ocean_Observation_M0_Instructions_CN.md",
+  "objective": "Validate the observation product, information availability, physical units, link and energy budgets before constructing a new closed-loop benchmark.",
+  "scope": {
+    "final_fusion_node": "one_fixed_shore_station",
+    "buoy_to_buoy_links": false,
+    "uav_to_uav_relay_links": false,
+    "free_global_state_or_control_channel": false,
+    "observation_product_types": 1,
+    "sampling_policy": "fixed",
+    "physical_parameters": "fixed_for_first_closed_loop_stage",
+    "low_level_controller": "fixed_and_separately_validated",
+    "historical_formal_system_modified": false,
+    "historical_results_rewritten": false
+  },
+  "budgets": {
+    "applies_to": "new_scientific_runs; existing_regression_tests_accounted_separately",
+    "training_updates": 0,
+    "policy_model_inferences": 0,
+    "new_environment_episode_steps": 0,
+    "historical_holdout_reruns": 0,
+    "large_external_dataset_downloads": 0,
+    "maximum_analytical_parameter_cases": 24
+  },
+  "initial_design_assumptions_not_frozen_experiment_parameters": {
+    "node_scales": [
+      {"uavs": 2, "buoys": 4},
+      {"uavs": 6, "buoys": 12}
+    ],
+    "area_width_m": 2000,
+    "area_height_m": 2000,
+    "flight_altitude_m": 100,
+    "motion_integration_s": 1,
+    "regular_planning_interval_s": 30,
+    "observation_window_s": 1200,
+    "observation_product_interval_s": 1200,
+    "evaluation_horizon_s": 1800,
+    "warmup_interval_s": [-1200, 0],
+    "in_episode_product_generation_times_s": [0, 1200]
+  },
+  "required_regimes": [
+    "communication_abundant",
+    "joint_access_and_communication_constraint",
+    "intermittent_backhaul"
+  ],
+  "required_comparison": "Audit the feasibility of direct buoy-to-shore transmission under the same physical assumptions.",
+  "future_primary_metric": "Time-and-space-weighted shore-map RMSE over a fixed region and complete evaluation interval.",
+  "future_performance_threshold_proposal": {
+    "relative_rmse_reduction": 0.05,
+    "reference": "strongest_deployable_nonlearning_baseline_selected_on_development_data",
+    "paired_95pct_confidence_interval_supports_improvement": true,
+    "status": "proposal_to_be_preregistered_before_formal_comparison"
+  },
+  "allowed_conclusions": [
+    "DESIGN_READY",
+    "REFRAME_REQUIRED",
+    "NEEDS_PARAMETER_EVIDENCE"
+  ],
+  "performance_pass": false,
+  "adopted": false,
+  "release_eligible": false,
+  "stop_after_m0_report": true
+}
