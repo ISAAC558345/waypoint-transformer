@@ -1,86 +1,198 @@
 {
-  "stage": "prepare",
+  "stage": "replay",
   "ok": true,
-  "t0_checks": [
+  "rows": [
     {
       "scenario_id": 321008,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321009,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321010,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321011,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321012,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321013,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321014,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321015,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321016,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321017,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321018,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321019,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321020,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321021,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321022,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     },
     {
       "scenario_id": 321023,
-      "t0_known_tagged_bits": 0.0,
-      "within_1_bit": true
+      "reference_match": true,
+      "repeat_match": true,
+      "exogenous_m": true,
+      "exogenous_t": true,
+      "action_gap": 0.0,
+      "position_gap_m": 0.0,
+      "payload_gap_bits": 0.0,
+      "queue_gap_bits": 0.0,
+      "bucket_gap_bits": 0.0
     }
   ],
   "problems": []

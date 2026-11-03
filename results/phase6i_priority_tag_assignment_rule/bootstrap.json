@@ -1,0 +1,62 @@
+{
+  "known_tagged_tm": {
+    "mean": 0.0,
+    "median": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "crosses_zero": true,
+    "draws": 10000,
+    "seed": 9400019,
+    "unit": "scenario"
+  },
+  "payload_tm": {
+    "mean": 0.0,
+    "median": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "crosses_zero": true,
+    "draws": 10000,
+    "seed": 9400019,
+    "unit": "scenario"
+  },
+  "known_tagged_tn": {
+    "mean": -36603.9445436463,
+    "median": 0.0,
+    "ci_low": -562500.0,
+    "ci_high": 489292.1109127074,
+    "crosses_zero": true,
+    "draws": 10000,
+    "seed": 9400019,
+    "unit": "scenario"
+  },
+  "payload_tn": {
+    "mean": 40057.612412737915,
+    "median": 372318.9571189508,
+    "ci_low": -1085928.1589629948,
+    "ci_high": 1066138.2584558509,
+    "crosses_zero": true,
+    "draws": 10000,
+    "seed": 9400019,
+    "unit": "scenario"
+  },
+  "known_tagged_mn": {
+    "mean": -36603.9445436463,
+    "median": 0.0,
+    "ci_low": -562500.0,
+    "ci_high": 489292.1109127074,
+    "crosses_zero": true,
+    "draws": 10000,
+    "seed": 9400019,
+    "unit": "scenario"
+  },
+  "payload_mn": {
+    "mean": 40057.612412737915,
+    "median": 372318.9571189508,
+    "ci_low": -1085928.1589629948,
+    "ci_high": 1066138.2584558509,
+    "crosses_zero": true,
+    "draws": 10000,
+    "seed": 9400019,
+    "unit": "scenario"
+  }
+}

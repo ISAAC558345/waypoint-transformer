@@ -1,0 +1,185 @@
+{
+  "schema_version": "fixed_tag_rule_diag_v1",
+  "scientific_gate": "FIXED_TAG_RULE_DIAG_COMPLETE",
+  "mechanism_evidence": "NO_TAG_DECISION_EFFECT",
+  "mechanism_published": true,
+  "failed_checks": [],
+  "e17_scientific_gate": "ASSIGNMENT_FEASIBILITY_COMPLETE",
+  "e17_opportunity_evidence": "NOT_OBSERVED_IN_REGISTERED_POOL",
+  "e18_scientific_gate": "ASSIGNMENT_COVERAGE_DIAG_COMPLETE",
+  "e18_opportunity_evidence": "REPLICATED_LOCAL_OPPORTUNITY",
+  "e15_scientific_gate": "CLIP_GROUP_BENCHMARK_INCONCLUSIVE",
+  "e16_scientific_gate": "CLIP_GROUP_LINE_CLOSED_UNADOPTED",
+  "problems": [],
+  "budget": {
+    "reference_steps": 768,
+    "candidate_steps": 480,
+    "repeat_steps": 240,
+    "fixture_steps": 0,
+    "total_steps": 1488,
+    "max_reference_steps": 768,
+    "max_candidate_steps": 720,
+    "max_repeat_steps": 240,
+    "max_steps": 1728,
+    "unused_steps_are_not_extra_room": true,
+    "training_updates": 0,
+    "parameter_updates": 0
+  },
+  "implementation_commit": "c5acf6bf3867bdc394fbad2df5af498b0ccb465e",
+  "selection_commit": "ab54f268bc9a51dc3b915f6a8d02402e6ee3ef86",
+  "instruction_commit": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+  "source_commit": "c6aac5b71f23a33653e21db1f2d558f212167be3",
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "selection_sha256": "ae857bef729b351771c23ffda198f3ddaed306dd159a7f9f2250c9dd2f6d0674",
+  "tagged_differs_count": 0,
+  "contrasts": {
+    "tm": {
+      "s0": 0,
+      "s1": 0,
+      "s2": 0,
+      "s0_scenarios": [],
+      "s2_scenarios": []
+    },
+    "tn": {
+      "s0": 2,
+      "s1": 2,
+      "s2": 1,
+      "s0_scenarios": [
+        321012,
+        321019
+      ],
+      "s2_scenarios": [
+        321019
+      ]
+    },
+    "mn": {
+      "s0": 2,
+      "s1": 2,
+      "s2": 1,
+      "s0_scenarios": [
+        321012,
+        321019
+      ],
+      "s2_scenarios": [
+        321019
+      ]
+    }
+  },
+  "bootstrap": {
+    "known_tagged_tm": {
+      "mean": 0.0,
+      "median": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "crosses_zero": true,
+      "draws": 10000,
+      "seed": 9400019,
+      "unit": "scenario"
+    },
+    "payload_tm": {
+      "mean": 0.0,
+      "median": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "crosses_zero": true,
+      "draws": 10000,
+      "seed": 9400019,
+      "unit": "scenario"
+    },
+    "known_tagged_tn": {
+      "mean": -36603.9445436463,
+      "median": 0.0,
+      "ci_low": -562500.0,
+      "ci_high": 489292.1109127074,
+      "crosses_zero": true,
+      "draws": 10000,
+      "seed": 9400019,
+      "unit": "scenario"
+    },
+    "payload_tn": {
+      "mean": 40057.612412737915,
+      "median": 372318.9571189508,
+      "ci_low": -1085928.1589629948,
+      "ci_high": 1066138.2584558509,
+      "crosses_zero": true,
+      "draws": 10000,
+      "seed": 9400019,
+      "unit": "scenario"
+    },
+    "known_tagged_mn": {
+      "mean": -36603.9445436463,
+      "median": 0.0,
+      "ci_low": -562500.0,
+      "ci_high": 489292.1109127074,
+      "crosses_zero": true,
+      "draws": 10000,
+      "seed": 9400019,
+      "unit": "scenario"
+    },
+    "payload_mn": {
+      "mean": 40057.612412737915,
+      "median": 372318.9571189508,
+      "ci_low": -1085928.1589629948,
+      "ci_high": 1066138.2584558509,
+      "crosses_zero": true,
+      "draws": 10000,
+      "seed": 9400019,
+      "unit": "scenario"
+    }
+  },
+  "overall_gain_uncertain": true,
+  "reuse": {
+    "scenarios_reused_m": 0,
+    "scenarios_reused_t": 16,
+    "logical_rows": 48
+  },
+  "decision_time": 15,
+  "scenarios": [
+    321008,
+    321009,
+    321010,
+    321011,
+    321012,
+    321013,
+    321014,
+    321015,
+    321016,
+    321017,
+    321018,
+    321019,
+    321020,
+    321021,
+    321022,
+    321023
+  ],
+  "weight": 0.001,
+  "process_seed": 2,
+  "process_seed_role": "historical_inherited_process_context",
+  "not_an_e18_hindsight_policy": true,
+  "release_eligible": false,
+  "merged": false,
+  "adopted": false,
+  "performance_pass": false,
+  "new_formal_loader": false,
+  "training_updates": 0,
+  "parameter_updates": 0,
+  "adam_updates": 0,
+  "deployment_verified": false,
+  "not_a_scheme_c_result": true,
+  "not_a_closed_loop_policy": true,
+  "e17_rewritten": false,
+  "e18_rewritten": false,
+  "selection_manifest_commit": "50a3b143db8d925cc3b743cbd4378f9c5ffab153",
+  "replay_context_commit": "ab54f268bc9a51dc3b915f6a8d02402e6ee3ef86",
+  "test_comparison": {
+    "baseline_ran": 1813,
+    "repository_ran": 1829,
+    "baseline_failure_count": 206,
+    "repository_failure_count": 206,
+    "historical_count": 206,
+    "new_failure_count": 0,
+    "new_failures": [],
+    "comparison_root": "E:/srdp/wt_e19_baseline",
+    "related_ok": true
+  }
+}
