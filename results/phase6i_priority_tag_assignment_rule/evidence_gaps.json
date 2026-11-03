@@ -1,0 +1,10 @@
+{
+  "preregistered": [
+    "The proxy assumes the current rate persists after the geometric ETA. It is not a transmission, a joint-interference prediction, or a future-service guarantee.",
+    "Only the pre-decision state at t=15 is scored. That focus follows the location of every E18 S0 row and does not test t=0, t=30, t=45, or a full closed loop.",
+    "The sixteen scenarios are inside the training pool. They are not a project-wide unseen holdout.",
+    "Scenarios with no known tags, no same-mask alternative, or no rule change stay in the denominator.",
+    "The 0.001 weight is this stage's fixed heuristic. It is not a trained reward and not a searched optimum.",
+    "A completed label is mechanism evidence. It is not an adoption standard."
+  ]
+}

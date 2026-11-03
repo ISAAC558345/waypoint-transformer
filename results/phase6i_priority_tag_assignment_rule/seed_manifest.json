@@ -1,0 +1,11 @@
+{
+  "env_reset_seed": "scenario_id",
+  "assignment_rng": "7000000 + scenario_id",
+  "process_seed": 2,
+  "process_seed_role": "historical_inherited_process_context",
+  "process_seed_reset": "before actor load and before every independent reference reset",
+  "selector_rng": null,
+  "bootstrap_seed": 9400019,
+  "bootstrap_draws": 10000,
+  "bootstrap_unit": "scenario"
+}

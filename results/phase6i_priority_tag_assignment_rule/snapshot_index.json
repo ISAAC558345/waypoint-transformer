@@ -1,0 +1,70 @@
+{
+  "full_capture_saved": true,
+  "decision_time": 15,
+  "files": [
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321008_t_15.json",
+      "sha256": "445354811706fd84bff50a1593f3d883df4d141da7621c9bd6a03d8f577f54a0"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321009_t_15.json",
+      "sha256": "193356d854a0d8c2b0ff460882cf156f68160ff98cf5224750d228aa8cbbe95e"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321010_t_15.json",
+      "sha256": "e4a70daf67241a487c71e05176fc1bf32b7f308afbd6433483f5ec0a715ad9b1"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321011_t_15.json",
+      "sha256": "c73c5e246f305fd38623ee123fd60a8e249e13d90f2107afb4f90805b47e1792"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321012_t_15.json",
+      "sha256": "5f9fa3200eee92d13ad64f96ca7cce9f30894e20c8af693bda62ff0eff5c68cb"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321013_t_15.json",
+      "sha256": "4fbbf6c5b9e0a83dea1f98a3515663f4f0332d3f7a950a967f42f69e7c26107f"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321014_t_15.json",
+      "sha256": "6b6b2ab5da3e1dfc93c4bf6927de0ff83f82d9e4b0a923325b1fe5a00fbec963"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321015_t_15.json",
+      "sha256": "c6d1bb1e471c9328342a0d5f4078377aa5130ef1782e5906938fa268ada42186"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321016_t_15.json",
+      "sha256": "ed3ee5ae0e1174f0e2fd3a2010fec2851b564b666a8817fc0f5cc248651402f7"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321017_t_15.json",
+      "sha256": "63b04d5ec8e3925c6ddfc00eb362b046ed3be5a4ef76184f4293699e2a1c8d9a"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321018_t_15.json",
+      "sha256": "8997ff822fa3c1be1c5bc8d102c05d1b825012e6f41be0e276212d387a1171ef"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321019_t_15.json",
+      "sha256": "866013271677e72f826f224c913ac83e96243165acc6eae7d9a1f9efc218d601"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321020_t_15.json",
+      "sha256": "81c19774ec8266c07864421b9ecfc724acccee3d042b9a08c5fb1116d14525b5"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321021_t_15.json",
+      "sha256": "d355de79aa59f45075725494f0a6818f30e5942250e9cf47ab9cf1fd86f8cc1c"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321022_t_15.json",
+      "sha256": "5fc2f7494d750a03efc241ae6d2e7ee0bdd69f0219e1469c8172e9ebe01e2a9f"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_rule/snapshots/scenario_321023_t_15.json",
+      "sha256": "a8cae298f5ddcaf40cc78d97599393eb482efd498b3f54dc96c66a47f7165fa6"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.4.1",
+  "torch": "2.12.0+cpu",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "implementation_commit": "c5acf6bf3867bdc394fbad2df5af498b0ccb465e",
+  "instruction_commit": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+  "source_commit": "c6aac5b71f23a33653e21db1f2d558f212167be3",
+  "formal_actor_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "torch_threads": 1,
+  "deterministic_algorithms": true,
+  "actor_action": "deterministic mean, then the frozen residual scale times tanh of that mean"
+}

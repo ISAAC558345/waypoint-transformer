@@ -1,0 +1,1646 @@
+{
+  "schema_version": "fixed_tag_rule_diag_v1",
+  "rule": "max P for the masked control, max P plus 0.001 K for the tagged rule",
+  "weight": 0.001,
+  "decision_time": 15,
+  "hold_steps": 15,
+  "replay_authorized": true,
+  "reference_steps": 768,
+  "records": [
+    {
+      "scenario_id": 321008,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "47e07a4637eaadc038ea84c5a4112bad8417f654b49acf12a804b64eeed03ff3",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 60,
+      "baseline_pool_index": 1012,
+      "baseline_assignment": [
+        -1,
+        8,
+        5,
+        6,
+        -1,
+        -1
+      ],
+      "baseline_mask": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 1012,
+        "assignment": [
+          -1,
+          8,
+          5,
+          6,
+          -1,
+          -1
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "P": "2432277.7808392057",
+        "K": "672207.2443817605",
+        "score_m": "2432277.7808392057",
+        "score_t": "2432949.9880835875"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 1005,
+        "assignment": [
+          -1,
+          8,
+          5,
+          10,
+          -1,
+          -1
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "P": "2479941.5601607864",
+        "K": "719871.0237033408",
+        "score_m": "2479941.5601607864",
+        "score_t": "2480661.4311844897"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 1005,
+        "assignment": [
+          -1,
+          8,
+          5,
+          10,
+          -1,
+          -1
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "P": "2479941.5601607864",
+        "K": "719871.0237033408",
+        "score_m": "2479941.5601607864",
+        "score_t": "2480661.4311844897"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "484054a92aee42a7b4153508931b1387bb5d2021add941f868d453d19ed2e09d"
+    },
+    {
+      "scenario_id": 321009,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "47e07a4637eaadc038ea84c5a4112bad8417f654b49acf12a804b64eeed03ff3",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 120,
+      "baseline_pool_index": 2543,
+      "baseline_assignment": [
+        10,
+        9,
+        6,
+        5,
+        -1,
+        8
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 2543,
+        "assignment": [
+          10,
+          9,
+          6,
+          5,
+          -1,
+          8
+        ],
+        "active_mask": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "P": "3522771.761837233",
+        "K": "0.0",
+        "score_m": "3522771.761837233",
+        "score_t": "3522771.761837233"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 1800,
+        "assignment": [
+          5,
+          10,
+          8,
+          9,
+          -1,
+          6
+        ],
+        "active_mask": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "P": "3565633.281812906",
+        "K": "0.0",
+        "score_m": "3565633.281812906",
+        "score_t": "3565633.281812906"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 1800,
+        "assignment": [
+          5,
+          10,
+          8,
+          9,
+          -1,
+          6
+        ],
+        "active_mask": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "P": "3565633.281812906",
+        "K": "0.0",
+        "score_m": "3565633.281812906",
+        "score_t": "3565633.281812906"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "ce25e782a5c9afa40fd337a14f960865c91d55634eb5ac25e21ed896afc692e9"
+    },
+    {
+      "scenario_id": 321010,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "46aa56cd210cb4af35b8d67e8e0ff3e621988c4eb1975a4c686a8b542ab89555",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 20,
+      "baseline_pool_index": 287,
+      "baseline_assignment": [
+        -1,
+        -1,
+        8,
+        -1,
+        4,
+        -1
+      ],
+      "baseline_mask": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 287,
+        "assignment": [
+          -1,
+          -1,
+          8,
+          -1,
+          4,
+          -1
+        ],
+        "active_mask": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "P": "1490654.4935809085",
+        "K": "0.0",
+        "score_m": "1490654.4935809085",
+        "score_t": "1490654.4935809085"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 141,
+        "assignment": [
+          -1,
+          -1,
+          4,
+          -1,
+          10,
+          -1
+        ],
+        "active_mask": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "P": "1716337.1206934368",
+        "K": "716337.1206934367",
+        "score_m": "1716337.1206934368",
+        "score_t": "1717053.4578141302"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 141,
+        "assignment": [
+          -1,
+          -1,
+          4,
+          -1,
+          10,
+          -1
+        ],
+        "active_mask": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "P": "1716337.1206934368",
+        "K": "716337.1206934367",
+        "score_m": "1716337.1206934368",
+        "score_t": "1717053.4578141302"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "fe8ccb025783e186170f816b18196c892520bd4d3cdf5f13d5ce597cce61bf79"
+    },
+    {
+      "scenario_id": 321011,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "45c6833d1d69ff437da39a50a8eb07273b0e0ce9b242e102411814e0748c3f86",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 120,
+      "baseline_pool_index": 2900,
+      "baseline_assignment": [
+        8,
+        1,
+        6,
+        10,
+        -1,
+        -1
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 2900,
+        "assignment": [
+          8,
+          1,
+          6,
+          10,
+          -1,
+          -1
+        ],
+        "active_mask": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "P": "5834086.494151425",
+        "K": "0.0",
+        "score_m": "5834086.494151425",
+        "score_t": "5834086.494151425"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 3445,
+        "assignment": [
+          10,
+          8,
+          3,
+          1,
+          -1,
+          -1
+        ],
+        "active_mask": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "P": "6555105.533383094",
+        "K": "0.0",
+        "score_m": "6555105.533383094",
+        "score_t": "6555105.533383094"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 3445,
+        "assignment": [
+          10,
+          8,
+          3,
+          1,
+          -1,
+          -1
+        ],
+        "active_mask": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "P": "6555105.533383094",
+        "K": "0.0",
+        "score_m": "6555105.533383094",
+        "score_t": "6555105.533383094"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "02343a07a137072934f767ff8e2e23f706e34654f6bb5fad5eb258faf0599072"
+    },
+    {
+      "scenario_id": 321012,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "f94801226c19d1401806dddc72b5e502aa62957718fdf396baa3da4c5290fdfb",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 120,
+      "baseline_pool_index": 3589,
+      "baseline_assignment": [
+        9,
+        -1,
+        -1,
+        10,
+        0,
+        8
+      ],
+      "baseline_mask": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 3589,
+        "assignment": [
+          9,
+          -1,
+          -1,
+          10,
+          0,
+          8
+        ],
+        "active_mask": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "P": "6830729.022641508",
+        "K": "0.0",
+        "score_m": "6830729.022641508",
+        "score_t": "6830729.022641508"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 2086,
+        "assignment": [
+          8,
+          -1,
+          -1,
+          10,
+          0,
+          6
+        ],
+        "active_mask": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "P": "6863228.756257612",
+        "K": "0.0",
+        "score_m": "6863228.756257612",
+        "score_t": "6863228.756257612"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 2086,
+        "assignment": [
+          8,
+          -1,
+          -1,
+          10,
+          0,
+          6
+        ],
+        "active_mask": [
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "P": "6863228.756257612",
+        "K": "0.0",
+        "score_m": "6863228.756257612",
+        "score_t": "6863228.756257612"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "6a3359220ef6f4dc6056dea90e7f00ce657bf45ae58fcb7500840529b5850c32"
+    },
+    {
+      "scenario_id": 321013,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "be483cd362fe461cfa821a980f040e88793f8bea4e3b9ff37abe06d0ef763915",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 120,
+      "baseline_pool_index": 1091,
+      "baseline_assignment": [
+        -1,
+        8,
+        6,
+        9,
+        4,
+        10
+      ],
+      "baseline_mask": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 1091,
+        "assignment": [
+          -1,
+          8,
+          6,
+          9,
+          4,
+          10
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "3756014.2783020814",
+        "K": "1297993.5020833309",
+        "score_m": "3756014.2783020814",
+        "score_t": "3757312.2718041646"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 1463,
+        "assignment": [
+          -1,
+          9,
+          8,
+          4,
+          6,
+          10
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "3770944.1383373034",
+        "K": "1384505.4168380995",
+        "score_m": "3770944.1383373034",
+        "score_t": "3772328.6437541414"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 1463,
+        "assignment": [
+          -1,
+          9,
+          8,
+          4,
+          6,
+          10
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "3770944.1383373034",
+        "K": "1384505.4168380995",
+        "score_m": "3770944.1383373034",
+        "score_t": "3772328.6437541414"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "0d375e9b0d33dd4b9abf2a538b0c23f94bcb7587a7d245991021c51393610c68"
+    },
+    {
+      "scenario_id": 321014,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "72629937e4bb04e9a0a7f3306528d4a4e15666de9e1711047e7cb40a4c06b2a3",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 120,
+      "baseline_pool_index": 2141,
+      "baseline_assignment": [
+        2,
+        -1,
+        3,
+        8,
+        -1,
+        10
+      ],
+      "baseline_mask": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 2141,
+        "assignment": [
+          2,
+          -1,
+          3,
+          8,
+          -1,
+          10
+        ],
+        "active_mask": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "P": "6256261.328179156",
+        "K": "0.0",
+        "score_m": "6256261.328179156",
+        "score_t": "6256261.328179156"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 3143,
+        "assignment": [
+          8,
+          -1,
+          2,
+          10,
+          -1,
+          3
+        ],
+        "active_mask": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "P": "6753658.311935468",
+        "K": "0.0",
+        "score_m": "6753658.311935468",
+        "score_t": "6753658.311935468"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 3143,
+        "assignment": [
+          8,
+          -1,
+          2,
+          10,
+          -1,
+          3
+        ],
+        "active_mask": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "P": "6753658.311935468",
+        "K": "0.0",
+        "score_m": "6753658.311935468",
+        "score_t": "6753658.311935468"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "0c299585523a9a18c107245279beeb39250222f00fd2b390c9f6dd535a1893ef"
+    },
+    {
+      "scenario_id": 321015,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "ca5bf817f3de8d1fe7100e60b0907d047653c7d87d88586fc9501c07f22876e2",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 60,
+      "baseline_pool_index": 1347,
+      "baseline_assignment": [
+        -1,
+        6,
+        -1,
+        -1,
+        1,
+        4
+      ],
+      "baseline_mask": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 1347,
+        "assignment": [
+          -1,
+          6,
+          -1,
+          -1,
+          1,
+          4
+        ],
+        "active_mask": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "P": "5656147.458529145",
+        "K": "0.0",
+        "score_m": "5656147.458529145",
+        "score_t": "5656147.458529145"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 925,
+        "assignment": [
+          -1,
+          10,
+          -1,
+          -1,
+          4,
+          1
+        ],
+        "active_mask": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "P": "5702984.272041485",
+        "K": "0.0",
+        "score_m": "5702984.272041485",
+        "score_t": "5702984.272041485"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 925,
+        "assignment": [
+          -1,
+          10,
+          -1,
+          -1,
+          4,
+          1
+        ],
+        "active_mask": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "P": "5702984.272041485",
+        "K": "0.0",
+        "score_m": "5702984.272041485",
+        "score_t": "5702984.272041485"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "e4a27830c91728656630a6193914c3a461ee84d8817863ce2452aeaaebe18410"
+    },
+    {
+      "scenario_id": 321016,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "9118853e5b25a7d2f079631a24cc0a57c2a1dbbc5b5d1b0c7f28dd1719cf41c8",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 120,
+      "baseline_pool_index": 3248,
+      "baseline_assignment": [
+        6,
+        -1,
+        9,
+        10,
+        2,
+        8
+      ],
+      "baseline_mask": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 3248,
+        "assignment": [
+          6,
+          -1,
+          9,
+          10,
+          2,
+          8
+        ],
+        "active_mask": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "6792772.851627763",
+        "K": "0.0",
+        "score_m": "6792772.851627763",
+        "score_t": "6792772.851627763"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 2246,
+        "assignment": [
+          8,
+          -1,
+          9,
+          10,
+          2,
+          6
+        ],
+        "active_mask": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "6800855.525399208",
+        "K": "0.0",
+        "score_m": "6800855.525399208",
+        "score_t": "6800855.525399208"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 2246,
+        "assignment": [
+          8,
+          -1,
+          9,
+          10,
+          2,
+          6
+        ],
+        "active_mask": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "6800855.525399208",
+        "K": "0.0",
+        "score_m": "6800855.525399208",
+        "score_t": "6800855.525399208"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "a731258c5ef43ff62acd0a7ba16dc6c7e3875935a07e17abcf37dd2dc823a199"
+    },
+    {
+      "scenario_id": 321017,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "f64e273328cb9f55c404a06a1069fc80f86f84725790475b3fdf6519741b3714",
+      "pool_size": 5096,
+      "unique_count": 5096,
+      "eligible_count": 156,
+      "baseline_pool_index": 3350,
+      "baseline_assignment": [
+        2,
+        5,
+        -1,
+        10,
+        -1,
+        0
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 3350,
+        "assignment": [
+          2,
+          5,
+          -1,
+          10,
+          -1,
+          0
+        ],
+        "active_mask": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "P": "9739611.737936638",
+        "K": "0.0",
+        "score_m": "9739611.737936638",
+        "score_t": "9739611.737936638"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 2061,
+        "assignment": [
+          1,
+          2,
+          -1,
+          0,
+          -1,
+          5
+        ],
+        "active_mask": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "P": "13000000.0",
+        "K": "0.0",
+        "score_m": "13000000.0",
+        "score_t": "13000000.0"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 2061,
+        "assignment": [
+          1,
+          2,
+          -1,
+          0,
+          -1,
+          5
+        ],
+        "active_mask": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "P": "13000000.0",
+        "K": "0.0",
+        "score_m": "13000000.0",
+        "score_t": "13000000.0"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "994dd77963e919e6a8e2e2086530fcb480c00bb5a805ad4ba1f8ae0bf8c4350a"
+    },
+    {
+      "scenario_id": 321018,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "0e2fdcd9ce6e1a8d6bf6e807957c2c1e8eeb7d5b55a6f3f56e97e55075011748",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 120,
+      "baseline_pool_index": 1252,
+      "baseline_assignment": [
+        -1,
+        8,
+        0,
+        2,
+        1,
+        10
+      ],
+      "baseline_mask": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 1252,
+        "assignment": [
+          -1,
+          8,
+          0,
+          2,
+          1,
+          10
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "13669840.005571557",
+        "K": "0.0",
+        "score_m": "13669840.005571557",
+        "score_t": "13669840.005571557"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 1218,
+        "assignment": [
+          -1,
+          8,
+          1,
+          2,
+          0,
+          10
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "13669840.005571557",
+        "K": "0.0",
+        "score_m": "13669840.005571557",
+        "score_t": "13669840.005571557"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 1218,
+        "assignment": [
+          -1,
+          8,
+          1,
+          2,
+          0,
+          10
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "13669840.005571557",
+        "K": "0.0",
+        "score_m": "13669840.005571557",
+        "score_t": "13669840.005571557"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "557b002b01707c18c302429273d38ad5c015c24755ec742f6ccd723d9f582257"
+    },
+    {
+      "scenario_id": 321019,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "a26e6278f6eae7b1b209ff0b0ad78219b0449d5db89b1328bc34362ed4de4f87",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 120,
+      "baseline_pool_index": 1315,
+      "baseline_assignment": [
+        -1,
+        9,
+        7,
+        -1,
+        6,
+        8
+      ],
+      "baseline_mask": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 1315,
+        "assignment": [
+          -1,
+          9,
+          7,
+          -1,
+          6,
+          8
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "P": "2612945.277533222",
+        "K": "611971.6035560636",
+        "score_m": "2612945.277533222",
+        "score_t": "2613557.249136778"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 613,
+        "assignment": [
+          -1,
+          8,
+          6,
+          -1,
+          10,
+          9
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "P": "2708545.827115533",
+        "K": "1542085.0019561362",
+        "score_m": "2708545.827115533",
+        "score_t": "2710087.912117489"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 613,
+        "assignment": [
+          -1,
+          8,
+          6,
+          -1,
+          10,
+          9
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "P": "2708545.827115533",
+        "K": "1542085.0019561362",
+        "score_m": "2708545.827115533",
+        "score_t": "2710087.912117489"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "566bed745b68268bfa8c90c7559dd10ed773f1dae20331c8cfa16683b7c18931"
+    },
+    {
+      "scenario_id": 321020,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "4f1008ed9b6550a8ce7415defe404f7db02631e8d6ebcee25b68a0a0d1befd0b",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 20,
+      "baseline_pool_index": 90,
+      "baseline_assignment": [
+        -1,
+        -1,
+        -1,
+        3,
+        8,
+        -1
+      ],
+      "baseline_mask": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 90,
+        "assignment": [
+          -1,
+          -1,
+          -1,
+          3,
+          8,
+          -1
+        ],
+        "active_mask": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "P": "1700810.784807889",
+        "K": "700810.784807889",
+        "score_m": "1700810.784807889",
+        "score_t": "1701511.595592697"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 40,
+        "assignment": [
+          -1,
+          -1,
+          -1,
+          1,
+          2,
+          -1
+        ],
+        "active_mask": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "P": "8000000.0",
+        "K": "0.0",
+        "score_m": "8000000.0",
+        "score_t": "8000000.0"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 40,
+        "assignment": [
+          -1,
+          -1,
+          -1,
+          1,
+          2,
+          -1
+        ],
+        "active_mask": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "P": "8000000.0",
+        "K": "0.0",
+        "score_m": "8000000.0",
+        "score_t": "8000000.0"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "87fde6825c67fa43ec5c45458ea2fa229a2d5648e3a86bf8bec5e67056dca736"
+    },
+    {
+      "scenario_id": 321021,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "fd5d8b7f4a9c3307c7e7d71f4caab1557173309e9068fc1f670dcfafbfbb3cc9",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 120,
+      "baseline_pool_index": 1873,
+      "baseline_assignment": [
+        4,
+        1,
+        2,
+        8,
+        -1,
+        10
+      ],
+      "baseline_mask": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 1873,
+        "assignment": [
+          4,
+          1,
+          2,
+          8,
+          -1,
+          10
+        ],
+        "active_mask": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "P": "10323394.502849327",
+        "K": "707706.3640108763",
+        "score_m": "10323394.502849327",
+        "score_t": "10324102.209213339"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 3804,
+        "assignment": [
+          8,
+          2,
+          1,
+          10,
+          -1,
+          4
+        ],
+        "active_mask": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "P": "10399171.318563016",
+        "K": "677120.5055725869",
+        "score_m": "10399171.318563016",
+        "score_t": "10399848.43906859"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 3804,
+        "assignment": [
+          8,
+          2,
+          1,
+          10,
+          -1,
+          4
+        ],
+        "active_mask": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "P": "10399171.318563016",
+        "K": "677120.5055725869",
+        "score_m": "10399171.318563016",
+        "score_t": "10399848.43906859"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "f6cc8bc43c76755f400a4ca5c5db7089693d3b2994f3cb0002c79dd5ae9d5d50"
+    },
+    {
+      "scenario_id": 321022,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "45389aa5abc76cc63ffec8c6a31463bf08fa8a2673857005cf9c51132419e56c",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 120,
+      "baseline_pool_index": 2162,
+      "baseline_assignment": [
+        3,
+        -1,
+        10,
+        -1,
+        8,
+        4
+      ],
+      "baseline_mask": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 2162,
+        "assignment": [
+          3,
+          -1,
+          10,
+          -1,
+          8,
+          4
+        ],
+        "active_mask": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "P": "3165839.7447417914",
+        "K": "0.0",
+        "score_m": "3165839.7447417914",
+        "score_t": "3165839.7447417914"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 2694,
+        "assignment": [
+          10,
+          -1,
+          8,
+          -1,
+          4,
+          3
+        ],
+        "active_mask": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "P": "3336555.3081678585",
+        "K": "0.0",
+        "score_m": "3336555.3081678585",
+        "score_t": "3336555.3081678585"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 2694,
+        "assignment": [
+          10,
+          -1,
+          8,
+          -1,
+          4,
+          3
+        ],
+        "active_mask": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "P": "3336555.3081678585",
+        "K": "0.0",
+        "score_m": "3336555.3081678585",
+        "score_t": "3336555.3081678585"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "0c1e9561d5e40d577fd2e7a86e4bfb2b0d651e11227a5c955e445e754c83b00c"
+    },
+    {
+      "scenario_id": 321023,
+      "decision_time": 15,
+      "horizon": 15,
+      "delta_t": "1.0",
+      "weight": 0.001,
+      "pool_sha256": "a6e7bf349c8764cac28b10621b4a0b8af7bf3845b862d36b9092e0ed58ed1893",
+      "pool_size": 4051,
+      "unique_count": 4051,
+      "eligible_count": 120,
+      "baseline_pool_index": 625,
+      "baseline_assignment": [
+        -1,
+        4,
+        10,
+        0,
+        8,
+        6
+      ],
+      "baseline_mask": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "natural": {
+        "role": "N",
+        "pool_index": 625,
+        "assignment": [
+          -1,
+          4,
+          10,
+          0,
+          8,
+          6
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "6948068.594755965",
+        "K": "1329355.8374262638",
+        "score_m": "6948068.594755965",
+        "score_t": "6949397.950593391"
+      },
+      "masked": {
+        "role": "M",
+        "pool_index": 1077,
+        "assignment": [
+          -1,
+          10,
+          8,
+          4,
+          0,
+          6
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "7026155.223153486",
+        "K": "1313081.1274770792",
+        "score_m": "7026155.223153486",
+        "score_t": "7027468.304280963"
+      },
+      "tagged": {
+        "role": "T",
+        "pool_index": 1077,
+        "assignment": [
+          -1,
+          10,
+          8,
+          4,
+          0,
+          6
+        ],
+        "active_mask": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "P": "7026155.223153486",
+        "K": "1313081.1274770792",
+        "score_m": "7026155.223153486",
+        "score_t": "7027468.304280963"
+      },
+      "tagged_differs_from_masked": false,
+      "scores_sha256": "97717e9c89cbe3d5d4d3312b5f3f5c8915fb9d900ea30c4fafb1ab4b10d7491d"
+    }
+  ],
+  "selection_sha256": "ae857bef729b351771c23ffda198f3ddaed306dd159a7f9f2250c9dd2f6d0674",
+  "scores_sha256": "4e0cb4a390efdb7e07fb1660b832d2ac5c318881355af44fa95a59aca4c2e482",
+  "implementation_commit": "c5acf6bf3867bdc394fbad2df5af498b0ccb465e"
+}
