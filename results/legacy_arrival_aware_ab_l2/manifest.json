@@ -1,0 +1,776 @@
+{
+  "package": "legacy_arrival_aware_ab_l2",
+  "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+  "restored_files": 32,
+  "restored_bytes": 100230,
+  "states": 16,
+  "candidate_rows": 2048,
+  "label_values": 4096,
+  "label_columns": [
+    "zero_payload_bits",
+    "real_payload_bits"
+  ],
+  "join": [
+    "scenario_id",
+    "time_step",
+    "candidate_id",
+    "assignment"
+  ],
+  "column_mapping": {
+    "labels.csv": "zero_payload_bits and real_payload_bits on one row",
+    "selected_candidates.csv": "same scenario_id, time_step, candidate_id, and assignment",
+    "state_manifest.source_state_hash": "labels.csv state_hash",
+    "state_manifest.checksum_state": "sha256 of the restored npz bytes"
+  },
+  "arms_share_graph_and_order": true,
+  "graph_conversion": "passed",
+  "graph_reason": "",
+  "graph_files": [
+    {
+      "scenario_id": 322016,
+      "time_step": 15,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322016_t015.npz",
+      "sha256": "1d0ba87864f3e90b56fb68dc7d2c51bc6379bdcc07368d9957206aca102fdd97",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322016,
+      "time_step": 30,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322016_t030.npz",
+      "sha256": "5e807ff38af626304154179f09f027735c62d993cd0fa3a277f1c5bc61cb1c3a",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322017,
+      "time_step": 15,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322017_t015.npz",
+      "sha256": "42cc2445904ca4d44a44a275c5667bdc7d08a27bd7b92a5d5f481ae93f6bb30f",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322017,
+      "time_step": 30,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322017_t030.npz",
+      "sha256": "94a37ff30724c9d89f13c7b85ea17f08ee1f0f9ec519758c197491ed693b2e03",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322018,
+      "time_step": 15,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322018_t015.npz",
+      "sha256": "540e87d2876434226b30bdcd09587181c5f1fc8e8d450c57d5d72d6e7e726499",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322018,
+      "time_step": 30,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322018_t030.npz",
+      "sha256": "dbce62a7949d4baaa1121d879c982287906418658755f3d4e3eee69128d1efcd",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322019,
+      "time_step": 15,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322019_t015.npz",
+      "sha256": "06371d24162ff25d045fd015ba678eab69dc354077ac9a627fced65eee2d0234",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322019,
+      "time_step": 30,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322019_t030.npz",
+      "sha256": "95faa7412d75efad8eeb0b44b89b8403ff6869cd2577416067e4a5142f18fc54",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322020,
+      "time_step": 15,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322020_t015.npz",
+      "sha256": "8cbb3afe64d2c82830e27cf50f02e10ed4b53ca2ad80946b7a352a9ccc0671be",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322020,
+      "time_step": 30,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322020_t030.npz",
+      "sha256": "20f536192ef848c0ce9c9f765115d16b1ea0a46d2ca5ab22d5c5a8633317731b",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322021,
+      "time_step": 15,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322021_t015.npz",
+      "sha256": "deb7b234e55fbf50fdf69307e9a13a7c1ba0b2f92763e78439997969e18a2287",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322021,
+      "time_step": 30,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322021_t030.npz",
+      "sha256": "8c57c0bbcb8b4a51877b403cf4d4c7ba67fe22d9bae8ff7e776b291d6b0ac039",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322022,
+      "time_step": 15,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322022_t015.npz",
+      "sha256": "e0df25e24b939e74581d6fc9f47ceaa5726cdb1cb702ee65b303437a33747e44",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322022,
+      "time_step": 30,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322022_t030.npz",
+      "sha256": "16e6fa7137c36b0aee39170481dbaef1a15e67cd3f35143bfdc35e8e3dea97bb",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322023,
+      "time_step": 15,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322023_t015.npz",
+      "sha256": "c1901ef90914c403d5f8a6166bd74e67f9a0418ef01d692e1f424627c97fee80",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    },
+    {
+      "scenario_id": 322023,
+      "time_step": 30,
+      "path": "results/legacy_arrival_aware_ab_l2/paired/graphs/scenario_322023_t030.npz",
+      "sha256": "91fed367b1b0d7bed02371c51d53697f3b34a12e4d01500b1637b4046322d993",
+      "shapes": {
+        "uav": [
+          1,
+          6,
+          8
+        ],
+        "buoy": [
+          1,
+          12,
+          8
+        ],
+        "uav_mask": [
+          1,
+          6
+        ],
+        "buoy_mask": [
+          1,
+          12
+        ],
+        "global": [
+          1,
+          3
+        ],
+        "edge": [
+          1,
+          6,
+          12,
+          3
+        ],
+        "edge_uu": [
+          1,
+          6,
+          6,
+          2
+        ]
+      },
+      "queue_edge_width": 4
+    }
+  ],
+  "rows_sha256": "6c1819d4e82e0f6f4549fcc14539efc337be43af35b1a404ac1536cd528ba808",
+  "groups": {
+    "train_scenarios": [
+      322016,
+      322017,
+      322018,
+      322019,
+      322020,
+      322021
+    ],
+    "explore_eval_scenarios": [
+      322022,
+      322023
+    ],
+    "times": [
+      15,
+      30
+    ],
+    "same_scenario_times_stay_together": true,
+    "train_states": 12,
+    "train_candidates": 1536,
+    "explore_eval_states": 4,
+    "explore_eval_candidates": 512,
+    "explore_eval_meaning": "scenarios 322022 and 322023 remain inside the existing training pool and were already opened by the arrival-label diagnosis; this is not a new independent validation or formal holdout",
+    "graph_status": "passed"
+  },
+  "environment_steps": 0,
+  "training_updates": 0,
+  "model_forward_passes": 0,
+  "prepare_command": "py -3 -m wt.legacy_arrival_aware_ab.prepare --inventory docs/research/Legacy_ArrivalAware_AB_Source_Inventory_20261104.json --labels results/phase6i_urgency_arrival_aware_expansion/labels.csv --candidates results/phase6i_urgency_arrival_aware_expansion/selected_candidates.csv --source-root results/legacy_arrival_aware_ab_l2/source_states --output results/legacy_arrival_aware_ab_l2",
+  "end_to_end_check": {
+    "status": "passed",
+    "restored_identities": 32,
+    "states": 16,
+    "candidate_rows": 2048,
+    "label_values": 4096,
+    "label_input_separation": "payload columns stay in paired/rows.csv; graph files contain the seven existing tensors",
+    "groups": "train 1536; explore_eval 512; both times of one scenario stay together",
+    "arms": "one row holds both payload columns and one shared graph file",
+    "graph_conversion": "passed"
+  },
+  "initialization_files": [
+    {
+      "path": "results/phase6id_joint_utility_training/epoch_006.pt",
+      "present": true,
+      "sha256": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde"
+    },
+    {
+      "path": "results/phase5l_joint_encoder/joint_utility_encoder.pt",
+      "present": false,
+      "sha256": null
+    },
+    {
+      "path": "results/phase5k_joint_decoder/matching_decoder.pt",
+      "present": true,
+      "sha256": "de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5"
+    }
+  ]
+}

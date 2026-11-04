@@ -10,3 +10,5 @@
 - E19 使用固定结果提交 `f9e9a9e007d7d84046232181fdab6f9a732a4a05`。16 个状态上 T 与 M 的选择相同，机制证据是 `NO_TAG_DECISION_EFFECT`，没有 performance pass，也没有采用。
 
 论文没有加入新方案内容。本次没有新的仿真、训练或 holdout。
+
+L2 把当前正文另存为 `Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261104.md`，并把 `Revised_20261102.md` 恢复为提交 `b30200cf8fd9fda0c5dece7bceb52edaa918f9bc` 的 11 月 2 日稿。两份 PDF 仍是先前独立排版，不是本 LaTeX 工程已核验的编译结果。正式重放 1488 步，另有 30 步作废计数，合计 1518。

@@ -1,0 +1,25 @@
+{
+  "train_scenarios": [
+    322016,
+    322017,
+    322018,
+    322019,
+    322020,
+    322021
+  ],
+  "explore_eval_scenarios": [
+    322022,
+    322023
+  ],
+  "times": [
+    15,
+    30
+  ],
+  "same_scenario_times_stay_together": true,
+  "train_states": 12,
+  "train_candidates": 1536,
+  "explore_eval_states": 4,
+  "explore_eval_candidates": 512,
+  "explore_eval_meaning": "scenarios 322022 and 322023 remain inside the existing training pool and were already opened by the arrival-label diagnosis; this is not a new independent validation or formal holdout",
+  "graph_status": "passed"
+}
