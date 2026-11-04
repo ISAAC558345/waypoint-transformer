@@ -1,0 +1,379 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "scope": "new_proposal_preserved_no_further_development",
+  "branch": "research/ocean-observation-isolated",
+  "formal_base_commit": "e58e5d190109e5a0e860cb5c6a412321c0d74e31",
+  "latest_proposal_commit": "01490662dea1d79d91a478df912eeee684e90072",
+  "latest_instruction_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+  "proposal_content_modified": false,
+  "new_proposal_file_count": 61,
+  "proposal_files": [
+    {
+      "path": "docs/research/Ocean_Observation_M0A_Report_CN.md",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "3bc3dda7d2741901a0a9244704468b7d3844a4ad"
+    },
+    {
+      "path": "docs/research/Ocean_Observation_M0B_Report_CN.md",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "2059bacbfa1ee841c2f133fe44486164e2eefa8d"
+    },
+    {
+      "path": "docs/research/Ocean_Observation_M0B_Task_Spec_CN.md",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "eb38065292c32ddcfe1bd217ae32882be6d33f5e"
+    },
+    {
+      "path": "docs/research/Ocean_Observation_M0_Contract.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "6cbc15a5eb72c2ebff890267a874beb92a1ca100"
+    },
+    {
+      "path": "docs/research/Ocean_Observation_M0_Instructions_CN.md",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "92f532ac8389e9394420e602464956e8789ac90a"
+    },
+    {
+      "path": "docs/research/Ocean_Observation_M0_Report_CN.md",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "37b17327f789b7cc50361e6bfa69bf5ad0a6566a"
+    },
+    {
+      "path": "docs/research/Ocean_Observation_Solution_CN.md",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "48caf211832c70f587a09661e2799888482a9ff9"
+    },
+    {
+      "path": "results/ocean_observation_m0/baseline_tests.log",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "5b358e015ad7e32778dd8c4bbdf9081c8dddc069"
+    },
+    {
+      "path": "results/ocean_observation_m0/case_manifest.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "ffcbb0ce8848ab96a0b5fb29398eefce64ac2869"
+    },
+    {
+      "path": "results/ocean_observation_m0/case_results.csv",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "c47a4bc203b905edc85dfb0656ce2e27ebd479a1"
+    },
+    {
+      "path": "results/ocean_observation_m0/case_results.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "7ec8e6115f8b00f21c160406b023721789c50938"
+    },
+    {
+      "path": "results/ocean_observation_m0/coverage_drift.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "00f54edf16b597120506df2be79767cb56d3d475"
+    },
+    {
+      "path": "results/ocean_observation_m0/interface_draft.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "321da6d0258ccd6dfcf9b40081ceedcb2308d2a9"
+    },
+    {
+      "path": "results/ocean_observation_m0/link_budget.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "6aa312bef270287c7ea047075420dc72b6336f47"
+    },
+    {
+      "path": "results/ocean_observation_m0/observation_example.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "4b7b113d4f03a2a8c2aadd45a10ab80f12da3fb9"
+    },
+    {
+      "path": "results/ocean_observation_m0/overlay_tests.log",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "762dec246fe9b1b2d11a27e5d5f8bd90af9e7092"
+    },
+    {
+      "path": "results/ocean_observation_m0/packet_sizes.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "e867b9c2f4c0118e4c5aa0395dc3061e448326f1"
+    },
+    {
+      "path": "results/ocean_observation_m0/parameter_table.csv",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "ce9db86c3bf3242a0698a641cde147e4cccc507b"
+    },
+    {
+      "path": "results/ocean_observation_m0/parameter_table.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "a58520f9cec164eb5d99e86f4037484958e5d4ab"
+    },
+    {
+      "path": "results/ocean_observation_m0/related_tests.log",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "6e63bf373ebd6cabbbadc443f2c8a7624523d30d"
+    },
+    {
+      "path": "results/ocean_observation_m0/run_manifest.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "4522c4ebdd7797b3dcd7569b585233fc13d36965"
+    },
+    {
+      "path": "results/ocean_observation_m0/study.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "2bd5a3cff491ea46cce6b738cbfbf90fcbced276"
+    },
+    {
+      "path": "results/ocean_observation_m0/timelines.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "de3dbe0228e688427f1b1a519d027781ef233c4d"
+    },
+    {
+      "path": "results/ocean_observation_m0/verification.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "35a06f8cb401a49bd59ba6c49a418bb27c28688c"
+    },
+    {
+      "path": "results/ocean_observation_m0/wind_illustration.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "705c3b6304e4c34dcb0a90710bf49f2558168fc9"
+    },
+    {
+      "path": "results/ocean_observation_m0a/comparison.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "34d4ad75035b0cc939799639ac6b219adc934161"
+    },
+    {
+      "path": "results/ocean_observation_m0a/geometry_manifest.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "9d07588ff7f89cb02e7a066d98bbbaca6b132eab"
+    },
+    {
+      "path": "results/ocean_observation_m0a/schedule.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "aa0ece4249347fc32f6fe1d114440aa34f73e2e0"
+    },
+    {
+      "path": "results/ocean_observation_m0b/derived_rows.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "b6e9edfeb810a20798f997e8d9a839c6ed25076c"
+    },
+    {
+      "path": "results/ocean_observation_m0b/difference_table.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "3394201599c56d05c93f005fd65d4196895ab570"
+    },
+    {
+      "path": "results/ocean_observation_m0b/necessary_checks.json",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "a1602da1e8ffa71449211f48a004e1cd4b824213"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0/__init__.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "d350ca717bd4b401a9171f509987598cf49d741d"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0/accounting.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "fb823d72c035817de4544852f03d530932443eb4"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0/codec.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "bf64d017a9603003034e74c251a2d6160f4507ac"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0/flight.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "6f6b9266ab4d841decf8dfcd9ec3b034f77e4258"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0/information.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "1762212e3087c2eae898c065da8347321ea6b237"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0/interfaces.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "de0d2d3a984bccf7e3278ff65363b06896a6811e"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0/parameters.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "92498c47d187456ccc7c85f6313da24675403562"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0/radio.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "766d9520c3089022799d6b2efac34f6ce97d1e31"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0/report_cn.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "d80d17a4eb5140d62ac751777081919c3e399a93"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0/run.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "b011d5c64f49e7f0ed2a6356948a5e4aeb8979cf"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0/test_compare.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "254fa81c3abdd221163ac6d272b5397b6162a8c6"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0a/__init__.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "f3198d8690eda8250668cf71dad94709e2de7125"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0a/compare.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "bc5626d043f6b29745a6574988cb67ced91aecde"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0a/geometry.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "fa3ae6e67ec0756b39314272238564db427da386"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0a/horizon.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "6cb4871040c1c31ad2bc413f1f8d1ceb7bede676"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0a/links.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "3dd945c4d1d44a473c3184774e82bc6aa10baaa0"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0a/report_cn.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "26d2a68a3789066d2f79b1fe4f8245766f619f1b"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0a/run.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "ee472680b23537739ec8af453f8aad4cef001aaa"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0a/schedule.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "4de7dda589cc57d08fe8dce3227646ec2a086753"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0b/__init__.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "40309d57b12ca6476a9a611af741e3f3101f9936"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0b/contract.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "acaa5b2929536f49879299873116d55e8ace4b53"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0b/derive.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "19d6f952de58c5775a31c9dcd9c12dc997c2e646"
+    },
+    {
+      "path": "src/wt/ocean_observation_m0b/run.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "966beca3da5d785d87872588ec7909fd6d8f42a3"
+    },
+    {
+      "path": "tests/test_ocean_observation_m0.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "3f4e961803b4d478ea15b5ed20a40e7a7330af41"
+    },
+    {
+      "path": "tests/test_ocean_observation_m0a.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "4e359869ceb2fc22daea57f0cb6063bd5529682f"
+    },
+    {
+      "path": "tests/test_ocean_observation_m0b.py",
+      "source_commit": "01490662dea1d79d91a478df912eeee684e90072",
+      "blob_sha": "0a363d7d2b1dd47d370cd50fd813ce07889bae6f"
+    },
+    {
+      "path": "docs/research/Ocean_Observation_M0A_Reframe_Instructions_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "202e99b6c05f5c91dbba9feed43af7177c5e951c"
+    },
+    {
+      "path": "docs/research/Ocean_Observation_M0B_Instructions_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "86967c1de420bbf057834a138bed89761c8ffc28"
+    },
+    {
+      "path": "docs/research/Ocean_Observation_M0_Cursor_Prompt_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "cb547ecb0beb0863d9f8c74496cfd8b9e13b6170"
+    },
+    {
+      "path": "docs/research/Ocean_Observation_M0_Next_Instructions_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "9858fcec0721307f021403a526a7ecd4d3bbc9a9"
+    }
+  ],
+  "archived_handoff_files": [
+    {
+      "path": "archive/handoff_20261104/docs/research/Development_Roadmap_20261104_CN.md",
+      "source_path": "docs/research/Development_Roadmap_20261104_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "0fef1f59553ea1514dace050a041f4f0a68c2cc3"
+    },
+    {
+      "path": "archive/handoff_20261104/docs/research/E19_Readonly_Review_20261104.json",
+      "source_path": "docs/research/E19_Readonly_Review_20261104.json",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "bd3ef20beaec4297baf2ef8883de8e4a788337e3"
+    },
+    {
+      "path": "archive/handoff_20261104/docs/research/HTW_UrgencyAware_E19_Review_and_Handoff_CN.md",
+      "source_path": "docs/research/HTW_UrgencyAware_E19_Review_and_Handoff_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "ef6b8fce962c3901938b9bfbcb0697743a91aabe"
+    },
+    {
+      "path": "archive/handoff_20261104/docs/research/Latest_Results_Review_20261104_CN.md",
+      "source_path": "docs/research/Latest_Results_Review_20261104_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "6b0234440458c08d7f48b659ce35d933c356d2ef"
+    },
+    {
+      "path": "archive/handoff_20261104/docs/research/Legacy_Formal_Repro_R1A_Instructions_CN.md",
+      "source_path": "docs/research/Legacy_Formal_Repro_R1A_Instructions_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "ce3909831df6a1e5571aff7f92ad8d709bd2001c"
+    },
+    {
+      "path": "archive/handoff_20261104/docs/research/Legacy_Formal_Repro_R1_Instructions_CN.md",
+      "source_path": "docs/research/Legacy_Formal_Repro_R1_Instructions_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "0ac476467b11f3ee54c68c13aa1db743baeb2620"
+    },
+    {
+      "path": "archive/handoff_20261104/docs/research/Next_Execution_20261104_CN.md",
+      "source_path": "docs/research/Next_Execution_20261104_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "f875249e39bfcf648f9bf7592925853ce2989a5e"
+    },
+    {
+      "path": "archive/handoff_20261104/docs/research/Research_Priority_and_Necessary_Testing_CN.md",
+      "source_path": "docs/research/Research_Priority_and_Necessary_Testing_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "2a2221c3efa8efc230544b2cefcb96e7b7eb9b1d"
+    },
+    {
+      "path": "archive/handoff_20261104/docs/research/Research_Unfinished_Tasks_CN.md",
+      "source_path": "docs/research/Research_Unfinished_Tasks_CN.md",
+      "source_commit": "33a770d1e8b301782752fbe13cdf9db9daf0cf2e",
+      "blob_sha": "920998159dd2487332e793f9efd78fe367d8716f"
+    }
+  ],
+  "original_branches_preserved": true,
+  "merged_into_formal_or_legacy": false,
+  "future_merge_decision": "user_required",
+  "new_training_updates": 0,
+  "new_environment_steps": 0
+}

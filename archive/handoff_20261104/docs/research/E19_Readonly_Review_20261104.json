@@ -1,0 +1,236 @@
+{
+  "rows": 1636,
+  "states": 16,
+  "all_selection_verified": true,
+  "all_tag_terms_zero_states": [
+    321009,
+    321011,
+    321014,
+    321016,
+    321018,
+    321022
+  ],
+  "higher_proxy_K_exists": [
+    321008,
+    321010,
+    321012,
+    321013,
+    321015,
+    321017,
+    321020,
+    321021,
+    321023
+  ],
+  "static_details": [
+    {
+      "scenario": 321008,
+      "n": 60,
+      "M_index": 1005,
+      "T_index": 1005,
+      "maxK": 1437036.4672177825,
+      "selectedK": 719871.0237033408,
+      "greater_K_exists": true,
+      "first_score_crossing_approx": 0.05982593463057716,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321009,
+      "n": 120,
+      "M_index": 1800,
+      "T_index": 1800,
+      "maxK": 0,
+      "selectedK": 0,
+      "greater_K_exists": false,
+      "first_score_crossing_approx": null,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321010,
+      "n": 20,
+      "M_index": 141,
+      "T_index": 141,
+      "maxK": 1166796.7815872643,
+      "selectedK": 716337.1206934367,
+      "greater_K_exists": true,
+      "first_score_crossing_approx": 1.2199546081789954,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321011,
+      "n": 120,
+      "M_index": 3445,
+      "T_index": 3445,
+      "maxK": 0,
+      "selectedK": 0,
+      "greater_K_exists": false,
+      "first_score_crossing_approx": null,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321012,
+      "n": 120,
+      "M_index": 2086,
+      "T_index": 2086,
+      "maxK": 241486.58832748095,
+      "selectedK": 0,
+      "greater_K_exists": true,
+      "first_score_crossing_approx": 0.21734856146614426,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321013,
+      "n": 120,
+      "M_index": 1463,
+      "T_index": 1463,
+      "maxK": 1492774.200961085,
+      "selectedK": 1384505.4168380995,
+      "greater_K_exists": true,
+      "first_score_crossing_approx": 0.11498844064066081,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321014,
+      "n": 120,
+      "M_index": 3143,
+      "T_index": 3143,
+      "maxK": 0,
+      "selectedK": 0,
+      "greater_K_exists": false,
+      "first_score_crossing_approx": null,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321015,
+      "n": 60,
+      "M_index": 925,
+      "T_index": 925,
+      "maxK": 688898.9214320461,
+      "selectedK": 0,
+      "greater_K_exists": true,
+      "first_score_crossing_approx": 0.02044617892587003,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321016,
+      "n": 120,
+      "M_index": 2246,
+      "T_index": 2246,
+      "maxK": 0,
+      "selectedK": 0,
+      "greater_K_exists": false,
+      "first_score_crossing_approx": null,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321017,
+      "n": 156,
+      "M_index": 2061,
+      "T_index": 2061,
+      "maxK": 690291.3559164206,
+      "selectedK": 0,
+      "greater_K_exists": true,
+      "first_score_crossing_approx": 0.4486636569168877,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321018,
+      "n": 120,
+      "M_index": 1218,
+      "T_index": 1218,
+      "maxK": 0,
+      "selectedK": 0,
+      "greater_K_exists": false,
+      "first_score_crossing_approx": null,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321019,
+      "n": 120,
+      "M_index": 613,
+      "T_index": 613,
+      "maxK": 1542085.0019561362,
+      "selectedK": 1542085.0019561362,
+      "greater_K_exists": false,
+      "first_score_crossing_approx": null,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321020,
+      "n": 20,
+      "M_index": 40,
+      "T_index": 40,
+      "maxK": 712526.5040860394,
+      "selectedK": 0,
+      "greater_K_exists": true,
+      "first_score_crossing_approx": 4.613826260583551,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321021,
+      "n": 120,
+      "M_index": 3804,
+      "T_index": 3804,
+      "maxK": 707706.3640108763,
+      "selectedK": 677120.5055725869,
+      "greater_K_exists": true,
+      "first_score_crossing_approx": 0.019921293181500332,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321022,
+      "n": 120,
+      "M_index": 2694,
+      "T_index": 2694,
+      "maxK": 0,
+      "selectedK": 0,
+      "greater_K_exists": false,
+      "first_score_crossing_approx": null,
+      "selection_verified": true
+    },
+    {
+      "scenario": 321023,
+      "n": 120,
+      "M_index": 1077,
+      "T_index": 1077,
+      "maxK": 1388084.6226099455,
+      "selectedK": 1313081.1274770792,
+      "greater_K_exists": true,
+      "first_score_crossing_approx": 0.015231424373888056,
+      "selection_verified": true
+    }
+  ],
+  "pair_means": {
+    "payload_tn": 40057.612412737915,
+    "known_tagged_tn": -36603.9445436463,
+    "payload_tm": 0,
+    "known_tagged_tm": 0
+  },
+  "payload_tn_direction": {
+    "positive": 9,
+    "zero": 1,
+    "negative": 6
+  },
+  "all_raw_safety_zero": true,
+  "formal_valid_steps": 1488,
+  "discarded_steps_reported": 30,
+  "total_reported_steps": 1518,
+  "new_env_steps_in_this_review": 0,
+  "method": "Read-only recomputation from published CSV. Floating point static crossings are descriptive, not a weight-selection experiment.",
+  "review_date": "2026-11-04",
+  "source_commit": "f9e9a9e007d7d84046232181fdab6f9a732a4a05",
+  "next_stage": "ocean_observation_M0",
+  "source_files": [
+    "results/phase6i_priority_tag_assignment_rule/static_scores.csv",
+    "results/phase6i_priority_tag_assignment_rule/selection_manifest.json",
+    "results/phase6i_priority_tag_assignment_rule/paired_differences.csv",
+    "docs/research/HTW_UrgencyAware_Fixed_Tag_Rule_Diagnosis_Report_CN.md"
+  ],
+  "selection_manifest_commit": "50a3b143db8d925cc3b743cbd4378f9c5ffab153",
+  "replay_context_commit": "ab54f268bc9a51dc3b915f6a8d02402e6ee3ef86",
+  "limitations": [
+    "No new simulation or model execution.",
+    "Floating point score checks are descriptive and are not parameter selection.",
+    "Discarded-step count comes from the published narrative report, while formal step counts come from summary.json.",
+    "Finite TRAIN snapshots and one 15-step intervention window do not establish whole-episode or Scheme C performance."
+  ]
+}
