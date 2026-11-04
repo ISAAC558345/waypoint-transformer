@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-11-04",
+  "purpose": "L2 legacy-only recovery of existing training-state inputs; no rollout or training authorized",
+  "source_repository": "ISAAC558345/waypoint-transformer",
+  "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+  "inspected_tree_truncated": false,
+  "source_file_count": 32,
+  "state_npz_count": 16,
+  "state_manifest_count": 16,
+  "total_source_bytes": 100230,
+  "recovery_status": "identified_not_restored_in_instruction_commit",
+  "output_source_root": "results/legacy_arrival_aware_ab_l2/source_states",
+  "scenario_ids": [
+    322016,
+    322017,
+    322018,
+    322019,
+    322020,
+    322021,
+    322022,
+    322023
+  ],
+  "time_steps": [
+    15,
+    30
+  ],
+  "existing_labels": "results/phase6i_urgency_arrival_aware_expansion/labels.csv",
+  "existing_candidates": "results/phase6i_urgency_arrival_aware_expansion/selected_candidates.csv",
+  "expected_decision_states": 16,
+  "expected_candidate_rows": 2048,
+  "expected_label_values": 4096,
+  "hash_meanings": {
+    "git_blob_sha": "identity of the exact source file bytes including Git blob header",
+    "checksum_state": "SHA-256 of revised NPZ bytes as recorded in each original manifest",
+    "source_state_hash": "semantic original state identity to join with D6, distinct from revised NPZ checksum"
+  },
+  "files": [
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322016/t015_manifest.json",
+      "git_blob_sha": "d80adc79e9415dafc2dce7033bad4116528199b5",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322016/t015_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322016/t015_state.npz",
+      "git_blob_sha": "26f26bc05a9dc55a0cf900059e34c18d76ad3597",
+      "bytes": 5182,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322016/t015_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322016/t030_manifest.json",
+      "git_blob_sha": "a13a5cf22669e8c1abc00bc448574d726d251828",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322016/t030_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322016/t030_state.npz",
+      "git_blob_sha": "e8fd218de8830ee2e4c78763ff5d78214b0200f8",
+      "bytes": 5324,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322016/t030_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322017/t015_manifest.json",
+      "git_blob_sha": "c7f031e9fe4728d90a0e8aae922949a9035784d0",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322017/t015_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322017/t015_state.npz",
+      "git_blob_sha": "ad3100894371e97f3468e302b6bcabd6eaa5fdfd",
+      "bytes": 5166,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322017/t015_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322017/t030_manifest.json",
+      "git_blob_sha": "fae4752a1d3d1fa676f8d0bcd8570d35babe37b0",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322017/t030_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322017/t030_state.npz",
+      "git_blob_sha": "8616de65aee14e45b8fdaa2e4a96ea1b239cd15d",
+      "bytes": 5328,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322017/t030_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322018/t015_manifest.json",
+      "git_blob_sha": "0c9f921390bbcc7509953888237b1c81938be11b",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322018/t015_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322018/t015_state.npz",
+      "git_blob_sha": "f5775fe4a3cb9f0136d66c305458602cfec366e8",
+      "bytes": 5176,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322018/t015_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322018/t030_manifest.json",
+      "git_blob_sha": "41e6b8226bb1b201d7a055fbfea60b8156d66ab2",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322018/t030_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322018/t030_state.npz",
+      "git_blob_sha": "3e101245b8e854584f9a4b3c20ed1ecab353eebd",
+      "bytes": 5310,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322018/t030_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322019/t015_manifest.json",
+      "git_blob_sha": "15e1cfe7403a51ca206051e2095f3278661205cc",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322019/t015_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322019/t015_state.npz",
+      "git_blob_sha": "493e860ddea64d2e145264213744f78e2d6360c0",
+      "bytes": 5172,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322019/t015_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322019/t030_manifest.json",
+      "git_blob_sha": "27842815384dfb1b40ff6968168eae48f2252ed0",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322019/t030_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322019/t030_state.npz",
+      "git_blob_sha": "9d5d8f1e08312261816a1eaf2b353bf817782d01",
+      "bytes": 5302,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322019/t030_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322020/t015_manifest.json",
+      "git_blob_sha": "65080e6615cc11933642ec75c510543634bbf346",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322020/t015_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322020/t015_state.npz",
+      "git_blob_sha": "6d249d33804bbb5ecfdc301023f8afef7a705a18",
+      "bytes": 5180,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322020/t015_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322020/t030_manifest.json",
+      "git_blob_sha": "b9f1f8b272b5ba54a1bbd8ee871f285d47edd9f3",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322020/t030_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322020/t030_state.npz",
+      "git_blob_sha": "fa3b0dd40e29a16f8df7791621a54af2e7b03546",
+      "bytes": 5329,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322020/t030_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322021/t015_manifest.json",
+      "git_blob_sha": "b039fb771e591cdea2d5cd7eba8f8702ca9f5954",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322021/t015_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322021/t015_state.npz",
+      "git_blob_sha": "6355e129a2b880d5c8817aeb0bff75075ecf7992",
+      "bytes": 5166,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322021/t015_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322021/t030_manifest.json",
+      "git_blob_sha": "fea128fb71bc4c4a8a6c3e35a61f0ada718b1a7c",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322021/t030_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322021/t030_state.npz",
+      "git_blob_sha": "e9055c6d1d634a602773708d4f53f793226079d2",
+      "bytes": 5303,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322021/t030_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322022/t015_manifest.json",
+      "git_blob_sha": "1e56afd9a149f582f9fbc70c8d1c10b372be3d72",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322022/t015_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322022/t015_state.npz",
+      "git_blob_sha": "734d6fab0ad4a55d43f5ceca8d7aed146cbbf4c6",
+      "bytes": 5183,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322022/t015_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322022/t030_manifest.json",
+      "git_blob_sha": "e1af0534ee34fab70a75cfe6a09b0bd84832cb58",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322022/t030_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322022/t030_state.npz",
+      "git_blob_sha": "5bca904b2d03d9a2d8b8693473755bab2bd12d7b",
+      "bytes": 5330,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322022/t030_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322023/t015_manifest.json",
+      "git_blob_sha": "24953518ab4475fdb35122861e11e540195898a5",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322023/t015_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322023/t015_state.npz",
+      "git_blob_sha": "1cdec869962d27b98e74d4a841aab2ff1ac44a59",
+      "bytes": 5171,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322023/t015_state.npz"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322023/t030_manifest.json",
+      "git_blob_sha": "7020096fed0a9cf0ec100fe2c70db61a9b1890b8",
+      "bytes": 1018,
+      "role": "state_manifest",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322023/t030_manifest.json"
+    },
+    {
+      "source_path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322023/t030_state.npz",
+      "git_blob_sha": "64407241bd024d1d76cd0039c694651919c0fe01",
+      "bytes": 5320,
+      "role": "revised_state",
+      "output_path": "results/legacy_arrival_aware_ab_l2/source_states/scenario_322023/t030_state.npz"
+    }
+  ]
+}
