@@ -8,6 +8,30 @@ def _n(value, digits: int = 1) -> str:
     return f"{float(value):.{digits}f}"
 
 
+def _pattern(rows: list[dict]) -> list[str]:
+    text = []
+    for geometry in ("original_domain", "single_region_beyond_direct", "separated_regions"):
+        calm = [row for row in rows if row["geometry"] == geometry and row["wind"] == "calm"]
+        by_method = {row["method"]: row for row in calm}
+        direct = by_method["direct"]
+        fixed = by_method["fixed"]
+        moving = by_method["moving"]
+        text.append(
+            f"- {geometry} 静风：直传未送达 {direct['undelivered_count']}，系统能量 {_n(direct['system_energy_J'], 1)} J；"
+            f"固定中继未送达 {fixed['undelivered_count']}，系统能量 {_n(fixed['system_energy_J'], 1)} J；"
+            f"移动未送达 {moving['undelivered_count']}，系统能量 {_n(moving['system_energy_J'], 1)} J。"
+        )
+    split = [row for row in rows if row["geometry"] == "separated_regions" and row["method"] == "moving"]
+    for row in split:
+        text.append(
+            f"- 分离几何 {row['wind']} 的两架 UAV 能量分别为 {_n(row['nodes_J']['uav_0'], 1)} J 和 {_n(row['nodes_J']['uav_1'], 1)} J，"
+            f"平均时延 {_n(row['mean_delay_s'], 1)} s。"
+        )
+    text.append("")
+    text.append("原 2 km 域内直传已经完成同一任务，并且系统能量低于悬停中继。单一远区从机库悬停就能接收，固定中继与移动航线重合。只有两侧分离时，固定点覆盖失败，移动航线在余量内完成送达。")
+    return text
+
+
 def render_report(geometry: dict, table: dict) -> str:
     lines = [
         "# 海洋观测 M0A：地平线口径与同一任务比较",
@@ -22,8 +46,13 @@ def render_report(geometry: dict, table: dict) -> str:
         "三个几何各配静风和 8 m/s 东风，共 18 个方法结果。漂移不进入任何一条臂，两个生成时刻都使用下面的坐标。",
         "",
     ]
+    reasons = {
+        "original_domain": "原 2 km 域内的四个分散浮标，直传链路可以闭合。",
+        "single_region_beyond_direct": "一簇浮标位于 k=4/3 浮标到岸站地平线之外 5 km，仍落在机库处 UAV 的覆盖圆内。",
+        "separated_regions": "两簇浮标分别放在 UAV 对浮标覆盖半径之外 1 km 的两侧，一个悬停点不能同时看见两簇。",
+    }
     for row in geometry["geometries"]:
-        lines.append(f"- {row['geometry']}：{row['reason']}")
+        lines.append(f"- {row['geometry']}：{reasons[row['geometry']]}")
         lines.append(f"  浮标 {row['buoys_xy_m']}。固定悬停 {row['fixed']['xy_m']}，覆盖全部浮标：{row['fixed']['covers_all_buoys']}。")
         for visit in row["moving"]["visits"]:
             lines.append(f"  移动接收 {visit['group']} 由 UAV {visit['uav']} 在 {visit['receive_xy_m']} 执行，覆盖：{visit['covers']}。")
@@ -57,12 +86,15 @@ def render_report(geometry: dict, table: dict) -> str:
                 ok=row["acceptable"],
             )
         )
+    lines.extend(["", "## 分情形", ""])
+    lines.extend(_pattern(table["rows"]))
     lines.extend(
         [
             "",
             "## 结论",
             "",
-            f"结论：{table['conclusion']}。",
+            f"结论：{table['conclusion']}。中文表述是：移动在分离几何下有条件增益。",
+            "第一次解析执行把分离几何写成了每侧 4 个浮标，总数变成 8，不符合登记的 4 浮标任务。该表没有采纳。修正为每侧 2 个浮标后只重算这一次，簇中心规则没有改。",
             "比较只针对这组链路任务的送达和代价。这里没有岸图均方误差，也没有闭合观测质量回路。",
             "能量超过单机余量上限的结果保留为方法不可行，不另开安全专项，也不改电池或坐标。",
             "",

@@ -32,6 +32,9 @@ class OceanObservationM0ATests(unittest.TestCase):
 
     def test_saved_comparison_is_the_same_eight_products(self) -> None:
         self.assertTrue(COMPARISON.is_file(), "the analytical comparison is missing")
+        geometry = json.loads((ROOT / "results" / "ocean_observation_m0a" / "geometry_manifest.json").read_text(encoding="utf-8"))
+        for context in geometry["geometries"]:
+            self.assertEqual(len(context["buoys_xy_m"]), 4)
         table = json.loads(COMPARISON.read_text(encoding="utf-8"))
         self.assertEqual(len(table["rows"]), 18)
         self.assertIn(table["conclusion"], CONCLUSIONS)

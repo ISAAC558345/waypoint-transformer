@@ -36,6 +36,11 @@ def _cluster(center: Point) -> tuple[Point, ...]:
     return tuple((center[0] + dx, center[1] + dy) for dx, dy in CLUSTER_OFFSETS_M)
 
 
+def _pair(center: Point) -> tuple[Point, ...]:
+    """Two buoys on one side. A separated context then has four buoys in total."""
+    return ((center[0] - 200.0, center[1]), (center[0] + 200.0, center[1]))
+
+
 def _centroid(points: tuple[Point, ...]) -> Point:
     return (sum(point[0] for point in points) / len(points), sum(point[1] for point in points) / len(points))
 
@@ -64,8 +69,8 @@ def contexts() -> tuple[dict, ...]:
             "geometry": "separated_regions",
             "reason": "Two clusters placed one declared kilometre beyond opposite UAV-buoy coverage radii, so one hover cannot see both.",
             "groups": (
-                {"name": "east", "buoys": _cluster((half, 0.0))},
-                {"name": "west", "buoys": _cluster((-half, 0.0))},
+                {"name": "east", "buoys": _pair((half, 0.0))},
+                {"name": "west", "buoys": _pair((-half, 0.0))},
             ),
         },
     )

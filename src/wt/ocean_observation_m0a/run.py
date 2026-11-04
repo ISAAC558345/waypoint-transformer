@@ -19,6 +19,9 @@ def _dump(path: Path, payload: dict) -> None:
 
 def write_geometry() -> dict:
     payload = geometry_manifest()
+    for row in payload["geometries"]:
+        if len(row["buoys_xy_m"]) != 4:
+            raise RuntimeError(f"{row['geometry']} does not have the registered four buoys")
     _dump(OUTPUT / "geometry_manifest.json", payload)
     return payload
 

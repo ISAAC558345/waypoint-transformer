@@ -1,0 +1,854 @@
+{
+  "usable_energy_J": 202151.81169403158,
+  "energy_limit_J": 161721.44935522528,
+  "hover_W": 168.45984307835965,
+  "rows": [
+    {
+      "method": "direct",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 0.11903999999999999,
+      "latest_delivery_s": 1200.5061600000001,
+      "mean_delay_s": 0.3126000000000443,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 1800.0,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.0323693568
+      },
+      "uavs": [
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 3960.1203637248,
+      "geometry": "original_domain",
+      "wind": "calm"
+    },
+    {
+      "method": "fixed",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "mean_delay_s": 10.97624800000014,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uavs": [
+        {
+          "flight_J": 6938.393723134386,
+          "return_J": 6938.393723134386,
+          "ground_J": 1717.6403839999996,
+          "radio_J": 0.15321613824,
+          "propulsion_J": 13874.287987353959,
+          "compute_J": 411.79808,
+          "energy_J": 16003.8796674922,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 18164.02328383012,
+      "geometry": "original_domain",
+      "wind": "calm"
+    },
+    {
+      "method": "moving",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "mean_delay_s": 10.97624800000014,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uavs": [
+        {
+          "flight_J": 6938.393723134386,
+          "return_J": 6938.393723134386,
+          "ground_J": 1717.6403839999996,
+          "radio_J": 0.15321613824,
+          "propulsion_J": 13874.287987353959,
+          "compute_J": 411.79808,
+          "energy_J": 16003.8796674922,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 18164.02328383012,
+      "geometry": "original_domain",
+      "wind": "calm"
+    },
+    {
+      "method": "direct",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 0.11903999999999999,
+      "latest_delivery_s": 1200.5061600000001,
+      "mean_delay_s": 0.3126000000000443,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 1800.0,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.0323693568
+      },
+      "uavs": [
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 3960.1203637248,
+      "geometry": "original_domain",
+      "wind": "wind_8mps_east"
+    },
+    {
+      "method": "fixed",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "mean_delay_s": 10.97624800000014,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uavs": [
+        {
+          "flight_J": 6938.393723134386,
+          "return_J": 6938.393723134386,
+          "ground_J": 1717.6403839999996,
+          "radio_J": 0.15321613824,
+          "propulsion_J": 13874.287987353959,
+          "compute_J": 411.79808,
+          "energy_J": 16003.8796674922,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 18164.02328383012,
+      "geometry": "original_domain",
+      "wind": "wind_8mps_east"
+    },
+    {
+      "method": "moving",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "mean_delay_s": 10.97624800000014,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uavs": [
+        {
+          "flight_J": 6938.393723134386,
+          "return_J": 6938.393723134386,
+          "ground_J": 1717.6403839999996,
+          "radio_J": 0.15321613824,
+          "propulsion_J": 13874.287987353959,
+          "compute_J": 411.79808,
+          "energy_J": 16003.8796674922,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 18164.02328383012,
+      "geometry": "original_domain",
+      "wind": "wind_8mps_east"
+    },
+    {
+      "method": "direct",
+      "product_count": 8,
+      "delivered_count": 0,
+      "undelivered_count": 8,
+      "full_delivery_fraction": 0.0,
+      "first_delivery_s": null,
+      "latest_delivery_s": null,
+      "mean_delay_s": null,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": false,
+      "nodes_J": {
+        "uav_0": 1800.0,
+        "uav_1": 1800.0,
+        "buoy_0": 90.0,
+        "buoy_1": 90.0,
+        "buoy_2": 90.0,
+        "buoy_3": 90.0,
+        "shore": 0.0
+      },
+      "uavs": [
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 3960.0,
+      "geometry": "single_region_beyond_direct",
+      "wind": "calm"
+    },
+    {
+      "method": "fixed",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "mean_delay_s": 10.97624800000014,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uavs": [
+        {
+          "flight_J": 6938.393723134386,
+          "return_J": 6938.393723134386,
+          "ground_J": 1717.6403839999996,
+          "radio_J": 0.15321613824,
+          "propulsion_J": 13874.287987353959,
+          "compute_J": 411.79808,
+          "energy_J": 16003.8796674922,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 18164.02328383012,
+      "geometry": "single_region_beyond_direct",
+      "wind": "calm"
+    },
+    {
+      "method": "moving",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "mean_delay_s": 10.97624800000014,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uavs": [
+        {
+          "flight_J": 6938.393723134386,
+          "return_J": 6938.393723134386,
+          "ground_J": 1717.6403839999996,
+          "radio_J": 0.15321613824,
+          "propulsion_J": 13874.287987353959,
+          "compute_J": 411.79808,
+          "energy_J": 16003.8796674922,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 18164.02328383012,
+      "geometry": "single_region_beyond_direct",
+      "wind": "calm"
+    },
+    {
+      "method": "direct",
+      "product_count": 8,
+      "delivered_count": 0,
+      "undelivered_count": 8,
+      "full_delivery_fraction": 0.0,
+      "first_delivery_s": null,
+      "latest_delivery_s": null,
+      "mean_delay_s": null,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": false,
+      "nodes_J": {
+        "uav_0": 1800.0,
+        "uav_1": 1800.0,
+        "buoy_0": 90.0,
+        "buoy_1": 90.0,
+        "buoy_2": 90.0,
+        "buoy_3": 90.0,
+        "shore": 0.0
+      },
+      "uavs": [
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 3960.0,
+      "geometry": "single_region_beyond_direct",
+      "wind": "wind_8mps_east"
+    },
+    {
+      "method": "fixed",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "mean_delay_s": 10.97624800000014,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uavs": [
+        {
+          "flight_J": 6938.393723134386,
+          "return_J": 6938.393723134386,
+          "ground_J": 1717.6403839999996,
+          "radio_J": 0.15321613824,
+          "propulsion_J": 13874.287987353959,
+          "compute_J": 411.79808,
+          "energy_J": 16003.8796674922,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 18164.02328383012,
+      "geometry": "single_region_beyond_direct",
+      "wind": "wind_8mps_east"
+    },
+    {
+      "method": "moving",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "mean_delay_s": 10.97624800000014,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uavs": [
+        {
+          "flight_J": 6938.393723134386,
+          "return_J": 6938.393723134386,
+          "ground_J": 1717.6403839999996,
+          "radio_J": 0.15321613824,
+          "propulsion_J": 13874.287987353959,
+          "compute_J": 411.79808,
+          "energy_J": 16003.8796674922,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 18164.02328383012,
+      "geometry": "single_region_beyond_direct",
+      "wind": "wind_8mps_east"
+    },
+    {
+      "method": "direct",
+      "product_count": 8,
+      "delivered_count": 0,
+      "undelivered_count": 8,
+      "full_delivery_fraction": 0.0,
+      "first_delivery_s": null,
+      "latest_delivery_s": null,
+      "mean_delay_s": null,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": false,
+      "nodes_J": {
+        "uav_0": 1800.0,
+        "uav_1": 1800.0,
+        "buoy_0": 90.0,
+        "buoy_1": 90.0,
+        "buoy_2": 90.0,
+        "buoy_3": 90.0,
+        "shore": 0.0
+      },
+      "uavs": [
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 3960.0,
+      "geometry": "separated_regions",
+      "wind": "calm"
+    },
+    {
+      "method": "fixed",
+      "product_count": 8,
+      "delivered_count": 0,
+      "undelivered_count": 8,
+      "full_delivery_fraction": 0.0,
+      "first_delivery_s": null,
+      "latest_delivery_s": null,
+      "mean_delay_s": null,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": false,
+      "nodes_J": {
+        "uav_0": 28245.803225705575,
+        "uav_1": 1800.0,
+        "buoy_0": 90.0,
+        "buoy_1": 90.0,
+        "buoy_2": 90.0,
+        "buoy_3": 90.0,
+        "shore": 0.0328851072
+      },
+      "uavs": [
+        {
+          "flight_J": 13273.991892155282,
+          "return_J": 13273.991892155282,
+          "ground_J": 1646.5939128888888,
+          "radio_J": 0.05903783423999999,
+          "propulsion_J": 25832.11983942689,
+          "compute_J": 767.0304355555556,
+          "energy_J": 28245.803225705575,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 30405.836110812776,
+      "geometry": "separated_regions",
+      "wind": "calm"
+    },
+    {
+      "method": "moving",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 105.19127466666669,
+      "latest_delivery_s": 1200.6536480000002,
+      "mean_delay_s": 54.31135022222233,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 71677.3565245829,
+        "uav_1": 75296.89575883215,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.15272370432
+      },
+      "uavs": [
+        {
+          "flight_J": 35033.464441942786,
+          "return_J": 35033.464441942786,
+          "ground_J": 1380.006037333333,
+          "radio_J": 0.18904748543999994,
+          "propulsion_J": 68197.19162643078,
+          "compute_J": 2099.9698133333336,
+          "energy_J": 71677.3565245829,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 36854.34080594174,
+          "return_J": 36854.34080594174,
+          "ground_J": 1357.783815111111,
+          "radio_J": 0.19777595903999998,
+          "propulsion_J": 71727.83324331757,
+          "compute_J": 2211.0809244444445,
+          "energy_J": 75296.89575883215,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 147334.49300148737,
+      "geometry": "separated_regions",
+      "wind": "calm"
+    },
+    {
+      "method": "direct",
+      "product_count": 8,
+      "delivered_count": 0,
+      "undelivered_count": 8,
+      "full_delivery_fraction": 0.0,
+      "first_delivery_s": null,
+      "latest_delivery_s": null,
+      "mean_delay_s": null,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": false,
+      "nodes_J": {
+        "uav_0": 1800.0,
+        "uav_1": 1800.0,
+        "buoy_0": 90.0,
+        "buoy_1": 90.0,
+        "buoy_2": 90.0,
+        "buoy_3": 90.0,
+        "shore": 0.0
+      },
+      "uavs": [
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 3960.0,
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east"
+    },
+    {
+      "method": "fixed",
+      "product_count": 8,
+      "delivered_count": 0,
+      "undelivered_count": 8,
+      "full_delivery_fraction": 0.0,
+      "first_delivery_s": null,
+      "latest_delivery_s": null,
+      "mean_delay_s": null,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": false,
+      "nodes_J": {
+        "uav_0": 28290.351293468968,
+        "uav_1": 1800.0,
+        "buoy_0": 90.0,
+        "buoy_1": 90.0,
+        "buoy_2": 90.0,
+        "buoy_3": 90.0,
+        "shore": 0.0328851072
+      },
+      "uavs": [
+        {
+          "flight_J": 13346.826946715239,
+          "return_J": 13245.978409632222,
+          "ground_J": 1646.3204086153846,
+          "radio_J": 0.05903783423999999,
+          "propulsion_J": 25875.573890096268,
+          "compute_J": 768.3979569230769,
+          "energy_J": 28290.351293468968,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 0.0,
+          "return_J": 0.0,
+          "ground_J": 1800.0,
+          "radio_J": 0.0,
+          "propulsion_J": 0.0,
+          "compute_J": 0.0,
+          "energy_J": 1800.0,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 30450.38417857617,
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east"
+    },
+    {
+      "method": "moving",
+      "product_count": 8,
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "full_delivery_fraction": 1.0,
+      "first_delivery_s": 84.67845415384618,
+      "latest_delivery_s": 1200.6536480000002,
+      "mean_delay_s": 63.627589538461635,
+      "track_feasible": true,
+      "energy_within_reserve": true,
+      "acceptable": true,
+      "nodes_J": {
+        "uav_0": 82368.91897321801,
+        "uav_1": 86879.41956273516,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.17198869247999998
+      },
+      "uavs": [
+        {
+          "flight_J": 28310.22863640818,
+          "return_J": 52513.877536332744,
+          "ground_J": 1314.3650116923075,
+          "radio_J": 0.21523290623999997,
+          "propulsion_J": 78626.16378708101,
+          "compute_J": 2428.1749415384616,
+          "energy_J": 82368.91897321801,
+          "within_reserve": true
+        },
+        {
+          "flight_J": 55791.45499153086,
+          "return_J": 29570.83534994592,
+          "ground_J": 1286.6727039999998,
+          "radio_J": 0.22396137983999995,
+          "propulsion_J": 83025.88641735532,
+          "compute_J": 2566.63648,
+          "energy_J": 86879.41956273516,
+          "within_reserve": true
+        }
+      ],
+      "system_energy_J": 169608.59851901364,
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east"
+    }
+  ],
+  "conclusion": "motion has a conditional gain"
+}
