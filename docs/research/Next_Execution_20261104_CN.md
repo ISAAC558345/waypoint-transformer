@@ -1,12 +1,16 @@
-# R1 与 M0A 结果后的下一步执行交接
+# 当前执行交接 原系统独立维护
 
-更新日期：2026-11-04。先读 [最新结果审阅](Latest_Results_Review_20261104_CN.md)，按 [原系统优先与必要测试规则](Research_Priority_and_Necessary_Testing_CN.md) 执行。
+更新日期：2026-11-04。用户最新要求替代此前并行推进安排：先只完善原系统，新方案停止修改，保存于独立分支，是否合并以后由用户决定。
 
-1. 原系统结果来源为 `1abcf1b264b6df1763cbcf2cfe410923cdc57dae`，优先执行 [R1A可迁移只读交付](Legacy_Formal_Repro_R1A_Instructions_CN.md)，修复绝对路径和读取旧结果时改写原运行元数据的问题。已有192步不重复。
-2. 新方向结果来源为 `12ff4ae7fdf3863ac56c3a81bd2168983453043b`，执行 [M0B同资源固定驻点对照](Ocean_Observation_M0B_Instructions_CN.md)。复用6个上下文，最多12条派生方法结果，纠正单驻点与双驻点混合的归因。
-3. 两包可在无冲突时并行整理；资源、依赖或执行时间冲突时先R1A。不要为了新方向覆盖原系统结果。
-4. 两包均为零新环境回合、零训练、零神经策略推理。只运行各自指令中的必要核对，不默认运行全历史套件、故障注入或安全压力。
-5. 先检查本地是否已有同阶段工作，保留未提交成果；已完成则核验并提交，不重复执行。各包在独立分支和结果目录提交并推送，汇报SHA、解决的问题、对照结论和剩余事项。
-6. 完成登记范围后停止。论文证据同步、LaTeX编译和旧系统到达感知方法比较仍保留在后续清单，不在本轮擅自追加训练。
+请切换或检出 `feature/legacy-system-maintenance`，当前已核验提交 `bb408f854d012850a4a3dbe3d0246be8ccbcf9ad`。先保存已有未提交工作，已有完成成果先核验，不重置或重复执行。
 
-当前任务不需要用户再次选择研究方向，先修复交付和比较中的明确问题。若之后要改变资源合同或开展训练，再准备具体方法、对照和预算供决定。
+读取：
+- [维护范围](https://github.com/ISAAC558345/waypoint-transformer/blob/bb408f854d012850a4a3dbe3d0246be8ccbcf9ad/README_BRANCH_SCOPE.md)
+- [旧系统下一步指令](https://github.com/ISAAC558345/waypoint-transformer/blob/bb408f854d012850a4a3dbe3d0246be8ccbcf9ad/docs/research/Legacy_System_Next_Instructions_CN.md)
+- [当前可用命令](https://github.com/ISAAC558345/waypoint-transformer/blob/bb408f854d012850a4a3dbe3d0246be8ccbcf9ad/docs/research/Legacy_System_Commands_CN.md)
+
+只在旧维护分支完成运行命令/依赖交付、旧论文证据和源码收尾，并保留原研究待办。必要方法对照和直接相关回归才执行，不默认全历史套件或无关安全专项。当前指令新增环境步、训练和策略推理均为0。
+
+新方案已保存在 `research/ocean-observation-isolated`，提交 `4d8622ef183e734f2d9a890d60d735ed716f5d74`。不要执行此前M0系列后继指令，不修改其方案、代码或结果，不合并到原系统。原混合文档分支和已有实验分支仅作历史记录，不再作为当前工作起点。
+
+提交并推送旧系统成果，汇报SHA、实际改进、必要检查和剩余事项后停止。详见 [分支隔离记录](Branch_Isolation_20261104_CN.md)。

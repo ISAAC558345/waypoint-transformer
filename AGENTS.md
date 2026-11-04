@@ -26,14 +26,16 @@ adds stricter constraints.
 - A round must stop after its own acceptance criteria pass; do not begin the
   next round without a new instruction.
 
-## Current user priority and testing policy
+## Current user scope and testing policy
 
-The user's 2026-11-04 instruction prioritizes completing and improving the
-existing system while advancing the new ocean-observation direction when
-resources and dependencies do not conflict. Resolve conflicts in favor of
-the existing system. See
-[Research priority and necessary testing](docs/research/Research_Priority_and_Necessary_Testing_CN.md).
+The user's latest 2026-11-04 instruction restricts current work to improving
+the existing system. Preserve the new ocean-observation proposal in its
+isolated branch and do not continue its development or merge it into the
+existing system unless the user later explicitly requests that merge.
+The active maintenance branch is feature/legacy-system-maintenance.
+See [Legacy-only workflow](https://github.com/ISAAC558345/waypoint-transformer/blob/bb408f854d012850a4a3dbe3d0246be8ccbcf9ad/docs/research/Legacy_Only_Workflow_CN.md).
+Use only necessary targeted regression or fair method comparisons.
 This current user instruction supersedes older blanket full-suite and
-unrelated safety-testing requirements, including those in historical round
-instructions. Keep actual errors and constraint events in normal outputs;
-do not weaken model constraints or rewrite old evidence to obtain a pass.
+unrelated safety-testing requirements, including historical round rules.
+Keep actual errors and original evidence; do not weaken constraints to
+make a result pass.
