@@ -1,13 +1,13 @@
 {
   "manuscript": "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261104.md",
-  "manuscript_sha256": "d7987d35be30c6e619b9e977603e147ffb35eeb42fc40c102619f12232a27792",
+  "manuscript_sha256": "b37ffdb70673bc9311fbf8cdbdd7428bec56042306928e214e02d0e4e1ee1efb",
   "manuscript_statement": "4 November 2026; evidence through completed E19; source not compiled in this delivery",
   "historical_manuscript": "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261102.md",
   "historical_manuscript_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
   "historical_manuscript_git_blob": "7708c858911169d9d8cfbc5cb9875df4a81b9f91",
   "instruction_parent": "c4b0752fb7796e2770357a29376bda16e9d55e26",
   "evidence_index": "docs/paper/evidence_20261104.json",
-  "evidence_index_sha256": "86b1078365b5c5aceb577c39a2362926810d0c9dcc16dc8fb783334fd5105811",
+  "evidence_index_sha256": "bda8ad8ebdbf8bd534d383fd7cd8ab64d03d08af8842d74079bd9031505e417b",
   "ranking_loss_summary": "MISSING",
   "e19_decision": "T and M select the same assignment; not adopted",
   "accounted_steps": {
@@ -38,5 +38,14 @@
   "previous_structural_check_transferred": false,
   "archived_previous_manifest": "docs/paper/latex/archive/source_manifest_20261102.json",
   "actual_latex_compile": "not_run_compiler_unavailable",
-  "compiler_availability_check": "one check on 2026-11-04; pdflatex, xelatex, lualatex, latexmk, and tectonic were absent from PATH; C:\\texlive and the usual MiKTeX directories were absent"
+  "compiler_availability_check": "one check on 2026-11-04; pdflatex, xelatex, lualatex, latexmk, and tectonic were absent from PATH; C:\\texlive and the usual MiKTeX directories were absent",
+  "hash_basis": "SHA-256 of raw repository Git blob bytes; checkout newline conversion may produce a different working-tree hash",
+  "manuscript_git_blob": "eaaf37461b12d4833a27f37d98d68b895e3ddff4",
+  "evidence_index_git_blob": "4f2743738dbcffb64301dafe7984922e87623ace",
+  "l2_working_tree_crlf_sha256": {
+    "manuscript": "d7987d35be30c6e619b9e977603e147ffb35eeb42fc40c102619f12232a27792",
+    "evidence_index": "86b1078365b5c5aceb577c39a2362926810d0c9dcc16dc8fb783334fd5105811"
+  },
+  "hash_correction_source_commit": "9f02fa806f5f80ddde2e02adc054844bfc3acc7f",
+  "archived_l2_manifest": "docs/paper/latex/archive/source_manifest_L2_20261104.json"
 }

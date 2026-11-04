@@ -1,0 +1,42 @@
+{
+  "manuscript": "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261104.md",
+  "manuscript_sha256": "d7987d35be30c6e619b9e977603e147ffb35eeb42fc40c102619f12232a27792",
+  "manuscript_statement": "4 November 2026; evidence through completed E19; source not compiled in this delivery",
+  "historical_manuscript": "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261102.md",
+  "historical_manuscript_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+  "historical_manuscript_git_blob": "7708c858911169d9d8cfbc5cb9875df4a81b9f91",
+  "instruction_parent": "c4b0752fb7796e2770357a29376bda16e9d55e26",
+  "evidence_index": "docs/paper/evidence_20261104.json",
+  "evidence_index_sha256": "86b1078365b5c5aceb577c39a2362926810d0c9dcc16dc8fb783334fd5105811",
+  "ranking_loss_summary": "MISSING",
+  "e19_decision": "T and M select the same assignment; not adopted",
+  "accounted_steps": {
+    "formal_replay": 1488,
+    "voided": 30,
+    "total": 1518
+  },
+  "tex_files": {
+    "docs/paper/latex/main.tex": {
+      "sha256": "0d6b70ea75cbcd01bfa04240740a4ac1ad1a0e6d0966abf1357a3db5a2a28cb0",
+      "structure": "pass"
+    },
+    "docs/paper/latex/body.tex": {
+      "sha256": "fd76e7dc7c9b430f4ac8243052bd939a9b86ebbda70101baace26c81b1049731",
+      "structure": "pass"
+    },
+    "docs/paper/latex/references.tex": {
+      "sha256": "c72bbc508afff068fc352b3df738248bf5a31b86d7d7e3e31096c222ef44d610",
+      "structure": "pass"
+    },
+    "docs/paper/latex/figures/formal_architecture.tex": {
+      "sha256": "3db1c3c89695d6c6c83666cabcb229df461ca8f45567f32d222a406ce8abe580",
+      "structure": "pass"
+    }
+  },
+  "optional_unreferenced_tex": "docs/paper/latex/figures/system_schematics.tex",
+  "brace_and_environment_check": "pass",
+  "previous_structural_check_transferred": false,
+  "archived_previous_manifest": "docs/paper/latex/archive/source_manifest_20261102.json",
+  "actual_latex_compile": "not_run_compiler_unavailable",
+  "compiler_availability_check": "one check on 2026-11-04; pdflatex, xelatex, lualatex, latexmk, and tectonic were absent from PATH; C:\\texlive and the usual MiKTeX directories were absent"
+}
