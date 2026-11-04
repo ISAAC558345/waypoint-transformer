@@ -37,7 +37,7 @@ class LegacyFormalReproR1Tests(unittest.TestCase):
         self.assertEqual(int(manifest["training_updates"]), 0)
         self.assertTrue(manifest["official_policy_unchanged"])
         self.assertEqual(
-            manifest["official_policy_sha256_before"],
+            manifest["official_policy_sha256"],
             hashlib.sha256(POLICY_FILE.read_bytes()).hexdigest(),
         )
         self.assertEqual(len(manifest["arms"]), 4)

@@ -1,0 +1,22 @@
+{
+  "research_environment_steps": 192,
+  "test_internal_steps_are_not_method_evidence": true,
+  "results": [
+    {
+      "test": "tests.test_legacy_formal_repro_r1.LegacyFormalReproR1Tests.test_policy_copy_leaves_the_official_file_unchanged",
+      "passed": true
+    },
+    {
+      "test": "tests.test_legacy_formal_repro_r1.LegacyFormalReproR1Tests.test_saved_run_matches_the_registered_contract",
+      "passed": true
+    },
+    {
+      "test": "tests.test_phase6iaa_formal_planner.Phase6IAAFormalPlannerTests.test_live_graph_uses_the_raw_edge_contract",
+      "passed": true
+    },
+    {
+      "test": "tests.test_phase6b_bit_queue.Phase6BTests.test_accounting_cases_pass",
+      "passed": true
+    }
+  ]
+}

@@ -18,14 +18,14 @@ FORMAL_MARKERS = (
 
 def _log_text() -> str:
     completed = subprocess.run(
-        ["git", "-c", "core.longpaths=true", "show", f"{FAILURE_LOG_COMMIT}:{FAILURE_LOG_PATH}"],
+        ["git", "-c", "core.longpaths=true", "cat-file", "blob", f"{FAILURE_LOG_COMMIT}:{FAILURE_LOG_PATH}"],
         cwd=ROOT,
         capture_output=True,
         check=False,
     )
     if completed.returncode != 0:
         raise RuntimeError("the existing baseline log is not available in the local git object")
-    return completed.stdout.decode("utf-8", errors="replace")
+    return completed.stdout.decode("utf-8", errors="replace").replace("\r\n", "\n").replace("\r", "\n")
 
 
 def _exception_line(block: str) -> str:

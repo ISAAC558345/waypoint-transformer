@@ -1,0 +1,7 @@
+{
+  "generator": "G1_RATE",
+  "high_level_policy": "g1_rate",
+  "historical_formal_k": 5,
+  "hold": 15,
+  "k": 6
+}
