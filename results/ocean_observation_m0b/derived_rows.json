@@ -1,0 +1,798 @@
+{
+  "source_result_commit": "12ff4ae7fdf3863ac56c3a81bd2168983453043b",
+  "environment_steps": 0,
+  "independent_experiment": false,
+  "equivalence_label": "策略等价、复用已算结果",
+  "derived_method_row_count": 8,
+  "revised_c_rows": [
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "moving",
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "mean_delay_s": 54.47726222222238,
+      "first_delivery_s": 105.19127466666669,
+      "latest_delivery_s": 1201.3172960000004,
+      "nodes_J": {
+        "uav_0": 71677.3565245829,
+        "uav_1": 75411.34838877145,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.15272370432
+      },
+      "uav_energy_J": [
+        71677.3565245829,
+        75411.34838877145
+      ],
+      "uav_within_reserve": [
+        true,
+        true
+      ],
+      "acceptable": true,
+      "system_energy_J": 147448.94563142667,
+      "source_row_index": 14,
+      "numbers_changed": true,
+      "independent_experiment": false,
+      "contract": "shared_half_duplex"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "mean_delay_s": 63.79350153846168,
+      "first_delivery_s": 84.67845415384618,
+      "latest_delivery_s": 1201.3172960000004,
+      "nodes_J": {
+        "uav_0": 82368.91897321801,
+        "uav_1": 86993.87219267445,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.17198869247999998
+      },
+      "uav_energy_J": [
+        82368.91897321801,
+        86993.87219267445
+      ],
+      "uav_within_reserve": [
+        true,
+        true
+      ],
+      "acceptable": true,
+      "system_energy_J": 169723.05114895295,
+      "source_row_index": 17,
+      "numbers_changed": true,
+      "independent_experiment": false,
+      "contract": "shared_half_duplex"
+    }
+  ],
+  "b2_rows": [
+    {
+      "geometry": "original_domain",
+      "wind": "calm",
+      "method": "b2",
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "mean_delay_s": 10.97624800000014,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uav_energy_J": [
+        16003.8796674922,
+        1800.0
+      ],
+      "uav_within_reserve": [
+        true,
+        true
+      ],
+      "acceptable": true,
+      "system_energy_J": 18164.02328383012,
+      "source_row_index": 2,
+      "numbers_changed": false,
+      "independent_experiment": false,
+      "contract": "shared_half_duplex",
+      "relation": "策略等价、复用已算结果",
+      "reused_from": "original_moving_row"
+    },
+    {
+      "geometry": "original_domain",
+      "wind": "wind_8mps_east",
+      "method": "b2",
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "mean_delay_s": 10.97624800000014,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uav_energy_J": [
+        16003.8796674922,
+        1800.0
+      ],
+      "uav_within_reserve": [
+        true,
+        true
+      ],
+      "acceptable": true,
+      "system_energy_J": 18164.02328383012,
+      "source_row_index": 5,
+      "numbers_changed": false,
+      "independent_experiment": false,
+      "contract": "shared_half_duplex",
+      "relation": "策略等价、复用已算结果",
+      "reused_from": "original_moving_row"
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "calm",
+      "method": "b2",
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "mean_delay_s": 10.97624800000014,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uav_energy_J": [
+        16003.8796674922,
+        1800.0
+      ],
+      "uav_within_reserve": [
+        true,
+        true
+      ],
+      "acceptable": true,
+      "system_energy_J": 18164.02328383012,
+      "source_row_index": 8,
+      "numbers_changed": false,
+      "independent_experiment": false,
+      "contract": "shared_half_duplex",
+      "relation": "策略等价、复用已算结果",
+      "reused_from": "original_moving_row"
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "wind_8mps_east",
+      "method": "b2",
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "mean_delay_s": 10.97624800000014,
+      "first_delivery_s": 20.782688,
+      "latest_delivery_s": 1201.1698080000003,
+      "nodes_J": {
+        "uav_0": 16003.8796674922,
+        "uav_1": 1800.0,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.05562196992
+      },
+      "uav_energy_J": [
+        16003.8796674922,
+        1800.0
+      ],
+      "uav_within_reserve": [
+        true,
+        true
+      ],
+      "acceptable": true,
+      "system_energy_J": 18164.02328383012,
+      "source_row_index": 11,
+      "numbers_changed": false,
+      "independent_experiment": false,
+      "contract": "shared_half_duplex",
+      "relation": "策略等价、复用已算结果",
+      "reused_from": "original_moving_row"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "b2",
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "mean_delay_s": 54.47726222222238,
+      "first_delivery_s": 105.19127466666669,
+      "latest_delivery_s": 1201.3172960000004,
+      "nodes_J": {
+        "uav_0": 71677.3565245829,
+        "uav_1": 75411.34838877145,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.15272370432
+      },
+      "uav_energy_J": [
+        71677.3565245829,
+        75411.34838877145
+      ],
+      "uav_within_reserve": [
+        true,
+        true
+      ],
+      "acceptable": true,
+      "system_energy_J": 147448.94563142667,
+      "source_row_index": 14,
+      "numbers_changed": true,
+      "independent_experiment": false,
+      "contract": "shared_half_duplex",
+      "relation": "策略等价、复用已算结果",
+      "reused_from": "revised_moving"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "b2",
+      "delivered_count": 8,
+      "undelivered_count": 0,
+      "mean_delay_s": 63.79350153846168,
+      "first_delivery_s": 84.67845415384618,
+      "latest_delivery_s": 1201.3172960000004,
+      "nodes_J": {
+        "uav_0": 82368.91897321801,
+        "uav_1": 86993.87219267445,
+        "buoy_0": 90.021998592,
+        "buoy_1": 90.021998592,
+        "buoy_2": 90.021998592,
+        "buoy_3": 90.021998592,
+        "shore": 0.17198869247999998
+      },
+      "uav_energy_J": [
+        82368.91897321801,
+        86993.87219267445
+      ],
+      "uav_within_reserve": [
+        true,
+        true
+      ],
+      "acceptable": true,
+      "system_energy_J": 169723.05114895295,
+      "source_row_index": 17,
+      "numbers_changed": true,
+      "independent_experiment": false,
+      "contract": "shared_half_duplex",
+      "relation": "策略等价、复用已算结果",
+      "reused_from": "revised_moving"
+    }
+  ],
+  "timing_corrections": [
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "source_row_index": 14,
+      "waited_uavs": [
+        1
+      ],
+      "wait_s": {
+        "1": 0.6636480000001939
+      },
+      "original_uav_energy_J": [
+        71677.3565245829,
+        75296.89575883215
+      ],
+      "revised_uav_energy_J": [
+        71677.3565245829,
+        75411.34838877145
+      ],
+      "original_mean_delay_s": 54.31135022222233,
+      "revised_mean_delay_s": 54.47726222222238,
+      "original_latest_delivery_s": 1200.6536480000002,
+      "revised_latest_delivery_s": 1201.3172960000004
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "source_row_index": 17,
+      "waited_uavs": [
+        1
+      ],
+      "wait_s": {
+        "1": 0.6636480000001939
+      },
+      "original_uav_energy_J": [
+        82368.91897321801,
+        86879.41956273516
+      ],
+      "revised_uav_energy_J": [
+        82368.91897321801,
+        86993.87219267445
+      ],
+      "original_mean_delay_s": 63.627589538461635,
+      "revised_mean_delay_s": 63.79350153846168,
+      "original_latest_delivery_s": 1200.6536480000002,
+      "revised_latest_delivery_s": 1201.3172960000004
+    }
+  ],
+  "identity": [
+    {
+      "geometry": "original_domain",
+      "wind": "calm",
+      "method": "fixed",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        5.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 41.179808,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1180.0,
+          "landing_s": 1221.1798080000003,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "original_domain",
+      "wind": "calm",
+      "method": "fixed",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": false,
+      "receive_xy_m": null,
+      "proposed_windows": []
+    },
+    {
+      "geometry": "original_domain",
+      "wind": "calm",
+      "method": "moving",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        5.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 41.179808,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1180.0,
+          "landing_s": 1221.1798080000003,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "original_domain",
+      "wind": "calm",
+      "method": "moving",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": false,
+      "receive_xy_m": null,
+      "proposed_windows": []
+    },
+    {
+      "geometry": "original_domain",
+      "wind": "wind_8mps_east",
+      "method": "fixed",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        5.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 41.179808,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1180.0,
+          "landing_s": 1221.1798080000003,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "original_domain",
+      "wind": "wind_8mps_east",
+      "method": "fixed",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": false,
+      "receive_xy_m": null,
+      "proposed_windows": []
+    },
+    {
+      "geometry": "original_domain",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        5.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 41.179808,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1180.0,
+          "landing_s": 1221.1798080000003,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "original_domain",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": false,
+      "receive_xy_m": null,
+      "proposed_windows": []
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "calm",
+      "method": "fixed",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        5.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 41.179808,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1180.0,
+          "landing_s": 1221.1798080000003,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "calm",
+      "method": "fixed",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": false,
+      "receive_xy_m": null,
+      "proposed_windows": []
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "calm",
+      "method": "moving",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        5.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 41.179808,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1180.0,
+          "landing_s": 1221.1798080000003,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "calm",
+      "method": "moving",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": false,
+      "receive_xy_m": null,
+      "proposed_windows": []
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "wind_8mps_east",
+      "method": "fixed",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        5.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 41.179808,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1180.0,
+          "landing_s": 1221.1798080000003,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "wind_8mps_east",
+      "method": "fixed",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": false,
+      "receive_xy_m": null,
+      "proposed_windows": []
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        5.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 41.179808,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1180.0,
+          "landing_s": 1221.1798080000003,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": false,
+      "receive_xy_m": null,
+      "proposed_windows": []
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "fixed",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        0.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 76.70304355555555,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1161.7222222222222,
+          "landing_s": 1238.425265777778,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "fixed",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": false,
+      "receive_xy_m": null,
+      "proposed_windows": []
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "moving",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        1205.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 209.99698133333337,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1095.3333333333333,
+          "landing_s": 1305.330314666667,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "moving",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": true,
+      "receive_xy_m": [
+        -1295.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 221.10809244444448,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1089.7777777777778,
+          "landing_s": 1310.8858702222224,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "fixed",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        0.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 76.83979569230769,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1161.5,
+          "landing_s": 1238.3397956923077,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "fixed",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": false,
+      "receive_xy_m": null,
+      "proposed_windows": []
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "list_index": 0,
+      "recorded_uav": 0,
+      "assigned_uav": 0,
+      "active": true,
+      "receive_xy_m": [
+        1205.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 242.81749415384618,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1115.8461538461538,
+          "landing_s": 1358.6636480000002,
+          "generation_s": 1200.0
+        }
+      ]
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "list_index": 1,
+      "recorded_uav": 0,
+      "assigned_uav": 1,
+      "active": true,
+      "receive_xy_m": [
+        -1295.0,
+        0.0
+      ],
+      "proposed_windows": [
+        {
+          "launch_s": 0.0,
+          "landing_s": 256.66364799999997,
+          "generation_s": 0.0
+        },
+        {
+          "launch_s": 1032.0,
+          "landing_s": 1288.6636480000002,
+          "generation_s": 1200.0
+        }
+      ]
+    }
+  ],
+  "energy_limit_J": 161721.44935522528
+}

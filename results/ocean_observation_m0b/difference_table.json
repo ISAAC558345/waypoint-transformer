@@ -1,0 +1,224 @@
+{
+  "rule": "B2 and C both use the shared half-duplex order",
+  "rows": [
+    {
+      "geometry": "original_domain",
+      "wind": "calm",
+      "delivered_count_difference": 0,
+      "mean_delay_difference_s": 0.0,
+      "node_energy_difference_J": {
+        "uav_0": 0.0,
+        "uav_1": 0.0,
+        "buoy_0": 0.0,
+        "buoy_1": 0.0,
+        "buoy_2": 0.0,
+        "buoy_3": 0.0,
+        "shore": 0.0
+      },
+      "same_under_shared_rule": true
+    },
+    {
+      "geometry": "original_domain",
+      "wind": "wind_8mps_east",
+      "delivered_count_difference": 0,
+      "mean_delay_difference_s": 0.0,
+      "node_energy_difference_J": {
+        "uav_0": 0.0,
+        "uav_1": 0.0,
+        "buoy_0": 0.0,
+        "buoy_1": 0.0,
+        "buoy_2": 0.0,
+        "buoy_3": 0.0,
+        "shore": 0.0
+      },
+      "same_under_shared_rule": true
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "calm",
+      "delivered_count_difference": 0,
+      "mean_delay_difference_s": 0.0,
+      "node_energy_difference_J": {
+        "uav_0": 0.0,
+        "uav_1": 0.0,
+        "buoy_0": 0.0,
+        "buoy_1": 0.0,
+        "buoy_2": 0.0,
+        "buoy_3": 0.0,
+        "shore": 0.0
+      },
+      "same_under_shared_rule": true
+    },
+    {
+      "geometry": "single_region_beyond_direct",
+      "wind": "wind_8mps_east",
+      "delivered_count_difference": 0,
+      "mean_delay_difference_s": 0.0,
+      "node_energy_difference_J": {
+        "uav_0": 0.0,
+        "uav_1": 0.0,
+        "buoy_0": 0.0,
+        "buoy_1": 0.0,
+        "buoy_2": 0.0,
+        "buoy_3": 0.0,
+        "shore": 0.0
+      },
+      "same_under_shared_rule": true
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "delivered_count_difference": 0,
+      "mean_delay_difference_s": 0.0,
+      "node_energy_difference_J": {
+        "uav_0": 0.0,
+        "uav_1": 0.0,
+        "buoy_0": 0.0,
+        "buoy_1": 0.0,
+        "buoy_2": 0.0,
+        "buoy_3": 0.0,
+        "shore": 0.0
+      },
+      "same_under_shared_rule": true
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "delivered_count_difference": 0,
+      "mean_delay_difference_s": 0.0,
+      "node_energy_difference_J": {
+        "uav_0": 0.0,
+        "uav_1": 0.0,
+        "buoy_0": 0.0,
+        "buoy_1": 0.0,
+        "buoy_2": 0.0,
+        "buoy_3": 0.0,
+        "shore": 0.0
+      },
+      "same_under_shared_rule": true
+    }
+  ],
+  "proposed_cross_uav_overlaps": [
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "command",
+      "right_phase": "command"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "ack",
+      "right_phase": "ack"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "payload",
+      "right_phase": "payload"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "payload",
+      "right_phase": "payload"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "backhaul",
+      "right_phase": "backhaul"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "calm",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "backhaul",
+      "right_phase": "backhaul"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "command",
+      "right_phase": "command"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "ack",
+      "right_phase": "ack"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "payload",
+      "right_phase": "payload"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "payload",
+      "right_phase": "payload"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "backhaul",
+      "right_phase": "backhaul"
+    },
+    {
+      "geometry": "separated_regions",
+      "wind": "wind_8mps_east",
+      "method": "moving",
+      "generation_s": 1200.0,
+      "left_uav": 0,
+      "right_uav": 1,
+      "left_phase": "backhaul",
+      "right_phase": "backhaul"
+    }
+  ],
+  "scheduled_overlaps": []
+}

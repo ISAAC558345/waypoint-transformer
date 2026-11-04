@@ -1,0 +1,32 @@
+{
+  "package": "ocean_observation_m0b",
+  "command": "py -3 -m unittest tests.test_ocean_observation_m0b -v",
+  "result": "OK",
+  "tests_run": 1,
+  "elapsed_s": 0.014,
+  "environment_steps": 0,
+  "training_updates": 0,
+  "policy_inferences": 0,
+  "checks": [
+    {
+      "name": "same_products_aircraft_points_and_windows",
+      "passed": true,
+      "note": "B2 reuses the moving product set, active UAVs, receive points, and proposed launch and landing windows."
+    },
+    {
+      "name": "assigned_identity",
+      "passed": true,
+      "note": "Separated moving records stay 0,0,0,0. Assigned identities are 0,1,0,1."
+    },
+    {
+      "name": "shared_channel_has_no_double_occupied_slot",
+      "passed": true,
+      "note": "Twelve proposed cross-UAV overlaps are separated by the shared half-duplex order. The scheduled channel has no overlap."
+    },
+    {
+      "name": "per_product_delay_and_node_energy_difference",
+      "passed": true,
+      "note": "Under the shared rule, delivery, mean delay, and per-node energy differences between B2 and C are zero."
+    }
+  ]
+}
