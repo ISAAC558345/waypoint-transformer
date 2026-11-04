@@ -1,6 +1,6 @@
 # R1A 依赖说明
 
-只读入口 `wt.legacy_formal_repro_r1a` 只使用 Python 标准库。本次检查记录 `torch_imported` 为 false。
+只读入口 `wt.legacy_formal_repro_r1a` 只使用 Python 标准库。读取已有结果不安装 torch，检查记录里的 `torch_imported` 为 false。模型运行使用下面的历史记录，不把这次文档整理当成一次新安装。
 
 原运行环境保存在 `results/legacy_formal_repro_r1/run_manifest.json` 的 `runtime` 字段，并原样复制到派生清单的 `provenance.original_runtime`：
 

@@ -1,0 +1,312 @@
+{
+  "check": "archived AB/AC summaries and episode payloads against the paper table",
+  "environment_steps": 0,
+  "training_updates": 0,
+  "policy_inferences": 0,
+  "holdout_rerun": false,
+  "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+  "source_commit_time": "2026-10-22T15:27:21+08:00",
+  "paper_table_mbit_rounded_to_3_decimals_matches": true,
+  "episode_payload_fields_match_summary_rows": true,
+  "episode_and_summary_count": 34,
+  "development_validation_is_development_set": 1,
+  "holdout_negative_scenarios_mbit": [
+    {
+      "scenario_id": 322065,
+      "delta_mbit": -8.162
+    },
+    {
+      "scenario_id": 322071,
+      "delta_mbit": -1.871
+    }
+  ],
+  "ranking_loss_summary": {
+    "path": "results/phase6if_ranking_loss/summary.json",
+    "status": "MISSING",
+    "sha256": null
+  },
+  "e19": {
+    "result_commit": "f9e9a9e007d7d84046232181fdab6f9a732a4a05",
+    "report": "docs/research/HTW_UrgencyAware_Fixed_Tag_Rule_Diagnosis_Report_CN.md",
+    "scientific_gate": "FIXED_TAG_RULE_DIAG_COMPLETE",
+    "mechanism_evidence": "NO_TAG_DECISION_EFFECT",
+    "selections_differ": 0,
+    "performance_pass": false,
+    "adopted": false,
+    "copied_into_this_branch": false
+  },
+  "files": [
+    {
+      "role": "summary",
+      "path": "results/phase6iab_planner_stability/summary.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/summary.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "eac04b05ecf0c884279db3949473184877f39aa15924c319cf8feabcec0bf12f",
+      "bytes": 139255
+    },
+    {
+      "role": "summary",
+      "path": "results/phase6iac_independent_holdout/summary.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/summary.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "5d6b599ea4f878c6377349ea91a476b0843a38bc2e49fbdedede0ecdea66cdcb",
+      "bytes": 139640
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322048.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322048.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "c9ac9afd79e63d26da8273720035a5dc23ec446d6c4ac85eed1dc68c7973a6f4",
+      "bytes": 7538
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322049.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322049.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "e57424ed5747518329a0b5ee34d06e29ab22cc95cb2ae19a85424870c32c5911",
+      "bytes": 7546
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322050.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322050.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "e4230768f979470484508d3461706d302dac3e15ba9d5d56f1a95498892b74a4",
+      "bytes": 7550
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322051.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322051.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "ca8d382d49f3c8ccc33b4d27909914eccd08c6b76c2bb538eb02fc82f5546963",
+      "bytes": 7516
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322052.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322052.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "320a45b81c68ffe5d3a6d1c1ff748d57d907ec66084fa5bb609b429d2be596b5",
+      "bytes": 7532
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322053.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322053.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "828794361c3d17a291fba4850ed0896a45b2e2492c45fc1808d399a7e44f4262",
+      "bytes": 7548
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322054.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322054.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "ff199825767b6c1c1dab9d8896ce487659c654d9503ae1d109631918a0a3c9a4",
+      "bytes": 7553
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322055.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322055.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "b91a1fdd2067d3a7c461c62e214df46a18d3a41a475aec26a35f30297e023fa2",
+      "bytes": 7541
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322056.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322056.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "66a3914dac7890d0c9e456ec65378faf7eb72354e48919e2cea6838d8b6fa810",
+      "bytes": 7538
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322057.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322057.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "72fa69729108b4f56ef454f1186eb137934612c33ecba2b55451008bfbd6a90e",
+      "bytes": 7536
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322058.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322058.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "4c19209ca3fa8b8a90ca7c23e89143de7ac7bb2242a2a06dd880460c0ef67bcb",
+      "bytes": 7527
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322059.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322059.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "b69fb54e812e1d1ad6c956232d8b661d479326202effb8e5ab92db45a3832b33",
+      "bytes": 7551
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322060.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322060.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "989b1d0f51d3fddafe30d1d4102afd8bbaed55a68198e6612c953da613391d0a",
+      "bytes": 7537
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322061.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322061.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "9db6856c8dabd001707a045cc5c5006eafcb79539ce0b156a68a310720c434db",
+      "bytes": 7552
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322062.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322062.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "f03b6c254520032c9300c8be65500b9bfceeee2ccbc142ed2915b3b9c9684b50",
+      "bytes": 7549
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iab_planner_stability/episodes/scenario_322063.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322063.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "e3e1a015ba36dbc3c79c691e2a8d00c5a44da0b9ad1e08cea7190991be222b6c",
+      "bytes": 7535
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322064.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322064.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "d055159adabef0026dc157ac641d249c39130c73e03a0b9930fe7fc7a8fe96e7",
+      "bytes": 7553
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322065.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322065.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "37b723257e5dd6303e46c672b14b73e4b7c4a60f34068929de3495ea4dfa38bd",
+      "bytes": 7550
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322066.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322066.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "2cc048a629052850f90e18b45941cc782dba3d25fdf9730348cf9035a7572f64",
+      "bytes": 7552
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322067.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322067.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "5389cebc9b1aaee7912fd8e6a6e18f7c348ffd565d8e6c0df8e34411ff6975e6",
+      "bytes": 7554
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322068.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322068.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "06f493f3315295292927481387c49b632e234ffb152db4113b1da61d0a6e776c",
+      "bytes": 7540
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322069.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322069.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "1ea970a62869aa5bd551d39244ae0ea149d460a2ad00f30a0fa0969e89e83da1",
+      "bytes": 7534
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322070.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322070.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "a765c19458f379c42d591860827a72cfe9d864580ae9853315826c1bcf9deb39",
+      "bytes": 7558
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322071.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322071.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "6b81522872422c14b6629e540a06668ba68075e4eedcc2c8c30677e8b1aa1e54",
+      "bytes": 7539
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322072.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322072.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "49d65df16ebceb0a4efadd7f1f0ce13dc7b85d102e02fe79ef9527f87e650d3c",
+      "bytes": 7542
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322073.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322073.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "713b224af2f7d8a7239977fa2bee1d4dd2fe9797ecde284203eea9c6a3a64bab",
+      "bytes": 7555
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322074.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322074.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "5c6a19754957a68c52e07014326ebe8de59f553220bcd3cf2500047c9fc2b45c",
+      "bytes": 7529
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322075.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322075.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "0a25e6d1b101a47f664211b0b9e591539d5f9fdb95efae50d92d4624f33578f3",
+      "bytes": 7539
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322076.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322076.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "4a5cb0d2186363984fd695375452355d8d71bdd56daeeef9c7c0af9fb3760bd6",
+      "bytes": 7555
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322077.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322077.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "5b09132f0ac3108f0c6cfc7c5adaf618a6e7b3c2eb08e2ed147fd57f9ef7fc02",
+      "bytes": 7542
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322078.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322078.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "e5fc1802f58e71debbb86957cb5bff32304a7af06cfde2f29d9c0d796cb009e7",
+      "bytes": 7542
+    },
+    {
+      "role": "episode",
+      "path": "results/phase6iac_independent_holdout/episodes/scenario_322079.json",
+      "archive_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322079.json",
+      "source_commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "sha256": "c0cfe8a682d072b6839e763577c42d10a6ec0d8cfa15241b0d6f36aae2d7a3df",
+      "bytes": 7542
+    }
+  ]
+}
