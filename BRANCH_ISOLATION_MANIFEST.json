@@ -1,0 +1,691 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "scope": "legacy_system_only",
+  "branch": "feature/legacy-system-maintenance",
+  "formal_base_commit": "e58e5d190109e5a0e860cb5c6a412321c0d74e31",
+  "parent_strategy": "Single parent is the formal baseline; no ocean-proposal commits are merged into this branch.",
+  "legacy_source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+  "paper_source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+  "source_files": [
+    {
+      "target_path": "docs/research/Legacy_Formal_Repro_R1A_Commands_CN.md",
+      "source_path": "docs/research/Legacy_Formal_Repro_R1A_Commands_CN.md",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "04190eba2bb7477d81104ce3afd9ca65dbe6eecb",
+      "disposition": "current_helper_or_command_updated_original_remains_at_source"
+    },
+    {
+      "target_path": "docs/research/Legacy_Formal_Repro_R1A_Dependencies_CN.md",
+      "source_path": "docs/research/Legacy_Formal_Repro_R1A_Dependencies_CN.md",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "960dafc6d46d8c16a1cf71c16ab316ec96b1d1dd",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/research/Legacy_Formal_Repro_R1A_Report_CN.md",
+      "source_path": "docs/research/Legacy_Formal_Repro_R1A_Report_CN.md",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "3fa9f479de6dce036ba376a7faa1805fdc137b3f",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/research/archive/Legacy_Formal_Repro_R1_Instructions_CN.md",
+      "source_path": "docs/research/Legacy_Formal_Repro_R1_Instructions_CN.md",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "0ac476467b11f3ee54c68c13aa1db743baeb2620",
+      "disposition": "historical_instruction_archived_exact"
+    },
+    {
+      "target_path": "docs/research/Legacy_Formal_Repro_R1_Report_CN.md",
+      "source_path": "docs/research/Legacy_Formal_Repro_R1_Report_CN.md",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "f60521a39159bbc9f438e53c3ac4bd52fca0820f",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/research/Legacy_Formal_Repro_R1_Runtime_CN.md",
+      "source_path": "docs/research/Legacy_Formal_Repro_R1_Runtime_CN.md",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "69089b624aa36da934f0f4ce9f7932e1fec7441a",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/configs/322000_g1_rate.json",
+      "source_path": "results/legacy_formal_repro_r1/configs/322000_g1_rate.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "c1c8df13a8fc37cb085ad5da15d0090cd9d20439",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/configs/322000_scheme_c.json",
+      "source_path": "results/legacy_formal_repro_r1/configs/322000_scheme_c.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "cca1833efa5e2f659fc1eea411545826fa603ed7",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/configs/322001_g1_rate.json",
+      "source_path": "results/legacy_formal_repro_r1/configs/322001_g1_rate.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "c1c8df13a8fc37cb085ad5da15d0090cd9d20439",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/configs/322001_scheme_c.json",
+      "source_path": "results/legacy_formal_repro_r1/configs/322001_scheme_c.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "cca1833efa5e2f659fc1eea411545826fa603ed7",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/episodes/322000_g1_rate.json",
+      "source_path": "results/legacy_formal_repro_r1/episodes/322000_g1_rate.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "095deffca8dd6f0245659ed583d2e6529f36599c",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
+      "source_path": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "f7485e289ed123ff320e8c408738d917d2d4da50",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/episodes/322001_g1_rate.json",
+      "source_path": "results/legacy_formal_repro_r1/episodes/322001_g1_rate.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "f1e53433958f84e641bbdaa411dafd03c1b56a9d",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/episodes/322001_scheme_c.json",
+      "source_path": "results/legacy_formal_repro_r1/episodes/322001_scheme_c.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "60dcabfef9c48fbcc9a17ec3993acb08b21da07a",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322048.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322048.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "b3e92c68b5e3d488ea2c2ae04f01122c449c7f2e",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322049.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322049.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "e1265c602aabb3c158388411f44df8c3f9aa6694",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322050.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322050.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "9f81db86fc89b8f30c433833919411d27e6afc67",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322051.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322051.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "64172b3c50960ee594b35decae1c8ded0587c0fe",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322052.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322052.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "e43754760e2391e0960c988fc80253c70699c533",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322053.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322053.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "15c9802c609cd929faddafcbfe6b888d1daf4cd0",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322054.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322054.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "65bc29e6f66d56bbbe6449e7066e76810e91e31f",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322055.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322055.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "17f7c6c9192fcd73c2feeaf733ae878471c58bf3",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322056.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322056.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "cb4d2396ed3a149bffab8705572539d29bd5e052",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322057.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322057.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "0ba49c69d5eeb29d9e7a4fd15e69fb9eaa46a5d3",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322058.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322058.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "17f152e936e2e34f43d937645b6f2b2fceb9c271",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322059.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322059.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "7f794396400d0ff08635deb1eba40f095d8fca84",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322060.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322060.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "cbb0a9e209064b1748001eb0e484d07f94865523",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322061.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322061.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "c0aa5cc98c5c8dd2725729c2c706d3ba34bf53e3",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322062.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322062.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "d790da82113bce0c047ac546d837b9f3fa354b66",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322063.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/episodes/scenario_322063.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "8ab9710c579283d7ae66f1aab91e51f8597c279e",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/summary.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iab_planner_stability/summary.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "73e01163aafb5edc771cd7f4aee6139fdd775b11",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322064.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322064.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "7ff767a50e6baccb8aae2bcef6d692900989eac7",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322065.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322065.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "afbc1e706549e7e395fe3303f1c47374a6d1ed24",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322066.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322066.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "ed35e2de1839a757c87e8532fa790e75b8ab8b08",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322067.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322067.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "7e42a7520a9c3960e2a7e07fae96c9c23260df0a",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322068.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322068.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "62949e7605be9be304f1be0d5dcacd630150db7a",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322069.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322069.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "9485f6cb5b61cb85a13bf605f6ae001da36756e5",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322070.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322070.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "13abbc9781a906301cf6e24438138e20e02e999c",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322071.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322071.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "3e19288396b82fb87b88650ab43efd1f62b853ed",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322072.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322072.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "f343d24b99ffa47d21b9b0e7b208d88c7bb788a1",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322073.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322073.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "586f46b169281d7affde3c58025dcf5e04c88b35",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322074.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322074.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "0977f82ece7ff588dec37297094bf6e4d513c605",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322075.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322075.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "99f0e7c700ab2c1ceaa6386f4ca48222b876cea3",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322076.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322076.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "22de4ab494bfc1d9ee21363c8e3ccc2489c20903",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322077.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322077.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "9978b898cb2b5f0861bdad84f5c45ff937e216b5",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322078.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322078.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "52496519bedef17c676213b56958716433d5d6e1",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322079.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/episodes/scenario_322079.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "08861756c698bc577a96923f4958f2eca1ca8b85",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/summary.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6iac_independent_holdout/summary.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "e23290d36258acc7d417a79d21c07a5502d95702",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/label_census.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/label_census.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "24c69fd1dd2fef9f28b6cac3259ea07c75a15ee2",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/runs/a/result.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/runs/a/result.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "882195ccb4f6fbd0006c141a5f2ad7c765f83ea6",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/runs/b/result.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/runs/b/result.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "f1b734ac1ee627883dcb53365e1e135fb943de09",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/runs/c/result.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/runs/c/result.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "e7be8da9c24f007ee5c30eef25a446d716fe3971",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/validation_loss_backfill.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/validation_loss_backfill.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "be641da232b0231f894e43ec40d7c120f7190ef4",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/weight_audit.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/weight_audit.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "89ae62ece49a56f3811f08aafaf9874d9f231a59",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/evidence_index.json",
+      "source_path": "results/legacy_formal_repro_r1/evidence_index.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "f547e9dbcecb0cf4de84e0a626d1485506996ce4",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/failure_index.json",
+      "source_path": "results/legacy_formal_repro_r1/failure_index.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "bb8ed3e755a5b5a7cb575be45cbc23d422819826",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/necessary_checks.json",
+      "source_path": "results/legacy_formal_repro_r1/necessary_checks.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "99b2bbee635225561cda3638783e5d1d5f0da560",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/run_manifest.json",
+      "source_path": "results/legacy_formal_repro_r1/run_manifest.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "3ac416049024d6e3c4ef12a396a95e3f774efd98",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1/steps.csv",
+      "source_path": "results/legacy_formal_repro_r1/steps.csv",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "0539c2ff83ddd8c81b3b2aeedf429ebdd2bad0fa",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1a/derived_manifest.json",
+      "source_path": "results/legacy_formal_repro_r1a/derived_manifest.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "55a8c63b854cc9a66bb52e907466411a31e27786",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1a/necessary_checks.json",
+      "source_path": "results/legacy_formal_repro_r1a/necessary_checks.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "3bea24a289711599e0df851eba3b73cf81b851bc",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "results/legacy_formal_repro_r1a/summary.json",
+      "source_path": "results/legacy_formal_repro_r1a/summary.json",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "d8429c9e8fcac71c7b63f6287cfbb94228835edf",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "src/wt/legacy_formal_repro_r1/__init__.py",
+      "source_path": "src/wt/legacy_formal_repro_r1/__init__.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "ca0234b82dea8e813a6a6582b0c19c27077ac8c6",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "src/wt/legacy_formal_repro_r1/evidence.py",
+      "source_path": "src/wt/legacy_formal_repro_r1/evidence.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "ade42a22fd53905570a79849e9cc797c941667b2",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "src/wt/legacy_formal_repro_r1/failures.py",
+      "source_path": "src/wt/legacy_formal_repro_r1/failures.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "91b85fe0f210fcb3d392e2c71c566507a893c9aa",
+      "disposition": "current_helper_or_command_updated_original_remains_at_source"
+    },
+    {
+      "target_path": "src/wt/legacy_formal_repro_r1/protocol.py",
+      "source_path": "src/wt/legacy_formal_repro_r1/protocol.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "936a36d6289b7b5e4fdf928043b878a70064d19c",
+      "disposition": "current_helper_or_command_updated_original_remains_at_source"
+    },
+    {
+      "target_path": "src/wt/legacy_formal_repro_r1/report_cn.py",
+      "source_path": "src/wt/legacy_formal_repro_r1/report_cn.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "8da081e75acc1485f45307cb0c336decfcfb2bdb",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "src/wt/legacy_formal_repro_r1/run.py",
+      "source_path": "src/wt/legacy_formal_repro_r1/run.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "a2386d945e3211ebe9fb1d7be26b1c8e602dba68",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "src/wt/legacy_formal_repro_r1/runner.py",
+      "source_path": "src/wt/legacy_formal_repro_r1/runner.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "7accdd6f204305e4cf5cc71fddc485d66949c640",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "src/wt/legacy_formal_repro_r1a/__init__.py",
+      "source_path": "src/wt/legacy_formal_repro_r1a/__init__.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "ae58b4ce90791e7049aa5f45050dfaf1a0d7df17",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "src/wt/legacy_formal_repro_r1a/export.py",
+      "source_path": "src/wt/legacy_formal_repro_r1a/export.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "20a66e98775dca0e8c5bce4bdd5f00c60c24ffd3",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "src/wt/legacy_formal_repro_r1a/inspect.py",
+      "source_path": "src/wt/legacy_formal_repro_r1a/inspect.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "ea561872cb682cfd92e1d2ce968218b74f0659aa",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "src/wt/legacy_formal_repro_r1a/read.py",
+      "source_path": "src/wt/legacy_formal_repro_r1a/read.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "cb5e4dcb49995a41901deeecfc9dabda8eff575d",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "tests/test_legacy_formal_repro_r1.py",
+      "source_path": "tests/test_legacy_formal_repro_r1.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "1e328dde5d6e707698f488e0cd0eb8d8ca44bd3b",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "tests/test_legacy_formal_repro_r1a.py",
+      "source_path": "tests/test_legacy_formal_repro_r1a.py",
+      "source_commit": "b8dd5329decb4da54c2e2c7abdf84e4091f3c1bf",
+      "source_blob_sha": "542516ef2de78c7148f1407a77a24395a05963b8",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261102.md",
+      "source_path": "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261102.md",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "7708c858911169d9d8cfbc5cb9875df4a81b9f91",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261102.pdf",
+      "source_path": "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261102.pdf",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "52812a308de74474c3e2b8ddd66e295ed5969cc5",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/README.md",
+      "source_path": "docs/paper/README.md",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "74c7757c1f91fbb2ac207f58f42e13361fcf174f",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/REVISION_NOTES_20261102_CN.md",
+      "source_path": "docs/paper/REVISION_NOTES_20261102_CN.md",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "b11d4bd8c02ffdac58651826908a5d08ee3654ec",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/evidence_20261102.json",
+      "source_path": "docs/paper/evidence_20261102.json",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "dc1f13856d8aef33bf38905b072830d8f8e20486",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/figures/README_CN.md",
+      "source_path": "docs/paper/figures/README_CN.md",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "dd3e0c54d942be45a133e2fe35ecadee4bdbcec7",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/figures/generation_prompts_20261102.json",
+      "source_path": "docs/paper/figures/generation_prompts_20261102.json",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "c637123b82f4b9c11a19022f29518b0ca0abc705",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/figures/system_dataflow.mmd",
+      "source_path": "docs/paper/figures/system_dataflow.mmd",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "e2c40f4130d81d02f2a85317c4f31ff5dda6dda7",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/figures/system_dataflow.png",
+      "source_path": "docs/paper/figures/system_dataflow.png",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "9990d6f3a451ae7297032923cd98fa4c02ed1a94",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/figures/system_environment.png",
+      "source_path": "docs/paper/figures/system_environment.png",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "b22e56bb890db19700bd29422c8f3d75579b499b",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/latex/.latexmkrc",
+      "source_path": "docs/paper/latex/.latexmkrc",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "0639f662d24698286e006510985547f7668bc546",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/latex/README_CN.md",
+      "source_path": "docs/paper/latex/README_CN.md",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "2bc7b99871f01383639592e85465fdb4c599488a",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/latex/body.tex",
+      "source_path": "docs/paper/latex/body.tex",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "4c8f82d75105d9d89b96810a1223929689ade408",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/latex/figures/formal_architecture.tex",
+      "source_path": "docs/paper/latex/figures/formal_architecture.tex",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "d0787a2a9d4098f51d540ff772a8483a9125cd6f",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/latex/figures/system_schematics.tex",
+      "source_path": "docs/paper/latex/figures/system_schematics.tex",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "f8ee6b057e8011d009c8239c6d9a5c082c5320fd",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/latex/main.tex",
+      "source_path": "docs/paper/latex/main.tex",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "297f1ce10ee0662ab3f85a6c5b1e54f046cdf205",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/latex/references.tex",
+      "source_path": "docs/paper/latex/references.tex",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "acbf41a7a209fe5e060876c6be04eb1b70e17948",
+      "disposition": "copied_exact"
+    },
+    {
+      "target_path": "docs/paper/latex/source_manifest.json",
+      "source_path": "docs/paper/latex/source_manifest.json",
+      "source_commit": "b30200cf8fd9fda0c5dece7bceb52edaa918f9bc",
+      "source_blob_sha": "21150b6acefd2f183ee9f75260915c4d7304a5a3",
+      "disposition": "copied_exact"
+    }
+  ],
+  "bundled_historical_log": {
+    "target_path": "results/legacy_formal_repro_r1/source_logs/baseline_tests.log",
+    "source_commit": "7e9e372e6ab603342f59c334301cdcc42ccc2e61",
+    "source_path": "results/ocean_observation_m0/baseline_tests.log",
+    "blob_sha": "5b358e015ad7e32778dd8c4bbdf9081c8dddc069",
+    "used_as": "existing legacy test-log evidence only; no ocean code or Git object required"
+  },
+  "source_helper_changes": [
+    "protocol.py: add a local bundled log path while preserving original source metadata",
+    "failures.py: read the bundled log without git cat-file"
+  ],
+  "targeted_check": {
+    "check": "bundled_log_without_git_or_new_proposal_directory",
+    "passed": true,
+    "signature_count": 206,
+    "counts": {
+      "historical_state": 11,
+      "missing_file": 172,
+      "assertion_failure": 23
+    },
+    "original_provenance_preserved": true,
+    "new_environment_steps": 0,
+    "full_test_suite_run": false
+  },
+  "new_proposal_branch": "research/ocean-observation-isolated",
+  "new_proposal_merge_authorized": false,
+  "new_training_updates": 0,
+  "new_environment_steps": 0
+}

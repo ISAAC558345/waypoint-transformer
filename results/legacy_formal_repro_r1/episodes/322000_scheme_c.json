@@ -1,0 +1,276 @@
+{
+  "scenario_id": 322000,
+  "policy": "scheme_c",
+  "policy_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\legacy_formal_repro_r1\\configs\\322000_scheme_c.json",
+  "policy_sha256_before": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb",
+  "policy_sha256_after": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb",
+  "process_seed": 1322000,
+  "process_seed_role": "random, numpy, and torch are reset before the planner is constructed",
+  "reset_seed": 322000,
+  "reset_seed_role": "environment reset seed inside run_active_episode",
+  "stop_time": 48,
+  "terminal_time": 48,
+  "environment_steps": 48,
+  "complete": true,
+  "payload_bits": 63785945.28984571,
+  "served_bits": 63785945.28984569,
+  "payload_matches_served": 1,
+  "step_served_bits": 63785945.28984572,
+  "step_served_matches_episode": true,
+  "decision_times": [
+    0,
+    15,
+    30,
+    45
+  ],
+  "decision_count": 4,
+  "scheme_c_calls": 4,
+  "anomaly_count": 0,
+  "anomalies": [],
+  "fault_recovery": null,
+  "seconds": 2.121112799999537,
+  "wall_seconds": 2.299302700004773,
+  "error": null,
+  "steps": [
+    {
+      "time": 0,
+      "served_bits": 1787923.8872679311,
+      "cumulative_payload_bits": 1787923.8872679311
+    },
+    {
+      "time": 1,
+      "served_bits": 501205.4206332809,
+      "cumulative_payload_bits": 2289129.307901212
+    },
+    {
+      "time": 2,
+      "served_bits": 1854161.0923741388,
+      "cumulative_payload_bits": 4143290.4002753505
+    },
+    {
+      "time": 3,
+      "served_bits": 741665.8226535169,
+      "cumulative_payload_bits": 4884956.222928867
+    },
+    {
+      "time": 4,
+      "served_bits": 1376548.236964095,
+      "cumulative_payload_bits": 6261504.459892962
+    },
+    {
+      "time": 5,
+      "served_bits": 1516577.740753565,
+      "cumulative_payload_bits": 7778082.200646527
+    },
+    {
+      "time": 6,
+      "served_bits": 1782591.2039458607,
+      "cumulative_payload_bits": 9560673.404592387
+    },
+    {
+      "time": 7,
+      "served_bits": 1578592.24484324,
+      "cumulative_payload_bits": 11139265.649435628
+    },
+    {
+      "time": 8,
+      "served_bits": 1826680.6772896403,
+      "cumulative_payload_bits": 12965946.326725267
+    },
+    {
+      "time": 9,
+      "served_bits": 1438201.3855868147,
+      "cumulative_payload_bits": 14404147.712312082
+    },
+    {
+      "time": 10,
+      "served_bits": 595852.2876879177,
+      "cumulative_payload_bits": 15000000.0
+    },
+    {
+      "time": 11,
+      "served_bits": 0.0,
+      "cumulative_payload_bits": 15000000.0
+    },
+    {
+      "time": 12,
+      "served_bits": 0.0,
+      "cumulative_payload_bits": 15000000.0
+    },
+    {
+      "time": 13,
+      "served_bits": 0.0,
+      "cumulative_payload_bits": 15000000.0
+    },
+    {
+      "time": 14,
+      "served_bits": 0.0,
+      "cumulative_payload_bits": 15000000.0
+    },
+    {
+      "time": 15,
+      "served_bits": 0.0,
+      "cumulative_payload_bits": 15000000.0
+    },
+    {
+      "time": 16,
+      "served_bits": 0.0,
+      "cumulative_payload_bits": 15000000.0
+    },
+    {
+      "time": 17,
+      "served_bits": 0.0,
+      "cumulative_payload_bits": 15000000.0
+    },
+    {
+      "time": 18,
+      "served_bits": 1676430.0939960259,
+      "cumulative_payload_bits": 16676430.093996026
+    },
+    {
+      "time": 19,
+      "served_bits": 909779.5685687123,
+      "cumulative_payload_bits": 17586209.66256474
+    },
+    {
+      "time": 20,
+      "served_bits": 1087317.611226509,
+      "cumulative_payload_bits": 18673527.27379125
+    },
+    {
+      "time": 21,
+      "served_bits": 1070185.9335592762,
+      "cumulative_payload_bits": 19743713.207350526
+    },
+    {
+      "time": 22,
+      "served_bits": 1302833.8482324423,
+      "cumulative_payload_bits": 21046547.055582967
+    },
+    {
+      "time": 23,
+      "served_bits": 1471452.1370513742,
+      "cumulative_payload_bits": 22517999.192634337
+    },
+    {
+      "time": 24,
+      "served_bits": 1367378.2947620123,
+      "cumulative_payload_bits": 23885377.487396356
+    },
+    {
+      "time": 25,
+      "served_bits": 1891407.863170726,
+      "cumulative_payload_bits": 25776785.35056708
+    },
+    {
+      "time": 26,
+      "served_bits": 1226937.7543640002,
+      "cumulative_payload_bits": 27003723.10493108
+    },
+    {
+      "time": 27,
+      "served_bits": 2410903.0616728296,
+      "cumulative_payload_bits": 29414626.166603908
+    },
+    {
+      "time": 28,
+      "served_bits": 1267076.026564971,
+      "cumulative_payload_bits": 30681702.19316888
+    },
+    {
+      "time": 29,
+      "served_bits": 3062598.2098036464,
+      "cumulative_payload_bits": 33744300.40297253
+    },
+    {
+      "time": 30,
+      "served_bits": 1780503.2761240192,
+      "cumulative_payload_bits": 35524803.67909655
+    },
+    {
+      "time": 31,
+      "served_bits": 1838033.7561821176,
+      "cumulative_payload_bits": 37362837.43527866
+    },
+    {
+      "time": 32,
+      "served_bits": 1620216.3438468417,
+      "cumulative_payload_bits": 38983053.779125504
+    },
+    {
+      "time": 33,
+      "served_bits": 1664937.2159228327,
+      "cumulative_payload_bits": 40647990.99504833
+    },
+    {
+      "time": 34,
+      "served_bits": 1960563.1445400068,
+      "cumulative_payload_bits": 42608554.13958835
+    },
+    {
+      "time": 35,
+      "served_bits": 1255192.3894548737,
+      "cumulative_payload_bits": 43863746.52904321
+    },
+    {
+      "time": 36,
+      "served_bits": 2144819.1069185995,
+      "cumulative_payload_bits": 46008565.635961816
+    },
+    {
+      "time": 37,
+      "served_bits": 916432.8364232435,
+      "cumulative_payload_bits": 46924998.47238506
+    },
+    {
+      "time": 38,
+      "served_bits": 2196267.745953081,
+      "cumulative_payload_bits": 49121266.21833815
+    },
+    {
+      "time": 39,
+      "served_bits": 728991.2376173451,
+      "cumulative_payload_bits": 49850257.45595549
+    },
+    {
+      "time": 40,
+      "served_bits": 2143571.0075086,
+      "cumulative_payload_bits": 51993828.46346408
+    },
+    {
+      "time": 41,
+      "served_bits": 925686.63630064,
+      "cumulative_payload_bits": 52919515.09976473
+    },
+    {
+      "time": 42,
+      "served_bits": 1479264.2315264556,
+      "cumulative_payload_bits": 54398779.33129118
+    },
+    {
+      "time": 43,
+      "served_bits": 1316287.992557927,
+      "cumulative_payload_bits": 55715067.32384911
+    },
+    {
+      "time": 44,
+      "served_bits": 1648876.5726897477,
+      "cumulative_payload_bits": 57363943.89653885
+    },
+    {
+      "time": 45,
+      "served_bits": 4028150.862171331,
+      "cumulative_payload_bits": 61392094.75871018
+    },
+    {
+      "time": 46,
+      "served_bits": 970038.1394768307,
+      "cumulative_payload_bits": 62362132.89818701
+    },
+    {
+      "time": 47,
+      "served_bits": 1423812.3916586968,
+      "cumulative_payload_bits": 63785945.28984571
+    }
+  ]
+}

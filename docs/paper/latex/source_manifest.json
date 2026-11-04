@@ -1,0 +1,18 @@
+{
+  "source_manuscript_sha256": "44364b9366e46b45b28693e5bebea6a06e318b78ccb299cca369df9a973f2d3d",
+  "source_repository_revision": "7fdaa0323dec71a7b7b7c99fc03cfaa4ee5753f8",
+  "source_blocks": 109,
+  "tables": 4,
+  "native_architecture_figure": 1,
+  "bibitems": 16,
+  "tex_files_checked": [
+    "body.tex",
+    "main.tex",
+    "references.tex",
+    "figures/formal_architecture.tex",
+    "figures/system_schematics.tex"
+  ],
+  "brace_and_environment_check": "pass",
+  "actual_latex_compile": "not_run_compiler_unavailable",
+  "generated_pngs_are_schematics_not_measurements": true
+}

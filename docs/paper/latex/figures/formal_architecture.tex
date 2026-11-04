@@ -1,0 +1,20 @@
+% Editable vector diagram of the formal execution path.
+\begin{tikzpicture}[
+  node distance=2mm,
+  process/.style={draw,rounded corners=1pt,align=center,font=\footnotesize,
+    text width=.88\columnwidth,inner sep=4pt},
+  flow/.style={-{Latex[length=1.5mm]},thin}]
+\node[process] (state) {Current state: positions, queues, links};
+\node[process,below=of state] (pool) {Legal G1\_RATE pool ($k=6$ per UAV)};
+\node[process,below=of pool] (hgnn) {Scheme C heterogeneous graph scorer};
+\node[process,below=of hgnn] (option) {TaskOption: assignment, hold $=15$};
+\node[process,below=of option] (actor) {Frozen residual MAPPO-V2 motion};
+\node[process,below=of actor] (safety) {Action clipping and SafetyProjector};
+\node[process,below=of safety] (step) {Environment step: service and payload};
+\draw[flow] (state)--(pool);
+\draw[flow] (pool)--(hgnn);
+\draw[flow] (hgnn)--(option);
+\draw[flow] (option)--(actor);
+\draw[flow] (actor)--(safety);
+\draw[flow] (safety)--(step);
+\end{tikzpicture}

@@ -1,0 +1,13 @@
+{
+  "check": "bundled_log_without_git_or_new_proposal_directory",
+  "passed": true,
+  "signature_count": 206,
+  "counts": {
+    "historical_state": 11,
+    "missing_file": 172,
+    "assertion_failure": 23
+  },
+  "original_provenance_preserved": true,
+  "new_environment_steps": 0,
+  "full_test_suite_run": false
+}

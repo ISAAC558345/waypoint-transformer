@@ -1,0 +1,86 @@
+{
+  "source_environment_steps": 192,
+  "source_steps_are_a_new_run": false,
+  "reader_environment_steps": 0,
+  "arms": [
+    {
+      "scenario_id": 322000,
+      "policy": "scheme_c",
+      "config_relative": "configs/322000_scheme_c.json",
+      "original_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\legacy_formal_repro_r1\\configs\\322000_scheme_c.json",
+      "config_sha256": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb",
+      "payload_bits": 63785945.28984571,
+      "environment_steps": 48,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ]
+    },
+    {
+      "scenario_id": 322000,
+      "policy": "g1_rate",
+      "config_relative": "configs/322000_g1_rate.json",
+      "original_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\legacy_formal_repro_r1\\configs\\322000_g1_rate.json",
+      "config_sha256": "daec1f7570f9dfd01e9c9bc13141d5a8a6ba6d6363401bcdd095a44c11afc0dc",
+      "payload_bits": 64731141.622913174,
+      "environment_steps": 48,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ]
+    },
+    {
+      "scenario_id": 322001,
+      "policy": "scheme_c",
+      "config_relative": "configs/322001_scheme_c.json",
+      "original_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\legacy_formal_repro_r1\\configs\\322001_scheme_c.json",
+      "config_sha256": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb",
+      "payload_bits": 68952073.58225587,
+      "environment_steps": 48,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ]
+    },
+    {
+      "scenario_id": 322001,
+      "policy": "g1_rate",
+      "config_relative": "configs/322001_g1_rate.json",
+      "original_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\legacy_formal_repro_r1\\configs\\322001_g1_rate.json",
+      "config_sha256": "daec1f7570f9dfd01e9c9bc13141d5a8a6ba6d6363401bcdd095a44c11afc0dc",
+      "payload_bits": 63445121.872805715,
+      "environment_steps": 48,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "scenario_id": 322000,
+      "scheme_c_payload_bits": 63785945.28984571,
+      "g1_rate_payload_bits": 64731141.622913174,
+      "payload_difference_bits": -945196.3330674618,
+      "recomputed_payload_difference_bits": -945196.3330674618
+    },
+    {
+      "scenario_id": 322001,
+      "scheme_c_payload_bits": 68952073.58225587,
+      "g1_rate_payload_bits": 63445121.872805715,
+      "payload_difference_bits": 5506951.7094501555,
+      "recomputed_payload_difference_bits": 5506951.7094501555
+    }
+  ],
+  "missing_original_summaries": [
+    "results/phase6if_ranking_loss/summary.json"
+  ]
+}

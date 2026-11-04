@@ -1,0 +1,226 @@
+{
+  "revision_date": "2026-11-02",
+  "source_revision": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+  "scope": "Manuscript-only update; no experiments, training, holdout access, model replacement, or formal-code change.",
+  "historical_formal_statistics": {
+    "status": "transcribed_not_recomputed",
+    "sources": [
+      "original manuscript PDF",
+      "docs/SYSTEM_OVERVIEW_CN.md"
+    ],
+    "mean_gain_bits": {
+      "validation": 2644990.809,
+      "holdout": 3502191.527
+    },
+    "ci95_bits": {
+      "validation": [
+        180100.077,
+        5016616.161
+      ],
+      "holdout": [
+        1270476.687,
+        5395098.501
+      ]
+    },
+    "raw_artifact_gaps": [
+      "results/phase6iab_planner_stability/summary.json",
+      "results/phase6iac_independent_holdout/summary.json",
+      "results/phase6if_ranking_loss/summary.json"
+    ],
+    "unrelated_tables_not_used": [
+      "paper_assets/tables/PAPER_TABLE_MAIN_RESULTS.csv",
+      "paper_assets/tables/PAPER_TABLE_PAIRWISE_STATS.csv"
+    ]
+  },
+  "e18": {
+    "status": "raw_csv_recomputed_for_this_revision",
+    "result_commit": "c6aac5b71f23a33653e21db1f2d558f212167be3",
+    "implementation_commit": "f79ad10139eacbb298b4a306a2b917057b32ef6b",
+    "selection_commit": "83fe1476f0dd109e49425db67dfa50ead5638445",
+    "unit": "scenario -> snapshot -> candidate; candidate rows are dependent",
+    "scope": "TRAIN 321000-321007, t=0,15,30; historical G1_RATE k=5; not Scheme C",
+    "performance_pass": false,
+    "raw_recomputation": {
+      "rows": 120,
+      "alternatives": 96,
+      "screens": {
+        "s0": 11,
+        "s1": 11,
+        "s2": 5
+      },
+      "s0_scenarios": [
+        321001,
+        321002,
+        321004,
+        321005,
+        321006
+      ],
+      "s2_scenarios": [
+        321002,
+        321006
+      ],
+      "s0_times": [
+        15
+      ],
+      "s0_payload_range_bits": [
+        0,
+        9000000
+      ],
+      "s2_payload_range_bits": [
+        4159947.2448251694,
+        9000000
+      ]
+    }
+  },
+  "e19": {
+    "status": "preregistered_only_no_execution_result",
+    "instruction_commit": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+    "planned_scenarios": [
+      321008,
+      321023
+    ],
+    "planned_time": 15,
+    "maximum_steps": 1728
+  },
+  "validation": {
+    "manuscript_only": true,
+    "simulator_steps": 0,
+    "training_updates": 0,
+    "historical_repository_tests_rerun": false,
+    "reason": "No executable repository code changed; manuscript checked through provenance, raw-table recomputation, PDF text checks and page rendering.",
+    "last_recorded_e18_test_state": {
+      "related_pass": true,
+      "baseline_failure_signatures": 206,
+      "new_failure_signatures": 0,
+      "full_suite_green": false
+    },
+    "pdf": {
+      "pages": 6,
+      "rendered_pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "layout_issues_remaining": 0,
+      "sha256": "258f98464b59d4ccfbcd7c89505e6e7fb67d27f56201bbc3685c71c4b57241d3"
+    }
+  },
+  "sources": [
+    {
+      "path": "docs/SYSTEM_OVERVIEW_CN.md",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "57950377d47a091bebddf566ff62497ba64b182d",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/docs/SYSTEM_OVERVIEW_CN.md"
+    },
+    {
+      "path": "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV.pdf",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "92ba3fe88ad8a6e99dbf45b655268aa300f802f9",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV.pdf"
+    },
+    {
+      "path": "docs/research/HTW_UrgencyAware_Reward_Attribution_Report_CN.md",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "0018dc595469b6ddb4d5bfabd6d4b89dbe2ae902",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/docs/research/HTW_UrgencyAware_Reward_Attribution_Report_CN.md"
+    },
+    {
+      "path": "docs/research/HTW_UrgencyAware_Direct_Tag_Reward_Experiment_Report_CN.md",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "998fe75e4596199f86df613552767ff96d25680f",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/docs/research/HTW_UrgencyAware_Direct_Tag_Reward_Experiment_Report_CN.md"
+    },
+    {
+      "path": "docs/research/HTW_UrgencyAware_Queue_Lookahead_Experiment_Report_CN.md",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "974e240e820dba3cd17afd4d219789236756644c",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/docs/research/HTW_UrgencyAware_Queue_Lookahead_Experiment_Report_CN.md"
+    },
+    {
+      "path": "docs/research/HTW_UrgencyAware_Clip_Group_Benchmark_Report_CN.md",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "328ea6ab8c90130519c04a4a68fb13a24c9e5fe9",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/docs/research/HTW_UrgencyAware_Clip_Group_Benchmark_Report_CN.md"
+    },
+    {
+      "path": "docs/research/HTW_UrgencyAware_Assignment_Coverage_Diagnosis_Report_CN.md",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "2a1593d84f3701748f6d47d30d2ce27cc92c22ca",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/docs/research/HTW_UrgencyAware_Assignment_Coverage_Diagnosis_Report_CN.md"
+    },
+    {
+      "path": "docs/research/HTW_UrgencyAware_Fixed_Tag_Rule_Diagnosis_Instructions_CN.md",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "9b557b32051be324f3e194e8261ac79d4b9816f4",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/docs/research/HTW_UrgencyAware_Fixed_Tag_Rule_Diagnosis_Instructions_CN.md"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/summary.json",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "41b6208243ee4caa5497c23b9e4e93954925b294",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/results/phase6i_priority_tag_assignment_coverage/summary.json"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/candidate_rows.csv",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "706bb935e8b49e61f397b4ed4f9626a0afa89ed4",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/results/phase6i_priority_tag_assignment_coverage/candidate_rows.csv"
+    },
+    {
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/protocol.py",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "a8c02610b3332415f5900e2a5179f1564313f2d6",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/src/wt/benchmark_v2/phase6ib_highlevel_dataset/protocol.py"
+    },
+    {
+      "path": "results/phase6i_priority_tag_assignment_coverage/runtime_manifest.json",
+      "ref": "26e35e9abcf2d79a7e5d3b932387af8d32d88431",
+      "blob_sha": "4a4ae1366ae0796db9b4a43d3ba71bbdfe571448",
+      "url": "https://github.com/ISAAC558345/waypoint-transformer/blob/26e35e9abcf2d79a7e5d3b932387af8d32d88431/results/phase6i_priority_tag_assignment_coverage/runtime_manifest.json"
+    }
+  ],
+  "external_references": [
+    {
+      "label": "[1]",
+      "text": "S. Xu, X. Zhang, C. Li, D. Wang, and L. Yang, \"Deep reinforcement learning approach for joint trajectory design in multi-UAV IoT networks,\" IEEE Trans. Veh. Technol., vol. 71, no. 3, pp. 3389-3394, 2022.",
+      "url": "https://ieeexplore.ieee.org/document/9689948/"
+    },
+    {
+      "label": "[2]",
+      "text": "X. Wang and M. C. Gursoy, \"Learning-based UAV trajectory optimization with collision avoidance and connectivity constraints,\" IEEE Trans. Wireless Commun., vol. 21, no. 6, pp. 4350-4363, 2022.",
+      "url": "https://arxiv.org/abs/2104.06256"
+    },
+    {
+      "label": "[3]",
+      "text": "C. Yu et al., \"The surprising effectiveness of PPO in cooperative, multi-agent games,\" Advances in Neural Information Processing Systems, vol. 35, 2022.",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/9c1535a02f0ce079433344e14d910597-Abstract.html"
+    },
+    {
+      "label": "[4]",
+      "text": "A. Badrinath, Y. Flet-Berliac, A. Nie, and E. Brunskill, \"Waypoint Transformer: Reinforcement learning via supervised learning with intermediate targets,\" Advances in Neural Information Processing Systems, vol. 36, 2023.",
+      "url": "https://papers.nips.cc/paper_files/paper/2023/hash/f58c24798220ba724fe05c0fa786227d-Abstract-Conference.html"
+    },
+    {
+      "label": "[5]",
+      "text": "B. Li et al., \"Queue-aware graph reinforcement learning for UAV-ISAC-assisted maritime data collection,\" arXiv:2607.00324v2, 2026.",
+      "url": "https://arxiv.org/abs/2607.00324v2"
+    },
+    {
+      "label": "[6]",
+      "text": "Z. Hu, Y. Dong, K. Wang, and Y. Sun, \"Heterogeneous graph transformer,\" Proc. The Web Conference, pp. 2704-2710, 2020.",
+      "url": "https://arxiv.org/abs/2003.01332"
+    },
+    {
+      "label": "[7]",
+      "text": "Z. Cao, T. Qin, T.-Y. Liu, M.-F. Tsai, and H. Li, \"Learning to rank: From pairwise approach to listwise approach,\" Proc. ICML, pp. 129-136, 2007.",
+      "url": "https://www.cs.nccu.edu.tw/~mftsai/papers/icml2007_tsai.pdf"
+    }
+  ],
+  "source_artifact_hashes": {
+    "original_pdf_sha256": "8b451fd7e35bdebdfac535129c4353023a586729893861a6b9c01245704c2a64",
+    "e18_candidate_csv_sha256": "56437bca2f6a8d6bff9719bb9b36f98e8cb448d1481c8c4db587541bcf05f7fe"
+  }
+}

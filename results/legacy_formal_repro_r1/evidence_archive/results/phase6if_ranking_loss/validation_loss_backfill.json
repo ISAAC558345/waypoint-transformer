@@ -1,0 +1,38 @@
+{
+  "a_epoch_001": {
+    "validation_loss": 0.046897947671823204,
+    "payload": 19027409.4423122,
+    "top1": 0.6666666666666666,
+    "peak_rss_bytes": 873099264
+  },
+  "c_epoch_001": {
+    "validation_loss": 7.448080003261566,
+    "payload": 19240091.24202323,
+    "top1": 0.6666666666666666,
+    "peak_rss_bytes": 873099264
+  },
+  "c_epoch_002": {
+    "validation_loss": 7.442582875490189,
+    "payload": 19162423.037996728,
+    "top1": 0.625,
+    "peak_rss_bytes": 873099264
+  },
+  "c_epoch_003": {
+    "validation_loss": 7.438973645369212,
+    "payload": 19085561.611963775,
+    "top1": 0.5625,
+    "peak_rss_bytes": 873099264
+  },
+  "c_epoch_004": {
+    "validation_loss": 7.43650354941686,
+    "payload": 18939693.257843956,
+    "top1": 0.5416666666666666,
+    "peak_rss_bytes": 873099264
+  },
+  "c_epoch_005": {
+    "validation_loss": 7.435225655635198,
+    "payload": 19034247.124269236,
+    "top1": 0.5416666666666666,
+    "peak_rss_bytes": 873099264
+  }
+}
