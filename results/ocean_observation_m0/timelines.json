@@ -1,0 +1,95 @@
+{
+  "normal_then_duplicate": [
+    {
+      "t_s": 0.0,
+      "actor": "浮标",
+      "fact": "窗口结束，产品完成编码",
+      "map_updated": false
+    },
+    {
+      "t_s": 30.0,
+      "actor": "无人机",
+      "fact": "完整包进入机载缓存，岸站仍是先验",
+      "map_updated": false
+    },
+    {
+      "t_s": 40.0,
+      "actor": "岸站",
+      "fact": "完整包校验通过并融合",
+      "map_updated": true
+    },
+    {
+      "t_s": 50.0,
+      "actor": "岸站",
+      "fact": "同一产品再次到达，不重复融合",
+      "map_updated": false
+    }
+  ],
+  "backhaul_outage": [
+    {
+      "t_s": 0.0,
+      "actor": "浮标",
+      "fact": "产品已编码",
+      "map_updated": false
+    },
+    {
+      "t_s": 20.0,
+      "actor": "无人机",
+      "fact": "包留在机载缓存",
+      "map_updated": false
+    },
+    {
+      "t_s": 20.0,
+      "actor": "岸站",
+      "fact": "回传窗口关闭，地图保持先验",
+      "map_updated": false
+    },
+    {
+      "t_s": 560.0,
+      "actor": "无人机",
+      "fact": "仍执行最后一份已激活任务：返航并交付",
+      "map_updated": false
+    },
+    {
+      "t_s": 560.0,
+      "actor": "岸站",
+      "fact": "断链期间无人机状态变旧，海况尚未融合",
+      "map_updated": false
+    }
+  ],
+  "lost_command": [
+    {
+      "t_s": 0.0,
+      "actor": "岸站",
+      "fact": "命令版本已发出",
+      "shore": "pending",
+      "map_updated": false
+    },
+    {
+      "t_s": 5.0,
+      "actor": "无人机",
+      "fact": "没有收到命令，保持上一份已激活任务",
+      "assumed_unexecuted": false
+    },
+    {
+      "t_s": 5.0,
+      "actor": "岸站",
+      "fact": "没有确认；状态保持待确认，不能假定任务没有执行",
+      "shore": "pending"
+    }
+  ],
+  "unacked_command": [
+    {
+      "t_s": 0.0,
+      "actor": "无人机",
+      "fact": "命令已送达并激活",
+      "assumed_unexecuted": false
+    },
+    {
+      "t_s": 1.0,
+      "actor": "岸站",
+      "fact": "确认丢失，状态保持待确认，不把任务当成未执行",
+      "shore_knows_execution": false
+    }
+  ]
+}

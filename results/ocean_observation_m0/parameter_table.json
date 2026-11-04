@@ -1,0 +1,518 @@
+[
+  {
+    "name": "area_width",
+    "value": 2000.0,
+    "unit": "m",
+    "source_class": "synthetic_assumption",
+    "source": "M0 contract starting square",
+    "applicability": "flat task square",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "area_height",
+    "value": 2000.0,
+    "unit": "m",
+    "source_class": "synthetic_assumption",
+    "source": "M0 contract starting square",
+    "applicability": "flat task square",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "flight_altitude",
+    "value": 100.0,
+    "unit": "m",
+    "source_class": "synthetic_assumption",
+    "source": "M0 contract",
+    "applicability": "level cruise; no climb model",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "motion_step",
+    "value": 1.0,
+    "unit": "s",
+    "source_class": "synthetic_assumption",
+    "source": "M0 contract",
+    "applicability": "analytical legs are not integrated at this step",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "planning_interval",
+    "value": 30.0,
+    "unit": "s",
+    "source_class": "synthetic_assumption",
+    "source": "M0 contract",
+    "applicability": "joint-regime cycle",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "observation_window",
+    "value": 1200.0,
+    "unit": "s",
+    "source_class": "synthetic_assumption",
+    "source": "aligned with the NDBC 20-minute record length; not an NDBC download",
+    "applicability": "one Hs mean per window",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "evaluation_horizon",
+    "value": 1800.0,
+    "unit": "s",
+    "source_class": "synthetic_assumption",
+    "source": "M0 contract",
+    "applicability": "two product times",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "shore_xy",
+    "value": [
+      0.0,
+      0.0
+    ],
+    "unit": "m",
+    "source_class": "synthetic_assumption",
+    "source": "registered before the case run",
+    "applicability": "corner antenna",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "shore_antenna_height",
+    "value": 10.0,
+    "unit": "m",
+    "source_class": "synthetic_assumption",
+    "source": "no surveyed mast",
+    "applicability": "link geometry only",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "depot_xy",
+    "value": [
+      5.0,
+      0.0
+    ],
+    "unit": "m",
+    "source_class": "synthetic_assumption",
+    "source": "pad offset so the landed range is not zero",
+    "applicability": "ground state",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "landed_antenna_height",
+    "value": 1.5,
+    "unit": "m",
+    "source_class": "synthetic_assumption",
+    "source": "no airframe drawing",
+    "applicability": "ground backhaul",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "buoy_antenna_height",
+    "value": 1.0,
+    "unit": "m",
+    "source_class": "synthetic_assumption",
+    "source": "no buoy drawing",
+    "applicability": "link geometry only",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "weight",
+    "value": 20.0,
+    "unit": "N",
+    "source_class": "literature",
+    "source": "Zeng/Xu/Zhang numerical example paired with arXiv:1804.02238 eq. (6)",
+    "applicability": "steady axial rotary-wing flight at sea-level density",
+    "confidence": "equation high; table not re-read from the PDF",
+    "missing": false
+  },
+  {
+    "name": "rotor_radius",
+    "value": 0.4,
+    "unit": "m",
+    "source_class": "literature",
+    "source": "same numerical example",
+    "applicability": "same",
+    "confidence": "equation high; table not re-read from the PDF",
+    "missing": false
+  },
+  {
+    "name": "rotor_omega",
+    "value": 300.0,
+    "unit": "rad/s",
+    "source_class": "literature",
+    "source": "same numerical example",
+    "applicability": "same",
+    "confidence": "equation high; table not re-read from the PDF",
+    "missing": false
+  },
+  {
+    "name": "solidity",
+    "value": 0.05,
+    "unit": "1",
+    "source_class": "literature",
+    "source": "same numerical example",
+    "applicability": "same",
+    "confidence": "equation high; table not re-read from the PDF",
+    "missing": false
+  },
+  {
+    "name": "profile_drag",
+    "value": 0.012,
+    "unit": "1",
+    "source_class": "literature",
+    "source": "same numerical example",
+    "applicability": "same",
+    "confidence": "equation high; table not re-read from the PDF",
+    "missing": false
+  },
+  {
+    "name": "parasite_d0",
+    "value": 0.6,
+    "unit": "1",
+    "source_class": "literature",
+    "source": "same numerical example",
+    "applicability": "same",
+    "confidence": "equation high; table not re-read from the PDF",
+    "missing": false
+  },
+  {
+    "name": "induced_k",
+    "value": 0.1,
+    "unit": "1",
+    "source_class": "literature",
+    "source": "same numerical example",
+    "applicability": "same",
+    "confidence": "equation high; table not re-read from the PDF",
+    "missing": false
+  },
+  {
+    "name": "induced_velocity",
+    "value": 4.03,
+    "unit": "m/s",
+    "source_class": "literature",
+    "source": "same numerical example",
+    "applicability": "same",
+    "confidence": "equation high; table not re-read from the PDF",
+    "missing": false
+  },
+  {
+    "name": "air_density",
+    "value": 1.225,
+    "unit": "kg/m^3",
+    "source_class": "literature",
+    "source": "same numerical example",
+    "applicability": "not a measured marine profile",
+    "confidence": "equation high; table not re-read from the PDF",
+    "missing": false
+  },
+  {
+    "name": "P0",
+    "value": 79.80147994942652,
+    "unit": "W",
+    "source_class": "literature",
+    "source": "computed from the primitives; not copied from a rounded watt claim",
+    "applicability": "hover and axial flight",
+    "confidence": "derived",
+    "missing": false
+  },
+  {
+    "name": "Pi",
+    "value": 88.65836312893315,
+    "unit": "W",
+    "source_class": "literature",
+    "source": "computed from the primitives",
+    "applicability": "hover and axial flight",
+    "confidence": "derived",
+    "missing": false
+  },
+  {
+    "name": "cruise_airspeed",
+    "value": 18.0,
+    "unit": "m/s",
+    "source_class": "literature",
+    "source": "argmin of zero-wind propulsion joule per metre on 1..20 m/s",
+    "applicability": "steady legs; chosen before case outcomes",
+    "confidence": "derived",
+    "missing": false
+  },
+  {
+    "name": "max_airspeed",
+    "value": 20.0,
+    "unit": "m/s",
+    "source_class": "synthetic_assumption",
+    "source": "operating cap inside the model, far below tip speed",
+    "applicability": "grid upper bound",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "acceleration",
+    "value": 2.0,
+    "unit": "m/s^2",
+    "source_class": "synthetic_assumption",
+    "source": "no airframe measurement",
+    "applicability": "one accel and one decel per leg at hover power",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "takeoff_hover",
+    "value": 20.0,
+    "unit": "s",
+    "source_class": "synthetic_assumption",
+    "source": "momentum model has no climb",
+    "applicability": "once per sortie",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "landing_hover",
+    "value": 20.0,
+    "unit": "s",
+    "source_class": "synthetic_assumption",
+    "source": "momentum model has no ground effect",
+    "applicability": "once per sortie",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "usable_energy",
+    "value": 202151.81169403158,
+    "unit": "J",
+    "source_class": "synthetic_assumption",
+    "source": "1200 s times computed hover power; not a measured pack",
+    "applicability": "no recharge",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "reserve_fraction",
+    "value": 0.2,
+    "unit": "1",
+    "source_class": "synthetic_assumption",
+    "source": "energy after the planned returns",
+    "applicability": "guard",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "compute_power",
+    "value": 5.0,
+    "unit": "W",
+    "source_class": "synthetic_assumption",
+    "source": "no flight-computer measurement",
+    "applicability": "airborne time only",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "ground_idle_power",
+    "value": 1.0,
+    "unit": "W",
+    "source_class": "synthetic_assumption",
+    "source": "motors off, avionics on; includes listen-mode radio",
+    "applicability": "ground waits",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "buoy_idle_power",
+    "value": 0.05,
+    "unit": "W",
+    "source_class": "synthetic_assumption",
+    "source": "no buoy power measurement",
+    "applicability": "direct and upload waits",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "radio_hz",
+    "value": 868000000.0,
+    "unit": "Hz",
+    "source_class": "device_specification",
+    "source": "EU868 sits in SX1276 Band 1",
+    "applicability": "all three links",
+    "confidence": "datasheet band",
+    "missing": false
+  },
+  {
+    "name": "tx_power",
+    "value": 13.0,
+    "unit": "dBm",
+    "source_class": "device_specification",
+    "source": "SX1276 IDDT_L condition on the RFO pin",
+    "applicability": "all transmitters",
+    "confidence": "datasheet typical",
+    "missing": false
+  },
+  {
+    "name": "tx_current",
+    "value": 0.028,
+    "unit": "A",
+    "source_class": "device_specification",
+    "source": "SX1276 IDDT_L typical at +13 dBm",
+    "applicability": "TX joules = 3.3 V * current * airtime",
+    "confidence": "datasheet typical",
+    "missing": false
+  },
+  {
+    "name": "rx_current",
+    "value": 0.0103,
+    "unit": "A",
+    "source_class": "device_specification",
+    "source": "SX1276 IDDR_L Band 1 125 kHz, LnaBoost off",
+    "applicability": "lower bound versus the LnaBoost sensitivity row",
+    "confidence": "datasheet typical",
+    "missing": false
+  },
+  {
+    "name": "sensitivity",
+    "value": -123.0,
+    "unit": "dBm",
+    "source_class": "device_specification",
+    "source": "SX1276 RFS_L125_HF SF7 typical",
+    "applicability": "threshold plus one implementation margin; no second PER",
+    "confidence": "datasheet typical",
+    "missing": false
+  },
+  {
+    "name": "implementation_margin",
+    "value": 6.0,
+    "unit": "dB",
+    "source_class": "synthetic_assumption",
+    "source": "cables and polarization; not a fading draw and not a second rate cut",
+    "applicability": "all links",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "buoy_gain",
+    "value": 2.0,
+    "unit": "dBi",
+    "source_class": "synthetic_assumption",
+    "source": "no antenna measurement",
+    "applicability": "all buoy links",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "uav_gain",
+    "value": 2.0,
+    "unit": "dBi",
+    "source_class": "synthetic_assumption",
+    "source": "no antenna measurement",
+    "applicability": "all UAV links",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "shore_gain",
+    "value": 6.0,
+    "unit": "dBi",
+    "source_class": "synthetic_assumption",
+    "source": "no antenna measurement",
+    "applicability": "shore links",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "mac_guard",
+    "value": 0.01,
+    "unit": "s",
+    "source_class": "synthetic_assumption",
+    "source": "fixed guard per slot",
+    "applicability": "time only; not a path-loss term",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "backhaul_period",
+    "value": 600.0,
+    "unit": "s",
+    "source_class": "synthetic_assumption",
+    "source": "operational TDMA, not a measured outage and not a bandwidth change",
+    "applicability": "intermittent regime",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "backhaul_open",
+    "value": 60.0,
+    "unit": "s",
+    "source_class": "synthetic_assumption",
+    "source": "must be checked against the epoch length",
+    "applicability": "intermittent regime",
+    "confidence": "contract",
+    "missing": false
+  },
+  {
+    "name": "current_speed",
+    "value": 0.1,
+    "unit": "m/s",
+    "source_class": "synthetic_assumption",
+    "source": "not a Copernicus sample",
+    "applicability": "horizontal drift",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "stokes_speed",
+    "value": 0.02,
+    "unit": "m/s",
+    "source_class": "synthetic_assumption",
+    "source": "explicit term; not added again inside the current",
+    "applicability": "wind direction; zero when calm",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "windage_fraction",
+    "value": 0.01,
+    "unit": "1",
+    "source_class": "synthetic_assumption",
+    "source": "OpenDrift-style coefficient, not fitted",
+    "applicability": "times wind speed",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "correlation_length",
+    "value": 1000.0,
+    "unit": "m",
+    "source_class": "synthetic_assumption",
+    "source": "diagnostic only; not estimated",
+    "applicability": "coverage and redundancy",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "hs_noise_std",
+    "value": 0.05,
+    "unit": "m",
+    "source_class": "synthetic_assumption",
+    "source": "numeric example only",
+    "applicability": "one worked packet",
+    "confidence": "low",
+    "missing": false
+  },
+  {
+    "name": "wind_east",
+    "value": 8.0,
+    "unit": "m/s",
+    "source_class": "synthetic_assumption",
+    "source": "Beaufort 5 starts at 8.0 m/s; the vector is a scenario, not ERA5",
+    "applicability": "steady horizontal wind",
+    "confidence": "scenario",
+    "missing": false
+  }
+]

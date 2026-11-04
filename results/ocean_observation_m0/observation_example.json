@@ -1,0 +1,31 @@
+{
+  "n_samples": 21,
+  "window_start_s": -1200.0,
+  "window_end_s": 0.0,
+  "mean_hs_m": 1.356123890502291,
+  "measurement_variance_m2": 0.00011904761904761907,
+  "mean_x_m": 457.57359312880715,
+  "mean_y_m": 457.57359312880715,
+  "framed_bytes": 52,
+  "belief_before": {
+    "mean_m": 1.2,
+    "variance_m2": 0.25
+  },
+  "fusion": {
+    "status": "fused",
+    "receive_time_s": 30.0,
+    "window_end_s": 0.0,
+    "sampling_time_rewritten": false,
+    "map_updated": true,
+    "mean_before_m": 1.2,
+    "mean_after_m": 1.3560496149157306,
+    "variance_before_m2": 0.25,
+    "variance_after_m2": 0.00011899095541348025
+  },
+  "belief_after": {
+    "mean_m": 1.3560496149157306,
+    "variance_m2": 0.00011899095541348025
+  },
+  "readable_before_receive": false,
+  "seed": 20261104
+}

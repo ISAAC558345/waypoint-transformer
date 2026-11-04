@@ -1,0 +1,46 @@
+{
+  "leg_m": 1000.0,
+  "airspeed_m_s": 18.0,
+  "wind_m_s": [
+    8.0,
+    0.0
+  ],
+  "calm": {
+    "feasible": true,
+    "reason": "flown",
+    "distance_m": 1000.0,
+    "ground_speed_m_s": 18.0,
+    "cruise_s": 55.55555555555556,
+    "transient_s": 18.0,
+    "propulsion_J": 11858.881217627468,
+    "compute_J": 367.77777777777777,
+    "time_s": 73.55555555555556,
+    "along_track_wind_m_s": 0.0
+  },
+  "tailwind": {
+    "feasible": true,
+    "reason": "flown",
+    "distance_m": 1000.0,
+    "ground_speed_m_s": 26.0,
+    "cruise_s": 38.46153846153846,
+    "transient_s": 18.0,
+    "propulsion_J": 9143.003050791469,
+    "compute_J": 282.3076923076923,
+    "time_s": 56.46153846153846,
+    "along_track_wind_m_s": 8.0
+  },
+  "headwind": {
+    "feasible": true,
+    "reason": "flown",
+    "distance_m": 1000.0,
+    "ground_speed_m_s": 10.0,
+    "cruise_s": 100.0,
+    "transient_s": 18.0,
+    "propulsion_J": 18920.164451401062,
+    "compute_J": 590.0,
+    "time_s": 118.0,
+    "along_track_wind_m_s": -8.0
+  },
+  "round_trip_propulsion_J": 28063.167502192533,
+  "two_headwind_propulsion_J": 37840.328902802125
+}

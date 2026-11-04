@@ -1,0 +1,52 @@
+name,value,unit,source_class,source,applicability,confidence,missing
+area_width,2000.0,m,synthetic_assumption,M0 contract starting square,flat task square,contract,False
+area_height,2000.0,m,synthetic_assumption,M0 contract starting square,flat task square,contract,False
+flight_altitude,100.0,m,synthetic_assumption,M0 contract,level cruise; no climb model,contract,False
+motion_step,1.0,s,synthetic_assumption,M0 contract,analytical legs are not integrated at this step,contract,False
+planning_interval,30.0,s,synthetic_assumption,M0 contract,joint-regime cycle,contract,False
+observation_window,1200.0,s,synthetic_assumption,aligned with the NDBC 20-minute record length; not an NDBC download,one Hs mean per window,contract,False
+evaluation_horizon,1800.0,s,synthetic_assumption,M0 contract,two product times,contract,False
+shore_xy,"[0.0, 0.0]",m,synthetic_assumption,registered before the case run,corner antenna,contract,False
+shore_antenna_height,10.0,m,synthetic_assumption,no surveyed mast,link geometry only,low,False
+depot_xy,"[5.0, 0.0]",m,synthetic_assumption,pad offset so the landed range is not zero,ground state,contract,False
+landed_antenna_height,1.5,m,synthetic_assumption,no airframe drawing,ground backhaul,low,False
+buoy_antenna_height,1.0,m,synthetic_assumption,no buoy drawing,link geometry only,low,False
+weight,20.0,N,literature,Zeng/Xu/Zhang numerical example paired with arXiv:1804.02238 eq. (6),steady axial rotary-wing flight at sea-level density,equation high; table not re-read from the PDF,False
+rotor_radius,0.4,m,literature,same numerical example,same,equation high; table not re-read from the PDF,False
+rotor_omega,300.0,rad/s,literature,same numerical example,same,equation high; table not re-read from the PDF,False
+solidity,0.05,1,literature,same numerical example,same,equation high; table not re-read from the PDF,False
+profile_drag,0.012,1,literature,same numerical example,same,equation high; table not re-read from the PDF,False
+parasite_d0,0.6,1,literature,same numerical example,same,equation high; table not re-read from the PDF,False
+induced_k,0.1,1,literature,same numerical example,same,equation high; table not re-read from the PDF,False
+induced_velocity,4.03,m/s,literature,same numerical example,same,equation high; table not re-read from the PDF,False
+air_density,1.225,kg/m^3,literature,same numerical example,not a measured marine profile,equation high; table not re-read from the PDF,False
+P0,79.80147994942652,W,literature,computed from the primitives; not copied from a rounded watt claim,hover and axial flight,derived,False
+Pi,88.65836312893315,W,literature,computed from the primitives,hover and axial flight,derived,False
+cruise_airspeed,18.0,m/s,literature,argmin of zero-wind propulsion joule per metre on 1..20 m/s,steady legs; chosen before case outcomes,derived,False
+max_airspeed,20.0,m/s,synthetic_assumption,"operating cap inside the model, far below tip speed",grid upper bound,contract,False
+acceleration,2.0,m/s^2,synthetic_assumption,no airframe measurement,one accel and one decel per leg at hover power,low,False
+takeoff_hover,20.0,s,synthetic_assumption,momentum model has no climb,once per sortie,low,False
+landing_hover,20.0,s,synthetic_assumption,momentum model has no ground effect,once per sortie,low,False
+usable_energy,202151.81169403158,J,synthetic_assumption,1200 s times computed hover power; not a measured pack,no recharge,contract,False
+reserve_fraction,0.2,1,synthetic_assumption,energy after the planned returns,guard,contract,False
+compute_power,5.0,W,synthetic_assumption,no flight-computer measurement,airborne time only,low,False
+ground_idle_power,1.0,W,synthetic_assumption,"motors off, avionics on; includes listen-mode radio",ground waits,low,False
+buoy_idle_power,0.05,W,synthetic_assumption,no buoy power measurement,direct and upload waits,low,False
+radio_hz,868000000.0,Hz,device_specification,EU868 sits in SX1276 Band 1,all three links,datasheet band,False
+tx_power,13.0,dBm,device_specification,SX1276 IDDT_L condition on the RFO pin,all transmitters,datasheet typical,False
+tx_current,0.028,A,device_specification,SX1276 IDDT_L typical at +13 dBm,TX joules = 3.3 V * current * airtime,datasheet typical,False
+rx_current,0.0103,A,device_specification,"SX1276 IDDR_L Band 1 125 kHz, LnaBoost off",lower bound versus the LnaBoost sensitivity row,datasheet typical,False
+sensitivity,-123.0,dBm,device_specification,SX1276 RFS_L125_HF SF7 typical,threshold plus one implementation margin; no second PER,datasheet typical,False
+implementation_margin,6.0,dB,synthetic_assumption,cables and polarization; not a fading draw and not a second rate cut,all links,contract,False
+buoy_gain,2.0,dBi,synthetic_assumption,no antenna measurement,all buoy links,low,False
+uav_gain,2.0,dBi,synthetic_assumption,no antenna measurement,all UAV links,low,False
+shore_gain,6.0,dBi,synthetic_assumption,no antenna measurement,shore links,low,False
+mac_guard,0.01,s,synthetic_assumption,fixed guard per slot,time only; not a path-loss term,contract,False
+backhaul_period,600.0,s,synthetic_assumption,"operational TDMA, not a measured outage and not a bandwidth change",intermittent regime,contract,False
+backhaul_open,60.0,s,synthetic_assumption,must be checked against the epoch length,intermittent regime,contract,False
+current_speed,0.1,m/s,synthetic_assumption,not a Copernicus sample,horizontal drift,low,False
+stokes_speed,0.02,m/s,synthetic_assumption,explicit term; not added again inside the current,wind direction; zero when calm,low,False
+windage_fraction,0.01,1,synthetic_assumption,"OpenDrift-style coefficient, not fitted",times wind speed,low,False
+correlation_length,1000.0,m,synthetic_assumption,diagnostic only; not estimated,coverage and redundancy,low,False
+hs_noise_std,0.05,m,synthetic_assumption,numeric example only,one worked packet,low,False
+wind_east,8.0,m/s,synthetic_assumption,"Beaufort 5 starts at 8.0 m/s; the vector is a scenario, not ERA5",steady horizontal wind,scenario,False

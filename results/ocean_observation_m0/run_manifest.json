@@ -1,0 +1,30 @@
+{
+  "design_baseline": "76bdd2dd17a22c85626909731eb0319a33baaf84",
+  "formal_source_commit": "e58e5d190109e5a0e860cb5c6a412321c0d74e31",
+  "handoff_commit": "5b6a7642ffb45b309e3ec09a8b789e55bd5089b7",
+  "e19_result_commit": "f9e9a9e007d7d84046232181fdab6f9a732a4a05",
+  "code_commit": "20f4fb722ce001c085f12ac7d09703c43c94dd11",
+  "formal_checkpoint_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+  "input_hashes": {
+    "solution": "3058828b92de5d0cbbca2466e9e5ea3769a63fae9c5c3d9e7d9c1474422ea0ac",
+    "instructions": "b0d642f15b6b4fa83331bf022c391cecb3437eecb0c9245bdf43dc707aca7beb",
+    "contract": "06986be4b2a9dfbbd006227a752de9589eabbcce00e42ff6f9102be7cd57c113",
+    "old_environment_not_used_as_link": "b938949322528f903b4ca6d4f4856a89f6173cab3d1b593b248557b35cb3b55f",
+    "formal_checkpoint": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e"
+  },
+  "case_manifest_sha256": "0a260b806e2d254d930e7aabf35a3b8384a7aef45cc8eb1e77197d541854dc0e",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": "Python standard library only",
+  "training_updates": 0,
+  "policy_model_loads": 0,
+  "policy_inferences": 0,
+  "new_environment_episode_steps": 0,
+  "historical_holdout_reruns": 0,
+  "large_external_dataset_downloads": 0,
+  "analytical_cases": 24,
+  "analytical_runs": 1,
+  "performance_pass": false,
+  "adopted": false,
+  "release_eligible": false
+}

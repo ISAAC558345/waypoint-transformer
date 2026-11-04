@@ -1,0 +1,1370 @@
+[
+  {
+    "case_id": "u2_b4_communication_abundant_calm_dispersed",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "communication_abundant",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        500.0,
+        500.0
+      ],
+      [
+        500.0,
+        1500.0
+      ],
+      [
+        1500.0,
+        500.0
+      ],
+      [
+        1500.0,
+        1500.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u2_b4_communication_abundant_calm_two_clusters",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "communication_abundant",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        350.0,
+        350.0
+      ],
+      [
+        450.0,
+        450.0
+      ],
+      [
+        1550.0,
+        1550.0
+      ],
+      [
+        1650.0,
+        1650.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u2_b4_communication_abundant_wind_8mps_east_dispersed",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "communication_abundant",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        500.0,
+        500.0
+      ],
+      [
+        500.0,
+        1500.0
+      ],
+      [
+        1500.0,
+        500.0
+      ],
+      [
+        1500.0,
+        1500.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u2_b4_communication_abundant_wind_8mps_east_two_clusters",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "communication_abundant",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        350.0,
+        350.0
+      ],
+      [
+        450.0,
+        450.0
+      ],
+      [
+        1550.0,
+        1550.0
+      ],
+      [
+        1650.0,
+        1650.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u2_b4_joint_access_and_communication_constraint_calm_dispersed",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "joint_access_and_communication_constraint",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        500.0,
+        500.0
+      ],
+      [
+        500.0,
+        1500.0
+      ],
+      [
+        1500.0,
+        500.0
+      ],
+      [
+        1500.0,
+        1500.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u2_b4_joint_access_and_communication_constraint_calm_two_clusters",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "joint_access_and_communication_constraint",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        350.0,
+        350.0
+      ],
+      [
+        450.0,
+        450.0
+      ],
+      [
+        1550.0,
+        1550.0
+      ],
+      [
+        1650.0,
+        1650.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u2_b4_joint_access_and_communication_constraint_wind_8mps_east_dispersed",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "joint_access_and_communication_constraint",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        500.0,
+        500.0
+      ],
+      [
+        500.0,
+        1500.0
+      ],
+      [
+        1500.0,
+        500.0
+      ],
+      [
+        1500.0,
+        1500.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u2_b4_joint_access_and_communication_constraint_wind_8mps_east_two_clusters",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "joint_access_and_communication_constraint",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        350.0,
+        350.0
+      ],
+      [
+        450.0,
+        450.0
+      ],
+      [
+        1550.0,
+        1550.0
+      ],
+      [
+        1650.0,
+        1650.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u2_b4_intermittent_backhaul_calm_dispersed",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "intermittent_backhaul",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        500.0,
+        500.0
+      ],
+      [
+        500.0,
+        1500.0
+      ],
+      [
+        1500.0,
+        500.0
+      ],
+      [
+        1500.0,
+        1500.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u2_b4_intermittent_backhaul_calm_two_clusters",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "intermittent_backhaul",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        350.0,
+        350.0
+      ],
+      [
+        450.0,
+        450.0
+      ],
+      [
+        1550.0,
+        1550.0
+      ],
+      [
+        1650.0,
+        1650.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u2_b4_intermittent_backhaul_wind_8mps_east_dispersed",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "intermittent_backhaul",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        500.0,
+        500.0
+      ],
+      [
+        500.0,
+        1500.0
+      ],
+      [
+        1500.0,
+        500.0
+      ],
+      [
+        1500.0,
+        1500.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u2_b4_intermittent_backhaul_wind_8mps_east_two_clusters",
+    "n_uav": 2,
+    "n_buoy": 4,
+    "regime": "intermittent_backhaul",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        350.0,
+        350.0
+      ],
+      [
+        450.0,
+        450.0
+      ],
+      [
+        1550.0,
+        1550.0
+      ],
+      [
+        1650.0,
+        1650.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_communication_abundant_calm_dispersed",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "communication_abundant",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        400.0,
+        300.0
+      ],
+      [
+        1000.0,
+        300.0
+      ],
+      [
+        1600.0,
+        300.0
+      ],
+      [
+        400.0,
+        800.0
+      ],
+      [
+        1000.0,
+        800.0
+      ],
+      [
+        1600.0,
+        800.0
+      ],
+      [
+        400.0,
+        1300.0
+      ],
+      [
+        1000.0,
+        1300.0
+      ],
+      [
+        1600.0,
+        1300.0
+      ],
+      [
+        400.0,
+        1800.0
+      ],
+      [
+        1000.0,
+        1800.0
+      ],
+      [
+        1600.0,
+        1800.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_communication_abundant_calm_two_clusters",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "communication_abundant",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        320.0,
+        440.0
+      ],
+      [
+        400.0,
+        440.0
+      ],
+      [
+        480.0,
+        440.0
+      ],
+      [
+        320.0,
+        560.0
+      ],
+      [
+        400.0,
+        560.0
+      ],
+      [
+        480.0,
+        560.0
+      ],
+      [
+        1520.0,
+        1440.0
+      ],
+      [
+        1600.0,
+        1440.0
+      ],
+      [
+        1680.0,
+        1440.0
+      ],
+      [
+        1520.0,
+        1560.0
+      ],
+      [
+        1600.0,
+        1560.0
+      ],
+      [
+        1680.0,
+        1560.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_communication_abundant_wind_8mps_east_dispersed",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "communication_abundant",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        400.0,
+        300.0
+      ],
+      [
+        1000.0,
+        300.0
+      ],
+      [
+        1600.0,
+        300.0
+      ],
+      [
+        400.0,
+        800.0
+      ],
+      [
+        1000.0,
+        800.0
+      ],
+      [
+        1600.0,
+        800.0
+      ],
+      [
+        400.0,
+        1300.0
+      ],
+      [
+        1000.0,
+        1300.0
+      ],
+      [
+        1600.0,
+        1300.0
+      ],
+      [
+        400.0,
+        1800.0
+      ],
+      [
+        1000.0,
+        1800.0
+      ],
+      [
+        1600.0,
+        1800.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_communication_abundant_wind_8mps_east_two_clusters",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "communication_abundant",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        320.0,
+        440.0
+      ],
+      [
+        400.0,
+        440.0
+      ],
+      [
+        480.0,
+        440.0
+      ],
+      [
+        320.0,
+        560.0
+      ],
+      [
+        400.0,
+        560.0
+      ],
+      [
+        480.0,
+        560.0
+      ],
+      [
+        1520.0,
+        1440.0
+      ],
+      [
+        1600.0,
+        1440.0
+      ],
+      [
+        1680.0,
+        1440.0
+      ],
+      [
+        1520.0,
+        1560.0
+      ],
+      [
+        1600.0,
+        1560.0
+      ],
+      [
+        1680.0,
+        1560.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_joint_access_and_communication_constraint_calm_dispersed",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "joint_access_and_communication_constraint",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        400.0,
+        300.0
+      ],
+      [
+        1000.0,
+        300.0
+      ],
+      [
+        1600.0,
+        300.0
+      ],
+      [
+        400.0,
+        800.0
+      ],
+      [
+        1000.0,
+        800.0
+      ],
+      [
+        1600.0,
+        800.0
+      ],
+      [
+        400.0,
+        1300.0
+      ],
+      [
+        1000.0,
+        1300.0
+      ],
+      [
+        1600.0,
+        1300.0
+      ],
+      [
+        400.0,
+        1800.0
+      ],
+      [
+        1000.0,
+        1800.0
+      ],
+      [
+        1600.0,
+        1800.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_joint_access_and_communication_constraint_calm_two_clusters",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "joint_access_and_communication_constraint",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        320.0,
+        440.0
+      ],
+      [
+        400.0,
+        440.0
+      ],
+      [
+        480.0,
+        440.0
+      ],
+      [
+        320.0,
+        560.0
+      ],
+      [
+        400.0,
+        560.0
+      ],
+      [
+        480.0,
+        560.0
+      ],
+      [
+        1520.0,
+        1440.0
+      ],
+      [
+        1600.0,
+        1440.0
+      ],
+      [
+        1680.0,
+        1440.0
+      ],
+      [
+        1520.0,
+        1560.0
+      ],
+      [
+        1600.0,
+        1560.0
+      ],
+      [
+        1680.0,
+        1560.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_joint_access_and_communication_constraint_wind_8mps_east_dispersed",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "joint_access_and_communication_constraint",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        400.0,
+        300.0
+      ],
+      [
+        1000.0,
+        300.0
+      ],
+      [
+        1600.0,
+        300.0
+      ],
+      [
+        400.0,
+        800.0
+      ],
+      [
+        1000.0,
+        800.0
+      ],
+      [
+        1600.0,
+        800.0
+      ],
+      [
+        400.0,
+        1300.0
+      ],
+      [
+        1000.0,
+        1300.0
+      ],
+      [
+        1600.0,
+        1300.0
+      ],
+      [
+        400.0,
+        1800.0
+      ],
+      [
+        1000.0,
+        1800.0
+      ],
+      [
+        1600.0,
+        1800.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_joint_access_and_communication_constraint_wind_8mps_east_two_clusters",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "joint_access_and_communication_constraint",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        320.0,
+        440.0
+      ],
+      [
+        400.0,
+        440.0
+      ],
+      [
+        480.0,
+        440.0
+      ],
+      [
+        320.0,
+        560.0
+      ],
+      [
+        400.0,
+        560.0
+      ],
+      [
+        480.0,
+        560.0
+      ],
+      [
+        1520.0,
+        1440.0
+      ],
+      [
+        1600.0,
+        1440.0
+      ],
+      [
+        1680.0,
+        1440.0
+      ],
+      [
+        1520.0,
+        1560.0
+      ],
+      [
+        1600.0,
+        1560.0
+      ],
+      [
+        1680.0,
+        1560.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_intermittent_backhaul_calm_dispersed",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "intermittent_backhaul",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        400.0,
+        300.0
+      ],
+      [
+        1000.0,
+        300.0
+      ],
+      [
+        1600.0,
+        300.0
+      ],
+      [
+        400.0,
+        800.0
+      ],
+      [
+        1000.0,
+        800.0
+      ],
+      [
+        1600.0,
+        800.0
+      ],
+      [
+        400.0,
+        1300.0
+      ],
+      [
+        1000.0,
+        1300.0
+      ],
+      [
+        1600.0,
+        1300.0
+      ],
+      [
+        400.0,
+        1800.0
+      ],
+      [
+        1000.0,
+        1800.0
+      ],
+      [
+        1600.0,
+        1800.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_intermittent_backhaul_calm_two_clusters",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "intermittent_backhaul",
+    "wind_name": "calm",
+    "wind_m_s": [
+      0.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        320.0,
+        440.0
+      ],
+      [
+        400.0,
+        440.0
+      ],
+      [
+        480.0,
+        440.0
+      ],
+      [
+        320.0,
+        560.0
+      ],
+      [
+        400.0,
+        560.0
+      ],
+      [
+        480.0,
+        560.0
+      ],
+      [
+        1520.0,
+        1440.0
+      ],
+      [
+        1600.0,
+        1440.0
+      ],
+      [
+        1680.0,
+        1440.0
+      ],
+      [
+        1520.0,
+        1560.0
+      ],
+      [
+        1600.0,
+        1560.0
+      ],
+      [
+        1680.0,
+        1560.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_intermittent_backhaul_wind_8mps_east_dispersed",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "intermittent_backhaul",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "dispersed",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        400.0,
+        300.0
+      ],
+      [
+        1000.0,
+        300.0
+      ],
+      [
+        1600.0,
+        300.0
+      ],
+      [
+        400.0,
+        800.0
+      ],
+      [
+        1000.0,
+        800.0
+      ],
+      [
+        1600.0,
+        800.0
+      ],
+      [
+        400.0,
+        1300.0
+      ],
+      [
+        1000.0,
+        1300.0
+      ],
+      [
+        1600.0,
+        1300.0
+      ],
+      [
+        400.0,
+        1800.0
+      ],
+      [
+        1000.0,
+        1800.0
+      ],
+      [
+        1600.0,
+        1800.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  },
+  {
+    "case_id": "u6_b12_intermittent_backhaul_wind_8mps_east_two_clusters",
+    "n_uav": 6,
+    "n_buoy": 12,
+    "regime": "intermittent_backhaul",
+    "wind_name": "wind_8mps_east",
+    "wind_m_s": [
+      8.0,
+      0.0
+    ],
+    "layout": "two_clusters",
+    "shore_xy_m": [
+      0.0,
+      0.0
+    ],
+    "depot_xy_m": [
+      5.0,
+      0.0
+    ],
+    "buoys_xy_m": [
+      [
+        320.0,
+        440.0
+      ],
+      [
+        400.0,
+        440.0
+      ],
+      [
+        480.0,
+        440.0
+      ],
+      [
+        320.0,
+        560.0
+      ],
+      [
+        400.0,
+        560.0
+      ],
+      [
+        480.0,
+        560.0
+      ],
+      [
+        1520.0,
+        1440.0
+      ],
+      [
+        1600.0,
+        1440.0
+      ],
+      [
+        1680.0,
+        1440.0
+      ],
+      [
+        1520.0,
+        1560.0
+      ],
+      [
+        1600.0,
+        1560.0
+      ],
+      [
+        1680.0,
+        1560.0
+      ]
+    ],
+    "analytical_case": true,
+    "environment_episode": false,
+    "policy_score": false
+  }
+]

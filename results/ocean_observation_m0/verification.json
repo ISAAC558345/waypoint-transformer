@@ -1,0 +1,24 @@
+{
+  "baseline": {
+    "tests_run": 1712,
+    "failures": 23,
+    "errors": 183,
+    "skipped": 32
+  },
+  "overlay": {
+    "tests_run": 1726,
+    "failures": 23,
+    "errors": 183,
+    "skipped": 32
+  },
+  "baseline_signature_count": 206,
+  "overlay_signature_count": 206,
+  "new_failure_count": 0,
+  "new_failure_signatures": [],
+  "lost_baseline_signature_count": 0,
+  "lost_baseline_signatures": [],
+  "related_tests": "OK",
+  "unittest_processes": 3,
+  "suite_is_green": false,
+  "historical_failures_retained": true
+}

@@ -1,0 +1,30 @@
+{
+  "product": {
+    "application_bytes": 44,
+    "magic_and_length_bytes": 4,
+    "crc32_bytes": 4,
+    "framed_bytes": 52,
+    "framed_bits": 416
+  },
+  "command": {
+    "application_bytes": 16,
+    "magic_and_length_bytes": 4,
+    "crc32_bytes": 4,
+    "framed_bytes": 24,
+    "framed_bits": 192
+  },
+  "ack": {
+    "application_bytes": 10,
+    "magic_and_length_bytes": 4,
+    "crc32_bytes": 4,
+    "framed_bytes": 18,
+    "framed_bits": 144
+  },
+  "telemetry": {
+    "application_bytes": 32,
+    "magic_and_length_bytes": 4,
+    "crc32_bytes": 4,
+    "framed_bytes": 40,
+    "framed_bits": 320
+  }
+}
