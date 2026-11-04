@@ -1,0 +1,120 @@
+{
+  "artifact_root_role": "directory that contains run_manifest.json",
+  "source_result_commit": "1abcf1b264b6df1763cbcf2cfe410923cdc57dae",
+  "source_environment_steps": 192,
+  "source_steps_are_a_new_run": false,
+  "reader_environment_steps": 0,
+  "reader_training_updates": 0,
+  "reader_policy_inferences": 0,
+  "reader_model_loads": 0,
+  "reader_downloads": 0,
+  "arms": [
+    {
+      "scenario_id": 322000,
+      "policy": "scheme_c",
+      "config_relative": "configs/322000_scheme_c.json",
+      "original_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\legacy_formal_repro_r1\\configs\\322000_scheme_c.json",
+      "config_sha256": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb",
+      "payload_bits": 63785945.28984571,
+      "environment_steps": 48,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ]
+    },
+    {
+      "scenario_id": 322000,
+      "policy": "g1_rate",
+      "config_relative": "configs/322000_g1_rate.json",
+      "original_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\legacy_formal_repro_r1\\configs\\322000_g1_rate.json",
+      "config_sha256": "daec1f7570f9dfd01e9c9bc13141d5a8a6ba6d6363401bcdd095a44c11afc0dc",
+      "payload_bits": 64731141.622913174,
+      "environment_steps": 48,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ]
+    },
+    {
+      "scenario_id": 322001,
+      "policy": "scheme_c",
+      "config_relative": "configs/322001_scheme_c.json",
+      "original_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\legacy_formal_repro_r1\\configs\\322001_scheme_c.json",
+      "config_sha256": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb",
+      "payload_bits": 68952073.58225587,
+      "environment_steps": 48,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ]
+    },
+    {
+      "scenario_id": 322001,
+      "policy": "g1_rate",
+      "config_relative": "configs/322001_g1_rate.json",
+      "original_path": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\legacy_formal_repro_r1\\configs\\322001_g1_rate.json",
+      "config_sha256": "daec1f7570f9dfd01e9c9bc13141d5a8a6ba6d6363401bcdd095a44c11afc0dc",
+      "payload_bits": 63445121.872805715,
+      "environment_steps": 48,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "scenario_id": 322000,
+      "scheme_c_payload_bits": 63785945.28984571,
+      "g1_rate_payload_bits": 64731141.622913174,
+      "payload_difference_bits": -945196.3330674618,
+      "recomputed_payload_difference_bits": -945196.3330674618
+    },
+    {
+      "scenario_id": 322001,
+      "scheme_c_payload_bits": 68952073.58225587,
+      "g1_rate_payload_bits": 63445121.872805715,
+      "payload_difference_bits": 5506951.7094501555,
+      "recomputed_payload_difference_bits": 5506951.7094501555
+    }
+  ],
+  "missing_original_summaries": [
+    "results/phase6if_ranking_loss/summary.json"
+  ],
+  "provenance": {
+    "original_run_code": "ed2c87c83dcdaccee1420ee3e14a8dfa19982e92",
+    "result_organization_code": "1abcf1b264b6df1763cbcf2cfe410923cdc57dae",
+    "current_check_code": [
+      "src/wt/legacy_formal_repro_r1a/__init__.py",
+      "src/wt/legacy_formal_repro_r1a/read.py",
+      "src/wt/legacy_formal_repro_r1a/inspect.py",
+      "src/wt/legacy_formal_repro_r1a/export.py"
+    ],
+    "original_runtime": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "numpy": "2.4.1",
+      "torch": "2.12.0+cpu",
+      "historical_requirements_sha256": "8dc18372029088cb855c184ed1ac74fc1049d5b8293b749578ec4680c059c16e",
+      "historical_pins": {
+        "numpy": "numpy==1.21.6",
+        "torch": "torch==1.13.0"
+      }
+    },
+    "original_output_note": "首次写清单时把源码目录当成了仓库根目录。已有的 192 步结果被移到 results/legacy_formal_repro_r1，没有再跑环境步。",
+    "check_environment": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "torch_imported": false,
+      "new_machine_install_verified": false
+    }
+  }
+}

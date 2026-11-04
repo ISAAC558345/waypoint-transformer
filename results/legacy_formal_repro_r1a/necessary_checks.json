@@ -1,0 +1,29 @@
+{
+  "package": "legacy_formal_repro_r1a",
+  "command": "py -3 -m unittest tests.test_legacy_formal_repro_r1a -v",
+  "result": "OK",
+  "tests_run": 3,
+  "elapsed_s": 10.009,
+  "model_loads": 0,
+  "environment_steps": 0,
+  "checks": [
+    {
+      "name": "copied_root_resolves_configs_without_the_absolute_path",
+      "passed": true,
+      "note": "Four configs copied to a temp root resolve by scenario and policy and match policy_sha256_after."
+    },
+    {
+      "name": "inspect_and_export_leave_the_saved_bytes_unchanged",
+      "passed": true,
+      "note": "Inspect, export, the default entry, --finalize, and --rerun leave the original manifest, episodes, configs, and R1 report unchanged. A second export is refused."
+    },
+    {
+      "name": "derived_view_repeats_the_saved_192_step_numbers",
+      "passed": true,
+      "note": "Four payloads, two pair differences, and the 192-step count match the saved manifest. The count is not a new run."
+    }
+  ],
+  "missing_original_summaries": [
+    "results/phase6if_ranking_loss/summary.json"
+  ]
+}

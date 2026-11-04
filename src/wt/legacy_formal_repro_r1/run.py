@@ -185,6 +185,21 @@ def finalize_saved() -> dict:
     )
 
 
+def cli(argv: list[str] | None = None) -> int:
+    """Default entry writes nothing. Rerun and finalize stay outside this command."""
+    args = list(sys.argv[1:] if argv is None else argv)
+    if not args:
+        print("read-only boundary: this command does not rewrite the saved R1 manifest or load a model.")
+        print("inspect: py -3 -m wt.legacy_formal_repro_r1a.inspect --artifact-root results/legacy_formal_repro_r1")
+        print("export: py -3 -m wt.legacy_formal_repro_r1a.export --artifact-root results/legacy_formal_repro_r1 --output results/legacy_formal_repro_r1a")
+        print("future rerun is outside this package and is not executed: py -3 -m wt.legacy_formal_repro_r1.run --rerun")
+        return 0
+    if "--rerun" in args or "--finalize" in args:
+        print("refusing to rerun or rewrite the saved R1 manifest from this entry")
+        return 2
+    print("unrecognized arguments; no files were written")
+    return 2
+
+
 if __name__ == "__main__":
-    result = finalize_saved() if any(EPISODE_DIR.glob("*.json")) else main()
-    print(json.dumps({"environment_steps": result["environment_steps"], "stopped_early": result["stopped_early"], "pairs": result["pairs"]}, ensure_ascii=False))
+    raise SystemExit(cli())
