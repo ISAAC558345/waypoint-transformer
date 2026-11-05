@@ -1,0 +1,10 @@
+{
+  "A": {
+    "states": 12,
+    "mean_online_loss_before_update": 3.627320488293966
+  },
+  "B": {
+    "states": 12,
+    "mean_online_loss_before_update": 4.710198760032654
+  }
+}
