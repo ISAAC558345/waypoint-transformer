@@ -78,7 +78,7 @@ def _record_steps(steps: list[dict]):
     return original, wrapped
 
 
-def run_arm(scenario_id: int, policy: str, policy_path: Path) -> dict:
+def run_arm(scenario_id: int, policy: str, policy_path: Path, fault_log: str | Path | None = None) -> dict:
     """One 48-step arm through run_active_episode. A failure is returned, not retried here."""
     steps: list[dict] = []
     original, wrapped = _record_steps(steps)
@@ -94,6 +94,7 @@ def run_arm(scenario_id: int, policy: str, policy_path: Path) -> dict:
             stop_time=int(HORIZON),
             policy_path=str(policy_path),
             allow_holdout=False,
+            fault_log=None if fault_log is None else str(fault_log),
         )
     except Exception as exc:
         error = f"{type(exc).__name__}: {exc}"

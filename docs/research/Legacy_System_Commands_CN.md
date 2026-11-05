@@ -1,6 +1,6 @@
 # 原系统当前可用命令
 
-以下命令在 `feature/legacy-system-maintenance` 的仓库根目录执行。本轮不重跑原 192 步，也不运行历史全套。
+以下命令在 `feature/legacy-system-maintenance` 的仓库根目录执行。原 192 步不重跑，历史全套不运行。现行正式单场景入口和受保护的 R1 入口分开列出。
 
 ## 路径
 
@@ -10,7 +10,7 @@
 $env:PYTHONPATH = Join-Path (Get-Location).Path 'src'
 ```
 
-结果根目录是包含 `run_manifest.json` 的目录，当前为 `results/legacy_formal_repro_r1`。配置按场景和策略名读取 `configs/{scenario_id}_{policy}.json`，不把保存的绝对路径当作唯一查找位置。
+R1 的结果根目录是包含其 `run_manifest.json` 的 `results/legacy_formal_repro_r1`。配置按场景和策略名读取 `configs/{scenario_id}_{policy}.json`，不把保存的绝对路径当作唯一查找位置。正式单场景结果另写在 `results/legacy_system_l6`，查找用其中的相对路径。
 
 ## 只读
 
@@ -28,16 +28,36 @@ py -3 -m wt.legacy_formal_repro_r1a.export --artifact-root results/legacy_formal
 
 导出目录必须是新目录。目标文件已经存在时，命令拒绝覆盖。派生视图与原 192 步记录分开保存。
 
-## 主动运行
+## 正式配置预览
 
-不带参数执行 `py -3 -m wt.legacy_formal_repro_r1.run` 只打印上述边界并返回 0，不写文件。
+预览只使用标准库，不建输出目录，不加载模型。
+
+```powershell
+py -3 -m wt.legacy_system.run --scenario 322000 --output results/legacy_system_l6
+```
+
+预览打印 Scheme C、G1_RATE、k=6、hold=15、stop_time=48。`historical_formal_k=5` 只保留旧候选数的来源，现行候选数是 k=6。
+
+## 正式单场景运行
+
+显式 `--run` 才调用正式 `run_active_episode`。当前回归只接受场景 322000，输出目录里已有文件时拒绝覆盖。
+
+```powershell
+py -3 -m wt.legacy_system.run --scenario 322000 --output results/legacy_system_l6 --run
+```
+
+L6 已把一次 48 步结果写入 `results/legacy_system_l6`。再执行同一输出目录不会重跑。换一次新的运行需要另一个空目录，并且不在本包内执行。
+
+## 受保护的 R1 入口
+
+不带参数执行 `py -3 -m wt.legacy_formal_repro_r1.run` 只打印边界并返回 0，不写文件。
 
 ```text
 py -3 -m wt.legacy_formal_repro_r1.run --rerun
 py -3 -m wt.legacy_formal_repro_r1.run --finalize
 ```
 
-这两条现在都返回 2，不能当作当前可执行的重跑或覆写入口。主动运行模型需要以后另定独立输出目录和步数预算。本维护交付不执行它们。
+这两条仍然返回 2，继续保护原始 192 步证据。它们不是当前唯一的主动运行方式；现行单场景命令是上面的 `wt.legacy_system.run`。
 
 ## 依赖
 

@@ -1,0 +1,59 @@
+{
+  "package": "legacy_system_l6",
+  "instruction_commit": "2b2fa2f3ca66d64688a122d939e2b9bdb5f6605a",
+  "this_run": {
+    "policy": "configs/322000_scheme_c.json",
+    "episode": "episode.json",
+    "steps": "steps.csv",
+    "comparison": "regression_comparison.json",
+    "fault_log": "faults.jsonl",
+    "fault_log_written": false
+  },
+  "historical_reference": {
+    "episode": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
+    "config": "results/legacy_formal_repro_r1/configs/322000_scheme_c.json",
+    "role": "saved R1 episode used for field comparison"
+  },
+  "run_context": {
+    "output_absolute": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\legacy_system_l6",
+    "policy_absolute": "E:\\srdp\\NeurIPS-2023-waypoint-transformer-reinforcement-learning-via-supervised-learning-with-intermediate-targets-Supplemental-Conference\\waypoint_transformer_official\\results\\legacy_system_l6\\configs\\322000_scheme_c.json",
+    "lookup": "manifest paths are relative to the output or repository; absolute paths are machine context"
+  },
+  "runtime": {
+    "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.1",
+    "torch": "2.12.0+cpu",
+    "install_claim": "versions already present in this environment; this run is not a new-machine install check"
+  },
+  "models": {
+    "scheme_c_checkpoint": "results/phase6if_ranking_loss/runs/c/epoch_001.pt",
+    "scheme_c_sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
+    "mappo_checkpoint": "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt",
+    "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "decoder_checkpoint": "results/phase5k_joint_decoder/matching_decoder.pt",
+    "decoder_sha256": "de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5",
+    "epoch6_checkpoint": "results/phase6id_joint_utility_training/epoch_006.pt",
+    "epoch6_sha256": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde",
+    "epoch6_role": "formal startup hash only; E6 is not the active high-level policy"
+  },
+  "model_hash_matches_contract": {
+    "scheme_c_sha256": true,
+    "mappo_sha256": true,
+    "decoder_sha256": true
+  },
+  "code_sha256": {
+    "run": "fb770197116f0a611faea62074a1ec5a4fa3a756d24397522f6375d21638f272",
+    "execute": "edc2477ea3a2ecbc0f565a7a98a8611b86ac1ee7114179bd8228271ed1845f52"
+  },
+  "official_policy_sha256_before": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb",
+  "official_policy_sha256_after": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb",
+  "official_policy_unchanged": true,
+  "scenario_id": 322000,
+  "environment_steps": 48,
+  "training_updates": 0,
+  "scheme_c_calls": 4,
+  "complete": true,
+  "error": null,
+  "regression_status": "matched"
+}

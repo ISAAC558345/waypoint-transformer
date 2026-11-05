@@ -351,7 +351,14 @@ def run_episode(scenario_id: int, mode: str) -> EpisodeResult:
     )
 
 
-def run_active_episode(scenario_id: int, *, stop_time: int | None = None, policy_path: str | None = None, allow_holdout: bool = False) -> dict:
+def run_active_episode(
+    scenario_id: int,
+    *,
+    stop_time: int | None = None,
+    policy_path: str | None = None,
+    allow_holdout: bool = False,
+    fault_log: str | None = None,
+) -> dict:
     """Official MAPPO loop. The historical j15 mode above still uses k=5."""
     from pathlib import Path
 
@@ -365,4 +372,5 @@ def run_active_episode(scenario_id: int, *, stop_time: int | None = None, policy
         stop_time=stop_time,
         allow_holdout=allow_holdout,
         policy_path=policy_file,
+        fault_log=fault_log,
     )

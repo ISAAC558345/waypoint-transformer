@@ -1,0 +1,58 @@
+{
+  "reference_episode": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
+  "reference_payload_bits": 63785945.28984571,
+  "tolerance_bits": 1.0,
+  "payload_abs_diff_bits": 0.0,
+  "served_abs_diff_bits": 0.0,
+  "published_payload_abs_diff_bits": 0.0,
+  "step_count": {
+    "reference": 48,
+    "current": 48
+  },
+  "step_served_mismatches": [],
+  "fields": {
+    "complete": {
+      "reference": true,
+      "current": true,
+      "match": true
+    },
+    "terminal_time": {
+      "reference": 48,
+      "current": 48,
+      "match": true
+    },
+    "process_seed": {
+      "reference": 1322000,
+      "current": 1322000,
+      "match": true
+    },
+    "reset_seed": {
+      "reference": 322000,
+      "current": 322000,
+      "match": true
+    },
+    "decision_times": {
+      "reference": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "current": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "match": true
+    },
+    "scheme_c_calls": {
+      "reference": 4,
+      "current": 4,
+      "match": true
+    }
+  },
+  "current_payload_matches_served": 1,
+  "current_step_served_matches_episode": true,
+  "status": "matched"
+}

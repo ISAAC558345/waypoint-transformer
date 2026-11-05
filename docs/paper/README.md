@@ -16,3 +16,7 @@
 - [原六页论文 PDF](Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV.pdf)
 
 E19 的完成结论来自固定提交 `f9e9a9e007d7d84046232181fdab6f9a732a4a05`：T 与 M 在 16 个状态上选择相同，没有采用。正式重放是 1488 步，另有 30 步作废计数，合计 1518。AB/AC 汇总和 episode 已按归档核对；ranking-loss 的 summary.json 仍然缺失。本次未运行新实验，也未修改正式系统。
+
+## 维护研究索引
+
+[L3–L5 到达标签探索结案](../research/Legacy_ArrivalAware_L3_L5_Closure_CN.md) 只索引维护分支上的这组配置。上面的正文和 PDF 没有纳入该结案，本索引也不表示这些文件已经改写或重新编译。

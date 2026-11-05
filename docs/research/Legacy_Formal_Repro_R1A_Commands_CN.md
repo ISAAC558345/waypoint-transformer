@@ -20,6 +20,6 @@ py -3 -m wt.legacy_formal_repro_r1a.export --artifact-root results/legacy_formal
 
 ## 当前主动重跑状态
 
-当前 `--rerun` 与 `--finalize` 返回2，不是可执行的主动复现入口。本阶段只提供读取与独立导出。后续若要运行模型，需要另行明确输出目录和运行预算。
+`--rerun` 与 `--finalize` 仍然返回 2，继续保护原始 192 步证据。现行正式单场景命令是 `wt.legacy_system.run`，默认只预览配置；显式 `--run` 才执行。命令和已完成的 48 步输出见 [当前可用命令](Legacy_System_Commands_CN.md)。
 
 从干净检出开始的完整命令与src路径设置见 [当前可用命令](Legacy_System_Commands_CN.md)。
