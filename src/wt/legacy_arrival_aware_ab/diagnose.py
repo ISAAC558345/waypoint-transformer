@@ -215,6 +215,7 @@ def _record(state: dict, matrix: np.ndarray, scores: np.ndarray) -> dict:
         "score_minus_real_oracle": float(scores[local] - scores[real_oracle]),
         "payload_minus_real_oracle_bits": float(state["real_payload"][local] - state["real_payload"][real_oracle]),
         "within_active_count_regret_bits": float(state["real_payload"][k_best] - state["real_payload"][local]),
+        "within_active_count_candidates": int(same_k.size),
         "within_mask_regret_bits": float(state["real_payload"][mask_best] - state["real_payload"][local]),
         "within_mask_candidates": int(same_mask.size),
         "model_expected_active_uavs": float(np.sum(real_metrics["model_probability"] * active)),
@@ -230,6 +231,22 @@ def _record(state: dict, matrix: np.ndarray, scores: np.ndarray) -> dict:
 
 def _mean(rows: list[dict], key: str) -> float:
     return float(np.mean([float(row[key]) for row in rows]))
+
+
+def _nested_mean(rows: list[dict], key: str, stat: str) -> float:
+    return float(np.mean([float(row[key][stat]) for row in rows]))
+
+
+def _group_size_report(rows: list[dict], size_key: str, regret_key: str) -> dict:
+    comparable = [row for row in rows if int(row[size_key]) > 1]
+    return {
+        "group_sizes": [int(row[size_key]) for row in rows],
+        "singleton_states": int(sum(int(row[size_key]) == 1 for row in rows)),
+        "comparable_states": len(comparable),
+        "positive_regret_states": int(sum(float(row[regret_key]) > 0.0 for row in rows)),
+        "positive_regret_among_comparable_states": int(sum(float(row[regret_key]) > 0.0 for row in comparable)),
+        "singleton_zero_regret_is_not_ranking_evidence": True,
+    }
 
 
 def _group(records: dict[str, list[dict]]) -> dict:
@@ -250,12 +267,23 @@ def _group(records: dict[str, list[dict]]) -> dict:
                 "mean_real_target_expected_active_uavs": _mean(group_rows, "real_target_expected_active_uavs"),
                 "mean_zero_kl": _mean(group_rows, "zero_kl"),
                 "mean_real_kl": _mean(group_rows, "real_kl"),
-                "mean_matrix_negative_fraction": _mean(group_rows, "matrix_negative_fraction"),
-                "mean_matrix_mean": _mean(group_rows, "matrix_mean"),
+                "primary_used_candidate_edges": {
+                    "definition": "unique valid (uav, buoy) edges appearing in the 128 candidates",
+                    "mean_count": _nested_mean(group_rows, "candidate_edges", "count"),
+                    "mean_of_state_means": _nested_mean(group_rows, "candidate_edges", "mean"),
+                    "mean_negative_fraction": _nested_mean(group_rows, "candidate_edges", "negative_fraction"),
+                },
+                "auxiliary_full_matrix": {
+                    "definition": "every matrix entry, including edges the 128 candidates never use",
+                    "mean_of_state_means": _mean(group_rows, "matrix_mean"),
+                    "mean_negative_fraction": _mean(group_rows, "matrix_negative_fraction"),
+                },
                 "states_with_negative_chosen_score": int(sum(float(row["score"]) < 0.0 for row in group_rows)),
                 "states_active_at_most_two": int(sum(int(row["active_uavs"]) <= 2 for row in group_rows)),
-                "states_within_count_regret": int(sum(float(row["within_active_count_regret_bits"]) > 0.0 for row in group_rows)),
-                "states_within_mask_regret": int(sum(float(row["within_mask_regret_bits"]) > 0.0 for row in group_rows)),
+                "within_active_count": _group_size_report(
+                    group_rows, "within_active_count_candidates", "within_active_count_regret_bits"
+                ),
+                "within_mask": _group_size_report(group_rows, "within_mask_candidates", "within_mask_regret_bits"),
                 "states_active_count_differs_from_real_oracle": int(
                     sum(int(row["active_uavs"]) != int(row["real_oracle_active_uavs"]) for row in group_rows)
                 ),

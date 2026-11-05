@@ -1,0 +1,8 @@
+{
+  "cache_keys": 48,
+  "candidates_per_state": 128,
+  "raw_sum_reproduced_l4": 48,
+  "used_edges_per_state": 36,
+  "auxiliary_matrix_entries_per_state": 72,
+  "labels_joined_after_selection_file": true
+}

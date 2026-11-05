@@ -1,0 +1,1778 @@
+{
+  "definition": "primary edge statistics use the 36 unique valid edges that appear in the 128 candidates; the 72-entry matrix is auxiliary",
+  "stored_candidate_edges_match_recompute": true,
+  "models": {
+    "E6": {
+      "train_t15": {
+        "states": 6,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": 3.3622468698907784,
+          "mean_negative_fraction": 0.0
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": 0.07140605213741462,
+          "mean_negative_fraction": 0.5
+        },
+        "within_mask": {
+          "group_sizes": [
+            34,
+            39,
+            34,
+            33,
+            40,
+            34
+          ],
+          "singleton_states": 0,
+          "comparable_states": 6,
+          "positive_regret_states": 5,
+          "positive_regret_among_comparable_states": 5,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            34,
+            39,
+            34,
+            33,
+            40,
+            34
+          ],
+          "singleton_states": 0,
+          "comparable_states": 6,
+          "positive_regret_states": 5,
+          "positive_regret_among_comparable_states": 5,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      },
+      "train_t30": {
+        "states": 6,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": 4.472425862042992,
+          "mean_negative_fraction": 0.0
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": 3.0848097006479898,
+          "mean_negative_fraction": 0.0
+        },
+        "within_mask": {
+          "group_sizes": [
+            38,
+            36,
+            36,
+            38,
+            35,
+            37
+          ],
+          "singleton_states": 0,
+          "comparable_states": 6,
+          "positive_regret_states": 5,
+          "positive_regret_among_comparable_states": 5,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            38,
+            36,
+            36,
+            38,
+            35,
+            37
+          ],
+          "singleton_states": 0,
+          "comparable_states": 6,
+          "positive_regret_states": 5,
+          "positive_regret_among_comparable_states": 5,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      },
+      "explore_t15": {
+        "states": 2,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": 3.3705277840296426,
+          "mean_negative_fraction": 0.0
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": 0.08037381619215012,
+          "mean_negative_fraction": 0.5
+        },
+        "within_mask": {
+          "group_sizes": [
+            41,
+            36
+          ],
+          "singleton_states": 0,
+          "comparable_states": 2,
+          "positive_regret_states": 2,
+          "positive_regret_among_comparable_states": 2,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            41,
+            36
+          ],
+          "singleton_states": 0,
+          "comparable_states": 2,
+          "positive_regret_states": 2,
+          "positive_regret_among_comparable_states": 2,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      },
+      "explore_t30": {
+        "states": 2,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": 4.5723234746191235,
+          "mean_negative_fraction": 0.0
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": 2.9838595390319824,
+          "mean_negative_fraction": 0.0
+        },
+        "within_mask": {
+          "group_sizes": [
+            38,
+            36
+          ],
+          "singleton_states": 0,
+          "comparable_states": 2,
+          "positive_regret_states": 2,
+          "positive_regret_among_comparable_states": 2,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            38,
+            36
+          ],
+          "singleton_states": 0,
+          "comparable_states": 2,
+          "positive_regret_states": 2,
+          "positive_regret_among_comparable_states": 2,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      }
+    },
+    "A10": {
+      "train_t15": {
+        "states": 6,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": 4.479726707493818,
+          "mean_negative_fraction": 0.0
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": 1.1744547287623088,
+          "mean_negative_fraction": 0.5
+        },
+        "within_mask": {
+          "group_sizes": [
+            34,
+            39,
+            34,
+            33,
+            40,
+            34
+          ],
+          "singleton_states": 0,
+          "comparable_states": 6,
+          "positive_regret_states": 5,
+          "positive_regret_among_comparable_states": 5,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            34,
+            39,
+            34,
+            33,
+            40,
+            34
+          ],
+          "singleton_states": 0,
+          "comparable_states": 6,
+          "positive_regret_states": 5,
+          "positive_regret_among_comparable_states": 5,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      },
+      "train_t30": {
+        "states": 6,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": 4.941828996494964,
+          "mean_negative_fraction": 0.0
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": 2.733022689819336,
+          "mean_negative_fraction": 0.13888888888888887
+        },
+        "within_mask": {
+          "group_sizes": [
+            38,
+            36,
+            36,
+            38,
+            35,
+            37
+          ],
+          "singleton_states": 0,
+          "comparable_states": 6,
+          "positive_regret_states": 6,
+          "positive_regret_among_comparable_states": 6,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            38,
+            36,
+            36,
+            38,
+            35,
+            37
+          ],
+          "singleton_states": 0,
+          "comparable_states": 6,
+          "positive_regret_states": 6,
+          "positive_regret_among_comparable_states": 6,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      },
+      "explore_t15": {
+        "states": 2,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": 4.481124745474921,
+          "mean_negative_fraction": 0.0
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": 1.1769767999649048,
+          "mean_negative_fraction": 0.5
+        },
+        "within_mask": {
+          "group_sizes": [
+            41,
+            36
+          ],
+          "singleton_states": 0,
+          "comparable_states": 2,
+          "positive_regret_states": 2,
+          "positive_regret_among_comparable_states": 2,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            41,
+            36
+          ],
+          "singleton_states": 0,
+          "comparable_states": 2,
+          "positive_regret_states": 2,
+          "positive_regret_among_comparable_states": 2,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      },
+      "explore_t30": {
+        "states": 2,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": 4.9827351537015705,
+          "mean_negative_fraction": 0.0
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": 2.7728543281555176,
+          "mean_negative_fraction": 0.0
+        },
+        "within_mask": {
+          "group_sizes": [
+            38,
+            36
+          ],
+          "singleton_states": 0,
+          "comparable_states": 2,
+          "positive_regret_states": 2,
+          "positive_regret_among_comparable_states": 2,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            38,
+            36
+          ],
+          "singleton_states": 0,
+          "comparable_states": 2,
+          "positive_regret_states": 2,
+          "positive_regret_among_comparable_states": 2,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      }
+    },
+    "B10": {
+      "train_t15": {
+        "states": 6,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": -0.46923233106025247,
+          "mean_negative_fraction": 0.9444444444444445
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": -0.648636649052302,
+          "mean_negative_fraction": 0.9722222222222222
+        },
+        "within_mask": {
+          "group_sizes": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "singleton_states": 5,
+          "comparable_states": 1,
+          "positive_regret_states": 1,
+          "positive_regret_among_comparable_states": 1,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            6,
+            4,
+            3,
+            4,
+            3,
+            2
+          ],
+          "singleton_states": 0,
+          "comparable_states": 6,
+          "positive_regret_states": 4,
+          "positive_regret_among_comparable_states": 4,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      },
+      "train_t30": {
+        "states": 6,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": 0.19450942627412993,
+          "mean_negative_fraction": 0.032407407407407406
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": 0.03336421384786566,
+          "mean_negative_fraction": 0.3912037037037037
+        },
+        "within_mask": {
+          "group_sizes": [
+            7,
+            36,
+            36,
+            5,
+            35,
+            37
+          ],
+          "singleton_states": 0,
+          "comparable_states": 6,
+          "positive_regret_states": 6,
+          "positive_regret_among_comparable_states": 6,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            30,
+            36,
+            36,
+            31,
+            35,
+            37
+          ],
+          "singleton_states": 0,
+          "comparable_states": 6,
+          "positive_regret_states": 6,
+          "positive_regret_among_comparable_states": 6,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      },
+      "explore_t15": {
+        "states": 2,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": -0.4922461008860005,
+          "mean_negative_fraction": 1.0
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": -0.6718076467514038,
+          "mean_negative_fraction": 1.0
+        },
+        "within_mask": {
+          "group_sizes": [
+            1,
+            1
+          ],
+          "singleton_states": 2,
+          "comparable_states": 0,
+          "positive_regret_states": 0,
+          "positive_regret_among_comparable_states": 0,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            4,
+            1
+          ],
+          "singleton_states": 1,
+          "comparable_states": 1,
+          "positive_regret_states": 0,
+          "positive_regret_among_comparable_states": 0,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      },
+      "explore_t30": {
+        "states": 2,
+        "primary_used_candidate_edges": {
+          "mean_count": 36.0,
+          "mean_of_state_means": 0.18047850374649796,
+          "mean_negative_fraction": 0.027777777777777776
+        },
+        "auxiliary_full_matrix": {
+          "mean_count": 72.0,
+          "mean_of_state_means": 0.011149074416607618,
+          "mean_negative_fraction": 0.3888888888888889
+        },
+        "within_mask": {
+          "group_sizes": [
+            38,
+            36
+          ],
+          "singleton_states": 0,
+          "comparable_states": 2,
+          "positive_regret_states": 2,
+          "positive_regret_among_comparable_states": 2,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        },
+        "within_active_count": {
+          "group_sizes": [
+            38,
+            36
+          ],
+          "singleton_states": 0,
+          "comparable_states": 2,
+          "positive_regret_states": 2,
+          "positive_regret_among_comparable_states": 2,
+          "singleton_zero_regret_is_not_ranking_evidence": true
+        }
+      }
+    }
+  },
+  "states": [
+    {
+      "model": "E6",
+      "scenario_id": 322016,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.3097548484802246,
+        "median": 3.370955467224121,
+        "max": 3.556596517562866,
+        "mean": 3.3837987581888833,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.09220899641513824,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 34,
+      "within_mask_regret_bits": 2545297.015408799,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 34,
+      "within_active_count_regret_bits": 2545297.015408799,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 25867295.24028642
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322016,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 2.1739799976348877,
+        "median": 5.036285638809204,
+        "max": 5.130106449127197,
+        "mean": 4.497188356187609,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 3.039672613143921,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 38,
+      "within_mask_regret_bits": 2939931.117784109,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 38,
+      "within_active_count_regret_bits": 2939931.117784109,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 26025324.66481746
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322017,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.3143322467803955,
+        "median": 3.3578109741210938,
+        "max": 3.4755892753601074,
+        "mean": 3.3717049625184803,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.08090795576572418,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 39,
+      "within_mask_regret_bits": 3430440.0137817487,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 39,
+      "within_active_count_regret_bits": 3430440.0137817487,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 18361494.37244996
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322017,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.6343400478363037,
+        "median": 4.535356044769287,
+        "max": 5.141139507293701,
+        "mean": 4.506156338585748,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 3.1247613430023193,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 36,
+      "within_mask_regret_bits": 4078245.9809051193,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 36,
+      "within_active_count_regret_bits": 4078245.9809051193,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 24962882.41601762
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322018,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.3125298023223877,
+        "median": 3.3497519493103027,
+        "max": 3.423361301422119,
+        "mean": 3.3555493354797363,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.06413563340902328,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 34,
+      "within_mask_regret_bits": 1797067.0843127891,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 34,
+      "within_active_count_regret_bits": 1797067.0843127891,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 22979985.02743763
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322018,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 2.698521137237549,
+        "median": 4.831339120864868,
+        "max": 5.120889186859131,
+        "mean": 4.500747448868221,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 3.09999680519104,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 36,
+      "within_mask_regret_bits": 1813958.4700613506,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 36,
+      "within_active_count_regret_bits": 1813958.4700613506,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 27477247.82940806
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322019,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.3132407665252686,
+        "median": 3.3258482217788696,
+        "max": 3.3600566387176514,
+        "mean": 3.3325453400611877,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.04221632704138756,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 33,
+      "within_mask_regret_bits": 2605039.8839567676,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 33,
+      "within_active_count_regret_bits": 2605039.8839567676,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 22359941.59323744
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322019,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 1.7883573770523071,
+        "median": 4.992528915405273,
+        "max": 5.097087860107422,
+        "mean": 4.376681556304296,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 3.0183982849121094,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 38,
+      "within_mask_regret_bits": 1148720.5441156812,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 38,
+      "within_active_count_regret_bits": 1148720.5441156812,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 23768621.29706784
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322020,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.308488607406616,
+        "median": 3.3681488037109375,
+        "max": 3.4091415405273438,
+        "mean": 3.364520125918918,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.07465137541294098,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 40,
+      "within_mask_regret_bits": 0.0,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 40,
+      "within_active_count_regret_bits": 0.0,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 23614327.36961265
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322020,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.4237115383148193,
+        "median": 4.5335853099823,
+        "max": 5.137301445007324,
+        "mean": 4.4913028081258135,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 3.1185145378112793,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 35,
+      "within_mask_regret_bits": 3125871.78363486,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 35,
+      "within_active_count_regret_bits": 3125871.78363486,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 26345843.01288018
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322021,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.3045570850372314,
+        "median": 3.3617626428604126,
+        "max": 3.4740443229675293,
+        "mean": 3.365362697177463,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.07431602478027344,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 34,
+      "within_mask_regret_bits": 3979708.7374879904,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 34,
+      "within_active_count_regret_bits": 3979708.7374879904,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 18101546.03399782
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322021,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.5651018619537354,
+        "median": 4.644409418106079,
+        "max": 5.137780666351318,
+        "mean": 4.462478664186266,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 3.1075146198272705,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 37,
+      "within_mask_regret_bits": 0.0,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 37,
+      "within_active_count_regret_bits": 0.0,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 28887519.90240569
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322022,
+      "time_step": 15,
+      "split": "explore_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.314166307449341,
+        "median": 3.3610957860946655,
+        "max": 3.4979889392852783,
+        "mean": 3.3770488368140326,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.08687877655029297,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 41,
+      "within_mask_regret_bits": 672798.3268420473,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 41,
+      "within_active_count_regret_bits": 672798.3268420473,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 27072800.64005944
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322022,
+      "time_step": 30,
+      "split": "explore_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 2.0453011989593506,
+        "median": 5.007760286331177,
+        "max": 5.099598407745361,
+        "mean": 4.527938869264391,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 2.913607358932495,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 38,
+      "within_mask_regret_bits": 955745.0078082271,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 38,
+      "within_active_count_regret_bits": 955745.0078082271,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 26376826.31385856
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322023,
+      "time_step": 15,
+      "split": "explore_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.3293612003326416,
+        "median": 3.369164228439331,
+        "max": 3.388472318649292,
+        "mean": 3.3640067312452526,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.07386885583400726,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 36,
+      "within_mask_regret_bits": 608372.9679826908,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 36,
+      "within_active_count_regret_bits": 608372.9679826908,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 24207869.69683477
+    },
+    {
+      "model": "E6",
+      "scenario_id": 322023,
+      "time_step": 30,
+      "split": "explore_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 2.755352258682251,
+        "median": 4.985640048980713,
+        "max": 5.136204242706299,
+        "mean": 4.616708079973857,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 3.0541117191314697,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 36,
+      "within_mask_regret_bits": 2428918.0366936997,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 36,
+      "within_active_count_regret_bits": 2428918.0366936997,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 25794111.44516828
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322016,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 4.456889629364014,
+        "median": 4.491067409515381,
+        "max": 4.590461254119873,
+        "mean": 4.4980734719170465,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 1.2007743120193481,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 34,
+      "within_mask_regret_bits": 2545297.015408799,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 34,
+      "within_active_count_regret_bits": 2545297.015408799,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 25867295.24028642
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322016,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 2.5641720294952393,
+        "median": 5.235896348953247,
+        "max": 5.243815898895264,
+        "mean": 4.798649489879608,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 2.994246244430542,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 38,
+      "within_mask_regret_bits": 5875187.584464788,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 38,
+      "within_active_count_regret_bits": 5875187.584464788,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 23090068.19813678
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322017,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 4.45617151260376,
+        "median": 4.472335577011108,
+        "max": 4.556380748748779,
+        "mean": 4.483673281139797,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 1.1802541017532349,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 39,
+      "within_mask_regret_bits": 3862582.462763291,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 39,
+      "within_active_count_regret_bits": 3862582.462763291,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 17929351.92346842
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322017,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 5.000068664550781,
+        "median": 5.049603700637817,
+        "max": 5.081874370574951,
+        "mean": 5.044976406627232,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 2.5143721103668213,
+        "negative_fraction": 0.3333333333333333,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 36,
+      "within_mask_regret_bits": 4078245.9809051193,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 36,
+      "within_active_count_regret_bits": 4078245.9809051193,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 24962882.41601762
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322018,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 4.45384407043457,
+        "median": 4.4726481437683105,
+        "max": 4.5275115966796875,
+        "mean": 4.477537777688768,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 1.1708564758300781,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 34,
+      "within_mask_regret_bits": 1797067.0843127891,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 34,
+      "within_active_count_regret_bits": 1797067.0843127891,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 22979985.02743763
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322018,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 4.625682353973389,
+        "median": 5.173173427581787,
+        "max": 5.186352252960205,
+        "mean": 5.084580116801792,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 2.8761138916015625,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 36,
+      "within_mask_regret_bits": 3456448.4658441506,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 36,
+      "within_active_count_regret_bits": 3456448.4658441506,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 25834757.83362526
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322019,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 4.449689865112305,
+        "median": 4.45858907699585,
+        "max": 4.472151279449463,
+        "mean": 4.460472623507182,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 1.1467217206954956,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 33,
+      "within_mask_regret_bits": 443965.71872086823,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 33,
+      "within_active_count_regret_bits": 443965.71872086823,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 24521015.75847334
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322019,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 1.4806405305862427,
+        "median": 5.241819858551025,
+        "max": 5.24798583984375,
+        "mean": 4.624220069911745,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 2.9440486431121826,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 38,
+      "within_mask_regret_bits": 2880454.7385821305,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 38,
+      "within_active_count_regret_bits": 2880454.7385821305,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 22036887.10260139
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322020,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 4.455821514129639,
+        "median": 4.47602915763855,
+        "max": 4.499929904937744,
+        "mean": 4.476454589102003,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 1.1702724695205688,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 40,
+      "within_mask_regret_bits": 0.0,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 40,
+      "within_active_count_regret_bits": 0.0,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 23614327.36961265
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322020,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 4.984671115875244,
+        "median": 5.049567937850952,
+        "max": 5.09023904800415,
+        "mean": 5.046782082981533,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 2.5287716388702393,
+        "negative_fraction": 0.3333333333333333,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 35,
+      "within_mask_regret_bits": 3760224.5337299295,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 35,
+      "within_active_count_regret_bits": 3760224.5337299295,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 25711490.26278511
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322021,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 4.452118396759033,
+        "median": 4.474046230316162,
+        "max": 4.556095600128174,
+        "mean": 4.482148501608107,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 1.177849292755127,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 34,
+      "within_mask_regret_bits": 3979708.7374879904,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 34,
+      "within_active_count_regret_bits": 3979708.7374879904,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 18101546.03399782
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322021,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 5.000199317932129,
+        "median": 5.060264348983765,
+        "max": 5.088709354400635,
+        "mean": 5.051765812767877,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 2.540583610534668,
+        "negative_fraction": 0.16666666666666666,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 37,
+      "within_mask_regret_bits": 1275418.4058825187,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 37,
+      "within_active_count_regret_bits": 1275418.4058825187,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 27612101.49652317
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322022,
+      "time_step": 15,
+      "split": "explore_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 4.4557976722717285,
+        "median": 4.4765965938568115,
+        "max": 4.551820278167725,
+        "mean": 4.485811842812432,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 1.1838738918304443,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 41,
+      "within_mask_regret_bits": 109085.06869037822,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 41,
+      "within_active_count_regret_bits": 109085.06869037822,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 27636513.89821111
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322022,
+      "time_step": 30,
+      "split": "explore_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 3.3331542015075684,
+        "median": 5.226495027542114,
+        "max": 5.235415935516357,
+        "mean": 4.916748570071326,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 2.995570182800293,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 38,
+      "within_mask_regret_bits": 59175.246086366475,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 38,
+      "within_active_count_regret_bits": 59175.246086366475,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 27273396.07558042
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322023,
+      "time_step": 15,
+      "split": "explore_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 4.466334342956543,
+        "median": 4.475335359573364,
+        "max": 4.487930774688721,
+        "mean": 4.47643764813741,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 1.1700797080993652,
+        "negative_fraction": 0.5,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 36,
+      "within_mask_regret_bits": 608372.9679826908,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 36,
+      "within_active_count_regret_bits": 608372.9679826908,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 24207869.69683477
+    },
+    {
+      "model": "A10",
+      "scenario_id": 322023,
+      "time_step": 30,
+      "split": "explore_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 4.903515815734863,
+        "median": 5.07469916343689,
+        "max": 5.08955717086792,
+        "mean": 5.048721737331814,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 2.550138473510742,
+        "negative_fraction": 0.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 36,
+      "within_mask_regret_bits": 3722750.6334278993,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 36,
+      "within_active_count_regret_bits": 3722750.6334278993,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 24500278.84843408
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322016,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": -0.5791546702384949,
+        "median": -0.3802366182208061,
+        "max": -0.009363493882119656,
+        "mean": -0.35220521714331376,
+        "negative_fraction": 1.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": -0.5349091291427612,
+        "negative_fraction": 1.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 2,
+      "within_mask_regret_bits": 24094.99433868751,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 6,
+      "within_active_count_regret_bits": 891656.2468023598,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 18003604.0144594
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322016,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": -0.05824273079633713,
+        "median": 0.26418425142765045,
+        "max": 0.36868712306022644,
+        "mean": 0.23355374901762438,
+        "negative_fraction": 0.027777777777777776
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.08198276907205582,
+        "negative_fraction": 0.2638888888888889,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 7,
+      "within_mask_regret_bits": 6791312.056607641,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 30,
+      "within_active_count_regret_bits": 6791312.056607641,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 21529729.68114751
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322017,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": -0.5937981009483337,
+        "median": -0.5567297339439392,
+        "max": 0.015919901430606842,
+        "mean": -0.46477269823662937,
+        "negative_fraction": 0.8333333333333334
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": -0.6433799266815186,
+        "negative_fraction": 0.9166666666666666,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 1,
+      "within_mask_regret_bits": 0.0,
+      "within_mask_singleton": true,
+      "within_active_count_candidates": 4,
+      "within_active_count_regret_bits": 1274403.1649236605,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 18093224.10377051
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322017,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 0.07610756903886795,
+        "median": 0.15256290137767792,
+        "max": 0.3264812231063843,
+        "mean": 0.18087721947166654,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.009993750602006912,
+        "negative_fraction": 0.4166666666666667,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 36,
+      "within_mask_regret_bits": 4078245.9809051193,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 36,
+      "within_active_count_regret_bits": 4078245.9809051193,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 24962882.41601762
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322018,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": -0.585226833820343,
+        "median": -0.5634302496910095,
+        "max": -0.07826130837202072,
+        "mean": -0.45170794799923897,
+        "negative_fraction": 1.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": -0.6318680644035339,
+        "negative_fraction": 1.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 1,
+      "within_mask_regret_bits": 0.0,
+      "within_mask_singleton": true,
+      "within_active_count_candidates": 3,
+      "within_active_count_regret_bits": 499120.83728510886,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 18296318.55172896
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322018,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 0.04263601452112198,
+        "median": 0.2451348379254341,
+        "max": 0.36412572860717773,
+        "mean": 0.24003464500937197,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.08193708956241608,
+        "negative_fraction": 0.25,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 36,
+      "within_mask_regret_bits": 793139.0458670631,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 36,
+      "within_active_count_regret_bits": 793139.0458670631,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 28498067.25360235
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322019,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": -0.5982792377471924,
+        "median": -0.5789522230625153,
+        "max": -0.40118297934532166,
+        "mean": -0.5515518743130896,
+        "negative_fraction": 1.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": -0.72899329662323,
+        "negative_fraction": 1.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 1,
+      "within_mask_regret_bits": 0.0,
+      "within_mask_singleton": true,
+      "within_active_count_candidates": 4,
+      "within_active_count_regret_bits": 718554.8926817328,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 18441799.26882697
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322019,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": -0.2295079082250595,
+        "median": 0.23681244254112244,
+        "max": 0.27344945073127747,
+        "mean": 0.1596874331848489,
+        "negative_fraction": 0.16666666666666666
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.014474489726126194,
+        "negative_fraction": 0.5833333333333334,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 5,
+      "within_mask_regret_bits": 4946404.873028278,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 31,
+      "within_active_count_regret_bits": 4946404.873028278,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 21424528.09553698
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322020,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": -0.5863512754440308,
+        "median": -0.5388705134391785,
+        "max": -0.48220130801200867,
+        "mean": -0.535867888894346,
+        "negative_fraction": 1.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": -0.7142524719238281,
+        "negative_fraction": 1.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 1,
+      "within_mask_regret_bits": 0.0,
+      "within_mask_singleton": true,
+      "within_active_count_candidates": 3,
+      "within_active_count_regret_bits": 0.0,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 18936959.87185054
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322020,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 0.05712968856096268,
+        "median": 0.09929832071065903,
+        "max": 0.3419215679168701,
+        "mean": 0.14730844067202675,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": -0.027742775157094002,
+        "negative_fraction": 0.4166666666666667,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 35,
+      "within_mask_regret_bits": 3125871.78363486,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 35,
+      "within_active_count_regret_bits": 3125871.78363486,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 26345843.01288018
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322021,
+      "time_step": 15,
+      "split": "train_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": -0.5792468190193176,
+        "median": -0.5435138046741486,
+        "max": 0.015123882330954075,
+        "mean": -0.4592883597748975,
+        "negative_fraction": 0.8333333333333334
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": -0.6384170055389404,
+        "negative_fraction": 0.9166666666666666,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 1,
+      "within_mask_regret_bits": 0.0,
+      "within_mask_singleton": true,
+      "within_active_count_candidates": 2,
+      "within_active_count_regret_bits": 0.0,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 18673697.64234509
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322021,
+      "time_step": 30,
+      "split": "train_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 0.057440049946308136,
+        "median": 0.22973936051130295,
+        "max": 0.3318520486354828,
+        "mean": 0.20559507028924096,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.03953995928168297,
+        "negative_fraction": 0.4166666666666667,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 37,
+      "within_mask_regret_bits": 1275418.4058825187,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 37,
+      "within_active_count_regret_bits": 1275418.4058825187,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 27612101.49652317
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322022,
+      "time_step": 15,
+      "split": "explore_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": -0.5840941071510315,
+        "median": -0.5355143249034882,
+        "max": -0.23206834495067596,
+        "mean": -0.46319887787103653,
+        "negative_fraction": 1.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": -0.6435794830322266,
+        "negative_fraction": 1.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 1,
+      "within_mask_regret_bits": 0.0,
+      "within_mask_singleton": true,
+      "within_active_count_candidates": 4,
+      "within_active_count_regret_bits": 0.0,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 19098733.26736973
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322022,
+      "time_step": 30,
+      "split": "explore_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": -0.026046834886074066,
+        "median": 0.14359275996685028,
+        "max": 0.372342586517334,
+        "mean": 0.19828653485617703,
+        "negative_fraction": 0.05555555555555555
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": 0.03523926064372063,
+        "negative_fraction": 0.3611111111111111,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 38,
+      "within_mask_regret_bits": 59175.246086366475,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 38,
+      "within_active_count_regret_bits": 59175.246086366475,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 27273396.07558042
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322023,
+      "time_step": 15,
+      "split": "explore_t15",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": -0.588302493095398,
+        "median": -0.5406729280948639,
+        "max": -0.3641437888145447,
+        "mean": -0.5212933239009645,
+        "negative_fraction": 1.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": -0.700035810470581,
+        "negative_fraction": 1.0,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 1,
+      "within_mask_regret_bits": 0.0,
+      "within_mask_singleton": true,
+      "within_active_count_candidates": 1,
+      "within_active_count_regret_bits": 0.0,
+      "within_active_count_singleton": true,
+      "real_payload_checked_bits": 9000000.0
+    },
+    {
+      "model": "B10",
+      "scenario_id": 322023,
+      "time_step": 30,
+      "split": "explore_t30",
+      "used_candidate_edges": {
+        "count": 36,
+        "min": 0.04401407390832901,
+        "median": 0.12253900617361069,
+        "max": 0.36126071214675903,
+        "mean": 0.16267047263681889,
+        "negative_fraction": 0.0
+      },
+      "auxiliary_full_matrix": {
+        "count": 72,
+        "mean": -0.01294111181050539,
+        "negative_fraction": 0.4166666666666667,
+        "definition": "every matrix entry, including edges the 128 candidates never use"
+      },
+      "within_mask_candidates": 36,
+      "within_mask_regret_bits": 2996296.7534856573,
+      "within_mask_singleton": false,
+      "within_active_count_candidates": 36,
+      "within_active_count_regret_bits": 2996296.7534856573,
+      "within_active_count_singleton": false,
+      "real_payload_checked_bits": 25226732.72837632
+    }
+  ]
+}
