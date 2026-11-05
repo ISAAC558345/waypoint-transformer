@@ -1,0 +1,58 @@
+[
+  {
+    "scenario_id": 322022,
+    "time_step": 15,
+    "local_position": 4,
+    "candidate_id": 532,
+    "row_index": 532,
+    "assignment": "-1|-1|8|6|-1|-1",
+    "real_payload_bits": 19098733.26736973,
+    "real_regret_bits": 8646865.69953176,
+    "zero_payload_bits": 8000000.0,
+    "zero_regret_bits": 16000000.0,
+    "score": -0.7549702525138855,
+    "tie_count": 1
+  },
+  {
+    "scenario_id": 322022,
+    "time_step": 30,
+    "local_position": 34,
+    "candidate_id": 4712,
+    "row_index": 4712,
+    "assignment": "6|7|10|8|11|9",
+    "real_payload_bits": 27273396.07558042,
+    "real_regret_bits": 2125524.1880747676,
+    "zero_payload_bits": 22444626.12643001,
+    "zero_regret_bits": 0.0,
+    "score": 1.2095190286636353,
+    "tie_count": 1
+  },
+  {
+    "scenario_id": 322023,
+    "time_step": 15,
+    "local_position": 0,
+    "candidate_id": 4,
+    "row_index": 4,
+    "assignment": "-1|-1|-1|-1|-1|9",
+    "real_payload_bits": 9000000.0,
+    "real_regret_bits": 16863403.63999928,
+    "zero_payload_bits": 4000000.0,
+    "zero_regret_bits": 19224399.31792771,
+    "score": -0.371673583984375,
+    "tie_count": 1
+  },
+  {
+    "scenario_id": 322023,
+    "time_step": 30,
+    "local_position": 58,
+    "candidate_id": 6195,
+    "row_index": 6195,
+    "assignment": "7|6|8|10|9|11",
+    "real_payload_bits": 25226732.72837632,
+    "real_regret_bits": 3697981.1026617996,
+    "zero_payload_bits": 22728828.63656414,
+    "zero_regret_bits": 0.0,
+    "score": 0.9848951697349548,
+    "tie_count": 1
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "graphs": 16,
+  "train_states": 12,
+  "explore_states": 4,
+  "l2_manifest_unchanged": true
+}

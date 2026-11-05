@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "strict_epoch6": true,
+  "decoder_frozen": true,
+  "initial_scores_identical": true,
+  "checked_state": [
+    322016,
+    15
+  ],
+  "checked_candidate_id": 8222,
+  "checked_local_position": 87,
+  "updates": 0
+}

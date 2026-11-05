@@ -1,0 +1,58 @@
+[
+  {
+    "scenario_id": 322022,
+    "time_step": 15,
+    "local_position": 87,
+    "candidate_id": 9916,
+    "row_index": 9916,
+    "assignment": "9|10|6|8|11|7",
+    "real_payload_bits": 27072800.64005944,
+    "real_regret_bits": 672798.3268420473,
+    "zero_payload_bits": 24000000.0,
+    "zero_regret_bits": 0.0,
+    "score": 20.262418746948242,
+    "tie_count": 1
+  },
+  {
+    "scenario_id": 322022,
+    "time_step": 30,
+    "local_position": 80,
+    "candidate_id": 8572,
+    "row_index": 8572,
+    "assignment": "8|11|6|7|10|9",
+    "real_payload_bits": 26376826.31385856,
+    "real_regret_bits": 3022093.949796628,
+    "zero_payload_bits": 22444626.12643001,
+    "zero_regret_bits": 0.0,
+    "score": 27.183237075805664,
+    "tie_count": 1
+  },
+  {
+    "scenario_id": 322023,
+    "time_step": 15,
+    "local_position": 93,
+    "candidate_id": 10150,
+    "row_index": 10150,
+    "assignment": "9|11|7|6|8|10",
+    "real_payload_bits": 24207869.69683477,
+    "real_regret_bits": 1655533.9431645125,
+    "zero_payload_bits": 22979741.32517464,
+    "zero_regret_bits": 244657.99275306985,
+    "score": 20.1840877532959,
+    "tie_count": 1
+  },
+  {
+    "scenario_id": 322023,
+    "time_step": 30,
+    "local_position": 60,
+    "candidate_id": 6299,
+    "row_index": 6299,
+    "assignment": "7|6|11|9|10|8",
+    "real_payload_bits": 25794111.44516828,
+    "real_regret_bits": 3130602.385869842,
+    "zero_payload_bits": 22728828.63656414,
+    "zero_regret_bits": 0.0,
+    "score": 27.708858489990234,
+    "tie_count": 1
+  }
+]

@@ -195,7 +195,7 @@ def _check_states(restored: list[dict], manifests: dict[tuple[int, int], dict], 
                     raise RuntimeError(f"{npz_rel} field {field} is empty or non-finite")
 
 
-def _graphs(repo: Path, manifests: dict[tuple[int, int], dict], output: Path) -> dict:
+def _graphs(source_root: Path, manifests: dict[tuple[int, int], dict], output: Path) -> dict:
     try:
         from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
         from wt.benchmark_v2.phase6ib_highlevel_dataset.hgnn_revision import hgnn_tensors
@@ -211,7 +211,7 @@ def _graphs(repo: Path, manifests: dict[tuple[int, int], dict], output: Path) ->
     graph_dir.mkdir(parents=True, exist_ok=True)
     files = []
     for scenario, time_step in sorted(manifests):
-        npz_path = repo / f"results/legacy_arrival_aware_ab_l2/source_states/scenario_{scenario}/t{time_step:03d}_state.npz"
+        npz_path = source_root / f"scenario_{scenario}" / f"t{time_step:03d}_state.npz"
         with np.load(npz_path) as payload:
             arrays = {name: np.asarray(payload[name]) for name in payload.files}
         built = hgnn_tensors(arrays, config)
@@ -245,7 +245,7 @@ def _graphs(repo: Path, manifests: dict[tuple[int, int], dict], output: Path) ->
             {
                 "scenario_id": scenario,
                 "time_step": time_step,
-                "path": f"results/legacy_arrival_aware_ab_l2/{relative}",
+                "path": relative,
                 "sha256": _sha256(target.read_bytes()),
                 "shapes": {key: list(graph[key].shape) for key in GRAPH_KEYS},
                 "queue_edge_width": int(conditioned["edge"].shape[-1]),
@@ -290,7 +290,7 @@ def prepare(repo: Path, inventory_path: Path, labels_path: Path, candidates_path
     labels = _read_csv(labels_path)
     candidates = _read_csv(candidates_path)
     paired = _pair_rows(labels, candidates, manifests)
-    graph_report = _graphs(repo, manifests, output)
+    graph_report = _graphs(repo / str(inventory["output_source_root"]), manifests, output)
     graph_paths = {
         (int(item["scenario_id"]), int(item["time_step"])): item["path"]
         for item in graph_report["files"]
@@ -340,6 +340,39 @@ def prepare(repo: Path, inventory_path: Path, labels_path: Path, candidates_path
     }
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     return manifest
+
+
+def prepare_from_existing(repo: Path, source_root: Path, labels_path: Path, candidates_path: Path, output: Path) -> dict:
+    """Build one package from the restored L2 states without rewriting them."""
+    l2_package = (repo / "results/legacy_arrival_aware_ab_l2").resolve()
+    if output.resolve() == l2_package or l2_package in output.resolve().parents:
+        raise RuntimeError("refusing to write inside the L2 package")
+    if source_root.resolve() == l2_package or l2_package not in source_root.resolve().parents:
+        raise RuntimeError("source root must be the restored L2 state directory")
+    manifests = {}
+    for scenario in TARGET_SCENARIOS:
+        for time_step in TARGET_TIMES:
+            manifest_path = source_root / f"scenario_{scenario}" / f"t{time_step:03d}_manifest.json"
+            npz_path = source_root / f"scenario_{scenario}" / f"t{time_step:03d}_state.npz"
+            payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+            digest = _sha256(npz_path.read_bytes())
+            if digest != str(payload["checksum_state"]):
+                raise RuntimeError(f"{npz_path.name} does not match checksum_state")
+            manifests[(int(scenario), int(time_step))] = payload
+    paired = _pair_rows(_read_csv(labels_path), _read_csv(candidates_path), manifests)
+    graph_report = _graphs(source_root, manifests, output)
+    if graph_report["status"] != "passed":
+        raise RuntimeError(graph_report["reason"] or "graph conversion did not pass")
+    for item in graph_report["files"]:
+        recorded = str(item["path"]).replace("\\", "/")
+        if recorded.startswith("results/") or "legacy_arrival_aware_ab_l2" in recorded:
+            raise RuntimeError(f"graph path is not package-relative: {recorded}")
+        if not (output / recorded).is_file():
+            raise RuntimeError(f"recorded graph is missing: {recorded}")
+    graph_paths = {(int(item["scenario_id"]), int(item["time_step"])): item["path"] for item in graph_report["files"]}
+    rows_path = output / "paired" / "rows.csv"
+    _write_rows(rows_path, paired, graph_paths)
+    return {"states": len(manifests), "candidate_rows": len(paired), "graph_files": graph_report["files"]}
 
 
 def main() -> None:
