@@ -1,0 +1,70 @@
+{
+  "package": "legacy_delivery_l7_evidence",
+  "claim_type": "原保存聚合已核对",
+  "environment_steps": 0,
+  "scoring_forwards": 0,
+  "training_updates": 0,
+  "backward_passes": 0,
+  "low_level_inferences": 0,
+  "source": {
+    "path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/runs/c/result.json",
+    "git_blob": "e7be8da9c24f007ee5c30eef25a446d716fe3971",
+    "git_blob_payload_sha256": "7ff7f6f13a42afb7e7d860063776375e2211df8c28504bc1da49c48f08bfeff4",
+    "workspace_sha256": "7ff7f6f13a42afb7e7d860063776375e2211df8c28504bc1da49c48f08bfeff4"
+  },
+  "sample_unit": "48 validation decision states",
+  "n_states": 48,
+  "best_epoch": 1,
+  "rounding": "paper cells keep their existing displayed digits; this index records the original saved values",
+  "checked_cells": {
+    "payload_bits": 19240091.24202323,
+    "payload_mbit": 19.24009124202323,
+    "paper_payload_mbit": 19.240091242,
+    "top1": 0.6666666666666666,
+    "top3": 0.7083333333333334,
+    "top5": 0.7083333333333334,
+    "normalized_regret": 0.035473433715573995,
+    "paper_display_after_existing_rounding": {
+      "payload_mbit": "19.240",
+      "top1": "0.6667",
+      "top3": "0.7083",
+      "top5": "0.7083",
+      "normalized_regret": "0.0355"
+    }
+  },
+  "original_loss": {
+    "json_value": null,
+    "reason": "the original result.json stores a non-numeric loss token; it is not rewritten as 0 and the file is not edited",
+    "nonfinite_token_count": 5
+  },
+  "baseline_side": {
+    "status": "reported_only",
+    "needles_present_in_result_json": {
+      "18.892": false,
+      "0.5625": true,
+      "0.6250": false,
+      "0.6667": false,
+      "0.0507": false
+    },
+    "reason": "the from-values 18.892, 0.5625, 0.6250, 0.6667, and 0.0507 are not treated as part of this best-epoch aggregate"
+  },
+  "missing": {
+    "results/phase6if_ranking_loss/summary.json": "MISSING",
+    "baseline_per_state": "MISSING",
+    "best_per_state": "MISSING"
+  },
+  "validation_loss_backfill": {
+    "role": "separate source; not spliced into result.json",
+    "source": {
+      "path": "results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/validation_loss_backfill.json",
+      "git_blob": "be641da232b0231f894e43ec40d7c120f7190ef4",
+      "git_blob_payload_sha256": "20cd33a0b4660cd1d7d741c6aadb79f128fcd6fcc27f7292effc8007de169413",
+      "workspace_sha256": "a1a5eae09f9c05b4c521a88427f9bb07fedbfe9f8a339d9ab946b7199b0c32b0",
+      "workspace_crlf_sha256": "a1a5eae09f9c05b4c521a88427f9bb07fedbfe9f8a339d9ab946b7199b0c32b0"
+    },
+    "field": "c_epoch_001.validation_loss",
+    "validation_loss": 7.448080003261566,
+    "payload": 19240091.24202323,
+    "top1": 0.6666666666666666
+  }
+}

@@ -16,4 +16,4 @@ L5 同时更正了 L4 的边统计口径：主要统计是每个状态 128 个�
 
 不在这 16 个已见状态上继续扫描参照系数、挑选种子、按 t15/t30 拼接规则，或从 E6、A10、B10 里挑一个最好模型。L3 的两份权重和 L5 的固定参照补丁都没有进入正式 Planner。
 
-本索引没有写入论文正文或 PDF。LaTeX 是否能够编译、ranking-loss 的 summary，以及 `lambda_H` 和 `delta_payload_max`，仍按原状态空缺。
+2026-11-08 正文写入了这段结案的短述。11 月 2 日和 11 月 4 日正文，以及更早的 PDF，没有改写。ranking-loss 的 summary.json、`lambda_H` 和 `delta_payload_max` 仍空缺。编译状态以 2026-11-08 的源码清单为准。

@@ -1,0 +1,117 @@
+{
+  "date": "2026-11-08",
+  "manuscript": "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261108.md",
+  "pdf": "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261108.pdf",
+  "pdf_pages": 7,
+  "source_updated": true,
+  "actual_latex_compile": "exit_0",
+  "pages_viewed": "7_of_7",
+  "compiler": {
+    "name": "Tectonic",
+    "version": "0.17.0",
+    "preferred_github_zip": "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic@0.17.0/tectonic-0.17.0-x86_64-pc-windows-msvc.zip",
+    "preferred_zip_result": "HTTP 504 Gateway Time-out from the GitHub edge; file not downloaded",
+    "preferred_zip_sha256_published_not_verified_locally": "f61ce51f0b0ade1015b7de7ef368541c5424e9756ecbd0d7af97d6d48030845f",
+    "used_package_url": "https://conda.anaconda.org/conda-forge/win-64/tectonic-0.17.0-h8a4d0b3_2.conda",
+    "used_package_sha256": "0e50ad47a61b38b7b7545b7b2357aff73c581be3a18b22390189fb820855a4c8",
+    "used_executable_sha256": "298339ebfa4f9cb33f0fae20e9eb8edb96dfc6bd8b401967b765e9b1a649b144"
+  },
+  "command": "tectonic -X compile --keep-logs --keep-intermediates --outdir backup/local_build/l7/tex main.tex",
+  "command_note": "The in-project executable was invoked through a temporary drive letter because the repository path made the format write fail with os error 3. TECTONIC_CACHE_DIR was backup/local_build/l7/tectonic-cache.",
+  "log": "docs/paper/latex/l7_build.log",
+  "layout_log": "Underfull hbox warnings only; no Overfull box and no undefined citation",
+  "previous_manifest": "docs/paper/latex/source_manifest.json",
+  "archived_tex": [
+    "docs/paper/latex/archive/main_20261104.tex",
+    "docs/paper/latex/archive/body_20261104.tex"
+  ],
+  "hash_basis": "Git blob identity from git hash-object, SHA-256 of that blob payload, and a separate workspace SHA-256 when the working-tree bytes differ",
+  "files": {
+    "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261108.md": {
+      "git_blob": "1d781b64631f951ca9a70ac4755b84f17f79d485",
+      "git_blob_payload_sha256": "2ac2f433316b6670289a001d010cea52e4864ae699a4a1f2053462ad90189de4",
+      "workspace_sha256": "e700b35befd8cbc084c90a094c99357473c70585182f17632f3bcd3b5fa34201"
+    },
+    "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261108.pdf": {
+      "git_blob": "feb40c827444308ac7ce57cd4f897c01ad2ea800",
+      "git_blob_payload_sha256": "f83fbc3f174821e74592e16af16ee9a9c4556159af9027c15ddd047e26241a30"
+    },
+    "docs/paper/evidence_20261108.json": {
+      "git_blob": "d3c3b149d59a82720bfb0ff57fc648bdf2352f74",
+      "git_blob_payload_sha256": "de061f989c35df09bd8eee56efff0d0133e657f8089c637f84b4d4612ac03254"
+    },
+    "docs/paper/latex/main.tex": {
+      "git_blob": "e27043644d5660588ad0f2b4df6cd096bf21403f",
+      "git_blob_payload_sha256": "f4cc3c3e111142a78b8fe117e773a8b6e58b51820d76b3a569a135b74c89a3fd",
+      "workspace_sha256": "84c80c39ee358474c9229ceac5f2b20dd9a7579ad7725cb5bb4dbdf4227b62c0"
+    },
+    "docs/paper/latex/body.tex": {
+      "git_blob": "4615fd6292c12b527fcfe2b7e208b0b56b97ce51",
+      "git_blob_payload_sha256": "f39a0c40f7e440ac404feead756072d657ab701f23bda9e6241354cafc8150ab",
+      "workspace_sha256": "bccca7022dd13a6208b53f8cf2b7cb9d7edf94e51173d5dfac2838e7ac7a6b60"
+    },
+    "docs/paper/latex/references.tex": {
+      "git_blob": "998fff4607b36ad5df3d001aa881a47b6de13864",
+      "git_blob_payload_sha256": "1ab8ccdd3ad964f017e6b696c377da1e92338a01be7ceaaa6bde42a184e83591",
+      "workspace_sha256": "c72bbc508afff068fc352b3df738248bf5a31b86d7d7e3e31096c222ef44d610"
+    },
+    "docs/paper/latex/figures/formal_architecture.tex": {
+      "git_blob": "10683931a957cf1685e02adca8eed7049397361d",
+      "git_blob_payload_sha256": "1c6c81fc1797075e649b638a3f11d5157e9b9b0eb90243a3cec99b0a37ef929b",
+      "workspace_sha256": "3db1c3c89695d6c6c83666cabcb229df461ca8f45567f32d222a406ce8abe580"
+    },
+    "docs/paper/latex/archive/main_20261104.tex": {
+      "git_blob": "cfbef7d0a7a764b7552f8843d7570461b7c7effb",
+      "git_blob_payload_sha256": "c825c5d789d1ce12608de43c3b845a48b5c10cbc9a7e0e36a50624354b66fb00",
+      "workspace_sha256": "0d6b70ea75cbcd01bfa04240740a4ac1ad1a0e6d0966abf1357a3db5a2a28cb0"
+    },
+    "docs/paper/latex/archive/body_20261104.tex": {
+      "git_blob": "09fd9b004f6eecd5d1e4eacf63d596ad90b92fa1",
+      "git_blob_payload_sha256": "d2e85a0e98fb886d0af92279d530dc9e9a0ad2c209439f9af3a0b0a40b7656fa",
+      "workspace_sha256": "fd76e7dc7c9b430f4ac8243052bd939a9b86ebbda70101baace26c81b1049731"
+    },
+    "docs/paper/latex/build_l7_tectonic.ps1": {
+      "git_blob": "423740e098de4739378c705788bed61c85f3108d",
+      "git_blob_payload_sha256": "be8475a7e9603558c133b118ed7dfb71978fbdb1e2f65912f0c01d24471e45b4",
+      "workspace_sha256": "f70e3d936851af5a50ca85025562dfdd4adfe2e78577f07bc6d583e061ed4109"
+    },
+    "docs/paper/latex/l7_build.log": {
+      "git_blob": "c2d1ca2e0f24168e3a09e47239a0ee8a66261aac",
+      "git_blob_payload_sha256": "ed0b39109c46f3b913d28ad4bce3606a491f2c2760e0b67c8919eae1f3681e15"
+    },
+    "docs/paper/latex/TECTONIC_L7_CN.md": {
+      "git_blob": "b67be9c628b06fbf22e48a6db1dc5252809ce584",
+      "git_blob_payload_sha256": "83c20cb7c1ad4a7ff56d3b632c5a9522b0930d422ed4c6336c62c49da9982f00",
+      "workspace_sha256": "91018792405b730732268981fc76051bbb8797b488b15f5fd6a12b498376b0e6"
+    },
+    "docs/paper/REVISION_NOTES_20261108_CN.md": {
+      "git_blob": "0a1531853bb423f742d0368ed977dcb545f6a63a",
+      "git_blob_payload_sha256": "f1255116520fb26526536a3c6294bcc490fe9ce4c08e7541d825be32ac1c76b2",
+      "workspace_sha256": "6f35bff3559c528ae6a3c16e692626eca34d805d1733a20944527463bd8e88f3"
+    },
+    "docs/research/Legacy_System_L7_Report_CN.md": {
+      "git_blob": "90c332fd935939d73a04641b565d0772eec6dc02",
+      "git_blob_payload_sha256": "0c015262e9608d1d9e52bddbac2f18ec5ba439d21be9cb26b2820884b5f22935",
+      "workspace_sha256": "d6fc2284b7905844e755c160a374a592908c05af3196bbc67e57aec445278fb9"
+    },
+    "results/legacy_delivery_l7/completion_check.json": {
+      "git_blob": "493eb7431275e40783105c77cce18b5ca772eeaa",
+      "git_blob_payload_sha256": "518fbb24b458f68dd80ce36ca308f8e2fdabdf9d3f4db65a558af4cb70925afc",
+      "workspace_sha256": "5f15c197d101b0267ab21b0ec25a8a9180cecbc8f4a086642b0f730611a804fc"
+    },
+    "src/wt/legacy_system/completion.py": {
+      "git_blob": "c214699368ad8426b9a05bfb4f1342c941827322",
+      "git_blob_payload_sha256": "859332b8f483137156f9beb25f1081470ee034c3aaf7a268aa1c21590d3c56b8",
+      "workspace_sha256": "0f73f50955b8266275a63d5d6d32822bf9842cdeb0a9623b605a2f992d4a538e"
+    },
+    "src/wt/legacy_system/execute.py": {
+      "git_blob": "d8ca2cd7fd586a289b29e69fc6977ef2a63a1bfa",
+      "git_blob_payload_sha256": "8971e40c892c10a06e9ad32072432e08f7c9dcf719bde4ada2d8fb379cbafa00"
+    },
+    "src/wt/legacy_system/check_completion.py": {
+      "git_blob": "b6ca2bffe9efc41023b8b18898f5b7658cb4ab98",
+      "git_blob_payload_sha256": "59650c2481815ed5db3549076484f41c71b32c67b47f533266f70660460e3d2a",
+      "workspace_sha256": "e4e2def628c899fa126f4d537e4ec5e2db9c8b58a5280a42c314ec55c0a289d7"
+    }
+  }
+}

@@ -11,11 +11,10 @@ from wt.benchmark_v2.phase6h_executor_conditioned_macro.protocol import primary_
 from wt.benchmark_v2.phase6iaa_formal_planner.protocol import EPOCH6_CKPT, POLICY_FILE, SCHEME_C_CKPT
 from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import DECODER_CKPT
 from wt.legacy_formal_repro_r1.runner import prepare_policy_copy, public_row, run_arm
+from wt.legacy_system.completion import OutputRefusal, compare_episodes, conclude, prepare_output_directory
 
 
 INSTRUCTION = "2b2fa2f3ca66d64688a122d939e2b9bdb5f6605a"
-REFERENCE_PAYLOAD_BITS = 63785945.28984571
-TOLERANCE_BITS = 1.0
 EXPECTED = {
     "scheme_c_sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
     "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
@@ -61,60 +60,10 @@ def _steps_csv(row: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
-def _field(reference: dict, current: dict, key: str) -> dict:
-    return {"reference": reference.get(key), "current": current.get(key), "match": reference.get(key) == current.get(key)}
-
-
-def _compare(reference: dict, current: dict) -> dict:
-    payload_gap = abs(float(current["payload_bits"]) - float(reference["payload_bits"]))
-    served_gap = abs(float(current["served_bits"]) - float(reference["served_bits"]))
-    published_gap = abs(float(current["payload_bits"]) - REFERENCE_PAYLOAD_BITS)
-    step_gaps = []
-    ref_steps = reference["steps"]
-    cur_steps = current["steps"]
-    count = min(len(ref_steps), len(cur_steps))
-    for index in range(count):
-        gap = abs(float(cur_steps[index]["served_bits"]) - float(ref_steps[index]["served_bits"]))
-        if int(cur_steps[index]["time"]) != int(ref_steps[index]["time"]) or gap > TOLERANCE_BITS:
-            step_gaps.append(
-                {
-                    "index": index,
-                    "reference_time": ref_steps[index]["time"],
-                    "current_time": cur_steps[index]["time"],
-                    "abs_served_diff_bits": gap,
-                }
-            )
-    if len(ref_steps) != len(cur_steps):
-        step_gaps.append({"reference_count": len(ref_steps), "current_count": len(cur_steps)})
-    numeric_ok = payload_gap <= TOLERANCE_BITS and served_gap <= TOLERANCE_BITS and published_gap <= TOLERANCE_BITS and not step_gaps
-    fields = {
-        name: _field(reference, current, name)
-        for name in ("complete", "terminal_time", "process_seed", "reset_seed", "decision_times", "scheme_c_calls")
-    }
-    fields_ok = all(item["match"] for item in fields.values())
-    return {
-        "reference_episode": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
-        "reference_payload_bits": REFERENCE_PAYLOAD_BITS,
-        "tolerance_bits": TOLERANCE_BITS,
-        "payload_abs_diff_bits": payload_gap,
-        "served_abs_diff_bits": served_gap,
-        "published_payload_abs_diff_bits": published_gap,
-        "step_count": {"reference": len(ref_steps), "current": len(cur_steps)},
-        "step_served_mismatches": step_gaps,
-        "fields": fields,
-        "current_payload_matches_served": current.get("payload_matches_served"),
-        "current_step_served_matches_episode": current.get("step_served_matches_episode"),
-        "status": "matched" if numeric_ok and fields_ok else "different",
-    }
-
-
 def run_once(root: Path, output: Path, scenario: int) -> int:
-    if output.exists() and any(output.iterdir()):
-        print(json.dumps({"error": "refusing to overwrite an existing output", "environment_steps": 0}), flush=True)
-        return 2
-    output.mkdir(parents=True)
     consumed = 0
     try:
+        prepare_output_directory(output)
         official_before = _sha256(POLICY_FILE)
         policy_path = prepare_policy_copy("scheme_c", output / "configs" / f"{scenario}_scheme_c.json")
         row = run_arm(scenario, "scheme_c", policy_path, fault_log=output / "faults.jsonl")
@@ -125,7 +74,12 @@ def run_once(root: Path, output: Path, scenario: int) -> int:
         _write_json(output / "episode.json", saved)
         (output / "steps.csv").write_text(_steps_csv(saved), encoding="utf-8")
         reference = json.loads((root / "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json").read_text(encoding="utf-8"))
-        comparison = _compare(reference, saved) if row["error"] is None else {"status": "not_compared", "error": row["error"]}
+        comparison = compare_episodes(reference, saved) if row["error"] is None else {
+            "status": "not_compared",
+            "error": row["error"],
+            "internal_consistency_ok": False,
+        }
+        comparison["reference_episode"] = "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json"
         _write_json(output / "regression_comparison.json", comparison)
         models = {
             "scheme_c_checkpoint": _relative(root, SCHEME_C_CKPT),
@@ -177,13 +131,41 @@ def run_once(root: Path, output: Path, scenario: int) -> int:
             "error": row["error"],
             "regression_status": comparison["status"],
         }
+        decision = conclude(manifest)
+        manifest["success"] = decision["success"]
+        manifest["exit_code"] = decision["exit_code"]
+        manifest["success_reasons"] = decision["reasons"]
         _write_json(output / "run_manifest.json", manifest)
-        print(json.dumps({"regression_status": comparison["status"], "environment_steps": consumed, "training_updates": 0}, sort_keys=True), flush=True)
-        return 0
-    except Exception as exc:
-        _write_json(
-            output / "failure.json",
-            {"error": f"{type(exc).__name__}: {exc}", "environment_steps": consumed, "training_updates": 0},
+        print(
+            json.dumps(
+                {
+                    "regression_status": comparison["status"],
+                    "success": decision["success"],
+                    "exit_code": decision["exit_code"],
+                    "environment_steps": consumed,
+                    "training_updates": 0,
+                },
+                sort_keys=True,
+            ),
+            flush=True,
         )
-        print(json.dumps({"error": f"{type(exc).__name__}: {exc}", "environment_steps": consumed}), flush=True)
+        return int(decision["exit_code"])
+    except OutputRefusal as exc:
+        print(json.dumps({"error": str(exc), "exit_code": 2, "environment_steps": 0, "success": False}), flush=True)
+        return 2
+    except Exception as exc:
+        failure = {
+            "error": f"{type(exc).__name__}: {exc}",
+            "environment_steps": consumed,
+            "training_updates": 0,
+            "success": False,
+            "exit_code": 1,
+        }
+        try:
+            output.mkdir(parents=True, exist_ok=True)
+            if not any(output.iterdir()) or not (output / "run_manifest.json").exists():
+                _write_json(output / "failure.json", failure)
+        except OSError:
+            pass
+        print(json.dumps(failure), flush=True)
         return 1

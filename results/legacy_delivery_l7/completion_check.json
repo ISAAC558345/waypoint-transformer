@@ -1,0 +1,48 @@
+{
+  "package": "legacy_delivery_l7_completion",
+  "environment_steps": 0,
+  "low_level_inferences": 0,
+  "scoring_forwards": 0,
+  "training_updates": 0,
+  "backward_passes": 0,
+  "empty_directory": {
+    "path": "results/legacy_delivery_l7/empty_dir_probe",
+    "status": "empty_reused",
+    "remains_empty": true
+  },
+  "nonempty_directory": {
+    "path": "results/legacy_system_l6",
+    "refused": true,
+    "message": "refusing to overwrite an existing output",
+    "episode_sha256_before": "3a980bc09eb4b61dcc94a5b274cc8d4d6cf0832e7cfd76a299f7f35774f734f4",
+    "episode_sha256_after": "3a980bc09eb4b61dcc94a5b274cc8d4d6cf0832e7cfd76a299f7f35774f734f4",
+    "episode_unchanged": true
+  },
+  "matched_saved_l6": {
+    "reference": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
+    "current": "results/legacy_system_l6/episode.json",
+    "status": "matched",
+    "internal_consistency_ok": true,
+    "payload_abs_diff_bits": 0.0,
+    "served_abs_diff_bits": 0.0,
+    "step_mismatch_count": 0,
+    "exit_code": 0,
+    "success": true
+  },
+  "mismatched_r1_episode": {
+    "reference": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
+    "current": "results/legacy_formal_repro_r1/episodes/322001_scheme_c.json",
+    "status": "different",
+    "exit_code": 1,
+    "success": false,
+    "reasons": [
+      "regression_not_matched"
+    ]
+  },
+  "internal_consistency_gate": {
+    "change": "saved L6 payload_matches_served set to 0 in memory only",
+    "status": "different",
+    "internal_consistency_ok": false
+  },
+  "l6_files_not_rewritten": true
+}
