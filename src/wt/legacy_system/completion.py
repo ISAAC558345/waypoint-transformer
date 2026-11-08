@@ -4,8 +4,8 @@ from __future__ import annotations
 from pathlib import Path
 
 
-REFERENCE_PAYLOAD_BITS = 63785945.28984571
 TOLERANCE_BITS = 1.0
+IDENTITY_FIELDS = ("scenario_id", "policy")
 
 
 class OutputRefusal(RuntimeError):
@@ -38,11 +38,28 @@ def _internal_ok(current: dict) -> bool:
     return (payload_flag is True or payload_flag == 1) and step_flag is True
 
 
+def _identity(reference: dict, current: dict) -> tuple[dict, bool]:
+    """Both sides must carry scenario_id and policy. Missing values are not equal."""
+    rows = {}
+    ok = True
+    for key in IDENTITY_FIELDS:
+        present = key in reference and key in current and reference[key] is not None and current[key] is not None
+        match = bool(present and reference[key] == current[key])
+        rows[key] = {
+            "reference": reference.get(key),
+            "current": current.get(key),
+            "present": present,
+            "match": match,
+        }
+        ok = ok and match
+    return rows, ok
+
+
 def compare_episodes(reference: dict, current: dict) -> dict:
-    """Match only when the saved fields, 1-bit tolerances, and both in-run consistency flags agree."""
-    payload_gap = abs(float(current["payload_bits"]) - float(reference["payload_bits"]))
+    """Match only when identity, saved fields, 1-bit tolerances, and both consistency flags agree."""
+    reference_payload = float(reference["payload_bits"])
+    payload_gap = abs(float(current["payload_bits"]) - reference_payload)
     served_gap = abs(float(current["served_bits"]) - float(reference["served_bits"]))
-    published_gap = abs(float(current["payload_bits"]) - REFERENCE_PAYLOAD_BITS)
     step_gaps = []
     ref_steps = reference["steps"]
     cur_steps = current["steps"]
@@ -60,7 +77,8 @@ def compare_episodes(reference: dict, current: dict) -> dict:
             )
     if len(ref_steps) != len(cur_steps):
         step_gaps.append({"reference_count": len(ref_steps), "current_count": len(cur_steps)})
-    numeric_ok = payload_gap <= TOLERANCE_BITS and served_gap <= TOLERANCE_BITS and published_gap <= TOLERANCE_BITS and not step_gaps
+    numeric_ok = payload_gap <= TOLERANCE_BITS and served_gap <= TOLERANCE_BITS and not step_gaps
+    identity, identity_ok = _identity(reference, current)
     fields = {
         name: _field(reference, current, name)
         for name in ("complete", "terminal_time", "process_seed", "reset_seed", "decision_times", "scheme_c_calls")
@@ -68,18 +86,21 @@ def compare_episodes(reference: dict, current: dict) -> dict:
     fields_ok = all(item["match"] for item in fields.values())
     internal_ok = _internal_ok(current)
     return {
-        "reference_payload_bits": REFERENCE_PAYLOAD_BITS,
+        "reference_payload_bits": reference_payload,
+        "reference_payload_source": "same R1 reference episode payload_bits",
         "tolerance_bits": TOLERANCE_BITS,
         "payload_abs_diff_bits": payload_gap,
         "served_abs_diff_bits": served_gap,
-        "published_payload_abs_diff_bits": published_gap,
+        "published_payload_abs_diff_bits": payload_gap,
+        "published_payload_role": "same R1 reference payload, not an independent published constant",
+        "identity": identity,
         "step_count": {"reference": len(ref_steps), "current": len(cur_steps)},
         "step_served_mismatches": step_gaps,
         "fields": fields,
         "current_payload_matches_served": current.get("payload_matches_served"),
         "current_step_served_matches_episode": current.get("step_served_matches_episode"),
         "internal_consistency_ok": internal_ok,
-        "status": "matched" if numeric_ok and fields_ok and internal_ok else "different",
+        "status": "matched" if numeric_ok and identity_ok and fields_ok and internal_ok else "different",
     }
 
 

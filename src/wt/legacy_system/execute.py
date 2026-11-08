@@ -12,9 +12,10 @@ from wt.benchmark_v2.phase6iaa_formal_planner.protocol import EPOCH6_CKPT, POLIC
 from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import DECODER_CKPT
 from wt.legacy_formal_repro_r1.runner import prepare_policy_copy, public_row, run_arm
 from wt.legacy_system.completion import OutputRefusal, compare_episodes, conclude, prepare_output_directory
+from wt.legacy_system.references import INSTRUCTION_COMMIT, ReferenceRefusal, require_reference
 
 
-INSTRUCTION = "2b2fa2f3ca66d64688a122d939e2b9bdb5f6605a"
+INSTRUCTION = INSTRUCTION_COMMIT
 EXPECTED = {
     "scheme_c_sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
     "mappo_sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
@@ -60,26 +61,46 @@ def _steps_csv(row: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
+def _install_low_level_counter(counter: dict):
+    from wt.benchmark_v2.phase6iaa_formal_planner import planner
+
+    original = planner._actor_move
+
+    def _wrapped(*args, **kwargs):
+        counter["low_level_inferences"] += 1
+        return original(*args, **kwargs)
+
+    planner._actor_move = _wrapped
+    return planner, original
+
+
 def run_once(root: Path, output: Path, scenario: int) -> int:
     consumed = 0
+    counter = {"low_level_inferences": 0}
+    planner = None
+    original_move = None
     try:
+        spec, reference = require_reference(root, scenario)
+        episode_file = root / spec["reference_episode"]
+        config_file = root / spec["reference_config"]
+        reference_hashes = {"episode": _sha256(episode_file), "config": _sha256(config_file)}
         prepare_output_directory(output)
         official_before = _sha256(POLICY_FILE)
-        policy_path = prepare_policy_copy("scheme_c", output / "configs" / f"{scenario}_scheme_c.json")
-        row = run_arm(scenario, "scheme_c", policy_path, fault_log=output / "faults.jsonl")
+        policy_path = prepare_policy_copy(spec["policy"], output / "configs" / f"{scenario}_scheme_c.json")
+        planner, original_move = _install_low_level_counter(counter)
+        row = run_arm(scenario, spec["policy"], policy_path, fault_log=output / "faults.jsonl")
         consumed = int(row["environment_steps"])
         official_after = _sha256(POLICY_FILE)
         saved = public_row(row)
         saved["policy_path"] = _relative(output, policy_path)
         _write_json(output / "episode.json", saved)
         (output / "steps.csv").write_text(_steps_csv(saved), encoding="utf-8")
-        reference = json.loads((root / "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json").read_text(encoding="utf-8"))
         comparison = compare_episodes(reference, saved) if row["error"] is None else {
             "status": "not_compared",
             "error": row["error"],
             "internal_consistency_ok": False,
         }
-        comparison["reference_episode"] = "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json"
+        comparison["reference_episode"] = spec["reference_episode"]
         _write_json(output / "regression_comparison.json", comparison)
         models = {
             "scheme_c_checkpoint": _relative(root, SCHEME_C_CKPT),
@@ -93,7 +114,7 @@ def run_once(root: Path, output: Path, scenario: int) -> int:
             "epoch6_role": "formal startup hash only; E6 is not the active high-level policy",
         }
         manifest = {
-            "package": "legacy_system_l6",
+            "package": "legacy_system",
             "instruction_commit": INSTRUCTION,
             "this_run": {
                 "policy": saved["policy_path"],
@@ -103,10 +124,23 @@ def run_once(root: Path, output: Path, scenario: int) -> int:
                 "fault_log": "faults.jsonl",
                 "fault_log_written": (output / "faults.jsonl").is_file(),
             },
+            "scenario_binding": {
+                "scenario_id": spec["scenario_id"],
+                "policy": spec["policy"],
+                "process_seed": spec["process_seed"],
+                "reset_seed": spec["reset_seed"],
+                "reference_episode": spec["reference_episode"],
+                "reference_config": spec["reference_config"],
+                "reference_episode_sha256": reference_hashes["episode"],
+                "reference_config_sha256": reference_hashes["config"],
+                "reference_source": spec["reference_source"],
+            },
             "historical_reference": {
-                "episode": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
-                "config": "results/legacy_formal_repro_r1/configs/322000_scheme_c.json",
-                "role": "saved R1 episode used for field comparison",
+                "episode": spec["reference_episode"],
+                "config": spec["reference_config"],
+                "episode_sha256": reference_hashes["episode"],
+                "config_sha256": reference_hashes["config"],
+                "role": "saved R1 episode for this scenario; the payload value is this same file, not a second published constant",
             },
             "run_context": {
                 "output_absolute": str(output),
@@ -119,13 +153,20 @@ def run_once(root: Path, output: Path, scenario: int) -> int:
             "code_sha256": {
                 "run": _sha256(root / "src/wt/legacy_system/run.py"),
                 "execute": _sha256(Path(__file__).resolve()),
+                "references": _sha256(root / "src/wt/legacy_system/references.py"),
+                "completion": _sha256(root / "src/wt/legacy_system/completion.py"),
             },
             "official_policy_sha256_before": official_before,
             "official_policy_sha256_after": official_after,
             "official_policy_unchanged": official_before == official_after,
             "scenario_id": int(scenario),
+            "process_seed": spec["process_seed"],
+            "reset_seed": spec["reset_seed"],
             "environment_steps": consumed,
+            "low_level_inferences": int(counter["low_level_inferences"]),
+            "high_level_calls": int(row["scheme_c_calls"]),
             "training_updates": 0,
+            "backward_passes": 0,
             "scheme_c_calls": int(row["scheme_c_calls"]),
             "complete": bool(row["complete"]),
             "error": row["error"],
@@ -143,21 +184,26 @@ def run_once(root: Path, output: Path, scenario: int) -> int:
                     "success": decision["success"],
                     "exit_code": decision["exit_code"],
                     "environment_steps": consumed,
+                    "low_level_inferences": int(counter["low_level_inferences"]),
+                    "high_level_calls": int(row["scheme_c_calls"]),
                     "training_updates": 0,
+                    "backward_passes": 0,
                 },
                 sort_keys=True,
             ),
             flush=True,
         )
         return int(decision["exit_code"])
-    except OutputRefusal as exc:
-        print(json.dumps({"error": str(exc), "exit_code": 2, "environment_steps": 0, "success": False}), flush=True)
+    except (OutputRefusal, ReferenceRefusal) as exc:
+        print(json.dumps({"error": str(exc), "exit_code": 2, "environment_steps": consumed, "low_level_inferences": int(counter["low_level_inferences"]), "success": False}), flush=True)
         return 2
     except Exception as exc:
         failure = {
             "error": f"{type(exc).__name__}: {exc}",
             "environment_steps": consumed,
+            "low_level_inferences": int(counter["low_level_inferences"]),
             "training_updates": 0,
+            "backward_passes": 0,
             "success": False,
             "exit_code": 1,
         }
@@ -169,3 +215,6 @@ def run_once(root: Path, output: Path, scenario: int) -> int:
             pass
         print(json.dumps(failure), flush=True)
         return 1
+    finally:
+        if planner is not None and original_move is not None:
+            planner._actor_move = original_move

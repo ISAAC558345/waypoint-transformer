@@ -1,0 +1,479 @@
+{
+  "package": "legacy_system_l10_stdlib_check",
+  "instruction_commit": "204dd3309115dfd369236c408f7e59306a0871d4",
+  "environment_steps": 0,
+  "low_level_inferences": 0,
+  "high_level_calls": 0,
+  "scoring_forwards": 0,
+  "training_updates": 0,
+  "backward_passes": 0,
+  "torch_imported": false,
+  "execute_imported": false,
+  "registered_scenarios": [
+    322000,
+    322001
+  ],
+  "previews": {
+    "default_322000": {
+      "mode": "config_only",
+      "scenario_id": 322000,
+      "allow_holdout": false,
+      "high_level_policy": "scheme_c",
+      "generator": "G1_RATE",
+      "k": 6,
+      "hold": 15,
+      "historical_formal_k": 5,
+      "historical_formal_k_role": "source label of the older formal candidate count; the active count is k=6",
+      "stop_time": 48,
+      "process_seed": 1322000,
+      "reset_seed": 322000,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "training_updates": 0,
+      "output": "results/legacy_system/scenario_322000",
+      "writes_files": false,
+      "loads_model": false,
+      "reference_episode": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
+      "reference_config": "results/legacy_formal_repro_r1/configs/322000_scheme_c.json",
+      "run_accepted": true,
+      "registered_scenarios": [
+        322000,
+        322001
+      ],
+      "coverage": "only registered R1 references can run; this is not a full-scenario regression"
+    },
+    "default_322001": {
+      "mode": "config_only",
+      "scenario_id": 322001,
+      "allow_holdout": false,
+      "high_level_policy": "scheme_c",
+      "generator": "G1_RATE",
+      "k": 6,
+      "hold": 15,
+      "historical_formal_k": 5,
+      "historical_formal_k_role": "source label of the older formal candidate count; the active count is k=6",
+      "stop_time": 48,
+      "process_seed": 1322001,
+      "reset_seed": 322001,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "training_updates": 0,
+      "output": "results/legacy_system/scenario_322001",
+      "writes_files": false,
+      "loads_model": false,
+      "reference_episode": "results/legacy_formal_repro_r1/episodes/322001_scheme_c.json",
+      "reference_config": "results/legacy_formal_repro_r1/configs/322001_scheme_c.json",
+      "run_accepted": true,
+      "registered_scenarios": [
+        322000,
+        322001
+      ],
+      "coverage": "only registered R1 references can run; this is not a full-scenario regression"
+    },
+    "explicit_322000_l6_output": {
+      "mode": "config_only",
+      "scenario_id": 322000,
+      "allow_holdout": false,
+      "high_level_policy": "scheme_c",
+      "generator": "G1_RATE",
+      "k": 6,
+      "hold": 15,
+      "historical_formal_k": 5,
+      "historical_formal_k_role": "source label of the older formal candidate count; the active count is k=6",
+      "stop_time": 48,
+      "process_seed": 1322000,
+      "reset_seed": 322000,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "training_updates": 0,
+      "output": "results/legacy_system_l6",
+      "writes_files": false,
+      "loads_model": false,
+      "reference_episode": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
+      "reference_config": "results/legacy_formal_repro_r1/configs/322000_scheme_c.json",
+      "run_accepted": true,
+      "registered_scenarios": [
+        322000,
+        322001
+      ],
+      "coverage": "only registered R1 references can run; this is not a full-scenario regression"
+    },
+    "unregistered_322002": {
+      "mode": "config_only",
+      "scenario_id": 322002,
+      "allow_holdout": false,
+      "high_level_policy": "scheme_c",
+      "generator": "G1_RATE",
+      "k": 6,
+      "hold": 15,
+      "historical_formal_k": 5,
+      "historical_formal_k_role": "source label of the older formal candidate count; the active count is k=6",
+      "stop_time": 48,
+      "process_seed": 1322002,
+      "reset_seed": 322002,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "training_updates": 0,
+      "output": "results/legacy_system/scenario_322002",
+      "writes_files": false,
+      "loads_model": false,
+      "reference_episode": null,
+      "reference_config": null,
+      "run_accepted": false,
+      "registered_scenarios": [
+        322000,
+        322001
+      ],
+      "coverage": "only registered R1 references can run; this is not a full-scenario regression",
+      "reason": "scenario is not in the registered reference set"
+    },
+    "direct_322000": {
+      "mode": "config_only",
+      "scenario_id": 322000,
+      "allow_holdout": false,
+      "high_level_policy": "scheme_c",
+      "generator": "G1_RATE",
+      "k": 6,
+      "hold": 15,
+      "historical_formal_k": 5,
+      "historical_formal_k_role": "source label of the older formal candidate count; the active count is k=6",
+      "stop_time": 48,
+      "process_seed": 1322000,
+      "reset_seed": 322000,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "training_updates": 0,
+      "output": "results/legacy_system/scenario_322000",
+      "writes_files": false,
+      "loads_model": false,
+      "reference_episode": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
+      "reference_config": "results/legacy_formal_repro_r1/configs/322000_scheme_c.json",
+      "run_accepted": true,
+      "registered_scenarios": [
+        322000,
+        322001
+      ],
+      "coverage": "only registered R1 references can run; this is not a full-scenario regression"
+    },
+    "direct_322001": {
+      "mode": "config_only",
+      "scenario_id": 322001,
+      "allow_holdout": false,
+      "high_level_policy": "scheme_c",
+      "generator": "G1_RATE",
+      "k": 6,
+      "hold": 15,
+      "historical_formal_k": 5,
+      "historical_formal_k_role": "source label of the older formal candidate count; the active count is k=6",
+      "stop_time": 48,
+      "process_seed": 1322001,
+      "reset_seed": 322001,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "training_updates": 0,
+      "output": "results/legacy_system/scenario_322001",
+      "writes_files": false,
+      "loads_model": false,
+      "reference_episode": "results/legacy_formal_repro_r1/episodes/322001_scheme_c.json",
+      "reference_config": "results/legacy_formal_repro_r1/configs/322001_scheme_c.json",
+      "run_accepted": true,
+      "registered_scenarios": [
+        322000,
+        322001
+      ],
+      "coverage": "only registered R1 references can run; this is not a full-scenario regression"
+    }
+  },
+  "preview_exit_codes": {
+    "default_322000": 0,
+    "default_322001": 0,
+    "explicit_322000": 0,
+    "unregistered_322002": 0
+  },
+  "unregistered_run": {
+    "exit_code": 2,
+    "payload": {
+      "error": "scenario is not in the registered reference set",
+      "environment_steps": 0,
+      "exit_code": 2,
+      "success": false
+    },
+    "output_created": false
+  },
+  "preview_directories_created": [],
+  "sources": {
+    "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json": {
+      "path": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
+      "sha256": "15604d84b7e0d2158fe7152f0d299d59ff2fdf538d01ecaa682d87a9d20a2cf1",
+      "unchanged": true
+    },
+    "results/legacy_formal_repro_r1/episodes/322001_scheme_c.json": {
+      "path": "results/legacy_formal_repro_r1/episodes/322001_scheme_c.json",
+      "sha256": "e7c6656586a6c1e9a917b0acc361ef43501be831fa4830d18e706f7e976604dc",
+      "unchanged": true
+    },
+    "results/legacy_formal_repro_r1/configs/322000_scheme_c.json": {
+      "path": "results/legacy_formal_repro_r1/configs/322000_scheme_c.json",
+      "sha256": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb",
+      "unchanged": true
+    },
+    "results/legacy_formal_repro_r1/configs/322001_scheme_c.json": {
+      "path": "results/legacy_formal_repro_r1/configs/322001_scheme_c.json",
+      "sha256": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb",
+      "unchanged": true
+    },
+    "results/legacy_system_l6/episode.json": {
+      "path": "results/legacy_system_l6/episode.json",
+      "sha256": "3a980bc09eb4b61dcc94a5b274cc8d4d6cf0832e7cfd76a299f7f35774f734f4",
+      "unchanged": true
+    },
+    "results/legacy_system_l6/run_manifest.json": {
+      "path": "results/legacy_system_l6/run_manifest.json",
+      "sha256": "3a6e2e7ae5a2508d0f4e7de361c3aab90a04795bd028489f442f7e610b037281",
+      "unchanged": true
+    }
+  },
+  "reference_records": {
+    "322000": {
+      "scenario_id": 322000,
+      "policy": "scheme_c",
+      "identity_present": true,
+      "steps": 48,
+      "times_are_0_through_47": true,
+      "environment_steps": 48,
+      "terminal_time": 48,
+      "stop_time": 48,
+      "complete": true,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "scheme_c_calls": 4,
+      "process_seed": 1322000,
+      "reset_seed": 322000,
+      "payload_bits": 63785945.28984571,
+      "served_bits": 63785945.28984569
+    },
+    "322001": {
+      "scenario_id": 322001,
+      "policy": "scheme_c",
+      "identity_present": true,
+      "steps": 48,
+      "times_are_0_through_47": true,
+      "environment_steps": 48,
+      "terminal_time": 48,
+      "stop_time": 48,
+      "complete": true,
+      "decision_times": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "scheme_c_calls": 4,
+      "process_seed": 1322001,
+      "reset_seed": 322001,
+      "payload_bits": 68952073.58225587,
+      "served_bits": 68952073.58225589
+    }
+  },
+  "comparisons": {
+    "r1_322000_versus_saved_l6": {
+      "status": "matched",
+      "reference_payload_bits": 63785945.28984571,
+      "reference_payload_source": "same R1 reference episode payload_bits",
+      "payload_abs_diff_bits": 0.0,
+      "served_abs_diff_bits": 0.0,
+      "step_mismatch_count": 0,
+      "identity": {
+        "scenario_id": {
+          "reference": 322000,
+          "current": 322000,
+          "present": true,
+          "match": true
+        },
+        "policy": {
+          "reference": "scheme_c",
+          "current": "scheme_c",
+          "present": true,
+          "match": true
+        }
+      },
+      "internal_consistency_ok": true
+    },
+    "r1_322001_versus_itself": {
+      "status": "matched",
+      "reference_payload_bits": 68952073.58225587,
+      "reference_payload_source": "same R1 reference episode payload_bits",
+      "payload_abs_diff_bits": 0.0,
+      "served_abs_diff_bits": 0.0,
+      "step_mismatch_count": 0,
+      "identity": {
+        "scenario_id": {
+          "reference": 322001,
+          "current": 322001,
+          "present": true,
+          "match": true
+        },
+        "policy": {
+          "reference": "scheme_c",
+          "current": "scheme_c",
+          "present": true,
+          "match": true
+        }
+      },
+      "internal_consistency_ok": true
+    },
+    "r1_322000_versus_r1_322001": {
+      "status": "different",
+      "reference_payload_bits": 63785945.28984571,
+      "reference_payload_source": "same R1 reference episode payload_bits",
+      "payload_abs_diff_bits": 5166128.292410158,
+      "served_abs_diff_bits": 5166128.292410195,
+      "step_mismatch_count": 41,
+      "identity": {
+        "scenario_id": {
+          "reference": 322000,
+          "current": 322001,
+          "present": true,
+          "match": false
+        },
+        "policy": {
+          "reference": "scheme_c",
+          "current": "scheme_c",
+          "present": true,
+          "match": true
+        }
+      },
+      "internal_consistency_ok": true
+    },
+    "missing_scenario_id": {
+      "status": "different",
+      "reference_payload_bits": 68952073.58225587,
+      "reference_payload_source": "same R1 reference episode payload_bits",
+      "payload_abs_diff_bits": 0.0,
+      "served_abs_diff_bits": 0.0,
+      "step_mismatch_count": 0,
+      "identity": {
+        "scenario_id": {
+          "reference": 322001,
+          "current": null,
+          "present": false,
+          "match": false
+        },
+        "policy": {
+          "reference": "scheme_c",
+          "current": "scheme_c",
+          "present": true,
+          "match": true
+        }
+      },
+      "internal_consistency_ok": true
+    },
+    "missing_policy_on_both_sides": {
+      "status": "different",
+      "reference_payload_bits": 68952073.58225587,
+      "reference_payload_source": "same R1 reference episode payload_bits",
+      "payload_abs_diff_bits": 0.0,
+      "served_abs_diff_bits": 0.0,
+      "step_mismatch_count": 0,
+      "identity": {
+        "scenario_id": {
+          "reference": 322001,
+          "current": 322001,
+          "present": true,
+          "match": true
+        },
+        "policy": {
+          "reference": null,
+          "current": null,
+          "present": false,
+          "match": false
+        }
+      },
+      "internal_consistency_ok": true
+    }
+  },
+  "bindings": {
+    "322000": {
+      "scenario_id": 322000,
+      "policy": "scheme_c",
+      "registered": true,
+      "run_accepted": true,
+      "process_seed": 1322000,
+      "reset_seed": 322000,
+      "stop_time": 48,
+      "default_output": "results/legacy_system/scenario_322000",
+      "reference_episode": "results/legacy_formal_repro_r1/episodes/322000_scheme_c.json",
+      "reference_config": "results/legacy_formal_repro_r1/configs/322000_scheme_c.json",
+      "reference_source": "results/legacy_formal_repro_r1"
+    },
+    "322001": {
+      "scenario_id": 322001,
+      "policy": "scheme_c",
+      "registered": true,
+      "run_accepted": true,
+      "process_seed": 1322001,
+      "reset_seed": 322001,
+      "stop_time": 48,
+      "default_output": "results/legacy_system/scenario_322001",
+      "reference_episode": "results/legacy_formal_repro_r1/episodes/322001_scheme_c.json",
+      "reference_config": "results/legacy_formal_repro_r1/configs/322001_scheme_c.json",
+      "reference_source": "results/legacy_formal_repro_r1"
+    },
+    "322002": {
+      "scenario_id": 322002,
+      "policy": "scheme_c",
+      "registered": false,
+      "run_accepted": false,
+      "process_seed": 1322002,
+      "reset_seed": 322002,
+      "stop_time": 48,
+      "default_output": "results/legacy_system/scenario_322002",
+      "reference_episode": null,
+      "reference_config": null,
+      "reference_source": "results/legacy_formal_repro_r1"
+    }
+  },
+  "checks": {
+    "previews": true,
+    "preview_exit_codes": true,
+    "no_preview_directory": true,
+    "no_model_import": true,
+    "unregistered_refused": true,
+    "saved_322000_matched": true,
+    "saved_322001_matched": true,
+    "cross_different": true,
+    "missing_identity_different": true,
+    "sources_complete": true,
+    "sources_unchanged": true,
+    "direct_preview_matches_registry": true
+  },
+  "passed": true
+}

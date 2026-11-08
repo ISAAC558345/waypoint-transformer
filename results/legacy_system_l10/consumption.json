@@ -1,0 +1,14 @@
+{
+  "stdlib_check_environment_steps": 0,
+  "stdlib_check_low_level_inferences": 0,
+  "stdlib_check_high_level_calls": 0,
+  "run_322001_environment_steps": 48,
+  "run_322001_low_level_inferences": 48,
+  "run_322001_high_level_calls": 4,
+  "training_updates": 0,
+  "backward_passes": 0,
+  "total_environment_steps": 48,
+  "retried": false,
+  "low_level_count_source": "FormalPlanner _actor_move calls during the single 322001 run",
+  "high_level_count_source": "scheme_c_calls recorded by the formal episode"
+}

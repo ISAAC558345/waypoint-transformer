@@ -10,7 +10,7 @@
 $env:PYTHONPATH = Join-Path (Get-Location).Path 'src'
 ```
 
-R1 的结果根目录是包含其 `run_manifest.json` 的 `results/legacy_formal_repro_r1`。配置按场景和策略名读取 `configs/{scenario_id}_{policy}.json`，不把保存的绝对路径当作唯一查找位置。正式单场景结果另写在 `results/legacy_system_l6`，查找用其中的相对路径。
+R1 的结果根目录是包含其 `run_manifest.json` 的 `results/legacy_formal_repro_r1`。配置按场景和策略名读取 `configs/{scenario_id}_{policy}.json`，不把保存的绝对路径当作唯一查找位置。正式单场景结果按场景分开：未指定 `--output` 时写入 `results/legacy_system/scenario_{scenario_id}`。显式路径仍然有效，已完成的 322000 结果留在 `results/legacy_system_l6`。查找用相对路径。
 
 ## 只读
 
@@ -30,25 +30,30 @@ py -3 -m wt.legacy_formal_repro_r1a.export --artifact-root results/legacy_formal
 
 ## 正式配置预览
 
-预览只使用标准库，不建输出目录，不加载模型。
+预览只使用标准库，不建输出目录，不加载模型。当前登记了两套已有完整 R1 参考的训练场景，322000 和 322001。这不是整个训练池、validation 或 reserved test 的回归。
 
 ```powershell
+py -3 -m wt.legacy_system.run --scenario 322000
+py -3 -m wt.legacy_system.run --scenario 322001
 py -3 -m wt.legacy_system.run --scenario 322000 --output results/legacy_system_l6
 ```
 
-预览打印 Scheme C、G1_RATE、k=6、hold=15、stop_time=48。`historical_formal_k=5` 只保留旧候选数的来源，现行候选数是 k=6。
+前两条使用各自的默认输出 `results/legacy_system/scenario_322000` 和 `results/legacy_system/scenario_322001`。第三条沿用已文档化的显式路径。每条预览打印该场景自己的参考 episode、参考 config、`process_seed=1000000+scenario` 和 `reset_seed=scenario`。`run_accepted` 只在场景已登记时为 true。未登记场景打印未接受，参考路径为空。
+
+预览同时打印 Scheme C、G1_RATE、k=6、hold=15、stop_time=48。`historical_formal_k=5` 只保留旧候选数的来源，现行候选数是 k=6。
 
 ## 正式单场景运行
 
-显式 `--run` 才调用正式 `run_active_episode`。当前回归只接受场景 322000，输出目录里已有文件时拒绝覆盖。
+显式 `--run` 才调用正式 `run_active_episode`。场景、参考文件、种子和默认输出由同一处标准库注册表解析。比较读取该场景的 R1 episode，不再把 322000 的 payload 常量套到其他场景。未登记场景在加载模型和创建输出前返回 2。
 
 ```powershell
 py -3 -m wt.legacy_system.run --scenario 322000 --output results/legacy_system_l6 --run
+py -3 -m wt.legacy_system.run --scenario 322001 --output results/legacy_system_l10/run_322001 --run
 ```
 
-L6 已把一次 48 步结果写入 `results/legacy_system_l6`。再执行同一输出目录不会重跑。换一次新的运行需要另一个空目录，并且不在本包内执行。
+L6 已把 322000 的一次 48 步结果写入 `results/legacy_system_l6`。再执行同一输出目录不会重跑。L10 已把 322001 的一次 48 步结果写入 `results/legacy_system_l10/run_322001`。换一次新的运行需要另一个空目录。
 
-成功结束时进程返回 0，保存的 JSON 使用同一个退出码。运行失败、回归不一致、模型身份不符或正式策略被改动时返回 1。输入被拒绝时仍返回 2。已有的空目录可以准备；非空目录仍拒绝覆盖，并且不写入该目录。L7 用已保存记录核对了这条约定，没有重跑 48 步。
+成功结束时进程返回 0，保存的 JSON 使用同一个退出码。执行完成、比较 matched、模型身份正确且正式策略未变，才算成功。运行失败或结果不一致时返回 1。输入或输出被拒绝时返回 2。没有对应参考时不标成 matched。已有的空目录可以准备；非空目录仍拒绝覆盖，并且不写入该目录。L7 用已保存记录核对了目录约定，没有重跑 48 步。
 
 ## 受保护的 R1 入口
 
