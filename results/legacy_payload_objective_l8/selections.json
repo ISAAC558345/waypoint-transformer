@@ -1,0 +1,853 @@
+{
+  "states": [
+    {
+      "scenario_id": 322024,
+      "time_step": 15,
+      "state_hash": "2435cc804452d770d885340d0f5226dff86dd662e06e967b70c072b3ca5b9a59",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "dea6b20b9c39bd6e09dfbb4312104dab4b0cbe99445017a75999411f52821845",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 6,
+          "candidate_id": 5555,
+          "assignment": "6|11|9|8|10|7",
+          "score": 29.715728759765625,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 121,
+          "candidate_id": 10235,
+          "assignment": "10|-1|-1|-1|-1|-1",
+          "score": -0.15994736552238464,
+          "active_count": 1,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 37,
+          "candidate_id": 11746,
+          "assignment": "10|11|8|9|7|6",
+          "score": 20.499658584594727,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 37,
+          "candidate_id": 11746,
+          "assignment": "10|11|8|9|7|6",
+          "score": 27.074186325073242,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322024,
+      "time_step": 30,
+      "state_hash": "0a01d98ab40bf73301ed1948f7f9589911c28d43e5ef08de232ef143c7e7021c",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "6ec32bddcc71a6839e7586ecd1425150a01e439b9be09260e4e9383613d32bdb",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 5,
+          "candidate_id": 6197,
+          "assignment": "7|6|8|10|11|9",
+          "score": 15.260744094848633,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 2,
+          "candidate_id": 5317,
+          "assignment": "6|10|8|11|7|9",
+          "score": 1.518141269683838,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 2,
+          "candidate_id": 5317,
+          "assignment": "6|10|8|11|7|9",
+          "score": 26.572776794433594,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 3,
+          "candidate_id": 5514,
+          "assignment": "6|11|8|7|10|9",
+          "score": 30.492456436157227,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322025,
+      "time_step": 15,
+      "state_hash": "c7d57f818b7b49179c1face1e77b647d9f00eccb32f5e37dc415c4e152c9ba96",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "54c551a172eb635e6558267c50f2f22a66d494447bc1521bd149700453f6dde6",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 62,
+          "candidate_id": 4851,
+          "assignment": "6|8|7|9|10|11",
+          "score": 29.700973510742188,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 122,
+          "candidate_id": 1974,
+          "assignment": "-1|7|11|-1|-1|-1",
+          "score": -0.7477518320083618,
+          "active_count": 2,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 7,
+          "candidate_id": 4919,
+          "assignment": "6|8|10|7|9|11",
+          "score": 20.200252532958984,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 32,
+          "candidate_id": 4858,
+          "assignment": "6|8|7|10|9|11",
+          "score": 26.88503646850586,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322025,
+      "time_step": 30,
+      "state_hash": "fcc45cad639949c29449c2dce655f09481f352b63581b802a5879eebf7a5edc8",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "ab1613560d20096d47ed518e39bf021890eaaf13c085a7372ad636ea44b9c9c9",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 0,
+          "candidate_id": 4644,
+          "assignment": "6|7|8|9|11|10",
+          "score": 13.824416160583496,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 51,
+          "candidate_id": 9011,
+          "assignment": "9|-1|8|7|6|11",
+          "score": 1.0050175189971924,
+          "active_count": 5,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 26,
+          "candidate_id": 6606,
+          "assignment": "7|9|6|8|10|11",
+          "score": 23.97919464111328,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 8,
+          "candidate_id": 5069,
+          "assignment": "6|9|7|10|11|8",
+          "score": 28.057111740112305,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322026,
+      "time_step": 15,
+      "state_hash": "3ace1b399f2ecfd78d418def4c99786ac0d70ed48e02d2d00b82ff9bfd1cc49f",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "cbcd60759d8d54a11334d461446c3e523f2af17472b9c3542b9bcf206d3bd901",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 36,
+          "candidate_id": 7811,
+          "assignment": "8|6|10|9|11|7",
+          "score": 29.696195602416992,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 117,
+          "candidate_id": 10235,
+          "assignment": "10|-1|-1|-1|-1|-1",
+          "score": -0.12120582908391953,
+          "active_count": 1,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 36,
+          "candidate_id": 7811,
+          "assignment": "8|6|10|9|11|7",
+          "score": 20.10512924194336,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 24,
+          "candidate_id": 10826,
+          "assignment": "10|6|7|8|9|11",
+          "score": 26.83462905883789,
+          "active_count": 6,
+          "tie_count": 3,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322026,
+      "time_step": 30,
+      "state_hash": "e1e57cf9744e68b41bf9f9421bcf860fb87f478b64416299b53c91aaabd0a01f",
+      "pool_hash": "3843a83b9fb3dc6f733a585047e31e892bd35055b75ac510783f7381b9c8f16f",
+      "subset_hash": "f14c1447c4dfd530239d7a70402aff1c6ed6c1be856e61c5e846be02e1420bf9",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 38,
+          "candidate_id": 6683,
+          "assignment": "6|8|9|7|11|0",
+          "score": 14.229522705078125,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 40,
+          "candidate_id": 10490,
+          "assignment": "9|-1|6|7|11|8",
+          "score": 1.174500823020935,
+          "active_count": 5,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 38,
+          "candidate_id": 6683,
+          "assignment": "6|8|9|7|11|0",
+          "score": 26.038393020629883,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 16,
+          "candidate_id": 6717,
+          "assignment": "6|8|11|7|9|0",
+          "score": 27.508729934692383,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322027,
+      "time_step": 15,
+      "state_hash": "fbe301b76593cc219802dd97e644a359511472e797e871eb90e4b4391fe38bf5",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "a6f66b0471c4ea7d2a43f62516cb555356a4efcc91747d7cccf4dd2ea62872d8",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 4,
+          "candidate_id": 11569,
+          "assignment": "10|9|11|8|6|7",
+          "score": 29.701221466064453,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 117,
+          "candidate_id": 10757,
+          "assignment": "10|6|-1|7|-1|-1",
+          "score": -1.0622721910476685,
+          "active_count": 3,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 21,
+          "candidate_id": 11494,
+          "assignment": "10|9|7|8|6|11",
+          "score": 20.19902229309082,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 28,
+          "candidate_id": 10937,
+          "assignment": "10|6|11|8|9|7",
+          "score": 26.89138412475586,
+          "active_count": 6,
+          "tie_count": 3,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322027,
+      "time_step": 30,
+      "state_hash": "fb4b265d8e292d38ccf2b710ea8dd884dc51868ee80146f9b1fc4af986c9ba28",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "98a91ba79819fe06481daa873e682ed06fd06ae7e84ba9ea8a9aeb0c9d50d15d",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 27,
+          "candidate_id": 6467,
+          "assignment": "7|8|10|6|11|9",
+          "score": 14.007386207580566,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 51,
+          "candidate_id": 8033,
+          "assignment": "8|7|11|-1|6|9",
+          "score": 1.0737314224243164,
+          "active_count": 5,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 27,
+          "candidate_id": 6467,
+          "assignment": "7|8|10|6|11|9",
+          "score": 25.095626831054688,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 26,
+          "candidate_id": 6431,
+          "assignment": "7|8|9|6|10|11",
+          "score": 27.445466995239258,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322028,
+      "time_step": 15,
+      "state_hash": "981a207e18ff86ce1bec314ac2706214d027d9a453c2fa0766a7002efffafeab",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "95fed8dbcee4a1b5bbd5f53038f858ac68b563d99596ad243dbc16447490a03e",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 27,
+          "candidate_id": 11285,
+          "assignment": "10|8|7|9|6|11",
+          "score": 29.696447372436523,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 117,
+          "candidate_id": 7174,
+          "assignment": "8|-1|-1|6|-1|-1",
+          "score": -0.6709569692611694,
+          "active_count": 2,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 35,
+          "candidate_id": 11730,
+          "assignment": "10|11|8|6|7|9",
+          "score": 20.122173309326172,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 31,
+          "candidate_id": 11348,
+          "assignment": "10|8|11|6|9|7",
+          "score": 26.863250732421875,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322028,
+      "time_step": 30,
+      "state_hash": "6446ecdcb3a87995e0cdbc7b796bfa199199b9fde3831b4e7e7c5b59554ad4ab",
+      "pool_hash": "3843a83b9fb3dc6f733a585047e31e892bd35055b75ac510783f7381b9c8f16f",
+      "subset_hash": "642cd960b25ff2106d374f1a9158e1b121dfcd6f9d57fc3188a5c18feab15a12",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 29,
+          "candidate_id": 6411,
+          "assignment": "6|7|0|11|8|9",
+          "score": 14.191144943237305,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 23,
+          "candidate_id": 6071,
+          "assignment": "6|-1|11|7|9|8",
+          "score": 1.2610795497894287,
+          "active_count": 5,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 29,
+          "candidate_id": 6411,
+          "assignment": "6|7|0|11|8|9",
+          "score": 25.753501892089844,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 41,
+          "candidate_id": 6717,
+          "assignment": "6|8|11|7|9|0",
+          "score": 27.51853370666504,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322029,
+      "time_step": 15,
+      "state_hash": "a9e22cacd421ba336961d64eb2d331ecdad0e25e4e099070c9673a6f59ca0f94",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "ad18e7e2443e3230e3f445222f1c36acfd38fc9dbf818cc0ffce26d709019e8b",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 11,
+          "candidate_id": 9923,
+          "assignment": "9|10|6|11|8|7",
+          "score": 29.701820373535156,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 127,
+          "candidate_id": 1567,
+          "assignment": "-1|7|-1|-1|10|-1",
+          "score": -0.8499619960784912,
+          "active_count": 2,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 11,
+          "candidate_id": 9923,
+          "assignment": "9|10|6|11|8|7",
+          "score": 20.177417755126953,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 11,
+          "candidate_id": 9923,
+          "assignment": "9|10|6|11|8|7",
+          "score": 26.861501693725586,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322029,
+      "time_step": 30,
+      "state_hash": "ebab01baaaa4e00b83f0546e6d35d4d535d165a05a8cc8359b9cc0da07512349",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "e066c599eaa9e27e742193ccc1be5da71844f75e95ce8f1a245f7b695786559a",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 12,
+          "candidate_id": 5560,
+          "assignment": "6|11|9|10|7|8",
+          "score": 14.468541145324707,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 38,
+          "candidate_id": 9337,
+          "assignment": "9|6|10|-1|7|11",
+          "score": 0.9454346895217896,
+          "active_count": 5,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 10,
+          "candidate_id": 5285,
+          "assignment": "6|10|7|11|9|8",
+          "score": 26.5576229095459,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 12,
+          "candidate_id": 5560,
+          "assignment": "6|11|9|10|7|8",
+          "score": 27.805349349975586,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322030,
+      "time_step": 15,
+      "state_hash": "189a54146c0c5fc50d5ee25fb597f4f013b2a40b721bbeb2241be0a615557310",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "5e08e669857d0b6aefe3968bd25b008f9d387eacf24e493f578fcbeff6399170",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 33,
+          "candidate_id": 6465,
+          "assignment": "7|8|10|6|9|11",
+          "score": 29.701637268066406,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 115,
+          "candidate_id": 3833,
+          "assignment": "-1|11|8|-1|-1|6",
+          "score": -0.9679570198059082,
+          "active_count": 3,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 33,
+          "candidate_id": 6465,
+          "assignment": "7|8|10|6|9|11",
+          "score": 20.199399948120117,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 33,
+          "candidate_id": 6465,
+          "assignment": "7|8|10|6|9|11",
+          "score": 26.89980125427246,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322030,
+      "time_step": 30,
+      "state_hash": "cb26454cc52658526a8c0e4fba949dcf35d1aa27ec45c70ea4b1e69d3ebf9286",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "b8368d261cbca627e2a5a86ed013e9fb023b07c700eabcce18a5dab59879e540",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 24,
+          "candidate_id": 6515,
+          "assignment": "7|8|11|10|9|6",
+          "score": 15.279095649719238,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 39,
+          "candidate_id": 6413,
+          "assignment": "7|8|6|11|10|9",
+          "score": 1.3838615417480469,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 4,
+          "candidate_id": 13283,
+          "assignment": "11|10|8|7|6|9",
+          "score": 27.503719329833984,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 24,
+          "candidate_id": 6515,
+          "assignment": "7|8|11|10|9|6",
+          "score": 30.329057693481445,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322031,
+      "time_step": 15,
+      "state_hash": "3053702b98d2ed8b2ff881e50f55a67d8966ac751e4b29db7eb025d6dfa04b6b",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "91c14c6adb3ff9d835bcef2f0bd9f620ac8dd0b467129baf78c48ffb0fa90ead",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 19,
+          "candidate_id": 8193,
+          "assignment": "8|9|7|10|6|11",
+          "score": 29.700435638427734,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 124,
+          "candidate_id": 2047,
+          "assignment": "-1|8|-1|-1|-1|-1",
+          "score": -0.3444979786872864,
+          "active_count": 1,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 6,
+          "candidate_id": 5101,
+          "assignment": "6|9|8|10|7|11",
+          "score": 20.18844223022461,
+          "active_count": 6,
+          "tie_count": 2,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 62,
+          "candidate_id": 5346,
+          "assignment": "6|10|9|8|11|7",
+          "score": 26.87461280822754,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    },
+    {
+      "scenario_id": 322031,
+      "time_step": 30,
+      "state_hash": "b3c726e317e9d1e7c4f3105631994824bb9f291ef64013cf703910e4600db2b2",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "1bf90ff3ae32055aede27bb69503d9ccaa769d83ce1175caa8dc30a01fd0ab30",
+      "models": {
+        "R_EXPECTED_REGRET": {
+          "local_position": 10,
+          "candidate_id": 12831,
+          "assignment": "11|8|7|9|6|10",
+          "score": 14.286455154418945,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "C_LISTNET": {
+          "local_position": 10,
+          "candidate_id": 12831,
+          "assignment": "11|8|7|9|6|10",
+          "score": 1.0315977334976196,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "E6": {
+          "local_position": 13,
+          "candidate_id": 4751,
+          "assignment": "6|7|11|9|8|10",
+          "score": 24.959720611572266,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        },
+        "L3A10": {
+          "local_position": 17,
+          "candidate_id": 4962,
+          "assignment": "6|8|11|9|10|7",
+          "score": 29.439695358276367,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": null,
+          "subset_optimum_bits": null,
+          "subset_regret_bits": null
+        }
+      }
+    }
+  ],
+  "labels_available": false
+}

@@ -1,0 +1,138 @@
+{
+  "rows": [
+    {
+      "scenario_id": 322016,
+      "time_step": 15,
+      "candidate_id": 3258,
+      "assignment": "-1|10|7|-1|-1|-1",
+      "score": -0.23842552304267883,
+      "active_count": 2,
+      "real_payload_bits": 18003604.0144594,
+      "subset_regret_bits": 11387265.792456359,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    },
+    {
+      "scenario_id": 322016,
+      "time_step": 30,
+      "candidate_id": 7972,
+      "assignment": "8|7|9|-1|11|10",
+      "score": 1.4349995851516724,
+      "active_count": 5,
+      "real_payload_bits": 21529729.68114751,
+      "subset_regret_bits": 8847591.720988002,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    },
+    {
+      "scenario_id": 322017,
+      "time_step": 15,
+      "candidate_id": 8700,
+      "assignment": "9|-1|-1|-1|7|-1",
+      "score": -0.5653454065322876,
+      "active_count": 2,
+      "real_payload_bits": 18093224.10377051,
+      "subset_regret_bits": 6225448.77010531,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    },
+    {
+      "scenario_id": 322017,
+      "time_step": 30,
+      "candidate_id": 4744,
+      "assignment": "6|7|11|8|9|10",
+      "score": 1.0882344245910645,
+      "active_count": 6,
+      "real_payload_bits": 24962882.41601762,
+      "subset_regret_bits": 4457303.964651138,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    },
+    {
+      "scenario_id": 322018,
+      "time_step": 15,
+      "candidate_id": 825,
+      "assignment": "-1|-1|10|7|-1|-1",
+      "score": -0.898299515247345,
+      "active_count": 2,
+      "real_payload_bits": 18296318.55172896,
+      "subset_regret_bits": 7472161.420674089,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    },
+    {
+      "scenario_id": 322018,
+      "time_step": 30,
+      "candidate_id": 7108,
+      "assignment": "7|11|9|10|8|6",
+      "score": 1.448691964149475,
+      "active_count": 6,
+      "real_payload_bits": 28498067.25360235,
+      "subset_regret_bits": 3201123.897240553,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    },
+    {
+      "scenario_id": 322019,
+      "time_step": 15,
+      "candidate_id": 10246,
+      "assignment": "10|-1|-1|-1|7|-1",
+      "score": -0.9606950283050537,
+      "active_count": 2,
+      "real_payload_bits": 18441799.26882697,
+      "subset_regret_bits": 7931488.241358809,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    },
+    {
+      "scenario_id": 322019,
+      "time_step": 30,
+      "candidate_id": 7975,
+      "assignment": "8|7|9|6|-1|11",
+      "score": 1.112083911895752,
+      "active_count": 5,
+      "real_payload_bits": 21424528.09553698,
+      "subset_regret_bits": 5882992.386673488,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    },
+    {
+      "scenario_id": 322020,
+      "time_step": 15,
+      "candidate_id": 2051,
+      "assignment": "-1|8|-1|-1|-1|10",
+      "score": -1.045323371887207,
+      "active_count": 2,
+      "real_payload_bits": 18936959.87185054,
+      "subset_regret_bits": 5873373.098205522,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    },
+    {
+      "scenario_id": 322020,
+      "time_step": 30,
+      "candidate_id": 5546,
+      "assignment": "6|11|9|7|8|10",
+      "score": 0.8876093029975891,
+      "active_count": 6,
+      "real_payload_bits": 26345843.01288018,
+      "subset_regret_bits": 3125871.78363486,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    },
+    {
+      "scenario_id": 322021,
+      "time_step": 15,
+      "candidate_id": 6307,
+      "assignment": "7|8|-1|-1|-1|-1",
+      "score": -0.5333617329597473,
+      "active_count": 2,
+      "real_payload_bits": 18673697.64234509,
+      "subset_regret_bits": 5673023.460956741,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    },
+    {
+      "scenario_id": 322021,
+      "time_step": 30,
+      "candidate_id": 5548,
+      "assignment": "6|11|9|7|10|8",
+      "score": 1.2371926307678223,
+      "active_count": 6,
+      "real_payload_bits": 27612101.49652317,
+      "subset_regret_bits": 1275418.4058825187,
+      "source": "results/legacy_arrival_aware_ab_l4/state_records.json"
+    }
+  ],
+  "source_sha256": "e58fd5615f34a8f7a5705b3cfde5e0650035d30352de7359969743ce7ec10649",
+  "recomputed": false
+}

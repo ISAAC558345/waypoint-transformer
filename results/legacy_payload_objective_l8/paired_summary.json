@@ -1,0 +1,138 @@
+{
+  "overall": {
+    "states": 16,
+    "R_minus_C_payload_bits_mean": 4006856.1559324544,
+    "R_minus_E6_payload_bits_mean": 553302.7330002391,
+    "R_minus_L3A10_payload_bits_mean": 728043.3695591122,
+    "payload_bits_mean": {
+      "R_EXPECTED_REGRET": 24398367.209643096,
+      "C_LISTNET": 20391511.053710643,
+      "E6": 23845064.476642855,
+      "L3A10": 23670323.840083983
+    },
+    "subset_regret_bits_mean": {
+      "R_EXPECTED_REGRET": 5060749.967737306,
+      "C_LISTNET": 9067606.12366976,
+      "E6": 5614052.700737545,
+      "L3A10": 5788793.337296418
+    },
+    "soft_expected_regret_mean": {
+      "R_EXPECTED_REGRET": 0.27436878237654283,
+      "C_LISTNET": 0.3917410753192603,
+      "E6": 0.27813908254329056,
+      "L3A10": 0.2756471151755471
+    }
+  },
+  "t15": {
+    "states": 8,
+    "R_minus_C_payload_bits_mean": 8044597.65811008,
+    "R_minus_E6_payload_bits_mean": -231601.54987492273,
+    "R_minus_L3A10_payload_bits_mean": 1265161.1217309614,
+    "payload_bits_mean": {
+      "R_EXPECTED_REGRET": 24627059.588253453,
+      "C_LISTNET": 16582461.930143375,
+      "E6": 24858661.138128377,
+      "L3A10": 23361898.466522492
+    },
+    "subset_regret_bits_mean": {
+      "R_EXPECTED_REGRET": 4009331.2178832716,
+      "C_LISTNET": 12053928.875993352,
+      "E6": 3777729.668008349,
+      "L3A10": 5274492.339614233
+    },
+    "soft_expected_regret_mean": {
+      "R_EXPECTED_REGRET": 0.23874495539312585,
+      "C_LISTNET": 0.4446722274145274,
+      "E6": 0.24467725073411017,
+      "L3A10": 0.23965814808325842
+    }
+  },
+  "t30": {
+    "states": 8,
+    "R_minus_C_payload_bits_mean": -30885.346245171968,
+    "R_minus_E6_payload_bits_mean": 1338207.015875401,
+    "R_minus_L3A10_payload_bits_mean": 190925.6173872631,
+    "payload_bits_mean": {
+      "R_EXPECTED_REGRET": 24169674.831032738,
+      "C_LISTNET": 24200560.177277908,
+      "E6": 22831467.815157335,
+      "L3A10": 23978749.213645473
+    },
+    "subset_regret_bits_mean": {
+      "R_EXPECTED_REGRET": 6112168.71759134,
+      "C_LISTNET": 6081283.371346168,
+      "E6": 7450375.733466741,
+      "L3A10": 6303094.334978603
+    },
+    "soft_expected_regret_mean": {
+      "R_EXPECTED_REGRET": 0.3099926093599597,
+      "C_LISTNET": 0.3388099232239933,
+      "E6": 0.311600914352471,
+      "L3A10": 0.3116360822678357
+    }
+  },
+  "scenarios": [
+    {
+      "scenario_id": 322024,
+      "t15_R_minus_C_payload_bits": 18087049.414210856,
+      "t30_R_minus_C_payload_bits": 1759224.3759114258,
+      "mean_R_minus_C_payload_bits": 9923136.89506114
+    },
+    {
+      "scenario_id": 322025,
+      "t15_R_minus_C_payload_bits": 3488278.0850744992,
+      "t30_R_minus_C_payload_bits": -2088661.4324585497,
+      "mean_R_minus_C_payload_bits": 699808.3263079748
+    },
+    {
+      "scenario_id": 322026,
+      "t15_R_minus_C_payload_bits": 12272359.528630674,
+      "t30_R_minus_C_payload_bits": -7194852.706512615,
+      "mean_R_minus_C_payload_bits": 2538753.4110590294
+    },
+    {
+      "scenario_id": 322027,
+      "t15_R_minus_C_payload_bits": 1481576.9497609735,
+      "t30_R_minus_C_payload_bits": 6129086.298387207,
+      "mean_R_minus_C_payload_bits": 3805331.6240740903
+    },
+    {
+      "scenario_id": 322028,
+      "t15_R_minus_C_payload_bits": 6619383.994232573,
+      "t30_R_minus_C_payload_bits": -962912.8029207513,
+      "mean_R_minus_C_payload_bits": 2828235.5956559107
+    },
+    {
+      "scenario_id": 322029,
+      "t15_R_minus_C_payload_bits": 6607068.959769253,
+      "t30_R_minus_C_payload_bits": 1557221.5111827925,
+      "mean_R_minus_C_payload_bits": 4082145.2354760226
+    },
+    {
+      "scenario_id": 322030,
+      "t15_R_minus_C_payload_bits": -264429.68961675465,
+      "t30_R_minus_C_payload_bits": 553811.986449115,
+      "mean_R_minus_C_payload_bits": 144691.14841618016
+    },
+    {
+      "scenario_id": 322031,
+      "t15_R_minus_C_payload_bits": 16065494.022818573,
+      "t30_R_minus_C_payload_bits": 0.0,
+      "mean_R_minus_C_payload_bits": 8032747.011409286
+    }
+  ],
+  "scenario_counts": {
+    "positive": 8,
+    "negative": 0,
+    "near_zero": 0,
+    "near_zero_abs_bits": 1.0
+  },
+  "gate": {
+    "label": "NOT_PROMOTED",
+    "overall_gain_above_1_bit": true,
+    "both_times_at_least_minus_1_bit": false,
+    "not_below_references_by_more_than_1_bit": true,
+    "starts_next_stage": false,
+    "adopts_model": false
+  }
+}

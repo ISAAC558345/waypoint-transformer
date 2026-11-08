@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "higher_payload_score_increased": true,
+  "equal_labels_zero_gradient": true,
+  "distinct_from_listnet": true,
+  "environment_steps": 0,
+  "scoring_forwards": 0
+}

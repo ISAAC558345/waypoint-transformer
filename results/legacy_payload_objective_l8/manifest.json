@@ -1,0 +1,25 @@
+{
+  "package": "legacy_payload_objective_l8",
+  "instruction_commit": "7c31d69894d2617d259a5b2fa5015ab5fa8f57c1",
+  "command": "py -3 -m wt.legacy_payload_objective_l8 --run",
+  "gate": {
+    "label": "NOT_PROMOTED",
+    "overall_gain_above_1_bit": true,
+    "both_times_at_least_minus_1_bit": false,
+    "not_below_references_by_more_than_1_bit": true,
+    "starts_next_stage": false,
+    "adopts_model": false
+  },
+  "primary_R_minus_C_payload_bits_mean": 4006856.1559324544,
+  "r_epoch_010_sha256": "4f4ffa043f13b31b83f31508ef8ade138d96cee36a9addf977d33aeb555bc27f",
+  "freeze_sha256": "dd5793baa406e2e224283bcc5f40f5384b201613a20dc9fe4effa05f4ae9611d",
+  "protected_unchanged": true,
+  "ocean_branch_unchanged": true,
+  "environment_steps": 30960,
+  "low_level_inferences": 30960,
+  "scoring_forwards": 196,
+  "training_updates": 120,
+  "backward_passes": 120,
+  "candidate_rollouts": 2048,
+  "retrained_reference_models": 0
+}
