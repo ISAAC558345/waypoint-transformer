@@ -1,0 +1,12 @@
+{
+  "environment_steps": 30960,
+  "low_level_inferences": 30960,
+  "scoring_forwards": 200,
+  "training_updates": 120,
+  "backward_passes": 120,
+  "candidate_rollouts": 2048,
+  "retrained_reference_models": 0,
+  "old_state_environment_steps": 0,
+  "old_state_scoring_forwards": 0,
+  "old_state_relabels": 0
+}

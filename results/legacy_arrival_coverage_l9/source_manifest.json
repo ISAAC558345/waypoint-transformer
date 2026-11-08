@@ -1,0 +1,621 @@
+{
+  "instruction_commit": "42fd0cca37dd62d950a47aa3d5d1a77e007bfcf7",
+  "command": "py -3 -m wt.legacy_arrival_coverage_l9 --run",
+  "historical_objects": [
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322032/t000_manifest.json",
+      "blob": "afc496e032bed30155a590bae41e75e50e5ab02b",
+      "sha256": "62fc2a6dec541ca10822a143048c053bfeae171a1ce602d0841eceeff98b8add",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322032/t000_state.npz",
+      "blob": "849c73d286e13f779b39a5bc37b2a66a63c884d5",
+      "sha256": "af630ad2d8ef54338dc8ce0c573a684898ff937a8a0697933e9d5cedf27a702f",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322032/t000_candidates.npz",
+      "blob": "a136f6d959d4434d8747eb05ac12e25f5b506f86",
+      "sha256": "59bfb22c16ad9e4f5db82e84dcb3a478b9e170e87b63aa688d0d474c6c0d23c8",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322032/t015_manifest.json",
+      "blob": "05ece34fdc224bbe7bf6c32bbe51c02d08113331",
+      "sha256": "06e4d61f6fd43a07033b78f2f449b327f1144a75ab1e683285110903e8285011",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322032/t015_state.npz",
+      "blob": "465270fc8eac25c5f109ccf25896bf335e122c9b",
+      "sha256": "c280b138e30b0a52017ede3df16d0aad7ab3f55cc91a4f3432bf9e3386ecaeae",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322032/t015_candidates.npz",
+      "blob": "130483a2c626f23fd39fe836461dff5f8adfb49b",
+      "sha256": "9ac758e07abb862ada18d6bd7905ce0af60db7311a4f52fd0a963642f94004cd",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322032/t030_manifest.json",
+      "blob": "fcb0ad07845ddc05fc3c01c8bfb0e6295aa14403",
+      "sha256": "c45758f826e473e842456413f638dfa1f2a0cd6a378e74884155d40bf1ee8a45",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322032/t030_state.npz",
+      "blob": "565947f16e05c3931975494d8735510f441784d8",
+      "sha256": "78c3b2ab1a61895dbb62d87d87f0159d1f00e326a2d5ad6d17911440caa1a055",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322032/t030_candidates.npz",
+      "blob": "11ec083dde348321d0291036bc3147f6ece5ad7f",
+      "sha256": "09a023b802e0238d396a36899a07061bb62c99d4779dce630b661de10179db46",
+      "on_disk": false
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322032/t015_state.npz",
+      "blob": "baef28992289b02e7c6dd38d755eca7d2db78300",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322032/t030_state.npz",
+      "blob": "c78606ca4deccf4258b4f0cacf01a9a2fd79e3c1",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322033/t000_manifest.json",
+      "blob": "7fc8eeb9b1c57d9c7d15fa8155ccd1d6a4ab5618",
+      "sha256": "e25cfa4ca6a08c3ac43dc905fa5eeed73a07582b6ec8fac64b99f24c2bff6004",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322033/t000_state.npz",
+      "blob": "9c10957e9755ad18218d6f7df4f929f2cea5edf4",
+      "sha256": "80a46da46d7be0fbd7c1483edd76ffe5bcf20317ff3240ceb4b4869ff60ce94a",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322033/t000_candidates.npz",
+      "blob": "cf01adb52732e4c38865a216ee5b26edc9a41c26",
+      "sha256": "eab48aa46f718602d10284dde79b7b31407c5a49d08c5523217158991b5461ba",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322033/t015_manifest.json",
+      "blob": "53938c5b114d518a97a592c468bac4c110fddd44",
+      "sha256": "e619a9589231a8b7c25d1cb8ea782fe2f76099c274ba7c6a66c8b193b6179236",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322033/t015_state.npz",
+      "blob": "f6744496aed1a44f8a732cff87f3a61420d8e43c",
+      "sha256": "a4fa5b65310b7ba5fe8a26f74ea387c144354d605584a85340e1cbedbbf818c4",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322033/t015_candidates.npz",
+      "blob": "4855f27fcfbbb3c4b3b8bbf6abd20efcb7db42f3",
+      "sha256": "5bcf52f042e0b526ce1c839f01151d75fc49f708948aa631232abfbe88dbf337",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322033/t030_manifest.json",
+      "blob": "2999984307b20e8ba4a5f72441d844b047fa29df",
+      "sha256": "ed904561071bdf86931d3e734677026f350720a8ce3ad23e9c43a3a77125df24",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322033/t030_state.npz",
+      "blob": "c91829713beaed462740daa5820991bb955a55e6",
+      "sha256": "5c7c70baf470f62dbc8de879c8cbc6fc58e96dc82dbc7c1cc14889af205ade1a",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322033/t030_candidates.npz",
+      "blob": "24f0dac5adb56d40dbc1341e9b8fc3c9b979558c",
+      "sha256": "ed2139a1f9cc825cfe454a04a33528120c6ecc744718ed94cb82751165255c97",
+      "on_disk": false
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322033/t015_state.npz",
+      "blob": "fbc3589fa6ccaaa42f4001bca00200124812ac8c",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322033/t030_state.npz",
+      "blob": "4d7098525af9fbc1fce17ccd3312be3aa5a343b4",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322034/t000_manifest.json",
+      "blob": "0aa9d21372fe48fdf6dcdfd7cccbf1787b0abbdd",
+      "sha256": "6dd2531e9c63185f99fc5941f3db8b98a6f1eb32b6fdf58c6ff3e7d67160c09e",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322034/t000_state.npz",
+      "blob": "2d55918f64438d62a57bfff96ede0df7041e02bc",
+      "sha256": "c12eaac82e9120a30223aa343c82337f286a0f5d4f4b82ff53c13530c53b185b",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322034/t000_candidates.npz",
+      "blob": "e4714b7b239dcfd880182b9dd3f0fc052e6caabf",
+      "sha256": "9abd1d6b3d439e8bbcfe67432ed221015d41ceebe5a4501a8babe08a29379711",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322034/t015_manifest.json",
+      "blob": "be25082aad14b054e32448e4470c0b2bd34e69d4",
+      "sha256": "86e9c3b80f0746e2c0f601a7bafea76ba3770736639b864122d8971879726253",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322034/t015_state.npz",
+      "blob": "5b56b32d373b876bc2f845c763e735563e0c17f6",
+      "sha256": "ee4d5bf350158a96e6535baa9c97950d50fc71decf45a19378350da3bee62740",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322034/t015_candidates.npz",
+      "blob": "4b2365f0d0965dee61403267be789e882a58a19a",
+      "sha256": "73a17d5598ae698c3c96d538f363a476d703bfb7da85a66826acf44ff8bcfb52",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322034/t030_manifest.json",
+      "blob": "c50c2b1af1cfea9516e10a05b6b864f1cef04599",
+      "sha256": "c890061036d89058e5178cacbe32a8a7cb79529495f987babfe68e6d033908e2",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322034/t030_state.npz",
+      "blob": "23d8f00c2fd15f0afff0eba7c6154d7aea7ec087",
+      "sha256": "92e3ba43a7c654b45b8bad08084112ffd77cff8ab5a47891b2d5c99570ab68c9",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322034/t030_candidates.npz",
+      "blob": "2b323d1268ba079d2c0e5352a4b397987c8da75e",
+      "sha256": "bc55906cc8c9a0f72c9e4c670890849dbe6d54475934e018f1a23ea4167cdb3a",
+      "on_disk": false
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322034/t015_state.npz",
+      "blob": "a7dafaf4f4985ebb4dbbc001519a80264cd9da8a",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322034/t030_state.npz",
+      "blob": "6e4908ae97b145b9f93845c86433995c2b227022",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322035/t000_manifest.json",
+      "blob": "31eb5b32262367b16e6b03d7ca08dc6903e73462",
+      "sha256": "c2f2996210556301b91409088dc7d8504d3ec3579d00851a2377c285ec2a43e9",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322035/t000_state.npz",
+      "blob": "8ac21af3d6a8e77bea7ae90716da9185f999dba7",
+      "sha256": "6a7b948a0345cbce899b1e1f34bd6fa51d42eaa7a61749f924ef845c5cafe068",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322035/t000_candidates.npz",
+      "blob": "717e5dfe1b3b892a0226cd5061a73076a34e3349",
+      "sha256": "a4c71a061b4718e4c63d009dee0b647da7206d662088fd60f11eeaf1785bcd10",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322035/t015_manifest.json",
+      "blob": "bdab0b4a119ed7060d2698afe79abd23829c90e5",
+      "sha256": "193b0f17bcdc07521f7cafdf06e5aa615181fc7fa9d3e291e4ba65bbe2b46896",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322035/t015_state.npz",
+      "blob": "a4a0980804bd1fcb8fb5c20c909a657962d79e39",
+      "sha256": "44477e06cf976b933860eb437e105b89764cd159a5b9f6022563ab9b6f789070",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322035/t015_candidates.npz",
+      "blob": "7dc05332f0fec89f6a98694e648577f7413f18aa",
+      "sha256": "faa4934ef33535440e7ecf934d86ed0aabe54552e7d7d5ead0afa243acd89e5b",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322035/t030_manifest.json",
+      "blob": "8c7c82e5eb51bd6d9251d727356491a7a7a01ff8",
+      "sha256": "d29a0b7bd3311c3ba71e07a4a7846c3ba8d949611926513f3d72a3fff0ae3065",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322035/t030_state.npz",
+      "blob": "01e5a156b58dc652d62a2711d464cef3ca2ccf39",
+      "sha256": "5854ddf287e893bb924c598e29278d35c0a8fa548bdff0d9f1864e9d25974460",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322035/t030_candidates.npz",
+      "blob": "184fd91460ec82a5eb8ae584b07927b2818706bd",
+      "sha256": "14e3221710a5bbc218d06342da424c7c80a6eb49495c53c17c2c082639513db7",
+      "on_disk": false
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322035/t015_state.npz",
+      "blob": "4ed511943c015b82197e0c48e96b8bf77be68b30",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322035/t030_state.npz",
+      "blob": "5dcc9fb987a10ce125ff16c0690b198e0a19fb4d",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322036/t000_manifest.json",
+      "blob": "8686a534cd08ed7316b3c015a5a984db428c835b",
+      "sha256": "e2a27dd63e4d2d7b16e384f00f5231f344ee47456dc9612810047b1c018d7a3f",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322036/t000_state.npz",
+      "blob": "226cc5ff3e6e2162c7db92a7802e774ad8638409",
+      "sha256": "5c9801462184bf769981cbcf66615f962b655320924e30caabb4c5f02ebbb6f8",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322036/t000_candidates.npz",
+      "blob": "e20d5b3cabc28a65d06ad70f74d22085ec771758",
+      "sha256": "9a66da7f3b32dadf8ccd85a619b32199f97199700c921d3663009872eda2fc24",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322036/t015_manifest.json",
+      "blob": "5e825246970a927a1a0c223034dbdd481b878238",
+      "sha256": "18dcd4b87cafa8256ae9bdd8ae94c9944a2f8b0fd6b6edc9ea20295383d7c36b",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322036/t015_state.npz",
+      "blob": "340d28f9ef92a8a18186da99f54524b6e2d8a4d1",
+      "sha256": "6252abcb32c8060d103b2a502c2ef305a56c9ada63bc2df7878f9d0043a6cddb",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322036/t015_candidates.npz",
+      "blob": "e96dede2902e9093668f4e8c89b5b38f4e86193a",
+      "sha256": "5e6a2643e63c546bbafd4ba26fa7b1642d975897370dc83a4f334e1e3e2ac0f8",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322036/t030_manifest.json",
+      "blob": "6b81dc921a53cbe9e30e3309ff85d6bcc12cde25",
+      "sha256": "30a503ac125c872da4a82cd188a6d13ad74e5550db5fd78e4317fc265ca52dac",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322036/t030_state.npz",
+      "blob": "b5735a3a4f568b6a6f5abfe3fc43d515790ccf17",
+      "sha256": "63ab3e626a8417917e6f1e35c27ed7833205f82d83b1f1e4b02f6badb0618f4a",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322036/t030_candidates.npz",
+      "blob": "8170f6a9dcd7fb6effb3b2396a7cdae52725f0da",
+      "sha256": "f6bdffd3e2db248346cabc6c8ea0f0fd32094f40f8877925e6f78429125baa21",
+      "on_disk": false
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322036/t015_state.npz",
+      "blob": "4424307c47c750a31c1376166c93de3ef16ded74",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322036/t030_state.npz",
+      "blob": "ae25d59ab59875c9145e54697f2f9fded161cb98",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322037/t000_manifest.json",
+      "blob": "2ce990419ad91b43191c3bcbc07751f8b37e5dc2",
+      "sha256": "a755ca781419b0815abb7d6482590ca626b25bbc7d9ceb42931603e09de18b37",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322037/t000_state.npz",
+      "blob": "0eda8cf7e57e537aaf2bca8994853727ba3b1d4b",
+      "sha256": "dc600a98f29bd3a70ec289a2144d8578a6536e72b96ea9e4afbdad5be0b57a10",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322037/t000_candidates.npz",
+      "blob": "6cf9d1e1fe04436067721d3b9a9be90d782c2482",
+      "sha256": "46887c448f5bea24d02cb14e5d790339a6a68f524cde7101dc30b8635b079afe",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322037/t015_manifest.json",
+      "blob": "3b22d0d687dcd04e8ec723dfc6c8743b6e7de25f",
+      "sha256": "511ee1915d7c249b3bdf7357b4f526ed696e7189390c3ff79b2a555c382f2d9b",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322037/t015_state.npz",
+      "blob": "09956ad6cc2ec43b76aef8c338f54b4079b25364",
+      "sha256": "d42b3033c9e3e21cc41c69a0f1f3866cc052b20a6d302ddae1878a2aba1368e5",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322037/t015_candidates.npz",
+      "blob": "43d7dc0bab5b4e6c2e7e9bc22ec416d0634fd207",
+      "sha256": "1b63a807857691537493edac3edbdfb760ccbb49bdbabf6d0a7dd394aec3f16e",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322037/t030_manifest.json",
+      "blob": "48d549329b1976bcdfc9d22a6a13006ef073772b",
+      "sha256": "585aa7519a55172e226b3acad26d4d345b182516e23c093eb13015bc70325936",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322037/t030_state.npz",
+      "blob": "1ebaef68149771911a08db7e71a54c285a72bd62",
+      "sha256": "c91815f4f322f4623e94a54b4681abd55d8dbbe8f05039bb5cb9a2d3d0e91613",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322037/t030_candidates.npz",
+      "blob": "c0ace7204d534f1000d22aa98d5fe4da33368285",
+      "sha256": "4df5b7ff9b59db70dad78c9dff21a61d0bb32e33efe91142a091d7769b78b443",
+      "on_disk": false
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322037/t015_state.npz",
+      "blob": "39fb7f4db5d1978f2753201b31758f9d734c9d7f",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322037/t030_state.npz",
+      "blob": "6a1aceb6789b0027d24296c6cb01a8e81be558da",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322038/t000_manifest.json",
+      "blob": "91de3e5664eed152efc274613e2173d1140346fc",
+      "sha256": "3950ff686d7acbe490a564a6d1cdd82436e4db3bff4154c5457219453ed1c773",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322038/t000_state.npz",
+      "blob": "d8bb1d3503e0629d983fa8e4c2a7e31b3bb3dfb5",
+      "sha256": "c3c8c9c4e70f1fd0c8215e102324541781e7e31e877729f2ac3985e600071c99",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322038/t000_candidates.npz",
+      "blob": "6c16454dee0ff82a5c2fefa16073936e1f37d7b5",
+      "sha256": "1e49b4d1a0768313b02c5ec5c40dd631092a735970fd7b0a726b900c464aa14d",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322038/t015_manifest.json",
+      "blob": "a01fff141fbe5a0af751da9ac2c968f664de37e5",
+      "sha256": "4da2e473799e30bc71607fbe5e90ea79ce6a0f45e56a388da49e17e3f06fa395",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322038/t015_state.npz",
+      "blob": "a323c591b8d3ad4ab0f69b107d3ae79777660783",
+      "sha256": "254d87bb7320b3ef22d0de8f2614451a7fa2646ef72f90f2d730b9711e892b3a",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322038/t015_candidates.npz",
+      "blob": "55134b2fe2c3db36d01855cb6c9eecc96ecea185",
+      "sha256": "2d6a7a19ca49a6f14f8d7aa3c7dbe7a5ac787928e9f4f3d93abab3f81a9b1eaa",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322038/t030_manifest.json",
+      "blob": "778aeced24e7d7540ff1719deb83b23246fdfedd",
+      "sha256": "66d796907ecba2da48fcbd2f4500afc9b268cbc7813e811a5fb323b8b09f7f15",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322038/t030_state.npz",
+      "blob": "d79e3153656f031968b5788731f23db72b38803d",
+      "sha256": "644095f43743408905d36a04b3a07231cc9414c69369c226a917b3f829fd54bf",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322038/t030_candidates.npz",
+      "blob": "773838b63783e133611c51f162b85a65e3588c00",
+      "sha256": "f18587d5bf936ac60bf4834602671418af4bbec185c9f1e791e09e1608e2fdcb",
+      "on_disk": false
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322038/t015_state.npz",
+      "blob": "121e77da8ce6961b1e61af000db482d1bd939709",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322038/t030_state.npz",
+      "blob": "376adbc7cc3f02d843132ca57f0188c6fb16932a",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322039/t000_manifest.json",
+      "blob": "a6a19f9b58325ff02b7423ab78638808a74fee1c",
+      "sha256": "3a6221a898d9e20bcec5030f069e7b782f5a4169f1cee383e2f15e5a81c877fa",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322039/t000_state.npz",
+      "blob": "9181c814bb1ba3cde8e8d05f44811bab7e47195b",
+      "sha256": "1947ee584146a4a57fdcb196b7f4e18fc6d4e06dfea7294b118ce6e8116e61ee",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322039/t000_candidates.npz",
+      "blob": "3444f88b998eb3b6713d0efd8105c631925f40e9",
+      "sha256": "e4ab4f53b249a587a795d2bd20b7d21616ceca850361887942bd0bffeba39220",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322039/t015_manifest.json",
+      "blob": "1715bd8dca530691bbefbbdb7d7047327a02fece",
+      "sha256": "6a2efecf56d6cfd70069ae228b11cb042a4cc502ad3e1fe64f0e29c4d88578f7",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322039/t015_state.npz",
+      "blob": "7fa7611a70f84d0c65801179158def5ebcbcf075",
+      "sha256": "66dfe4f47d7f92fe760f0bee0b916b4ddf668bb93dbf49de94e2499c628bb3f2",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322039/t015_candidates.npz",
+      "blob": "6c5ad281ae05e2366cd349cf992efef517a1eac9",
+      "sha256": "65bf3a7127f380460becc928859eab8d1eb7f2337ac8829cd0032f272f7387a7",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322039/t030_manifest.json",
+      "blob": "8217f81e280a53201b098f1c62111b7ad507fb20",
+      "sha256": "754492bfe26467312ada446fa130802583be5f76819d9a3076dab1a2ee816cb8",
+      "on_disk": true
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322039/t030_state.npz",
+      "blob": "2af57d4157e2c6ed14074a1a5a289a70325d2be6",
+      "sha256": "ae3e4d6eca0b3fbb44752d60731948f229ab71251399c82f8d295ae210ac39ae",
+      "on_disk": false
+    },
+    {
+      "commit": "aadbb3c5c5954669dd335dce9afb3462d7de114c",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322039/t030_candidates.npz",
+      "blob": "d6467ac45fe6948b593635758f0552ef7e6947ae",
+      "sha256": "212b325fd72474254df1976afcd7d3a3a7156b87846a4d52f495031f7ce31ee8",
+      "on_disk": false
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322039/t015_state.npz",
+      "blob": "4b405030b2c340d959019de9ee42926553d36d09",
+      "role": "revision_check_source"
+    },
+    {
+      "commit": "8a34efc718665a7cfe4375b662e8f5249263f03d",
+      "path": "src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/train/scenario_322039/t030_state.npz",
+      "blob": "d347df4005713f36c634475c42e6720d1ad3c94c",
+      "role": "revision_check_source"
+    }
+  ],
+  "protected_sha256": {
+    "r12": "4f4ffa043f13b31b83f31508ef8ade138d96cee36a9addf977d33aeb555bc27f",
+    "l8_candidates": "82c3bb48c9a4a9e3ab2de7f0b63e2c453031b360de4915c7762e6d223e29ba93",
+    "l8_labels": "1fcc7d83c3c9cf9109af50ed542cd75fbfe4e10183e2cbee43589344ee8ddc91",
+    "l8_loss": "76b0136adb19ccd08ebc809f76daeb8346abaafd9d1f48430d4fe949cc20de92",
+    "official_policy": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb",
+    "l2_manifest": "c6e7df3ae007504b0095a8dec4db317ec4d38ad467d1ae342a63725ed2115e59",
+    "historical_listnet": "79280ba88c09834046ace0f3432fc35dd95df8aa227a5c8e4a12daa75140c032",
+    "mappo": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e",
+    "scheme_c": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864",
+    "epoch6": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde",
+    "decoder": "de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5",
+    "c_listnet": "6024f4c42cdf2de2e8452b49da6ed1824ff8d6e56e84204681a6a37161b81141",
+    "l3_a10": "87f7c7673555518d80303a8226ae699057bcdaeacb4307512331b7dbad4e60d8"
+  }
+}

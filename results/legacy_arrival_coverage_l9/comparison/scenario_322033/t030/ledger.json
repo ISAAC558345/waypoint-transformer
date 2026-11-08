@@ -1,0 +1,239 @@
+{
+  "schema_version": "episode_admission_age_v1",
+  "age_scale_steps": 48,
+  "buckets": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      {
+        "admission_step": 6,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 387367.82705786044
+      },
+      {
+        "admission_step": 8,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 10,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 18,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 117768.84864146821
+      },
+      {
+        "admission_step": 20,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 189993.52107838728
+      },
+      {
+        "admission_step": 22,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 216836.28797055408
+      },
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 333698.64057113
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 332230.9372521704
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 296337.42834157404
+      }
+    ],
+    [
+      {
+        "admission_step": 10,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 6002.078020939021
+      },
+      {
+        "admission_step": 20,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 22,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 447113.56564652873
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 443314.49151302874
+      }
+    ],
+    [
+      {
+        "admission_step": 6,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 689895.4932213216
+      },
+      {
+        "admission_step": 8,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 10,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 18,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 137967.40699449694
+      },
+      {
+        "admission_step": 20,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 91257.52606093744
+      },
+      {
+        "admission_step": 22,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 154605.52205223497
+      },
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 243120.29039010033
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 271149.9884909536
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 199911.9124978711
+      }
+    ],
+    [
+      {
+        "admission_step": 20,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 658675.3641383005
+      },
+      {
+        "admission_step": 22,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 724518.3553975956
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 471230.0615763152
+      }
+    ],
+    [
+      {
+        "admission_step": 6,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 568220.7215782029
+      },
+      {
+        "admission_step": 8,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 10,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 18,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 682320.0453069997
+      },
+      {
+        "admission_step": 20,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 261475.47235607356
+      },
+      {
+        "admission_step": 22,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 97825.9129172191
+      },
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 36014.335803077556
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 63251.66806848813
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 140069.66104420973
+      }
+    ],
+    [
+      {
+        "admission_step": 20,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 84015.82366605906
+      },
+      {
+        "admission_step": 22,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 849859.5205887528
+      },
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 866440.0427093958
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 839222.2075746804
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 786080.5967478338
+      }
+    ]
+  ]
+}

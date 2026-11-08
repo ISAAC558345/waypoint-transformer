@@ -1,0 +1,234 @@
+{
+  "schema_version": "episode_admission_age_v1",
+  "age_scale_steps": 48,
+  "buckets": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 671364.6249502101
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      }
+    ],
+    [
+      {
+        "admission_step": 8,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 49612.38131918933
+      },
+      {
+        "admission_step": 10,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 18,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 327031.6887706262
+      },
+      {
+        "admission_step": 20,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 390184.722519448
+      },
+      {
+        "admission_step": 22,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 450064.6521628029
+      },
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 546919.623699497
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 583873.7630948853
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 497379.0065725632
+      }
+    ],
+    [
+      {
+        "admission_step": 6,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 371409.53480596514
+      },
+      {
+        "admission_step": 8,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 10,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 18,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 171192.17377907643
+      },
+      {
+        "admission_step": 20,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 132189.25428815186
+      },
+      {
+        "admission_step": 22,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 229060.98238030868
+      },
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 313741.24968220014
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 327096.29708007956
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 229855.01848197542
+      }
+    ],
+    [
+      {
+        "admission_step": 18,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 20703.054360520007
+      },
+      {
+        "admission_step": 20,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 22,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 741262.8137165746
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 606785.1662748097
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 452173.76215371303
+      }
+    ],
+    [
+      {
+        "admission_step": 4,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 91272.88032907329
+      },
+      {
+        "admission_step": 6,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 8,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 10,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 1000000.0
+      },
+      {
+        "admission_step": 18,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 187504.1204146319
+      },
+      {
+        "admission_step": 20,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 144760.06537394505
+      },
+      {
+        "admission_step": 22,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 110174.74723906536
+      },
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 62903.59693709435
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 85195.03319661831
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 166363.59615830798
+      }
+    ],
+    [
+      {
+        "admission_step": 10,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 535744.4487966672
+      },
+      {
+        "admission_step": 20,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 959107.8175391601
+      },
+      {
+        "admission_step": 22,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 701808.8755222182
+      },
+      {
+        "admission_step": 24,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 536713.3610132206
+      },
+      {
+        "admission_step": 26,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 490690.9822780434
+      },
+      {
+        "admission_step": 28,
+        "age_origin": "environment_arrival",
+        "bits_remaining": 629476.3021441214
+      }
+    ]
+  ]
+}

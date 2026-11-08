@@ -1,0 +1,871 @@
+{
+  "updates": 120,
+  "full_passes": 4,
+  "tail_updates": 8,
+  "rule": "update i uses sorted state i mod 28",
+  "per_state": [
+    {
+      "scenario_id": 322016,
+      "time_step": 15,
+      "visits": 5
+    },
+    {
+      "scenario_id": 322016,
+      "time_step": 30,
+      "visits": 5
+    },
+    {
+      "scenario_id": 322017,
+      "time_step": 15,
+      "visits": 5
+    },
+    {
+      "scenario_id": 322017,
+      "time_step": 30,
+      "visits": 5
+    },
+    {
+      "scenario_id": 322018,
+      "time_step": 15,
+      "visits": 5
+    },
+    {
+      "scenario_id": 322018,
+      "time_step": 30,
+      "visits": 5
+    },
+    {
+      "scenario_id": 322019,
+      "time_step": 15,
+      "visits": 5
+    },
+    {
+      "scenario_id": 322019,
+      "time_step": 30,
+      "visits": 5
+    },
+    {
+      "scenario_id": 322020,
+      "time_step": 15,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322020,
+      "time_step": 30,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322021,
+      "time_step": 15,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322021,
+      "time_step": 30,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322024,
+      "time_step": 15,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322024,
+      "time_step": 30,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322025,
+      "time_step": 15,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322025,
+      "time_step": 30,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322026,
+      "time_step": 15,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322026,
+      "time_step": 30,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322027,
+      "time_step": 15,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322027,
+      "time_step": 30,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322028,
+      "time_step": 15,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322028,
+      "time_step": 30,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322029,
+      "time_step": 15,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322029,
+      "time_step": 30,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322030,
+      "time_step": 15,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322030,
+      "time_step": 30,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322031,
+      "time_step": 15,
+      "visits": 4
+    },
+    {
+      "scenario_id": 322031,
+      "time_step": 30,
+      "visits": 4
+    }
+  ],
+  "visits": [
+    {
+      "update": 0,
+      "scenario_id": 322016,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 1,
+      "scenario_id": 322016,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 2,
+      "scenario_id": 322017,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 3,
+      "scenario_id": 322017,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 4,
+      "scenario_id": 322018,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 5,
+      "scenario_id": 322018,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 6,
+      "scenario_id": 322019,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 7,
+      "scenario_id": 322019,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 8,
+      "scenario_id": 322020,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 9,
+      "scenario_id": 322020,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 10,
+      "scenario_id": 322021,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 11,
+      "scenario_id": 322021,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 12,
+      "scenario_id": 322024,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 13,
+      "scenario_id": 322024,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 14,
+      "scenario_id": 322025,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 15,
+      "scenario_id": 322025,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 16,
+      "scenario_id": 322026,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 17,
+      "scenario_id": 322026,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 18,
+      "scenario_id": 322027,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 19,
+      "scenario_id": 322027,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 20,
+      "scenario_id": 322028,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 21,
+      "scenario_id": 322028,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 22,
+      "scenario_id": 322029,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 23,
+      "scenario_id": 322029,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 24,
+      "scenario_id": 322030,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 25,
+      "scenario_id": 322030,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 26,
+      "scenario_id": 322031,
+      "time_step": 15,
+      "visit": 1
+    },
+    {
+      "update": 27,
+      "scenario_id": 322031,
+      "time_step": 30,
+      "visit": 1
+    },
+    {
+      "update": 28,
+      "scenario_id": 322016,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 29,
+      "scenario_id": 322016,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 30,
+      "scenario_id": 322017,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 31,
+      "scenario_id": 322017,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 32,
+      "scenario_id": 322018,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 33,
+      "scenario_id": 322018,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 34,
+      "scenario_id": 322019,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 35,
+      "scenario_id": 322019,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 36,
+      "scenario_id": 322020,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 37,
+      "scenario_id": 322020,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 38,
+      "scenario_id": 322021,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 39,
+      "scenario_id": 322021,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 40,
+      "scenario_id": 322024,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 41,
+      "scenario_id": 322024,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 42,
+      "scenario_id": 322025,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 43,
+      "scenario_id": 322025,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 44,
+      "scenario_id": 322026,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 45,
+      "scenario_id": 322026,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 46,
+      "scenario_id": 322027,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 47,
+      "scenario_id": 322027,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 48,
+      "scenario_id": 322028,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 49,
+      "scenario_id": 322028,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 50,
+      "scenario_id": 322029,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 51,
+      "scenario_id": 322029,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 52,
+      "scenario_id": 322030,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 53,
+      "scenario_id": 322030,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 54,
+      "scenario_id": 322031,
+      "time_step": 15,
+      "visit": 2
+    },
+    {
+      "update": 55,
+      "scenario_id": 322031,
+      "time_step": 30,
+      "visit": 2
+    },
+    {
+      "update": 56,
+      "scenario_id": 322016,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 57,
+      "scenario_id": 322016,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 58,
+      "scenario_id": 322017,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 59,
+      "scenario_id": 322017,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 60,
+      "scenario_id": 322018,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 61,
+      "scenario_id": 322018,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 62,
+      "scenario_id": 322019,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 63,
+      "scenario_id": 322019,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 64,
+      "scenario_id": 322020,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 65,
+      "scenario_id": 322020,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 66,
+      "scenario_id": 322021,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 67,
+      "scenario_id": 322021,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 68,
+      "scenario_id": 322024,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 69,
+      "scenario_id": 322024,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 70,
+      "scenario_id": 322025,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 71,
+      "scenario_id": 322025,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 72,
+      "scenario_id": 322026,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 73,
+      "scenario_id": 322026,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 74,
+      "scenario_id": 322027,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 75,
+      "scenario_id": 322027,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 76,
+      "scenario_id": 322028,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 77,
+      "scenario_id": 322028,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 78,
+      "scenario_id": 322029,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 79,
+      "scenario_id": 322029,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 80,
+      "scenario_id": 322030,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 81,
+      "scenario_id": 322030,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 82,
+      "scenario_id": 322031,
+      "time_step": 15,
+      "visit": 3
+    },
+    {
+      "update": 83,
+      "scenario_id": 322031,
+      "time_step": 30,
+      "visit": 3
+    },
+    {
+      "update": 84,
+      "scenario_id": 322016,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 85,
+      "scenario_id": 322016,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 86,
+      "scenario_id": 322017,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 87,
+      "scenario_id": 322017,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 88,
+      "scenario_id": 322018,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 89,
+      "scenario_id": 322018,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 90,
+      "scenario_id": 322019,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 91,
+      "scenario_id": 322019,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 92,
+      "scenario_id": 322020,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 93,
+      "scenario_id": 322020,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 94,
+      "scenario_id": 322021,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 95,
+      "scenario_id": 322021,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 96,
+      "scenario_id": 322024,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 97,
+      "scenario_id": 322024,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 98,
+      "scenario_id": 322025,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 99,
+      "scenario_id": 322025,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 100,
+      "scenario_id": 322026,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 101,
+      "scenario_id": 322026,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 102,
+      "scenario_id": 322027,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 103,
+      "scenario_id": 322027,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 104,
+      "scenario_id": 322028,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 105,
+      "scenario_id": 322028,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 106,
+      "scenario_id": 322029,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 107,
+      "scenario_id": 322029,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 108,
+      "scenario_id": 322030,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 109,
+      "scenario_id": 322030,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 110,
+      "scenario_id": 322031,
+      "time_step": 15,
+      "visit": 4
+    },
+    {
+      "update": 111,
+      "scenario_id": 322031,
+      "time_step": 30,
+      "visit": 4
+    },
+    {
+      "update": 112,
+      "scenario_id": 322016,
+      "time_step": 15,
+      "visit": 5
+    },
+    {
+      "update": 113,
+      "scenario_id": 322016,
+      "time_step": 30,
+      "visit": 5
+    },
+    {
+      "update": 114,
+      "scenario_id": 322017,
+      "time_step": 15,
+      "visit": 5
+    },
+    {
+      "update": 115,
+      "scenario_id": 322017,
+      "time_step": 30,
+      "visit": 5
+    },
+    {
+      "update": 116,
+      "scenario_id": 322018,
+      "time_step": 15,
+      "visit": 5
+    },
+    {
+      "update": 117,
+      "scenario_id": 322018,
+      "time_step": 30,
+      "visit": 5
+    },
+    {
+      "update": 118,
+      "scenario_id": 322019,
+      "time_step": 15,
+      "visit": 5
+    },
+    {
+      "update": 119,
+      "scenario_id": 322019,
+      "time_step": 30,
+      "visit": 5
+    }
+  ],
+  "r12_visits_per_state": 10
+}

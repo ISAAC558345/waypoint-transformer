@@ -1,0 +1,23 @@
+{
+  "scenario_id": 322037,
+  "time_step": 30,
+  "state_hash": "940940824bfd4e2721619543ae60f92ae101ed364a46453ff6dd89660869d21e",
+  "manifest_checksum_candidates": "4df5b7ff9b59db70dad78c9dff21a61d0bb32e33efe91142a091d7769b78b443",
+  "manifest_candidate_count": 13327,
+  "manifest_illegal": 0,
+  "tol_bits": 1.0,
+  "ledger_gap_bits": 9.313225746154785e-10,
+  "velocity_predecessor": "previous_environment_step",
+  "predecessor_time_step": 29,
+  "graph_keys": [
+    "uav",
+    "buoy",
+    "uav_mask",
+    "buoy_mask",
+    "global",
+    "edge",
+    "edge_uu"
+  ],
+  "future_label_fields_in_graph": false,
+  "revision_matches_historical_source": true
+}

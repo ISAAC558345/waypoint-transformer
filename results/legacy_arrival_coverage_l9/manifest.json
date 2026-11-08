@@ -1,0 +1,29 @@
+{
+  "package": "legacy_arrival_coverage_l9",
+  "instruction_commit": "42fd0cca37dd62d950a47aa3d5d1a77e007bfcf7",
+  "command": "py -3 -m wt.legacy_arrival_coverage_l9 --run",
+  "gate": {
+    "label": "NOT_PROMOTED",
+    "r28_minus_r12_margin": true,
+    "r28_minus_c_margin": true,
+    "not_below_references_by_more_than_1_bit": false,
+    "starts_next_stage": false,
+    "adopts_model": false,
+    "rewrites_l8": false
+  },
+  "primary_R28_minus_R12_payload_bits_mean": 789951.0605846928,
+  "r28_sha256": "d156f88648a55f276358375a2be58fff1e61a4eb0c51668398089dfa82c746ee",
+  "freeze_sha256": "0ab395ac07f2cd613603455737b3cdf8a504b8fe38863bb94d2f02106e97f78e",
+  "protected_unchanged": true,
+  "low_level_counted_separately": true,
+  "environment_steps": 30960,
+  "low_level_inferences": 30960,
+  "scoring_forwards": 200,
+  "training_updates": 120,
+  "backward_passes": 120,
+  "candidate_rollouts": 2048,
+  "retrained_reference_models": 0,
+  "old_state_environment_steps": 0,
+  "old_state_scoring_forwards": 0,
+  "old_state_relabels": 0
+}

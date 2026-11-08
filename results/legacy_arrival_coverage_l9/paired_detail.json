@@ -1,0 +1,1338 @@
+{
+  "per_state": [
+    {
+      "scenario_id": 322032,
+      "time_step": 15,
+      "state_hash": "3974bc3027e613b0ce5b12136ee9e4d557409ac358cc185b6604ae8eb91e548c",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "b991fe8827c223471c2ebb1dfb32699daa0a269a25f71fec25745489c31e79b1",
+      "subset_optimum_bits": 26564632.12452724,
+      "models": {
+        "R28_U120": {
+          "local_position": 7,
+          "candidate_id": 11496,
+          "assignment": "10|9|7|8|11|6",
+          "score": 29.50112533569336,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 24658651.201259784,
+          "subset_optimum_bits": 26564632.12452724,
+          "subset_regret_bits": 1905980.923267454,
+          "soft_expected_regret": 0.20615864262713457
+        },
+        "R12_U120": {
+          "local_position": 24,
+          "candidate_id": 11780,
+          "assignment": "10|11|9|8|7|6",
+          "score": 29.698017120361328,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 23861026.766844153,
+          "subset_optimum_bits": 26564632.12452724,
+          "subset_regret_bits": 2703605.357683085,
+          "soft_expected_regret": 0.2061219425157121
+        },
+        "C_LISTNET": {
+          "local_position": 127,
+          "candidate_id": 229,
+          "assignment": "-1|-1|6|-1|-1|-1",
+          "score": -0.022463522851467133,
+          "active_count": 1,
+          "tie_count": 1,
+          "real_payload_bits": 9000000.0,
+          "subset_optimum_bits": 26564632.12452724,
+          "subset_regret_bits": 17564632.12452724,
+          "soft_expected_regret": 0.2886250971618867
+        },
+        "E6": {
+          "local_position": 27,
+          "candidate_id": 7979,
+          "assignment": "8|7|9|6|11|10",
+          "score": 20.153148651123047,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 24810128.632854823,
+          "subset_optimum_bits": 26564632.12452724,
+          "subset_regret_bits": 1754503.4916724153,
+          "soft_expected_regret": 0.20762304363894463
+        },
+        "L3A10": {
+          "local_position": 56,
+          "candidate_id": 9523,
+          "assignment": "9|7|8|6|10|11",
+          "score": 26.902921676635742,
+          "active_count": 6,
+          "tie_count": 2,
+          "real_payload_bits": 15907700.83554019,
+          "subset_optimum_bits": 26564632.12452724,
+          "subset_regret_bits": 10656931.288987048,
+          "soft_expected_regret": 0.20634655466703725
+        }
+      },
+      "R28_minus_R12_payload_bits": 797624.434415631,
+      "R28_minus_C_payload_bits": 15658651.201259784,
+      "R28_minus_E6_payload_bits": -151477.43159503862,
+      "R28_minus_L3A10_payload_bits": 8750950.365719594
+    },
+    {
+      "scenario_id": 322032,
+      "time_step": 30,
+      "state_hash": "c1df4b387aeae461d46bd5842ba32d0429586fb01bf60efe321451cda1fc91fb",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "d8b9f0e029242a15f5c7e150d4e170e96b7b05eafc4c419f4c665ec31fb6952d",
+      "subset_optimum_bits": 29468874.22424522,
+      "models": {
+        "R28_U120": {
+          "local_position": 29,
+          "candidate_id": 5110,
+          "assignment": "6|9|8|11|10|7",
+          "score": 17.786273956298828,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 29054505.29006372,
+          "subset_optimum_bits": 29468874.22424522,
+          "subset_regret_bits": 414368.9341815002,
+          "soft_expected_regret": 0.21545028373641215
+        },
+        "R12_U120": {
+          "local_position": 31,
+          "candidate_id": 5164,
+          "assignment": "6|9|11|7|10|8",
+          "score": 14.97854232788086,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 23368223.193857457,
+          "subset_optimum_bits": 29468874.22424522,
+          "subset_regret_bits": 6100651.030387763,
+          "soft_expected_regret": 0.21629393794166896
+        },
+        "C_LISTNET": {
+          "local_position": 6,
+          "candidate_id": 7768,
+          "assignment": "8|6|9|7|10|11",
+          "score": 1.5724475383758545,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 25342916.85840047,
+          "subset_optimum_bits": 29468874.22424522,
+          "subset_regret_bits": 4125957.365844749,
+          "soft_expected_regret": 0.22969456202688807
+        },
+        "E6": {
+          "local_position": 8,
+          "candidate_id": 9559,
+          "assignment": "9|7|10|6|11|8",
+          "score": 26.079233169555664,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 22809333.304348625,
+          "subset_optimum_bits": 29468874.22424522,
+          "subset_regret_bits": 6659540.919896595,
+          "soft_expected_regret": 0.2160083598273951
+        },
+        "L3A10": {
+          "local_position": 8,
+          "candidate_id": 9559,
+          "assignment": "9|7|10|6|11|8",
+          "score": 30.518596649169922,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 22809333.304348625,
+          "subset_optimum_bits": 29468874.22424522,
+          "subset_regret_bits": 6659540.919896595,
+          "soft_expected_regret": 0.21570296911328238
+        }
+      },
+      "R28_minus_R12_payload_bits": 5686282.096206263,
+      "R28_minus_C_payload_bits": 3711588.4316632487,
+      "R28_minus_E6_payload_bits": 6245171.985715095,
+      "R28_minus_L3A10_payload_bits": 6245171.985715095
+    },
+    {
+      "scenario_id": 322033,
+      "time_step": 15,
+      "state_hash": "9675cb05a4eee20c68fe208c512d0be9cfbe12aaa2c501af746eee9dfbd87ff9",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "3de9570c15a0390bc67596eb0f9c674e155f7fba4ab56d2ddfad2d3ffacc0137",
+      "subset_optimum_bits": 29083422.274605647,
+      "models": {
+        "R28_U120": {
+          "local_position": 12,
+          "candidate_id": 9389,
+          "assignment": "9|6|11|8|7|10",
+          "score": 29.652759552001953,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 26418225.611916177,
+          "subset_optimum_bits": 29083422.274605647,
+          "subset_regret_bits": 2665196.6626894698,
+          "soft_expected_regret": 0.29835638852128243
+        },
+        "R12_U120": {
+          "local_position": 57,
+          "candidate_id": 11557,
+          "assignment": "10|9|11|6|8|7",
+          "score": 29.71318244934082,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 17035481.19775668,
+          "subset_optimum_bits": 29083422.274605647,
+          "subset_regret_bits": 12047941.076848965,
+          "soft_expected_regret": 0.29842907805088914
+        },
+        "C_LISTNET": {
+          "local_position": 126,
+          "candidate_id": 131,
+          "assignment": "-1|-1|-1|8|11|-1",
+          "score": -0.5480762124061584,
+          "active_count": 2,
+          "tie_count": 1,
+          "real_payload_bits": 18795067.89669412,
+          "subset_optimum_bits": 29083422.274605647,
+          "subset_regret_bits": 10288354.377911527,
+          "soft_expected_regret": 0.5139715307135846
+        },
+        "E6": {
+          "local_position": 38,
+          "candidate_id": 5074,
+          "assignment": "6|9|7|11|8|10",
+          "score": 20.328271865844727,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 23475977.542659435,
+          "subset_optimum_bits": 29083422.274605647,
+          "subset_regret_bits": 5607444.731946211,
+          "soft_expected_regret": 0.3041293454778485
+        },
+        "L3A10": {
+          "local_position": 57,
+          "candidate_id": 11557,
+          "assignment": "10|9|11|6|8|7",
+          "score": 26.967994689941406,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 17035481.19775668,
+          "subset_optimum_bits": 29083422.274605647,
+          "subset_regret_bits": 12047941.076848965,
+          "soft_expected_regret": 0.29929949982692966
+        }
+      },
+      "R28_minus_R12_payload_bits": 9382744.414159495,
+      "R28_minus_C_payload_bits": 7623157.715222057,
+      "R28_minus_E6_payload_bits": 2942248.0692567416,
+      "R28_minus_L3A10_payload_bits": 9382744.414159495
+    },
+    {
+      "scenario_id": 322033,
+      "time_step": 30,
+      "state_hash": "b2106811cc70f860ba6270e9e58aef894a1a437ae758c6389b7053be72e6bcd9",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "dd49ec098ae531cf1a783ce85d07845b0d9153d384010de43fed31cfc9734cd2",
+      "subset_optimum_bits": 31250343.78368913,
+      "models": {
+        "R28_U120": {
+          "local_position": 11,
+          "candidate_id": 9989,
+          "assignment": "9|10|8|11|6|7",
+          "score": 18.344146728515625,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 25281005.49848721,
+          "subset_optimum_bits": 31250343.78368913,
+          "subset_regret_bits": 5969338.285201918,
+          "soft_expected_regret": 0.19184535090842408
+        },
+        "R12_U120": {
+          "local_position": 16,
+          "candidate_id": 4651,
+          "assignment": "6|7|8|10|11|9",
+          "score": 15.409427642822266,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 27526396.658033304,
+          "subset_optimum_bits": 31250343.78368913,
+          "subset_regret_bits": 3723947.125655826,
+          "soft_expected_regret": 0.19236072712468008
+        },
+        "C_LISTNET": {
+          "local_position": 16,
+          "candidate_id": 4651,
+          "assignment": "6|7|8|10|11|9",
+          "score": 1.1090551614761353,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 27526396.658033304,
+          "subset_optimum_bits": 31250343.78368913,
+          "subset_regret_bits": 3723947.125655826,
+          "soft_expected_regret": 0.23570838191450297
+        },
+        "E6": {
+          "local_position": 27,
+          "candidate_id": 5130,
+          "assignment": "6|9|10|7|11|8",
+          "score": 27.655540466308594,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 24425005.83223172,
+          "subset_optimum_bits": 31250343.78368913,
+          "subset_regret_bits": 6825337.951457411,
+          "soft_expected_regret": 0.1898820453690687
+        },
+        "L3A10": {
+          "local_position": 16,
+          "candidate_id": 4651,
+          "assignment": "6|7|8|10|11|9",
+          "score": 30.32753562927246,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 27526396.658033304,
+          "subset_optimum_bits": 31250343.78368913,
+          "subset_regret_bits": 3723947.125655826,
+          "soft_expected_regret": 0.18894695191836713
+        }
+      },
+      "R28_minus_R12_payload_bits": -2245391.159546092,
+      "R28_minus_C_payload_bits": -2245391.159546092,
+      "R28_minus_E6_payload_bits": 855999.6662554927,
+      "R28_minus_L3A10_payload_bits": -2245391.159546092
+    },
+    {
+      "scenario_id": 322034,
+      "time_step": 15,
+      "state_hash": "e5ccda8a61c245105e4ee8045c9529e988431bacb6ad7a592968395acf472394",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "fe32195678b0e5c208919d2a76f4f650e135a6661cbcf89cdfd4ac50ab524d84",
+      "subset_optimum_bits": 27567165.939380933,
+      "models": {
+        "R28_U120": {
+          "local_position": 18,
+          "candidate_id": 9916,
+          "assignment": "9|10|6|8|11|7",
+          "score": 29.704143524169922,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 25116506.40046179,
+          "subset_optimum_bits": 27567165.939380933,
+          "subset_regret_bits": 2450659.5389191434,
+          "soft_expected_regret": 0.2583189601427535
+        },
+        "R12_U120": {
+          "local_position": 18,
+          "candidate_id": 9916,
+          "assignment": "9|10|6|8|11|7",
+          "score": 29.693077087402344,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 25116506.40046179,
+          "subset_optimum_bits": 27567165.939380933,
+          "subset_regret_bits": 2450659.5389191434,
+          "soft_expected_regret": 0.2583464979158659
+        },
+        "C_LISTNET": {
+          "local_position": 119,
+          "candidate_id": 11154,
+          "assignment": "10|8|-1|-1|-1|-1",
+          "score": -0.878603458404541,
+          "active_count": 2,
+          "tie_count": 1,
+          "real_payload_bits": 18067736.172738045,
+          "subset_optimum_bits": 27567165.939380933,
+          "subset_regret_bits": 9499429.766642887,
+          "soft_expected_regret": 0.5477990062801906
+        },
+        "E6": {
+          "local_position": 38,
+          "candidate_id": 4858,
+          "assignment": "6|8|7|10|9|11",
+          "score": 20.070083618164062,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 22779834.96122157,
+          "subset_optimum_bits": 27567165.939380933,
+          "subset_regret_bits": 4787330.978159364,
+          "soft_expected_regret": 0.2664149749155259
+        },
+        "L3A10": {
+          "local_position": 38,
+          "candidate_id": 4858,
+          "assignment": "6|8|7|10|9|11",
+          "score": 26.80785369873047,
+          "active_count": 6,
+          "tie_count": 7,
+          "real_payload_bits": 22779834.96122157,
+          "subset_optimum_bits": 27567165.939380933,
+          "subset_regret_bits": 4787330.978159364,
+          "soft_expected_regret": 0.25959589068674666
+        }
+      },
+      "R28_minus_R12_payload_bits": 0.0,
+      "R28_minus_C_payload_bits": 7048770.227723744,
+      "R28_minus_E6_payload_bits": 2336671.439240221,
+      "R28_minus_L3A10_payload_bits": 2336671.439240221
+    },
+    {
+      "scenario_id": 322034,
+      "time_step": 30,
+      "state_hash": "72de42978df999d5119c03591959031120359385fc951355984a75ef293ee652",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "d229836d3a0402bffb7930b937b241308b5d6ffd92e4c5b30558c802d8b7f360",
+      "subset_optimum_bits": 28638985.651466314,
+      "models": {
+        "R28_U120": {
+          "local_position": 14,
+          "candidate_id": 5528,
+          "assignment": "6|11|8|10|9|7",
+          "score": 16.109663009643555,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 21328011.56660119,
+          "subset_optimum_bits": 28638985.651466314,
+          "subset_regret_bits": 7310974.084865123,
+          "soft_expected_regret": 0.4379047514290058
+        },
+        "R12_U120": {
+          "local_position": 15,
+          "candidate_id": 5553,
+          "assignment": "6|11|9|8|7|10",
+          "score": 14.069546699523926,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 20614446.386435594,
+          "subset_optimum_bits": 28638985.651466314,
+          "subset_regret_bits": 8024539.265030719,
+          "soft_expected_regret": 0.4421210414000153
+        },
+        "C_LISTNET": {
+          "local_position": 38,
+          "candidate_id": 6487,
+          "assignment": "7|8|11|-1|6|9",
+          "score": 1.1049578189849854,
+          "active_count": 5,
+          "tie_count": 1,
+          "real_payload_bits": 22223711.125225835,
+          "subset_optimum_bits": 28638985.651466314,
+          "subset_regret_bits": 6415274.526240479,
+          "soft_expected_regret": 0.42982446600140695
+        },
+        "E6": {
+          "local_position": 20,
+          "candidate_id": 6433,
+          "assignment": "7|8|9|6|11|10",
+          "score": 26.12603187561035,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 20595458.12152995,
+          "subset_optimum_bits": 28638985.651466314,
+          "subset_regret_bits": 8043527.529936362,
+          "soft_expected_regret": 0.44880837459138356
+        },
+        "L3A10": {
+          "local_position": 15,
+          "candidate_id": 5553,
+          "assignment": "6|11|9|8|7|10",
+          "score": 27.53336524963379,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 20614446.386435594,
+          "subset_optimum_bits": 28638985.651466314,
+          "subset_regret_bits": 8024539.265030719,
+          "soft_expected_regret": 0.4465660265278525
+        }
+      },
+      "R28_minus_R12_payload_bits": 713565.1801655963,
+      "R28_minus_C_payload_bits": -895699.5586246438,
+      "R28_minus_E6_payload_bits": 732553.445071239,
+      "R28_minus_L3A10_payload_bits": 713565.1801655963
+    },
+    {
+      "scenario_id": 322035,
+      "time_step": 15,
+      "state_hash": "7c2838ea83fac9fdaeca352e1edc87392aa620e50d79174a1cd8e18ec960509d",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "762d6da075f856aef0b4deff580e2a1b94a040179f00ffd3ab1741a306a38eda",
+      "subset_optimum_bits": 26820893.320704143,
+      "models": {
+        "R28_U120": {
+          "local_position": 56,
+          "candidate_id": 11469,
+          "assignment": "10|9|6|11|8|7",
+          "score": 29.766382217407227,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 19756196.93987839,
+          "subset_optimum_bits": 26820893.320704143,
+          "subset_regret_bits": 7064696.380825754,
+          "soft_expected_regret": 0.1554240492592354
+        },
+        "R12_U120": {
+          "local_position": 56,
+          "candidate_id": 11469,
+          "assignment": "10|9|6|11|8|7",
+          "score": 29.707122802734375,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 19756196.93987839,
+          "subset_optimum_bits": 26820893.320704143,
+          "subset_regret_bits": 7064696.380825754,
+          "soft_expected_regret": 0.15544007900414858
+        },
+        "C_LISTNET": {
+          "local_position": 127,
+          "candidate_id": 2047,
+          "assignment": "-1|8|-1|-1|-1|-1",
+          "score": -0.39067524671554565,
+          "active_count": 1,
+          "tie_count": 1,
+          "real_payload_bits": 10000000.0,
+          "subset_optimum_bits": 26820893.320704143,
+          "subset_regret_bits": 16820893.320704143,
+          "soft_expected_regret": 0.2806438337352016
+        },
+        "E6": {
+          "local_position": 6,
+          "candidate_id": 5076,
+          "assignment": "6|9|7|11|10|8",
+          "score": 20.246978759765625,
+          "active_count": 6,
+          "tie_count": 3,
+          "real_payload_bits": 22786538.664419137,
+          "subset_optimum_bits": 26820893.320704143,
+          "subset_regret_bits": 4034354.6562850066,
+          "soft_expected_regret": 0.15873121597002318
+        },
+        "L3A10": {
+          "local_position": 9,
+          "candidate_id": 6297,
+          "assignment": "7|6|11|9|8|10",
+          "score": 26.895423889160156,
+          "active_count": 6,
+          "tie_count": 2,
+          "real_payload_bits": 26062439.36158649,
+          "subset_optimum_bits": 26820893.320704143,
+          "subset_regret_bits": 758453.9591176547,
+          "soft_expected_regret": 0.1559549203776115
+        }
+      },
+      "R28_minus_R12_payload_bits": 0.0,
+      "R28_minus_C_payload_bits": 9756196.93987839,
+      "R28_minus_E6_payload_bits": -3030341.7245407477,
+      "R28_minus_L3A10_payload_bits": -6306242.4217081
+    },
+    {
+      "scenario_id": 322035,
+      "time_step": 30,
+      "state_hash": "58b7b6a7290ec82a7db316b74bef5badc717ca3aec2a702ae25dc814d373821e",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "0718bdbcc5aacb820abc0eed19a8bf711d548cfb9735fc1fc89e08a63dc1a803",
+      "subset_optimum_bits": 31739189.547435015,
+      "models": {
+        "R28_U120": {
+          "local_position": 28,
+          "candidate_id": 9816,
+          "assignment": "9|8|11|10|7|6",
+          "score": 16.96526336669922,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 25768138.593849447,
+          "subset_optimum_bits": 31739189.547435015,
+          "subset_regret_bits": 5971050.953585569,
+          "soft_expected_regret": 0.29108553966204076
+        },
+        "R12_U120": {
+          "local_position": 1,
+          "candidate_id": 11353,
+          "assignment": "10|8|11|7|6|9",
+          "score": 14.802923202514648,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 26721949.199585393,
+          "subset_optimum_bits": 31739189.547435015,
+          "subset_regret_bits": 5017240.347849622,
+          "soft_expected_regret": 0.29257344250652906
+        },
+        "C_LISTNET": {
+          "local_position": 39,
+          "candidate_id": 7397,
+          "assignment": "8|-1|7|9|11|6",
+          "score": 0.8899626731872559,
+          "active_count": 5,
+          "tie_count": 1,
+          "real_payload_bits": 23300851.02093268,
+          "subset_optimum_bits": 31739189.547435015,
+          "subset_regret_bits": 8438338.526502334,
+          "soft_expected_regret": 0.36327249615334567
+        },
+        "E6": {
+          "local_position": 18,
+          "candidate_id": 7809,
+          "assignment": "8|6|10|9|7|11",
+          "score": 26.00098419189453,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 24346559.27820978,
+          "subset_optimum_bits": 31739189.547435015,
+          "subset_regret_bits": 7392630.269225236,
+          "soft_expected_regret": 0.28607408621383784
+        },
+        "L3A10": {
+          "local_position": 18,
+          "candidate_id": 7809,
+          "assignment": "8|6|10|9|7|11",
+          "score": 29.331850051879883,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 24346559.27820978,
+          "subset_optimum_bits": 31739189.547435015,
+          "subset_regret_bits": 7392630.269225236,
+          "soft_expected_regret": 0.28536747398796447
+        }
+      },
+      "R28_minus_R12_payload_bits": -953810.6057359464,
+      "R28_minus_C_payload_bits": 2467287.5729167648,
+      "R28_minus_E6_payload_bits": 1421579.3156396672,
+      "R28_minus_L3A10_payload_bits": 1421579.3156396672
+    },
+    {
+      "scenario_id": 322036,
+      "time_step": 15,
+      "state_hash": "417a27b4f421d5810770dfcfe5b550402076bb12439bd5fe557fe451d447300f",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "d5028cd1aea0a1a2dca23abe6cc9608301a71ab20b4f2f93cc6465a461233148",
+      "subset_optimum_bits": 26087233.14229937,
+      "models": {
+        "R28_U120": {
+          "local_position": 44,
+          "candidate_id": 12840,
+          "assignment": "11|8|7|10|9|6",
+          "score": 29.712675094604492,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 18908459.26667037,
+          "subset_optimum_bits": 26087233.14229937,
+          "subset_regret_bits": 7178773.875629,
+          "soft_expected_regret": 0.11690081720403608
+        },
+        "R12_U120": {
+          "local_position": 30,
+          "candidate_id": 5137,
+          "assignment": "6|9|10|8|11|7",
+          "score": 29.695005416870117,
+          "active_count": 6,
+          "tie_count": 2,
+          "real_payload_bits": 24937408.291619346,
+          "subset_optimum_bits": 26087233.14229937,
+          "subset_regret_bits": 1149824.8506800234,
+          "soft_expected_regret": 0.11686734410176502
+        },
+        "C_LISTNET": {
+          "local_position": 119,
+          "candidate_id": 2663,
+          "assignment": "-1|9|-1|11|-1|-1",
+          "score": -1.109645962715149,
+          "active_count": 2,
+          "tie_count": 1,
+          "real_payload_bits": 19021692.941167627,
+          "subset_optimum_bits": 26087233.14229937,
+          "subset_regret_bits": 7065540.201131742,
+          "soft_expected_regret": 0.4334682751692492
+        },
+        "E6": {
+          "local_position": 30,
+          "candidate_id": 5137,
+          "assignment": "6|9|10|8|11|7",
+          "score": 20.087589263916016,
+          "active_count": 6,
+          "tie_count": 3,
+          "real_payload_bits": 24937408.291619346,
+          "subset_optimum_bits": 26087233.14229937,
+          "subset_regret_bits": 1149824.8506800234,
+          "soft_expected_regret": 0.12772508708193084
+        },
+        "L3A10": {
+          "local_position": 30,
+          "candidate_id": 5137,
+          "assignment": "6|9|10|8|11|7",
+          "score": 26.817794799804688,
+          "active_count": 6,
+          "tie_count": 3,
+          "real_payload_bits": 24937408.291619346,
+          "subset_optimum_bits": 26087233.14229937,
+          "subset_regret_bits": 1149824.8506800234,
+          "soft_expected_regret": 0.11855467821536839
+        }
+      },
+      "R28_minus_R12_payload_bits": -6028949.024948977,
+      "R28_minus_C_payload_bits": -113233.67449725792,
+      "R28_minus_E6_payload_bits": -6028949.024948977,
+      "R28_minus_L3A10_payload_bits": -6028949.024948977
+    },
+    {
+      "scenario_id": 322036,
+      "time_step": 30,
+      "state_hash": "1b91303b9f4c2e96bb0e99fad181b7c4ed2e4745bbc47025f6dada448d67d25c",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "632c236f19c0f7ab9565363956d53c69804fe263fa0c96727697165b0cd7de3e",
+      "subset_optimum_bits": 29434585.47061578,
+      "models": {
+        "R28_U120": {
+          "local_position": 30,
+          "candidate_id": 5074,
+          "assignment": "6|9|7|11|8|10",
+          "score": 17.492782592773438,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 25640195.368658282,
+          "subset_optimum_bits": 29434585.47061578,
+          "subset_regret_bits": 3794390.1019575,
+          "soft_expected_regret": 0.2988397415760494
+        },
+        "R12_U120": {
+          "local_position": 8,
+          "candidate_id": 8020,
+          "assignment": "8|7|10|9|11|6",
+          "score": 14.977299690246582,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 22933070.566172637,
+          "subset_optimum_bits": 29434585.47061578,
+          "subset_regret_bits": 6501514.904443145,
+          "soft_expected_regret": 0.3001803407536577
+        },
+        "C_LISTNET": {
+          "local_position": 40,
+          "candidate_id": 11064,
+          "assignment": "10|7|8|-1|11|9",
+          "score": 1.1100773811340332,
+          "active_count": 5,
+          "tie_count": 1,
+          "real_payload_bits": 22027489.965218574,
+          "subset_optimum_bits": 29434585.47061578,
+          "subset_regret_bits": 7407095.505397208,
+          "soft_expected_regret": 0.32885130621328695
+        },
+        "E6": {
+          "local_position": 6,
+          "candidate_id": 6865,
+          "assignment": "7|10|8|11|9|6",
+          "score": 27.17916488647461,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 23876061.951357298,
+          "subset_optimum_bits": 29434585.47061578,
+          "subset_regret_bits": 5558523.519258484,
+          "soft_expected_regret": 0.29766106888364086
+        },
+        "L3A10": {
+          "local_position": 8,
+          "candidate_id": 8020,
+          "assignment": "8|7|10|9|11|6",
+          "score": 29.42116355895996,
+          "active_count": 6,
+          "tie_count": 2,
+          "real_payload_bits": 22933070.566172637,
+          "subset_optimum_bits": 29434585.47061578,
+          "subset_regret_bits": 6501514.904443145,
+          "soft_expected_regret": 0.29738650429539043
+        }
+      },
+      "R28_minus_R12_payload_bits": 2707124.802485645,
+      "R28_minus_C_payload_bits": 3612705.403439708,
+      "R28_minus_E6_payload_bits": 1764133.4173009843,
+      "R28_minus_L3A10_payload_bits": 2707124.802485645
+    },
+    {
+      "scenario_id": 322037,
+      "time_step": 15,
+      "state_hash": "0ae8aa431d9c8991d2f4fb5525504e5309bf01a2b4ccebe178da51e683034736",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "08d7be281fac4ec1a62c375ea5ecdab181fb5ac04688b5e17716e1d2df660b9f",
+      "subset_optimum_bits": 26993684.3581007,
+      "models": {
+        "R28_U120": {
+          "local_position": 63,
+          "candidate_id": 12656,
+          "assignment": "11|7|9|8|6|10",
+          "score": 29.61103057861328,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 18038022.419543933,
+          "subset_optimum_bits": 26993684.3581007,
+          "subset_regret_bits": 8955661.938556768,
+          "soft_expected_regret": 0.4876998924288535
+        },
+        "R12_U120": {
+          "local_position": 55,
+          "candidate_id": 9714,
+          "assignment": "9|8|6|11|10|7",
+          "score": 29.699426651000977,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 19523927.713361498,
+          "subset_optimum_bits": 26993684.3581007,
+          "subset_regret_bits": 7469756.644739203,
+          "soft_expected_regret": 0.4876815168505193
+        },
+        "C_LISTNET": {
+          "local_position": 120,
+          "candidate_id": 32,
+          "assignment": "-1|-1|-1|-1|10|6",
+          "score": -0.8765474557876587,
+          "active_count": 2,
+          "tie_count": 1,
+          "real_payload_bits": 18350058.87689867,
+          "subset_optimum_bits": 26993684.3581007,
+          "subset_regret_bits": 8643625.481202032,
+          "soft_expected_regret": 0.6096402776886318
+        },
+        "E6": {
+          "local_position": 11,
+          "candidate_id": 10840,
+          "assignment": "10|6|7|11|8|9",
+          "score": 20.158292770385742,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 22897593.662914056,
+          "subset_optimum_bits": 26993684.3581007,
+          "subset_regret_bits": 4096090.695186645,
+          "soft_expected_regret": 0.49264688795286593
+        },
+        "L3A10": {
+          "local_position": 11,
+          "candidate_id": 10840,
+          "assignment": "10|6|7|11|8|9",
+          "score": 26.880996704101562,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 22897593.662914056,
+          "subset_optimum_bits": 26993684.3581007,
+          "subset_regret_bits": 4096090.695186645,
+          "soft_expected_regret": 0.488449568459454
+        }
+      },
+      "R28_minus_R12_payload_bits": -1485905.2938175648,
+      "R28_minus_C_payload_bits": -312036.4573547356,
+      "R28_minus_E6_payload_bits": -4859571.243370123,
+      "R28_minus_L3A10_payload_bits": -4859571.243370123
+    },
+    {
+      "scenario_id": 322037,
+      "time_step": 30,
+      "state_hash": "940940824bfd4e2721619543ae60f92ae101ed364a46453ff6dd89660869d21e",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "0f818fc1513304d4684a0b19520140d9acf2ef6102b8740a1e11c4f6bc084010",
+      "subset_optimum_bits": 31549245.01463062,
+      "models": {
+        "R28_U120": {
+          "local_position": 5,
+          "candidate_id": 5562,
+          "assignment": "6|11|9|10|8|7",
+          "score": 18.320838928222656,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 25375855.09616193,
+          "subset_optimum_bits": 31549245.01463062,
+          "subset_regret_bits": 6173389.918468688,
+          "soft_expected_regret": 0.3042424076445613
+        },
+        "R12_U120": {
+          "local_position": 12,
+          "candidate_id": 8047,
+          "assignment": "8|7|11|6|10|9",
+          "score": 15.261746406555176,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 29321872.33235167,
+          "subset_optimum_bits": 31549245.01463062,
+          "subset_regret_bits": 2227372.68227895,
+          "soft_expected_regret": 0.30756170587015197
+        },
+        "C_LISTNET": {
+          "local_position": 11,
+          "candidate_id": 7977,
+          "assignment": "8|7|9|6|10|11",
+          "score": 1.4129770994186401,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 26762126.43213021,
+          "subset_optimum_bits": 31549245.01463062,
+          "subset_regret_bits": 4787118.582500409,
+          "soft_expected_regret": 0.39104440865556184
+        },
+        "E6": {
+          "local_position": 11,
+          "candidate_id": 7977,
+          "assignment": "8|7|9|6|10|11",
+          "score": 27.54645347595215,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 26762126.43213021,
+          "subset_optimum_bits": 31549245.01463062,
+          "subset_regret_bits": 4787118.582500409,
+          "soft_expected_regret": 0.30004855700253524
+        },
+        "L3A10": {
+          "local_position": 12,
+          "candidate_id": 8047,
+          "assignment": "8|7|11|6|10|9",
+          "score": 30.26315689086914,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 29321872.33235167,
+          "subset_optimum_bits": 31549245.01463062,
+          "subset_regret_bits": 2227372.68227895,
+          "soft_expected_regret": 0.299246832194566
+        }
+      },
+      "R28_minus_R12_payload_bits": -3946017.236189738,
+      "R28_minus_C_payload_bits": -1386271.3359682783,
+      "R28_minus_E6_payload_bits": -1386271.3359682783,
+      "R28_minus_L3A10_payload_bits": -3946017.236189738
+    },
+    {
+      "scenario_id": 322038,
+      "time_step": 15,
+      "state_hash": "454204a2e7a1d81beaebb8cfe25ac30fa78e09c6b5434fb6068b70898f68c1d7",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "4fd056428ba08d727a5779bf3cdf1f0abb46535f0e5f0277d11354da5d3aeda2",
+      "subset_optimum_bits": 25259215.785424035,
+      "models": {
+        "R28_U120": {
+          "local_position": 8,
+          "candidate_id": 12456,
+          "assignment": "11|6|9|10|8|7",
+          "score": 29.78815460205078,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 23820381.98958538,
+          "subset_optimum_bits": 25259215.785424035,
+          "subset_regret_bits": 1438833.795838654,
+          "soft_expected_regret": 0.08292363503008988
+        },
+        "R12_U120": {
+          "local_position": 67,
+          "candidate_id": 7991,
+          "assignment": "8|7|9|11|6|10",
+          "score": 29.71278190612793,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 17848553.016683396,
+          "subset_optimum_bits": 25259215.785424035,
+          "subset_regret_bits": 7410662.768740639,
+          "soft_expected_regret": 0.08294005460942591
+        },
+        "C_LISTNET": {
+          "local_position": 118,
+          "candidate_id": 0,
+          "assignment": "-1|-1|-1|-1|-1|-1",
+          "score": 0.0,
+          "active_count": 0,
+          "tie_count": 1,
+          "real_payload_bits": 0.0,
+          "subset_optimum_bits": 25259215.785424035,
+          "subset_regret_bits": 25259215.785424035,
+          "soft_expected_regret": 0.18061254657075287
+        },
+        "E6": {
+          "local_position": 67,
+          "candidate_id": 7991,
+          "assignment": "8|7|9|11|6|10",
+          "score": 20.383007049560547,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 17848553.016683396,
+          "subset_optimum_bits": 25259215.785424035,
+          "subset_regret_bits": 7410662.768740639,
+          "soft_expected_regret": 0.08498150025708635
+        },
+        "L3A10": {
+          "local_position": 35,
+          "candidate_id": 11732,
+          "assignment": "10|11|8|6|9|7",
+          "score": 26.969444274902344,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 23425156.86345653,
+          "subset_optimum_bits": 25259215.785424035,
+          "subset_regret_bits": 1834058.9219675064,
+          "soft_expected_regret": 0.08325513354161868
+        }
+      },
+      "R28_minus_R12_payload_bits": 5971828.972901985,
+      "R28_minus_C_payload_bits": 23820381.98958538,
+      "R28_minus_E6_payload_bits": 5971828.972901985,
+      "R28_minus_L3A10_payload_bits": 395225.12612885237
+    },
+    {
+      "scenario_id": 322038,
+      "time_step": 30,
+      "state_hash": "470062baaa40007750a91e9f4a5cb92ed870e35cc0529c60b65ba00e435acc7f",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "0fbc7cba92ea0772a716a420d64577334a894292d514dbe768b5d9881947e59b",
+      "subset_optimum_bits": 29700579.6494225,
+      "models": {
+        "R28_U120": {
+          "local_position": 28,
+          "candidate_id": 13108,
+          "assignment": "11|9|10|7|6|8",
+          "score": 16.734542846679688,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 23240973.884859663,
+          "subset_optimum_bits": 29700579.6494225,
+          "subset_regret_bits": 6459605.764562838,
+          "soft_expected_regret": 0.3334543940337687
+        },
+        "R12_U120": {
+          "local_position": 25,
+          "candidate_id": 12588,
+          "assignment": "11|7|6|9|8|10",
+          "score": 14.590500831604004,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 22195102.114949908,
+          "subset_optimum_bits": 29700579.6494225,
+          "subset_regret_bits": 7505477.534472592,
+          "soft_expected_regret": 0.33358285716465647
+        },
+        "C_LISTNET": {
+          "local_position": 39,
+          "candidate_id": 9721,
+          "assignment": "9|8|7|-1|6|11",
+          "score": 0.8203158378601074,
+          "active_count": 5,
+          "tie_count": 1,
+          "real_payload_bits": 21596770.702398118,
+          "subset_optimum_bits": 29700579.6494225,
+          "subset_regret_bits": 8103808.947024383,
+          "soft_expected_regret": 0.34408882905917604
+        },
+        "E6": {
+          "local_position": 8,
+          "candidate_id": 7058,
+          "assignment": "7|11|8|6|9|10",
+          "score": 26.690183639526367,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 24236581.10187857,
+          "subset_optimum_bits": 29700579.6494225,
+          "subset_regret_bits": 5463998.547543932,
+          "soft_expected_regret": 0.333890822992319
+        },
+        "L3A10": {
+          "local_position": 15,
+          "candidate_id": 8611,
+          "assignment": "8|11|7|9|6|10",
+          "score": 28.059110641479492,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 24554939.69405645,
+          "subset_optimum_bits": 29700579.6494225,
+          "subset_regret_bits": 5145639.955366049,
+          "soft_expected_regret": 0.33493875363585013
+        }
+      },
+      "R28_minus_R12_payload_bits": 1045871.7699097544,
+      "R28_minus_C_payload_bits": 1644203.1824615449,
+      "R28_minus_E6_payload_bits": -995607.217018906,
+      "R28_minus_L3A10_payload_bits": -1313965.8091967888
+    },
+    {
+      "scenario_id": 322039,
+      "time_step": 15,
+      "state_hash": "bdd44e6e98c8d06c37e59cf75d60144ad6a777729ca6e55a50a17db20f52eacd",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "a734ef562723da493b22edc86073523ec18c4bc1e8d63e944a1ee8876621f317",
+      "subset_optimum_bits": 25584651.424491663,
+      "models": {
+        "R28_U120": {
+          "local_position": 25,
+          "candidate_id": 7058,
+          "assignment": "7|11|8|6|9|10",
+          "score": 29.512964248657227,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 22159703.51787852,
+          "subset_optimum_bits": 25584651.424491663,
+          "subset_regret_bits": 3424947.9066131413,
+          "soft_expected_regret": 0.3908435875116287
+        },
+        "R12_U120": {
+          "local_position": 28,
+          "candidate_id": 10184,
+          "assignment": "9|11|8|6|7|10",
+          "score": 29.705188751220703,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 22072439.27022814,
+          "subset_optimum_bits": 25584651.424491663,
+          "subset_regret_bits": 3512212.1542635225,
+          "soft_expected_regret": 0.39079051574417345
+        },
+        "C_LISTNET": {
+          "local_position": 122,
+          "candidate_id": 6520,
+          "assignment": "7|9|-1|-1|-1|11",
+          "score": -0.5002782344818115,
+          "active_count": 3,
+          "tie_count": 1,
+          "real_payload_bits": 19096517.42010018,
+          "subset_optimum_bits": 25584651.424491663,
+          "subset_regret_bits": 6488134.004391484,
+          "soft_expected_regret": 0.5337691254066914
+        },
+        "E6": {
+          "local_position": 20,
+          "candidate_id": 11530,
+          "assignment": "10|9|8|7|11|6",
+          "score": 20.24669075012207,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 22749445.205529172,
+          "subset_optimum_bits": 25584651.424491663,
+          "subset_regret_bits": 2835206.2189624906,
+          "soft_expected_regret": 0.39758113915502613
+        },
+        "L3A10": {
+          "local_position": 20,
+          "candidate_id": 11530,
+          "assignment": "10|9|8|7|11|6",
+          "score": 26.959259033203125,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 22749445.205529172,
+          "subset_optimum_bits": 25584651.424491663,
+          "subset_regret_bits": 2835206.2189624906,
+          "soft_expected_regret": 0.3918265198704275
+        }
+      },
+      "R28_minus_R12_payload_bits": 87264.24765038118,
+      "R28_minus_C_payload_bits": 3063186.0977783427,
+      "R28_minus_E6_payload_bits": -589741.6876506507,
+      "R28_minus_L3A10_payload_bits": -589741.6876506507
+    },
+    {
+      "scenario_id": 322039,
+      "time_step": 30,
+      "state_hash": "d787fee0586d2637a6ec225cd7de0ff502018d3482b88acad58fe94700285659",
+      "pool_hash": "45a04bf411c28644de7f66465886f88fa94774021a0b3041954b137d2687b4fb",
+      "subset_hash": "bbd9f1040effd4506c1f35571ec5aee0387168018bc9d20a2f4cd02b2119950c",
+      "subset_optimum_bits": 31859906.266689412,
+      "models": {
+        "R28_U120": {
+          "local_position": 8,
+          "candidate_id": 5319,
+          "assignment": "6|10|8|11|9|7",
+          "score": 18.458158493041992,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 24114186.661209967,
+          "subset_optimum_bits": 31859906.266689412,
+          "subset_regret_bits": 7745719.605479445,
+          "soft_expected_regret": 0.3543720917921044
+        },
+        "R12_U120": {
+          "local_position": 31,
+          "candidate_id": 9734,
+          "assignment": "9|8|7|6|11|10",
+          "score": 15.307409286499023,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 23207202.289511316,
+          "subset_optimum_bits": 31859906.266689412,
+          "subset_regret_bits": 8652703.977178097,
+          "soft_expected_regret": 0.35420787536200693
+        },
+        "C_LISTNET": {
+          "local_position": 5,
+          "candidate_id": 4858,
+          "assignment": "6|8|7|10|9|11",
+          "score": 1.498962640762329,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 27913189.930756617,
+          "subset_optimum_bits": 31859906.266689412,
+          "subset_regret_bits": 3946716.335932795,
+          "soft_expected_regret": 0.3783642428513443
+        },
+        "E6": {
+          "local_position": 23,
+          "candidate_id": 9287,
+          "assignment": "9|6|7|10|8|11",
+          "score": 27.684490203857422,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 31859906.266689412,
+          "subset_optimum_bits": 31859906.266689412,
+          "subset_regret_bits": 0.0,
+          "soft_expected_regret": 0.3542127876926747
+        },
+        "L3A10": {
+          "local_position": 31,
+          "candidate_id": 9734,
+          "assignment": "9|8|7|6|11|10",
+          "score": 30.266145706176758,
+          "active_count": 6,
+          "tie_count": 1,
+          "real_payload_bits": 23207202.289511316,
+          "subset_optimum_bits": 31859906.266689412,
+          "subset_regret_bits": 8652703.977178097,
+          "soft_expected_regret": 0.3541106943081827
+        }
+      },
+      "R28_minus_R12_payload_bits": 906984.3716986515,
+      "R28_minus_C_payload_bits": -3799003.2695466504,
+      "R28_minus_E6_payload_bits": -7745719.605479445,
+      "R28_minus_L3A10_payload_bits": 906984.3716986515
+    }
+  ],
+  "overall": {
+    "states": 16,
+    "R28_minus_R12_payload_bits_mean": 789951.0605846928,
+    "R28_minus_C_payload_bits_mean": 4353405.831649456,
+    "R28_minus_E6_payload_bits_mean": -157343.30994942132,
+    "R28_minus_L3A10_payload_bits_mean": 473133.65114639676,
+    "payload_bits_mean": {
+      "R28_U120": 23667438.70669286,
+      "R12_U120": 22877487.646108165,
+      "C_LISTNET": 19314032.875043403,
+      "E6": 23824782.01664228,
+      "L3A10": 23194305.055546463
+    },
+    "subset_regret_bits_mean": {
+      "R28_U120": 4932724.291915123,
+      "R12_U120": 5722675.352499816,
+      "C_LISTNET": 9286130.123564579,
+      "E6": 4775380.981965701,
+      "L3A10": 5405857.943061519
+    },
+    "soft_expected_regret_mean": {
+      "R28_U120": 0.27648878334421134,
+      "R12_U120": 0.27721868480724166,
+      "C_LISTNET": 0.38058614910010635,
+      "E6": 0.27915120606388166,
+      "L3A10": 0.27659681072666564
+    }
+  },
+  "t15": {
+    "states": 8,
+    "R28_minus_R12_payload_bits_mean": 1090575.9687951189,
+    "R28_minus_C_payload_bits_mean": 8318134.2549494635,
+    "R28_minus_E6_payload_bits_mean": -426166.5788383237,
+    "R28_minus_L3A10_payload_bits_mean": 385135.87094628904,
+    "payload_bits_mean": {
+      "R28_U120": 22359518.418399293,
+      "R12_U120": 21268942.449604176,
+      "C_LISTNET": 14041384.163449831,
+      "E6": 22785684.997237615,
+      "L3A10": 21974382.547453
+    },
+    "subset_regret_bits_mean": {
+      "R28_U120": 4385593.877792424,
+      "R12_U120": 5476169.846587542,
+      "C_LISTNET": 12703728.132741887,
+      "E6": 3959427.2989540994,
+      "L3A10": 4770729.748738712
+    },
+    "soft_expected_regret_mean": {
+      "R28_U120": 0.24957824659062677,
+      "R12_U120": 0.24957712859906242,
+      "C_LISTNET": 0.42356621159077357,
+      "E6": 0.2549791493061564,
+      "L3A10": 0.25041034570564924
+    }
+  },
+  "t30": {
+    "states": 8,
+    "R28_minus_R12_payload_bits_mean": 489326.15237426665,
+    "R28_minus_C_payload_bits_mean": 388677.4083494502,
+    "R28_minus_E6_payload_bits_mean": 111479.95893948106,
+    "R28_minus_L3A10_payload_bits_mean": 561131.4313465045,
+    "payload_bits_mean": {
+      "R28_U120": 24975358.994986426,
+      "R12_U120": 24486032.84261216,
+      "C_LISTNET": 24586681.586636975,
+      "E6": 24863879.036046945,
+      "L3A10": 24414227.563639924
+    },
+    "subset_regret_bits_mean": {
+      "R28_U120": 5479854.706037823,
+      "R12_U120": 5969180.858412089,
+      "C_LISTNET": 5868532.114387273,
+      "E6": 5591334.664977304,
+      "L3A10": 6040986.137384327
+    },
+    "soft_expected_regret_mean": {
+      "R28_U120": 0.3033993200977958,
+      "R12_U120": 0.3048602410154208,
+      "C_LISTNET": 0.3376060866094391,
+      "E6": 0.3033232628216069,
+      "L3A10": 0.302783275747682
+    }
+  },
+  "scenarios": [
+    {
+      "scenario_id": 322032,
+      "t15_R28_minus_R12_payload_bits": 797624.434415631,
+      "t30_R28_minus_R12_payload_bits": 5686282.096206263,
+      "mean_R28_minus_R12_payload_bits": 3241953.265310947
+    },
+    {
+      "scenario_id": 322033,
+      "t15_R28_minus_R12_payload_bits": 9382744.414159495,
+      "t30_R28_minus_R12_payload_bits": -2245391.159546092,
+      "mean_R28_minus_R12_payload_bits": 3568676.6273067016
+    },
+    {
+      "scenario_id": 322034,
+      "t15_R28_minus_R12_payload_bits": 0.0,
+      "t30_R28_minus_R12_payload_bits": 713565.1801655963,
+      "mean_R28_minus_R12_payload_bits": 356782.59008279815
+    },
+    {
+      "scenario_id": 322035,
+      "t15_R28_minus_R12_payload_bits": 0.0,
+      "t30_R28_minus_R12_payload_bits": -953810.6057359464,
+      "mean_R28_minus_R12_payload_bits": -476905.3028679732
+    },
+    {
+      "scenario_id": 322036,
+      "t15_R28_minus_R12_payload_bits": -6028949.024948977,
+      "t30_R28_minus_R12_payload_bits": 2707124.802485645,
+      "mean_R28_minus_R12_payload_bits": -1660912.111231666
+    },
+    {
+      "scenario_id": 322037,
+      "t15_R28_minus_R12_payload_bits": -1485905.2938175648,
+      "t30_R28_minus_R12_payload_bits": -3946017.236189738,
+      "mean_R28_minus_R12_payload_bits": -2715961.2650036514
+    },
+    {
+      "scenario_id": 322038,
+      "t15_R28_minus_R12_payload_bits": 5971828.972901985,
+      "t30_R28_minus_R12_payload_bits": 1045871.7699097544,
+      "mean_R28_minus_R12_payload_bits": 3508850.3714058697
+    },
+    {
+      "scenario_id": 322039,
+      "t15_R28_minus_R12_payload_bits": 87264.24765038118,
+      "t30_R28_minus_R12_payload_bits": 906984.3716986515,
+      "mean_R28_minus_R12_payload_bits": 497124.3096745163
+    }
+  ],
+  "scenario_counts": {
+    "positive": 5,
+    "negative": 3,
+    "near_zero": 0,
+    "near_zero_abs_bits": 1.0
+  },
+  "train_loss_mean": 0.2928943590571483,
+  "gate": {
+    "label": "NOT_PROMOTED",
+    "r28_minus_r12_margin": true,
+    "r28_minus_c_margin": true,
+    "not_below_references_by_more_than_1_bit": false,
+    "starts_next_stage": false,
+    "adopts_model": false,
+    "rewrites_l8": false
+  }
+}
