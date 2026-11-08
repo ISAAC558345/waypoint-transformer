@@ -1,130 +1,107 @@
-# 旧系统下一步指令：L9 固定预算的数据覆盖对照
+# 旧系统下一步指令：L10 按场景正确运行与比较
 
-日期：2026-11-08。结果基线：77eb078e54dde9e6ca0a55c3e47a3c482ff20d2c。执行分支：feature/legacy-system-maintenance。先读本次提交的 Legacy_System_L8_Push_Review_CN.md。
+日期：2026-11-08。结果基线：bbb7a0eb329fc83da7cd59d91310da198def3b7b。执行分支：feature/legacy-system-maintenance。先读本次提交的Legacy_System_L9_Push_Review_CN.md。
 
-## 1. 当前结论与唯一问题
+## 1. 本轮范围
 
-L8按NOT_PROMOTED结案。t30未达到原门槛，不改结论、不放宽容差、不补种子、不按时刻拼接选择，不运行L8闭环。
+L9经复核保持NOT_PROMOTED，L8也保持NOT_PROMOTED。两轮均不启动闭环、不接入正式Planner，不改变门槛，不补训练或调参。本轮只修正正常入口对场景和参考的绑定，训练、反向均为0。
 
-本轮新问题是：相同120次监督更新预算下，把真实到达训练状态从12个扩至28个，能否改善另一组场景上的最终payload选择？只改变训练数据集合及其固定访问分配；网络结构、损失、初始化、优化器、更新量和冻结执行器保持相同。
+正式Scheme C epoch1、G1_RATE k6、hold15、冻结MAPPO-V2、SafetyProjector及served定义保持当前配置。海洋隔离分支不修改、不执行、不合并。lambda_H、delta_payload_max仍不取值。
 
-这是固定计算预算的数据分配对照。新数据覆盖增加时每状态训练次数会下降，不得声称每样本训练量也保持不变。数据覆盖不足只是待检验假设。
+项目辅助文件和临时文件留在项目内，临时项使用backup；新结果使用results/legacy_system_l10。保留旧结果、用户其他文件和目录，不新建或搬移工作树。
 
-只推进旧系统，正式Planner与Scheme C保持当前配置，海洋隔离分支不修改、不执行、不合并。lambda_H、delta_payload_max仍不取值。所有辅助文件放在项目内；临时文件使用backup，结果使用新的results/legacy_arrival_coverage_l9。保留旧结果、用户其他文件和目录。
+## 2. 已确认的问题与目标
 
-## 2. 两臂、参考与固定训练设置
+目前：
+- wt.legacy_system.run只接受322000，preview中的参考文件也总是322000；
+- execute.run_once读取322000参考；
+- completion.compare_episodes把322000的REFERENCE_PAYLOAD_BITS常量纳入所有数值比较；
+- 新执行manifest还沿用L6包名和旧指令号。
 
-主对照：
+底层run_arm已支持scenario参数及1_000_000+scenario的过程种子，无需改正式运行器或模型。
 
-- R12_U120：复用 results/legacy_payload_objective_l8/r_epoch_010.pt。SHA-256为4f4ffa043f13b31b83f31508ef8ade138d96cee36a9addf977d33aeb555bc27f。原12状态各训练10次、共120更新。不要重训或继续训练。
-- R28_U120：从同一E6完整模型和空Adam重新开始，用下面的28状态固定序列训练120次。不能从R12继续训练，不能加载它的优化器状态。
+改为一处共享的标准库参考注册/解析逻辑，集中提供scenario_id、reference_episode、reference_config、process_seed、reset_seed和默认输出路径。当前仅登记R1已有完整参考的训练场景322000与322001，不自动开放整个训练池、validation或reserved test。
 
-固定参考仅评分、不训练：
-
-- E6：results/phase6id_joint_utility_training/epoch_006.pt，SHA-256 7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde。
-- L3A10：results/legacy_arrival_aware_ab_l3/arm_a_epoch_010.pt，SHA-256 87f7c7673555518d80303a8226ae699057bcdaeacb4307512331b7dbad4e60d8。
-- C_LISTNET：results/legacy_arrival_aware_ab_l3/arm_b_epoch_010.pt，SHA-256 6024f4c42cdf2de2e8452b49da6ed1824ff8d6e56e84204681a6a37161b81141。
-
-编码器继续可训练，与L8相同。decoder固定为results/phase5k_joint_decoder/matching_decoder.pt，SHA-256 de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5，参数冻结、eval，仍向编码器传递梯度。
-
-直接复用L8的expected_regret_loss，不另写或改历史损失：
-
+参考相对路径为：
 ~~~text
-y = real_payload_bits.detach()
-r = ((y.max() - y) / clamp(y.max() - y.min(), min=1e-6)).detach()
-L = sum(softmax(candidate_scores, dim=0) * r)
+results/legacy_formal_repro_r1/episodes/{scenario}_scheme_c.json
+results/legacy_formal_repro_r1/configs/{scenario}_scheme_c.json
 ~~~
 
-温度固定1。Adam lr=3e-4、weight_decay=1e-4、clip_grad_norm=1.0，seed0、CPU、单线程、确定性，保持L8的dtype与模型构建口径。只运行这一个新臂，不调温度、偏置、模型结构、活动数奖励、标签权重或学习率。
+注册表保存相对路径而非历史机器绝对路径。预览、执行和manifest共用这一处解析，不在三个位置重复写两套常量。可用一个小的标准库模块实现，不引入新依赖或大型配置框架。
 
-R28保存为r28_u120.pt，并记录updates=120、完整pass数4、尾段更新8。它不是10轮训练，不要为了兼容旧loader伪写epoch=10。按实际updates与完整model严格加载。
+## 3. 预览、输出与比较行为
 
-## 3. 直接复用28个训练状态
+预览仍只用标准库，不加载torch/模型，不建立目录。两场景各自打印正确参考、种子及run_accepted=true。对未登记场景明确表示未接受，实际--run在加载模型/创建输出前返回2；不要声称已有完整回归支持。
 
-原12：L2 train中的322016–322021，各t15/t30，每状态128候选。读取原有修订图、assignment和real_payload，不使用zero_payload作为监督。
+未显式--output时，默认输出随scenario分开，例如results/legacy_system/scenario_322001。显式指定路径的行为保持兼容，包括已文档化的322000命令。保持L7已完成的空目录接收、非空目录拒绝与退出码约定，不再改其逻辑。
 
-新增16：L8的322024–322031，各t15/t30，每状态128候选。直接读取：
+比较器必须：
+- 从本次对应reference读取payload/served参考值，去除322000常量对其他场景的约束；
+- 校验reference/current都具有必要的scenario_id和policy字段，并一致；不能用缺失字段的None==None作为身份通过；
+- 保留原有逐步served、步数/时刻、种子、决策时刻、Scheme C调用数及两个内部served一致性检查，数值容差仍为1bit；
+- reference_payload_bits如继续输出，必须是该场景的实际参考值。如保留旧“公布值”字段，也须标注同一R1来源，不能当成另一份独立证据；
+- 保持conclude的原语义：执行完成、matched、模型身份正确、正式策略未变才成功返回0；执行错误或不一致返回1；输入/输出拒绝返回2。无参考时不伪标matched或成功。
 
-- results/legacy_payload_objective_l8/comparison/scenario_*/t*/graph.npz；
-- results/legacy_payload_objective_l8/candidates.json；
-- results/legacy_payload_objective_l8/real_labels.jsonl；
-- 同状态state_meta.json及必要来源清单。
+新manifest记录所选场景的参考episode/config、来源哈希、对应种子、实际执行代码及本次指令来源；包名不再误写为legacy_system_l6。保留原L6/L7 manifest，不回写历史元数据。
 
-图均为相同7键修订输入，候选中已有local_position、row_index、candidate_id、assignment与状态/子集哈希。标签按scenario_id、time_step、candidate_id、assignment关联，不能用candidate_id直接当本地数组下标。保留各状态原128候选的本地顺序。
+不要修改R1受保护入口、R1原始episode/config、run_arm、FormalPlanner、策略配置或任何权重。
 
-新增独立的L9 loader，仅拼上述28状态，不放宽L2 loader，也不改L8结果或范围。需要的图/标签全部已有，旧数据环境步、旧数据模型前向和旧数据重新标注均为0。不要重放L8，不恢复全套历史数据，不为不存在的zero标签填0。
+## 4. 最小验证：先保存结果，再一次48步
 
-总计28图、3584候选及对应真实payload值。L8的16个比较状态现在明确转为L9训练数据，不再作为L9验证结果。322022–322023旧探索状态不参与本轮训练、选参或主比较。
+只进行当前改动所需的以下验证，不追加测试矩阵。
 
-固定访问序列：按(scenario_id,time_step)升序排列上述28状态；update从0到119，每次使用states[update % 28]。因此120=4×28+8，前8个状态各使用5次，其余20个各4次。保存全部120个访问键与每状态次数；R12旧数据为每状态10次。这一访问分配在任何新比较标签揭示前固定，不按既有负差、payload大小、t15/t30或损失值重加权。
+第一步：标准库检查，模型前向和环境步均为0，结果保存到新L10目录，不能运行会回写旧L7目录的历史check_completion入口。
 
-只使用第120次更新后的模型，不选择中间检查点，不跑训练集末轮评分或重算旧模型训练诊断。120行训练loss/梯度记录已足够说明执行完成；主结论来自下一组固定比较。
+- 预览322000和322001：参考路径、种子、默认输出各自正确，不写预览目录、不导入torch。
+- 原R1 322000与已保存L6 322000比较为matched，证明旧场景仍兼容。
+- 原R1 322001与其自身比较为matched，证明不再受322000固定payload约束。
+- 322000参考与322001记录交叉比较为different。
+- 检查两套参考文件身份、48步完整性和来源，仅使用保存文件。
 
-## 4. 新比较范围和数据生成
+第二步：只实际执行322001一次，完整48步，命令示例：
+~~~powershell
+$env:PYTHONPATH = Join-Path (Get-Location).Path 'src'
+py -3 -m wt.legacy_system.run --scenario 322001 --output results/legacy_system_l10/run_322001 --run
+~~~
 
-固定322032–322039，各t15/t30，共16状态。它们未在这条已执行到达标签研究中使用，但仍在历史TRAIN内；E6可能见过零到达数据，因此不能称独立验证、未见模型泛化或正式留出集。不打开历史validation或reserved test。
+预期与对应R1结果一致：
+~~~text
+scenario_id = 322001
+process_seed = 1322001
+reset_seed = 322001
+stop_time = terminal_time = environment_steps = 48
+decision_times = [0, 15, 30, 45]
+scheme_c_calls = 4
+payload_bits = 68952073.58225587
+served_bits = 68952073.58225589
+payload_matches_served = 1
+step_served_matches_episode = true
+error = null
+regression_status = matched
+success = true
+exit_code = 0
+~~~
 
-复用L8已经验证的30步重放、完整快照/账本保存、修订图构造、固定候选采样与单臂真实标签逻辑。为L9范围写适配层，不调用整个L8入口，不改L8全局常量后继续运行旧实验，不复制不必要的大段历史流程。
+两个总量和全部48条逐步served均按原1bit容差比较；不要四舍五入后再比较。此验证是入口一致性，不是性能收益实验。
 
-每场景沿MAX_RATE_INDEPENDENT与冻结MAPPO-V2 seed0重放一次至t30，保存t15/t30完整快照、ledger和当前图。共240环境步。这不是正式Scheme C轨迹。service_progress和uav_step_displacement_m必须来自同一真实轨迹；不能置零或额外跑一条图轨迹。
+新增实际环境步预算48，训练/反向0。低层推理和正式高层调用记录实际值，正常预期分别48和4。失败/作废步也计入48预算。若出现错误，保留原始失败与消耗，不自动重新执行另一轮48步；先报告具体原因，不能改参考让结果通过。
 
-每状态128候选，沿用D6规则：旧零到达J15 top32 + 名次分层96、seed605。候选、顺序、并列口径、pool/subset/state哈希相同地提供给5个模型。不依照新方法分数或真实标签增删候选。
+不实际重跑322000，不重跑原192步，不重做L8/L9，不重复L7目录冲突检查，不运行安全/压力/故障注入矩阵，不重编译论文。原有输出保护没有改动时无需再测一遍。
 
-需要的旧候选来源为aadbb3c5c5954669dd335dce9afb3462d7de114c中的高层训练数据，修订图来源可用8a34efc718665a7cfe4375b662e8f5249263f03d核对。只读取所需对象，保留源路径/blob/字节哈希。不重新计算全候选J15。所需源对象实际缺失或口径不一致时记录具体缺口并停止，不另换采样方案。
+## 5. 文档与交付
 
-先冻结R28权重，再在新状态上保存5模型全部原始分数与argmax选择、共同候选和输入哈希，最后才生成真实到达标签。未来到达、真实payload、名次、scenario_id特征和最优索引不得进入图或候选评分。scenario_id只作身份键。
+更新docs/research/Legacy_System_Commands_CN.md，说明当前可运行的两个参考场景、预览/显式运行、按场景默认输出、显式路径兼容和结果比较来源。保持R1只读/导出及其受保护入口的说明。
 
-真实标签仅计算一臂：每候选从共同快照恢复，zero_arrivals=False、horizon=15，采用现有served口径和相同冻结执行器/外生机制。共2048候选回合、30,720候选环境步。不得重做零到达对照、t0/t45、D6双臂研究或标签优先级权衡。
+保存results/legacy_system_l10/中的标准库检查记录、run_322001的配置/episode/逐步served/比较/执行manifest、实际消耗，以及必要的错误记录。引用旧参考原件，不复制或改写R1证据。不要为本轮引入新的模型研究代码。
 
-分数并列取较小candidate_id，不用payload破并列。保留idle合法性，不强制6机活动。子集最优只指128候选内最大payload，披露旧零到达J15采样造成的支持偏差，不宣称全候选最优。
+提交docs/research/Legacy_System_L10_Report_CN.md，说明：
+- 哪些场景/参考硬编码已解除；
+- 保存结果检查及322001新48步的结果与退出码；
+- 实际环境步、低层推理、高层调用、更新和反向；
+- L8/L9仍未晋级，正式模型没有改变；
+- 当前仍仅支持登记参考的两个训练场景，不能写成全场景验证。
 
-## 5. 必要检查和固定预算
+在维护分支提交并推送本轮代码、结果、命令文档和报告，提供提交号后停止。本轮不自动启动新的架构或目标研究；后续如投入另一种研究问题，先明确假设和预算。
 
-| 项目 | 计划/上限 |
-| --- | ---: |
-| 新方法更新、反向传播 | 各120 |
-| 重训R12或其他参考 | 0 |
-| 旧28状态重放/重新标注 | 0 |
-| 新轨迹重放 | 240环境步 |
-| 新候选标签 | 2048回合，30,720环境步 |
-| 总环境步 | 上限30,960 |
-| 高层评分前向 | 计划200，上限204 |
-
-200前向=120训练+5模型×16新状态评分。额外最多4次仅供实际需要的接线验证，不默认跑。不要追加28状态训练末轮评分，也不要跑一次check-only后再自动重复同样模型检查。
-
-只做与当前数据拼接和比较直接相关的检查：
-
-1. 一次读取中核对28状态/3584条候选标签的身份、原本地顺序、图schema与有限值；确认训练范围和新比较范围不相交。保存来源字节哈希和访问次数，不用模型检查旧数据。
-2. 确认各权重、初始化、空Adam、decoder冻结与120次更新一致。L8损失未改，不重新做已通过的小张量梯度测试。
-3. 在正常新数据流程中检查相同步数、候选身份、当前观测口径和served统计；沿用已有恢复逻辑，不做额外重复标签回合。
-4. 完成后读取确认正式权重、decoder、原始输入、旧研究模型与正式策略未被改写。
-
-环境步、低层调用、前向、更新、反向都记录实际消耗；失败或作废部分也算预算。若每步一次MAPPO调用，应分别实测记录，不自动从环境步复制推理数。出现实际执行错误时保存原始记录，在剩余预算内修复明确错误；方法结果差不是重跑理由。
-
-不跑历史全量测试、安全/压力/故障注入矩阵，不重新检查目录搬迁、不重放L6、不重编译论文。不修改当前论文实验结论。
-
-## 6. 预注册指标与下一阶段门槛
-
-主比较为新16状态上的R28_U120−R12_U120，指标是argmax所选真实payload配对差，报告bit与Mbit。
-
-保存每状态5模型的候选编号、assignment、active_count、分数、payload、子集regret。按全16状态、t15、t30分别汇总；按场景先平均两个时刻，再报告8个场景的配对差和正/负/近零数，近零容差1bit。两个时刻不是两个独立场景。
-
-同时报告R28相对C_LISTNET、E6、L3A10的差。soft期望regret和训练loss仅为辅助，不决定检查点。不能把L8已转训练的状态混入新比较。
-
-只有以下全部满足，才标记CONTINUE_TO_CLOSED_LOOP_COMPARISON：
-
-- R28−R12总体平均 >1bit，且t15/t30各自平均均 >=−1bit；
-- R28−C_LISTNET总体平均 >1bit，且t15/t30各自平均均 >=−1bit，保留原L8相对ListNet的要求；
-- R28总体payload不低于固定E6和L3A10，各自容差1bit。
-
-这只是决定下次是否值得制定闭环对照，不自动执行闭环，不采用新模型，不重写L8的NOT_PROMOTED。完整结果不满足则NOT_PROMOTED；数据或执行不完整则INCOMPLETE。不能事后挑场景、挑时刻、换基线、调容差或再增训练量。本轮结束后停止。
-
-## 7. 交付与推送
-
-实现独立模块，例如wt.legacy_arrival_coverage_l9，默认仅显示固定配置，显式--run才执行。报告实际命令、输入来源和所用指令提交。
-
-results/legacy_arrival_coverage_l9/至少保存：28状态来源/拼接索引与固定访问表、120行训练记录、r28_u120.pt与哈希、16个新状态图/完整快照/候选来源、预测先于标签的冻结记录、5模型原始分数与选择、2048条真实标签、配对明细/汇总、实际预算和必要检查/失败记录。旧训练图和标签引用原件，不复制大份旧结果。
-
-提交docs/research/Legacy_System_L9_Report_CN.md，先写门槛结果，再写主A/B与固定参考指标、实际5项消耗、固定更新下每样本访问量不同及历史TRAIN限制。明确旧L8数据已经用于训练，不能作为新验证证据。
-
-在当前维护分支提交并推送代码、结果、报告，提供提交号和主要结果后停止。正式分支e58e5d190109e5a0e860cb5c6a412321c0d74e31、海洋隔离分支4d8622ef183e734f2d9a890d60d735ed716f5d74均保持不变。
+正式分支e58e5d190109e5a0e860cb5c6a412321c0d74e31、海洋隔离分支4d8622ef183e734f2d9a890d60d735ed716f5d74保持不变。
