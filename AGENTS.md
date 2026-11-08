@@ -39,3 +39,14 @@ This current user instruction supersedes older blanket full-suite and
 unrelated safety-testing requirements, including historical round rules.
 Keep actual errors and original evidence; do not weaken constraints to
 make a result pass.
+
+## Local file placement
+
+Per the user's 2026-11-07 organization request, keep all project auxiliary
+scripts, commit-message files, logs, downloaded build tools, and caches inside
+this project. Do not create them in E:\srdp or another parent directory.
+Use the ignored backup directory for local tools and build intermediates.
+Historical baseline worktrees are under backup/baseline_worktrees; use Git
+worktree operations if a future task explicitly requires relocation.
+Preserve unrelated files and directory locations. Historical logs may retain
+original paths as provenance; do not rewrite those records just for relocation.

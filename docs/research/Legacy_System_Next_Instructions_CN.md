@@ -1,77 +1,81 @@
-# 旧系统 L6：正式运行入口与探索结案
+# 旧系统 L7：命令完成语义与论文真实交付
 
-更新时间：2026-11-05。工作分支：`feature/legacy-system-maintenance`；已审查L5结果 `30c880bedd9da4adff0b2de1d6b3fbef4bc27554`。L5原指令保存在 `archive/Legacy_System_L5_Instructions_20261105_CN.md`，不再重复运行。
+更新时间：2026-11-08。工作分支 `feature/legacy-system-maintenance`；审阅结果提交 `77c73c00462ad2bb3d778d12a2ad98f0e4ffd576`。L6原指令归档于 `archive/Legacy_System_L6_Instructions_20261105_CN.md`，不要重跑。
 
-## 1 当前目标与范围
+## 1 本包目标与范围
 
-先把旧正式系统交付为可直接运行、结果单独保存的命令入口，并结案L3–L5这组未采用的探索。当前不再在同16状态上试新选择器、按t15/t30拼接规则或继续训练。
+完成两项交付：修正正式命令的完成语义；将当前旧系统、已结案研究和可核对证据同步到新版论文，实际编译LaTeX并检查页面。新环境步、模型前向、训练更新、反传全部0。
 
-先读 `AGENTS.md`、`README_BRANCH_SCOPE.md`、`Legacy_Only_Workflow_CN.md`、[L5审阅](Legacy_System_L5_Push_Review_CN.md) 及R1/R1A的命令与结果说明。新方案在 `research/ocean-observation-isolated` 保持原样，不执行或合并；正式分支也不合并。
+阅读AGENTS、README_BRANCH_SCOPE、Legacy_Only_Workflow及 [L6审阅](Legacy_System_L6_Push_Review_CN.md)。新方案保持在research/ocean-observation-isolated，不修改、执行或合并；正式分支也不合并。L3–L5已结案，不再调选择器、权重或时刻门控，不重开旧validation/holdout。
 
-本包训练更新0；只新增一次48步正式SchemeC运行，作为新入口的直接回归。没有新方法性能对照，不跑历史全套或无关安全专项。
+所有辅助文件留在当前项目内。建议便携工具位于 `backup/local_tools/`，构建/缓存/逐页PNG位于 `backup/local_build/l7/`，最终文档和小型证据记录沿用docs/paper与results。不要再向E:\srdp根目录写脚本、提交说明或日志，也不移动或重写其他项目文件夹。已有9个基线worktree仅按其现有Git关联使用，不重新创建或搬回上级。
 
-## 2 新增独立正式运行命令
+## 2 修复三个已确认的入口缺口，0环境步验证
 
-建议入口 `wt.legacy_system.run`，或选择等价清晰名称并登记。不要重新开放R1旧CLI的 `--rerun/--finalize`；它们继续保护原始证据。
+仅修 `wt.legacy_system` 的完成语义，不改Planner、环境、奖励、动作、权重或fault判定：
+1. 接受已存在但为空的输出目录；目录准备进入适当异常处理，非空目录仍不覆盖。
+2. 将运行错误、回归是否匹配、实际完成状态、所用模型身份及官方策略是否变化统一纳入最终成功结论。成功才退出0；执行失败/不匹配返回明确非0；输入拒绝可沿用2。保存的JSON状态与退出码一致。
+3. `_compare` 的matched同时要求payload/served两项运行内一致性，不能只记录标志却忽略。
 
-默认只预览配置和将写入的目录，不建输出、不加载模型，标准库层即可工作；显式 `--run` 才调用模型和环境。建议实际命令：
+原L6结果满足成功条件，原episode/manifest/对照文件保持原件，不用新代码覆写原运行身份。不要为验证返回码再跑一次48步。
 
-```powershell
-$env:PYTHONPATH = Join-Path (Get-Location).Path 'src'
-py -3 -m wt.legacy_system.run --scenario 322000 --output results/legacy_system_l6
-py -3 -m wt.legacy_system.run --scenario 322000 --output results/legacy_system_l6 --run
+最小必要验证：一次现成空目录准备；以保存的L6匹配记录作为成功例，以已有另一份R1 episode作为不匹配例检查结果判定/退出语义。必要时抽出标准库判定函数，使检查不导入模型。只验证这次改动，不构建逐字段故障矩阵或模拟环境测试。结果记录到新 `results/legacy_delivery_l7/`。
+
+## 3 用原保存记录补全证据口径
+
+使用现有R1归档，不做新的模型评估：
+- `results/legacy_formal_repro_r1/evidence_archive/results/phase6if_ranking_loss/runs/c/result.json`；
+- 同目录体系中的 `validation_loss_backfill.json`，仅用于注明其原保存字段及来源；
+- 已有AB/AC证据索引、L3/L4/L5结案和L6结果固定提交。
+
+按源文件best_epoch=1定位C的原保存聚合，核对19.240091242 Mbit、Top1 0.6666667、Top3/5 0.7083333、normalized_regret 0.0354734337对应的论文格。逐项登记源路径、原blob/原字节哈希、JSON定位、样本单位48状态、舍入口径和claim类型。
+
+这些格可标“原保存聚合已核对”，不是重新推理得到的统计。缺失的原顶层summary、基线/best逐状态数据仍标MISSING，不从差值倒推补造，不新建伪装成原件的 `results/phase6if_ranking_loss/summary.json`。其他未有原件支持的历史表格格值保留reported-only状态。
+
+原result含loss:NaN。原文件不改；派生JSON用null及原因，若引用backfill必须分别注明源字段，不把NaN变0或自动嫁接成原result。新版证据索引须是标准JSON，不输出NaN/Infinity。沿用已有AB/AC原件核对，不重做整轮历史证据审计。
+
+## 4 同步新的旧系统论文版本
+
+从11月4日稿生成日期明确的新稿，例如 `Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261108.md`，同步当前LaTeX。保留11月2日/4日正文和所有旧PDF；当前TeX修改前按原字节归档一次到dated archive，避免混淆版本。
+
+必要修改限定为：
+- ListNet公式与代码一致：`q_i=(y_i-min y)/max(max y-min y,1e-6)`，`p=softmax(30*(q-max q))`，交叉熵目标脱离计算图；不改真实算法。
+- 增加精简的L3–L5探索结案。清楚标注两个已见训练池场景、4个15步探索窗口、候选子集限制；B原均值20.150 Mbit，A25.905，E6初始化25.863；行均值idle消融使B升到24.404但有t30负差并损害对照组，均未采用。不能写成新的48步策略收益或泛化通过。L4统计采用L5已更正口径，单例组0regret不作排序证据。
+- 加入L6正式CLI已完成48步、与原R1逐步及payload匹配的可复现说明；它是工程回归，不是新性能实验。
+- 更新C列原保存聚合可追溯状态，保留其他真实缺口。正式benchmark数值、原负差案例、未采用结论和物理通信约定不变，不加入新方案内容。
+- 摘要、讨论、结论、制品说明和引用状态一致。对读者的论文标题/日期不再含已过时的“本次未编译”说明；具体构建状态放README/清单，依据实际结果填写。
+
+固定引用L3=8052e96267aa0699e30b6b37927f4971c8ba51b4，L4=d25e97fec756028a394a1cca67edb6d29c47c137，L5=30c880bedd9da4adff0b2de1d6b3fbef4bc27554，L6=77c73c00462ad2bb3d778d12a2ad98f0e4ffd576；正式证据继续使用原固定来源，不能只链mutable branch。
+
+## 5 在项目内部实际编译，不再停于PATH探测
+
+已知本机没有系统LaTeX编译器。本包允许按需获取官方便携构建工具及所需TeX资源到项目backup目录，不安装系统级大套件、不改系统PATH、不移动其他文件。优先一条固定路线：Tectonic官方预编译程序，登记实际版本、官方来源URL与下载文件哈希；不从源码编译Rust工具链。
+
+[官方安装说明](https://tectonic-typesetting.github.io/book/latest/installation/)
+[官方独立文档编译说明](https://tectonic-typesetting.github.io/book/latest/v2cli/compile.html)
+
+用过程内 `TECTONIC_CACHE_DIR` 将资源缓存指向项目 `backup/local_build/l7/tectonic-cache`。在当前latex目录运行实际工具；独立文档命令形式：
+```text
+tectonic -X compile --keep-logs --keep-intermediates --outdir <项目内构建目录> main.tex
 ```
+实际调用可使用项目内程序绝对路径。保存完整命令、工具版本、日志与退出状态。工具/资源不作为大体积仓库产物提交，保留便携构建脚本与来源说明即可。
 
-以实现后的真实命令为准。本包只提供和验证现行正式SchemeC路径，不顺便实现L3/L5策略切换或新算法配置。
+修正实际出现的TeX/字体/引用/版式错误并重新构建，直至得到本工程的PDF；不要用旧独立排版PDF或其他生成器代替LaTeX编译。若官方资源下载或权限真的阻断，记录具体URL/错误、已完成工作和可复现源码包，不虚称编译成功；也不能只重复“没有编译器”而不尝试这条已授权路线。
 
-实现要求：
-1. 调用现有 `run_active_episode` / `FormalPlanner` 正式链路。复用R1的 `prepare_policy_copy`、`run_arm`、进程种子和逐步served记录能力，避免复制Planner算法。不能调用R1的main/finalize/run_registered，也不能调用多场景audit程序。
-2. 为本次运行生成独立策略配置副本，置于新输出目录；正式配置是G1_RATE、k=6、hold=15、scheme_c。保留历史字段的来源解释，不能把historical_formal_k=5当作现行k。
-3. 只使用原正式SchemeC和冻结MAPPO-V2权重及原decoder，不使用E6作为正式高层替代、L3 A/B权重或ROW_MEAN_IDLE。
-4. 预览与读结果不安装torch。显式运行使用当前已有可用依赖，记录实际版本；不重装大型依赖、不把当前运行说成新机器安装验证。
-5. 运行产物写入新目录，不覆写R1/R1A、L2–L5和旧研究产物。配置、episode、steps和manifest之间使用明确的输出相对路径，机器上的原绝对路径如需记录放入运行上下文，不能作为迁移后唯一查找依据。
-6. 已有 `run_closed_episode` 可接收fault_log，但 `run_active_episode` 未透传。若复用路径需要隔离本次异常日志，可做最小、默认行为不变的可选参数透传，并把本次路径放进新目录；不改Planner、SafetyProjector或故障判定逻辑，不为此做故障注入测试。也可直接复用相同FormalPlanner+run_closed_episode并显式指定路径，只要保持同一正式行为和种子约定。
-7. 已存在的完整输出不得自动覆盖或删除；异常时记录实际消耗和错误后停止，不自动换场景/模型或重试环境回合。
+## 6 实际页面检查与来源身份
 
-## 3 唯一一次48步回归
+编译成功后，用可用PDF渲染工具生成全部页面PNG并逐页查看，核对公式、表格、图、列宽、链接/引用、分页和字形。文本提取用于查缺字与引用，不替代视觉核对。只重建/重看因实际修改受影响的必要产物，不运行模型或仓库全套测试。
 
-先运行一次默认预览，确认它只展示配置；再显式执行一次下面的正式回合：
+另存新的日期明确PDF，记录页数与实际视觉检查状态；没有完成页面检查的状态须如实保留。更新论文README、LaTeX README、revision notes、source_manifest和新版evidence索引，准确区分“源码更新”“实际编译”“页面已看”。
 
-- scenario=322000，属于既有训练场景；allow_holdout=false；
-- process_seed=1000000+322000=1322000，在构造Planner前重置random/NumPy/torch；
-- 环境reset_seed=322000；CPU单线程、确定性算法，沿用R1真实约定；
-- SchemeC、k=6、hold=15、stop_time=48；
-- 期望完整48步，正式决策时刻0/15/30/45，scheme_c_calls=4；
-- 训练0；正常执行约48个低层动作步，实际步数/调用按记录报告。
+来源清单计算当前源码对应Git blob的原字节SHA-256，并登记Git blob身份；工作区CRLF哈希如有区别另列，不混用。避免为了把最终提交SHA写回而无限重编译；源文件、构建工具、命令和产物哈希足以关联。原清单和旧PDF保持可追溯。
 
-总新增环境步上限 **48**。不要再跑322001、G1对照、原4臂192步或48步新策略测试。这个回归覆盖新CLI的正式全链路，不是复核历史性能或补holdout数据。
+## 7 交付与停止
 
-参考原件：
-- `results/legacy_formal_repro_r1/episodes/322000_scheme_c.json`；
-- `results/legacy_formal_repro_r1/configs/322000_scheme_c.json`。
+交付：
+- CLI完成语义修复及上述最小保存数据检查结果；
+- 新版Markdown、LaTeX、实际可生成的新PDF、构建脚本与日志；
+- 新证据索引、版本/构建来源清单及可复现说明；
+- `Legacy_System_L7_Report_CN.md`，分别报告命令修复、证据核对、编译/逐页检查与尚未完成事项，五项研究消耗均0。
 
-对比complete、terminal_time、种子、决策时刻、SchemeC调用数、payload/served及48条逐步served。参考payload为 **63785945.28984571 bit**。与原件的payload/逐步served绝对差以1 bit为比对容差；payload与served的运行内一致性仍沿用正式契约。路径、时间戳、耗时不要求相同。
-
-若业务字段或数值不一致，保留新结果和具体差异，追查配置/运行版本等实际原因；不能改种子、替换权重、放宽约束或再跑一批结果选匹配者。发生部分运行也计入本包48步预算，写明剩余未完成项后停止，不自动补跑。
-
-## 4 交付产物与状态
-
-新目录至少保存：策略副本、episode.json、steps.csv、run_manifest.json和与R1原件的regression_comparison.json。清单区分本次实际运行与历史参考，登记实际runtime、正式所用权重/策略文件身份、输入来源、代码身份、实际步骤和错误。
-
-正式模型参考：
-- SchemeC Epoch1 SHA-256：`f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864`；
-- MAPPO-V2 SHA-256：`92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e`；
-- decoder SHA-256：`de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5`。
-
-以实际代码读取路径为准，不为列清单额外加载不用的权重。源模型、官方active_policy、旧结果身份保留；比对使用已有文件和本次回合，不额外执行回合。记录原始anomaly/错误，不用全量测试绿灯或性能提升标签代替本次功能回归结论。
-
-## 5 同步命令与研究结案索引
-
-1. 更新 `Legacy_System_Commands_CN.md` 与分支入口说明，清楚列出只读inspect、显式导出、配置预览和新正式运行命令。旧R1受保护命令不再被描述成唯一主动运行方式。
-2. 输出 `Legacy_ArrivalAware_L3_L5_Closure_CN.md`，引用L3/L4/L5固定提交，写清240训练更新、48诊断前向、缓存消融的来源与实际结论；A/B模型与固定参照补丁均未采用。只结案该配置链，不关闭整个payload/标签服务或到达感知总目标。
-3. 研究索引可从论文README链接，但不要冒称当前论文正文/PDF已包含新结案；本包不扩写论文正文、不重查编译器，不补造ranking-loss summary。明确这些仍是遗留项。
-4. 输出 `Legacy_System_L6_Report_CN.md`，区分已完成的工程完善、48步回归结果、失败/未完成项及研究结案。
-
-本包只做一次预览和一次实际全链路回归。不要新增同实现互相印证的mock测试、大规模参数矩阵或历史全套。与当前改动直接相关的实际失败可以修，但48步总预算不能通过重跑绕过。
-
-完成后提交推送当前维护分支，报告SHA后停止。本次根聊天只发布指令，没有执行这48步。后续结构/目标改造须先有明确假设和证据预算，不由L5的局部改善自动启动。
+不重跑L6、R1、L3–L5、validation/holdout或历史全套，不开始新模型训练或新方案。完成后提交推送当前维护分支，报告SHA后停止。本次根聊天只发布指令，没有执行这些修复或生成PDF。下一轮算法研究再依据明确目标和独立证据预算安排。
