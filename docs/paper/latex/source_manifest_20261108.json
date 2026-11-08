@@ -25,7 +25,7 @@
     "docs/paper/latex/archive/main_20261104.tex",
     "docs/paper/latex/archive/body_20261104.tex"
   ],
-  "hash_basis": "Git blob identity from git hash-object, SHA-256 of that blob payload, and a separate workspace SHA-256 when the working-tree bytes differ",
+  "hash_basis": "git_blob and git_blob_payload_sha256 identify the exact bytes stored in Git at source_commit for this inventory. workspace_sha256 preserves the recorded build-time working-tree bytes. normalized_lf_* preserves the prior LF-normalized identities where CRLF source bytes were actually committed.",
   "files": {
     "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261108.md": {
       "git_blob": "1d781b64631f951ca9a70ac4755b84f17f79d485",
@@ -41,24 +41,32 @@
       "git_blob_payload_sha256": "de061f989c35df09bd8eee56efff0d0133e657f8089c637f84b4d4612ac03254"
     },
     "docs/paper/latex/main.tex": {
-      "git_blob": "e27043644d5660588ad0f2b4df6cd096bf21403f",
-      "git_blob_payload_sha256": "f4cc3c3e111142a78b8fe117e773a8b6e58b51820d76b3a569a135b74c89a3fd",
-      "workspace_sha256": "84c80c39ee358474c9229ceac5f2b20dd9a7579ad7725cb5bb4dbdf4227b62c0"
+      "git_blob": "215135796397a26bf5c29bf55f3271897b66a531",
+      "git_blob_payload_sha256": "84c80c39ee358474c9229ceac5f2b20dd9a7579ad7725cb5bb4dbdf4227b62c0",
+      "workspace_sha256": "84c80c39ee358474c9229ceac5f2b20dd9a7579ad7725cb5bb4dbdf4227b62c0",
+      "normalized_lf_git_blob": "e27043644d5660588ad0f2b4df6cd096bf21403f",
+      "normalized_lf_sha256": "f4cc3c3e111142a78b8fe117e773a8b6e58b51820d76b3a569a135b74c89a3fd"
     },
     "docs/paper/latex/body.tex": {
-      "git_blob": "4615fd6292c12b527fcfe2b7e208b0b56b97ce51",
-      "git_blob_payload_sha256": "f39a0c40f7e440ac404feead756072d657ab701f23bda9e6241354cafc8150ab",
-      "workspace_sha256": "bccca7022dd13a6208b53f8cf2b7cb9d7edf94e51173d5dfac2838e7ac7a6b60"
+      "git_blob": "65f4ff71c93d1085a2438c9cf0e2edeef6bb4937",
+      "git_blob_payload_sha256": "bccca7022dd13a6208b53f8cf2b7cb9d7edf94e51173d5dfac2838e7ac7a6b60",
+      "workspace_sha256": "bccca7022dd13a6208b53f8cf2b7cb9d7edf94e51173d5dfac2838e7ac7a6b60",
+      "normalized_lf_git_blob": "4615fd6292c12b527fcfe2b7e208b0b56b97ce51",
+      "normalized_lf_sha256": "f39a0c40f7e440ac404feead756072d657ab701f23bda9e6241354cafc8150ab"
     },
     "docs/paper/latex/references.tex": {
-      "git_blob": "998fff4607b36ad5df3d001aa881a47b6de13864",
-      "git_blob_payload_sha256": "1ab8ccdd3ad964f017e6b696c377da1e92338a01be7ceaaa6bde42a184e83591",
-      "workspace_sha256": "c72bbc508afff068fc352b3df738248bf5a31b86d7d7e3e31096c222ef44d610"
+      "git_blob": "361f4b6ec4c5773e86d0560518de4afc86900a8c",
+      "git_blob_payload_sha256": "c72bbc508afff068fc352b3df738248bf5a31b86d7d7e3e31096c222ef44d610",
+      "workspace_sha256": "c72bbc508afff068fc352b3df738248bf5a31b86d7d7e3e31096c222ef44d610",
+      "normalized_lf_git_blob": "998fff4607b36ad5df3d001aa881a47b6de13864",
+      "normalized_lf_sha256": "1ab8ccdd3ad964f017e6b696c377da1e92338a01be7ceaaa6bde42a184e83591"
     },
     "docs/paper/latex/figures/formal_architecture.tex": {
-      "git_blob": "10683931a957cf1685e02adca8eed7049397361d",
-      "git_blob_payload_sha256": "1c6c81fc1797075e649b638a3f11d5157e9b9b0eb90243a3cec99b0a37ef929b",
-      "workspace_sha256": "3db1c3c89695d6c6c83666cabcb229df461ca8f45567f32d222a406ce8abe580"
+      "git_blob": "d0787a2a9d4098f51d540ff772a8483a9125cd6f",
+      "git_blob_payload_sha256": "3db1c3c89695d6c6c83666cabcb229df461ca8f45567f32d222a406ce8abe580",
+      "workspace_sha256": "3db1c3c89695d6c6c83666cabcb229df461ca8f45567f32d222a406ce8abe580",
+      "normalized_lf_git_blob": "10683931a957cf1685e02adca8eed7049397361d",
+      "normalized_lf_sha256": "1c6c81fc1797075e649b638a3f11d5157e9b9b0eb90243a3cec99b0a37ef929b"
     },
     "docs/paper/latex/archive/main_20261104.tex": {
       "git_blob": "cfbef7d0a7a764b7552f8843d7570461b7c7effb",
@@ -112,6 +120,25 @@
       "git_blob": "b6ca2bffe9efc41023b8b18898f5b7658cb4ab98",
       "git_blob_payload_sha256": "59650c2481815ed5db3549076484f41c71b32c67b47f533266f70660460e3d2a",
       "workspace_sha256": "e4e2def628c899fa126f4d537e4ec5e2db9c8b58a5280a42c314ec55c0a289d7"
+    }
+  },
+  "metadata_correction": {
+    "date": "2026-11-08",
+    "source_commit": "157c1c9fabfea6af4a23c9175bd736197923f27c",
+    "paths": [
+      "docs/paper/latex/main.tex",
+      "docs/paper/latex/body.tex",
+      "docs/paper/latex/references.tex",
+      "docs/paper/latex/figures/formal_architecture.tex"
+    ],
+    "reason": "Four TeX entries had LF-normalized identities in git_blob fields although Git stored CRLF bytes. Correct field labels to the existing source objects and retain normalized identities; source text, PDF and build results are unchanged.",
+    "recompiled": false,
+    "research_execution": {
+      "environment_steps": 0,
+      "low_level_inferences": 0,
+      "scoring_forwards": 0,
+      "training_updates": 0,
+      "backward_passes": 0
     }
   }
 }
