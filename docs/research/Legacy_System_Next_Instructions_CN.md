@@ -1,102 +1,108 @@
-# 旧系统下一步指令：L11 真实目录重构与论文交付收尾
+# L12：源码工件与历史路径收尾、论文索引对齐
 
-日期：2026-11-09。结果基线：8fc6fda3d50d51b414cb609b7a8953951788eb18。执行分支：feature/legacy-system-maintenance。
+日期：2026-11-09。结果基线：fa845dfda498b8ba18134505a9cf3ab03f61ba6d。维护分支：feature/legacy-system-maintenance。
+先读本次Legacy_System_L11_Push_Review_CN.md。
 
-先读本次提交的Legacy_System_L10_Push_Review_CN.md和Legacy_System_Repository_Layout_20261109_CN.md。后者包含目标结构、36项语义映射及实际依赖，属于本指令的实施要求。
+## 1. 范围与零研究消耗
 
-## 1. 用户决定与完成目标
+用户已选C：完成旧系统交付，暂不新增模型研究。L11正式链路迁移和一次48步一致性通过，不重复执行。当前问题是有限的目录、资源解析和论文交付缺口。
 
-用户选择C：完成旧系统交付收尾，暂不新增模型研究；同时要求按真实论文代码仓库重构，去掉round1/round2等目录。
+本轮新增环境步、低层推理、高层模型前向、训练更新、反向全部为0。不打开322040–322047，不生成标签，不执行L8/L9或保留集，不改变正式模型、参数、种子、候选池、奖励或served定义。海洋隔离分支保持不变。
 
-本轮必须实际完成文件与依赖迁移，不只提交方案/映射/README，不只创建src/envs之类转发层。不留下archive/round_XX、stage01或旧round包兼容目录。
+只处理本项目主检出；保留其他用户文件、未提交修改、独立工作树、backup快照、环境及Git元数据。临时项留在项目backup，不再整体重排已经正确的功能源码。
 
-不训练、不反向、不生成新标签、不制定新模型实验协议、不打开322040–322047，不执行L8/L9闭环。海洋隔离分支不修改、不执行、不合并。正式模型、候选生成、hold、队列/served定义均不改变。
+## 2. 把剩余旧权重与成套输出真正移出src
 
-顺序：清点与迁移→必要一致性验证→按最终路径更新论文→编译/交付→推送后停止。
+当前Git树src下还有199个.pt，总316,947,845字节。将它们按用途迁入checkpoints/legacy/<语义主题>/，保留原字节，不能加载再保存。源名冲突按主题区分，不覆盖、不以一串新的轮次目录代替。源码中同批outputs里的结果表、日志、统计等非代码工件也按用途归入results或data；实际代码与必要轻量代码资源不要混着搬。
 
-## 2. 清点和迁移
+五份planning/task_option/outputs/handoff/deepsets_util_seed0.pt至seed4.pt（每份1,546,165字节）属于旧高层DeepSets-util，不是现行FormalPlanner的SchemeCAdapter/load_primary资源。正式四份checkpoint及其资源ID/路径保持不变；本轮不改其加载链。
 
-在项目主检出内清点已追踪及本地未追踪/忽略文件，生成迁移前清单。尤其不能遗漏round outputs、数据和checkpoint。先检查未提交修改；保留它们，不reset、不覆盖。所有源/目标绝对路径在操作前确认都位于本项目内。
+只补充这次实际移动对象的源/目标/字节SHA/旧blob到迁移索引。Git追踪工件用可逆移动并继续追踪；本地忽略工件保持原有本地属性。不要改checkpoint内容、原始结果、锁和日志，不强制上传缓存。
 
-不搬上一级E:\srdp文件、不碰其他项目，不进入.git、虚拟环境、backup/snapshots、backup/baseline_worktrees及其他独立Git检出。辅助脚本/临时文件留在本项目backup内。历史备份是独立旧快照，不为清理当前布局而重写。
+同步这些资源在旧逻辑路径和当前源码路径下的解析。根文档中“权重离开src”的完成声明，只有实际扫描确认无实验checkpoint留在src之后才能保留。
 
-按设计文档真正迁移：
-- 当前env/model/planner/controller/episode/CLI等实现进入src/wt的功能包，保留wt顶层包。
-- round30中的masked_mean、PPO公共函数等当前依赖按功能提取，更新全部Python imports；旧round代码按语义包迁移，不能直接删除。
-- round_01至36材料按主题归档；本地内部的round编号子目录也迁移。源码内roundN目录全部消除。历史文件/日志中的旧路径字符串可以保留。
-- 二进制数据离开src，权重按正式/初始化/研究用途进入checkpoints；结果按benchmarks/reproducibility/research组织。
-- 根目录CURRENT_ROUND、ROUND_VERSIONING等旧治理状态归档；上游长说明保留在archive/upstream，根README改为当前系统说明。保留许可证与归属。
-- 根AGENTS改成当前规则，旧轮次AGENTS以历史说明保存，不再作为现行指令。
+## 3. 修复旧逻辑路径到最终物理位置
 
-写docs/development/path_migration_20261109.json及实际结构说明。记录旧/新路径、类型、旧blob/字节哈希、内容是否变更和模块映射。原工件用字节移动；活动源码允许导入/路径/入口调整，不改变算法与参数。历史锁、原JSON/log/结果/PDF中的旧路径不全局替换。
+现resolve_logical只替换一次，而resources里包含“原路径→中间路径”和“中间路径→最终路径”，因此部分历史记录失效。
 
-对旧manifest需要的逻辑路径，提供只读artifact resolver映射到新物理位置。不能要求重建原目录，也不能通过修改旧锁哈希让迁移通过。已追踪材料保持追踪；未追踪的大型本地结果保留本地属性，不因迁移意外全量上传。同步.gitignore/.gitattributes；只更改本次相关路径规则，不强制提交整个backup。
+基于实际迁移索引生成/修正可闭合的映射。可以优先直接登记old_path→final_path；若组合前缀改名，必须得到最终路径，处理循环/冲突并保持重复解析结果稳定。不能只对一个示例写补丁、留下同类嵌套改名未处理。也不能改写历史JSON的旧路径来掩盖resolver缺口。
 
-## 3. 当前运行入口和资源路径
+至少修正：
+- round_13/amendments/round13_completion_amendment_20260825_0010 → archive/experiments/service_action_controllability/amendments/completion_amendment_20260825_0010；
+- round_11/AGENTS.md → archive/experiments/task_waypoint_predictor/historical_instructions.md，及同类历史指令文件改名；
+- 本轮199权重及其原模块/中间模块路径；
+- 下列两份摘要的逻辑定位。
 
-用common.paths/资源注册表定位项目根与模型、配置、数据、参考。迁移后的代码不依赖固定parents层数，也不以当前工作目录猜根。不能为了新包名修改权重字节。
-
-当前4份关键权重的原SHA保持不变，见设计文档。正式策略JSON原内容保持不变：Scheme C、G1_RATE、k6、hold15。仍只接受当前登记R1参考的322000与322001，仍保留过程种子1_000_000+scenario和reset种子scenario。
-
-新公共入口建议wt.cli.evaluate，scripts/evaluate.py只调用这一实现，默认预览，显式--run才执行。预览和只读结果命令不导入torch或运行环境。不要保留一个默认执行322002的旁路脚本与新入口相互矛盾。
-
-scripts/benchmark.py整理为读取已有汇总的入口，不重跑验证集/保留集；旧路径失效时按artifact索引找已归档原件，确实缺失则如实报告，不用新实验补造。当前README、docs/USAGE.md和SYSTEM_OVERVIEW只链接实际存在并已核对的命令/资源；不把未验证安装写成已通过。
-
-历史测试/模块按新命名更新导入和资源解析，保留原断言，不削弱约束。无需执行所有历史入口或导入可能产生副作用的旧实验模块。
-
-## 4. 仅必要的重构验证
-
-这次移动影响实际导入与checkpoint/参考定位，所以需要一次结构回归；不进行新的方法比较。
-
-无环境的检查：
-- 当前主检出所有受管理目录中没有round+编号的物理目录，包括嵌套目录；排除上面明确的独立备份/工作树/环境。不能只检查GitHub树或最外层。
-- 对改动Python做语法/静态导入与资源引用检查；当前正式链可导入。模型模块本来依赖torch，不得声称它们纯标准库。
-- 活动代码没有仍指向旧round目录的依赖；历史原文中的旧路径不算失败，由resolver解释。
-- 实际移动的原工件哈希与迁移前一致；代码文件哈希变化按映射如实记录。只核对本轮移动对象，不反复扫描无关历史库。
-- 两个登记场景的预览和只读摘要能解析新路径；保存参考的对比保持原matched/different语义，不改L10判定。
-
-只实际执行322001一次48步，使用新入口和独立新输出，例如：
-~~~powershell
-$env:PYTHONPATH = Join-Path (Get-Location).Path 'src'
-py -3 -m wt.cli.evaluate --scenario 322001 --output results/reproducibility/layout_refactor_20261109/run_322001 --run
+原summary逻辑名：
+~~~text
+results/phase6iab_planner_stability/summary.json
+results/phase6iac_independent_holdout/summary.json
+~~~
+实际已存在的位置：
+~~~text
+results/reproducibility/formal_scheme_c/evidence_archive/results/phase6iab_planner_stability/summary.json
+results/reproducibility/formal_scheme_c/evidence_archive/results/phase6iac_independent_holdout/summary.json
 ~~~
 
-对迁移后的同一R1参考核对总payload、served及全部48步served；容差保持1bit。预期payload=68952073.58225587、served=68952073.58225589，process_seed=1322001、reset_seed=322001、决策0/15/30/45、高层4次、matched、success=true、exit0。
+AB原blob=73e01163aafb5edc771cd7f4aee6139fdd775b11，AC=e23290d36258acc7d417a79d21c07a5502d95702。它们不是缺失证据，不重新生成、不复制一套替代结果。benchmark入口继续读取这些原件。
 
-新增工程回归环境步计划48，低层调用按实测正常为48，高层4；训练/反向0。失败/作废消耗也保留和计数，不能删掉失败再只报成功部分。发现明确迁移错误先修代码/路径，不改参考、模型或算法；额外完整重跑不在本计划内，需先报告实际失败原因。
+## 4. 只做必要的无模型验证
 
-不重跑322000、原192步、L8/L9、保留集、历史全套、安全/压力/故障注入矩阵。不要把重构回归写成新服务收益。
+- 一次检查本轮移动工件的目标存在且字节哈希/原Git对象不变；src不再留实验.pt/.pth等checkpoint。不要反复扫描无关历史库。
+- 在已知实际存在的迁移对象上验证旧逻辑路径可直接到最终文件，特别是嵌套改名、historical_instructions、两份摘要和本轮权重。不能把源本就缺失的历史文件当作本轮失败后强行恢复或重新生成。
+- 运行一次scripts/benchmark.py，只读两个归档summary。应打印真实paired均值/CI及正平负数，而非absent。将实际输出和原件路径/blob记录在results/reproducibility/delivery_closeout_20261109/。
+- AB：16场景，mean 2644990.8087698035 bit，CI [180100.0770928479,5016616.160644779]，11/0/5；
+  AC：16场景，mean 3502191.5265653464 bit，CI [1270476.686997788,5395098.500613804]，14/0/2。
+  只读取已算好的统计，不重新bootstrap、不重跑episodes。
+- 核对正式4份资源绑定、路径和哈希未变；两个登记场景预览正确且不加载torch。不要为本轮不涉及的正式模型再跑一次48步。
 
-## 5. 按最终路径更新2026-11-09论文
+不运行历史全量测试、安全/压力/故障注入矩阵，也不逐个导入可能执行旧实验的历史模块。
 
-旧2026-11-08及更早正文/PDF保持原字节；当前TeX修改前按字节归档main/body（原件存在则不覆盖）。生成新的Revised_20261109.md与同名PDF，保持当前英文论文风格，无需重做图或新增文献。
+## 5. 更正来源与缺失说明
 
-以一张简表及必要解释补齐L8/L9：
-- L8：训练12状态，新比较322024–322031×t15/t30；R相对L3B10总体+4.006856 Mbit、t15+8.044598、t30−0.030885；相对E6总体+0.553303；因t30条件未过NOT_PROMOTED。
-- L9：同120预算训练28状态，其中L8比较状态已经转训练；新比较322032–322039×t15/t30；R28−R12总体+0.789951、t15+1.090576、t30+0.489326；相对L3B10+4.353406、相对E6−0.157343；因E6参考条件未过NOT_PROMOTED。
-- L8/L9的ListNet对照是L3B10，不是正式Scheme C epoch1。都是历史TRAIN中的128候选、15步离线比较，MAX_RATE_INDEPENDENT快照；不是独立泛化、不是48步正式策略收益。不要合并成独立验证统计或修改门槛。
-- L3–L5仍保持原结案；L8/L9不采用，正式模型未变。不能写成整个到达感知研究均已被否定。
-- 更新L6/L10工程描述：322000/322001已按对应参考验证，L10新增48步一致；仅工程复现，不是新性能实验。修正摘要、讨论、结论中仍写仅一次命令或只覆盖早期阶段的陈旧范围。
+README.md、docs/USAGE.md、docs/DELIVERY_STATUS_CN.md、当前修订说明和evidence_20261109.json要明确AB/AC摘要已经保存在归档，旧脚本误报来自路径未解析。记录真实原件路径和blob/字节SHA，不写为新恢复/新统计收益。
 
-新增evidence_20261109.json，按精确bit值保存新增结论、来源提交、原始逻辑路径和迁移后路径/哈希，派生JSON不含NaN/Infinity。来源：
-L8 77eb078e54dde9e6ca0a55c3e47a3c482ff20d2c；
-L9 bbb7a0eb329fc83da7cd59d91310da198def3b7b；
-L10 8fc6fda3d50d51b414cb609b7a8953951788eb18。
-先按这些提交的paired_summary/manifest核对，不从四舍五入值反算原始bit。旧summary/baseline分状态等缺失证据继续缺失，不补造。
+ranking-loss顶层summary、基线侧分状态等真正缺失的证据继续如实标注，不把它们与AB/AC混淆。原L11报告可保留原文并附更正说明；不要把其错误“缺失”描述继续当当前状态。
 
-复用项目内Tectonic 0.17.0与已有缓存；新构建产物和临时文件使用backup/local_build/l11，不覆盖L7产物或旧PDF，不安装新系统TeX。旧build_l7脚本保留，新构建适配最终目录。优先一次构建，仅有实际编译/排版错误才修正重编译。记录真实退出码、页数、日志，逐页渲染查看新PDF，检查表格/公式/引用和裁切，不强制仍为7页。
+保留L11那次48步原始manifest/episode/steps。该manifest把instruction_commit记为204dd3309115dfd369236c408f7e59306a0871d4，实际迁移指令是b55981aad49e58366870ed3391217af427786c90。新增派生provenance_correction.json，指向原manifest及其哈希，说明错误字段、正确来源及“只改来源解释，结果未重跑”。本轮没有新episode，不能假造新的运行manifest。交付索引引用更正说明。
 
-更新README/LaTeX说明、REVISION_NOTES_20261109_CN.md及source_manifest_20261109.json。分别记录工作区原字节SHA与实际Git对象身份；不要把LF规范化结果误标为已提交CRLF的blob。编译成功和全部页已查看只能在实际完成后写入。
+## 6. 论文小幅补齐定义并更新最新入口
 
-## 6. 交付、推送和停止
+保持2026-11-09为当前可编辑稿和同名PDF，不再制造一套v2文件夹。2026-11-08及更早正文/PDF保持原字节。
 
-交付必须包含：
-- 真实迁移的源码、配置、数据/权重位置与活动导入/资源解析更新；无旧round实体目录，无空壳重构。
-- 实际迁移索引、必要结构检查及一次48步结果/消耗；原工件字节保留，其他用户文件不动。
-- 2026-11-09可编辑正文、LaTeX源、实际编译PDF、来源与构建清单。
-- 一份简洁交付状态（如docs/DELIVERY_STATUS_CN.md）：现行模型/命令、最新论文、未采用研究、缺失历史证据、当前登记范围及用户暂不新增研究的选择。
-- docs/research/Legacy_System_L11_Report_CN.md：先列实际新结构及结果，再列迁移范围、必要检查、48步一致性、PDF页数、真实消耗与尚未完成项。不得把仅写计划当重构完成。
+同时修改11月9日Markdown与当前TeX：
+- Sec.VII开头“两场景四窗口”明确只限定L3–L5，不概括后来L8/L9。
+- 定义L8的R为R12：从E6初始化、冻结matching decoder、在322016–322021×t15/t30的12状态上用真实到达标签训练120更新，使用温度1的期望归一化regret。
+- 简要给出L=sum softmax(score)_i * ((max y-y_i)/max(max y-min y,1e-6))，标签脱离梯度；这是软选择代理，不等于直接优化argmax。
+- 定义L9的R28：同E6/损失/120更新，训练数据为原12状态加L8的16比较状态，共28；固定4完整循环+前8状态。L8比较322024–322031，L9比较322032–322039，各t15/t30；后者仍历史TRAIN，不是独立泛化。L8数据转训练后不能再当L9评估证据。
+- ListNet参考仍是L3B10，不是正式Scheme C；L8/L9均NOT_PROMOTED，数值和门槛不改。把结论仍写“证据仅推进至E18”的旧范围句改成与当前内容一致。
+- 只补必要段落，不新增实验、文献搜索或新模型方向。
 
-在维护分支提交并推送本轮实际代码改动、该追踪的迁移工件、论文、结果和报告，核对远端文件路径与blob。只写本次相关变更，不force push，不推送本地缓存或工具。
+docs/paper/README.md及latex/README_CN.md改为真实最新11月9日稿、PDF、证据和本次可执行构建命令，保留旧版链接并明确历史身份。
 
-正式分支e58e5d190109e5a0e860cb5c6a412321c0d74e31和海洋隔离分支4d8622ef183e734f2d9a890d60d735ed716f5d74保持不变。交付完成后报告并停止，不自动开展下一模型研究或新实验。
+先恢复11月8日TeX原Git字节归档（源提交8fc6fda3d50d51b414cb609b7a8953951788eb18）：
+~~~text
+docs/paper/latex/archive/main_20261108.tex -> blob 215135796397a26bf5c29bf55f3271897b66a531
+docs/paper/latex/archive/body_20261108.tex -> blob 65f4ff71c93d1085a2438c9cf0e2edeef6bb4937
+~~~
+用原对象/二进制写出，避免PowerShell文本重编码或Git过滤再次归一化；必要时只对这些档案路径设置准确的-text规则。不要全仓normalize。旧档案身份恢复不需要编译，当前正文变化才需要编译。
+
+复用已有Tectonic与缓存，进行一次必要构建；只在实际编译或排版问题发生时修正重编译。临时产物放backup/local_build/delivery_closeout_20261109，旧构建记录不覆盖。记录真实退出码、页数，逐页查看最终PDF；不强制7页。提交一份适量的本次构建日志，使GitHub可核对，不只引用被忽略的backup日志。
+
+source_manifest_20261109.json必须指向最终当前正文/TeX/PDF/证据的真实字节和实际Git对象。当前main/body旧git_blob是LF规范化身份，必要时保留为normalized_lf_git_blob，不能再与实际提交对象混称。git_blob应从将提交的实际tree/index取得，并在推送后读取Git树核对；workspace_sha256单独记录编译时字节。不要只用会受过滤影响的git hash-object结果冒充远端对象。
+
+## 7. 最终交付与停止
+
+提交实际权重/结果移动、闭合映射与只读摘要修复、来源更正、当前文档和论文/PDF/构建证据，以及docs/research/Legacy_System_L12_Report_CN.md。
+
+报告给出：
+- 移出src的工件数量/字节与哈希核对结果；
+- 嵌套路径/旧指令文件/两份summary的实际解析位置；
+- benchmark真实只读输出；
+- 旧48步来源更正记录，及本轮0环境步、0低层推理、0模型前向、0更新、0反向；
+- 新PDF真实页数/构建日志及源产物对应；
+- 当前剩余的真实限制，不再误报已存在摘要缺失。
+
+推送维护分支的实际代码、该追踪的移动工件、结果与论文，核对远端路径和manifest对象，不force push，不推送本地缓存。正式分支e58e5d190109e5a0e860cb5c6a412321c0d74e31和海洋隔离分支4d8622ef183e734f2d9a890d60d735ed716f5d74保持不变。
+
+完成这些已知交付项后报告并停止。不能为了“下一步”自动增加一轮检查、训练、候选协议或模型研究。
