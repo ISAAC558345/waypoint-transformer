@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-09",
+  "source_commit": "a23a7441f9f2c50a2ad53dbcae3ee8310f4c1a40",
+  "scope": "Tracked files removed in this commit; no local filesystem deletion or model execution is claimed.",
+  "deleted": [
+    {
+      "path": "paper_assets/.mplconfig/fontlist-v390.json",
+      "git_blob": "1ac5f1bf658d5912bae9d41f540ed0e95f2a0904",
+      "bytes": 118253,
+      "reason": "Matplotlib-generated font cache; regenerated locally and not a scientific artifact."
+    },
+    {
+      "path": "scripts/archive_root_like_paper_repo.py",
+      "git_blob": "cb91fd058519148857fc9186ad501b0c9f4de1b1",
+      "bytes": 6729,
+      "reason": "Obsolete one-off layout script using the pre-refactor root/round structure; no current callers."
+    },
+    {
+      "path": "scripts/build_cleanup_inventory.py",
+      "git_blob": "ff54f9f87c516a96142681116c1e31911c596867",
+      "bytes": 8629,
+      "reason": "Obsolete inventory script using old paths and round allowlists, replaced by the current migration index; no current callers."
+    },
+    {
+      "path": "scripts/apply_confirmed_cleanup.py",
+      "git_blob": "fc9ab943ec92f94dc60fc3fdb2324dbc44226eee",
+      "bytes": 7062,
+      "reason": "Obsolete one-off cleanup tool containing pre-refactor round paths and broad deletion operations; no current callers."
+    },
+    {
+      "path": "scripts/extract_referenced_notes.py",
+      "git_blob": "a0397ea38ebc78824a3cdc3ec5c49acf244d4c86",
+      "bytes": 1003,
+      "reason": "Completed one-off note extraction for an old archive layout; not used by the current delivery."
+    },
+    {
+      "path": "scripts/find_stale_root_paths.py",
+      "git_blob": "cb9f625e1400adf37c492243485d3050dfb6a5b4",
+      "bytes": 919,
+      "reason": "Superseded old-layout diagnostic with stale round-path assumptions; no current callers."
+    }
+  ],
+  "tracked_deleted_files": 6,
+  "tracked_deleted_bytes": 142595,
+  "local_cleanup_completed": false,
+  "checkpoint_deduplication_completed": false,
+  "remaining_work": "L12: remove regenerable local caches/build intermediates after final paper delivery, and consolidate exact duplicate checkpoints through canonical paths and the migration resolver. Preserve unique scientific artifacts."
+}

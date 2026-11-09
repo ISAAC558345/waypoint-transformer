@@ -15,4 +15,11 @@ data/highlevel_revision/
 archive/experiments/*/outputs/
 archive/experiments/*/figures/
 archive/experiments/*/report/
-data/highlevel_revision/
+
+# Regenerable local caches
+**/.mplconfig/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.pyo
