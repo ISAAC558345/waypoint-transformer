@@ -6,14 +6,15 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase61.features import OPTION_DIM, OPTION_UAV_DIM, UAV_DIM, encode_option, feature_dict_l2a
-from wt.htw_phase61.models import L2AOptionActorCritic, L2AStateActorCritic
-from wt.htw_phase61.vector import L2AVector
-from wt.l2a.env import L2AEnv
-from wt.l2a.policies import oracle_option_assignment
-from wt.round30 import ppo as ppo_module
-from wt.round30.ppo import PPOAgent, PPOConfig, seed_everything
-from wt.round30.runner import collect
+from wt.legacy.htw_historical61.features import OPTION_DIM, OPTION_UAV_DIM, UAV_DIM, encode_option, feature_dict_l2a
+from wt.legacy.htw_historical61.models import L2AOptionActorCritic, L2AStateActorCritic
+from wt.legacy.htw_historical61.vector import L2AVector
+from wt.legacy.queue_task_causal.env import L2AEnv
+from wt.legacy.queue_task_causal.policies import oracle_option_assignment
+from wt.legacy.deepsets_ppo import ppo as ppo_module
+from wt.algorithms.ppo_common import PPOConfig, seed_everything
+from wt.legacy.deepsets_ppo.ppo import PPOAgent
+from wt.legacy.deepsets_ppo.runner import collect
 
 
 class HTWPhase61Tests(unittest.TestCase):

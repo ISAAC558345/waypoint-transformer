@@ -5,16 +5,16 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase101.protocol import DESIGN_TRAIN_SEEDS, DESIGN_VAL_SEEDS, PPO
-from wt.htw_phase103.gate import InRangeZeroMotionGate
-from wt.htw_phase104.protocol import HIGH_CKPT, LOW_SEEDS, N_SCENARIOS, SEED0_FINAL, TRANSITIONS, UPDATES, sha256_bytes
-from wt.htw_phase104.scenarios import select_independent_seeds
-from wt.htw_phase104.stats import bootstrap_deltas, classify_llexec
+from wt.legacy.htw_historical101.protocol import DESIGN_TRAIN_SEEDS, DESIGN_VAL_SEEDS, PPO
+from wt.legacy.htw_historical103.gate import InRangeZeroMotionGate
+from wt.legacy.htw_historical104.protocol import HIGH_CKPT, LOW_SEEDS, N_SCENARIOS, SEED0_FINAL, TRANSITIONS, UPDATES, sha256_bytes
+from wt.legacy.htw_historical104.scenarios import select_independent_seeds
+from wt.legacy.htw_historical104.stats import bootstrap_deltas, classify_llexec
 
 
 class Phase104Tests(unittest.TestCase):
     def test_01_independent_seeds_disjoint_and_count(self) -> None:
-        from wt.htw_phase104.protocol import all_blocked_scenario_seeds
+        from wt.legacy.htw_historical104.protocol import all_blocked_scenario_seeds
 
         seeds = select_independent_seeds()
         self.assertEqual(len(seeds), N_SCENARIOS)
@@ -39,7 +39,7 @@ class Phase104Tests(unittest.TestCase):
         self.assertEqual(tuple(LOW_SEEDS), (0, 1, 2, 3, 4))
 
     def test_04_gate_is_phase103_class(self) -> None:
-        self.assertEqual(InRangeZeroMotionGate.__module__, "wt.htw_phase103.gate")
+        self.assertEqual(InRangeZeroMotionGate.__module__, "wt.legacy.htw_historical103.gate")
 
     def test_05_bootstrap_respects_shared_b3(self) -> None:
         b3 = np.array([1.0, 2.0, 3.0, 4.0])
@@ -62,7 +62,7 @@ class Phase104Tests(unittest.TestCase):
         self.assertFalse(c["stable_low_level_advantage"])
 
     def test_07_scenario_freeze_does_not_need_models(self) -> None:
-        from wt.htw_phase104.scenarios import build_scenario_manifest
+        from wt.legacy.htw_historical104.scenarios import build_scenario_manifest
 
         payload = build_scenario_manifest(consumed=False)
         self.assertEqual(payload["n_scenarios"], 64)

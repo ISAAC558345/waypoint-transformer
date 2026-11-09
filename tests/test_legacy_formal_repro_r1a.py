@@ -11,11 +11,12 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from wt.legacy_formal_repro_r1a.export import main as export_main
-from wt.legacy_formal_repro_r1a.inspect import main as inspect_main
-from wt.legacy_formal_repro_r1a.read import build_view
+from wt.evaluation.scheme_c_inspection.export import main as export_main
+from wt.evaluation.scheme_c_inspection.inspect import main as inspect_main
+from wt.evaluation.scheme_c_inspection.read import build_view
+from wt.common.paths import repo_root
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 SOURCE = ROOT / "results" / "legacy_formal_repro_r1"
 REPORT = ROOT / "docs" / "research" / "Legacy_Formal_Repro_R1_Report_CN.md"
 CONFIGS = (
@@ -82,7 +83,7 @@ class LegacyFormalReproR1ATests(unittest.TestCase):
             with self.assertRaises(FileExistsError):
                 export_main(["--artifact-root", str(SOURCE), "--output", str(output)])
         completed = subprocess.run(
-            [sys.executable, "-c", "import sys; sys.path.insert(0, 'src'); from wt.legacy_formal_repro_r1.run import cli; "
+            [sys.executable, "-c", "import sys; sys.path.insert(0, 'src'); from wt.evaluation.scheme_c_runner.run import cli; "
              "raise SystemExit(0 if cli([]) == 0 and cli(['--finalize']) == 2 and cli(['--rerun']) == 2 else 1)"],
             cwd=ROOT,
             capture_output=True,
@@ -115,7 +116,7 @@ class LegacyFormalReproR1ATests(unittest.TestCase):
         for pair, saved_pair in zip(view["pairs"], saved["pairs"]):
             self.assertEqual(pair["payload_difference_bits"], saved_pair["payload_difference_bits"])
             self.assertEqual(pair["recomputed_payload_difference_bits"], saved_pair["payload_difference_bits"])
-        self.assertEqual(view["missing_original_summaries"], ["results/phase6if_ranking_loss/summary.json"])
+        self.assertEqual(view["missing_original_summaries"], ["results/benchmarks/ranking_loss/summary.json"])
 
 
 if __name__ == "__main__":

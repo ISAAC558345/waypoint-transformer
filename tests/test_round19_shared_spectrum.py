@@ -7,16 +7,17 @@ import unittest
 
 import numpy as np
 
-from wt.maritime.config import MaritimeEnvConfig
-from wt.round18.multi_env import MultiUAVMaritimeEnv, deterministic_matching
-from wt.round18.planner import ACTION_CANDIDATE_NAMES as R18_ACTIONS, PLANNING_HORIZONS as R18_HORIZONS
-from wt.round19.audit import single_uav_regression
-from wt.round19.multi_env import SharedSpectrumMultiUAVEnv, SharedSpectrumOptions, assignment_link_metrics, gain_matrix, joint_aware_matching
-from wt.round19.planner import ACTION_CANDIDATE_NAMES, PLANNING_HORIZONS, independent_decision, joint_plan
-from wt.round19.scenarios import SCENARIO_NAMESPACE, materialize_scenario, planning_scenarios
+from wt.legacy.maritime_environment.config import MaritimeEnvConfig
+from wt.legacy.multi_uav_coordination.multi_env import MultiUAVMaritimeEnv, deterministic_matching
+from wt.legacy.multi_uav_coordination.planner import ACTION_CANDIDATE_NAMES as R18_ACTIONS, PLANNING_HORIZONS as R18_HORIZONS
+from wt.legacy.shared_spectrum_planning.audit import single_uav_regression
+from wt.legacy.shared_spectrum_planning.multi_env import SharedSpectrumMultiUAVEnv, SharedSpectrumOptions, assignment_link_metrics, gain_matrix, joint_aware_matching
+from wt.legacy.shared_spectrum_planning.planner import ACTION_CANDIDATE_NAMES, PLANNING_HORIZONS, independent_decision, joint_plan
+from wt.legacy.shared_spectrum_planning.scenarios import SCENARIO_NAMESPACE, materialize_scenario, planning_scenarios
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 R18_LOCK = "8A9462FC87F1DB546E30877DB8814FE591BF90CCB5DE81B0A6C9C63E96C0DA9B"
 
 
@@ -28,9 +29,9 @@ def config(k=3, **extra):
 
 class Round19SharedSpectrumTests(unittest.TestCase):
     def test_01_round18_lock_unchanged(self): self.assertEqual(hashlib.sha256((ROOT / "round_18/ROUND_LOCK.json").read_bytes()).hexdigest().upper(), R18_LOCK)
-    def test_02_no_optimizer(self): self.assertNotIn("optimizer", (ROOT / "src/wt/round19/planner.py").read_text())
-    def test_03_no_backward(self): self.assertNotIn("backward", (ROOT / "src/wt/round19/planner.py").read_text())
-    def test_04_no_neural_checkpoint(self): self.assertFalse(list((ROOT / "src/wt/round19").glob("*.pt")))
+    def test_02_no_optimizer(self): self.assertNotIn("optimizer", (ROOT / "src/wt/legacy/shared_spectrum_planning/planner.py").read_text())
+    def test_03_no_backward(self): self.assertNotIn("backward", (ROOT / "src/wt/legacy/shared_spectrum_planning/planner.py").read_text())
+    def test_04_no_neural_checkpoint(self): self.assertFalse(list((ROOT / "src/wt/legacy/shared_spectrum_planning").glob("*.pt")))
     def test_05_m1_interference_zero(self): self.assertTrue(all(row["passed"] for row in single_uav_regression()))
     def test_06_eta0_orthogonal_exact_one_step(self):
         c=config(); old=MultiUAVMaritimeEnv(c); new=SharedSpectrumMultiUAVEnv(c, options=SharedSpectrumOptions("orthogonal", 0.0)); old.reset(seed=12); new.reset(seed=12); a=np.array(((.2,-.4),(.7,.1))); x=old.step(a); y=new.step(a); self.assertTrue(np.array_equal(x[0],y[0]) and x[1] == y[1] and np.array_equal(x[4]["raw_queue_bits"],y[4]["raw_queue_bits"]))
@@ -46,7 +47,7 @@ class Round19SharedSpectrumTests(unittest.TestCase):
         a,_,_,_=joint_aware_matching(np.ones(3),np.ones((2,3)),config(),.5); self.assertEqual(len(set(a[a>=0])),np.count_nonzero(a>=0))
     def test_12_joint_matching_deterministic(self):
         first=joint_aware_matching(np.ones(3),np.ones((2,3)),config(),.5)[0]; second=joint_aware_matching(np.ones(3),np.ones((2,3)),config(),.5)[0]; self.assertTrue(np.array_equal(first,second))
-    def test_13_no_future_in_matching(self): self.assertNotIn("future", (ROOT / "src/wt/round19/multi_env.py").read_text().split("def joint_aware_matching",1)[1].split("def shared_shadow_step",1)[0])
+    def test_13_no_future_in_matching(self): self.assertNotIn("future", (ROOT / "src/wt/legacy/shared_spectrum_planning/multi_env.py").read_text().split("def joint_aware_matching",1)[1].split("def shared_shadow_step",1)[0])
     def test_14_k3_support(self): self.assertEqual(SharedSpectrumMultiUAVEnv(config(3),options=SharedSpectrumOptions("shared",.25)).reset()[1]["raw_queue_bits"].shape,(3,))
     def test_15_k5_support(self): self.assertEqual(SharedSpectrumMultiUAVEnv(config(5),options=SharedSpectrumOptions("shared",.25)).reset()[1]["raw_queue_bits"].shape,(5,))
     def test_16_padding_state_dim(self): self.assertNotEqual(SharedSpectrumMultiUAVEnv(config(3),options=SharedSpectrumOptions("shared",.25)).state_dim,SharedSpectrumMultiUAVEnv(config(5),options=SharedSpectrumOptions("shared",.25)).state_dim)
@@ -79,7 +80,7 @@ class Round19SharedSpectrumTests(unittest.TestCase):
     def test_35_no_hgnn(self): self.assertFalse(json.loads((ROOT / "round_19/round_manifest.json").read_text())["hgnn_training_performed"])
     def test_36_no_ppo_or_marl(self):
         m=json.loads((ROOT / "round_19/round_manifest.json").read_text()); self.assertFalse(m["ppo_training_performed"] or m["multi_agent_rl_performed"])
-    def test_37_compileall(self): self.assertTrue(compileall.compile_dir(str(ROOT / "src/wt/round19"),quiet=1))
+    def test_37_compileall(self): self.assertTrue(compileall.compile_dir(str(ROOT / "src/wt/legacy/shared_spectrum_planning"),quiet=1))
 
 
 if __name__ == "__main__": unittest.main()

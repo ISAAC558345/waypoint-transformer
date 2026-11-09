@@ -11,13 +11,14 @@ import unittest
 import numpy as np
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "src"))
 
-from wt.round19.multi_env import SharedSpectrumMultiUAVEnv, SharedSpectrumOptions, assignment_link_metrics, gain_matrix
-from wt.round20.audit import R19_LOCK_SHA256, permute_buoys, permute_uavs, preflight, split_audit, task_waypoint_audits
-from wt.round20.dataset import BEHAVIORS, build_task_waypoint_samples, plain, run_episode
-from wt.round20.scenarios import development_scenarios, untouched_evaluation_scenarios
+from wt.legacy.shared_spectrum_planning.multi_env import SharedSpectrumMultiUAVEnv, SharedSpectrumOptions, assignment_link_metrics, gain_matrix
+from wt.legacy.multi_uav_task_dataset.audit import R19_LOCK_SHA256, permute_buoys, permute_uavs, preflight, split_audit, task_waypoint_audits
+from wt.legacy.multi_uav_task_dataset.dataset import BEHAVIORS, build_task_waypoint_samples, plain, run_episode
+from wt.legacy.multi_uav_task_dataset.scenarios import development_scenarios, untouched_evaluation_scenarios
+from wt.common.paths import repo_root
 
 
 class Round20MultiUAVDatasetTests(unittest.TestCase):
@@ -34,13 +35,13 @@ class Round20MultiUAVDatasetTests(unittest.TestCase):
         self.assertEqual(hashlib.sha256((ROOT / "round_19/ROUND_LOCK.json").read_bytes()).hexdigest().upper(), R19_LOCK_SHA256)
 
     def test_02_no_optimizer_constructed(self):
-        self.assertNotIn("optimizer", "\n".join(path.read_text(encoding="utf-8") for path in (ROOT / "src/wt/round20").glob("*.py")))
+        self.assertNotIn("optimizer", "\n".join(path.read_text(encoding="utf-8") for path in (ROOT / "src/wt/legacy/multi_uav_task_dataset").glob("*.py")))
 
     def test_03_no_backward_constructed(self):
-        self.assertNotIn("backward", "\n".join(path.read_text(encoding="utf-8") for path in (ROOT / "src/wt/round20").glob("*.py")))
+        self.assertNotIn("backward", "\n".join(path.read_text(encoding="utf-8") for path in (ROOT / "src/wt/legacy/multi_uav_task_dataset").glob("*.py")))
 
     def test_04_no_neural_checkpoint(self):
-        self.assertFalse(list((ROOT / "src/wt/round20").glob("*.pt")))
+        self.assertFalse(list((ROOT / "src/wt/legacy/multi_uav_task_dataset").glob("*.pt")))
 
     def test_05_environment_physics_unchanged(self):
         config = self.shared_scenario.config()
@@ -54,7 +55,7 @@ class Round20MultiUAVDatasetTests(unittest.TestCase):
 
     def test_07_matching_source_unchanged(self):
         lock = json.loads((ROOT / "round_19/ROUND_LOCK.json").read_text(encoding="utf-8"))
-        self.assertEqual(hashlib.sha256((ROOT / "src/wt/round19/multi_env.py").read_bytes()).hexdigest().upper(), lock["source_tree"]["src/wt/round19/multi_env.py"])
+        self.assertEqual(hashlib.sha256((ROOT / "src/wt/legacy/shared_spectrum_planning/multi_env.py").read_bytes()).hexdigest().upper(), lock["source_tree"]["src/wt/legacy/shared_spectrum_planning/multi_env.py"])
 
     def test_08_safety_unchanged(self):
         self.assertEqual(self.shared_scenario.config().multi_uav_min_separation_m, 15.0)
@@ -72,7 +73,7 @@ class Round20MultiUAVDatasetTests(unittest.TestCase):
         self.assertEqual(BEHAVIORS[4].base_horizon, 1)
 
     def test_12_policy_switch_has_no_future_input(self):
-        source = (ROOT / "src/wt/round20/dataset.py").read_text(encoding="utf-8").split("def _switch_base", 1)[1].split("def behavior_action", 1)[0]
+        source = (ROOT / "src/wt/legacy/multi_uav_task_dataset/dataset.py").read_text(encoding="utf-8").split("def _switch_base", 1)[1].split("def behavior_action", 1)[0]
         self.assertNotIn("future", source)
 
     def test_13_random_joint_action_legal(self):
@@ -110,7 +111,7 @@ class Round20MultiUAVDatasetTests(unittest.TestCase):
         k5 = next(item for item in self.scenarios if item.num_buoys == 5 and item.spectrum_tier == "low")
         env = SharedSpectrumMultiUAVEnv(k5.config(), buoy_positions_m=np.asarray(k5.buoy_positions_m), options=k5.options())
         _, info = env.reset(seed=k5.seed)
-        from wt.round20.dataset import build_graph_state
+        from wt.legacy.multi_uav_task_dataset.dataset import build_graph_state
         self.assertEqual(int(np.sum(build_graph_state(info, env.config)["buoy_mask"])), 5)
 
     def test_24_uav_permutation_equivariance(self):
@@ -191,11 +192,11 @@ class Round20MultiUAVDatasetTests(unittest.TestCase):
         self.assertTrue(preflight(ROOT)["round19_verified"])
 
     def test_43_schema_future_variable_m(self):
-        from wt.round20.dataset import graph_schema
+        from wt.legacy.multi_uav_task_dataset.dataset import graph_schema
         self.assertTrue(graph_schema()["future_variable_m_compatible"])
 
     def test_44_compileall(self):
-        self.assertTrue(compileall.compile_dir(str(ROOT / "src/wt/round20"), quiet=1))
+        self.assertTrue(compileall.compile_dir(str(ROOT / "src/wt/legacy/multi_uav_task_dataset"), quiet=1))
 
 
 if __name__ == "__main__":

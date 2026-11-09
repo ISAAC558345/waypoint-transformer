@@ -1,1 +1,0 @@
-"""Stdlib reader for the saved R1 artifacts. This package does not import torch."""

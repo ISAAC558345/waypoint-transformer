@@ -7,7 +7,7 @@ import unittest
 
 import numpy as np
 
-from wt.round14.guidance import (
+from wt.legacy.task_to_motion_mapping.guidance import (
     MAPPING_NAMES,
     MappingResult,
     current_observable_mapping_inputs,
@@ -17,10 +17,10 @@ from wt.round14.guidance import (
     split_task_waypoint,
 )
 
+from wt.common.paths import repo_root
 
-ROOT = Path(__file__).resolve().parents[1]
 
-
+ROOT = repo_root()
 class Round14GuidanceTests(unittest.TestCase):
     """Small pure-function tests: no dataset, checkpoint, optimizer, or rollout."""
 

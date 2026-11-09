@@ -8,9 +8,9 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6h_executor_conditioned_macro.protocol import primary_checkpoint
-from wt.benchmark_v2.phase6iaa_formal_planner.faults import (
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.control.executor.protocol import primary_checkpoint
+from wt.planning.formal_planner.faults import (
     CheckpointError,
     PolicyError,
     RollbackError,
@@ -20,9 +20,9 @@ from wt.benchmark_v2.phase6iaa_formal_planner.faults import (
     rollback_to_baseline,
     verify_checkpoint_file,
 )
-from wt.benchmark_v2.phase6iaa_formal_planner.protocol import MAPPO_SHA256, POLICY_FILE, SCHEME_C_CKPT, SCHEME_C_SHA256, read_policy, write_policy
-from wt.benchmark_v2.phase6iae_deployment_contract.protocol import assign_gate, load_requirements, pending_requirements, status_flags
-from wt.htw_phase100.contract import TaskOption
+from wt.planning.formal_planner.protocol import MAPPO_SHA256, POLICY_FILE, SCHEME_C_CKPT, SCHEME_C_SHA256, read_policy, write_policy
+from wt.legacy.deployment_contract.protocol import assign_gate, load_requirements, pending_requirements, status_flags
+from wt.planning.task_option.contract import TaskOption
 
 
 def _copy_policy(folder: Path) -> Path:
@@ -123,7 +123,7 @@ class Phase6IAEContractTests(unittest.TestCase):
             self.assertEqual(payload["generator"], "G1_RATE")
             self.assertEqual(int(payload["k"]), 6)
             failed = _copy_policy(root)
-            import wt.benchmark_v2.phase6iaa_formal_planner.faults as faults
+            import wt.planning.formal_planner.faults as faults
 
             original = faults.file_sha256
 
@@ -154,7 +154,7 @@ class Phase6IAEFaultInjectionTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        from wt.benchmark_v2.phase6iaa_formal_planner.planner import FormalPlanner
+        from wt.planning.formal_planner.planner import FormalPlanner
 
         cls.official = POLICY_FILE.read_text(encoding="utf-8")
         cls.planner = FormalPlanner("scheme_c")
@@ -166,8 +166,8 @@ class Phase6IAEFaultInjectionTests(unittest.TestCase):
             raise RuntimeError("official policy changed during fault injection")
 
     def _run(self, folder: Path, **patches):
-        from wt.benchmark_v2.phase6iaa_formal_planner.planner import run_closed_episode
-        import wt.benchmark_v2.phase6iaa_formal_planner.planner as planner_mod
+        from wt.planning.formal_planner.planner import run_closed_episode
+        import wt.planning.formal_planner.planner as planner_mod
 
         path = _copy_policy(folder)
         log = folder / "faults.jsonl"

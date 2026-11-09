@@ -4,15 +4,15 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6g_lowlevel_mappo.protocol import assert_allowed
-from wt.benchmark_v2.phase6i_priority_tag_reward_scale_e2.protocol import (
+from wt.control.mappo.protocol import assert_allowed
+from wt.research.priority_tag_reward_scale_e2.protocol import (
     GATE_BLOCKED,
     GATE_INCONCLUSIVE,
     GATE_REPLICATED,
     choose_gate,
 )
-from wt.benchmark_v2.phase6i_priority_tag_reward_scale_e2.rollout import train_scenarios
-from wt.benchmark_v2.phase6i_priority_tag_reward_scale_e2.scale import material_reorder
+from wt.research.priority_tag_reward_scale_e2.rollout import train_scenarios
+from wt.research.priority_tag_reward_scale_e2.scale import material_reorder
 
 
 class RewardScaleE2Test(unittest.TestCase):

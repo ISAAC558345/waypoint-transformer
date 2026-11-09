@@ -4,8 +4,8 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.lowlevel_v2.phase5zi_ranking_failure_audit.metrics import choose_gate
-from wt.lowlevel_v2.phase5zi_ranking_failure_audit.protocol import assert_consumed
+from wt.legacy.ranking_failure_audit.metrics import choose_gate
+from wt.legacy.ranking_failure_audit.protocol import assert_consumed
 
 
 class Phase5ZIRankingFailureAuditTest(unittest.TestCase):
@@ -38,7 +38,7 @@ class Phase5ZIRankingFailureAuditTest(unittest.TestCase):
             assert_consumed(230100)
 
     def test_package_does_not_train_or_call_deployment(self) -> None:
-        root = Path("src/wt/lowlevel_v2/phase5zi_ranking_failure_audit")
+        root = Path("src/wt/legacy/ranking_failure_audit")
         for path in root.glob("*.py"):
             source = path.read_text(encoding="utf-8")
             self.assertNotIn("decide(", source)

@@ -5,8 +5,8 @@ import unittest
 
 import numpy as np
 
-from wt.l3a.env import L3AEnv, conflict_mask, legal_assignment_count
-from wt.l3a.policies import exclusive_myopic_assignment, myopic_assignment, oracle_option_assignment
+from wt.legacy.queue_task_causal_followup.env import L3AEnv, conflict_mask, legal_assignment_count
+from wt.legacy.queue_task_causal_followup.policies import exclusive_myopic_assignment, myopic_assignment, oracle_option_assignment
 
 
 class L3ACausalTests(unittest.TestCase):

@@ -6,11 +6,11 @@ from pathlib import Path
 
 import torch
 
-from wt.lowlevel_v2.phase5t_scorer_failure_audit.represent import assignment_latents
-from wt.lowlevel_v2.phase5y_executor_value_distillation.value import ExecutorConditionedJointValue
-from wt.lowlevel_v2.phase5z_representation_collision_audit.layers import layer_tensors
-from wt.lowlevel_v2.phase5z_representation_collision_audit.metrics import choose_gate
-from wt.lowlevel_v2.phase5z_representation_collision_audit.protocol import assert_consumed
+from wt.legacy.scorer_failure_audit.represent import assignment_latents
+from wt.legacy.executor_value_distillation.value import ExecutorConditionedJointValue
+from wt.legacy.representation_collision_audit.layers import layer_tensors
+from wt.legacy.representation_collision_audit.metrics import choose_gate
+from wt.legacy.representation_collision_audit.protocol import assert_consumed
 
 
 class Phase5ZRepresentationCollisionAuditTest(unittest.TestCase):

@@ -8,15 +8,14 @@ import unittest
 
 import numpy as np
 
-from wt.round15 import ACTION_CANDIDATE_NAMES, finite_lattice_plan, myopic_one_step_greedy
-from wt.round15.audit import _angle_degrees, _bootstrap, _policy_descriptor, _queue_tie_proxy, dispatch_policy_action, preflight
-from wt.round15.planner import _causal_score, action_candidates
-from wt.round15.scenarios import materialize_scenario, planning_scenarios, scenario_manifest_rows
+from wt.legacy.static_planning_headroom import ACTION_CANDIDATE_NAMES, finite_lattice_plan, myopic_one_step_greedy
+from wt.legacy.static_planning_headroom.audit import _angle_degrees, _bootstrap, _policy_descriptor, _queue_tie_proxy, dispatch_policy_action, preflight
+from wt.legacy.static_planning_headroom.planner import _causal_score, action_candidates
+from wt.legacy.static_planning_headroom.scenarios import materialize_scenario, planning_scenarios, scenario_manifest_rows
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
-
-
+ROOT = repo_root()
 class Round15PlanningTests(unittest.TestCase):
     def setUp(self) -> None:
         self.scenario = planning_scenarios()[0]
@@ -112,7 +111,7 @@ class Round15PlanningTests(unittest.TestCase):
         self.assertEqual(manifest["untouched_holdout_access_count"], 1)
 
     def test_025_round15_source_has_no_neural_training_import(self) -> None:
-        source = "\n".join(path.read_text(encoding="utf-8") for path in (ROOT / "src/wt/round15").glob("*.py"))
+        source = "\n".join(path.read_text(encoding="utf-8") for path in (ROOT / "src/wt/legacy/static_planning_headroom").glob("*.py"))
         self.assertNotIn("torch", source)
         self.assertNotIn(".backward(", source)
 

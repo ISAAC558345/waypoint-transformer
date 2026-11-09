@@ -6,14 +6,14 @@ import unittest
 import numpy as np
 import torch
 
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import make_option
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST
-from wt.lowlevel_v2.critic_state import expected_critic_dim
-from wt.lowlevel_v2.phase1.protocol import ALPHA_RESIDUAL
-from wt.lowlevel_v2.residual_policy import CentralizedCritic, ResidualActor
-from wt.benchmark_v2.phase6is2_robust_lowlevel.audit import gae_audit, observation_audit
-from wt.benchmark_v2.phase6is2_robust_lowlevel.protocol import EVAL_POOL, HELD_OUT_SOURCE, TRAIN_SCENARIOS, TRAIN_SOURCES
-from wt.benchmark_v2.phase6is2_robust_lowlevel.worker import RobustTrainWorker
+from wt.control.mappo.worker import make_option
+from wt.models.hgnn_assets.protocol import RESERVED_TEST
+from wt.models.critic_state import expected_critic_dim
+from wt.legacy.historical1.protocol import ALPHA_RESIDUAL
+from wt.control.residual_policy import CentralizedCritic, ResidualActor
+from wt.legacy.robust_lowlevel.audit import gae_audit, observation_audit
+from wt.legacy.robust_lowlevel.protocol import EVAL_POOL, HELD_OUT_SOURCE, TRAIN_SCENARIOS, TRAIN_SOURCES
+from wt.legacy.robust_lowlevel.worker import RobustTrainWorker
 
 
 class _StubSelector:

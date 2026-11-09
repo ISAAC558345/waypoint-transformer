@@ -6,12 +6,12 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase2.tracking import auxiliary_reward, tracking_distance
-from wt.htw_phase2.vector import HierarchicalTrackingVector
-from wt.htwc_phase1.oracle import oracle_conditioner
-from wt.round19.multi_env import SharedSpectrumMultiUAVEnv
-from wt.round30.ppo import PPOAgent
-from wt.round30.scenarios import training_scenarios
+from wt.legacy.htw_historical2.tracking import auxiliary_reward, tracking_distance
+from wt.legacy.htw_historical2.vector import HierarchicalTrackingVector
+from wt.legacy.htwc_historical1.oracle import oracle_conditioner
+from wt.legacy.shared_spectrum_planning.multi_env import SharedSpectrumMultiUAVEnv
+from wt.legacy.deepsets_ppo.ppo import PPOAgent
+from wt.legacy.deepsets_ppo.scenarios import training_scenarios
 
 
 class HTWPhase2OracleControllerTests(unittest.TestCase):
@@ -34,7 +34,7 @@ class HTWPhase2OracleControllerTests(unittest.TestCase):
         self.assertAlmostEqual(tracking_distance(waypoint, waypoint, mask), 0.0)
 
     def test_04_vector_uses_aux_not_env_reward_when_lambda_positive(self) -> None:
-        from wt.htw_phase2.experiment import oracle_low_level_conditioner
+        from wt.legacy.htw_historical2.experiment import oracle_low_level_conditioner
 
         scenario = training_scenarios()[0]
         env = SharedSpectrumMultiUAVEnv(scenario.config(), buoy_positions_m=np.asarray(scenario.buoy_positions_m), options=scenario.options())

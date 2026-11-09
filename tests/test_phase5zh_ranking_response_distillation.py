@@ -7,11 +7,11 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from wt.lowlevel_v2.phase5ze_response_distillation.predictor import OneStepExecutorResponsePredictor
-from wt.lowlevel_v2.phase5ze_response_distillation.tokens import token_dim
-from wt.lowlevel_v2.phase5zh_ranking_response_distillation.loss import pairwise_rank_loss, ranking_pairs
-from wt.lowlevel_v2.phase5zh_ranking_response_distillation.metrics import choose_gate
-from wt.lowlevel_v2.phase5zh_ranking_response_distillation.protocol import (
+from wt.legacy.response_distillation.predictor import OneStepExecutorResponsePredictor
+from wt.legacy.response_distillation.tokens import token_dim
+from wt.legacy.ranking_response_distillation.loss import pairwise_rank_loss, ranking_pairs
+from wt.legacy.ranking_response_distillation.metrics import choose_gate
+from wt.legacy.ranking_response_distillation.protocol import (
     CONFIRM_SCENARIOS,
     LAMBDA_RANK,
     TRAIN_SCENARIOS,
@@ -104,11 +104,11 @@ class Phase5ZHRankingDistillationTest(unittest.TestCase):
         self.assertEqual(sum(parameter.numel() for parameter in model.parameters()), sum(parameter.numel() for parameter in model.parameters()))
 
     def test_loss_keeps_the_response_term(self) -> None:
-        source = Path("src/wt/lowlevel_v2/phase5zh_ranking_response_distillation/run_phase5zh.py").read_text(encoding="utf-8")
+        source = Path("src/wt/legacy/ranking_response_distillation/run_phase5zh.py").read_text(encoding="utf-8")
         self.assertIn("response_loss(", source)
         self.assertIn("regression + float(LAMBDA_RANK) * ranking", source)
         self.assertNotIn("decide(", source)
-        root = Path("src/wt/lowlevel_v2/phase5zh_ranking_response_distillation")
+        root = Path("src/wt/legacy/ranking_response_distillation")
         for path in root.glob("*.py"):
             self.assertNotIn("decide(", path.read_text(encoding="utf-8"))
 

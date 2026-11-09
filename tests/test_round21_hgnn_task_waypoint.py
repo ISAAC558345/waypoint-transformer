@@ -11,14 +11,15 @@ import unittest
 import numpy as np
 import torch
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "src"))
 
-from wt.round21.audits import permutation_audit
-from wt.round21.data import DEV_SPLIT, EXCLUDED_GRAPH_KEYS, EXCLUDED_MODEL_METADATA, GraphNormalizer, SAFE_GRAPH_KEYS, TaskDataset, load_task_samples
-from wt.round21.models import DeepSetsTaskWaypointPredictor, build_model
-from wt.round21.training import TrainConfig, dimensions, task_loss
-from wt.governance_state_sync import verify_round32_round33_lifecycle
+from wt.legacy.hgnn_task_waypoint.audits import permutation_audit
+from wt.legacy.hgnn_task_waypoint.data import DEV_SPLIT, EXCLUDED_GRAPH_KEYS, EXCLUDED_MODEL_METADATA, GraphNormalizer, SAFE_GRAPH_KEYS, TaskDataset, load_task_samples
+from wt.legacy.hgnn_task_waypoint.models import DeepSetsTaskWaypointPredictor, build_model
+from wt.legacy.hgnn_task_waypoint.training import TrainConfig, dimensions, task_loss
+from wt.legacy.historical_governance.sync import verify_round32_round33_lifecycle
+from wt.common.paths import repo_root
 
 CONFIG = json.loads((ROOT / "round_21/configs/round21_training_config.json").read_text(encoding="utf-8"))
 
@@ -47,7 +48,7 @@ class Round21HGNNTests(unittest.TestCase):
         lock = json.loads((ROOT / "round_20/ROUND_LOCK.json").read_text(encoding="utf-8"))
         for group, prefix in (("configuration_hashes", ROOT / "round_20"), ("source_tree", ROOT), ("output_hashes", ROOT / lock["formal_output"]), ("figure_hashes", ROOT / lock["figure_directory"])):
             for relative, expected in lock[group].items():
-                if relative in {"tests/test_round19_shared_spectrum.py", "src/wt/round20/audit.py"}:
+                if relative in {"tests/test_round19_shared_spectrum.py", "src/wt/legacy/multi_uav_task_dataset/audit.py"}:
                     verify_round32_round33_lifecycle()
                     continue
                 self.assertEqual(hashlib.sha256((prefix / relative).read_bytes()).hexdigest().upper(), expected)

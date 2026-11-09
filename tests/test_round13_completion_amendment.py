@@ -8,25 +8,25 @@ import json
 
 import numpy as np
 
-from wt.round12.contracts import sha256
-from wt.round13.amendment import (
+from wt.legacy.task_waypoint_policy.contracts import sha256
+from wt.legacy.service_action_controllability.amendment import (
     ORIGINAL_OUTPUT,
     _file_hashes,
     _hstep_return_rows,
     _round12_integrity,
     _scenario_mechanisms,
 )
-from wt.round13.audit import _validation_scenarios
-from wt.round13.service_decoder import (
+from wt.legacy.service_action_controllability.audit import _validation_scenarios
+from wt.legacy.service_action_controllability.service_decoder import (
     allocate_payload,
     continuous_priority_from_current_state,
     masked_simplex,
 )
 
+from wt.common.paths import repo_root
 
-ROOT = Path(__file__).resolve().parents[1]
 
-
+ROOT = repo_root()
 class Round13CompletionAmendmentContracts(unittest.TestCase):
     def test_01_masked_simplex_rejects_padding_mass(self) -> None:
         self.assertTrue(np.allclose(masked_simplex(np.array([1.0, 3.0, 0.0]), np.array([True, True, False])), [0.25, 0.75, 0.0]))

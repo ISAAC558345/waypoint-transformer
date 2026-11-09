@@ -5,8 +5,8 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, VALIDATION_POOL
-from wt.benchmark_v2.phase6in_pair_attribution.audit import _key, assign_gate
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, VALIDATION_POOL
+from wt.legacy.pair_attribution.audit import _key, assign_gate
 
 
 class Phase6INAttributionTests(unittest.TestCase):

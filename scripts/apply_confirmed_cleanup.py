@@ -7,8 +7,9 @@ from __future__ import annotations
 import hashlib
 import shutil
 from pathlib import Path
+from wt.common.paths import repo_root
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 REPORTS = ROOT / "docs" / "archive" / "reports"
 MERGED = ROOT / "docs" / "archive" / "merged"
 TABLES = ROOT / "docs" / "archive" / "tables"

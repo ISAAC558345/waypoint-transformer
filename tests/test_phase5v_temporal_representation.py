@@ -7,13 +7,14 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.l3b.config import L3BConfig
-from wt.lowlevel_v2.phase5v_temporal_representation.metrics import choose_gate
-from wt.lowlevel_v2.phase5v_temporal_representation.protocol import TEMP_INPUT_DIM, assert_consumed
-from wt.lowlevel_v2.phase5v_temporal_representation.temporal import observability_rows, temporal_matrix
+from wt.envs.queue.config import L3BConfig
+from wt.legacy.temporal_representation.metrics import choose_gate
+from wt.legacy.temporal_representation.protocol import TEMP_INPUT_DIM, assert_consumed
+from wt.legacy.temporal_representation.temporal import observability_rows, temporal_matrix
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5v_temporal_representation"
 
 
@@ -135,10 +136,10 @@ class Phase5VTests(unittest.TestCase):
                     called.append(node.func.id)
         self.assertNotIn("decide", called)
         for relative in (
-            "src/wt/htw_phase100/high_level.py",
-            "src/wt/lowlevel_v2/residual_policy.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/reward.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/planner.py",
+            "src/wt/planning/task_option/high_level.py",
+            "src/wt/control/residual_policy.py",
+            "src/wt/research/hgnn_urgency/reward.py",
+            "src/wt/research/hgnn_urgency/planner.py",
         ):
             self.assertNotIn("phase5v", (ROOT / relative).read_text(encoding="utf-8"))
 

@@ -7,19 +7,19 @@ import unittest
 import numpy as np
 import torch
 
-from wt.benchmark_v2.phase6h_executor_conditioned_macro.protocol import primary_checkpoint
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST
-from wt.benchmark_v2.phase6ik_lowlevel_opt.protocol import EVAL_POOL, SOURCE_ACTOR, TRAIN_POOL
-from wt.benchmark_v2.phase6ik_lowlevel_opt.scale import (
+from wt.control.executor.protocol import primary_checkpoint
+from wt.models.hgnn_assets.protocol import RESERVED_TEST
+from wt.legacy.lowlevel_opt.protocol import EVAL_POOL, SOURCE_ACTOR, TRAIN_POOL
+from wt.legacy.lowlevel_opt.scale import (
     actor_feature_scales,
     critic_feature_scales,
     fold_scales_into_actor,
     neighbor_edge_scales,
     scale_actor_observation,
 )
-from wt.l3b.config import L3BConfig
-from wt.lowlevel_v2.critic_state import expected_critic_dim
-from wt.lowlevel_v2.residual_policy import ResidualActor
+from wt.envs.queue.config import L3BConfig
+from wt.models.critic_state import expected_critic_dim
+from wt.control.residual_policy import ResidualActor
 
 
 class Phase6IKScaleTests(unittest.TestCase):

@@ -12,13 +12,14 @@ import unittest
 
 import numpy as np
 
-from wt.round19.multi_env import SharedSpectrumMultiUAVEnv
-from wt.round30.ppo import compute_gae
-from wt.round30.scenarios import validation_scenarios
-from wt.round31 import audit
+from wt.legacy.shared_spectrum_planning.multi_env import SharedSpectrumMultiUAVEnv
+from wt.algorithms.ppo_common import compute_gae
+from wt.legacy.deepsets_ppo.scenarios import validation_scenarios
+from wt.legacy.ppo_failure_analysis import audit
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 OUTPUT = ROOT / "round_31" / "outputs" / "round31_ppo_failure_diagnosis_20260830_2116"
 FIGURES = ROOT / "round_31" / "figures" / "round31_ppo_failure_diagnosis_20260830_2116"
 R30_LOCK_SHA = "7A2591574DC52C286018A19B12C7787546C0C0E3983FA5664A8C6CB19D338125"
@@ -39,16 +40,16 @@ class Round31PPOFailureDiagnosisTests(unittest.TestCase):
         self.assertTrue(json.loads((OUTPUT / "access_audit.json").read_text(encoding="utf-8"))["round30_hashes_before_after_match"])
 
     def test_02_no_optimizer_update_or_backward(self) -> None:
-        tree = ast.parse((ROOT / "src/wt/round31/audit.py").read_text(encoding="utf-8"))
+        tree = ast.parse((ROOT / "src/wt/legacy/ppo_failure_analysis/audit.py").read_text(encoding="utf-8"))
         calls = [node.func.attr for node in ast.walk(tree) if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)]
         self.assertNotIn("backward", calls)
         self.assertNotIn("zero_grad", calls)
-        self.assertNotIn("torch.optim", (ROOT / "src/wt/round31/audit.py").read_text(encoding="utf-8"))
+        self.assertNotIn("torch.optim", (ROOT / "src/wt/legacy/ppo_failure_analysis/audit.py").read_text(encoding="utf-8"))
         run = json.loads((OUTPUT / "run_manifest.json").read_text(encoding="utf-8"))
         self.assertEqual((run["optimizer_update_count"], run["backward_pass_count"]), (0, 0))
 
     def test_03_no_training_or_checkpoint_write(self) -> None:
-        source = (ROOT / "src/wt/round31/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/ppo_failure_analysis/audit.py").read_text(encoding="utf-8")
         for forbidden in ("torch.save(", "optimizer.step(", ".backward("):
             self.assertNotIn(forbidden, source)
         run = json.loads((OUTPUT / "run_manifest.json").read_text(encoding="utf-8"))
@@ -103,11 +104,11 @@ class Round31PPOFailureDiagnosisTests(unittest.TestCase):
         access = json.loads((OUTPUT / "access_audit.json").read_text(encoding="utf-8"))
         self.assertEqual(access["fresh_new_rollout_count"], 0); self.assertEqual(access["untouched_eval_access_count"], 0)
         self.assertFalse(access["untouched_eval_accessed"])
-        source = (ROOT / "src/wt/round31/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/ppo_failure_analysis/audit.py").read_text(encoding="utf-8")
         self.assertNotIn("fresh_scenarios", source)
 
     def test_12_no_hgnn_transformer_actor_or_task_waypoint(self) -> None:
-        source = (ROOT / "src/wt/round31/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/ppo_failure_analysis/audit.py").read_text(encoding="utf-8")
         self.assertNotIn("torch_geometric", source)
         self.assertNotIn("build_policy(", source)
         self.assertNotIn("Task-Waypoint", (ROOT / "round_31" / "AGENTS.md").read_text(encoding="utf-8").replace("Task-Waypoint", ""))
@@ -127,7 +128,7 @@ class Round31PPOFailureDiagnosisTests(unittest.TestCase):
         self.assertGreaterEqual(len(list(FIGURES.glob("*.png"))), 18); self.assertGreaterEqual(len(list(FIGURES.glob("*.svg"))), 18)
 
     def test_15_round31_sources_compile_and_legal_round32_successor(self) -> None:
-        for path in (ROOT / "src/wt/round31").glob("*.py"):
+        for path in (ROOT / "src/wt/legacy/ppo_failure_analysis").glob("*.py"):
             compile(path.read_text(encoding="utf-8"), path.as_posix(), "exec")
         successor = ROOT / "round_32"
         if successor.exists():

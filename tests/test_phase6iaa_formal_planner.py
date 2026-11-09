@@ -7,11 +7,11 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6f_system_bringup.episode import _contamination, _fingerprint
-from wt.benchmark_v2.phase6f_system_bringup.protocol import CANDIDATE_K
-from wt.benchmark_v2.phase6iaa_formal_planner.planner import accept_scored_row, graph_from_env
-from wt.benchmark_v2.phase6iaa_formal_planner.protocol import (
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.evaluation.closed_loop.episode import _contamination, _fingerprint
+from wt.evaluation.closed_loop.protocol import CANDIDATE_K
+from wt.planning.formal_planner.planner import accept_scored_row, graph_from_env
+from wt.planning.formal_planner.protocol import (
     HISTORICAL_FORMAL_K,
     assert_scenario,
     assign_gate,
@@ -19,9 +19,9 @@ from wt.benchmark_v2.phase6iaa_formal_planner.protocol import (
     status_flags,
     write_policy,
 )
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import GRAPH_KEYS
-from wt.benchmark_v2.phase6iw_inference_adapter.interface import stable_choice
-from wt.htw_phase9.const import EDGE_UB_DIM
+from wt.models.hgnn_assets.protocol import GRAPH_KEYS
+from wt.planning.scheme_c_inference.interface import stable_choice
+from wt.models.edge_bound.const import EDGE_UB_DIM
 
 
 class Phase6IAAFormalPlannerTests(unittest.TestCase):

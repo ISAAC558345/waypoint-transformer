@@ -5,11 +5,11 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6e.generators import is_legal
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, VALIDATION_POOL
-from wt.benchmark_v2.phase6ij_executor_audit.audit import buoy_set
-from wt.benchmark_v2.phase6ik_execution_closure.audit import vector_hamming
-from wt.benchmark_v2.phase6im_local_swap.audit import assign_gate, single_swaps, transposition_distance, two_swap_assignments
+from wt.planning.candidate_generation.generators import is_legal
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, VALIDATION_POOL
+from wt.legacy.executor_audit.audit import buoy_set
+from wt.legacy.execution_closure.audit import vector_hamming
+from wt.legacy.local_swap.audit import assign_gate, single_swaps, transposition_distance, two_swap_assignments
 
 
 class Phase6IMLocalSwapTests(unittest.TestCase):

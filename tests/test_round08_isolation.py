@@ -4,9 +4,9 @@ import tempfile,unittest
 from pathlib import Path
 import numpy as np
 import torch
-from wt.round5.causal_policy import CausalPolicyConfig,CausalTrajectoryPolicy,masked_action_mse
-from wt.round8.holdout_guard import HoldoutAccessError,HoldoutAccessGuard
-from wt.round8.round8_runner import CONTEXT,GOAL_DIM,HORIZONS,MAX_BUOYS,SEEDS,STATE_DIM,VARIANTS,_kind
+from wt.legacy.causal_offline_policy.causal_policy import CausalPolicyConfig,CausalTrajectoryPolicy,masked_action_mse
+from wt.legacy.spatial_waypoint_retraining.holdout_guard import HoldoutAccessError,HoldoutAccessGuard
+from wt.legacy.spatial_waypoint_retraining.round8_runner import CONTEXT,GOAL_DIM,HORIZONS,MAX_BUOYS,SEEDS,STATE_DIM,VARIANTS,_kind
 
 class Round08Smoke(unittest.TestCase):
     def test_01_goal_dimension(self):self.assertEqual(GOAL_DIM,3)

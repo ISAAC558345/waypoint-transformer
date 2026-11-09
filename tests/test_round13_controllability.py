@@ -7,7 +7,7 @@ import unittest
 
 import numpy as np
 
-from wt.round13.audit import (
+from wt.legacy.service_action_controllability.audit import (
     _action_set,
     _check_round12_lock,
     _new_policy,
@@ -16,16 +16,16 @@ from wt.round13.audit import (
     _state_hash,
     _validation_scenarios,
 )
-from wt.round13.contracts import (
+from wt.legacy.service_action_controllability.contracts import (
     current_state_service_heuristic,
     discrete_service_fractions,
     valid_masked_priority_fractions,
 )
 
+from wt.common.paths import repo_root
 
-ROOT = Path(__file__).resolve().parents[1]
 
-
+ROOT = repo_root()
 class Round13ControllabilityContracts(unittest.TestCase):
     def test_01_masked_simplex_keeps_padding_zero(self) -> None:
         result = valid_masked_priority_fractions(np.array([2.0, 6.0, 7.0]), np.array([True, True, False]))
@@ -96,7 +96,7 @@ class Round13ControllabilityContracts(unittest.TestCase):
         self.assertTrue(np.isfinite(rollout["H_step_return"]))
 
     def test_11_round13_module_has_no_learning_or_other_systems(self) -> None:
-        source = (ROOT / "src/wt/round13/audit.py").read_text(encoding="utf-8").lower()
+        source = (ROOT / "src/wt/legacy/service_action_controllability/audit.py").read_text(encoding="utf-8").lower()
         for forbidden in ("import torch", "torch.", ".backward(", "torch.optim", "from hgnn", "from ppo", "multi-uav"):
             self.assertNotIn(forbidden, source)
         self.assertNotIn(".train(", source)

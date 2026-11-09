@@ -5,8 +5,8 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, VALIDATION_POOL
-from wt.benchmark_v2.phase6ij_executor_audit.audit import assign_gate, buoy_set, pair_ok
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, VALIDATION_POOL
+from wt.legacy.executor_audit.audit import assign_gate, buoy_set, pair_ok
 
 
 class Phase6IJExecutorTests(unittest.TestCase):

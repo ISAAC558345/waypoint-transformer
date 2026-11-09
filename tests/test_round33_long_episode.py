@@ -7,9 +7,10 @@ import json
 from collections import Counter
 from pathlib import Path
 import unittest
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 ROUND = ROOT / "round_33"
 OUTPUT = ROUND / "outputs" / "round33_long_episode_benchmark_20260830_2320"
 FIGURES = ROUND / "figures" / "round33_long_episode_benchmark_20260830_2320"
@@ -34,7 +35,7 @@ class Round33LongEpisodeTests(unittest.TestCase):
         self.assertEqual(digest(ROOT / "round_32/ROUND_LOCK.json"), R32)
 
     def test_02_snapshot_preserves_preextension_planner(self) -> None:
-        self.assertEqual(digest(ROOT / "backup/snapshots/before_round_33_20260830_2320/src/wt/round19/planner.py"), "C7B7A8F78E787BC5DECC77676985F5864E01AE9DE6C198E45D5A96CBCA419FA5")
+        self.assertEqual(digest(ROOT / "backup/snapshots/before_round_33_20260830_2320/src/wt/legacy/shared_spectrum_planning/planner.py"), "C7B7A8F78E787BC5DECC77676985F5864E01AE9DE6C198E45D5A96CBCA419FA5")
 
     def test_03_round_agent_contract_prohibits_learning(self) -> None:
         text = (ROUND / "AGENTS.md").read_text(encoding="utf-8").lower()
@@ -44,7 +45,7 @@ class Round33LongEpisodeTests(unittest.TestCase):
         self.assertEqual(load("round33_long_episode_config.json")["episode_horizon"], 20)
 
     def test_05_h20_is_a_supported_frozen_search_depth(self) -> None:
-        from wt.round19.planner import PLANNING_HORIZONS
+        from wt.legacy.shared_spectrum_planning.planner import PLANNING_HORIZONS
         self.assertEqual(PLANNING_HORIZONS, (1, 5, 10, 20))
 
     def test_06_planner_integrity_limits_the_authorized_change(self) -> None:

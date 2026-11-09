@@ -8,17 +8,16 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.final.constants import DEFAULT_DEMO_SEED, EXPECTED_HIGH_SHA, HOLD, IDLE_INDEX, UNTOUCHED_SEEDS
-from wt.final.pipeline import load_final_model, refuse_untouched, run_final_hier
-from wt.htw_phase100.rule_executor import RuleExecutorAdapter
-from wt.htw_phase103.gate import InRangeZeroMotionGate
-from wt.l3b.env import L3BEnv, conflict_mask
-from wt.l3b.policies import fly_toward
+from wt.legacy.final_bootstrap.constants import DEFAULT_DEMO_SEED, EXPECTED_HIGH_SHA, HOLD, IDLE_INDEX, UNTOUCHED_SEEDS
+from wt.legacy.final_bootstrap.pipeline import load_final_model, refuse_untouched, run_final_hier
+from wt.planning.task_option.rule_executor import RuleExecutorAdapter
+from wt.legacy.htw_historical103.gate import InRangeZeroMotionGate
+from wt.envs.queue.env import L3BEnv, conflict_mask
+from wt.envs.queue.policies import fly_toward
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
-
-
+ROOT = repo_root()
 class Phase11Tests(unittest.TestCase):
     def test_01_checkpoint_sha(self) -> None:
         model, digest = load_final_model()
@@ -57,7 +56,7 @@ class Phase11Tests(unittest.TestCase):
         assignment = np.array([0, 1, 2, 3, 4, 5], dtype=np.int64)
         move = fly_toward(env, assignment)
         self.assertEqual(move.shape, (6, 2))
-        from wt.htw_phase100.contract import TaskOption
+        from wt.planning.task_option.contract import TaskOption
 
         option = TaskOption(assignment, 0, 15, np.ones(6, dtype=bool), np.ones(12, dtype=bool), assignment.copy())
         raw = RuleExecutorAdapter().act(env, option)
@@ -73,7 +72,7 @@ class Phase11Tests(unittest.TestCase):
         env = L3BEnv()
         env.reset(seed=8)
         assignment = np.full(6, -1, dtype=np.int64)
-        from wt.htw_phase100.contract import TaskOption
+        from wt.planning.task_option.contract import TaskOption
 
         option = TaskOption(assignment, 0, 15, np.ones(6, dtype=bool), np.ones(12, dtype=bool), assignment.copy())
         raw = RuleExecutorAdapter().act(env, option)
@@ -91,7 +90,7 @@ class Phase11Tests(unittest.TestCase):
             if isinstance(node, ast.ImportFrom) and node.module:
                 imported.append(node.module)
         self.assertFalse(any("l3b.env" in name or name.endswith("env") and "l3b" in name for name in imported))
-        self.assertNotIn("wt.l3b.env", source)
+        self.assertNotIn("wt.envs.queue.env", source)
         self.assertNotIn("L3BEnv", source)
 
     def test_08_demo_refuses_untouched(self) -> None:
@@ -102,7 +101,7 @@ class Phase11Tests(unittest.TestCase):
             run_final_hier(106000)
 
     def test_09_config_matches_phase106(self) -> None:
-        from wt.l3b.config import L3BConfig
+        from wt.envs.queue.config import L3BConfig
 
         cfg = L3BConfig()
         self.assertEqual(cfg.num_uavs, 6)

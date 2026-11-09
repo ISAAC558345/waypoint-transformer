@@ -5,8 +5,8 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase51.models import OptionActorCritic
-from wt.htw_phase51.option import (
+from wt.legacy.htw_historical51.models import OptionActorCritic
+from wt.legacy.htw_historical51.option import (
     IDLE_INDEX,
     OPTION_DIM,
     OPTION_UAV_DIM,
@@ -14,9 +14,9 @@ from wt.htw_phase51.option import (
     encode_option,
     oracle_assignment,
 )
-from wt.round19.multi_env import SharedSpectrumMultiUAVEnv
-from wt.round30.features import UAV_DIM
-from wt.round30.scenarios import training_scenarios
+from wt.legacy.shared_spectrum_planning.multi_env import SharedSpectrumMultiUAVEnv
+from wt.legacy.deepsets_ppo.features import UAV_DIM
+from wt.legacy.deepsets_ppo.scenarios import training_scenarios
 
 
 class HTWPhase51OracleOptionTests(unittest.TestCase):

@@ -7,13 +7,13 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from wt.lowlevel_v2.phase5ze_response_distillation.metrics import choose_gate, retention_ratio
-from wt.lowlevel_v2.phase5ze_response_distillation.predictor import (
+from wt.legacy.response_distillation.metrics import choose_gate, retention_ratio
+from wt.legacy.response_distillation.predictor import (
     OneStepExecutorResponsePredictor,
     response_loss,
 )
-from wt.lowlevel_v2.phase5ze_response_distillation.protocol import BINARY_FEATURES, RESPONSE_FEATURES, assert_consumed
-from wt.lowlevel_v2.phase5ze_response_distillation.tokens import build_tokens, token_dim
+from wt.legacy.response_distillation.protocol import BINARY_FEATURES, RESPONSE_FEATURES, assert_consumed
+from wt.legacy.response_distillation.tokens import build_tokens, token_dim
 
 
 class Phase5ZEResponseDistillationTest(unittest.TestCase):
@@ -35,7 +35,7 @@ class Phase5ZEResponseDistillationTest(unittest.TestCase):
         self.assertEqual(int(model.response[-1].out_features), len(RESPONSE_FEATURES))
 
     def test_loss_uses_huber_and_bce_without_j15(self) -> None:
-        source = Path("src/wt/lowlevel_v2/phase5ze_response_distillation/predictor.py").read_text(encoding="utf-8")
+        source = Path("src/wt/legacy/response_distillation/predictor.py").read_text(encoding="utf-8")
         self.assertNotIn("j_mappo", source)
         self.assertNotIn("j15", source.lower())
         prediction = torch.zeros(2, 6, len(RESPONSE_FEATURES))
@@ -77,7 +77,7 @@ class Phase5ZEResponseDistillationTest(unittest.TestCase):
             assert_consumed(230100)
 
     def test_package_does_not_call_deployment_decide(self) -> None:
-        root = Path("src/wt/lowlevel_v2/phase5ze_response_distillation")
+        root = Path("src/wt/legacy/response_distillation")
         text = "\n".join(path.read_text(encoding="utf-8") for path in root.glob("*.py"))
         self.assertNotIn("decide(", text)
         self.assertIn("Adam", text)

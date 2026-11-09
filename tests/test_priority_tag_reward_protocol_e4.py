@@ -4,7 +4,7 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6i_priority_tag_reward_protocol_e4.protocol import (
+from wt.research.priority_tag_reward_protocol_e4.protocol import (
     CANDIDATE_STATUS,
     E3_GATE,
     GATE_BLOCKED,
@@ -13,7 +13,7 @@ from wt.benchmark_v2.phase6i_priority_tag_reward_protocol_e4.protocol import (
     OWNER_APPROVED,
     choose_gate,
 )
-from wt.benchmark_v2.phase6i_priority_tag_reward_protocol_e4.report import render_report
+from wt.research.priority_tag_reward_protocol_e4.report import render_report
 
 
 class RewardProtocolE4Test(unittest.TestCase):

@@ -4,8 +4,8 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6i_priority_tag_reward_form_e3.compare import capped_bonus, payload_step_reorder, reward_reorder
-from wt.benchmark_v2.phase6i_priority_tag_reward_form_e3.protocol import (
+from wt.research.priority_tag_reward_form_e3.compare import capped_bonus, payload_step_reorder, reward_reorder
+from wt.research.priority_tag_reward_form_e3.protocol import (
     GATE_BLOCKED,
     GATE_INCONCLUSIVE,
     GATE_READY,

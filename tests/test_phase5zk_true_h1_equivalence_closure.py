@@ -4,10 +4,10 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.l3b.env import L3BEnv, hypothetical_rates
-from wt.lowlevel_v2.phase5x_executor_lookahead.shadow import fingerprint, max_abs_diff
-from wt.lowlevel_v2.phase5zk_true_h1_equivalence_closure.metrics import choose_gate, combined_limit, within_combined
-from wt.lowlevel_v2.phase5zk_true_h1_equivalence_closure.protocol import (
+from wt.envs.queue.env import L3BEnv, hypothetical_rates
+from wt.legacy.executor_lookahead.shadow import fingerprint, max_abs_diff
+from wt.legacy.true_h1_equivalence_closure.metrics import choose_gate, combined_limit, within_combined
+from wt.legacy.true_h1_equivalence_closure.protocol import (
     ATOL,
     DEPLOYMENT_VERIFIED,
     FROZEN_FOR_FRESH_CONFIRMATION,

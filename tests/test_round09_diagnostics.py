@@ -1,6 +1,6 @@
 import json,unittest
 from pathlib import Path
-from wt.round9.diagnostics import _bootstrap
+from wt.legacy.waypoint_mechanism_diagnosis.diagnostics import _bootstrap
 ROOT=Path(__file__).resolve().parents[1]
 class Round09Diagnostics(unittest.TestCase):
     def test_01_bootstrap_finite(self):self.assertTrue(all(v==v for v in _bootstrap(__import__('numpy').array([1.,2.,3.])).values() if isinstance(v,float)))

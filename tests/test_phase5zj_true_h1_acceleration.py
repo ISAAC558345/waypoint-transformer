@@ -6,10 +6,10 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.l3b.env import L3BEnv
-from wt.lowlevel_v2.phase5zj_true_h1_acceleration.fast_path import info_without_counterfactual, observation_gap
-from wt.lowlevel_v2.phase5zj_true_h1_acceleration.metrics import choose_gate
-from wt.lowlevel_v2.phase5zj_true_h1_acceleration.protocol import (
+from wt.envs.queue.env import L3BEnv
+from wt.legacy.true_h1_acceleration.fast_path import info_without_counterfactual, observation_gap
+from wt.legacy.true_h1_acceleration.metrics import choose_gate
+from wt.legacy.true_h1_acceleration.protocol import (
     ATOL,
     DEPLOYMENT_VERIFIED,
     FROZEN_FOR_FRESH_CONFIRMATION,

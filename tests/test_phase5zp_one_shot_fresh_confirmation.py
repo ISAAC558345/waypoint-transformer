@@ -4,7 +4,7 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.lowlevel_v2.phase5zp_one_shot_fresh_confirmation.protocol import (
+from wt.legacy.one_shot_fresh_confirmation.protocol import (
     FRESH_POOL,
     choose_gate,
     confirmation_may_start,

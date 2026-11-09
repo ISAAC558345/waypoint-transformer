@@ -5,10 +5,11 @@ import ast
 import unittest
 from pathlib import Path
 
-from wt.lowlevel_v2.phase5c_utility_audit.protocol import assert_audit_seed
+from wt.legacy.utility_audit.protocol import assert_audit_seed
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 AUDIT = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5c_utility_audit" / "audit.py"
 
 

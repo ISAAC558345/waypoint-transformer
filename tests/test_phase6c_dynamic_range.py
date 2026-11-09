@@ -5,10 +5,10 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6c.channel import hypothetical_match, rates_match_environment
-from wt.benchmark_v2.phase6c.controllers import one_step_optima, random_legal
-from wt.benchmark_v2.phase6c.protocol import assert_development, choose_gate
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.legacy.historical6c.channel import hypothetical_match, rates_match_environment
+from wt.legacy.historical6c.controllers import one_step_optima, random_legal
+from wt.legacy.historical6c.protocol import assert_development, choose_gate
 
 
 class Phase6CTests(unittest.TestCase):

@@ -4,8 +4,8 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6iaa_formal_planner.protocol import POLICY_FILE, assert_episode_scenario, assert_scenario
-from wt.benchmark_v2.phase6iac_independent_holdout.protocol import (
+from wt.planning.formal_planner.protocol import POLICY_FILE, assert_episode_scenario, assert_scenario
+from wt.legacy.independent_holdout.protocol import (
     BIT_TIE,
     BOOTSTRAP_DRAWS,
     BOOTSTRAP_SEED,
@@ -14,7 +14,7 @@ from wt.benchmark_v2.phase6iac_independent_holdout.protocol import (
     assert_output_path,
     assign_gate,
 )
-from wt.benchmark_v2.phase6ib_highlevel_dataset.protocol import TRAIN_POOL, VALIDATION_POOL
+from wt.data.highlevel_graphs.protocol import TRAIN_POOL, VALIDATION_POOL
 
 
 class Phase6IACIndependentHoldoutTests(unittest.TestCase):

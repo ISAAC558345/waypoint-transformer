@@ -3,11 +3,11 @@ from __future__ import annotations
 
 import unittest
 
-from wt.htwc_phase1.adapter import CONDITIONED_UAV_DIM
-from wt.htwc_phase1.conditioned_actor import GoalConditionedActorCritic
-from wt.round30.features import UAV_DIM
-from wt.round30.models import DeepSetsActorCritic
-from wt.round30.ppo import PPOAgent
+from wt.legacy.htwc_historical1.adapter import CONDITIONED_UAV_DIM
+from wt.legacy.htwc_historical1.conditioned_actor import GoalConditionedActorCritic
+from wt.legacy.deepsets_ppo.features import UAV_DIM
+from wt.legacy.deepsets_ppo.models import DeepSetsActorCritic
+from wt.legacy.deepsets_ppo.ppo import PPOAgent
 
 
 class HTWPhase3GoalConditionedTests(unittest.TestCase):

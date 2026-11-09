@@ -4,7 +4,7 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.lowlevel_v2.phase5zq_confirmation_failure_attribution.protocol import (
+from wt.legacy.confirmation_failure_attribution.protocol import (
     PHASE5ZP_GATE,
     choose_gate,
     conservation_error,

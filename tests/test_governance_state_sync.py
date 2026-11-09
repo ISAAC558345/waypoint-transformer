@@ -7,10 +7,11 @@ import sys
 import unittest
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "src"))
 
-from wt.governance_state_sync import verify_round22_governance_state_sync_amendment
+from wt.legacy.historical_governance.sync import verify_round22_governance_state_sync_amendment
+from wt.common.paths import repo_root
 
 
 def current_fields() -> tuple[str, dict[str, str]]:

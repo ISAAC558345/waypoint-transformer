@@ -4,17 +4,18 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.lowlevel_v2.phase5zl_shadow_hierarchical_integration.protocol import (
+from wt.legacy.shadow_hierarchical_integration.protocol import (
     DEPLOYMENT_VERIFIED,
     FORBIDDEN,
     PLANNER_READY,
     assert_consumed,
     choose_gate,
 )
-from wt.lowlevel_v2.phase5zl_shadow_hierarchical_integration.shadow import select_index
+from wt.legacy.shadow_hierarchical_integration.shadow import select_index
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5zl_shadow_hierarchical_integration"
 
 

@@ -5,11 +5,11 @@ import unittest
 
 import torch
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
-from wt.benchmark_v2.phase6is_assignment_head.loss import pairwise_rank_loss
-from wt.benchmark_v2.phase6iu_pairwise_head.head import PairwiseInteractionHead, symmetric_pair_features
-from wt.benchmark_v2.phase6iu_pairwise_head.protocol import LAMBDA_PAIR, SEEDS, assign_gate, seed_supported
-from wt.lowlevel_v2.phase5k_joint_decoder.loss import joint_rank_loss
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
+from wt.models.assignment_head.loss import pairwise_rank_loss
+from wt.legacy.pairwise_head.head import PairwiseInteractionHead, symmetric_pair_features
+from wt.legacy.pairwise_head.protocol import LAMBDA_PAIR, SEEDS, assign_gate, seed_supported
+from wt.models.joint_decoder.loss import joint_rank_loss
 
 
 class Phase6IUPairwiseHeadTests(unittest.TestCase):

@@ -9,16 +9,16 @@ import unittest
 import numpy as np
 import torch
 
-from wt.round12.contracts import (
+from wt.legacy.task_waypoint_policy.contracts import (
     PREDICTOR_SHA256,
     assert_predictor_frozen,
     load_frozen_predictor,
     predicted_phi,
     sha256,
 )
-from wt.round12.data import ROUND12_EPISODE_HORIZON, Round12TransitionSplit
-from wt.round12.formal import _paired_statistics, _parse_scenario
-from wt.round12.policy_models import (
+from wt.legacy.task_waypoint_policy.data import ROUND12_EPISODE_HORIZON, Round12TransitionSplit
+from wt.legacy.task_waypoint_policy.formal import _paired_statistics, _parse_scenario
+from wt.legacy.task_waypoint_policy.policy_models import (
     ORACLE_TASK_WAYPOINT_TRANSFORMER,
     PREDICTED_TASK_WAYPOINT_TRANSFORMER,
     STATE_ONLY_TRANSFORMER,
@@ -28,14 +28,13 @@ from wt.round12.policy_models import (
     mask_phi,
     rollout_action,
 )
-from wt.round12.sampler import ScenarioBehaviorBalancedSampler
-from wt.round12.sequence import build_causal_sequence_split, causal_attention_mask
-from wt.round12.trainer import Round12PolicyTrainer, Round12TrainingConfig
+from wt.legacy.task_waypoint_policy.sampler import ScenarioBehaviorBalancedSampler
+from wt.legacy.task_waypoint_policy.sequence import build_causal_sequence_split, causal_attention_mask
+from wt.legacy.task_waypoint_policy.trainer import Round12PolicyTrainer, Round12TrainingConfig
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
-
-
+ROOT = repo_root()
 def _transitions(split: str = "train") -> Round12TransitionSplit:
     # Two scenario/behaviour strata plus a synthetic terminal boundary inside
     # ep-a, which makes history-reset behaviour directly observable.

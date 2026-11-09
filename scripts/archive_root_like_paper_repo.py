@@ -8,8 +8,9 @@ from __future__ import annotations
 import re
 import shutil
 from pathlib import Path
+from wt.common.paths import repo_root
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 REPORTS = ROOT / "docs" / "archive" / "phase_reports"
 EXPORTS = ROOT / "results" / "root_exports"
 KEEP_FILES = {
@@ -39,20 +40,20 @@ KEEP_DIRS = {
     "tests",
 }
 PUBLISH_FILES = {
-    "src/wt/lowlevel_v2/integration_phase1/run_compat.py",
-    "src/wt/lowlevel_v2/integration_phase2/run_phase2.py",
-    "src/wt/lowlevel_v2/integration_phase2a/run_audit.py",
-    "src/wt/lowlevel_v2/integration_phase2b/run_phase2b.py",
-    "src/wt/lowlevel_v2/integration_phase2c/run_phase2c.py",
-    "src/wt/lowlevel_v2/integration_phase2d/run_phase2d.py",
-    "src/wt/lowlevel_v2/integration_phase3/run_phase3.py",
-    "src/wt/lowlevel_v2/phase1/run_phase1.py",
-    "src/wt/lowlevel_v2/phase1b/run_phase1b.py",
-    "src/wt/lowlevel_v2/phase2/run_phase2.py",
-    "src/wt/lowlevel_v2/phase3/run_phase3.py",
-    "src/wt/lowlevel_v2/phase4a/run_phase4a.py",
-    "src/wt/lowlevel_v2/phase4b/redraw_figures.py",
-    "src/wt/lowlevel_v2/phase4b/run_phase4b.py",
+    "src/wt/legacy/integration/run_compat.py",
+    "src/wt/legacy/integration_historical2/run_phase2.py",
+    "src/wt/legacy/integration_historical2a/run_audit.py",
+    "src/wt/legacy/integration_historical2b/run_phase2b.py",
+    "src/wt/legacy/integration_historical2c/run_phase2c.py",
+    "src/wt/legacy/integration_historical2d/run_phase2d.py",
+    "src/wt/legacy/integration_historical3/run_phase3.py",
+    "src/wt/legacy/historical1/run_phase1.py",
+    "src/wt/legacy/historical1b/run_phase1b.py",
+    "src/wt/legacy/historical2/run_phase2.py",
+    "src/wt/legacy/historical3/run_phase3.py",
+    "src/wt/legacy/historical4a/run_phase4a.py",
+    "src/wt/legacy/historical4b/redraw_figures.py",
+    "src/wt/legacy/historical4b/run_phase4b.py",
 }
 JOIN = 'ROOT / ("docs/archive/phase_reports" if str(name).endswith(".md") else "results/root_exports") / name'
 
@@ -140,7 +141,7 @@ def rewrite_publishers() -> None:
         if updated == text:
             raise RuntimeError(f"publish path not found in {relative}")
         path.write_text(updated, encoding="utf-8")
-    audit = ROOT / "src/wt/benchmark_v2/phase6iac_independent_holdout/audit.py"
+    audit = ROOT / "src/wt/legacy/independent_holdout/audit.py"
     text = audit.read_text(encoding="utf-8")
     old = "if not (root / name).is_file():"
     new = 'if not (root / "docs/archive/phase_reports" / name).is_file():'

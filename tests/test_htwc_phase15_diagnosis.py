@@ -5,10 +5,10 @@ import unittest
 
 import numpy as np
 
-from wt.htwc_phase1.oracle import oracle_planner_window, tw_enters_actor
-from wt.round19.multi_env import SharedSpectrumMultiUAVEnv
-from wt.round30.features import feature_dict
-from wt.round30.scenarios import training_scenarios
+from wt.legacy.htwc_historical1.oracle import oracle_planner_window, tw_enters_actor
+from wt.legacy.shared_spectrum_planning.multi_env import SharedSpectrumMultiUAVEnv
+from wt.legacy.deepsets_ppo.features import feature_dict
+from wt.legacy.deepsets_ppo.scenarios import training_scenarios
 
 
 class HTWPhase15DiagnosisTests(unittest.TestCase):
@@ -24,7 +24,7 @@ class HTWPhase15DiagnosisTests(unittest.TestCase):
         self.assertTrue(np.all(error < 1.0e-6))
 
     def test_02_oracle_features_enter_conditioned_uav_width(self) -> None:
-        from wt.htwc_phase1.oracle import oracle_conditioner
+        from wt.legacy.htwc_historical1.oracle import oracle_conditioner
 
         scenario = training_scenarios()[0]
         env = SharedSpectrumMultiUAVEnv(scenario.config(), buoy_positions_m=np.asarray(scenario.buoy_positions_m), options=scenario.options())

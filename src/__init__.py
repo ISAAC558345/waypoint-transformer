@@ -1,1 +1,1 @@
-"""python -m src.wt.final.run_final_hier when repo root is on sys.path."""
+"""python -m src.wt.legacy.final_bootstrap.run_final_hier when repo root is on sys.path."""

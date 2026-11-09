@@ -7,9 +7,10 @@ import json
 import math
 from pathlib import Path
 import unittest
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 ROUND = ROOT / "round_24"
 OUTPUT = ROUND / "outputs" / "round24_multiseed_stability_20260829_1515"
 EXPECTED_R23 = "948E89F9197E8204B147FA2F3B9543CD878D4380680254DCB1190E7E9015F22A"

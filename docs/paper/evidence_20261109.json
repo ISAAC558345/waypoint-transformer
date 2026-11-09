@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-09",
+  "role": "exact recorded values after the semantic layout migration",
+  "l8": {
+    "commit": "77eb078e54dde9e6ca0a55c3e47a3c482ff20d2c",
+    "gate": "NOT_PROMOTED",
+    "original_logical_path": "results/legacy_payload_objective_l8/paired_summary.json",
+    "path": "results/research/payload_objective/paired_summary.json",
+    "sha256": "fd40961b6174c29226ccfbb82656dc93e6a82add08479cd2fd68f9026d463d9d",
+    "listnet_arm": "L3B10",
+    "listnet_is_scheme_c_epoch1": false,
+    "overall_R_minus_C_bits": 4006856.1559324544,
+    "t15_R_minus_C_bits": 8044597.65811008,
+    "t30_R_minus_C_bits": -30885.346245171968,
+    "overall_R_minus_E6_bits": 553302.7330002391,
+    "overall_R_minus_L3A10_bits": 728043.3695591122,
+    "payload_bits_mean": {
+      "R_EXPECTED_REGRET": 24398367.209643096,
+      "C_LISTNET": 20391511.053710643,
+      "E6": 23845064.476642855,
+      "L3A10": 23670323.840083983
+    }
+  },
+  "l9": {
+    "commit": "bbb7a0eb329fc83da7cd59d91310da198def3b7b",
+    "gate": "NOT_PROMOTED",
+    "original_logical_path": "results/legacy_arrival_coverage_l9/paired_summary.json",
+    "path": "results/research/arrival_coverage/paired_summary.json",
+    "sha256": "b452723e4c5690e4c0146d4a3f5deb59cd5eb84e077cd12e66da61933f5d3348",
+    "listnet_arm": "L3B10",
+    "listnet_is_scheme_c_epoch1": false,
+    "overall_R28_minus_R12_bits": 789951.0605846928,
+    "t15_R28_minus_R12_bits": 1090575.9687951189,
+    "t30_R28_minus_R12_bits": 489326.15237426665,
+    "overall_R28_minus_C_bits": 4353405.831649456,
+    "overall_R28_minus_E6_bits": -157343.30994942132,
+    "overall_R28_minus_L3A10_bits": 473133.65114639676,
+    "payload_bits_mean": {
+      "R28_U120": 23667438.70669286,
+      "R12_U120": 22877487.646108165,
+      "C_LISTNET": 19314032.875043403,
+      "E6": 23824782.01664228,
+      "L3A10": 23194305.055546463
+    }
+  },
+  "l10": {
+    "commit": "8fc6fda3d50d51b414cb609b7a8953951788eb18",
+    "registered_scenarios": [
+      322000,
+      322001
+    ],
+    "reference_root_original": "results/legacy_formal_repro_r1",
+    "reference_root": "results/reproducibility/formal_scheme_c",
+    "scenario_322001_reference": "results/reproducibility/formal_scheme_c/episodes/322001_scheme_c.json",
+    "scenario_322001_reference_sha256": "e7c6656586a6c1e9a917b0acc361ef43501be831fa4830d18e706f7e976604dc"
+  },
+  "layout_consistency_run": {
+    "scenario_id": 322001,
+    "command": "py -3 -m wt.cli.evaluate --scenario 322001 --output results/reproducibility/layout_refactor_20261109/run_322001 --run",
+    "output": "results/reproducibility/layout_refactor_20261109/run_322001",
+    "payload_bits": 68952073.58225587,
+    "served_bits": 68952073.58225589,
+    "process_seed": 1322001,
+    "reset_seed": 322001,
+    "decision_times": [
+      0,
+      15,
+      30,
+      45
+    ],
+    "scheme_c_calls": 4,
+    "environment_steps": 48,
+    "low_level_inferences": 48,
+    "high_level_calls": 4,
+    "training_updates": 0,
+    "backward_passes": 0,
+    "regression_status": "matched",
+    "success": true,
+    "exit_code": 0,
+    "episode_sha256": "660b73784747b14e45a5f6eb264a728984ccda773690cc7821c567096da378ab"
+  },
+  "formal_artifacts": {
+    "scheme_c": {
+      "path": "checkpoints/formal/scheme_c_epoch1.pt",
+      "sha256": "f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864"
+    },
+    "mappo_seed0": {
+      "path": "checkpoints/formal/mappo_v2_seed0.pt",
+      "sha256": "92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e"
+    },
+    "matching_decoder": {
+      "path": "checkpoints/formal/matching_decoder.pt",
+      "sha256": "de1809fab8290b5be3e89cd0d31e22cd04638fd9a43207957aa20b1de255eca5"
+    },
+    "epoch6": {
+      "path": "checkpoints/initialization/joint_utility_epoch6.pt",
+      "sha256": "7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde"
+    },
+    "policy": {
+      "path": "configs/formal_scheme_c_policy.json",
+      "sha256": "3fc2f0b1277188e6f12084370c9c1d5acb70e897f6a4fba8b47bedf031b25ebb"
+    }
+  },
+  "comparison_scope": "historical TRAIN, 128 candidates, 15-step offline scores on MAX_RATE_INDEPENDENT snapshots; not independent validation and not a 48-step formal gain",
+  "missing_historical_summaries": [
+    "results/phase6iab_planner_stability/summary.json",
+    "results/phase6iac_independent_holdout/summary.json"
+  ]
+}

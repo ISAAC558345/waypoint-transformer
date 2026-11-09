@@ -3,8 +3,8 @@ from __future__ import annotations
 
 import unittest
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, VALIDATION_POOL
-from wt.benchmark_v2.phase6iq_short_horizon.audit import PILOT_SCENARIOS, assign_gate, evaluate_metric, relation
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, VALIDATION_POOL
+from wt.legacy.short_horizon.audit import PILOT_SCENARIOS, assign_gate, evaluate_metric, relation
 
 
 class Phase6IQShortHorizonTests(unittest.TestCase):

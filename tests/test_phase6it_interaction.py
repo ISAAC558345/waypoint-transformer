@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
-from wt.benchmark_v2.phase6it_interaction.audit import context_ranges, decompositions, pair_scores
-from wt.benchmark_v2.phase6it_interaction.protocol import assign_gate
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
+from wt.legacy.interaction.audit import context_ranges, decompositions, pair_scores
+from wt.legacy.interaction.protocol import assign_gate
 
 
 class Phase6ITInteractionTests(unittest.TestCase):

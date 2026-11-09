@@ -7,11 +7,12 @@ __pycache__/
 .vscode/
 backup/
 logs/
-_tmp_round19_full_tests/
-round_*/outputs/
-round_*/figures/
-round_*/report/
+archive/experiments/shared_spectrum_full_tests/
 report/
 docs/archive/
 results/root_exports/
-src/wt/benchmark_v2/phase6ib_highlevel_dataset/revision_hgnn_input/dataset/
+data/highlevel_revision/
+archive/experiments/*/outputs/
+archive/experiments/*/figures/
+archive/experiments/*/report/
+data/highlevel_revision/

@@ -4,7 +4,7 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6iad_deployment_audit.protocol import (
+from wt.legacy.deployment_audit.protocol import (
     REGRESSION_SCENARIO,
     REPEAT_SCENARIO,
     assert_output_path,
@@ -12,7 +12,7 @@ from wt.benchmark_v2.phase6iad_deployment_audit.protocol import (
     assign_gate,
     status_flags,
 )
-from wt.benchmark_v2.phase6is_assignment_head.protocol import SCHEME_C_CKPT
+from wt.models.assignment_head.protocol import SCHEME_C_CKPT
 
 
 class Phase6IADDeploymentAuditTests(unittest.TestCase):

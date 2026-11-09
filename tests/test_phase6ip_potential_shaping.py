@@ -5,10 +5,10 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import low_level_reward
-from wt.benchmark_v2.phase6ip_potential_shaping.shaping import direction_report, directions_pass, distance_potential, shaping_reward
-from wt.lowlevel_v2.phase1.protocol import ALPHA_RESIDUAL, PPO
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.control.mappo.worker import low_level_reward
+from wt.legacy.potential_shaping.shaping import direction_report, directions_pass, distance_potential, shaping_reward
+from wt.legacy.historical1.protocol import ALPHA_RESIDUAL, PPO
 
 
 class Phase6IPPotentialTests(unittest.TestCase):

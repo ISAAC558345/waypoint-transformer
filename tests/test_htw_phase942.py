@@ -5,10 +5,10 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase941.protocol import CONFIRMATION_SEEDS, USED_L3B_SCENARIO_SEEDS
-from wt.htw_phase942.decode_order import freeze_orders, inverse_assignment, permute_uav_batch
-from wt.htw_phase942.pressures import label_three, regime_of
-from wt.htw_phase942.protocol import BLOCKED_SCENARIO_SEEDS, ORDER_SEED, SCAN_START
+from wt.legacy.htw_historical941.protocol import CONFIRMATION_SEEDS, USED_L3B_SCENARIO_SEEDS
+from wt.legacy.htw_historical942.decode_order import freeze_orders, inverse_assignment, permute_uav_batch
+from wt.legacy.htw_historical942.pressures import label_three, regime_of
+from wt.legacy.htw_historical942.protocol import BLOCKED_SCENARIO_SEEDS, ORDER_SEED, SCAN_START
 
 
 class Phase942Tests(unittest.TestCase):

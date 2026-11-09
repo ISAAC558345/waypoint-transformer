@@ -5,14 +5,14 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase100.contract import TaskOption
-from wt.htw_phase9.const import HOLD
-from wt.l3b.env import L3BEnv
+from wt.planning.task_option.contract import TaskOption
+from wt.models.edge_bound.const import HOLD
+from wt.envs.queue.env import L3BEnv
 
-from wt.htw_phase102.analyze import payload_caliber
-from wt.htw_phase102.protocol import DESIGN_VAL_SEEDS, SNAPSHOT_RULE
-from wt.htw_phase102.replay import classify_rho
-from wt.htw_phase102.snapshot import capture_env, restore_env
+from wt.legacy.htw_historical102.analyze import payload_caliber
+from wt.legacy.htw_historical102.protocol import DESIGN_VAL_SEEDS, SNAPSHOT_RULE
+from wt.legacy.htw_historical102.replay import classify_rho
+from wt.legacy.htw_historical102.snapshot import capture_env, restore_env
 
 
 class Phase102Tests(unittest.TestCase):

@@ -5,12 +5,12 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase25.alignment import alignment_rows, summarize_alignment
-from wt.htw_phase25.tracking_loss import TrackingLossAgent
-from wt.htw_phase2.tracking import auxiliary_reward
-from wt.round30.models import DeepSetsActorCritic
-from wt.round30.ppo import PPOConfig
-from wt.round30.scenarios import training_scenarios
+from wt.legacy.htw_historical25.alignment import alignment_rows, summarize_alignment
+from wt.legacy.htw_historical25.tracking_loss import TrackingLossAgent
+from wt.legacy.htw_historical2.tracking import auxiliary_reward
+from wt.legacy.deepsets_ppo.models import DeepSetsActorCritic
+from wt.algorithms.ppo_common import PPOConfig
+from wt.legacy.deepsets_ppo.scenarios import training_scenarios
 
 
 class HTWPhase25AlignmentTests(unittest.TestCase):

@@ -11,10 +11,11 @@ import sys
 import unittest
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "src"))
 
-from wt.round23.audit import EXPECTED_PREDICTOR, EXPECTED_R22_LOCK, FIGURES, OUTPUT, REQUIRED_OUTPUTS, sha256, verify_frozen_state
+from wt.legacy.task_policy_seed_audit.audit import EXPECTED_PREDICTOR, EXPECTED_R22_LOCK, FIGURES, OUTPUT, REQUIRED_OUTPUTS, sha256, verify_frozen_state
+from wt.common.paths import repo_root
 
 
 def rows(name: str) -> list[dict[str, str]]:

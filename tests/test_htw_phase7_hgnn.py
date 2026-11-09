@@ -6,16 +6,17 @@ import unittest
 import numpy as np
 import torch
 
-from wt.htw_phase61.features import BUOY_DIM
-from wt.htw_phase61.models import L2AOptionActorCritic
-from wt.htw_phase61.run_phase61 import SMOKE_CONFIG
-from wt.htw_phase7.graph import EDGE_DIM, build_edge_features
-from wt.htw_phase7.models import DeepSetsOptionModel, HeteroOptionHGNN, MLPOptionModel
-from wt.htw_phase7.vector import GraphHeldVector
-from wt.l2a.env import L2AEnv
-from wt.round30.ppo import PPOAgent, PPOConfig, seed_everything
-from wt.htw_phase7.agent import GraphDiscretePPOAgent
-from wt.htw_phase7.vector import collect_graph_held
+from wt.legacy.htw_historical61.features import BUOY_DIM
+from wt.legacy.htw_historical61.models import L2AOptionActorCritic
+from wt.legacy.htw_historical61.run_phase61 import SMOKE_CONFIG
+from wt.legacy.htw_historical7.graph import EDGE_DIM, build_edge_features
+from wt.legacy.htw_historical7.models import DeepSetsOptionModel, HeteroOptionHGNN, MLPOptionModel
+from wt.legacy.htw_historical7.vector import GraphHeldVector
+from wt.legacy.queue_task_causal.env import L2AEnv
+from wt.algorithms.ppo_common import PPOConfig, seed_everything
+from wt.legacy.deepsets_ppo.ppo import PPOAgent
+from wt.legacy.htw_historical7.agent import GraphDiscretePPOAgent
+from wt.legacy.htw_historical7.vector import collect_graph_held
 
 
 class HTWPhase7Tests(unittest.TestCase):

@@ -6,13 +6,13 @@ from pathlib import Path
 
 import torch
 
-from wt.lowlevel_v2.phase5za_correspondence_pooling.metrics import choose_gate
-from wt.lowlevel_v2.phase5za_correspondence_pooling.pool import (
+from wt.legacy.correspondence_pooling.metrics import choose_gate
+from wt.legacy.correspondence_pooling.pool import (
     CorrespondencePreservingValue,
     permute_buoys,
     permute_uavs,
 )
-from wt.lowlevel_v2.phase5za_correspondence_pooling.protocol import HEAD_INPUT_DIM, assert_consumed
+from wt.legacy.correspondence_pooling.protocol import HEAD_INPUT_DIM, assert_consumed
 
 
 def _features(count: int = 4) -> tuple[dict, torch.Tensor]:

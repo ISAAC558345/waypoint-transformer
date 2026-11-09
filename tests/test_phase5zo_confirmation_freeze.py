@@ -4,8 +4,8 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.lowlevel_v2.phase5s_multiscenario_nonadditive.protocol import CONFIRM_SCENARIOS, TRAIN_SCENARIOS
-from wt.lowlevel_v2.phase5zo_confirmation_freeze.protocol import FRESH_POOL, PLANNER_READY, assert_not_fresh, choose_gate
+from wt.legacy.multiscenario_nonadditive.protocol import CONFIRM_SCENARIOS, TRAIN_SCENARIOS
+from wt.legacy.confirmation_freeze.protocol import FRESH_POOL, PLANNER_READY, assert_not_fresh, choose_gate
 
 
 PACKAGE = Path(__file__).resolve().parents[1] / "src" / "wt" / "lowlevel_v2" / "phase5zo_confirmation_freeze"

@@ -6,15 +6,15 @@ import unittest
 import numpy as np
 import torch
 
-from wt.htw_phase100.contract import TaskOption
-from wt.htw_phase9.const import HOLD, TRAIN_SEEDS, EVAL_SEEDS
-from wt.l3b.env import L3BEnv
+from wt.planning.task_option.contract import TaskOption
+from wt.models.edge_bound.const import HOLD, TRAIN_SEEDS, EVAL_SEEDS
+from wt.envs.queue.env import L3BEnv
 
-from wt.htw_phase101.features import attach_option, build_schema, encode_obs
-from wt.htw_phase101.high_level import refuse_m5
-from wt.htw_phase101.models import L3BGoalActorCritic, shape_from_schema
-from wt.htw_phase101.protocol import DESIGN_TRAIN_SEEDS, DESIGN_VAL_SEEDS, FORBIDDEN_M5_CKPT, PPO
-from wt.htw_phase101.rewards import auxiliary_reward
+from wt.legacy.htw_historical101.features import attach_option, build_schema, encode_obs
+from wt.legacy.htw_historical101.high_level import refuse_m5
+from wt.legacy.htw_historical101.models import L3BGoalActorCritic, shape_from_schema
+from wt.legacy.htw_historical101.protocol import DESIGN_TRAIN_SEEDS, DESIGN_VAL_SEEDS, FORBIDDEN_M5_CKPT, PPO
+from wt.legacy.htw_historical101.rewards import auxiliary_reward
 
 
 class Phase101Tests(unittest.TestCase):
@@ -41,7 +41,7 @@ class Phase101Tests(unittest.TestCase):
             buoy_mask=np.ones(schema["max_buoys"], dtype=bool),
             association=assignment.copy(),
         )
-        from wt.htw_phase9.features import feature_dict_l3b
+        from wt.models.edge_bound.features import feature_dict_l3b
 
         feat = attach_option(feature_dict_l3b(info, env), env, info, option, schema)
         extra = feat["uav"][:, schema["base_uav_dim"] :]

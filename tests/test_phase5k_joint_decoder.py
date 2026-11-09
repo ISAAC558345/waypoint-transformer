@@ -8,12 +8,13 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from wt.lowlevel_v2.phase5k_joint_decoder.decoders import capacity_plan, gather_assignment_score, hungarian_assign, joint_pick
-from wt.lowlevel_v2.phase5k_joint_decoder.loss import joint_rank_loss
-from wt.lowlevel_v2.phase5k_joint_decoder.protocol import assert_phase5k_seed, split_name
+from wt.models.joint_decoder.decoders import capacity_plan, gather_assignment_score, hungarian_assign, joint_pick
+from wt.models.joint_decoder.loss import joint_rank_loss
+from wt.models.joint_decoder.protocol import assert_phase5k_seed, split_name
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5k_joint_decoder"
 
 
@@ -66,10 +67,10 @@ class Phase5KTests(unittest.TestCase):
                     called.append(node.func.id)
         self.assertNotIn("decide", called)
         for relative in (
-            "src/wt/htw_phase100/high_level.py",
-            "src/wt/lowlevel_v2/residual_policy.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/reward.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/planner.py",
+            "src/wt/planning/task_option/high_level.py",
+            "src/wt/control/residual_policy.py",
+            "src/wt/research/hgnn_urgency/reward.py",
+            "src/wt/research/hgnn_urgency/planner.py",
         ):
             text = (ROOT / relative).read_text(encoding="utf-8")
             self.assertNotIn("phase5k", text)

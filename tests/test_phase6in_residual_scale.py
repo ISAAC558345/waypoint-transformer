@@ -6,9 +6,9 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6in_residual_scale.action import heading_delta_deg, residual_command, scale_limits
-from wt.lowlevel_v2.contracts import clip_unit_step
-from wt.lowlevel_v2.phase1.protocol import ALPHA_RESIDUAL
+from wt.legacy.residual_scale.action import heading_delta_deg, residual_command, scale_limits
+from wt.planning.contracts import clip_unit_step
+from wt.legacy.historical1.protocol import ALPHA_RESIDUAL
 
 
 class Phase6INResidualScaleTests(unittest.TestCase):

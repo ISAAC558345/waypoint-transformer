@@ -4,9 +4,9 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6e.generators import build_pools
-from wt.benchmark_v2.phase6ia_candidate_boundary.protocol import PRIMARY_SEED, assert_allowed, choose_gate, evaluate_flags
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.planning.candidate_generation.generators import build_pools
+from wt.planning.candidate_boundary.protocol import PRIMARY_SEED, assert_allowed, choose_gate, evaluate_flags
 
 
 def _stats(**overrides) -> dict:

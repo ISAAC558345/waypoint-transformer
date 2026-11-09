@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-from wt.l2a.config import L2AConfig
-from wt.l2a.env import L2AEnv, legal_assignment_count, project_exclusive
-from wt.l2a.policies import myopic_assignment, oracle_option_assignment
+from wt.legacy.queue_task_causal.config import L2AConfig
+from wt.legacy.queue_task_causal.env import L2AEnv, legal_assignment_count, project_exclusive
+from wt.legacy.queue_task_causal.policies import myopic_assignment, oracle_option_assignment
 
 
 class L2ACausalTests(unittest.TestCase):

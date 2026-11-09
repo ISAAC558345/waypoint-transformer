@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
-from wt.benchmark_v2.phase6iv_frozen_fusion.audit import average_rank, fuse_ranks, fusion_order
-from wt.benchmark_v2.phase6iv_frozen_fusion.protocol import RULES, assign_gate, rule_supported
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
+from wt.legacy.frozen_fusion.audit import average_rank, fuse_ranks, fusion_order
+from wt.legacy.frozen_fusion.protocol import RULES, assign_gate, rule_supported
 
 
 class Phase6IVFrozenFusionTests(unittest.TestCase):

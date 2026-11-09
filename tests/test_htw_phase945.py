@@ -7,14 +7,14 @@ import numpy as np
 import torch
 
 from pathlib import Path
-from wt.htw_phase9.const import EVAL_SEEDS, HOLD
-from wt.htw_phase92.run_phase92 import COLLECT_SEEDS
-from wt.htw_phase943.order_free_decoder import OrderFreeAssignmentModel
-from wt.htw_phase943.permutation_audit import candidate_order_invariance
-from wt.htw_phase943.protocol import AUDIT_SEEDS
-from wt.htw_phase943.set_context import make_snap
-from wt.htw_phase945.candidate_pool import generate_pool, is_legal
-from wt.htw_phase945.protocol import (
+from wt.models.edge_bound.const import EVAL_SEEDS, HOLD
+from wt.legacy.htw_historical92.run_phase92 import COLLECT_SEEDS
+from wt.legacy.htw_historical943.order_free_decoder import OrderFreeAssignmentModel
+from wt.legacy.htw_historical943.permutation_audit import candidate_order_invariance
+from wt.legacy.htw_historical943.protocol import AUDIT_SEEDS
+from wt.legacy.htw_historical943.set_context import make_snap
+from wt.legacy.htw_historical945.candidate_pool import generate_pool, is_legal
+from wt.legacy.htw_historical945.protocol import (
     BLOCKED_SCENARIO_SEEDS,
     LAMBDA_RANK,
     LAMBDA_REF,
@@ -22,10 +22,10 @@ from wt.htw_phase945.protocol import (
     SCAN_START,
     TAU,
 )
-from wt.htw_phase945.utility_loss import utility_losses
-from wt.htw_phase945.utility_rollout import shadow_h15_payload
-from wt.htw_phase945.utility_targets import ranking_pairs, soft_targets
-from wt.l3b.env import L3BEnv
+from wt.legacy.htw_historical945.utility_loss import utility_losses
+from wt.legacy.htw_historical945.utility_rollout import shadow_h15_payload
+from wt.legacy.htw_historical945.utility_targets import ranking_pairs, soft_targets
+from wt.envs.queue.env import L3BEnv
 
 
 class Phase945Tests(unittest.TestCase):
@@ -92,8 +92,8 @@ class Phase945Tests(unittest.TestCase):
     def test_09_losses_finite(self) -> None:
         env = L3BEnv()
         info = env.reset(seed=4)
-        from wt.htw_phase9.features import build_graph, feature_dict_l3b, stack_feature_dicts
-        from wt.htw_phase943.evaluation import encode_env
+        from wt.models.edge_bound.features import build_graph, feature_dict_l3b, stack_feature_dicts
+        from wt.legacy.htw_historical943.evaluation import encode_env
 
         feats = stack_feature_dicts([feature_dict_l3b(info, env)])
         edge, edge_uu = build_graph(info, env)
@@ -129,7 +129,7 @@ class Phase945Tests(unittest.TestCase):
         self.assertNotIn(SCAN_START, blocked)
 
     def test_13_checkpoint_rule_ignores_confirmation_payload(self) -> None:
-        from wt.htw_phase945.training import train_utility_model
+        from wt.legacy.htw_historical945.training import train_utility_model
 
         src = Path(train_utility_model.__code__.co_filename).read_text(encoding="utf-8")
         self.assertIn("top1_regret", src)

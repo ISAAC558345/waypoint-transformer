@@ -4,8 +4,8 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6i_urgency_label_rule_design.analyze import delta_for, sensitivity_rows
-from wt.benchmark_v2.phase6i_urgency_label_rule_design.protocol import (
+from wt.research.urgency_label_rule_design.analyze import delta_for, sensitivity_rows
+from wt.research.urgency_label_rule_design.protocol import (
     DELTA_PAYLOAD_MAX,
     FRACTIONS,
     GATE_BLOCKED,
@@ -14,8 +14,8 @@ from wt.benchmark_v2.phase6i_urgency_label_rule_design.protocol import (
     LAMBDA_H,
     choose_gate,
 )
-from wt.benchmark_v2.phase6i_urgency_label_rule_design.rules import payload_loss, rule_c, rule_p, urgent_first
-from wt.benchmark_v2.phase6i_urgency_label_rule_design.sources import StateBatch
+from wt.research.urgency_label_rule_design.rules import payload_loss, rule_c, rule_p, urgent_first
+from wt.research.urgency_label_rule_design.sources import StateBatch
 
 
 def _row(candidate_id: int, payload: float, urgent: float) -> dict:

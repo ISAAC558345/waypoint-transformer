@@ -7,11 +7,12 @@ from pathlib import Path
 
 import torch
 
-from wt.lowlevel_v2.phase5f_utility_rank.loss import pairwise_rank_loss
-from wt.lowlevel_v2.phase5f_utility_rank.protocol import FORBIDDEN_INPUTS, assert_phase5f_seed
+from wt.legacy.utility_rank.loss import pairwise_rank_loss
+from wt.legacy.utility_rank.protocol import FORBIDDEN_INPUTS, assert_phase5f_seed
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5f_utility_rank"
 
 

@@ -3,10 +3,10 @@ from __future__ import annotations
 
 import unittest
 
-from wt.benchmark_v2.phase6f_system_bringup.protocol import CANDIDATE_K
-from wt.benchmark_v2.phase6ib_highlevel_dataset.jobs import _key
-from wt.benchmark_v2.phase6iy_candidate_adapter.adapter import CandidateBinding, bind_keys
-from wt.benchmark_v2.phase6iy_candidate_adapter.protocol import FORMAL_ENTRY_K, assign_gate, config_payload
+from wt.evaluation.closed_loop.protocol import CANDIDATE_K
+from wt.data.highlevel_graphs.jobs import _key
+from wt.planning.candidate_adapter.adapter import CandidateBinding, bind_keys
+from wt.planning.candidate_adapter.protocol import FORMAL_ENTRY_K, assign_gate, config_payload
 
 
 class Phase6IYCandidateAdapterTests(unittest.TestCase):

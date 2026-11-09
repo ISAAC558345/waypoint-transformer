@@ -7,9 +7,10 @@ import json
 import math
 from pathlib import Path
 import unittest
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 ROUND = ROOT / "round_28"
 OUTPUT = ROUND / "outputs" / "round28_planning_need_representation_20260830_1624"
 FIGURES = ROUND / "figures" / "round28_planning_need_representation_20260830_1624"
@@ -50,24 +51,24 @@ class Round28PlanningNeedRepresentationTests(unittest.TestCase):
         self.assertEqual(digest(ROOT / "round_27" / "ROUND_LOCK.json"), EXPECTED_R27)
 
     def test_02_no_optimizer(self) -> None:
-        self.assertNotIn("torch.optim", (ROOT / "src/wt/round28/audit.py").read_text(encoding="utf-8"))
+        self.assertNotIn("torch.optim", (ROOT / "src/wt/legacy/planning_need_representation/audit.py").read_text(encoding="utf-8"))
 
     def test_03_no_backward(self) -> None:
-        self.assertNotIn(".backward(", (ROOT / "src/wt/round28/audit.py").read_text(encoding="utf-8"))
+        self.assertNotIn(".backward(", (ROOT / "src/wt/legacy/planning_need_representation/audit.py").read_text(encoding="utf-8"))
 
     def test_04_no_model_training(self) -> None:
-        source = (ROOT / "src/wt/round28/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/planning_need_representation/audit.py").read_text(encoding="utf-8")
         self.assertNotIn("train_one(", source)
         self.assertNotIn(".zero_grad(", source)
         self.assertNotIn("optimizer.step(", source)
 
     def test_05_no_classifier_training(self) -> None:
-        source = (ROOT / "src/wt/round28/audit.py").read_text(encoding="utf-8").lower()
+        source = (ROOT / "src/wt/legacy/planning_need_representation/audit.py").read_text(encoding="utf-8").lower()
         for forbidden in ("logisticregression", "decisiontree", "randomforest", "sklearn", "svm"):
             self.assertNotIn(forbidden, source)
 
     def test_06_no_checkpoint_writes(self) -> None:
-        source = (ROOT / "src/wt/round28/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/planning_need_representation/audit.py").read_text(encoding="utf-8")
         self.assertNotIn("torch.save", source)
         self.assertNotIn("save_checkpoint", source)
 
@@ -82,7 +83,7 @@ class Round28PlanningNeedRepresentationTests(unittest.TestCase):
         self.assertIn("before utility labels", config["state_sampling"]["selection_rule"])
 
     def test_09_train_validation_scenario_separation(self) -> None:
-        from wt.round28.audit import _allowed_h1_states, _load, _scenario_map, CONFIG_PATH
+        from wt.legacy.planning_need_representation.audit import _allowed_h1_states, _load, _scenario_map, CONFIG_PATH
         selected = _allowed_h1_states(_load(CONFIG_PATH), _scenario_map())
         split_by_scenario = {}
         for row in selected:
@@ -98,7 +99,7 @@ class Round28PlanningNeedRepresentationTests(unittest.TestCase):
             self.assertLessEqual(float(row["stored_h1_action_reproduction_rmse"]), 1.0e-9)
 
     def test_11_planner_is_frozen(self) -> None:
-        source = (ROOT / "src/wt/round28/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/planning_need_representation/audit.py").read_text(encoding="utf-8")
         self.assertIn("joint_plan(env, info, horizon=first_horizon)", source)
         self.assertNotIn("planner modification", source.lower())
 
@@ -127,7 +128,7 @@ class Round28PlanningNeedRepresentationTests(unittest.TestCase):
             self.assertAlmostEqual(float(row["assignment_regret"]), expected, places=10)
 
     def test_16_isr_is_current_only(self) -> None:
-        source = (ROOT / "src/wt/round28/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/planning_need_representation/audit.py").read_text(encoding="utf-8")
         self.assertIn("assignment_link_metrics(assignment, gains", source)
         self.assertIn("joint_aware_matching(queues, gains", source)
 
@@ -185,7 +186,7 @@ class Round28PlanningNeedRepresentationTests(unittest.TestCase):
 
     def test_27_no_ppo_or_marl(self) -> None:
         self.assertFalse(load(ROUND / "round_manifest.json")["ppo_training_performed"])
-        self.assertNotIn("mappo", (ROOT / "src/wt/round28/audit.py").read_text(encoding="utf-8").lower())
+        self.assertNotIn("mappo", (ROOT / "src/wt/legacy/planning_need_representation/audit.py").read_text(encoding="utf-8").lower())
 
     def test_28_no_nan_or_inf(self) -> None:
         self._completed()
@@ -212,7 +213,7 @@ class Round28PlanningNeedRepresentationTests(unittest.TestCase):
             manifest32 = load(successor32 / "round_manifest.json")
             self.assertEqual(manifest32["previous_round_lock"], "round_31/ROUND_LOCK.json")
             self.assertFalse(manifest32["round33_created"])
-        self.assertTrue((ROOT / "src/wt/round28/audit.py").is_file())
+        self.assertTrue((ROOT / "src/wt/legacy/planning_need_representation/audit.py").is_file())
 
     def test_lock_covers_completed_evidence_when_present(self) -> None:
         lock_path = ROUND / "ROUND_LOCK.json"

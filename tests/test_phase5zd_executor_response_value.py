@@ -7,10 +7,10 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from wt.lowlevel_v2.phase5zd_executor_response_value.metrics import choose_gate
-from wt.lowlevel_v2.phase5zd_executor_response_value.protocol import RESPONSE_FEATURES, assert_consumed
-from wt.lowlevel_v2.phase5zd_executor_response_value.response import assemble_response
-from wt.lowlevel_v2.phase5zd_executor_response_value.scorer import ExecutorConditionedJointScorer
+from wt.legacy.executor_response_value.metrics import choose_gate
+from wt.legacy.executor_response_value.protocol import RESPONSE_FEATURES, assert_consumed
+from wt.legacy.executor_response_value.response import assemble_response
+from wt.legacy.executor_response_value.scorer import ExecutorConditionedJointScorer
 
 
 class Phase5ZDExecutorResponseValueTest(unittest.TestCase):
@@ -71,7 +71,7 @@ class Phase5ZDExecutorResponseValueTest(unittest.TestCase):
             assert_consumed(230000)
 
     def test_package_does_not_call_deployment_decide(self) -> None:
-        text = "\n".join(path.read_text(encoding="utf-8") for path in Path(__file__).resolve().parents[1].joinpath("src/wt/lowlevel_v2/phase5zd_executor_response_value").glob("*.py"))
+        text = "\n".join(path.read_text(encoding="utf-8") for path in Path(__file__).resolve().parents[1].joinpath("src/wt/legacy/executor_response_value").glob("*.py"))
         self.assertNotIn("decide(", text)
         self.assertIn("Adam", text)
 

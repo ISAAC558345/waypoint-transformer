@@ -7,11 +7,12 @@ from pathlib import Path
 import sys
 import unittest
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "src"))
 
-from wt.governance_state_sync import verify_round22_governance_state_sync_amendment
-from wt.round22.governance import verify_round21_amendment_overlay
+from wt.legacy.historical_governance.sync import verify_round22_governance_state_sync_amendment
+from wt.legacy.deepsets_task_policy.governance import verify_round21_amendment_overlay
+from wt.common.paths import repo_root
 
 
 OUTPUT = ROOT / "round_22" / "outputs" / "round22_deepsets_task_waypoint_policy_20260829_1153"

@@ -6,12 +6,12 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6g_lowlevel_mappo.protocol import DEV_POOL, TRAIN_POOL, assert_allowed, choose_gate
-from wt.benchmark_v2.phase6g_lowlevel_mappo.train import probe_initialization
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import TrainWorker, low_level_reward
-from wt.lowlevel_v2.critic_state import expected_critic_dim
-from wt.lowlevel_v2.residual_policy import CentralizedCritic, ResidualActor
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.control.mappo.protocol import DEV_POOL, TRAIN_POOL, assert_allowed, choose_gate
+from wt.control.mappo.train import probe_initialization
+from wt.control.mappo.worker import TrainWorker, low_level_reward
+from wt.models.critic_state import expected_critic_dim
+from wt.control.residual_policy import CentralizedCritic, ResidualActor
 
 
 class Phase6GTests(unittest.TestCase):

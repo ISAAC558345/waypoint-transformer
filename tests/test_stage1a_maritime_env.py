@@ -18,16 +18,17 @@ import unittest
 import numpy as np
 
 
-REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+REPOSITORY_ROOT = repo_root()
 SOURCE_ROOT = REPOSITORY_ROOT / "src"
 sys.path.insert(0, str(SOURCE_ROOT))
 
-from wt.maritime.channel import (  # noqa: E402
+from wt.legacy.maritime_environment.channel import (  # noqa: E402
     compute_channel_metrics,
     theoretical_max_rates,
 )
-from wt.maritime.config import MaritimeEnvConfig  # noqa: E402
-from wt.maritime.env import MaritimeEnv  # noqa: E402
+from wt.legacy.maritime_environment.config import MaritimeEnvConfig  # noqa: E402
+from wt.legacy.maritime_environment.env import MaritimeEnv  # noqa: E402
+from wt.common.paths import repo_root
 
 
 def _channel_kwargs(config: MaritimeEnvConfig) -> dict[str, float]:
@@ -584,11 +585,11 @@ class MaritimeDependencyIsolationTests(unittest.TestCase):
             "import sys\n"
             f"sys.path.insert(0, {source_literal})\n"
             "before = set(sys.modules)\n"
-            "import wt.maritime\n"
-            "import wt.maritime.channel\n"
-            "import wt.maritime.config\n"
-            "import wt.maritime.env\n"
-            "import wt.maritime.smoke\n"
+            "import wt.legacy.maritime_environment\n"
+            "import wt.legacy.maritime_environment.channel\n"
+            "import wt.legacy.maritime_environment.config\n"
+            "import wt.legacy.maritime_environment.env\n"
+            "import wt.legacy.maritime_environment.smoke\n"
             "loaded = set(sys.modules) - before\n"
             f"forbidden = set({forbidden_literal})\n"
             "bad = sorted({name.partition('.')[0] for name in loaded} & forbidden)\n"

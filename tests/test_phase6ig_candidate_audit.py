@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.dataset import DecisionDataset
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST
-from wt.benchmark_v2.phase6ig_candidate_audit.audit import (
+from wt.models.hgnn_assets.dataset import DecisionDataset
+from wt.models.hgnn_assets.protocol import RESERVED_TEST
+from wt.legacy.candidate_audit.audit import (
     assign_gate,
     cluster_means,
     decision_view,

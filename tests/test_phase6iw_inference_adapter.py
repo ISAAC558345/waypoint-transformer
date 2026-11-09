@@ -5,14 +5,14 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
-from wt.benchmark_v2.phase6iw_inference_adapter.interface import (
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
+from wt.planning.scheme_c_inference.interface import (
     SchemeCAdapter,
     assignment_is_legal,
     g1_rate_scores,
     stable_choice,
 )
-from wt.benchmark_v2.phase6iw_inference_adapter.protocol import assign_gate
+from wt.planning.scheme_c_inference.protocol import assign_gate
 
 
 class Phase6IWInferenceAdapterTests(unittest.TestCase):

@@ -5,10 +5,10 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6g_lowlevel_mappo.protocol import DEV_POOL, TRAIN_POOL
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import low_level_reward
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST
-from wt.lowlevel_v2.phase1.protocol import ALPHA_RESIDUAL
+from wt.control.mappo.protocol import DEV_POOL, TRAIN_POOL
+from wt.control.mappo.worker import low_level_reward
+from wt.models.hgnn_assets.protocol import RESERVED_TEST
+from wt.legacy.historical1.protocol import ALPHA_RESIDUAL
 
 
 class Phase6IRAlignmentTests(unittest.TestCase):

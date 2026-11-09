@@ -5,13 +5,13 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import make_option
-from wt.benchmark_v2.phase6im_adaptive_residual.action import adaptive_command, heading_delta_deg
-from wt.benchmark_v2.phase6im_adaptive_residual.protocol import MAX_TURN_DEG, OFFICIAL_CONFIG
-from wt.benchmark_v2.phase6im_adaptive_residual.worker import apply_command, make_projector
-from wt.l3b.policies import fly_toward
-from wt.lowlevel_v2.contracts import minimum_pairwise_distance
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.control.mappo.worker import make_option
+from wt.legacy.adaptive_residual.action import adaptive_command, heading_delta_deg
+from wt.legacy.adaptive_residual.protocol import MAX_TURN_DEG, OFFICIAL_CONFIG
+from wt.legacy.adaptive_residual.worker import apply_command, make_projector
+from wt.envs.queue.policies import fly_toward
+from wt.planning.contracts import minimum_pairwise_distance
 
 
 def _full_speed_bias() -> float:

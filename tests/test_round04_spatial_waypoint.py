@@ -22,8 +22,8 @@ os.environ.setdefault("MKL_NUM_THREADS", "1")
 import numpy as np
 import torch
 
-from wt.maritime.dataset_v1 import load_dataset_v1
-from wt.round4.round4_data import (
+from wt.legacy.maritime_environment.dataset_v1 import load_dataset_v1
+from wt.legacy.spatial_waypoint_pretraining.round4_data import (
     CANONICAL_GOAL_SOURCE,
     GOAL_CONDITIONED_SOURCE_FIELDS,
     PREDICTOR_LEAKAGE_DENYLIST,
@@ -31,7 +31,7 @@ from wt.round4.round4_data import (
     assert_predictor_fields_safe,
     load_round4_spatial_dataset,
 )
-from wt.round4.round4_evaluation import (
+from wt.legacy.spatial_waypoint_pretraining.round4_evaluation import (
     assign_episode_length_bands,
     compute_spatial_waypoint_metrics,
     constant_velocity_baseline,
@@ -42,24 +42,25 @@ from wt.round4.round4_evaluation import (
     summarize_spatial_waypoint_metrics,
     zero_baseline,
 )
-from wt.round4.round4_runner import _run_manifest
-from wt.round4.round4_training import (
+from wt.legacy.spatial_waypoint_pretraining.round4_runner import _run_manifest
+from wt.legacy.spatial_waypoint_pretraining.round4_training import (
     SpatialTrainingConfig,
     load_spatial_waypoint_checkpoint,
     predict_spatial_waypoints,
     train_spatial_waypoint,
 )
-from wt.round4.spatial_waypoint import (
+from wt.legacy.spatial_waypoint_pretraining.spatial_waypoint import (
     SpatialWaypointMLP,
     rebuild_spatial_waypoint_model,
     set_deterministic_seed,
     spatial_input_dim,
     spatial_waypoint_loss,
 )
-from wt.maritime.waypoint_samples import load_waypoint_samples
+from wt.legacy.maritime_environment.waypoint_samples import load_waypoint_samples
+from wt.common.paths import repo_root
 
 
-REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+REPOSITORY_ROOT = repo_root()
 CANONICAL_ROOT = (
     REPOSITORY_ROOT
     / "round_03"
@@ -129,7 +130,7 @@ class _TinyAdam:
 
 def _train_tiny(**kwargs):
     with patch(
-        "wt.round4.round4_training.torch.optim.Adam", _TinyAdam
+        "wt.legacy.spatial_waypoint_pretraining.round4_training.torch.optim.Adam", _TinyAdam
     ):
         return train_spatial_waypoint(**kwargs)
 

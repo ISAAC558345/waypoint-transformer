@@ -4,7 +4,7 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6i_t30_loss_attribution.analyze import (
+from wt.legacy.t30_loss_attribution.analyze import (
     BIT_TIE,
     P4_RESULTS,
     VALIDATION_IDS,

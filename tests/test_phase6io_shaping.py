@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6io_obs_reward.shaping import distance_potential, shaping_reward
-from wt.lowlevel_v2.phase1.protocol import ALPHA_RESIDUAL, PPO
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.legacy.obs_reward.shaping import distance_potential, shaping_reward
+from wt.legacy.historical1.protocol import ALPHA_RESIDUAL, PPO
 
 
 class Phase6IOShapingTests(unittest.TestCase):

@@ -6,9 +6,9 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6d.protocol import assert_development, choose_gate
-from wt.benchmark_v2.phase6d.shadow import macro_return
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.legacy.historical6d.protocol import assert_development, choose_gate
+from wt.legacy.historical6d.shadow import macro_return
 
 
 class Phase6DTemporalPlanningTest(unittest.TestCase):

@@ -6,17 +6,16 @@ import unittest
 
 import numpy as np
 
-from wt.maritime.config import MaritimeEnvConfig
-from wt.maritime.env import MaritimeEnv
-from wt.round18.audit import single_uav_regression
-from wt.round18.multi_env import MultiUAVMaritimeEnv, deterministic_matching, minimum_pairwise_distance, project_uav_separation
-from wt.round18.planner import ACTION_CANDIDATE_NAMES, PLANNING_HORIZONS, independent_decision, joint_plan
-from wt.round18.scenarios import SCENARIO_NAMESPACE, materialize_scenario, planning_scenarios
+from wt.legacy.maritime_environment.config import MaritimeEnvConfig
+from wt.legacy.maritime_environment.env import MaritimeEnv
+from wt.legacy.multi_uav_coordination.audit import single_uav_regression
+from wt.legacy.multi_uav_coordination.multi_env import MultiUAVMaritimeEnv, deterministic_matching, minimum_pairwise_distance, project_uav_separation
+from wt.legacy.multi_uav_coordination.planner import ACTION_CANDIDATE_NAMES, PLANNING_HORIZONS, independent_decision, joint_plan
+from wt.legacy.multi_uav_coordination.scenarios import SCENARIO_NAMESPACE, materialize_scenario, planning_scenarios
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
-
-
+ROOT = repo_root()
 def config(k=3, **extra):
     values = dict(num_uavs=2, num_buoys=k, task_semantics_version="v1", buoy_drift_mode="static", channel_variation_mode="static", initial_uav_positions_m=((85.0, 90.0), (115.0, 90.0)), initial_queue_bits_by_buoy=tuple(2.5e6 for _ in range(k)), terminate_on_task_success=False, episode_horizon=8)
     values.update(extra)
@@ -25,9 +24,9 @@ def config(k=3, **extra):
 
 class Round18MultiUAVTests(unittest.TestCase):
     def test_01_round17_lock_unchanged(self): self.assertEqual(hashlib.sha256((ROOT / "round_17/ROUND_LOCK.json").read_bytes()).hexdigest().upper(), "A393148768835CB28296999D73490C77CAD51279B8060E9B99D10EC8581285FD")
-    def test_02_no_optimizer(self): self.assertNotIn("optimizer", (ROOT / "src/wt/round18").joinpath("planner.py").read_text())
-    def test_03_no_backward(self): self.assertNotIn("backward", (ROOT / "src/wt/round18").joinpath("planner.py").read_text())
-    def test_04_no_neural_checkpoint(self): self.assertFalse(list((ROOT / "src/wt/round18").glob("*.pt")))
+    def test_02_no_optimizer(self): self.assertNotIn("optimizer", (ROOT / "src/wt/legacy/multi_uav_coordination").joinpath("planner.py").read_text())
+    def test_03_no_backward(self): self.assertNotIn("backward", (ROOT / "src/wt/legacy/multi_uav_coordination").joinpath("planner.py").read_text())
+    def test_04_no_neural_checkpoint(self): self.assertFalse(list((ROOT / "src/wt/legacy/multi_uav_coordination").glob("*.pt")))
     def test_05_m1_exact_regression(self): self.assertTrue(all(row["passed"] for row in single_uav_regression()))
     def test_06_configurable_num_uavs(self): self.assertEqual(MaritimeEnvConfig(num_uavs=4).num_uavs, 4)
     def test_07_joint_action_shape(self): self.assertEqual(MultiUAVMaritimeEnv(config()).action_shape, (2, 2))
@@ -80,7 +79,7 @@ class Round18MultiUAVTests(unittest.TestCase):
     def test_34_holdout_zero(self): self.assertEqual(json.loads((ROOT / "round_18/round_manifest.json").read_text())["untouched_holdout_new_access_count"], 0)
     def test_35_hgnn_false(self): self.assertFalse(json.loads((ROOT / "round_18/round_manifest.json").read_text())["hgnn_training_performed"])
     def test_36_ppo_false(self): self.assertFalse(json.loads((ROOT / "round_18/round_manifest.json").read_text())["ppo_training_performed"])
-    def test_37_compileall(self): self.assertTrue(compileall.compile_dir(str(ROOT / "src/wt/round18"), quiet=1))
+    def test_37_compileall(self): self.assertTrue(compileall.compile_dir(str(ROOT / "src/wt/legacy/multi_uav_coordination"), quiet=1))
 
 
 if __name__ == "__main__": unittest.main()

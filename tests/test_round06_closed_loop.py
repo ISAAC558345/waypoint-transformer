@@ -5,9 +5,9 @@ import json
 import unittest
 from pathlib import Path
 import numpy as np
-from wt.maritime.config import MaritimeEnvConfig
-from wt.maritime.round3_runner import _build_case_config
-from wt.round6.closed_loop import ROOT, R4_CHECKPOINT, R5, WAYPOINT_SHA, _achieved_goal, _reset, _snapshot, _state_from_observation
+from wt.legacy.maritime_environment.config import MaritimeEnvConfig
+from wt.legacy.maritime_environment.round3_runner import _build_case_config
+from wt.legacy.waypoint_closed_loop.closed_loop import ROOT, R4_CHECKPOINT, R5, WAYPOINT_SHA, _achieved_goal, _reset, _snapshot, _state_from_observation
 
 class Round6ClosedLoopTests(unittest.TestCase):
     def test_01_locked_hashes_exist(self):

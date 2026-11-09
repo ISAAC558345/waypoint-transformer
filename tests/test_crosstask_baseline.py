@@ -7,20 +7,20 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import make_option
-from wt.benchmark_v2.phase6iaa_formal_planner.planner import _pool_hash
-from wt.benchmark_v2.phase6i_urgency_stage_a.runner import fly_action
-from wt.benchmark_v2.phase6i_urgency_stage_b.analyze import choose_gate, paired_contrast
-from wt.benchmark_v2.phase6i_urgency_stage_b.conditions import training_pool_decision
-from wt.benchmark_v2.phase6i_urgency_stage_b.protocol import (
+from wt.control.mappo.worker import make_option
+from wt.planning.formal_planner.planner import _pool_hash
+from wt.research.urgency_stage_a.runner import fly_action
+from wt.research.urgency_stage_b.analyze import choose_gate, paired_contrast
+from wt.research.urgency_stage_b.conditions import training_pool_decision
+from wt.research.urgency_stage_b.protocol import (
     dev_scenario_ids,
     pool_hash,
     replication_rng,
     require_dev_scenario,
 )
-from wt.benchmark_v2.phase6i_urgency_stage_b.rollout import environment_match, run_episode
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import install_light_info
+from wt.research.urgency_stage_b.rollout import environment_match, run_episode
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.control.mappo.worker import install_light_info
 
 
 class StageBGuardTest(unittest.TestCase):
@@ -104,7 +104,7 @@ class StageBRolloutTest(unittest.TestCase):
             path = Path(folder) / "steps.csv"
             import csv
 
-            from wt.benchmark_v2.phase6i_urgency_stage_b.rollout import ROW_FIELDS
+            from wt.research.urgency_stage_b.rollout import ROW_FIELDS
 
             with path.open("w", encoding="utf-8", newline="") as handle:
                 writer = csv.DictWriter(handle, fieldnames=ROW_FIELDS, extrasaction="ignore", lineterminator="\n")

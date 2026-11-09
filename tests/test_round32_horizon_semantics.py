@@ -7,9 +7,10 @@ import hashlib
 import json
 from pathlib import Path
 import unittest
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 R32 = ROOT / "round_32"
 OUTPUT = R32 / "outputs" / "round32_horizon_semantics_audit_20260830_2231"
 FIGURES = R32 / "figures" / "round32_horizon_semantics_audit_20260830_2231"
@@ -30,7 +31,7 @@ class Round32HorizonSemanticsTests(unittest.TestCase):
         self.assertEqual(digest(ROOT / "round_31/ROUND_LOCK.json"), R31_LOCK_SHA)
 
     def test_02_only_audit_source_has_no_learning_operations(self) -> None:
-        source = (ROOT / "src/wt/round32/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/horizon_semantics/audit.py").read_text(encoding="utf-8")
         tree = ast.parse(source)
         calls = {node.func.attr for node in ast.walk(tree) if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)}
         self.assertNotIn("backward", calls); self.assertNotIn("step", calls)
@@ -124,7 +125,7 @@ class Round32HorizonSemanticsTests(unittest.TestCase):
         required = {"horizon_semantics_spec.md", "cross_round_horizon_semantics.csv", "planner_effective_horizon_audit.csv", "planner_horizon_utilization.csv", "h5_h10_equivalence_audit.csv", "dynamic_round_effective_horizon.csv", "task_waypoint_effective_horizon.csv", "task_waypoint_horizon_coverage.csv", "remaining_horizon_semantics.md", "round30_episode_horizon_provenance.md", "ppo_rollout_vs_episode_horizon_audit.md", "ppo_effective_credit_horizon.csv", "historical_planning_horizon_validity.csv", "historical_task_waypoint_horizon_validity.csv", "historical_gate_horizon_reassessment.csv", "long_horizon_definition_proposal.md", "physical_episode_timescale_audit.csv", "queue_service_timescale_audit.csv", "coordination_timescale_audit.csv", "episode_horizon_sufficiency_gate.json", "round32_horizon_semantics_gate.json", "round32_readiness_gate.json", "access_audit.json", "run_manifest.json"}
         self.assertTrue(all((OUTPUT / name).is_file() for name in required))
         self.assertEqual(len(list(FIGURES.glob("*.png"))), 12); self.assertEqual(len(list(FIGURES.glob("*.svg"))), 12)
-        for path in (ROOT / "src/wt/round32").glob("*.py"):
+        for path in (ROOT / "src/wt/legacy/horizon_semantics").glob("*.py"):
             compile(path.read_text(encoding="utf-8"), path.as_posix(), "exec")
 
     def test_17_round33_requires_a_narrow_successor_amendment(self) -> None:

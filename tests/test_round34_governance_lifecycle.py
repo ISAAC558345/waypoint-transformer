@@ -8,10 +8,11 @@ import sys
 import unittest
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "src"))
 
-from wt.governance_state_sync import EXPECTED_R33_LOCK_SHA256, verify_round35_round36_lifecycle
+from wt.legacy.historical_governance.sync import EXPECTED_R33_LOCK_SHA256, verify_round35_round36_lifecycle
+from wt.common.paths import repo_root
 
 
 class Round34GovernanceLifecycleTests(unittest.TestCase):

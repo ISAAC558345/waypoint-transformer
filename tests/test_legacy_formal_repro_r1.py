@@ -7,9 +7,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6iaa_formal_planner.protocol import POLICY_FILE, read_policy
-from wt.legacy_formal_repro_r1.protocol import DECISION_TIMES, HORIZON, OUTPUT, ROOT, SCENARIOS, STEP_BUDGET
-from wt.legacy_formal_repro_r1.runner import prepare_policy_copy
+from wt.planning.formal_planner.protocol import POLICY_FILE, read_policy
+from wt.evaluation.scheme_c_runner.protocol import DECISION_TIMES, HORIZON, OUTPUT, ROOT, SCENARIOS, STEP_BUDGET
+from wt.evaluation.scheme_c_runner.runner import prepare_policy_copy
 
 
 class LegacyFormalReproR1Tests(unittest.TestCase):

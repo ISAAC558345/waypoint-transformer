@@ -5,11 +5,11 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6c.channel import link_rates
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, VALIDATION_POOL
-from wt.benchmark_v2.phase6ii_candidate_features.audit import PROPOSED, assign_gate, separated
-from wt.benchmark_v2.phase6ii_candidate_features.features import candidate_features
-from wt.l3b.config import L3BConfig
+from wt.legacy.historical6c.channel import link_rates
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, VALIDATION_POOL
+from wt.legacy.candidate_features.audit import PROPOSED, assign_gate, separated
+from wt.legacy.candidate_features.features import candidate_features
+from wt.envs.queue.config import L3BConfig
 
 
 def _state() -> dict[str, np.ndarray]:

@@ -9,15 +9,17 @@ import unittest
 import numpy as np
 import torch
 
-from wt.round19.multi_env import SharedSpectrumMultiUAVEnv
-from wt.round30.evaluation import rollout
-from wt.round30.features import feature_dict, stack_feature_dicts
-from wt.round30.models import DeepSetsActorCritic
-from wt.round30.ppo import PPOAgent, PPOConfig, compute_gae, load_agent, tanh_log_prob
-from wt.round30.scenarios import assert_disjoint, fresh_scenarios, training_scenarios, validation_scenarios
+from wt.legacy.shared_spectrum_planning.multi_env import SharedSpectrumMultiUAVEnv
+from wt.legacy.deepsets_ppo.evaluation import rollout
+from wt.legacy.deepsets_ppo.features import feature_dict, stack_feature_dicts
+from wt.legacy.deepsets_ppo.models import DeepSetsActorCritic
+from wt.algorithms.ppo_common import PPOConfig, compute_gae, tanh_log_prob
+from wt.legacy.deepsets_ppo.ppo import PPOAgent, load_agent
+from wt.legacy.deepsets_ppo.scenarios import assert_disjoint, fresh_scenarios, training_scenarios, validation_scenarios
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 ROUND = ROOT / "round_30"
 OUTPUT = ROUND / "outputs" / "round30_deepsets_ppo_20260830_1845"
 R29_LOCK_SHA256 = "1F4CCAECE01F4B3F127CE4B922A9AC07B0E7E01AC9A34B204192EF8651AC51FB"
@@ -62,7 +64,7 @@ class Round30DeepSetsPPOTests(unittest.TestCase):
         self.assertFalse(DeepSetsActorCritic().uses_task_waypoint)
 
     def test_04_no_planner_trigger_or_graph_policy_input(self) -> None:
-        text = (ROOT / "src/wt/round30/models.py").read_text(encoding="utf-8").lower()
+        text = (ROOT / "src/wt/legacy/deepsets_ppo/models.py").read_text(encoding="utf-8").lower()
         for forbidden in ("joint_plan", "independent_decision", "edge_index", "torch_geometric", "gru(", "lstm("):
             self.assertNotIn(forbidden, text)
 
@@ -178,7 +180,7 @@ class Round30DeepSetsPPOTests(unittest.TestCase):
         self.assertAlmostEqual(float(actual), -0.2, places=6)
 
     def test_21_advantage_normalization_and_gradient_clip_registered(self) -> None:
-        source = (ROOT / "src/wt/round30/ppo.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/deepsets_ppo/ppo.py").read_text(encoding="utf-8")
         self.assertIn('flat["advantages"] = (flat["advantages"] - flat["advantages"].mean())', source)
         self.assertIn("clip_grad_norm_", source)
 
@@ -218,7 +220,7 @@ class Round30DeepSetsPPOTests(unittest.TestCase):
         self.assertTrue(np.array_equal(first["action"], second["action"]))
 
     def test_27_round30_sources_compile(self) -> None:
-        for path in (ROOT / "src/wt/round30").glob("*.py"):
+        for path in (ROOT / "src/wt/legacy/deepsets_ppo").glob("*.py"):
             compile(path.read_text(encoding="utf-8"), path.as_posix(), "exec")
 
 

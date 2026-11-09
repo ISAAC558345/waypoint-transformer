@@ -6,11 +6,12 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.lowlevel_v2.phase5zf_distillation_error_audit.metrics import choose_gate, pairwise_accuracy, recovery_ratio
-from wt.lowlevel_v2.phase5zf_distillation_error_audit.protocol import GROUPS, assert_consumed
+from wt.legacy.distillation_error_audit.metrics import choose_gate, pairwise_accuracy, recovery_ratio
+from wt.legacy.distillation_error_audit.protocol import GROUPS, assert_consumed
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5zf_distillation_error_audit"
 
 

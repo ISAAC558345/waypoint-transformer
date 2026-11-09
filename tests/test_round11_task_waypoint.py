@@ -3,10 +3,10 @@ import json, unittest
 from pathlib import Path
 import numpy as np
 import torch
-from wt.round11.task_waypoint import TaskWaypointConfig, TaskWaypointMLP, masked_softmax, task_waypoint_losses
+from wt.legacy.task_waypoint_predictor.task_waypoint import TaskWaypointConfig, TaskWaypointMLP, masked_softmax, task_waypoint_losses
+from wt.common.paths import repo_root
 
-ROOT = Path(__file__).resolve().parents[1]
-
+ROOT = repo_root()
 class Round11(unittest.TestCase):
     def setUp(self):
         self.cfg = TaskWaypointConfig(state_dim=7, max_buoys=3, progress_scale=5.0, return_std=2.0)

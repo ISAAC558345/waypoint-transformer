@@ -4,12 +4,12 @@ import inspect,json
 from pathlib import Path
 import unittest
 import numpy as np
-from wt.maritime.config import MaritimeEnvConfig
-from wt.maritime.env import MaritimeEnv, reflect_buoy_motion
-from wt.round15.planner import ACTION_CANDIDATE_NAMES as R15_ACTIONS
-from wt.round16.audit import _static_regression
-from wt.round16.planner import ACTION_CANDIDATE_NAMES, _causal_score, finite_lattice_plan
-from wt.round16.scenarios import materialize_scenario, planning_scenarios
+from wt.legacy.maritime_environment.config import MaritimeEnvConfig
+from wt.legacy.maritime_environment.env import MaritimeEnv, reflect_buoy_motion
+from wt.legacy.static_planning_headroom.planner import ACTION_CANDIDATE_NAMES as R15_ACTIONS
+from wt.legacy.buoy_drift_planning.audit import _static_regression
+from wt.legacy.buoy_drift_planning.planner import ACTION_CANDIDATE_NAMES, _causal_score, finite_lattice_plan
+from wt.legacy.buoy_drift_planning.scenarios import materialize_scenario, planning_scenarios
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -59,7 +59,7 @@ class Round16DriftTests(unittest.TestCase):
  def test_025_scenarios_cover_slow_diagnostic(self): self.assertIn("slowly_varying_secondary",{s.drift_tier for s in planning_scenarios()})
  def test_026_scenarios_cover_buoy_counts(self): self.assertEqual({s.num_buoys for s in planning_scenarios()},{3,5})
  def test_027_no_optimizer_or_backward(self):
-  source="\n".join(p.read_text(encoding="utf-8") for p in (ROOT/"src/wt/round16").glob("*.py"));self.assertNotIn("torch",source);self.assertNotIn(".backward(",source)
+  source="\n".join(p.read_text(encoding="utf-8") for p in (ROOT/"src/wt/legacy/buoy_drift_planning").glob("*.py"));self.assertNotIn("torch",source);self.assertNotIn(".backward(",source)
  def test_028_controls_forbid_holdout(self):
   m=json.loads((ROOT/"round_16/round_manifest.json").read_text());self.assertEqual(m["untouched_holdout_new_access_count"],0);self.assertFalse(m["untouched_holdout_new_accessed"])
  def test_029_controls_forbid_hgnn_ppo_multi_uav(self):

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import unittest
 
-from wt.benchmark_v2.phase6a.protocol import RESERVED_POOL, assert_allowed, choose_gate
+from wt.legacy.historical6a.protocol import RESERVED_POOL, assert_allowed, choose_gate
 
 
 class Phase6ATests(unittest.TestCase):

@@ -8,12 +8,13 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from wt.htw_phase9.const import BUOY_DIM, EDGE_UB_DIM
-from wt.lowlevel_v2.phase5l_joint_encoder.model import JointUtilityHGNN, append_queue_edge
-from wt.lowlevel_v2.phase5l_joint_encoder.protocol import assert_phase5l_seed
+from wt.models.edge_bound.const import BUOY_DIM, EDGE_UB_DIM
+from wt.models.joint_encoder.model import JointUtilityHGNN, append_queue_edge
+from wt.models.joint_encoder.protocol import assert_phase5l_seed
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5l_joint_encoder"
 
 
@@ -55,11 +56,11 @@ class Phase5LTests(unittest.TestCase):
                     called.append(node.func.id)
         self.assertNotIn("decide", called)
         for relative in (
-            "src/wt/htw_phase100/high_level.py",
-            "src/wt/lowlevel_v2/residual_policy.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/reward.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/planner.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/encoder.py",
+            "src/wt/planning/task_option/high_level.py",
+            "src/wt/control/residual_policy.py",
+            "src/wt/research/hgnn_urgency/reward.py",
+            "src/wt/research/hgnn_urgency/planner.py",
+            "src/wt/research/hgnn_urgency/encoder.py",
         ):
             text = (ROOT / relative).read_text(encoding="utf-8")
             self.assertNotIn("phase5l", text)

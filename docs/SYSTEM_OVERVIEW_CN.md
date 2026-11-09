@@ -10,7 +10,7 @@
 
 ## 2. 系统总体架构
 
-正式入口是 `src/wt/benchmark_v2/phase6f_system_bringup/episode.py` 的 `run_active_episode`。它读取 `results/phase6iaa_formal_planner/active_policy.json`，构造 `FormalPlanner`，再调用 `run_closed_episode`。历史函数 `run_episode` 仍走 k=5，不是当前正式链路。
+正式入口是 `python -m wt.cli.evaluate`。它在预览时不加载模型；显式 `--run` 才执行已注册场景。规划器在 `src/wt/planning/formal_planner`，闭环包装在 `src/wt/evaluation/closed_loop/episode.py`。正式策略文件是 `configs/formal_scheme_c_policy.json`。历史函数 `run_episode` 仍走 k=5，不是当前正式链路。
 
 ```mermaid
 flowchart TD
@@ -41,7 +41,7 @@ flowchart TD
 
 ## 3. 高层规划模型
 
-实现在 `src/wt/lowlevel_v2/phase5l_joint_encoder/model.py` 与 `src/wt/lowlevel_v2/phase5k_joint_decoder/decoders.py`。节点和边的宽度来自 `src/wt/htw_phase9/const.py`。
+实现在 `src/wt/models/joint_encoder/model.py` 与 `src/wt/models/joint_decoder/decoders.py`。节点和边的宽度来自 `src/wt/models/edge_bound/const.py`。
 
 - UAV 节点宽度 8，浮标节点宽度 7。浮标队列通道在构图时追加到边特征，原始 UAV–浮标边宽 3，追加后为 4。
 - UAV–UAV 边宽 2。两层 UAV–浮标消息传递，一层 UAV–UAV 消息传递，自身不连边。
@@ -53,23 +53,23 @@ flowchart TD
 
 方案 C 与 Epoch 6 共用同一个 matching decoder。decoder 对选中的无人机—浮标对打分并求和，空闲项不加分。正式排序必须调用 `decoder.score_assignments`。Top-1 使用 `np.argsort(-scores, kind="stable")`。
 
-方案 C 的权重是 `results/phase6if_ranking_loss/runs/c/epoch_001.pt`，SHA-256 为 `f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864`。它从 Epoch 6 checkpoint `results/phase6id_joint_utility_training/epoch_006.pt`（SHA-256 `7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde`）出发，只继续训练编码器。损失是 `top_regret_loss`：把 J15 bit 标签线性归一化后做 `LISTNET_BETA=30` 的 softmax 目标，再对分数做 log-softmax 交叉熵。标签不是模型输入。
+方案 C 的权重是 `checkpoints/formal/scheme_c_epoch1.pt`，SHA-256 为 `f77c0bcef3f359e01de35b75753f3776a9e8332bf65fd191f112236df074f864`。它从 Epoch 6 checkpoint `checkpoints/initialization/joint_utility_epoch6.pt`（SHA-256 `7859f9c94940d9259ab1bece1f8dddf9655a4dcb1cd45d537ad127347526bcde`）出发，只继续训练编码器。损失是 `top_regret_loss`：把 J15 bit 标签线性归一化后做 `LISTNET_BETA=30` 的 softmax 目标，再对分数做 log-softmax 交叉熵。标签不是模型输入。
 
-训练与验证划分在 `src/wt/benchmark_v2/phase6ib_highlevel_dataset/protocol.py`：训练场景 322000–322047，验证场景 322048–322063，标签名 `J15_MAPPO_CURRENT`，标签由冻结的 MAPPO-V2 在 15 步窗口上产生。`utility_rank` 只用于审计，1 bit 以内视为并列。
+训练与验证划分在 `src/wt/data/highlevel_graphs/protocol.py`：训练场景 322000–322047，验证场景 322048–322063，标签名 `J15_MAPPO_CURRENT`，标签由冻结的 MAPPO-V2 在 15 步窗口上产生。`utility_rank` 只用于审计，1 bit 以内视为并列。
 
 离线验证上，方案 C Epoch 1 相对 Epoch 6 的短程记录是：平均 J15 由 18,892,120 bit 到 19,240,091 bit，Top-1 由 0.5625 到 0.6667，Top-3 由 0.6250 到 0.7083，Top-5 由 0.6667 到 0.7083，归一化 regret 由 0.0507 到 0.0355。中位配对差为 0，48 个状态中 14 个上升、7 个下降。方案 C 的后续 epoch、方案 A 的 gap 加权损失、方案 B 的容差间隔损失，以及后来的交互头和融合头，都没有成为正式规划器。这些离线排序指标不是完整 episode 的交付量。
 
-当前正式文件 `active_policy.json` 的内容是 `generator=G1_RATE`、`high_level_policy=scheme_c`、`k=6`、`hold=15`、`historical_formal_k=5`。文件缺失或字段非法会抛出 `PolicyError`，不会静默回退到方案 C。
+当前正式文件 `configs/formal_scheme_c_policy.json` 的内容是 `generator=G1_RATE`、`high_level_policy=scheme_c`、`k=6`、`hold=15`、`historical_formal_k=5`。文件缺失或字段非法会抛出 `PolicyError`，不会静默回退到方案 C。
 
 ## 4. 低层轨迹控制模型
 
-低层是 Residual MAPPO-V2，实现在 `src/wt/lowlevel_v2/residual_policy.py`。Actor 先编码邻居，输出宽度 16；自身、任务、通信、邻居和一项附加特征进入隐藏宽度 64 的网络，均值维度为 2，`log_std` 初值为 -1，均值头零初始化。集中式 Critic 隐藏宽度 128。推理使用 `tanh(mu)` 的确定性均值，不从正态分布采样。观测宽度来自 `observation.py`：自身 5、任务 8、通信 4。
+低层是 Residual MAPPO-V2，实现在 `src/wt/control/residual_policy.py`。Actor 先编码邻居，输出宽度 16；自身、任务、通信、邻居和一项附加特征进入隐藏宽度 64 的网络，均值维度为 2，`log_std` 初值为 -1，均值头零初始化。集中式 Critic 隐藏宽度 128。推理使用 `tanh(mu)` 的确定性均值，不从正态分布采样。观测宽度来自 `observation.py`：自身 5、任务 8、通信 4。
 
 动作是相对 fly-toward 的二维残差，再经过 SafetyProjector。约束失败或投影非有限时，该步记零并计一次干预；投影范数大于 `1e-3` 也计干预。MAPPO 不选择 assignment，只执行已经给定的 TaskOption。
 
 Phase-6G 的低层奖励是 `served_bits / block_payload_bits`，再减去投影惩罚和残差惩罚。`block_payload_bits` 为 1,000,000。完整 episode 的研究指标是环境累计的 `payload_bits`，不是这个训练奖励本身。
 
-保留的 checkpoint 是 `src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt`，SHA-256 为 `92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e`。Actor 由旧的 `mappo_original.pt` 热启动，Critic 重新初始化。正式闭环使用 seed 0。同一状态和同一 TaskOption 下，MAPPO-V2 相对 fly-toward 的场景等权配对差为 621,455.224 bit，95% 置信区间为 [502,582.599, 752,570.564] bit，按 1 bit 阈值全部场景为正。该对照使用了五个种子，记录在 `HTW_Phase6G_BenchmarkV2_LowLevelMAPPO_CN.md`。
+保留的 checkpoint 是 `checkpoints/formal/mappo_v2_seed0.pt`，SHA-256 为 `92aa68785c898415439ad8c6480427593e10c851e3d392ee3a8110f3a58dbd0e`。Actor 由旧的 `mappo_original.pt` 热启动，Critic 重新初始化。正式闭环使用 seed 0。同一状态和同一 TaskOption 下，MAPPO-V2 相对 fly-toward 的场景等权配对差为 621,455.224 bit，95% 置信区间为 [502,582.599, 752,570.564] bit，按 1 bit 阈值全部场景为正。该对照使用了五个种子，记录在 `HTW_Phase6G_BenchmarkV2_LowLevelMAPPO_CN.md`。
 
 低层尚未单独证明它在运动约束、干扰和服务进度同时变化时做了超出“朝目标残差加投影”的轨迹规划。干扰和服务进入环境转移，但 Actor 的动作只通过观测间接看到这些量。
 

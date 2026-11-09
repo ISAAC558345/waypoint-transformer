@@ -6,13 +6,14 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase61.features import IDLE_INDEX, OPTION_DIM
-from wt.htw_phase61.models import L2AOptionActorCritic
-from wt.htw_phase61.run_phase61 import SMOKE_CONFIG
-from wt.htw_phase63.high_ppo import DiscretePPOAgent, HighLevelOptionModel, assignment_to_indices, indices_to_assignment
-from wt.htw_phase63.vector import HierarchicalVector, collect_high
-from wt.l2a.env import L2AEnv, project_exclusive
-from wt.round30.ppo import PPOAgent, compute_gae, seed_everything
+from wt.legacy.htw_historical61.features import IDLE_INDEX, OPTION_DIM
+from wt.legacy.htw_historical61.models import L2AOptionActorCritic
+from wt.legacy.htw_historical61.run_phase61 import SMOKE_CONFIG
+from wt.legacy.htw_historical63.high_ppo import DiscretePPOAgent, HighLevelOptionModel, assignment_to_indices, indices_to_assignment
+from wt.legacy.htw_historical63.vector import HierarchicalVector, collect_high
+from wt.legacy.queue_task_causal.env import L2AEnv, project_exclusive
+from wt.algorithms.ppo_common import compute_gae, seed_everything
+from wt.legacy.deepsets_ppo.ppo import PPOAgent
 
 
 class HTWPhase63Tests(unittest.TestCase):

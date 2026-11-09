@@ -6,9 +6,9 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.lowlevel_v2.phase5zb_cross_moment_audit.metrics import choose_gate
-from wt.lowlevel_v2.phase5zb_cross_moment_audit.moments import cross_moment, permute_buoys, permute_uavs
-from wt.lowlevel_v2.phase5zb_cross_moment_audit.protocol import assert_consumed
+from wt.legacy.cross_moment_audit.metrics import choose_gate
+from wt.legacy.cross_moment_audit.moments import cross_moment, permute_buoys, permute_uavs
+from wt.legacy.cross_moment_audit.protocol import assert_consumed
 
 
 class Phase5ZBCrossMomentAuditTest(unittest.TestCase):

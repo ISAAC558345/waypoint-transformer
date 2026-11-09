@@ -7,11 +7,12 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.lowlevel_v2.phase5i_joint_utility.protocol import assert_phase5i_seed
-from wt.lowlevel_v2.phase5i_joint_utility.search import enumerate_exclusive
+from wt.legacy.joint_utility.protocol import assert_phase5i_seed
+from wt.legacy.joint_utility.search import enumerate_exclusive
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5i_joint_utility"
 
 

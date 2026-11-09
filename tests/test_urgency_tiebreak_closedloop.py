@@ -4,14 +4,14 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6i_urgency_tiebreak_closedloop.protocol import (
+from wt.research.urgency_tiebreak_closedloop.protocol import (
     GATE_BLOCKED,
     GATE_COMPLETE,
     GATE_INCONCLUSIVE,
     choose_gate,
     label_horizon,
 )
-from wt.benchmark_v2.phase6i_urgency_tiebreak_closedloop.rules import choose_executed, payload_first, urgency_tiebreak
+from wt.research.urgency_tiebreak_closedloop.rules import choose_executed, payload_first, urgency_tiebreak
 
 
 FORBIDDEN = ("deci" + "de(", "322048", "322064")
@@ -54,7 +54,7 @@ class TiebreakRuleTest(unittest.TestCase):
         self.assertEqual(choose_gate(mechanical_ok=False, budget_ok=True, tiebreak_fraction=1.0, urgent_direction="consistent_nonnegative"), GATE_BLOCKED)
 
     def test_sources_do_not_name_held_out_splits(self) -> None:
-        root = Path("src/wt/benchmark_v2/phase6i_urgency_tiebreak_closedloop")
+        root = Path("src/wt/research/urgency_tiebreak_closedloop")
         text = "\n".join(path.read_text(encoding="utf-8") for path in root.glob("*.py"))
         for token in FORBIDDEN:
             self.assertNotIn(token, text)

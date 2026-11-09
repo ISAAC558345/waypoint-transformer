@@ -4,18 +4,18 @@ from __future__ import annotations
 import json
 import unittest
 
-from wt.htw_phase101.protocol import HIGH_CKPT
-from wt.htw_phase103.gate import InRangeZeroMotionGate
-from wt.htw_phase105.protocol import SCENARIO_BASE as P105
-from wt.htw_phase106.protocol import EXPECTED_HIGH_SHA, N_SCENARIOS, SCENARIO_BASE, candidate_untouched_seeds, historical_blocked_seeds, sha256_bytes
-from wt.htw_phase106.stats import classify_final
+from wt.legacy.htw_historical101.protocol import HIGH_CKPT
+from wt.legacy.htw_historical103.gate import InRangeZeroMotionGate
+from wt.legacy.htw_historical105.protocol import SCENARIO_BASE as P105
+from wt.legacy.htw_historical106.protocol import EXPECTED_HIGH_SHA, N_SCENARIOS, SCENARIO_BASE, candidate_untouched_seeds, historical_blocked_seeds, sha256_bytes
+from wt.legacy.htw_historical106.stats import classify_final
 
 
 class Phase106Tests(unittest.TestCase):
     def test_01_restore_sha_and_sys_a(self) -> None:
         self.assertTrue(HIGH_CKPT.is_file())
         self.assertEqual(sha256_bytes(HIGH_CKPT.read_bytes()), EXPECTED_HIGH_SHA)
-        from wt.htw_phase106.protocol import ARCH_MANIFEST, FREEZE_FILE
+        from wt.legacy.htw_historical106.protocol import ARCH_MANIFEST, FREEZE_FILE
 
         arch = json.loads(ARCH_MANIFEST.read_text(encoding="utf-8"))
         self.assertTrue(arch["architecture_frozen"])
@@ -34,8 +34,8 @@ class Phase106Tests(unittest.TestCase):
         self.assertFalse(set(seeds) & set(range(P105, P105 + 64)))
 
     def test_03_gate_and_baselines_unmodified_modules(self) -> None:
-        self.assertEqual(InRangeZeroMotionGate.__module__, "wt.htw_phase103.gate")
-        from wt.htw_phase105.baselines import exclusive_assignment, legal_myopic_assignment
+        self.assertEqual(InRangeZeroMotionGate.__module__, "wt.legacy.htw_historical103.gate")
+        from wt.legacy.htw_historical105.baselines import exclusive_assignment, legal_myopic_assignment
 
         self.assertTrue(callable(legal_myopic_assignment))
         self.assertTrue(callable(exclusive_assignment))

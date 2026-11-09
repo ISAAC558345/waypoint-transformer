@@ -10,8 +10,9 @@ import os
 import shutil
 import subprocess
 from pathlib import Path
+from wt.common.paths import repo_root
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 SKIP = {".git", "__pycache__", ".venv", "node_modules"}
 ARCHIVE = ROOT / "docs" / "archive" / "reports"
 KEEP_ROOT_NAMES = {
@@ -30,7 +31,7 @@ HASH_TARGETS = [
     "phase6id_joint_utility_training/epoch_006.pt",
     "phase5l_joint_encoder/joint_utility_encoder.pt",
     "phase5k_joint_decoder/matching_decoder.pt",
-    "src/wt/benchmark_v2/phase6g_lowlevel_mappo/checkpoints/phase6g_seed0.pt",
+    "checkpoints/formal/mappo_v2_seed0.pt",
     "phase6iaa_formal_planner/active_policy.json",
     "phase6iab_planner_stability/summary.json",
     "phase6iac_independent_holdout/summary.json",

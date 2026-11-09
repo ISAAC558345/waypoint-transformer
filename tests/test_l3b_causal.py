@@ -5,8 +5,8 @@ import unittest
 
 import numpy as np
 
-from wt.l3b.env import L3BEnv, sinr_rates_for_links
-from wt.l3b.policies import exclusive_matching, myopic_assignment
+from wt.envs.queue.env import L3BEnv, sinr_rates_for_links
+from wt.envs.queue.policies import exclusive_matching, myopic_assignment
 
 
 class L3BCausalTests(unittest.TestCase):

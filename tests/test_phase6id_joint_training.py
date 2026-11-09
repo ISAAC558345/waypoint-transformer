@@ -6,10 +6,10 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.dataset import DecisionDataset
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST
-from wt.benchmark_v2.phase6id_joint_training.metrics import state_metrics
-from wt.benchmark_v2.phase6id_joint_training.protocol import (
+from wt.models.hgnn_assets.dataset import DecisionDataset
+from wt.models.hgnn_assets.protocol import RESERVED_TEST
+from wt.legacy.joint_training.metrics import state_metrics
+from wt.legacy.joint_training.protocol import (
     ENCODER_CKPT,
     clear_improvement,
     selection_key,

@@ -6,11 +6,11 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6e.generators import build_pools
-from wt.benchmark_v2.phase6e.value import batch_j15
-from wt.benchmark_v2.phase6f_system_bringup.episode import _contamination, _fingerprint
-from wt.benchmark_v2.phase6f_system_bringup.protocol import assert_allowed, choose_gate
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.planning.candidate_generation.generators import build_pools
+from wt.planning.candidate_generation.value import batch_j15
+from wt.evaluation.closed_loop.episode import _contamination, _fingerprint
+from wt.evaluation.closed_loop.protocol import assert_allowed, choose_gate
 
 
 class Phase6FTests(unittest.TestCase):

@@ -4,23 +4,23 @@ from __future__ import annotations
 import numpy as np
 import torch
 
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import TrainWorker, low_level_reward
-from wt.benchmark_v2.phase6h_executor_conditioned_macro.executor import load_primary
-from wt.l3b.config import L3BConfig
-from wt.lowlevel_v2.contracts import clip_unit_step
-from wt.lowlevel_v2.critic_state import expected_critic_dim
-from wt.lowlevel_v2.residual_policy import CentralizedCritic
-from wt.lowlevel_v2.phase1.protocol import (
+from wt.control.mappo.worker import TrainWorker, low_level_reward
+from wt.control.executor.executor import load_primary
+from wt.envs.queue.config import L3BConfig
+from wt.planning.contracts import clip_unit_step
+from wt.models.critic_state import expected_critic_dim
+from wt.control.residual_policy import CentralizedCritic
+from wt.legacy.historical1.protocol import (
     ACTION_SCALE,
     ALPHA_RESIDUAL,
     LAMBDA_PROJECT,
     LAMBDA_RESIDUAL,
     SERVICE_SAFETY_MARGIN_M,
 )
-from wt.lowlevel_v2.contracts import CollisionConfig
-from wt.lowlevel_v2.safety_projector import SafetyProjector
-from wt.l3b.policies import fly_toward
-from wt.lowlevel_v2.residual_policy import ResidualActor
+from wt.planning.contracts import CollisionConfig
+from wt.control.safety_projector import SafetyProjector
+from wt.envs.queue.policies import fly_toward
+from wt.control.residual_policy import ResidualActor
 
 
 def main() -> None:
@@ -60,12 +60,12 @@ def main() -> None:
         hit = np.full(6, -1, dtype=np.int64)
         for step_index in range(int(cfg.episode_horizon)):
             if worker.pending <= 0:
-                from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import make_option, sample_assignment
+                from wt.control.mappo.worker import make_option, sample_assignment
 
                 worker.option = make_option(worker.env, sample_assignment(worker.env, worker.rng))
                 worker.pending = 15
             association = np.asarray(worker.option.association, dtype=np.int64).copy()
-            obs = __import__("wt.lowlevel_v2.observation", fromlist=["build_actor_observation"]).build_actor_observation(
+            obs = __import__("wt.data.observation", fromlist=["build_actor_observation"]).build_actor_observation(
                 worker.env, worker.option, worker.last_movement
             )
             task = obs["task"]

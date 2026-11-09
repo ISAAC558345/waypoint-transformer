@@ -4,7 +4,7 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6i_urgency_utility_rule.analyze import (
+from wt.research.urgency_utility_rule.analyze import (
     Candidate,
     dominates,
     leave_one_out,
@@ -13,7 +13,7 @@ from wt.benchmark_v2.phase6i_urgency_utility_rule.analyze import (
     state_analysis,
     urgent_first,
 )
-from wt.benchmark_v2.phase6i_urgency_utility_rule.protocol import (
+from wt.research.urgency_utility_rule.protocol import (
     GATE_BLOCKED,
     GATE_INCONCLUSIVE,
     GATE_READY,
@@ -62,7 +62,7 @@ class UtilityRuleTest(unittest.TestCase):
         self.assertEqual(choose_gate(inputs_ok=True, frontier_ok=False, rules_ok=True), GATE_INCONCLUSIVE)
 
     def test_sources_do_not_name_held_out_splits(self) -> None:
-        root = Path("src/wt/benchmark_v2/phase6i_urgency_utility_rule")
+        root = Path("src/wt/research/urgency_utility_rule")
         text = "\n".join(path.read_text(encoding="utf-8") for path in root.glob("*.py"))
         for token in FORBIDDEN:
             self.assertNotIn(token, text)

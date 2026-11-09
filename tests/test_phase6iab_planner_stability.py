@@ -4,8 +4,8 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6iaa_formal_planner.protocol import POLICY_FILE
-from wt.benchmark_v2.phase6iab_planner_stability.protocol import (
+from wt.planning.formal_planner.protocol import POLICY_FILE
+from wt.legacy.planner_stability.protocol import (
     BIT_TIE,
     BOOTSTRAP_DRAWS,
     BOOTSTRAP_SEED,

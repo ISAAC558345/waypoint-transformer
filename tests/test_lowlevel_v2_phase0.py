@@ -8,22 +8,22 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from wt.htw_phase100.contract import TaskOption
-from wt.htw_phase100.rule_executor import RuleExecutorAdapter
-from wt.htw_phase103.gate import InRangeZeroMotionGate
-from wt.l3b.env import L3BEnv, active_links, sinr_rates_for_links
-from wt.lowlevel_v2.base_executor import BaseExecutor
-from wt.lowlevel_v2.contracts import CollisionConfig, clip_unit_step, env_target
-from wt.lowlevel_v2.critic_state import build_critic_state, expected_critic_dim
-from wt.lowlevel_v2.data_registry import build_registry, refuse_untouched
-from wt.lowlevel_v2.metrics import collision_diagnostics
-from wt.lowlevel_v2.neighbor_encoder import NeighborSetEncoder, permutation_invariance_error
-from wt.lowlevel_v2.observation import build_actor_observation, neighbor_edges
-from wt.lowlevel_v2.protocol import D_SAFE_PLACEHOLDER_M, EXPECTED_HIGH_SHA, FINAL_CKPT, HOLD_STEPS, PHASE106_UNTOUCHED, ROOT
-from wt.lowlevel_v2.residual_action import residual_desired
-from wt.lowlevel_v2.residual_policy import ResidualActor
-from wt.lowlevel_v2.safety_projector import SafetyProjector
-from wt.lowlevel_v2.service_safe_envelope import envelope_active, next_in_envelope
+from wt.planning.task_option.contract import TaskOption
+from wt.planning.task_option.rule_executor import RuleExecutorAdapter
+from wt.legacy.htw_historical103.gate import InRangeZeroMotionGate
+from wt.envs.queue.env import L3BEnv, active_links, sinr_rates_for_links
+from wt.control.base_executor import BaseExecutor
+from wt.planning.contracts import CollisionConfig, clip_unit_step, env_target
+from wt.models.critic_state import build_critic_state, expected_critic_dim
+from wt.data.registry import build_registry, refuse_untouched
+from wt.evaluation.metrics import collision_diagnostics
+from wt.models.neighbor_encoder import NeighborSetEncoder, permutation_invariance_error
+from wt.data.observation import build_actor_observation, neighbor_edges
+from wt.control.lowlevel_protocol import D_SAFE_PLACEHOLDER_M, EXPECTED_HIGH_SHA, FINAL_CKPT, HOLD_STEPS, PHASE106_UNTOUCHED, ROOT
+from wt.control.residual_action import residual_desired
+from wt.control.residual_policy import ResidualActor
+from wt.control.safety_projector import SafetyProjector
+from wt.control.service_safe_envelope import envelope_active, next_in_envelope
 
 
 def _sha(path: Path) -> str:

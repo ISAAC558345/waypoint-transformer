@@ -6,9 +6,9 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.lowlevel_v2.phase5zc_dynamic_observability.actions import radial_components
-from wt.lowlevel_v2.phase5zc_dynamic_observability.metrics import choose_gate, nearest_neighbor
-from wt.lowlevel_v2.phase5zc_dynamic_observability.protocol import assert_consumed
+from wt.legacy.dynamic_observability.actions import radial_components
+from wt.legacy.dynamic_observability.metrics import choose_gate, nearest_neighbor
+from wt.legacy.dynamic_observability.protocol import assert_consumed
 
 
 class Phase5ZCDynamicObservabilityTest(unittest.TestCase):
@@ -41,7 +41,7 @@ class Phase5ZCDynamicObservabilityTest(unittest.TestCase):
             assert_consumed(230050)
 
     def test_package_does_not_fit_a_probe(self) -> None:
-        text = "\n".join(path.read_text(encoding="utf-8") for path in Path(__file__).resolve().parents[1].joinpath("src/wt/lowlevel_v2/phase5zc_dynamic_observability").glob("*.py"))
+        text = "\n".join(path.read_text(encoding="utf-8") for path in Path(__file__).resolve().parents[1].joinpath("src/wt/legacy/dynamic_observability").glob("*.py"))
         for banned in ("torch.optim", ".backward(", "RandomForest", "ExtraTrees", "XGBoost", "LogisticRegression"):
             self.assertNotIn(banned, text)
 

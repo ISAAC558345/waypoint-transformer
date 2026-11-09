@@ -7,9 +7,10 @@ import json
 import math
 from pathlib import Path
 import unittest
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 ROUND = ROOT / "round_29"
 OUTPUT = ROUND / "outputs" / "round29_cross_scale_dsp_20260830_1745"
 FIGURES = ROUND / "figures" / "round29_cross_scale_dsp_20260830_1745"
@@ -48,18 +49,18 @@ class Round29CrossScaleDeferredServiceTests(unittest.TestCase):
         self.assertEqual(digest(ROOT / "round_28" / "ROUND_LOCK.json"), EXPECTED_R28)
 
     def test_02_no_optimizer(self) -> None:
-        self.assertNotIn("torch.optim", (ROOT / "src/wt/round29/audit.py").read_text(encoding="utf-8"))
+        self.assertNotIn("torch.optim", (ROOT / "src/wt/legacy/cross_scale_planning_trigger/audit.py").read_text(encoding="utf-8"))
 
     def test_03_no_backward(self) -> None:
-        self.assertNotIn(".backward(", (ROOT / "src/wt/round29/audit.py").read_text(encoding="utf-8"))
+        self.assertNotIn(".backward(", (ROOT / "src/wt/legacy/cross_scale_planning_trigger/audit.py").read_text(encoding="utf-8"))
 
     def test_04_no_model_or_policy_training(self) -> None:
-        source = (ROOT / "src/wt/round29/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/cross_scale_planning_trigger/audit.py").read_text(encoding="utf-8")
         for forbidden in ("train_one(", ".zero_grad(", "optimizer.step(", "torch.save"):
             self.assertNotIn(forbidden, source)
 
     def test_05_no_classifier_training(self) -> None:
-        source = (ROOT / "src/wt/round29/audit.py").read_text(encoding="utf-8").lower()
+        source = (ROOT / "src/wt/legacy/cross_scale_planning_trigger/audit.py").read_text(encoding="utf-8").lower()
         for forbidden in ("logisticregression", "decisiontree", "randomforest", "sklearn", "svm"):
             self.assertNotIn(forbidden, source)
 
@@ -137,7 +138,7 @@ class Round29CrossScaleDeferredServiceTests(unittest.TestCase):
         self.assertIn("before DSP or utility", config["confirmation"]["selection_rule"])
 
     def test_17_planner_and_environment_are_frozen(self) -> None:
-        source = (ROOT / "src/wt/round29/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/cross_scale_planning_trigger/audit.py").read_text(encoding="utf-8")
         self.assertIn("joint_plan(env, info, horizon=first_horizon)", source)
         self.assertIn("matching_mode=\"joint_aware\"", source)
 
@@ -168,7 +169,7 @@ class Round29CrossScaleDeferredServiceTests(unittest.TestCase):
         self.assertFalse(load(ROUND / "round_manifest.json")["hgnn_training_performed"])
 
     def test_23_no_ppo_or_marl(self) -> None:
-        source = (ROOT / "src/wt/round29/audit.py").read_text(encoding="utf-8").lower()
+        source = (ROOT / "src/wt/legacy/cross_scale_planning_trigger/audit.py").read_text(encoding="utf-8").lower()
         self.assertNotIn("mappo", source)
         self.assertFalse(load(ROUND / "round_manifest.json")["ppo_training_performed"])
 
@@ -184,7 +185,7 @@ class Round29CrossScaleDeferredServiceTests(unittest.TestCase):
                     self.assertTrue(math.isfinite(number), f"{path.name}: {value}")
 
     def test_25_compileable_figures_and_legal_successor_chain(self) -> None:
-        self.assertTrue((ROOT / "src/wt/round29/audit.py").is_file())
+        self.assertTrue((ROOT / "src/wt/legacy/cross_scale_planning_trigger/audit.py").is_file())
         self.assertFalse(load(ROUND / "ROUND_LOCK.json")["round30_created"])
         self.assertTrue((ROOT / "round_30" / "AGENTS.md").is_file())
         successor = ROOT / "round_31"

@@ -5,8 +5,8 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6i_execution_attribution.run_attribution import assert_validation_scenario
-from wt.benchmark_v2.phase6i_t45_counterfactual.run_counterfactual import (
+from wt.legacy.execution_attribution.run_attribution import assert_validation_scenario
+from wt.legacy.t45_counterfactual.run_counterfactual import (
     assignment_geometry,
     choose_distance_assignment,
 )

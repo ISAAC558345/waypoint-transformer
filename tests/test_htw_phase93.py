@@ -5,10 +5,10 @@ import unittest
 
 import torch
 
-from wt.htw_phase93.losses import ranking_loss
-from wt.htw_phase93.models import RelationalHGNNAssignmentHead
-from wt.htw_phase9.features import build_graph, feature_dict_l3b, stack_feature_dicts
-from wt.l3b.env import L3BEnv
+from wt.legacy.htw_historical93.losses import ranking_loss
+from wt.legacy.htw_historical93.models import RelationalHGNNAssignmentHead
+from wt.models.edge_bound.features import build_graph, feature_dict_l3b, stack_feature_dicts
+from wt.envs.queue.env import L3BEnv
 
 
 class Phase93Tests(unittest.TestCase):

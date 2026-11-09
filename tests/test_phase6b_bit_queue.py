@@ -3,9 +3,9 @@ from __future__ import annotations
 
 import unittest
 
-from wt.benchmark_v2.phase6b.accounting_checks import run_accounting_tests
-from wt.benchmark_v2.phase6b.protocol import assert_sanity_scenario, choose_gate
-from wt.l3b.env import L3BEnv
+from wt.legacy.historical6b.accounting_checks import run_accounting_tests
+from wt.legacy.historical6b.protocol import assert_sanity_scenario, choose_gate
+from wt.envs.queue.env import L3BEnv
 
 
 class Phase6BTests(unittest.TestCase):

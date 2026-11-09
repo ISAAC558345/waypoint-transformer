@@ -1,1 +1,0 @@
-"""Single-scenario formal Scheme C entry."""

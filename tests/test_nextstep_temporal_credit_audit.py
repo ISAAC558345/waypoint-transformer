@@ -6,13 +6,13 @@ import unittest
 import numpy as np
 import torch
 
-from wt.benchmark_v2.phase6d.shadow import capture_state
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import TrainWorker, low_level_reward
-from wt.benchmark_v2.phase6ir_scheme_c_align.worker import SchemeCTrainWorker
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.lowlevel_v2.critic_state import expected_critic_dim
-from wt.lowlevel_v2.residual_policy import CentralizedCritic, ResidualActor
-from wt.round30.ppo import compute_gae
+from wt.legacy.historical6d.shadow import capture_state
+from wt.control.mappo.worker import TrainWorker, low_level_reward
+from wt.legacy.scheme_c_align.worker import SchemeCTrainWorker
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.models.critic_state import expected_critic_dim
+from wt.control.residual_policy import CentralizedCritic, ResidualActor
+from wt.algorithms.ppo_common import compute_gae
 
 
 def _nets():
@@ -48,8 +48,8 @@ class TemporalCreditAuditTests(unittest.TestCase):
         self.assertAlmostEqual(reward, comm, places=6)
 
     def test_phase6g_hold_boundary_continues_the_episode(self) -> None:
-        from wt.benchmark_v2.phase6g_lowlevel_mappo.protocol import HOLD
-        from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import make_option
+        from wt.control.mappo.protocol import HOLD
+        from wt.control.mappo.worker import make_option
 
         actor, critic = _nets()
         worker = TrainWorker(0, 0, actor, critic)

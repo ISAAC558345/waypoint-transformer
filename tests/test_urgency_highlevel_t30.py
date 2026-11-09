@@ -6,8 +6,8 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.phase6i_urgency_highlevel_pilot.sampling import select_candidates
-from wt.benchmark_v2.phase6i_urgency_highlevel_t30_pilot.protocol import (
+from wt.research.urgency_highlevel_pilot.sampling import select_candidates
+from wt.research.urgency_highlevel_t30_pilot.protocol import (
     EXPECTED_SCENARIOS,
     GATE_BLOCKED,
     GATE_INCONCLUSIVE,
@@ -68,7 +68,7 @@ class T30PilotTest(unittest.TestCase):
         self.assertEqual(first["seed"], 602)
 
     def test_sources_stay_away_from_held_out_splits(self) -> None:
-        root = Path("src/wt/benchmark_v2/phase6i_urgency_highlevel_t30_pilot")
+        root = Path("src/wt/research/urgency_highlevel_t30_pilot")
         text = "\n".join(path.read_text(encoding="utf-8") for path in root.glob("*.py"))
         for token in FORBIDDEN:
             self.assertNotIn(token, text)

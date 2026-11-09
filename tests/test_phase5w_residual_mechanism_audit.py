@@ -7,14 +7,15 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.l3b.env import L3BEnv
-from wt.lowlevel_v2.phase5w_residual_mechanism_audit.metrics import choose_gate, synergy_ratio, synergy_value
-from wt.lowlevel_v2.phase5w_residual_mechanism_audit.protocol import assert_consumed
-from wt.lowlevel_v2.phase5w_residual_mechanism_audit.run_phase5w import _hybrids, _legal
-from wt.lowlevel_v2.phase5w_residual_mechanism_audit.semantics import service_semantics
+from wt.envs.queue.env import L3BEnv
+from wt.legacy.residual_mechanism_audit.metrics import choose_gate, synergy_ratio, synergy_value
+from wt.legacy.residual_mechanism_audit.protocol import assert_consumed
+from wt.legacy.residual_mechanism_audit.run_phase5w import _hybrids, _legal
+from wt.legacy.residual_mechanism_audit.semantics import service_semantics
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5w_residual_mechanism_audit"
 
 
@@ -76,10 +77,10 @@ class Phase5WTests(unittest.TestCase):
         self.assertNotIn("Adam", called)
         self.assertNotIn("backward", called)
         for relative in (
-            "src/wt/htw_phase100/high_level.py",
-            "src/wt/lowlevel_v2/residual_policy.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/reward.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/planner.py",
+            "src/wt/planning/task_option/high_level.py",
+            "src/wt/control/residual_policy.py",
+            "src/wt/research/hgnn_urgency/reward.py",
+            "src/wt/research/hgnn_urgency/planner.py",
         ):
             self.assertNotIn("phase5w", (ROOT / relative).read_text(encoding="utf-8"))
 

@@ -5,20 +5,20 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase101.protocol import DESIGN_TRAIN_SEEDS, DESIGN_VAL_SEEDS, HIGH_CKPT
-from wt.htw_phase103.gate import InRangeZeroMotionGate
-from wt.htw_phase104.protocol import SCENARIO_BASE as P104
-from wt.htw_phase105.baselines import exclusive_assignment, legal_myopic_assignment
-from wt.htw_phase105.protocol import HIGH_SEED, N_SCENARIOS, SCENARIO_BASE, sha256_bytes
-from wt.htw_phase105.stats import paired_bootstrap
-from wt.l3b.env import L3BEnv, conflict_mask
-from wt.l3b.policies import myopic_assignment
+from wt.legacy.htw_historical101.protocol import DESIGN_TRAIN_SEEDS, DESIGN_VAL_SEEDS, HIGH_CKPT
+from wt.legacy.htw_historical103.gate import InRangeZeroMotionGate
+from wt.legacy.htw_historical104.protocol import SCENARIO_BASE as P104
+from wt.legacy.htw_historical105.baselines import exclusive_assignment, legal_myopic_assignment
+from wt.legacy.htw_historical105.protocol import HIGH_SEED, N_SCENARIOS, SCENARIO_BASE, sha256_bytes
+from wt.legacy.htw_historical105.stats import paired_bootstrap
+from wt.envs.queue.env import L3BEnv, conflict_mask
+from wt.envs.queue.policies import myopic_assignment
 
 
 class Phase105Tests(unittest.TestCase):
     def test_01_independent_seeds_disjoint(self) -> None:
-        from wt.htw_phase105.protocol import all_blocked_scenario_seeds
-        from wt.htw_phase105.run_phase105 import select_seeds
+        from wt.legacy.htw_historical105.protocol import all_blocked_scenario_seeds
+        from wt.legacy.htw_historical105.run_phase105 import select_seeds
 
         seeds = select_seeds()
         self.assertEqual(len(seeds), N_SCENARIOS)
@@ -35,7 +35,7 @@ class Phase105Tests(unittest.TestCase):
         self.assertEqual(sha256_bytes(HIGH_CKPT.read_bytes()), "dbd6196b23c111a88a4d86a9054ca1709e459e5b035c1d9210639bedd2dda109")
 
     def test_03_gate_is_phase103(self) -> None:
-        self.assertEqual(InRangeZeroMotionGate.__module__, "wt.htw_phase103.gate")
+        self.assertEqual(InRangeZeroMotionGate.__module__, "wt.legacy.htw_historical103.gate")
 
     def test_04_legal_myopic_has_no_collision(self) -> None:
         env = L3BEnv()
@@ -55,7 +55,7 @@ class Phase105Tests(unittest.TestCase):
         self.assertEqual(out["n"], 4)
 
     def test_06_no_training_flag_in_protocol_constants(self) -> None:
-        from wt.htw_phase105.protocol import HOLD
+        from wt.legacy.htw_historical105.protocol import HOLD
 
         self.assertEqual(HOLD, 15)
 

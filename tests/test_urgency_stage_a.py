@@ -6,30 +6,30 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import install_light_info
-from wt.benchmark_v2.phase6i_urgency_stage_a.ledger import (
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.control.mappo.worker import install_light_info
+from wt.research.urgency_stage_a.ledger import (
     AdmissionAgeLedger,
     AgeBucket,
     LedgerError,
     snap_vector,
 )
-from wt.benchmark_v2.phase6i_urgency_stage_a.protocol import (
+from wt.research.urgency_stage_a.protocol import (
     AGE_ORIGIN_ARRIVAL,
     AGE_ORIGIN_RESET,
     smoke_scenario_ids,
 )
-from wt.benchmark_v2.phase6i_urgency_stage_a.runner import (
+from wt.research.urgency_stage_a.runner import (
     branch_env,
     communication_at_service,
     fly_action,
     run_episode,
     same_outcome,
 )
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST
-from wt.lowlevel_v2.critic_state import expected_critic_dim
-from wt.lowlevel_v2.observation import TASK_DIM
-from wt.lowlevel_v2.residual_policy import ResidualActor
+from wt.models.hgnn_assets.protocol import RESERVED_TEST
+from wt.models.critic_state import expected_critic_dim
+from wt.data.observation import TASK_DIM
+from wt.control.residual_policy import ResidualActor
 
 
 def _zeros(count: int) -> np.ndarray:
@@ -158,7 +158,7 @@ class LedgerRuleTest(unittest.TestCase):
         assignment = np.asarray([0, 1, 2, 3, 4, 5], dtype=np.int64)
         option_hold = 15
         while int(env.t) < 4:
-            from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import make_option
+            from wt.control.mappo.worker import make_option
 
             option = make_option(env, assignment)
             option.remaining_hold = option_hold
@@ -178,7 +178,7 @@ class LedgerRuleTest(unittest.TestCase):
             ledger.assert_matches(env.q_bits, float(env.tol_bits))
             option_hold -= 1
         before = np.asarray(env.cumulative_snap_bits, dtype=np.float64).copy()
-        from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import make_option
+        from wt.control.mappo.worker import make_option
 
         option = make_option(env, assignment)
         action = fly_action(env, option, np.zeros((6, 2)))
@@ -245,7 +245,7 @@ class LogInvariantTest(unittest.TestCase):
         env = L3BBitQueueEnvV2()
         install_light_info(env)
         env.reset(seed=scenario_id)
-        from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import make_option
+        from wt.control.mappo.worker import make_option
 
         assignment = np.asarray([0, 1, 2, 3, 4, 5], dtype=np.int64)
         option = make_option(env, assignment)
@@ -274,10 +274,10 @@ class LogInvariantTest(unittest.TestCase):
         self.assertNotIn("remaining_arrivals", text)
         self.assertNotIn("decide(", text)
         for relative in (
-            "src/wt/benchmark_v2/bit_queue_v2.py",
-            "src/wt/benchmark_v2/phase6g_lowlevel_mappo/worker.py",
-            "src/wt/lowlevel_v2/safety_projector.py",
-            "src/wt/benchmark_v2/phase6ib_highlevel_dataset/hgnn_revision.py",
+            "src/wt/envs/bit_queue.py",
+            "src/wt/control/mappo/worker.py",
+            "src/wt/control/safety_projector.py",
+            "src/wt/data/highlevel_graphs/hgnn_revision.py",
         ):
             formal = (root / relative).read_text(encoding="utf-8")
             self.assertNotIn("phase6i_urgency_stage_a", formal)

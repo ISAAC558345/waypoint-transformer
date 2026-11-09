@@ -3,8 +3,9 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+from wt.common.paths import repo_root
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "scripts"))
 
 

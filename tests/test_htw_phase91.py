@@ -6,12 +6,12 @@ import unittest
 import numpy as np
 import torch
 
-from wt.htw_phase64.run_phase64 import high_config
-from wt.htw_phase9.agent import GraphDiscretePPOAgent
-from wt.htw_phase9.const import indices_to_assignment
-from wt.htw_phase9.features import build_graph, feature_dict_l3b, stack_feature_dicts
-from wt.htw_phase91.models import OPTION_DIM, HeteroOptionHGNN, MLPOptionModel
-from wt.l3b.env import L3BEnv
+from wt.legacy.htw_historical64.run_phase64 import high_config
+from wt.models.edge_bound.agent import GraphDiscretePPOAgent
+from wt.models.edge_bound.const import indices_to_assignment
+from wt.models.edge_bound.features import build_graph, feature_dict_l3b, stack_feature_dicts
+from wt.legacy.htw_historical91.models import OPTION_DIM, HeteroOptionHGNN, MLPOptionModel
+from wt.envs.queue.env import L3BEnv
 
 
 class Phase91Tests(unittest.TestCase):

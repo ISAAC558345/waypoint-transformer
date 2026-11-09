@@ -27,33 +27,33 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader, Dataset
 
-from wt.round5.causal_policy import (
+from wt.legacy.causal_offline_policy.causal_policy import (
     CausalPolicyConfig,
     CausalTrajectoryPolicy,
     count_parameters,
     masked_action_mse,
 )
-from wt.round5.frozen_waypoint import (
+from wt.legacy.causal_offline_policy.frozen_waypoint import (
     SELECTED_WAYPOINT_CHECKPOINT_SHA256,
     build_frozen_waypoint_cache,
     load_frozen_waypoint_predictor,
 )
-from wt.round5.round5_data import (
+from wt.legacy.causal_offline_policy.round5_data import (
     CANONICAL_COLLECTION_POLICIES,
     build_round5_sequence_datasets,
     build_round5_sequence_split,
     load_round5_transition_dataset,
 )
-from wt.round5.round5_diagnostics import (
+from wt.legacy.causal_offline_policy.round5_diagnostics import (
     run_interface_smoke,
     run_recorded_replay,
 )
-from wt.round5.round5_evaluation import (
+from wt.legacy.causal_offline_policy.round5_evaluation import (
     compute_action_metrics,
     radial_action_projection,
 )
-from wt.round5.round5_runner import build_seeded_policy
-from wt.round5.round5_training import (
+from wt.legacy.causal_offline_policy.round5_runner import build_seeded_policy
+from wt.legacy.causal_offline_policy.round5_training import (
     PolicyBalancedBatchSampler,
     Round5Trainer,
     TrainingConfig,
@@ -62,8 +62,10 @@ from wt.round5.round5_training import (
     prepare_batch,
 )
 
+from wt.common.paths import repo_root
 
-REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+
+REPOSITORY_ROOT = repo_root()
 CANONICAL_ROOT = (
     REPOSITORY_ROOT
     / "round_03"

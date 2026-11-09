@@ -5,9 +5,9 @@ import unittest
 
 import torch
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.dataset import DecisionDataset
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST
-from wt.benchmark_v2.phase6if_ranking_loss.losses import gap_weighted_loss, tolerance_margin_loss, top_regret_loss
+from wt.models.hgnn_assets.dataset import DecisionDataset
+from wt.models.hgnn_assets.protocol import RESERVED_TEST
+from wt.algorithms.ranking_loss.losses import gap_weighted_loss, tolerance_margin_loss, top_regret_loss
 
 
 class Phase6IFLossTests(unittest.TestCase):

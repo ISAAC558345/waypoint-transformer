@@ -7,13 +7,14 @@ from pathlib import Path
 
 import torch
 
-from wt.lowlevel_v2.phase5q_encoder_scorer_audit.scorer import AssignmentConditionedSetScorer
-from wt.lowlevel_v2.phase5t_scorer_failure_audit.metrics import choose_gate
-from wt.lowlevel_v2.phase5t_scorer_failure_audit.protocol import assert_consumed_seed
-from wt.lowlevel_v2.phase5t_scorer_failure_audit.represent import assignment_latents
+from wt.legacy.encoder_scorer_audit.scorer import AssignmentConditionedSetScorer
+from wt.legacy.scorer_failure_audit.metrics import choose_gate
+from wt.legacy.scorer_failure_audit.protocol import assert_consumed_seed
+from wt.legacy.scorer_failure_audit.represent import assignment_latents
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5t_scorer_failure_audit"
 
 
@@ -69,10 +70,10 @@ class Phase5TTests(unittest.TestCase):
         self.assertNotIn("decide", called)
         self.assertNotIn("step", called)
         for relative in (
-            "src/wt/htw_phase100/high_level.py",
-            "src/wt/lowlevel_v2/residual_policy.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/reward.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/planner.py",
+            "src/wt/planning/task_option/high_level.py",
+            "src/wt/control/residual_policy.py",
+            "src/wt/research/hgnn_urgency/reward.py",
+            "src/wt/research/hgnn_urgency/planner.py",
         ):
             text = (ROOT / relative).read_text(encoding="utf-8")
             self.assertNotIn("phase5t", text)

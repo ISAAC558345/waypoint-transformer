@@ -5,12 +5,12 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase100.compatibility import audit
-from wt.htw_phase100.contract import TaskOption
-from wt.htw_phase100.protocol import DESIGN_SEEDS, HOLD
-from wt.htw_phase100.rule_executor import RuleExecutorAdapter
-from wt.l3b.env import L3BEnv
-from wt.l3b.policies import fly_toward
+from wt.planning.task_option.compatibility import audit
+from wt.planning.task_option.contract import TaskOption
+from wt.planning.task_option.protocol import DESIGN_SEEDS, HOLD
+from wt.planning.task_option.rule_executor import RuleExecutorAdapter
+from wt.envs.queue.env import L3BEnv
+from wt.envs.queue.policies import fly_toward
 
 
 class Phase100Tests(unittest.TestCase):

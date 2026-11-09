@@ -7,15 +7,15 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6d.shadow import capture_state
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import install_light_info
-from wt.benchmark_v2.phase6h_executor_conditioned_macro.labels import batch_j15_mappo
-from wt.benchmark_v2.phase6ib_highlevel_dataset.jobs import _frozen_actor
-from wt.benchmark_v2.phase6i_urgency_stage_a.ledger import AdmissionAgeLedger
-from wt.benchmark_v2.phase6i_urgency_highlevel_pilot.analyze import reversal_rate, spearman
-from wt.benchmark_v2.phase6i_urgency_highlevel_pilot.labels import score_assignment
-from wt.benchmark_v2.phase6i_urgency_highlevel_pilot.protocol import (
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.legacy.historical6d.shadow import capture_state
+from wt.control.mappo.worker import install_light_info
+from wt.control.executor.labels import batch_j15_mappo
+from wt.data.highlevel_graphs.jobs import _frozen_actor
+from wt.research.urgency_stage_a.ledger import AdmissionAgeLedger
+from wt.research.urgency_highlevel_pilot.analyze import reversal_rate, spearman
+from wt.research.urgency_highlevel_pilot.labels import score_assignment
+from wt.research.urgency_highlevel_pilot.protocol import (
     ADAPTER_CONFIG_SHA256,
     GATE_BLOCKED,
     GATE_INCONCLUSIVE,
@@ -24,8 +24,8 @@ from wt.benchmark_v2.phase6i_urgency_highlevel_pilot.protocol import (
     config_sha256,
     pilot_scenarios,
 )
-from wt.benchmark_v2.phase6i_urgency_highlevel_pilot.sampling import select_candidates
-from wt.benchmark_v2.phase6i_urgency_highlevel_pilot.shards import load_manifest, load_npz
+from wt.research.urgency_highlevel_pilot.sampling import select_candidates
+from wt.research.urgency_highlevel_pilot.shards import load_manifest, load_npz
 
 
 FORBIDDEN = ("deci" + "de(", "generate_scenario(", "_store(", "FormalPlanner", "phase6i_urgency_lowlevel")
@@ -41,7 +41,7 @@ class HighLevelPilotTest(unittest.TestCase):
         self.assertEqual(choose_gate(mechanical_ok=True, budget_ok=True, mean_spearman=0.99, mean_reversal=0.01), GATE_INCONCLUSIVE)
         self.assertEqual(choose_gate(mechanical_ok=True, budget_ok=True, mean_spearman=0.4, mean_reversal=0.2), GATE_PASS)
         with self.assertRaises(RuntimeError):
-            from wt.benchmark_v2.phase6i_urgency_highlevel_pilot.protocol import assert_pilot_scenario
+            from wt.research.urgency_highlevel_pilot.protocol import assert_pilot_scenario
 
             assert_pilot_scenario(322064)
 
@@ -81,16 +81,16 @@ class HighLevelPilotTest(unittest.TestCase):
         self.assertEqual(candidate_sha, manifest["checksum_candidates"])
         self.assertEqual(int(candidates["assignment"].shape[0]), 13327)
         self.assertEqual(set(candidates), {"candidate_id", "assignment", "j15_bits", "utility_rank", "tie_group_id"})
-        disk = Path("src/wt/benchmark_v2/phase6ib_highlevel_dataset/dataset/train/scenario_322000")
+        disk = Path("src/wt/data/highlevel_graphs/dataset/train/scenario_322000")
         names = {path.name for path in disk.iterdir()}
         self.assertFalse(any(name.endswith(".npz") for name in names))
-        from wt.benchmark_v2.phase6i_urgency_highlevel_pilot.shards import ShardError, _refuse_dataset_write
+        from wt.research.urgency_highlevel_pilot.shards import ShardError, _refuse_dataset_write
 
         with self.assertRaises(ShardError):
             _refuse_dataset_write(disk / "t000_state.npz")
 
     def test_sources_do_not_call_forbidden_writers(self) -> None:
-        root = Path("src/wt/benchmark_v2/phase6i_urgency_highlevel_pilot")
+        root = Path("src/wt/research/urgency_highlevel_pilot")
         text = "\n".join(path.read_text(encoding="utf-8") for path in root.glob("*.py"))
         for token in FORBIDDEN:
             self.assertNotIn(token, text)

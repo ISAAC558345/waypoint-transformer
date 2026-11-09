@@ -6,15 +6,15 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6e.generators import build_pools, proposal_scores
-from wt.benchmark_v2.phase6e.protocol import (
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.planning.candidate_generation.generators import build_pools, proposal_scores
+from wt.planning.candidate_generation.protocol import (
     assert_allowed,
     choose_gate,
     k4_sufficient,
     select_rule,
 )
-from wt.benchmark_v2.phase6e.value import batch_j15
+from wt.planning.candidate_generation.value import batch_j15
 
 
 class Phase6ECandidateGeneratorTest(unittest.TestCase):
@@ -32,7 +32,7 @@ class Phase6ECandidateGeneratorTest(unittest.TestCase):
     def test_scores_ignore_future_arrivals(self) -> None:
         env = L3BBitQueueEnvV2()
         env.reset(seed=320000)
-        from wt.benchmark_v2.phase6e.generators import feature_matrices
+        from wt.planning.candidate_generation.generators import feature_matrices
 
         before = proposal_scores(feature_matrices(env))
         env.arrivals = lambda: np.ones(env.config.num_buoys, dtype=np.float64) * 10.0

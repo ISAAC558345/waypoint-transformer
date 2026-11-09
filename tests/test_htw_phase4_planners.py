@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase4.planners import planner_a_action, planner_b_action, planner_window
-from wt.round19.multi_env import SharedSpectrumMultiUAVEnv
-from wt.round30.scenarios import training_scenarios
+from wt.legacy.htw_historical4.planners import planner_a_action, planner_b_action, planner_window
+from wt.legacy.shared_spectrum_planning.multi_env import SharedSpectrumMultiUAVEnv
+from wt.legacy.deepsets_ppo.scenarios import training_scenarios
 
 
 class HTWPhase4PlannerTests(unittest.TestCase):
@@ -30,7 +30,7 @@ class HTWPhase4PlannerTests(unittest.TestCase):
         self.assertEqual(path.shape[0], 6)
 
     def test_03_planner_c_single_beam_window(self) -> None:
-        from wt.htw_phase4.planners import planner_c_window
+        from wt.legacy.htw_historical4.planners import planner_c_window
 
         scenario = training_scenarios()[0]
         env = SharedSpectrumMultiUAVEnv(scenario.config(), buoy_positions_m=np.asarray(scenario.buoy_positions_m), options=scenario.options())

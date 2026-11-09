@@ -8,18 +8,20 @@ import unittest
 import numpy as np
 import torch
 
-from wt.htwc_phase1.adapter import CONDITIONED_UAV_DIM, attach_task_waypoint
-from wt.htwc_phase1.conditioned_actor import GoalConditionedActorCritic
-from wt.htwc_phase1.contract import DEFAULT_HORIZON, GOAL_DIM, TaskWaypointV2, validate_tw
-from wt.htwc_phase1.labels import collect_planner_window, labels_from_planner_window
-from wt.htwc_phase1.predictor import TaskWaypointV2Predictor, TWPredictorConfig, task_waypoint_v2_loss
-from wt.round19.scenarios import materialize_scenario, planning_scenarios
-from wt.round30.features import MAX_BUOYS, MAX_UAVS, UAV_DIM, feature_dict
-from wt.round30.models import DeepSetsActorCritic
-from wt.round30.ppo import PPOAgent, PPOConfig
+from wt.legacy.htwc_historical1.adapter import CONDITIONED_UAV_DIM, attach_task_waypoint
+from wt.legacy.htwc_historical1.conditioned_actor import GoalConditionedActorCritic
+from wt.legacy.htwc_historical1.contract import DEFAULT_HORIZON, GOAL_DIM, TaskWaypointV2, validate_tw
+from wt.legacy.htwc_historical1.labels import collect_planner_window, labels_from_planner_window
+from wt.legacy.htwc_historical1.predictor import TaskWaypointV2Predictor, TWPredictorConfig, task_waypoint_v2_loss
+from wt.legacy.shared_spectrum_planning.scenarios import materialize_scenario, planning_scenarios
+from wt.legacy.deepsets_ppo.features import MAX_BUOYS, MAX_UAVS, UAV_DIM, feature_dict
+from wt.legacy.deepsets_ppo.models import DeepSetsActorCritic
+from wt.algorithms.ppo_common import PPOConfig
+from wt.legacy.deepsets_ppo.ppo import PPOAgent
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 ROUND21_MODELS = ROOT / "src" / "wt" / "round21" / "models.py"
 ROUND21_MODELS_SHA256 = hashlib.sha256(ROUND21_MODELS.read_bytes()).hexdigest().upper()
 
@@ -124,7 +126,7 @@ class HTWPhase1TaskWaypointTests(unittest.TestCase):
         self.assertNotEqual(GoalConditionedActorCritic().shape.uav_dim, DeepSetsActorCritic().shape.uav_dim)
 
     def test_08_three_validation_baselines_have_distinct_input_width(self) -> None:
-        from wt.htwc_phase1.validation import interface_shapes
+        from wt.legacy.htwc_historical1.validation import interface_shapes
 
         shapes = interface_shapes()
         self.assertEqual(shapes["state_only"], 8)

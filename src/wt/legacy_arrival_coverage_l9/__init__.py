@@ -1,1 +1,0 @@
-"""Fixed-budget arrival-data coverage comparison."""

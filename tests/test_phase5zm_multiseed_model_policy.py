@@ -6,8 +6,8 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.lowlevel_v2.phase5zm_multiseed_model_policy.consensus import rank_mean_select
-from wt.lowlevel_v2.phase5zm_multiseed_model_policy.protocol import (
+from wt.legacy.multiseed_model_policy.consensus import rank_mean_select
+from wt.legacy.multiseed_model_policy.protocol import (
     FRESH_CONFIRMATION_AUTHORIZED,
     MODEL_R1_AGGREGATION_APPROVED,
     PLANNER_READY,

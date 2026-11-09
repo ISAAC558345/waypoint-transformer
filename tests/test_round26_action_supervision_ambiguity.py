@@ -7,9 +7,10 @@ import json
 import math
 from pathlib import Path
 import unittest
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 ROUND = ROOT / "round_26"
 OUTPUT = ROUND / "outputs" / "round26_action_ambiguity_20260830_1322"
 FIGURES = ROUND / "figures" / "round26_action_ambiguity_20260830_1322"
@@ -50,7 +51,7 @@ def rows(path: Path) -> list[dict[str, str]]:
 class Round26ActionSupervisionAmbiguityTests(unittest.TestCase):
     def test_round25_lock_and_frozen_preconditions(self) -> None:
         self.assertEqual(digest(ROOT / "round_25" / "ROUND_LOCK.json"), EXPECTED_R25)
-        from wt.round26.audit import verify_frozen_state
+        from wt.legacy.action_ambiguity.audit import verify_frozen_state
         result = verify_frozen_state()
         self.assertTrue(result["passed"])
         self.assertEqual(result["round20_development_test_reuse_count"], 0)

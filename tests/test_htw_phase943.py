@@ -6,13 +6,13 @@ import unittest
 import numpy as np
 import torch
 
-from wt.htw_phase9.const import MAX_UAVS
-from wt.htw_phase9.features import build_graph, conflict_rate, feature_dict_l3b, stack_feature_dicts
-from wt.htw_phase943.order_free_decoder import OrderFreeAssignmentModel, decoder_parameter_count, pick_candidate
-from wt.htw_phase943.protocol import BLOCKED_SCENARIO_SEEDS, COLLECT_SEEDS, SCAN_START
-from wt.htw_phase943.set_context import UNDECIDED, all_candidate_physics_set, apply_choice, assignment_links, empty_assignment, legal_candidate_mask, make_snap
-from wt.htw_phase943.set_likelihood_dp import exhaustive_logprob, subset_dp_logprob
-from wt.l3b.env import L3BEnv
+from wt.models.edge_bound.const import MAX_UAVS
+from wt.models.edge_bound.features import build_graph, conflict_rate, feature_dict_l3b, stack_feature_dicts
+from wt.legacy.htw_historical943.order_free_decoder import OrderFreeAssignmentModel, decoder_parameter_count, pick_candidate
+from wt.legacy.htw_historical943.protocol import BLOCKED_SCENARIO_SEEDS, COLLECT_SEEDS, SCAN_START
+from wt.legacy.htw_historical943.set_context import UNDECIDED, all_candidate_physics_set, apply_choice, assignment_links, empty_assignment, legal_candidate_mask, make_snap
+from wt.legacy.htw_historical943.set_likelihood_dp import exhaustive_logprob, subset_dp_logprob
+from wt.envs.queue.env import L3BEnv
 
 
 def _batch(env, info):
@@ -41,7 +41,7 @@ class Phase943Tests(unittest.TestCase):
         pa = all_candidate_physics_set(snap, ab)
         pb = all_candidate_physics_set(snap, ba)
         self.assertTrue(np.allclose(pa, pb))
-        from wt.htw_phase943.set_context import candidate_physics_set
+        from wt.legacy.htw_historical943.set_context import candidate_physics_set
 
         ref = candidate_physics_set(snap, ab, 2, 4)
         self.assertTrue(np.allclose(pa[2, 4], ref, atol=1.0e-5))
@@ -52,7 +52,7 @@ class Phase943Tests(unittest.TestCase):
         batch = _batch(env, info)
         model = OrderFreeAssignmentModel("deepsets")
         model.eval()
-        from wt.htw_phase943.evaluation import encode_env
+        from wt.legacy.htw_historical943.evaluation import encode_env
 
         encoded = encode_env(model, batch)
         snap = make_snap(env.uav_positions, env.buoy_positions, env.config)
@@ -76,7 +76,7 @@ class Phase943Tests(unittest.TestCase):
         env = L3BEnv()
         info = env.reset(seed=2)
         batch = _batch(env, info)
-        from wt.htw_phase943.evaluation import decode_assignment
+        from wt.legacy.htw_historical943.evaluation import decode_assignment
 
         d = OrderFreeAssignmentModel("deepsets")
         h = OrderFreeAssignmentModel("hgnn")
@@ -95,16 +95,16 @@ class Phase943Tests(unittest.TestCase):
 
     def test_07_inference_no_oracle_tokens(self) -> None:
         import inspect
-        from wt.htw_phase943.evaluation import decode_assignment
+        from wt.legacy.htw_historical943.evaluation import decode_assignment
 
         src = inspect.getsource(decode_assignment)
         self.assertNotIn("oracle_option_assignment", src)
         self.assertNotIn("teacher", src.lower())
 
     def test_08_uav_perm_and_candidate_shuffle(self) -> None:
-        from wt.htw_phase942.decode_order import permute_uav_batch
-        from wt.htw_phase943.evaluation import decode_assignment
-        from wt.htw_phase943.permutation_audit import map_assignment_uav, sets_equivalent
+        from wt.legacy.htw_historical942.decode_order import permute_uav_batch
+        from wt.legacy.htw_historical943.evaluation import decode_assignment
+        from wt.legacy.htw_historical943.permutation_audit import map_assignment_uav, sets_equivalent
 
         env = L3BEnv()
         info = env.reset(seed=3)
@@ -123,10 +123,10 @@ class Phase943Tests(unittest.TestCase):
             self.assertTrue(sets_equivalent(base, shuffled))
 
     def test_09_buoy_perm_with_cluster_labels(self) -> None:
-        from wt.htw_phase9.const import MAX_BUOYS
-        from wt.htw_phase943.evaluation import decode_assignment
-        from wt.htw_phase943.permutation_audit import map_assignment_buoy, permute_buoy_batch, sets_equivalent
-        from wt.htw_phase943.set_context import default_buoy_cluster
+        from wt.models.edge_bound.const import MAX_BUOYS
+        from wt.legacy.htw_historical943.evaluation import decode_assignment
+        from wt.legacy.htw_historical943.permutation_audit import map_assignment_buoy, permute_buoy_batch, sets_equivalent
+        from wt.legacy.htw_historical943.set_context import default_buoy_cluster
 
         env = L3BEnv()
         info = env.reset(seed=9001)

@@ -9,12 +9,13 @@ import unittest
 import numpy as np
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "src"))
 
-from wt.round35.level2_env import Level2SharedSpectrumMultiUAVEnv
-from wt.round36.harness import Round36AuditState, direct_execute_assignment, enumerate_legal_assignments, frozen_legacy_movement
-from wt.round36.scenarios import CONFIRMATION_FAMILY, DESIGN_FAMILY, build_clean_scenarios, require_clean_manifest
+from wt.legacy.relational_benchmark_environment.level2_env import Level2SharedSpectrumMultiUAVEnv
+from wt.legacy.relational_planning_validation.harness import Round36AuditState, direct_execute_assignment, enumerate_legal_assignments, frozen_legacy_movement
+from wt.legacy.relational_planning_validation.scenarios import CONFIRMATION_FAMILY, DESIGN_FAMILY, build_clean_scenarios, require_clean_manifest
+from wt.common.paths import repo_root
 
 
 OUT = ROOT / "round_36" / "outputs" / "round36_level2_planning_validation_20260902_1610"

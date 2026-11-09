@@ -7,9 +7,10 @@ import json
 import math
 from pathlib import Path
 import unittest
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 ROUND = ROOT / "round_27"
 OUTPUT = ROUND / "outputs" / "round27_conditional_planner_utility_20260830_1447"
 FIGURES = ROUND / "figures" / "round27_conditional_planner_utility_20260830_1447"
@@ -44,7 +45,7 @@ def rows(path: Path) -> list[dict[str, str]]:
 class Round27ConditionalPlannerUtilityTests(unittest.TestCase):
     def test_round26_lock_and_frozen_preconditions(self) -> None:
         self.assertEqual(digest(ROOT / "round_26" / "ROUND_LOCK.json"), EXPECTED_R26)
-        from wt.round27.audit import verify_frozen_state
+        from wt.legacy.conditional_planner_utility.audit import verify_frozen_state
         result = verify_frozen_state()
         self.assertTrue(result["passed"])
         self.assertEqual(result["fresh_new_rollout_count"], 0)

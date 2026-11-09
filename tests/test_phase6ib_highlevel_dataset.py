@@ -6,12 +6,12 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6e.generators import build_pools
-from wt.benchmark_v2.phase6ib_highlevel_dataset.jobs import _dense_groups
-from wt.benchmark_v2.phase6ib_highlevel_dataset.protocol import PRIMARY_SEED, assert_allowed, choose_gate, integrity_selected
-from wt.benchmark_v2.phase6ib_highlevel_dataset.hgnn_revision import step_observation
-from wt.benchmark_v2.phase6ib_highlevel_dataset.schema import state_arrays
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.planning.candidate_generation.generators import build_pools
+from wt.data.highlevel_graphs.jobs import _dense_groups
+from wt.data.highlevel_graphs.protocol import PRIMARY_SEED, assert_allowed, choose_gate, integrity_selected
+from wt.data.highlevel_graphs.hgnn_revision import step_observation
+from wt.data.highlevel_graphs.schema import state_arrays
 
 
 def _flags(**overrides) -> dict:
@@ -56,7 +56,7 @@ class Phase6IBTests(unittest.TestCase):
         self.assertEqual(choose_gate(_flags(degenerate=True, data_a=False))["gate"], "DATA-D")
 
     def test_worker_selection_rejects_contention(self) -> None:
-        from wt.benchmark_v2.phase6ib_highlevel_dataset.run_phase6ib import select_workers
+        from wt.data.highlevel_graphs.run_phase6ib import select_workers
 
         def row(workers: int, seconds: float, projected: float, failed: bool = False) -> dict:
             return {"workers": workers, "mean_scenario_seconds": seconds, "projected_seconds": projected, "oom": False, "failed": failed}

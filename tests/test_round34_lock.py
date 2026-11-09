@@ -6,9 +6,10 @@ import json
 from pathlib import Path
 import unittest
 import sys
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "src"))
 
 def sha256(path: Path) -> str:

@@ -6,9 +6,9 @@ import unittest
 import numpy as np
 import torch
 
-from wt.htw_phase9.const import IDLE_INDEX, MAX_BUOYS, MAX_UAVS
-from wt.htw_phase9.features import build_graph, conflict_rate, feature_dict_l3b, stack_feature_dicts
-from wt.htw_phase94.assignment_context import (
+from wt.models.edge_bound.const import IDLE_INDEX, MAX_BUOYS, MAX_UAVS
+from wt.models.edge_bound.features import build_graph, conflict_rate, feature_dict_l3b, stack_feature_dicts
+from wt.legacy.htw_historical94.assignment_context import (
     all_candidate_physics,
     candidate_physics,
     legality_mask,
@@ -17,12 +17,12 @@ from wt.htw_phase94.assignment_context import (
     partial_vector,
     prefix_links,
 )
-from wt.htw_phase94.autoregressive_decoder import AssignmentARModel, decoder_parameter_count
-from wt.htw_phase94.evaluation import decode_sequence
-from wt.htw_phase94.oracle_sequence import sequence_to_assignment, serialize_oracle_assignment
-from wt.htw_phase94.training import precompute_teacher_context, teacher_sequences
-from wt.l3b.env import L3BEnv
-from wt.l3b.policies import oracle_option_assignment
+from wt.legacy.htw_historical94.autoregressive_decoder import AssignmentARModel, decoder_parameter_count
+from wt.legacy.htw_historical94.evaluation import decode_sequence
+from wt.legacy.htw_historical94.oracle_sequence import sequence_to_assignment, serialize_oracle_assignment
+from wt.legacy.htw_historical94.training import precompute_teacher_context, teacher_sequences
+from wt.envs.queue.env import L3BEnv
+from wt.envs.queue.policies import oracle_option_assignment
 
 
 class Phase94Tests(unittest.TestCase):

@@ -5,8 +5,9 @@ import csv
 import json
 import shutil
 from pathlib import Path
+from wt.common.paths import repo_root
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PHASE106 = ROOT / "src" / "wt" / "htw_phase106" / "outputs" / "untouched"
 PHASE945 = ROOT / "src" / "wt" / "htw_phase945" / "outputs" / "utility_aligned"
 PHASE943 = ROOT / "src" / "wt" / "htw_phase943" / "outputs" / "order_free_decoder"

@@ -7,9 +7,10 @@ import json
 import math
 from pathlib import Path
 import unittest
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 ROUND = ROOT / "round_25"
 OUTPUT = ROUND / "outputs" / "round25_supervision_ambiguity_alignment_20260830_1203"
 FIGURES = ROUND / "figures" / "round25_supervision_ambiguity_alignment_20260830_1203"
@@ -47,7 +48,7 @@ def read_json(path: Path) -> dict:
 class Round25SupervisionAmbiguityTests(unittest.TestCase):
     def test_round24_lock_and_frozen_preconditions(self) -> None:
         self.assertEqual(digest(ROOT / "round_24" / "ROUND_LOCK.json"), EXPECTED_R24)
-        from wt.round25.audit import verify_frozen_state
+        from wt.legacy.supervision_ambiguity.audit import verify_frozen_state
         result = verify_frozen_state()
         self.assertTrue(result["passed"])
         self.assertEqual(result["round24_mismatch_count"], 0)

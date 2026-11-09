@@ -5,15 +5,15 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase100.contract import TaskOption
-from wt.htw_phase100.rule_executor import RuleExecutorAdapter
-from wt.htw_phase9.const import HOLD
-from wt.l3b.env import L3BEnv
-from wt.l3b.policies import fly_toward
+from wt.planning.task_option.contract import TaskOption
+from wt.planning.task_option.rule_executor import RuleExecutorAdapter
+from wt.models.edge_bound.const import HOLD
+from wt.envs.queue.env import L3BEnv
+from wt.envs.queue.policies import fly_toward
 
-from wt.htw_phase102.replay import classify_rho
-from wt.htw_phase103.gate import InRangeZeroMotionGate
-from wt.htw_phase103.protocol import DESIGN_VAL_SEEDS, HIGH_CKPT, LOW_FINAL, sha256_bytes
+from wt.legacy.htw_historical102.replay import classify_rho
+from wt.legacy.htw_historical103.gate import InRangeZeroMotionGate
+from wt.legacy.htw_historical103.protocol import DESIGN_VAL_SEEDS, HIGH_CKPT, LOW_FINAL, sha256_bytes
 
 
 class Phase103Tests(unittest.TestCase):

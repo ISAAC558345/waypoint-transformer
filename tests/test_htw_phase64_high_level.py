@@ -5,14 +5,15 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase61.features import BUOY_DIM
-from wt.htw_phase61.models import L2AOptionActorCritic
-from wt.htw_phase61.run_phase61 import SMOKE_CONFIG
-from wt.htw_phase64.features import ENHANCED_BUOY_DIM, feature_dict_high
-from wt.htw_phase64.models import HighLevelOptionModel
-from wt.htw_phase64.vector import HeldHighVector, high_level_reward
-from wt.l2a.env import L2AEnv
-from wt.round30.ppo import PPOAgent, seed_everything
+from wt.legacy.htw_historical61.features import BUOY_DIM
+from wt.legacy.htw_historical61.models import L2AOptionActorCritic
+from wt.legacy.htw_historical61.run_phase61 import SMOKE_CONFIG
+from wt.legacy.htw_historical64.features import ENHANCED_BUOY_DIM, feature_dict_high
+from wt.legacy.htw_historical64.models import HighLevelOptionModel
+from wt.legacy.htw_historical64.vector import HeldHighVector, high_level_reward
+from wt.legacy.queue_task_causal.env import L2AEnv
+from wt.algorithms.ppo_common import seed_everything
+from wt.legacy.deepsets_ppo.ppo import PPOAgent
 
 
 class HTWPhase64Tests(unittest.TestCase):

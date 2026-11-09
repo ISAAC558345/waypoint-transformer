@@ -6,12 +6,12 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import install_light_info, make_option
-from wt.benchmark_v2.phase6h_executor_conditioned_macro.executor import actor_is_stateless, load_primary
-from wt.benchmark_v2.phase6h_executor_conditioned_macro.labels import batch_j15_mappo
-from wt.benchmark_v2.phase6h_executor_conditioned_macro.protocol import PRIMARY_SEED, assert_allowed, choose_gate
-from wt.benchmark_v2.phase6f_system_bringup.episode import _contamination, _fingerprint
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.control.mappo.worker import install_light_info, make_option
+from wt.control.executor.executor import actor_is_stateless, load_primary
+from wt.control.executor.labels import batch_j15_mappo
+from wt.control.executor.protocol import PRIMARY_SEED, assert_allowed, choose_gate
+from wt.evaluation.closed_loop.episode import _contamination, _fingerprint
 
 
 class Phase6HTests(unittest.TestCase):

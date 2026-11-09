@@ -5,8 +5,8 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6i_execution_attribution.run_attribution import assert_validation_scenario
-from wt.benchmark_v2.phase6i_t30_active_preserve.run_preserve import (
+from wt.legacy.execution_attribution.run_attribution import assert_validation_scenario
+from wt.legacy.t30_active_preserve.run_preserve import (
     choose_preserving_assignment,
     uav_roles,
 )

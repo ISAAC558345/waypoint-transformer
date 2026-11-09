@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, VALIDATION_POOL
-from wt.benchmark_v2.phase6ip_dynamic_sinr.audit import assign_gate, straight_line_channel
-from wt.l3b.config import L3BConfig
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, VALIDATION_POOL
+from wt.legacy.dynamic_sinr.audit import assign_gate, straight_line_channel
+from wt.envs.queue.config import L3BConfig
 
 
 class Phase6IPDynamicSinrTests(unittest.TestCase):

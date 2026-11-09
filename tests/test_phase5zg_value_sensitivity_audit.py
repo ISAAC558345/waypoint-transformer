@@ -6,17 +6,18 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.lowlevel_v2.phase5zg_value_sensitivity_audit.metrics import (
+from wt.legacy.value_sensitivity_audit.metrics import (
     choose_gate,
     group_dot,
     sign_agreement,
     trapezoid,
     unique_dominant,
 )
-from wt.lowlevel_v2.phase5zg_value_sensitivity_audit.protocol import GROUPS, assert_consumed
+from wt.legacy.value_sensitivity_audit.protocol import GROUPS, assert_consumed
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5zg_value_sensitivity_audit"
 
 

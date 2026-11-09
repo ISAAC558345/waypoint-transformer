@@ -10,12 +10,12 @@ import unittest
 
 import numpy as np
 
-from wt.maritime.config import MaritimeEnvConfig
-from wt.maritime.env import MaritimeEnv
-from wt.round15.planner import ACTION_CANDIDATE_NAMES as R15_ACTIONS
-from wt.round17.audit import _static_regression
-from wt.round17.planner import ACTION_CANDIDATE_NAMES, _causal_score, advance_channel_phase, finite_lattice_plan, predictable_channel_multiplier
-from wt.round17.scenarios import materialize_scenario, planning_scenarios
+from wt.legacy.maritime_environment.config import MaritimeEnvConfig
+from wt.legacy.maritime_environment.env import MaritimeEnv
+from wt.legacy.static_planning_headroom.planner import ACTION_CANDIDATE_NAMES as R15_ACTIONS
+from wt.legacy.predictable_channel_planning.audit import _static_regression
+from wt.legacy.predictable_channel_planning.planner import ACTION_CANDIDATE_NAMES, _causal_score, advance_channel_phase, finite_lattice_plan, predictable_channel_multiplier
+from wt.legacy.predictable_channel_planning.scenarios import materialize_scenario, planning_scenarios
 
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -67,7 +67,7 @@ class Round17PredictableChannelTests(unittest.TestCase):
     def test_030_scenarios_cover_primary_tiers(self): self.assertEqual({s.channel_tier for s in planning_scenarios()},{"static","low","medium","high"})
     def test_031_scenarios_cover_three_and_five(self): self.assertEqual({s.num_buoys for s in planning_scenarios()},{3,5})
     def test_032_no_optimizer_backward_or_torch(self):
-        source="\n".join(p.read_text(encoding="utf-8") for p in (ROOT/"src/wt/round17").glob("*.py"));self.assertNotIn("torch",source);self.assertNotIn(".backward(",source);self.assertNotIn("optimizer",source)
+        source="\n".join(p.read_text(encoding="utf-8") for p in (ROOT/"src/wt/legacy/predictable_channel_planning").glob("*.py"));self.assertNotIn("torch",source);self.assertNotIn(".backward(",source);self.assertNotIn("optimizer",source)
     def test_033_controls_forbid_protected_access(self):
         m=json.loads((ROOT/"round_17/round_manifest.json").read_text());self.assertEqual(m["old_development_test_access_count"],0);self.assertEqual(m["fresh_development_access_count"],0);self.assertEqual(m["untouched_holdout_new_access_count"],0)
     def test_034_controls_forbid_hgnn_ppo_multi_uav(self):
@@ -78,7 +78,7 @@ class Round17PredictableChannelTests(unittest.TestCase):
         with self.assertRaises(ValueError): MaritimeEnvConfig(channel_log_amplitude=.15)
     def test_037_dynamic_channel_schema_forbids_future_fields(self):
         d=json.loads((ROOT/"round_17/dynamic_channel_schema.json").read_text());self.assertIn("future_rate",d["future_channel_fields_forbidden"])
-    def test_038_compileall_round17(self): self.assertTrue(compileall.compile_dir(str(ROOT/"src/wt/round17"),quiet=1))
+    def test_038_compileall_round17(self): self.assertTrue(compileall.compile_dir(str(ROOT/"src/wt/legacy/predictable_channel_planning"),quiet=1))
 
 
 if __name__=="__main__": unittest.main()

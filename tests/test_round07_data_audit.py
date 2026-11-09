@@ -3,7 +3,7 @@ from __future__ import annotations
 import hashlib, json, tempfile, unittest
 from pathlib import Path
 import numpy as np
-from wt.round7.round7_runner import _case, _difficulty, _quality, _records, _rollout, _row, _specs, _splits, _stitch, _waypoint, radial_projection
+from wt.legacy.offline_dataset_audit.round7_runner import _case, _difficulty, _quality, _records, _rollout, _row, _specs, _splits, _stitch, _waypoint, radial_projection
 
 ROOT=Path(__file__).resolve().parents[1]
 def sha(path:Path)->str:

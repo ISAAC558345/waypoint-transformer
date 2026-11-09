@@ -5,8 +5,8 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.dataset import load_decision
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import GRAPH_KEYS, assert_open
+from wt.models.hgnn_assets.dataset import load_decision
+from wt.models.hgnn_assets.protocol import GRAPH_KEYS, assert_open
 
 
 class Phase6ICDatasetTests(unittest.TestCase):

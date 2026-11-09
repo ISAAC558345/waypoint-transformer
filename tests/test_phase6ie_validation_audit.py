@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ie_validation_audit.audit import _score_view, aggregate
-from wt.benchmark_v2.phase6ic_hgnn_smoke.dataset import DecisionDataset
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST
+from wt.legacy.validation_audit.audit import _score_view, aggregate
+from wt.models.hgnn_assets.dataset import DecisionDataset
+from wt.models.hgnn_assets.protocol import RESERVED_TEST
 
 
 class Phase6IEAuditTests(unittest.TestCase):

@@ -3,8 +3,8 @@ from __future__ import annotations
 
 import unittest
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, VALIDATION_POOL
-from wt.benchmark_v2.phase6io_per_uav_response.audit import CASES, MAX_NEW_ROLLOUTS, assign_gate, compose_swaps
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, VALIDATION_POOL
+from wt.legacy.per_uav_response.audit import CASES, MAX_NEW_ROLLOUTS, assign_gate, compose_swaps
 
 
 class Phase6IOPerUavResponseTests(unittest.TestCase):

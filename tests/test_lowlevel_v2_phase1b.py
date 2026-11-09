@@ -7,19 +7,19 @@ import unittest
 import numpy as np
 import torch
 
-from wt.htw_phase100.contract import TaskOption
-from wt.l3b.env import L3BEnv
-from wt.lowlevel_v2.base_executor import BaseExecutor
-from wt.lowlevel_v2.contracts import HOLD_STEPS, ResidualConfig, env_target
-from wt.lowlevel_v2.phase1.controller import ResidualWorker as Phase1Worker
-from wt.lowlevel_v2.phase1.controller import load_frozen_high, make_networks
-from wt.lowlevel_v2.phase1b.controller import ResidualWorker as Phase1BWorker
-from wt.lowlevel_v2.phase1b.mappo import ICARMAPPOLocked
-from wt.lowlevel_v2.phase1b.protocol import EXPECTED_HIGH_SHA, FINAL_CKPT, PPO, refuse_untouched
-from wt.lowlevel_v2.phase1b.service_lock import apply_service_residual_lock, service_lock_mask
-from wt.lowlevel_v2.protocol import PHASE106_UNTOUCHED
-from wt.lowlevel_v2.residual_action import residual_desired
-from wt.round30.ppo import seed_everything
+from wt.planning.task_option.contract import TaskOption
+from wt.envs.queue.env import L3BEnv
+from wt.control.base_executor import BaseExecutor
+from wt.planning.contracts import HOLD_STEPS, ResidualConfig, env_target
+from wt.legacy.historical1.controller import ResidualWorker as Phase1Worker
+from wt.legacy.historical1.controller import load_frozen_high, make_networks
+from wt.legacy.historical1b.controller import ResidualWorker as Phase1BWorker
+from wt.legacy.historical1b.mappo import ICARMAPPOLocked
+from wt.legacy.historical1b.protocol import EXPECTED_HIGH_SHA, FINAL_CKPT, PPO, refuse_untouched
+from wt.legacy.historical1b.service_lock import apply_service_residual_lock, service_lock_mask
+from wt.control.lowlevel_protocol import PHASE106_UNTOUCHED
+from wt.control.residual_action import residual_desired
+from wt.algorithms.ppo_common import seed_everything
 
 
 def _option(env: L3BEnv, assoc) -> TaskOption:
@@ -152,7 +152,7 @@ class LowLevelV2Phase1BTests(unittest.TestCase):
 
 
 def _toy_storage(*, lock_all: bool) -> dict:
-    from wt.lowlevel_v2.critic_state import expected_critic_dim
+    from wt.models.critic_state import expected_critic_dim
 
     horizon, n_env, m = 48, 4, 6
     rng = np.random.default_rng(3)

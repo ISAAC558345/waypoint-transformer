@@ -15,12 +15,12 @@ import unittest
 import numpy as np
 
 
-REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+REPOSITORY_ROOT = repo_root()
 SOURCE_ROOT = REPOSITORY_ROOT / "src"
 sys.path.insert(0, str(SOURCE_ROOT))
 
-from wt.maritime.arrival import materialize_arrival_trace  # noqa: E402
-from wt.maritime.baselines import (  # noqa: E402
+from wt.legacy.maritime_environment.arrival import materialize_arrival_trace  # noqa: E402
+from wt.legacy.maritime_environment.baselines import (  # noqa: E402
     MAX_QUEUE,
     NEAREST_BUOY,
     QUEUE_RATE_ENERGY,
@@ -28,25 +28,25 @@ from wt.maritime.baselines import (  # noqa: E402
     available_baseline_policies,
     create_baseline_policy,
 )
-from wt.maritime.config import MaritimeEnvConfig  # noqa: E402
-from wt.maritime.dataset_v1 import (  # noqa: E402
+from wt.legacy.maritime_environment.config import MaritimeEnvConfig  # noqa: E402
+from wt.legacy.maritime_environment.dataset_v1 import (  # noqa: E402
     assert_roundtrip_exact_v1,
     deterministic_episode_split_v1,
     load_dataset_v1,
     save_dataset_v1,
     validate_saved_dataset_v1,
 )
-from wt.maritime.env import MaritimeEnv  # noqa: E402
-from wt.maritime.round3_analysis import (  # noqa: E402
+from wt.legacy.maritime_environment.env import MaritimeEnv  # noqa: E402
+from wt.legacy.maritime_environment.round3_analysis import (  # noqa: E402
     build_data_quality_audit,
     compute_action_agreement_matrix,
     compute_episode_metric_rows_v1,
 )
-from wt.maritime.round3_runner import (  # noqa: E402
+from wt.legacy.maritime_environment.round3_runner import (  # noqa: E402
     ROUND3_POLICY_NAMES,
     collect_round3_episodes,
 )
-from wt.maritime.waypoint_samples import (  # noqa: E402
+from wt.legacy.maritime_environment.waypoint_samples import (  # noqa: E402
     build_waypoint_sample_dataset,
     load_waypoint_samples,
     save_waypoint_samples,
@@ -55,6 +55,8 @@ from wt.maritime.waypoint_samples import (  # noqa: E402
     waypoint_dim,
     waypoint_state_dim,
 )
+
+from wt.common.paths import repo_root
 
 
 def _v1_config(**kwargs: object) -> MaritimeEnvConfig:

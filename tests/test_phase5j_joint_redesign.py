@@ -7,11 +7,12 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.lowlevel_v2.phase5j_joint_redesign.joint import conflict_rate, joint_utility
-from wt.lowlevel_v2.phase5j_joint_redesign.protocol import assert_phase5j_seed
+from wt.legacy.joint_redesign.joint import conflict_rate, joint_utility
+from wt.legacy.joint_redesign.protocol import assert_phase5j_seed
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5j_joint_redesign"
 
 

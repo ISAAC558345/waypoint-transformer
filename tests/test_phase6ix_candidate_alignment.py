@@ -5,8 +5,8 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ix_candidate_alignment.audit import _compare_rows, formal_order, scheme_c_order
-from wt.benchmark_v2.phase6ix_candidate_alignment.protocol import FORMAL_K, FROZEN_K, GENERATOR, assign_gate
+from wt.legacy.candidate_alignment.audit import _compare_rows, formal_order, scheme_c_order
+from wt.legacy.candidate_alignment.protocol import FORMAL_K, FROZEN_K, GENERATOR, assign_gate
 
 
 class Phase6IXCandidateAlignmentTests(unittest.TestCase):

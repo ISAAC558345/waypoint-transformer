@@ -19,11 +19,11 @@ import unittest
 import numpy as np
 
 
-REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+REPOSITORY_ROOT = repo_root()
 SOURCE_ROOT = REPOSITORY_ROOT / "src"
 sys.path.insert(0, str(SOURCE_ROOT))
 
-from wt.maritime.baselines import (  # noqa: E402
+from wt.legacy.maritime_environment.baselines import (  # noqa: E402
     MAX_QUEUE,
     NEAREST_BUOY,
     RANDOM_VALID,
@@ -31,8 +31,8 @@ from wt.maritime.baselines import (  # noqa: E402
     available_baseline_policies,
     create_baseline_policy,
 )
-from wt.maritime.config import MaritimeEnvConfig  # noqa: E402
-from wt.maritime.dataset_io import (  # noqa: E402
+from wt.legacy.maritime_environment.config import MaritimeEnvConfig  # noqa: E402
+from wt.legacy.maritime_environment.dataset_io import (  # noqa: E402
     assert_roundtrip_exact,
     deterministic_episode_split,
     load_dataset,
@@ -40,21 +40,23 @@ from wt.maritime.dataset_io import (  # noqa: E402
     validate_dataset,
     validate_saved_dataset,
 )
-from wt.maritime.env import MaritimeEnv  # noqa: E402
-from wt.maritime.k_step_audit import (  # noqa: E402
+from wt.legacy.maritime_environment.env import MaritimeEnv  # noqa: E402
+from wt.legacy.maritime_environment.k_step_audit import (  # noqa: E402
     audit_k_steps,
     enumerate_k_step_pairs,
     get_k_step_state_pair,
 )
-from wt.maritime.metrics import (  # noqa: E402
+from wt.legacy.maritime_environment.metrics import (  # noqa: E402
     compute_episode_metrics,
     summarize_episode_metrics,
 )
-from wt.maritime.plotting import FIGURE_FILENAMES  # noqa: E402
-from wt.maritime.runner import (  # noqa: E402
+from wt.legacy.maritime_environment.plotting import FIGURE_FILENAMES  # noqa: E402
+from wt.legacy.maritime_environment.runner import (  # noqa: E402
     collect_baseline_episodes,
     run_baseline_experiment,
 )
+
+from wt.common.paths import repo_root
 
 
 POLICY_NAMES = (

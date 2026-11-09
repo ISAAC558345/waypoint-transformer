@@ -4,10 +4,10 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6i_urgency_tiebreak_closedloop.protocol import label_horizon
-from wt.benchmark_v2.phase6i_urgency_tiebreak_closedloop.rules import choose_executed
-from wt.benchmark_v2.phase6i_urgency_tiebreak_single_intervention.d3_reuse import load_t0
-from wt.benchmark_v2.phase6i_urgency_tiebreak_single_intervention.protocol import (
+from wt.research.urgency_tiebreak_closedloop.protocol import label_horizon
+from wt.research.urgency_tiebreak_closedloop.rules import choose_executed
+from wt.research.urgency_tiebreak_single_intervention.d3_reuse import load_t0
+from wt.research.urgency_tiebreak_single_intervention.protocol import (
     GATE_BLOCKED,
     GATE_COMPLETE,
     GATE_INCONCLUSIVE,

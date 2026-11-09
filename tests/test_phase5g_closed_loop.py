@@ -5,10 +5,11 @@ import ast
 import unittest
 from pathlib import Path
 
-from wt.lowlevel_v2.phase5g_closed_loop.protocol import assert_phase5g_seed
+from wt.legacy.historical5g_closed_loop.protocol import assert_phase5g_seed
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5g_closed_loop"
 
 

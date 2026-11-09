@@ -5,8 +5,8 @@ import unittest
 
 import numpy as np
 
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
-from wt.benchmark_v2.phase6ih_t15_audit.audit import lexicographic_rows, utility_rank_matches
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
+from wt.legacy.t15_audit.audit import lexicographic_rows, utility_rank_matches
 
 
 class Phase6IHAuditTests(unittest.TestCase):

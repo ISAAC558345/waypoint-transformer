@@ -22,7 +22,7 @@ import torch
 from torch import nn
 
 
-REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+REPOSITORY_ROOT = repo_root()
 sys.path.insert(0, str(REPOSITORY_ROOT / "src"))
 
 
@@ -57,14 +57,14 @@ def _install_import_stubs() -> None:
     sys.modules["d4rl"] = d4rl
     sys.modules["d4rl.offline_env"] = offline_env
 
-    step = types.ModuleType("wt.step")
+    step = types.ModuleType("wt.legacy.upstream_waypoint.step")
     step.d4rl_env_names = []
     step.d4rl_antmaze = []
     step.gym_goal_envs = []
     step.GCSLToGym = object
     step.is_antmaze_env = lambda env: bool(getattr(env, "is_antmaze", False))
-    sys.modules["wt.step"] = step
-    sys.modules["wt.train"] = types.ModuleType("wt.train")
+    sys.modules["wt.legacy.upstream_waypoint.step"] = step
+    sys.modules["wt.legacy.upstream_waypoint.train"] = types.ModuleType("wt.legacy.upstream_waypoint.train")
 
     wandb = types.ModuleType("wandb")
     wandb_run = types.ModuleType("wandb.wandb_run")
@@ -129,13 +129,16 @@ def _install_import_stubs() -> None:
 
 _install_import_stubs()
 
-from wt import dataset, goal_net, policies  # noqa: E402
-from wt.transformer import GPT, GPTConfig, TransformerExtractor  # noqa: E402
+from wt.legacy.upstream_waypoint import dataset, goal_net
+
+from wt import policies  # noqa: E402
+from wt.legacy.upstream_waypoint.transformer import GPT, GPTConfig, TransformerExtractor  # noqa: E402
 from gym import spaces as gym_spaces  # noqa: E402
+from wt.common.paths import repo_root
 
 
 def _load_real_step_module():
-    """Load wt.step under an alias while keeping heavyweight envs stubbed."""
+    """Load wt.legacy.upstream_waypoint.step under an alias while keeping heavyweight envs stubbed."""
     import wt as wt_package
 
     d4rl = sys.modules["d4rl"]
@@ -190,8 +193,8 @@ def _load_real_step_module():
     sys.modules["gcsl.algo.variants"] = variants
     sys.modules["gcsl.envs.goal_env"] = goal_env
 
-    visualize = types.ModuleType("wt.visualize")
-    sys.modules["wt.visualize"] = visualize
+    visualize = types.ModuleType("wt.legacy.upstream_waypoint.visualize")
+    sys.modules["wt.legacy.upstream_waypoint.visualize"] = visualize
     wt_package.visualize = visualize
 
     module_name = "wt._stage06_real_step"

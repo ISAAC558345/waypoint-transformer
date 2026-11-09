@@ -6,13 +6,13 @@ import unittest
 import numpy as np
 import torch
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6ic_hgnn_smoke.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
-from wt.benchmark_v2.phase6is_assignment_head.features import assignment_raw_features
-from wt.benchmark_v2.phase6is_assignment_head.head import AssignmentConditionedHead
-from wt.benchmark_v2.phase6is_assignment_head.loss import pairwise_rank_loss
-from wt.benchmark_v2.phase6is_assignment_head.protocol import RAW_NAMES, SEEDS, assign_gate, seed_supported
-from wt.lowlevel_v2.phase5k_joint_decoder.loss import joint_rank_loss
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.models.hgnn_assets.protocol import RESERVED_TEST, TRAIN_POOL, VALIDATION_POOL
+from wt.models.assignment_head.features import assignment_raw_features
+from wt.models.assignment_head.head import AssignmentConditionedHead
+from wt.models.assignment_head.loss import pairwise_rank_loss
+from wt.models.assignment_head.protocol import RAW_NAMES, SEEDS, assign_gate, seed_supported
+from wt.models.joint_decoder.loss import joint_rank_loss
 
 
 def _arrays(config) -> dict[str, np.ndarray]:

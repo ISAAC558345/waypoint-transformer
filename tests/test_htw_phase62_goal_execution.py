@@ -5,10 +5,10 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase62.rewards import low_level_reward, mean_target_distance_slots
-from wt.htw_phase62.vector import GoalOptionVector
-from wt.l2a.env import L2AEnv
-from wt.round30.ppo import PPOConfig
+from wt.legacy.htw_historical62.rewards import low_level_reward, mean_target_distance_slots
+from wt.legacy.htw_historical62.vector import GoalOptionVector
+from wt.legacy.queue_task_causal.env import L2AEnv
+from wt.algorithms.ppo_common import PPOConfig
 
 
 class HTWPhase62Tests(unittest.TestCase):
@@ -35,8 +35,8 @@ class HTWPhase62Tests(unittest.TestCase):
         self.assertEqual(inspect_env_step_name(), "association")
 
     def test_04_budget_matches_phase61(self) -> None:
-        from wt.htw_phase61.run_phase61 import MINI_UPDATES, SMOKE_CONFIG, SEED
-        from wt.htw_phase62 import run_phase62
+        from wt.legacy.htw_historical61.run_phase61 import MINI_UPDATES, SMOKE_CONFIG, SEED
+        from wt.legacy.htw_historical62 import run_phase62
 
         self.assertEqual(run_phase62.MINI_UPDATES, MINI_UPDATES)
         self.assertEqual(run_phase62.SEED, SEED)

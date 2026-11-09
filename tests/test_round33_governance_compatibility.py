@@ -8,10 +8,10 @@ import sys
 import unittest
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "src"))
 
-from wt.governance_state_sync import (
+from wt.legacy.historical_governance.sync import (
     EXPECTED_R32_LIFECYCLE_AMENDMENT_SHA256,
     EXPECTED_R32_LOCK_SHA256,
     sha256,
@@ -20,6 +20,8 @@ from wt.governance_state_sync import (
     verify_round32_round33_lifecycle,
     verify_round33_scientific_artifact_hashes,
 )
+
+from wt.common.paths import repo_root
 
 
 COMPATIBILITY_PATH = ROOT / "round_33" / "GOVERNANCE_COMPATIBILITY_AMENDMENT.json"

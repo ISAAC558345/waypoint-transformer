@@ -5,11 +5,12 @@ import ast
 import unittest
 from pathlib import Path
 
-from wt.lowlevel_v2.phase5b_alignment.features import hgnn_feature_table
-from wt.lowlevel_v2.phase5b_alignment.protocol import assert_diagnosis_seed
+from wt.legacy.alignment.features import hgnn_feature_table
+from wt.legacy.alignment.protocol import assert_diagnosis_seed
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 DIAG = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5b_alignment" / "diagnose.py"
 
 

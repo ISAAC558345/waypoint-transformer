@@ -4,8 +4,8 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.benchmark_v2.phase6i_urgency_arrival_aware_expansion.analyze import _top, pairwise_inversion, pareto_frontier, rank_state
-from wt.benchmark_v2.phase6i_urgency_arrival_aware_expansion.protocol import (
+from wt.research.urgency_arrival_aware_expansion.analyze import _top, pairwise_inversion, pareto_frontier, rank_state
+from wt.research.urgency_arrival_aware_expansion.protocol import (
     GATE_BLOCKED,
     GATE_COMPLETE,
     GATE_INCONCLUSIVE,

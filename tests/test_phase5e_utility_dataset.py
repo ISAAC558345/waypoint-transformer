@@ -5,11 +5,12 @@ import ast
 import unittest
 from pathlib import Path
 
-from wt.lowlevel_v2.phase5e_utility_dataset.protocol import FEATURE_COLUMNS, LABEL_COLUMNS, assert_dataset_seed
-from wt.lowlevel_v2.phase5e_utility_dataset.utility import descending_rank, utility_score
+from wt.legacy.utility_dataset.protocol import FEATURE_COLUMNS, LABEL_COLUMNS, assert_dataset_seed
+from wt.legacy.utility_dataset.utility import descending_rank, utility_score
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5e_utility_dataset"
 
 

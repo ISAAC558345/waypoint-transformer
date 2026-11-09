@@ -7,23 +7,22 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from wt.htw_phase100.contract import TaskOption
-from wt.htw_phase9.const import BUOY_DIM, EDGE_UB_DIM, EDGE_UU_DIM, UAV_DIM
-from wt.htw_phase943.order_free_decoder import OrderFreeSetDecoder
-from wt.l3b.env import L3BEnv
+from wt.planning.task_option.contract import TaskOption
+from wt.models.edge_bound.const import BUOY_DIM, EDGE_UB_DIM, EDGE_UU_DIM, UAV_DIM
+from wt.legacy.htw_historical943.order_free_decoder import OrderFreeSetDecoder
+from wt.envs.queue.env import L3BEnv
 
-from wt.lowlevel_v2.phase5_hgnn_urgency.actor import ORIGINAL_OBS_DIM, URGENCY_OBS_DIM, UrgencyResidualActor
-from wt.lowlevel_v2.phase5_hgnn_urgency.encoder import Phase5HGNNEncoder, Phase5OrderFreeModel
-from wt.lowlevel_v2.phase5_hgnn_urgency.features import graph_batch, observable_exclusive_assignment
-from wt.lowlevel_v2.phase5_hgnn_urgency.protocol import FORBIDDEN_RANGES, assert_phase5_seed
-from wt.lowlevel_v2.phase5_hgnn_urgency.reward import unchanged_step_reward
-from wt.lowlevel_v2.phase5_hgnn_urgency.urgency import shared_task_urgency
-from wt.lowlevel_v2.phase5_hgnn_urgency.worker import Phase5Worker, make_actor, make_critic
-
-
-ROOT = Path(__file__).resolve().parents[1]
+from wt.research.hgnn_urgency.actor import ORIGINAL_OBS_DIM, URGENCY_OBS_DIM, UrgencyResidualActor
+from wt.research.hgnn_urgency.encoder import Phase5HGNNEncoder, Phase5OrderFreeModel
+from wt.research.hgnn_urgency.features import graph_batch, observable_exclusive_assignment
+from wt.research.hgnn_urgency.protocol import FORBIDDEN_RANGES, assert_phase5_seed
+from wt.research.hgnn_urgency.reward import unchanged_step_reward
+from wt.research.hgnn_urgency.urgency import shared_task_urgency
+from wt.research.hgnn_urgency.worker import Phase5Worker, make_actor, make_critic
+from wt.common.paths import repo_root
 
 
+ROOT = repo_root()
 class Phase5InterfaceTests(unittest.TestCase):
     def test_urgency_formula_and_range(self) -> None:
         queue = np.array([0.0, 2.0, 4.0, 1.0], dtype=np.float64)

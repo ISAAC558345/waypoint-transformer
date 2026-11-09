@@ -4,8 +4,8 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from wt.lowlevel_v2.phase5s_multiscenario_nonadditive.protocol import CONFIRM_SCENARIOS, TRAIN_SCENARIOS
-from wt.lowlevel_v2.phase5zn_human_deployment_specification.protocol import (
+from wt.legacy.multiscenario_nonadditive.protocol import CONFIRM_SCENARIOS, TRAIN_SCENARIOS
+from wt.legacy.human_deployment_specification.protocol import (
     FRESH_CONFIRMATION_AUTHORIZED,
     FRESH_POOL,
     MODEL_R1_AGGREGATION_APPROVED,

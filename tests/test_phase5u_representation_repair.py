@@ -7,13 +7,14 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.l3b.config import L3BConfig
-from wt.lowlevel_v2.phase5u_representation_repair.features import relational_matrix
-from wt.lowlevel_v2.phase5u_representation_repair.metrics import choose_gate
-from wt.lowlevel_v2.phase5u_representation_repair.protocol import REL_DIM, assert_consumed
+from wt.envs.queue.config import L3BConfig
+from wt.legacy.representation_repair.features import relational_matrix
+from wt.legacy.representation_repair.metrics import choose_gate
+from wt.legacy.representation_repair.protocol import REL_DIM, assert_consumed
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5u_representation_repair"
 
 
@@ -119,10 +120,10 @@ class Phase5UTests(unittest.TestCase):
                     called.append(node.func.id)
         self.assertNotIn("decide", called)
         for relative in (
-            "src/wt/htw_phase100/high_level.py",
-            "src/wt/lowlevel_v2/residual_policy.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/reward.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/planner.py",
+            "src/wt/planning/task_option/high_level.py",
+            "src/wt/control/residual_policy.py",
+            "src/wt/research/hgnn_urgency/reward.py",
+            "src/wt/research/hgnn_urgency/planner.py",
         ):
             text = (ROOT / relative).read_text(encoding="utf-8")
             self.assertNotIn("phase5u", text)

@@ -1,0 +1,8 @@
+[project]
+name = "waypoint-transformer"
+version = "2026.11.09"
+description = "Execution-grounded hierarchical graph planner for multi-UAV communication"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]

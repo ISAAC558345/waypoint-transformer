@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import unittest
 
-from wt.benchmark_v2.phase6iz_closed_loop.protocol import BIT_TIE, VALIDATION_POOL, assign_gate
+from wt.legacy.closed_loop.protocol import BIT_TIE, VALIDATION_POOL, assign_gate
 
 
 class Phase6IZClosedLoopTests(unittest.TestCase):

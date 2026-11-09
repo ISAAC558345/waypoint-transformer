@@ -8,31 +8,31 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from wt.benchmark_v2.bit_queue_v2 import L3BBitQueueEnvV2
-from wt.benchmark_v2.phase6g_lowlevel_mappo.worker import install_light_info, low_level_reward, make_option
-from wt.benchmark_v2.phase6h_executor_conditioned_macro.protocol import primary_checkpoint
-from wt.benchmark_v2.phase6i_urgency_stage_a.ledger import AdmissionAgeLedger, snap_vector
-from wt.benchmark_v2.phase6i_urgency_stage_a.protocol import AGE_SCALE_STEPS
-from wt.benchmark_v2.phase6i_urgency_stage_a.runner import ScoreTap, fly_action
-from wt.benchmark_v2.phase6i_urgency_stage_b.conditions import scheme_c_decision
-from wt.benchmark_v2.phase6iaa_formal_planner.planner import FormalPlanner
-from wt.lowlevel_v2.critic_state import expected_critic_dim
-from wt.lowlevel_v2.observation import TASK_DIM, build_actor_observation
-from wt.lowlevel_v2.residual_policy import CentralizedCritic, ResidualActor
-from wt.round30.ppo import PPOConfig
+from wt.envs.bit_queue import L3BBitQueueEnvV2
+from wt.control.mappo.worker import install_light_info, low_level_reward, make_option
+from wt.control.executor.protocol import primary_checkpoint
+from wt.research.urgency_stage_a.ledger import AdmissionAgeLedger, snap_vector
+from wt.research.urgency_stage_a.protocol import AGE_SCALE_STEPS
+from wt.research.urgency_stage_a.runner import ScoreTap, fly_action
+from wt.research.urgency_stage_b.conditions import scheme_c_decision
+from wt.planning.formal_planner.planner import FormalPlanner
+from wt.models.critic_state import expected_critic_dim
+from wt.data.observation import TASK_DIM, build_actor_observation
+from wt.control.residual_policy import CentralizedCritic, ResidualActor
+from wt.algorithms.ppo_common import PPOConfig
 
-from wt.benchmark_v2.phase6i_urgency_lowlevel.models import (
+from wt.research.urgency_lowlevel.models import (
     UrgencyActor,
     assert_old_checkpoint_still_loads,
     load_checkpoint,
     save_checkpoint,
     warm_start_from_frozen,
 )
-from wt.benchmark_v2.phase6i_urgency_lowlevel.observation import build_urgency_actor_observation, build_urgency_critic_state
-from wt.benchmark_v2.phase6i_urgency_lowlevel.protocol import ACTOR_IN_DIM, CRITIC_IN_DIM, LAMBDA_URGENCY, MODEL_SEEDS_STAGE_C
-from wt.benchmark_v2.phase6i_urgency_lowlevel.reward import l1_reward, l2_reward
-from wt.benchmark_v2.phase6i_urgency_lowlevel.train import train_variant
-from wt.benchmark_v2.phase6i_urgency_lowlevel.worker import SchemeCWorker
+from wt.research.urgency_lowlevel.observation import build_urgency_actor_observation, build_urgency_critic_state
+from wt.research.urgency_lowlevel.protocol import ACTOR_IN_DIM, CRITIC_IN_DIM, LAMBDA_URGENCY, MODEL_SEEDS_STAGE_C
+from wt.research.urgency_lowlevel.reward import l1_reward, l2_reward
+from wt.research.urgency_lowlevel.train import train_variant
+from wt.research.urgency_lowlevel.worker import SchemeCWorker
 
 
 FORBIDDEN = ("deci" + "de(", "remaining_arrivals", "arrivals_future", "future_trajectory")

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import unittest
 
-from wt.benchmark_v2.phase6i_execution_attribution.run_attribution import (
+from wt.legacy.execution_attribution.run_attribution import (
     assert_validation_scenario,
     observation_flags,
 )

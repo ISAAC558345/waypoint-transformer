@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-from wt.htw_phase941.bootstrap import hierarchical_bootstrap, seed_cluster_bootstrap
-from wt.htw_phase941.protocol import CONFIRMATION_SEEDS, USED_L3B_SCENARIO_SEEDS, confirmation_ok, dump_frozen, protocol_payload
-from wt.htw_phase941.strata import label_competition, label_interference
+from wt.legacy.htw_historical941.bootstrap import hierarchical_bootstrap, seed_cluster_bootstrap
+from wt.legacy.htw_historical941.protocol import CONFIRMATION_SEEDS, USED_L3B_SCENARIO_SEEDS, confirmation_ok, dump_frozen, protocol_payload
+from wt.legacy.htw_historical941.strata import label_competition, label_interference
 
 
 class Phase941Tests(unittest.TestCase):

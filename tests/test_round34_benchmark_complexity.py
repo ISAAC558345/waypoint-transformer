@@ -8,10 +8,10 @@ import sys
 import unittest
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "src"))
 
-from wt.round34.audit import (
+from wt.legacy.benchmark_complexity.audit import (
     ProtectedSplitSecondViolation,
     _metadata_from_raw,
     association_count,
@@ -20,30 +20,32 @@ from wt.round34.audit import (
     extract_decision_ownership,
 )
 
+from wt.common.paths import repo_root
+
 
 class Round34BenchmarkComplexityTests(unittest.TestCase):
     def test_01_round33_original_lock_is_unchanged(self) -> None:
         self.assertEqual(hashlib.sha256((ROOT / "round_33" / "ROUND_LOCK.json").read_bytes()).hexdigest().upper(), "40A4C92A3E085661D01B2D112B4525E2DDE2CC68D63D8718ED2F5BEF83DE8075")
 
     def test_02_no_training_library_is_imported(self) -> None:
-        source = (ROOT / "src/wt/round34/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/benchmark_complexity/audit.py").read_text(encoding="utf-8")
         self.assertNotIn("import torch", source)
         self.assertNotIn("tensorflow", source)
 
     def test_03_no_fitting_construct_is_present(self) -> None:
-        source = (ROOT / "src/wt/round34/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/benchmark_complexity/audit.py").read_text(encoding="utf-8")
         self.assertNotIn(".backward(", source)
         self.assertNotIn("torch.optim", source)
 
     def test_04_environment_is_not_imported(self) -> None:
-        source = (ROOT / "src/wt/round34/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/benchmark_complexity/audit.py").read_text(encoding="utf-8")
         self.assertNotIn("SharedSpectrumMultiUAVEnv", source)
         self.assertNotIn("run_episode(", source)
 
     def test_05_planner_is_not_imported(self) -> None:
-        source = (ROOT / "src/wt/round34/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/benchmark_complexity/audit.py").read_text(encoding="utf-8")
         self.assertNotIn("joint_plan(", source)
-        self.assertNotIn("from wt.round19", source)
+        self.assertNotIn("from wt.legacy.shared_spectrum_planning", source)
 
     def test_06_decision_ownership_is_exact(self) -> None:
         rows = extract_decision_ownership()
@@ -68,29 +70,29 @@ class Round34BenchmarkComplexityTests(unittest.TestCase):
         self.assertEqual({row["feature"] for row in uu if row["class"] == "C"}, {"both_assigned_distinct", "receiver_cross_interference_power_w", "interference_to_signal_ratio"})
 
     def test_10_current_state_graph_is_the_only_graph_input(self) -> None:
-        source = (ROOT / "src/wt/round34/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/benchmark_complexity/audit.py").read_text(encoding="utf-8")
         self.assertIn('record["current_graph_state"]', source)
         self.assertNotIn("graph_state_t_plus_1", source)
 
     def test_11_protected_data_markers_are_rejected_before_decode(self) -> None:
-        source = (ROOT / "src/wt/round34/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/benchmark_complexity/audit.py").read_text(encoding="utf-8")
         self.assertIn("metadata is checked before JSON parsing", source)
         decoder = source.index("def decode_allowed_record")
         self.assertLess(source.index("if not metadata.get(\"allowed\")", decoder), source.index("return json.loads(raw.decode", decoder))
 
     def test_12_no_task_waypoint_fitting(self) -> None:
-        source = (ROOT / "src/wt/round34/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/benchmark_complexity/audit.py").read_text(encoding="utf-8")
         self.assertNotIn("TaskWaypointPredictor", source)
 
     def test_13_no_hgnn_fitting(self) -> None:
-        source = (ROOT / "src/wt/round34/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/benchmark_complexity/audit.py").read_text(encoding="utf-8")
         self.assertNotIn("HeterogeneousTaskWaypointPredictor", source)
 
     def test_14_no_ppo(self) -> None:
-        self.assertNotIn("PPO", (ROOT / "src/wt/round34/audit.py").read_text(encoding="utf-8"))
+        self.assertNotIn("PPO", (ROOT / "src/wt/legacy/benchmark_complexity/audit.py").read_text(encoding="utf-8"))
 
     def test_15_no_new_rollout(self) -> None:
-        self.assertNotIn("env.step(", (ROOT / "src/wt/round34/audit.py").read_text(encoding="utf-8"))
+        self.assertNotIn("env.step(", (ROOT / "src/wt/legacy/benchmark_complexity/audit.py").read_text(encoding="utf-8"))
 
     def test_16_historical_gate_is_locked(self) -> None:
         lock = json.loads((ROOT / "round_33" / "ROUND_LOCK.json").read_text(encoding="utf-8"))
@@ -106,7 +108,7 @@ class Round34BenchmarkComplexityTests(unittest.TestCase):
         self.assertEqual(config["fresh_rollout_count"], 0)
 
     def test_18_compile_target_is_standard_library_only(self) -> None:
-        self.assertTrue((ROOT / "src/wt/round34/audit.py").is_file())
+        self.assertTrue((ROOT / "src/wt/legacy/benchmark_complexity/audit.py").is_file())
 
     def test_19_development_test_metadata_is_detected_without_deserialization(self) -> None:
         raw = b'{"sample_id":"synthetic-dev","split":"development_test","t":0}'
@@ -168,7 +170,7 @@ class Round34BenchmarkComplexityTests(unittest.TestCase):
             decode_allowed_record(raw, metadata, metadata)
 
     def test_30_preflight_uses_allowlist_not_blacklist(self) -> None:
-        source = (ROOT / "src/wt/round34/audit.py").read_text(encoding="utf-8")
+        source = (ROOT / "src/wt/legacy/benchmark_complexity/audit.py").read_text(encoding="utf-8")
         self.assertIn('ALLOWED_SPLITS = frozenset(("train", "validation"))', source)
         self.assertIn('"protected_split_fail_closed": True', source)
 

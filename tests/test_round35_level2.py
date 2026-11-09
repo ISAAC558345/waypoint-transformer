@@ -9,15 +9,17 @@ import unittest
 
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "src"))
 
-from wt.round35.audit import legal_assignment_count, level2_config, require_engineering_only_manifest
-from wt.round35.level2_env import (
+from wt.legacy.relational_benchmark_environment.audit import legal_assignment_count, level2_config, require_engineering_only_manifest
+from wt.legacy.relational_benchmark_environment.level2_env import (
     Level2SharedSpectrumMultiUAVEnv,
     association_candidate_mask,
     external_preference_matching,
 )
+
+from wt.common.paths import repo_root
 
 
 OUTPUT = ROOT / "round_35" / "outputs" / "round35_level2_structural_validation_20260902_0001"

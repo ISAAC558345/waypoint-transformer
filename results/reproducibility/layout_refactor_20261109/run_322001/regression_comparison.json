@@ -1,0 +1,75 @@
+{
+  "reference_payload_bits": 68952073.58225587,
+  "reference_payload_source": "same R1 reference episode payload_bits",
+  "tolerance_bits": 1.0,
+  "payload_abs_diff_bits": 0.0,
+  "served_abs_diff_bits": 0.0,
+  "published_payload_abs_diff_bits": 0.0,
+  "published_payload_role": "same R1 reference payload, not an independent published constant",
+  "identity": {
+    "scenario_id": {
+      "reference": 322001,
+      "current": 322001,
+      "present": true,
+      "match": true
+    },
+    "policy": {
+      "reference": "scheme_c",
+      "current": "scheme_c",
+      "present": true,
+      "match": true
+    }
+  },
+  "step_count": {
+    "reference": 48,
+    "current": 48
+  },
+  "step_served_mismatches": [],
+  "fields": {
+    "complete": {
+      "reference": true,
+      "current": true,
+      "match": true
+    },
+    "terminal_time": {
+      "reference": 48,
+      "current": 48,
+      "match": true
+    },
+    "process_seed": {
+      "reference": 1322001,
+      "current": 1322001,
+      "match": true
+    },
+    "reset_seed": {
+      "reference": 322001,
+      "current": 322001,
+      "match": true
+    },
+    "decision_times": {
+      "reference": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "current": [
+        0,
+        15,
+        30,
+        45
+      ],
+      "match": true
+    },
+    "scheme_c_calls": {
+      "reference": 4,
+      "current": 4,
+      "match": true
+    }
+  },
+  "current_payload_matches_served": 1,
+  "current_step_served_matches_episode": true,
+  "internal_consistency_ok": true,
+  "status": "matched",
+  "reference_episode": "results/reproducibility/formal_scheme_c/episodes/322001_scheme_c.json"
+}

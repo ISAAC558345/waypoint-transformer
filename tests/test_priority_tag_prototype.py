@@ -6,8 +6,8 @@ from pathlib import Path
 
 import numpy as np
 
-from wt.benchmark_v2.phase6i_priority_tag.ledger import PriorityTagLedger
-from wt.benchmark_v2.phase6i_priority_tag.protocol import (
+from wt.research.priority_tag.ledger import PriorityTagLedger
+from wt.research.priority_tag.protocol import (
     GATE_BLOCKED,
     GATE_SCALE_READY,
     LAMBDA_CANDIDATES,
@@ -15,8 +15,8 @@ from wt.benchmark_v2.phase6i_priority_tag.protocol import (
     LAMBDA_SELECTED,
     choose_gate,
 )
-from wt.benchmark_v2.phase6i_priority_tag.smoke import run_smoke
-from wt.benchmark_v2.phase6i_priority_tag.tags import draw_tag
+from wt.research.priority_tag.smoke import run_smoke
+from wt.research.priority_tag.tags import draw_tag
 
 
 def _zeros(count: int = 2) -> np.ndarray:

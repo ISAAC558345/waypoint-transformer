@@ -6,10 +6,10 @@ import unittest
 import numpy as np
 import torch
 
-from wt.htw_phase92.matching import hungarian_maximize, match_uav_buoy
-from wt.htw_phase92.models import HGNNAssignmentHead, MLPOptionClassifier
-from wt.htw_phase9.features import build_graph, feature_dict_l3b, stack_feature_dicts
-from wt.l3b.env import L3BEnv
+from wt.legacy.htw_historical92.matching import hungarian_maximize, match_uav_buoy
+from wt.legacy.htw_historical92.models import HGNNAssignmentHead, MLPOptionClassifier
+from wt.models.edge_bound.features import build_graph, feature_dict_l3b, stack_feature_dicts
+from wt.envs.queue.env import L3BEnv
 
 
 class Phase92Tests(unittest.TestCase):

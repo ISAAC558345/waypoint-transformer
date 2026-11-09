@@ -8,13 +8,14 @@ from pathlib import Path
 
 import torch
 
-from wt.lowlevel_v2.phase5y_executor_value_distillation.metrics import choose_gate
-from wt.lowlevel_v2.phase5y_executor_value_distillation.protocol import assert_consumed
-from wt.lowlevel_v2.phase5y_executor_value_distillation.run_phase5y import _train_one
-from wt.lowlevel_v2.phase5y_executor_value_distillation.value import ExecutorConditionedJointValue, state_huber
+from wt.legacy.executor_value_distillation.metrics import choose_gate
+from wt.legacy.executor_value_distillation.protocol import assert_consumed
+from wt.legacy.executor_value_distillation.run_phase5y import _train_one
+from wt.legacy.executor_value_distillation.value import ExecutorConditionedJointValue, state_huber
+from wt.common.paths import repo_root
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = repo_root()
 PACKAGE = ROOT / "src" / "wt" / "lowlevel_v2" / "phase5y_executor_value_distillation"
 
 
@@ -59,10 +60,10 @@ class Phase5YTests(unittest.TestCase):
         self.assertNotIn("decide", called)
         self.assertIn("Adam", called)
         for relative in (
-            "src/wt/htw_phase100/high_level.py",
-            "src/wt/lowlevel_v2/residual_policy.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/reward.py",
-            "src/wt/lowlevel_v2/phase5_hgnn_urgency/planner.py",
+            "src/wt/planning/task_option/high_level.py",
+            "src/wt/control/residual_policy.py",
+            "src/wt/research/hgnn_urgency/reward.py",
+            "src/wt/research/hgnn_urgency/planner.py",
         ):
             self.assertNotIn("phase5y", (ROOT / relative).read_text(encoding="utf-8"))
 
