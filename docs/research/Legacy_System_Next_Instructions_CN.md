@@ -1,107 +1,102 @@
-# 旧系统下一步指令：L10 按场景正确运行与比较
+# 旧系统下一步指令：L11 真实目录重构与论文交付收尾
 
-日期：2026-11-08。结果基线：bbb7a0eb329fc83da7cd59d91310da198def3b7b。执行分支：feature/legacy-system-maintenance。先读本次提交的Legacy_System_L9_Push_Review_CN.md。
+日期：2026-11-09。结果基线：8fc6fda3d50d51b414cb609b7a8953951788eb18。执行分支：feature/legacy-system-maintenance。
 
-## 1. 本轮范围
+先读本次提交的Legacy_System_L10_Push_Review_CN.md和Legacy_System_Repository_Layout_20261109_CN.md。后者包含目标结构、36项语义映射及实际依赖，属于本指令的实施要求。
 
-L9经复核保持NOT_PROMOTED，L8也保持NOT_PROMOTED。两轮均不启动闭环、不接入正式Planner，不改变门槛，不补训练或调参。本轮只修正正常入口对场景和参考的绑定，训练、反向均为0。
+## 1. 用户决定与完成目标
 
-正式Scheme C epoch1、G1_RATE k6、hold15、冻结MAPPO-V2、SafetyProjector及served定义保持当前配置。海洋隔离分支不修改、不执行、不合并。lambda_H、delta_payload_max仍不取值。
+用户选择C：完成旧系统交付收尾，暂不新增模型研究；同时要求按真实论文代码仓库重构，去掉round1/round2等目录。
 
-项目辅助文件和临时文件留在项目内，临时项使用backup；新结果使用results/legacy_system_l10。保留旧结果、用户其他文件和目录，不新建或搬移工作树。
+本轮必须实际完成文件与依赖迁移，不只提交方案/映射/README，不只创建src/envs之类转发层。不留下archive/round_XX、stage01或旧round包兼容目录。
 
-## 2. 已确认的问题与目标
+不训练、不反向、不生成新标签、不制定新模型实验协议、不打开322040–322047，不执行L8/L9闭环。海洋隔离分支不修改、不执行、不合并。正式模型、候选生成、hold、队列/served定义均不改变。
 
-目前：
-- wt.legacy_system.run只接受322000，preview中的参考文件也总是322000；
-- execute.run_once读取322000参考；
-- completion.compare_episodes把322000的REFERENCE_PAYLOAD_BITS常量纳入所有数值比较；
-- 新执行manifest还沿用L6包名和旧指令号。
+顺序：清点与迁移→必要一致性验证→按最终路径更新论文→编译/交付→推送后停止。
 
-底层run_arm已支持scenario参数及1_000_000+scenario的过程种子，无需改正式运行器或模型。
+## 2. 清点和迁移
 
-改为一处共享的标准库参考注册/解析逻辑，集中提供scenario_id、reference_episode、reference_config、process_seed、reset_seed和默认输出路径。当前仅登记R1已有完整参考的训练场景322000与322001，不自动开放整个训练池、validation或reserved test。
+在项目主检出内清点已追踪及本地未追踪/忽略文件，生成迁移前清单。尤其不能遗漏round outputs、数据和checkpoint。先检查未提交修改；保留它们，不reset、不覆盖。所有源/目标绝对路径在操作前确认都位于本项目内。
 
-参考相对路径为：
-~~~text
-results/legacy_formal_repro_r1/episodes/{scenario}_scheme_c.json
-results/legacy_formal_repro_r1/configs/{scenario}_scheme_c.json
-~~~
+不搬上一级E:\srdp文件、不碰其他项目，不进入.git、虚拟环境、backup/snapshots、backup/baseline_worktrees及其他独立Git检出。辅助脚本/临时文件留在本项目backup内。历史备份是独立旧快照，不为清理当前布局而重写。
 
-注册表保存相对路径而非历史机器绝对路径。预览、执行和manifest共用这一处解析，不在三个位置重复写两套常量。可用一个小的标准库模块实现，不引入新依赖或大型配置框架。
+按设计文档真正迁移：
+- 当前env/model/planner/controller/episode/CLI等实现进入src/wt的功能包，保留wt顶层包。
+- round30中的masked_mean、PPO公共函数等当前依赖按功能提取，更新全部Python imports；旧round代码按语义包迁移，不能直接删除。
+- round_01至36材料按主题归档；本地内部的round编号子目录也迁移。源码内roundN目录全部消除。历史文件/日志中的旧路径字符串可以保留。
+- 二进制数据离开src，权重按正式/初始化/研究用途进入checkpoints；结果按benchmarks/reproducibility/research组织。
+- 根目录CURRENT_ROUND、ROUND_VERSIONING等旧治理状态归档；上游长说明保留在archive/upstream，根README改为当前系统说明。保留许可证与归属。
+- 根AGENTS改成当前规则，旧轮次AGENTS以历史说明保存，不再作为现行指令。
 
-## 3. 预览、输出与比较行为
+写docs/development/path_migration_20261109.json及实际结构说明。记录旧/新路径、类型、旧blob/字节哈希、内容是否变更和模块映射。原工件用字节移动；活动源码允许导入/路径/入口调整，不改变算法与参数。历史锁、原JSON/log/结果/PDF中的旧路径不全局替换。
 
-预览仍只用标准库，不加载torch/模型，不建立目录。两场景各自打印正确参考、种子及run_accepted=true。对未登记场景明确表示未接受，实际--run在加载模型/创建输出前返回2；不要声称已有完整回归支持。
+对旧manifest需要的逻辑路径，提供只读artifact resolver映射到新物理位置。不能要求重建原目录，也不能通过修改旧锁哈希让迁移通过。已追踪材料保持追踪；未追踪的大型本地结果保留本地属性，不因迁移意外全量上传。同步.gitignore/.gitattributes；只更改本次相关路径规则，不强制提交整个backup。
 
-未显式--output时，默认输出随scenario分开，例如results/legacy_system/scenario_322001。显式指定路径的行为保持兼容，包括已文档化的322000命令。保持L7已完成的空目录接收、非空目录拒绝与退出码约定，不再改其逻辑。
+## 3. 当前运行入口和资源路径
 
-比较器必须：
-- 从本次对应reference读取payload/served参考值，去除322000常量对其他场景的约束；
-- 校验reference/current都具有必要的scenario_id和policy字段，并一致；不能用缺失字段的None==None作为身份通过；
-- 保留原有逐步served、步数/时刻、种子、决策时刻、Scheme C调用数及两个内部served一致性检查，数值容差仍为1bit；
-- reference_payload_bits如继续输出，必须是该场景的实际参考值。如保留旧“公布值”字段，也须标注同一R1来源，不能当成另一份独立证据；
-- 保持conclude的原语义：执行完成、matched、模型身份正确、正式策略未变才成功返回0；执行错误或不一致返回1；输入/输出拒绝返回2。无参考时不伪标matched或成功。
+用common.paths/资源注册表定位项目根与模型、配置、数据、参考。迁移后的代码不依赖固定parents层数，也不以当前工作目录猜根。不能为了新包名修改权重字节。
 
-新manifest记录所选场景的参考episode/config、来源哈希、对应种子、实际执行代码及本次指令来源；包名不再误写为legacy_system_l6。保留原L6/L7 manifest，不回写历史元数据。
+当前4份关键权重的原SHA保持不变，见设计文档。正式策略JSON原内容保持不变：Scheme C、G1_RATE、k6、hold15。仍只接受当前登记R1参考的322000与322001，仍保留过程种子1_000_000+scenario和reset种子scenario。
 
-不要修改R1受保护入口、R1原始episode/config、run_arm、FormalPlanner、策略配置或任何权重。
+新公共入口建议wt.cli.evaluate，scripts/evaluate.py只调用这一实现，默认预览，显式--run才执行。预览和只读结果命令不导入torch或运行环境。不要保留一个默认执行322002的旁路脚本与新入口相互矛盾。
 
-## 4. 最小验证：先保存结果，再一次48步
+scripts/benchmark.py整理为读取已有汇总的入口，不重跑验证集/保留集；旧路径失效时按artifact索引找已归档原件，确实缺失则如实报告，不用新实验补造。当前README、docs/USAGE.md和SYSTEM_OVERVIEW只链接实际存在并已核对的命令/资源；不把未验证安装写成已通过。
 
-只进行当前改动所需的以下验证，不追加测试矩阵。
+历史测试/模块按新命名更新导入和资源解析，保留原断言，不削弱约束。无需执行所有历史入口或导入可能产生副作用的旧实验模块。
 
-第一步：标准库检查，模型前向和环境步均为0，结果保存到新L10目录，不能运行会回写旧L7目录的历史check_completion入口。
+## 4. 仅必要的重构验证
 
-- 预览322000和322001：参考路径、种子、默认输出各自正确，不写预览目录、不导入torch。
-- 原R1 322000与已保存L6 322000比较为matched，证明旧场景仍兼容。
-- 原R1 322001与其自身比较为matched，证明不再受322000固定payload约束。
-- 322000参考与322001记录交叉比较为different。
-- 检查两套参考文件身份、48步完整性和来源，仅使用保存文件。
+这次移动影响实际导入与checkpoint/参考定位，所以需要一次结构回归；不进行新的方法比较。
 
-第二步：只实际执行322001一次，完整48步，命令示例：
+无环境的检查：
+- 当前主检出所有受管理目录中没有round+编号的物理目录，包括嵌套目录；排除上面明确的独立备份/工作树/环境。不能只检查GitHub树或最外层。
+- 对改动Python做语法/静态导入与资源引用检查；当前正式链可导入。模型模块本来依赖torch，不得声称它们纯标准库。
+- 活动代码没有仍指向旧round目录的依赖；历史原文中的旧路径不算失败，由resolver解释。
+- 实际移动的原工件哈希与迁移前一致；代码文件哈希变化按映射如实记录。只核对本轮移动对象，不反复扫描无关历史库。
+- 两个登记场景的预览和只读摘要能解析新路径；保存参考的对比保持原matched/different语义，不改L10判定。
+
+只实际执行322001一次48步，使用新入口和独立新输出，例如：
 ~~~powershell
 $env:PYTHONPATH = Join-Path (Get-Location).Path 'src'
-py -3 -m wt.legacy_system.run --scenario 322001 --output results/legacy_system_l10/run_322001 --run
+py -3 -m wt.cli.evaluate --scenario 322001 --output results/reproducibility/layout_refactor_20261109/run_322001 --run
 ~~~
 
-预期与对应R1结果一致：
-~~~text
-scenario_id = 322001
-process_seed = 1322001
-reset_seed = 322001
-stop_time = terminal_time = environment_steps = 48
-decision_times = [0, 15, 30, 45]
-scheme_c_calls = 4
-payload_bits = 68952073.58225587
-served_bits = 68952073.58225589
-payload_matches_served = 1
-step_served_matches_episode = true
-error = null
-regression_status = matched
-success = true
-exit_code = 0
-~~~
+对迁移后的同一R1参考核对总payload、served及全部48步served；容差保持1bit。预期payload=68952073.58225587、served=68952073.58225589，process_seed=1322001、reset_seed=322001、决策0/15/30/45、高层4次、matched、success=true、exit0。
 
-两个总量和全部48条逐步served均按原1bit容差比较；不要四舍五入后再比较。此验证是入口一致性，不是性能收益实验。
+新增工程回归环境步计划48，低层调用按实测正常为48，高层4；训练/反向0。失败/作废消耗也保留和计数，不能删掉失败再只报成功部分。发现明确迁移错误先修代码/路径，不改参考、模型或算法；额外完整重跑不在本计划内，需先报告实际失败原因。
 
-新增实际环境步预算48，训练/反向0。低层推理和正式高层调用记录实际值，正常预期分别48和4。失败/作废步也计入48预算。若出现错误，保留原始失败与消耗，不自动重新执行另一轮48步；先报告具体原因，不能改参考让结果通过。
+不重跑322000、原192步、L8/L9、保留集、历史全套、安全/压力/故障注入矩阵。不要把重构回归写成新服务收益。
 
-不实际重跑322000，不重跑原192步，不重做L8/L9，不重复L7目录冲突检查，不运行安全/压力/故障注入矩阵，不重编译论文。原有输出保护没有改动时无需再测一遍。
+## 5. 按最终路径更新2026-11-09论文
 
-## 5. 文档与交付
+旧2026-11-08及更早正文/PDF保持原字节；当前TeX修改前按字节归档main/body（原件存在则不覆盖）。生成新的Revised_20261109.md与同名PDF，保持当前英文论文风格，无需重做图或新增文献。
 
-更新docs/research/Legacy_System_Commands_CN.md，说明当前可运行的两个参考场景、预览/显式运行、按场景默认输出、显式路径兼容和结果比较来源。保持R1只读/导出及其受保护入口的说明。
+以一张简表及必要解释补齐L8/L9：
+- L8：训练12状态，新比较322024–322031×t15/t30；R相对L3B10总体+4.006856 Mbit、t15+8.044598、t30−0.030885；相对E6总体+0.553303；因t30条件未过NOT_PROMOTED。
+- L9：同120预算训练28状态，其中L8比较状态已经转训练；新比较322032–322039×t15/t30；R28−R12总体+0.789951、t15+1.090576、t30+0.489326；相对L3B10+4.353406、相对E6−0.157343；因E6参考条件未过NOT_PROMOTED。
+- L8/L9的ListNet对照是L3B10，不是正式Scheme C epoch1。都是历史TRAIN中的128候选、15步离线比较，MAX_RATE_INDEPENDENT快照；不是独立泛化、不是48步正式策略收益。不要合并成独立验证统计或修改门槛。
+- L3–L5仍保持原结案；L8/L9不采用，正式模型未变。不能写成整个到达感知研究均已被否定。
+- 更新L6/L10工程描述：322000/322001已按对应参考验证，L10新增48步一致；仅工程复现，不是新性能实验。修正摘要、讨论、结论中仍写仅一次命令或只覆盖早期阶段的陈旧范围。
 
-保存results/legacy_system_l10/中的标准库检查记录、run_322001的配置/episode/逐步served/比较/执行manifest、实际消耗，以及必要的错误记录。引用旧参考原件，不复制或改写R1证据。不要为本轮引入新的模型研究代码。
+新增evidence_20261109.json，按精确bit值保存新增结论、来源提交、原始逻辑路径和迁移后路径/哈希，派生JSON不含NaN/Infinity。来源：
+L8 77eb078e54dde9e6ca0a55c3e47a3c482ff20d2c；
+L9 bbb7a0eb329fc83da7cd59d91310da198def3b7b；
+L10 8fc6fda3d50d51b414cb609b7a8953951788eb18。
+先按这些提交的paired_summary/manifest核对，不从四舍五入值反算原始bit。旧summary/baseline分状态等缺失证据继续缺失，不补造。
 
-提交docs/research/Legacy_System_L10_Report_CN.md，说明：
-- 哪些场景/参考硬编码已解除；
-- 保存结果检查及322001新48步的结果与退出码；
-- 实际环境步、低层推理、高层调用、更新和反向；
-- L8/L9仍未晋级，正式模型没有改变；
-- 当前仍仅支持登记参考的两个训练场景，不能写成全场景验证。
+复用项目内Tectonic 0.17.0与已有缓存；新构建产物和临时文件使用backup/local_build/l11，不覆盖L7产物或旧PDF，不安装新系统TeX。旧build_l7脚本保留，新构建适配最终目录。优先一次构建，仅有实际编译/排版错误才修正重编译。记录真实退出码、页数、日志，逐页渲染查看新PDF，检查表格/公式/引用和裁切，不强制仍为7页。
 
-在维护分支提交并推送本轮代码、结果、命令文档和报告，提供提交号后停止。本轮不自动启动新的架构或目标研究；后续如投入另一种研究问题，先明确假设和预算。
+更新README/LaTeX说明、REVISION_NOTES_20261109_CN.md及source_manifest_20261109.json。分别记录工作区原字节SHA与实际Git对象身份；不要把LF规范化结果误标为已提交CRLF的blob。编译成功和全部页已查看只能在实际完成后写入。
 
-正式分支e58e5d190109e5a0e860cb5c6a412321c0d74e31、海洋隔离分支4d8622ef183e734f2d9a890d60d735ed716f5d74保持不变。
+## 6. 交付、推送和停止
+
+交付必须包含：
+- 真实迁移的源码、配置、数据/权重位置与活动导入/资源解析更新；无旧round实体目录，无空壳重构。
+- 实际迁移索引、必要结构检查及一次48步结果/消耗；原工件字节保留，其他用户文件不动。
+- 2026-11-09可编辑正文、LaTeX源、实际编译PDF、来源与构建清单。
+- 一份简洁交付状态（如docs/DELIVERY_STATUS_CN.md）：现行模型/命令、最新论文、未采用研究、缺失历史证据、当前登记范围及用户暂不新增研究的选择。
+- docs/research/Legacy_System_L11_Report_CN.md：先列实际新结构及结果，再列迁移范围、必要检查、48步一致性、PDF页数、真实消耗与尚未完成项。不得把仅写计划当重构完成。
+
+在维护分支提交并推送本轮实际代码改动、该追踪的迁移工件、论文、结果和报告，核对远端文件路径与blob。只写本次相关变更，不force push，不推送本地缓存或工具。
+
+正式分支e58e5d190109e5a0e860cb5c6a412321c0d74e31和海洋隔离分支4d8622ef183e734f2d9a890d60d735ed716f5d74保持不变。交付完成后报告并停止，不自动开展下一模型研究或新实验。

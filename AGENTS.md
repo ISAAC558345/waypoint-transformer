@@ -50,3 +50,27 @@ Historical baseline worktrees are under backup/baseline_worktrees; use Git
 worktree operations if a future task explicitly requires relocation.
 Preserve unrelated files and directory locations. Historical logs may retain
 original paths as provenance; do not rewrite those records just for relocation.
+
+## Current delivery closeout and repository refactor (2026-11-09)
+
+The user selected C: finish the existing-system delivery closeout and do not
+start new model research. Do not train models, generate fresh labels, open new
+comparison scenarios (including 322040-322047), prepare new model experiments,
+or merge the isolated ocean proposal unless the user explicitly changes this
+direction. L8 and L9 remain NOT_PROMOTED.
+
+The user also explicitly requested a real paper-code repository layout with no
+round1/round2-style directories. This authorizes reversible semantic relocation
+inside the current project and supersedes older requirements to keep round
+folders, old module paths, or round-governance entry points in place. Preserve
+historical evidence bytes and provenance through the migration map; do not
+rewrite old locks to make them pass. Move actual implementations and update
+imports/resources rather than adding forwarding facades or old-directory shims.
+Do not alter unrelated project files, external directories, independent Git
+worktrees, backup snapshots, environments, or Git metadata.
+
+Only necessary migration checks, one registered 322001 48-step engineering
+regression, and manuscript compilation/page review are in scope. No historical
+full suite or unrelated safety/stress matrix. After the actual refactor and
+paper/LaTeX/PDF/evidence delivery are complete, report and stop; do not infer a
+new research phase from completion alone.
