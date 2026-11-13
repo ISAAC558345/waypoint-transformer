@@ -1,0 +1,250 @@
+"""Registered M1 scenarios and the battery rule.
+
+Probe flights use a sentinel battery and are not trial samples. Their step
+count is returned separately so it is not added to the reported mission steps.
+"""
+
+from __future__ import annotations
+
+import json
+import math
+
+from wt.active_model_identification.belief import Belief, prior_belief
+from wt.active_model_identification.physics import measure_integration_factor
+from wt.active_model_identification.world import Action, World, action_allowed, advance, make_world
+
+SENTINEL_BATTERY_J = 1.0e7
+_BUILD_CACHE: dict[str, tuple[list[dict], dict, float]] = {}
+
+
+def observation_noise(seed: int, sigma_j: float):
+    import random
+
+    def _noise(uav_index: int, interval_index: int) -> float:
+        generator = random.Random(f"m1-obs-{seed}-{uav_index}-{interval_index}")
+        return generator.gauss(0.0, sigma_j)
+
+    return _noise
+
+
+def _point_belief(spec: dict, theta: float) -> Belief:
+    lo, hi = (float(spec["belief"]["support"][0]), float(spec["belief"]["support"][1]))
+    std = 1.0e-4
+    return Belief(float(theta), 1.0 / (std * std), lo, hi)
+
+
+def _far_id(spec: dict, uav_index: int) -> int:
+    return int(spec["geometry"]["uavs"][uav_index]["far_buoy"])
+
+
+def _near_id(spec: dict, uav_index: int) -> int:
+    return int(spec["geometry"]["uavs"][uav_index]["near_buoy"])
+
+
+def _actions(spec: dict, active: int, action: Action) -> list[Action]:
+    actions: list[Action] = [("wait", None) for _ in spec["geometry"]["uavs"]]
+    actions[active] = action
+    return actions
+
+
+def _finished(world: World, uav_index: int, buoy_id: int) -> bool:
+    uav = world.uavs[uav_index]
+    pending = any(packet.buoy == buoy_id and packet.holder != "shore" for packet in world.packets)
+    away = math.hypot(uav.x - uav.home_x, uav.y - uav.home_y) > 15.0
+    return (not pending) and (not away) and (not uav.airborne) and (not uav.cache_ids)
+
+
+def _run(
+    spec: dict,
+    factor: float,
+    battery: list[float],
+    beliefs: list[Belief],
+    dynamics: list[float],
+    action_at,
+    intervals: int,
+    tag: str,
+) -> World:
+    world = make_world(spec, battery, tag)
+    for interval in range(intervals):
+        actions = action_at(world, interval)
+        if actions is None:
+            break
+        advance(
+            world,
+            actions,
+            dynamics,
+            beliefs,
+            spec,
+            factor,
+            None,
+            planning=True,
+            interval_index=interval,
+            noise_j=lambda _uav, _interval: 0.0,
+        )
+    return world
+
+
+def _service_script(spec: dict, uav_index: int, buoy_id: int):
+    def action_at(world: World, _interval: int):
+        if _finished(world, uav_index, buoy_id):
+            return None
+        uav = world.uavs[uav_index]
+        holding = any(packet.holder == f"uav:{uav_index}" for packet in world.packets)
+        at_buoy = any(packet.buoy == buoy_id and packet.holder == "buoy" for packet in world.packets)
+        if at_buoy:
+            return _actions(spec, uav_index, ("service", buoy_id))
+        if holding:
+            return _actions(spec, uav_index, ("backhaul", None))
+        if math.hypot(uav.x - uav.home_x, uav.y - uav.home_y) > 12.0 or uav.airborne:
+            return _actions(spec, uav_index, ("return", None))
+        return _actions(spec, uav_index, ("wait", None))
+
+    return action_at
+
+
+def _cal_then_service(spec: dict, uav_index: int, buoy_id: int):
+    follow = _service_script(spec, uav_index, buoy_id)
+
+    def action_at(world: World, interval: int):
+        if interval == 0:
+            return _actions(spec, uav_index, ("calibrate", None))
+        return follow(world, interval)
+
+    return action_at
+
+
+def _delivered(world: World, buoy_id: int) -> bool:
+    packets = [packet for packet in world.packets if packet.buoy == buoy_id]
+    return bool(packets) and all(packet.holder == "shore" for packet in packets)
+
+
+def _measure_pair(spec: dict, factor: float, theta: float, uav_index: int) -> dict:
+    buoy_id = _far_id(spec, uav_index)
+    beliefs = [_point_belief(spec, theta), _point_belief(spec, theta)]
+    battery = [SENTINEL_BATTERY_J, SENTINEL_BATTERY_J]
+    chained = _run(
+        spec,
+        factor,
+        battery,
+        [item.copy() for item in beliefs],
+        [theta, theta],
+        _cal_then_service(spec, uav_index, buoy_id),
+        24,
+        f"probe-chain-{uav_index}",
+    )
+    direct = _run(
+        spec,
+        factor,
+        battery,
+        [item.copy() for item in beliefs],
+        [theta, theta],
+        _service_script(spec, uav_index, buoy_id),
+        24,
+        f"probe-far-{uav_index}",
+    )
+    if not _delivered(chained, buoy_id) or chained.uavs[uav_index].failed:
+        raise RuntimeError(f"probe calibration-plus-far did not finish for uav {uav_index} at theta {theta}")
+    if not _delivered(direct, buoy_id) or direct.uavs[uav_index].failed:
+        raise RuntimeError(f"probe far trip did not finish for uav {uav_index} at theta {theta}")
+    return {
+        "chain_j": chained.uavs[uav_index].consumed_j,
+        "far_j": direct.uavs[uav_index].consumed_j,
+        "chain_return_failures": chained.return_failures,
+        "far_return_failures": direct.return_failures,
+    }
+
+
+def build_scenarios(spec: dict) -> tuple[list[dict], dict, float]:
+    key = json.dumps(spec, sort_keys=True)
+    cached = _BUILD_CACHE.get(key)
+    if cached is not None:
+        return cached
+    factor = measure_integration_factor()
+    reserve = float(spec["energy"]["reserve_j"])
+    margin = float(spec["energy"]["budget_margin_j"])
+    sensitive = []
+    insensitive = []
+    probes = []
+    for uav_index in range(2):
+        low = _measure_pair(spec, factor, 1.0, uav_index)
+        high = _measure_pair(spec, factor, 1.4, uav_index)
+        probes.append({"uav": uav_index, "theta_1": low, "theta_1_4": high})
+        sensitive.append(low["chain_j"] + reserve + margin)
+        insensitive.append(high["chain_j"] + reserve + margin)
+    _validate(spec, factor, sensitive, insensitive)
+    scenarios = []
+    for base in spec["scenarios"]:
+        for condition, battery in (("sensitive", sensitive), ("insensitive", insensitive)):
+            scenarios.append(
+                {
+                    "id": f"{base['base']}_{condition}",
+                    "base": base["base"],
+                    "condition": condition,
+                    "theta": [float(value) for value in base["theta"]],
+                    "seed": int(base["seed"]),
+                    "battery_j": [float(value) for value in battery],
+                    "wind_xy_m_s": [float(value) for value in spec["motion"]["wind_xy_m_s"]],
+                }
+            )
+    budget = {
+        "integration_factor": factor,
+        "reserve_j": reserve,
+        "margin_j": margin,
+        "sensitive_battery_j": sensitive,
+        "insensitive_battery_j": insensitive,
+        "probes": probes,
+        "probe_battery_j": SENTINEL_BATTERY_J,
+        "probe_note": "Sentinel-battery probes measure route cost before the trial. They are not the 32 missions.",
+    }
+    result = (scenarios, budget, factor)
+    _BUILD_CACHE[key] = result
+    return result
+
+
+def _validate(spec: dict, factor: float, sensitive: list[float], insensitive: list[float]) -> None:
+    prior = prior_belief(spec)
+    guard = float(spec["belief"]["guard_probability"])
+    for uav_index, battery in enumerate(sensitive):
+        world = make_world(spec, sensitive, "validate-sensitive")
+        far = ("service", _far_id(spec, uav_index))
+        if action_allowed(world.uavs[uav_index], far, prior.quantile(guard), spec, factor):
+            raise RuntimeError(f"sensitive battery still allows the high-value trip for uav {uav_index} under the prior")
+        _assert_chain_delivers(spec, factor, sensitive, uav_index, 1.0)
+        blocked = _run(
+            spec,
+            factor,
+            sensitive,
+            [prior.copy(), prior.copy()],
+            [1.25, 1.25],
+            _service_script(spec, uav_index, _far_id(spec, uav_index)),
+            8,
+            "validate-block",
+        )
+        if _delivered(blocked, _far_id(spec, uav_index)):
+            raise RuntimeError("prior guard delivered the high-value buoy on the sensitive battery")
+    for uav_index, _battery in enumerate(insensitive):
+        world = make_world(spec, insensitive, "validate-insensitive")
+        far = ("service", _far_id(spec, uav_index))
+        if not action_allowed(world.uavs[uav_index], far, prior.quantile(guard), spec, factor):
+            raise RuntimeError(f"insensitive battery blocks the high-value trip for uav {uav_index} under the prior")
+
+
+def _assert_chain_delivers(spec: dict, factor: float, battery: list[float], uav_index: int, theta: float) -> None:
+    beliefs = [prior_belief(spec), prior_belief(spec)]
+    buoy_id = _far_id(spec, uav_index)
+    world = _run(
+        spec,
+        factor,
+        battery,
+        beliefs,
+        [theta, theta],
+        _cal_then_service(spec, uav_index, buoy_id),
+        24,
+        "validate-chain",
+    )
+    if world.uavs[uav_index].failed or not _delivered(world, buoy_id):
+        raise RuntimeError(
+            f"calibration then high-value service failed for uav {uav_index}: "
+            f"failed={world.uavs[uav_index].failed} delivered={_delivered(world, buoy_id)} "
+            f"energy={world.uavs[uav_index].energy_j:.1f}"
+        )

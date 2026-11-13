@@ -4,11 +4,11 @@
 
 ## 当前执行任务
 
-2026-11-13，用户指定继续在本分支实现并验证主动功耗辨识 M1，并要求完成后将结果上传到同一 GitHub 分支。执行入口为 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，完整范围为 [M1 指令](docs/research/Active_Model_Identification_M1_Instructions_CN.md)。
+2026-11-13，用户指定的主动功耗辨识 M1 已在本分支完成并记录。入口说明见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，结果见 [M1 报告](docs/research/Active_Model_Identification_M1_Report_CN.md)。不要重复已完成的 32 条核心任务。
 
-已有功能的 18 项针对性测试、6 项结果复算和论文生成检查已通过，记录见 [功能验证汇总](results/active_model_identification_checks/20261113/summary.json)。M1 尚待执行。
+已有功能的 18 项针对性测试、6 项结果复算和论文生成检查此前已通过。M1 新增 8 项必要测试，记录在 `results/active_model_identification_m1/m1_20261113/necessary_tests.log`。
 
-本轮只做必要测试，不启动神经网络训练。按完整指令直接完成实现、小试和推送，不重复请求常规启动确认。未经用户明确允许，不得合并到主分支、默认分支或原系统维护分支。
+本轮没有启动神经网络训练。未经用户明确允许，不得合并到主分支、默认分支或原系统维护分支。
 
 ## 历史隔离保存记录
 

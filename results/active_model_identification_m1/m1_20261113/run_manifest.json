@@ -1,0 +1,12 @@
+{
+  "parent_commit": "dc6deb20865817f981a1ea1d8aae43c5ab812bf8",
+  "config_sha256": "40676e1d97a49cc5bce6cd76b30b81acf2912019034def40de0e5addfdf57723",
+  "scenario_manifest_sha256": "677bfab28b16ecdc14f75bf5b772a391aa745ef131b5e65555f221093ee2aa09",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "seed_rule": "observation noise is Random(f'm1-obs-{scenario_seed}-{uav}-{interval}') and does not depend on action order",
+  "core_missions": 32,
+  "physical_steps": 57600,
+  "planning_steps": 1041600,
+  "planning_copies": 34720,
+  "training_updates": 0
+}

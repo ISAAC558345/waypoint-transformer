@@ -1,0 +1,195 @@
+{
+  "scenarios": [
+    {
+      "id": "b1_sensitive",
+      "base": "b1",
+      "condition": "sensitive",
+      "theta": [
+        1.0,
+        1.0
+      ],
+      "seed": 1101,
+      "battery_j": [
+        46982.23981722261,
+        46982.23981722261
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "b1_insensitive",
+      "base": "b1",
+      "condition": "insensitive",
+      "theta": [
+        1.0,
+        1.0
+      ],
+      "seed": 1101,
+      "battery_j": [
+        63160.20442694636,
+        63160.20442694636
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "b2_sensitive",
+      "base": "b2",
+      "condition": "sensitive",
+      "theta": [
+        1.25,
+        1.25
+      ],
+      "seed": 1102,
+      "battery_j": [
+        46982.23981722261,
+        46982.23981722261
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "b2_insensitive",
+      "base": "b2",
+      "condition": "insensitive",
+      "theta": [
+        1.25,
+        1.25
+      ],
+      "seed": 1102,
+      "battery_j": [
+        63160.20442694636,
+        63160.20442694636
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "b3_sensitive",
+      "base": "b3",
+      "condition": "sensitive",
+      "theta": [
+        1.0,
+        1.25
+      ],
+      "seed": 1103,
+      "battery_j": [
+        46982.23981722261,
+        46982.23981722261
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "b3_insensitive",
+      "base": "b3",
+      "condition": "insensitive",
+      "theta": [
+        1.0,
+        1.25
+      ],
+      "seed": 1103,
+      "battery_j": [
+        63160.20442694636,
+        63160.20442694636
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "b4_sensitive",
+      "base": "b4",
+      "condition": "sensitive",
+      "theta": [
+        1.25,
+        1.0
+      ],
+      "seed": 1104,
+      "battery_j": [
+        46982.23981722261,
+        46982.23981722261
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "b4_insensitive",
+      "base": "b4",
+      "condition": "insensitive",
+      "theta": [
+        1.25,
+        1.0
+      ],
+      "seed": 1104,
+      "battery_j": [
+        63160.20442694636,
+        63160.20442694636
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "budget": {
+    "integration_factor": 1.0153003641238145,
+    "reserve_j": 4000.0,
+    "margin_j": 1200.0,
+    "sensitive_battery_j": [
+      46982.23981722261,
+      46982.23981722261
+    ],
+    "insensitive_battery_j": [
+      63160.20442694636,
+      63160.20442694636
+    ],
+    "probes": [
+      {
+        "uav": 0,
+        "theta_1": {
+          "chain_j": 41782.23981722261,
+          "far_j": 37154.46653643341,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        },
+        "theta_1_4": {
+          "chain_j": 57960.20442694636,
+          "far_j": 51541.32853763157,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        }
+      },
+      {
+        "uav": 1,
+        "theta_1": {
+          "chain_j": 41782.23981722261,
+          "far_j": 37154.46653643341,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        },
+        "theta_1_4": {
+          "chain_j": 57960.20442694636,
+          "far_j": 51541.32853763157,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        }
+      }
+    ],
+    "probe_battery_j": 10000000.0,
+    "probe_note": "Sentinel-battery probes measure route cost before the trial. They are not the 32 missions."
+  }
+}

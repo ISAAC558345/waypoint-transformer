@@ -1,0 +1,950 @@
+{
+  "fixed_receiver": [
+    {
+      "kind": "fixed_receiver",
+      "scenario_id": "b1_sensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "propulsion_j": 0.0,
+      "links": [
+        {
+          "buoy": 0,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 500.0,
+          "closes": false
+        },
+        {
+          "buoy": 1,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        },
+        {
+          "buoy": 2,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 350.0,
+          "closes": false
+        },
+        {
+          "buoy": 3,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "kind": "fixed_receiver",
+      "scenario_id": "b1_insensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "propulsion_j": 0.0,
+      "links": [
+        {
+          "buoy": 0,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 500.0,
+          "closes": false
+        },
+        {
+          "buoy": 1,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        },
+        {
+          "buoy": 2,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 350.0,
+          "closes": false
+        },
+        {
+          "buoy": 3,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "kind": "fixed_receiver",
+      "scenario_id": "b2_sensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "propulsion_j": 0.0,
+      "links": [
+        {
+          "buoy": 0,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 500.0,
+          "closes": false
+        },
+        {
+          "buoy": 1,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        },
+        {
+          "buoy": 2,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 350.0,
+          "closes": false
+        },
+        {
+          "buoy": 3,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "kind": "fixed_receiver",
+      "scenario_id": "b2_insensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "propulsion_j": 0.0,
+      "links": [
+        {
+          "buoy": 0,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 500.0,
+          "closes": false
+        },
+        {
+          "buoy": 1,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        },
+        {
+          "buoy": 2,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 350.0,
+          "closes": false
+        },
+        {
+          "buoy": 3,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "kind": "fixed_receiver",
+      "scenario_id": "b3_sensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "propulsion_j": 0.0,
+      "links": [
+        {
+          "buoy": 0,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 500.0,
+          "closes": false
+        },
+        {
+          "buoy": 1,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        },
+        {
+          "buoy": 2,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 350.0,
+          "closes": false
+        },
+        {
+          "buoy": 3,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "kind": "fixed_receiver",
+      "scenario_id": "b3_insensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "propulsion_j": 0.0,
+      "links": [
+        {
+          "buoy": 0,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 500.0,
+          "closes": false
+        },
+        {
+          "buoy": 1,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        },
+        {
+          "buoy": 2,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 350.0,
+          "closes": false
+        },
+        {
+          "buoy": 3,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "kind": "fixed_receiver",
+      "scenario_id": "b4_sensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "propulsion_j": 0.0,
+      "links": [
+        {
+          "buoy": 0,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 500.0,
+          "closes": false
+        },
+        {
+          "buoy": 1,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        },
+        {
+          "buoy": 2,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 350.0,
+          "closes": false
+        },
+        {
+          "buoy": 3,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "kind": "fixed_receiver",
+      "scenario_id": "b4_insensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "propulsion_j": 0.0,
+      "links": [
+        {
+          "buoy": 0,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 500.0,
+          "closes": false
+        },
+        {
+          "buoy": 1,
+          "receiver_xy": [
+            150.0,
+            400.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        },
+        {
+          "buoy": 2,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 350.0,
+          "closes": false
+        },
+        {
+          "buoy": 3,
+          "receiver_xy": [
+            150.0,
+            1600.0
+          ],
+          "distance_m": 1700.0,
+          "closes": false
+        }
+      ]
+    }
+  ],
+  "direct": [
+    {
+      "kind": "direct_bulk",
+      "scenario_id": "b1_sensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "counted_in_executed_tasks": false,
+      "links": [
+        {
+          "buoy": 0,
+          "distance_m": 912.4143795447329,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 1,
+          "distance_m": 1892.74932307477,
+          "bulk_closes": false,
+          "bits": 50000.0
+        },
+        {
+          "buoy": 2,
+          "distance_m": 1258.967831201417,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 3,
+          "distance_m": 2445.914961727002,
+          "bulk_closes": false,
+          "bits": 50000.0
+        }
+      ],
+      "lora_aside_not_credited": [
+        {
+          "buoy": 0,
+          "closes": true,
+          "distance_m": 912.4587661916564,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 1,
+          "closes": true,
+          "distance_m": 1892.7707203990662,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 2,
+          "closes": true,
+          "distance_m": 1259.0,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 3,
+          "closes": true,
+          "distance_m": 2445.931519891757,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        }
+      ],
+      "antenna_heights_m": {
+        "buoy": 1.0,
+        "shore": 10.0
+      }
+    },
+    {
+      "kind": "direct_bulk",
+      "scenario_id": "b1_insensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "counted_in_executed_tasks": false,
+      "links": [
+        {
+          "buoy": 0,
+          "distance_m": 912.4143795447329,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 1,
+          "distance_m": 1892.74932307477,
+          "bulk_closes": false,
+          "bits": 50000.0
+        },
+        {
+          "buoy": 2,
+          "distance_m": 1258.967831201417,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 3,
+          "distance_m": 2445.914961727002,
+          "bulk_closes": false,
+          "bits": 50000.0
+        }
+      ],
+      "lora_aside_not_credited": [
+        {
+          "buoy": 0,
+          "closes": true,
+          "distance_m": 912.4587661916564,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 1,
+          "closes": true,
+          "distance_m": 1892.7707203990662,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 2,
+          "closes": true,
+          "distance_m": 1259.0,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 3,
+          "closes": true,
+          "distance_m": 2445.931519891757,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        }
+      ],
+      "antenna_heights_m": {
+        "buoy": 1.0,
+        "shore": 10.0
+      }
+    },
+    {
+      "kind": "direct_bulk",
+      "scenario_id": "b2_sensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "counted_in_executed_tasks": false,
+      "links": [
+        {
+          "buoy": 0,
+          "distance_m": 912.4143795447329,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 1,
+          "distance_m": 1892.74932307477,
+          "bulk_closes": false,
+          "bits": 50000.0
+        },
+        {
+          "buoy": 2,
+          "distance_m": 1258.967831201417,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 3,
+          "distance_m": 2445.914961727002,
+          "bulk_closes": false,
+          "bits": 50000.0
+        }
+      ],
+      "lora_aside_not_credited": [
+        {
+          "buoy": 0,
+          "closes": true,
+          "distance_m": 912.4587661916564,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 1,
+          "closes": true,
+          "distance_m": 1892.7707203990662,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 2,
+          "closes": true,
+          "distance_m": 1259.0,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 3,
+          "closes": true,
+          "distance_m": 2445.931519891757,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        }
+      ],
+      "antenna_heights_m": {
+        "buoy": 1.0,
+        "shore": 10.0
+      }
+    },
+    {
+      "kind": "direct_bulk",
+      "scenario_id": "b2_insensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "counted_in_executed_tasks": false,
+      "links": [
+        {
+          "buoy": 0,
+          "distance_m": 912.4143795447329,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 1,
+          "distance_m": 1892.74932307477,
+          "bulk_closes": false,
+          "bits": 50000.0
+        },
+        {
+          "buoy": 2,
+          "distance_m": 1258.967831201417,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 3,
+          "distance_m": 2445.914961727002,
+          "bulk_closes": false,
+          "bits": 50000.0
+        }
+      ],
+      "lora_aside_not_credited": [
+        {
+          "buoy": 0,
+          "closes": true,
+          "distance_m": 912.4587661916564,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 1,
+          "closes": true,
+          "distance_m": 1892.7707203990662,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 2,
+          "closes": true,
+          "distance_m": 1259.0,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 3,
+          "closes": true,
+          "distance_m": 2445.931519891757,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        }
+      ],
+      "antenna_heights_m": {
+        "buoy": 1.0,
+        "shore": 10.0
+      }
+    },
+    {
+      "kind": "direct_bulk",
+      "scenario_id": "b3_sensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "counted_in_executed_tasks": false,
+      "links": [
+        {
+          "buoy": 0,
+          "distance_m": 912.4143795447329,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 1,
+          "distance_m": 1892.74932307477,
+          "bulk_closes": false,
+          "bits": 50000.0
+        },
+        {
+          "buoy": 2,
+          "distance_m": 1258.967831201417,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 3,
+          "distance_m": 2445.914961727002,
+          "bulk_closes": false,
+          "bits": 50000.0
+        }
+      ],
+      "lora_aside_not_credited": [
+        {
+          "buoy": 0,
+          "closes": true,
+          "distance_m": 912.4587661916564,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 1,
+          "closes": true,
+          "distance_m": 1892.7707203990662,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 2,
+          "closes": true,
+          "distance_m": 1259.0,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 3,
+          "closes": true,
+          "distance_m": 2445.931519891757,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        }
+      ],
+      "antenna_heights_m": {
+        "buoy": 1.0,
+        "shore": 10.0
+      }
+    },
+    {
+      "kind": "direct_bulk",
+      "scenario_id": "b3_insensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "counted_in_executed_tasks": false,
+      "links": [
+        {
+          "buoy": 0,
+          "distance_m": 912.4143795447329,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 1,
+          "distance_m": 1892.74932307477,
+          "bulk_closes": false,
+          "bits": 50000.0
+        },
+        {
+          "buoy": 2,
+          "distance_m": 1258.967831201417,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 3,
+          "distance_m": 2445.914961727002,
+          "bulk_closes": false,
+          "bits": 50000.0
+        }
+      ],
+      "lora_aside_not_credited": [
+        {
+          "buoy": 0,
+          "closes": true,
+          "distance_m": 912.4587661916564,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 1,
+          "closes": true,
+          "distance_m": 1892.7707203990662,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 2,
+          "closes": true,
+          "distance_m": 1259.0,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 3,
+          "closes": true,
+          "distance_m": 2445.931519891757,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        }
+      ],
+      "antenna_heights_m": {
+        "buoy": 1.0,
+        "shore": 10.0
+      }
+    },
+    {
+      "kind": "direct_bulk",
+      "scenario_id": "b4_sensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "counted_in_executed_tasks": false,
+      "links": [
+        {
+          "buoy": 0,
+          "distance_m": 912.4143795447329,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 1,
+          "distance_m": 1892.74932307477,
+          "bulk_closes": false,
+          "bits": 50000.0
+        },
+        {
+          "buoy": 2,
+          "distance_m": 1258.967831201417,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 3,
+          "distance_m": 2445.914961727002,
+          "bulk_closes": false,
+          "bits": 50000.0
+        }
+      ],
+      "lora_aside_not_credited": [
+        {
+          "buoy": 0,
+          "closes": true,
+          "distance_m": 912.4587661916564,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 1,
+          "closes": true,
+          "distance_m": 1892.7707203990662,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 2,
+          "closes": true,
+          "distance_m": 1259.0,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 3,
+          "closes": true,
+          "distance_m": 2445.931519891757,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        }
+      ],
+      "antenna_heights_m": {
+        "buoy": 1.0,
+        "shore": 10.0
+      }
+    },
+    {
+      "kind": "direct_bulk",
+      "scenario_id": "b4_insensitive",
+      "environment_mission": false,
+      "delivered_bits": 0.0,
+      "workload_bits": 140000.0,
+      "counted_in_executed_tasks": false,
+      "links": [
+        {
+          "buoy": 0,
+          "distance_m": 912.4143795447329,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 1,
+          "distance_m": 1892.74932307477,
+          "bulk_closes": false,
+          "bits": 50000.0
+        },
+        {
+          "buoy": 2,
+          "distance_m": 1258.967831201417,
+          "bulk_closes": false,
+          "bits": 20000.0
+        },
+        {
+          "buoy": 3,
+          "distance_m": 2445.914961727002,
+          "bulk_closes": false,
+          "bits": 50000.0
+        }
+      ],
+      "lora_aside_not_credited": [
+        {
+          "buoy": 0,
+          "closes": true,
+          "distance_m": 912.4587661916564,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 1,
+          "closes": true,
+          "distance_m": 1892.7707203990662,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 2,
+          "closes": true,
+          "distance_m": 1259.0,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        },
+        {
+          "buoy": 3,
+          "closes": true,
+          "distance_m": 2445.931519891757,
+          "horizon_m": 17156.125587934315,
+          "credited": false,
+          "reason": "LoRa closure is not the registered bulk contract"
+        }
+      ],
+      "antenna_heights_m": {
+        "buoy": 1.0,
+        "shore": 10.0
+      }
+    }
+  ]
+}

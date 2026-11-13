@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "parent_commit": "dc6deb20865817f981a1ea1d8aae43c5ab812bf8",
+  "reference_base": "fe3b8c023df34d91eac9e3ece026c2e7f2d84ef4",
+  "result_dir": "results/active_model_identification_m1/m1_20261113",
+  "config_sha256": "40676e1d97a49cc5bce6cd76b30b81acf2912019034def40de0e5addfdf57723",
+  "scenario_manifest_sha256": "677bfab28b16ecdc14f75bf5b772a391aa745ef131b5e65555f221093ee2aa09",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "integration_factor": 1.0153003641238145,
+  "interface_status": "PASS",
+  "mechanism_status": "SAMPLE_DIFFERENCES_PRESENT",
+  "tests": {
+    "status": "PASS",
+    "ok": true,
+    "log": "results/active_model_identification_m1/m1_20261113/necessary_tests.log"
+  },
+  "counts": {
+    "core_missions": 32,
+    "fixed_receiver_diagnostics": 8,
+    "direct_accountings": 8,
+    "executed_tasks": 40,
+    "physical_steps": 57600,
+    "planning_steps": 1041600,
+    "planning_copies": 34720,
+    "return_failures": 0,
+    "training_updates": 0,
+    "model_forward_passes": 0
+  },
+  "answers": {
+    "calibration_adds_information": false,
+    "fixed_calibration_first_z_j": 4430.340593294276,
+    "passive_first_z_j": 4562.794714968344,
+    "fixed_calibration_end_variance": 0.0004234585542299602,
+    "passive_end_variance": 0.0006163891202946614,
+    "information_changes_choice": true,
+    "sensitive_choice_differences": 3,
+    "sensitive_pairs": 4,
+    "benefit_offsets_cost": false,
+    "sensitive_utility_gap": -0.0034606054282986243,
+    "insensitive_reduces_calibration": true,
+    "lookahead_sensitive_cal_s": 30.0,
+    "lookahead_insensitive_cal_s": 0.0,
+    "fixed_calibration_insensitive_cal_s": 60.0
+  },
+  "method_means": [
+    {
+      "method": "fixed_model",
+      "condition": "sensitive",
+      "utility": 9.800813651512192,
+      "on_time_bits": 100000.0,
+      "energy_kj": 71.70708545561092,
+      "calibration_s": 0.0,
+      "calibration_kj": 0.0,
+      "rmse": 0.15088834764831843,
+      "coverage": 0.5517857142857143,
+      "return_failures": 0
+    },
+    {
+      "method": "fixed_model",
+      "condition": "insensitive",
+      "utility": 13.74849142598934,
+      "on_time_bits": 140000.0,
+      "energy_kj": 90.5430866438378,
+      "calibration_s": 0.0,
+      "calibration_kj": 0.0,
+      "rmse": 0.15088834764831843,
+      "coverage": 0.453125,
+      "return_failures": 0
+    },
+    {
+      "method": "passive",
+      "condition": "sensitive",
+      "utility": 8.39480657040885,
+      "on_time_bits": 85000.0,
+      "energy_kj": 37.86963465281372,
+      "calibration_s": 0.0,
+      "calibration_kj": 0.0,
+      "rmse": 0.03517734357836261,
+      "coverage": 0.9285714285714286,
+      "return_failures": 0
+    },
+    {
+      "method": "passive",
+      "condition": "insensitive",
+      "utility": 13.74849142598934,
+      "on_time_bits": 140000.0,
+      "energy_kj": 90.5430866438378,
+      "calibration_s": 0.0,
+      "calibration_kj": 0.0,
+      "rmse": 0.017310275219379247,
+      "coverage": 0.9375,
+      "return_failures": 0
+    },
+    {
+      "method": "fixed_calibration",
+      "condition": "sensitive",
+      "utility": 7.8751089433427595,
+      "on_time_bits": 80000.0,
+      "energy_kj": 44.960780396606495,
+      "calibration_s": 60.0,
+      "calibration_kj": 10.268266334912122,
+      "rmse": 0.02076051086382761,
+      "coverage": 0.8666666666666667,
+      "return_failures": 0
+    },
+    {
+      "method": "fixed_calibration",
+      "condition": "insensitive",
+      "utility": 11.702040602509456,
+      "on_time_bits": 120000.0,
+      "energy_kj": 107.26538309659597,
+      "calibration_s": 60.0,
+      "calibration_kj": 10.268266334912122,
+      "rmse": 0.013223776347333339,
+      "coverage": 0.9372474747474747,
+      "return_failures": 0
+    },
+    {
+      "method": "finite_lookahead",
+      "condition": "sensitive",
+      "utility": 8.391345964980552,
+      "on_time_bits": 85000.0,
+      "energy_kj": 39.115452607001345,
+      "calibration_s": 30.0,
+      "calibration_kj": 5.134133167456061,
+      "rmse": 0.015789093819661305,
+      "coverage": 0.9125,
+      "return_failures": 0
+    },
+    {
+      "method": "finite_lookahead",
+      "condition": "insensitive",
+      "utility": 13.840691871811362,
+      "on_time_bits": 140000.0,
+      "energy_kj": 57.35092614790992,
+      "calibration_s": 0.0,
+      "calibration_kj": 0.0,
+      "rmse": 0.016646689947190523,
+      "coverage": 0.875,
+      "return_failures": 0
+    }
+  ],
+  "diagnostics_overview": {
+    "direct_delivered_bits": 0.0,
+    "fixed_receiver_delivered_bits": 0.0,
+    "direct_feasible_scenarios": 0
+  },
+  "commands": {
+    "tests": "python -m unittest tests.test_active_model_identification_m1 -v",
+    "trial": "python -m wt.active_model_identification.run --tests-log results/active_model_identification_m1/m1_20261113/necessary_tests.log",
+    "pythonpath": "src"
+  },
+  "budget": {
+    "integration_factor": 1.0153003641238145,
+    "reserve_j": 4000.0,
+    "margin_j": 1200.0,
+    "sensitive_battery_j": [
+      46982.23981722261,
+      46982.23981722261
+    ],
+    "insensitive_battery_j": [
+      63160.20442694636,
+      63160.20442694636
+    ],
+    "probes": [
+      {
+        "uav": 0,
+        "theta_1": {
+          "chain_j": 41782.23981722261,
+          "far_j": 37154.46653643341,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        },
+        "theta_1_4": {
+          "chain_j": 57960.20442694636,
+          "far_j": 51541.32853763157,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        }
+      },
+      {
+        "uav": 1,
+        "theta_1": {
+          "chain_j": 41782.23981722261,
+          "far_j": 37154.46653643341,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        },
+        "theta_1_4": {
+          "chain_j": 57960.20442694636,
+          "far_j": 51541.32853763157,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        }
+      }
+    ],
+    "probe_battery_j": 10000000.0,
+    "probe_note": "Sentinel-battery probes measure route cost before the trial. They are not the 32 missions."
+  },
+  "claim_limits": [
+    "32 core missions are one paired draw per method, not a significance test",
+    "finite lookahead is a one-interval coordinate-wise approximation",
+    "no network was trained and no legacy checkpoint was loaded"
+  ]
+}

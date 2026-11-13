@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "status": "executable_m1",
+  "parent_commit": "dc6deb20865817f981a1ea1d8aae43c5ab812bf8",
+  "reference_base": "fe3b8c023df34d91eac9e3ece026c2e7f2d84ef4",
+  "instruction": "docs/research/Active_Model_Identification_M1_Instructions_CN.md",
+  "time": {
+    "dt_s": 1,
+    "decision_s": 30,
+    "mission_s": 1800,
+    "landing_s": 5,
+    "source": "Paper Table II and the M1 instruction. Landing hover is a synthetic M1 contract, not the M0 20 s figure."
+  },
+  "motion": {
+    "cruise_m_s": 18,
+    "accel_m_s2": 2,
+    "altitude_m": 100,
+    "wind_xy_m_s": [0.0, 0.0],
+    "wind_source": "Synthetic calm for the first stationary segment. A later experiment owns wind-estimation error. The nominal regressor still uses airspeed, which equals ground speed at this wind.",
+    "start_state": "landed at the registered pad; wait draws no propulsion, so it does not identify theta"
+  },
+  "geometry": {
+    "area_m": [2000, 2000],
+    "shore_xy": [0.0, 0.0],
+    "note": "Low-value buoys are off the eastbound path to each UAV's high-value buoy. Both high-value buoys are far from both pads, so one UAV cannot collect the other UAV's high-value buoy cheaply.",
+    "uavs": [
+      {"home_xy": [150.0, 400.0], "near_buoy": 0, "far_buoy": 1},
+      {"home_xy": [150.0, 1600.0], "near_buoy": 2, "far_buoy": 3}
+    ],
+    "buoys": [
+      {"id": 0, "role": "low_value", "xy": [150.0, 900.0], "packets": 2, "bits_each": 10000},
+      {"id": 1, "role": "high_value", "xy": [1850.0, 400.0], "packets": 2, "bits_each": 25000},
+      {"id": 2, "role": "low_value", "xy": [150.0, 1250.0], "packets": 2, "bits_each": 10000},
+      {"id": 3, "role": "high_value", "xy": [1850.0, 1600.0], "packets": 2, "bits_each": 25000}
+    ]
+  },
+  "belief": {
+    "support": [0.8, 1.4],
+    "prior_mu": 1.1,
+    "prior_kernel_std": 0.18,
+    "sigma_j": 180.0,
+    "guard_probability": 0.95,
+    "quadrature_nodes": 7,
+    "quadrature": "Per UAV, 7 equal-width nodes on the support, weighted by the kernel and normalized. Coordinate-wise lookahead uses this marginal grid, not a 49-point tensor product.",
+    "fixed_model_mu": 1.0,
+    "fixed_model_kernel_std": 0.000001,
+    "source": "Support matches Table II. Kernel std, noise and the nominal point mass are synthetic M1 contracts. Kernel mean is not the truncated mean."
+  },
+  "utility": {
+    "b_ref_bits": 10000.0,
+    "e_ref_j": 3600.0,
+    "lambda_e": 0.01,
+    "formula": "J = on_time_bits / b_ref - lambda_e * sum_m energy_used_j / e_ref",
+    "source": "Same shape as paper equation (7). Scales are synthetic and were fixed before the trial so a full high-value buoy is worth 5 utility points and 1 Wh costs 0.01."
+  },
+  "energy": {
+    "reserve_j": 4000.0,
+    "budget_margin_j": 1200.0,
+    "compute_w": 5.0,
+    "ground_idle_w": 1.0,
+    "bulk_tx_w": 0.5,
+    "bulk_rx_w": 0.2,
+    "bulk_range_m": 80.0,
+    "bulk_rate_bps": 250000.0,
+    "bulk_source": "Synthetic short-range data-product radio. It is not an old service radius and it is not the LoRa command channel. Propulsion uses the existing Zeng nominal model; theta scales only P_nom. Auxiliary loads are not multiplied by theta.",
+    "battery_rule": "Sensitive initial energy equals the simulated cost of one calibration at theta=1 plus the high-value round trip at the posterior 0.95 quantile after a noise-free calibration, plus reserve and margin. Insensitive initial energy equals a calibration and high-value round trip at the support upper endpoint 1.4, plus reserve and margin. Probes use a large sentinel battery and are not trial samples."
+  },
+  "radio": {
+    "reuse": "LoRa airtime, current and the M0A k=4/3 horizon. Commands, acks and telemetry are LoRa. The bulk product is not credited on LoRa.",
+    "command_bytes": 32,
+    "telemetry_bytes": 64,
+    "backhaul_chunk_bytes": 200
+  },
+  "lookahead": {
+    "explicit_depth_intervals": 1,
+    "terminal": "Analytic completion from the copied physical state and the updated belief. gamma=1. Not an exact Bayes optimum.",
+    "coordinate_wise": true,
+    "other_uav_action_while_scoring": "wait"
+  },
+  "methods": ["fixed_model", "passive", "fixed_calibration", "finite_lookahead"],
+  "fixed_calibration": "Both UAVs calibrate on decision epoch 0 only, then use the passive rule.",
+  "scenarios": [
+    {"base": "b1", "theta": [1.0, 1.0], "seed": 1101},
+    {"base": "b2", "theta": [1.25, 1.25], "seed": 1102},
+    {"base": "b3", "theta": [1.0, 1.25], "seed": 1103},
+    {"base": "b4", "theta": [1.25, 1.0], "seed": 1104}
+  ],
+  "conditions": ["sensitive", "insensitive"],
+  "diagnostics": {
+    "fixed_receiver": "One row per scenario. Receivers stay at the two UAV pads and use the same bulk-range contract.",
+    "direct": "Same bulk contract from buoy to shore. Accounted beside the trial and not counted as an environment mission."
+  }
+}
