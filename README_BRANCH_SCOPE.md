@@ -1,6 +1,20 @@
-# 新方案隔离保存分支
+# 海洋观测独立研究分支
 
-分支：`research/ocean-observation-isolated`。依据用户2026-11-04最新指令，新方案暂不继续修改或执行，未来是否合并原系统由用户另行决定。
+分支：`research/ocean-observation-isolated`。
+
+## 当前执行任务
+
+2026-11-13，用户指定继续在本分支实现并验证主动功耗辨识 M1，并要求完成后将结果上传到同一 GitHub 分支。执行入口为 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，完整范围为 [M1 指令](docs/research/Active_Model_Identification_M1_Instructions_CN.md)。
+
+已有功能的 18 项针对性测试、6 项结果复算和论文生成检查已通过，记录见 [功能验证汇总](results/active_model_identification_checks/20261113/summary.json)。M1 尚待执行。
+
+本轮只做必要测试，不启动神经网络训练。按完整指令直接完成实现、小试和推送，不重复请求常规启动确认。未经用户明确允许，不得合并到主分支、默认分支或原系统维护分支。
+
+## 历史隔离保存记录
+
+以下保留 2026-11-04 的隔离背景，其“暂不执行”状态已被上面的本轮 M1 指令在指定范围内更新。历史 M0、M0A、M0B 结果和原始来源清单仍作为各自证据保留。
+
+分支：`research/ocean-observation-isolated`。依据用户2026-11-04当时的指令，新方案暂不继续修改或执行，未来是否合并原系统由用户另行决定。
 
 本分支保存M0、M0A、M0B全部代码、结果、测试和方案文档，以及最新文档分支中的方案指令。61个新方案专用文件直接复用原Git blob；本次没有改变其内容。混合阶段的交接文档按原blob保存在 `archive/handoff_20261104/`，仅作历史记录，不是当前执行指令。
 
@@ -8,4 +22,4 @@
 
 旧系统在 [独立维护分支](https://github.com/ISAAC558345/waypoint-transformer/tree/feature/legacy-system-maintenance) 继续完善。原正式分支和已有研究分支均保留。当前不要根据历史交接自动推进新方案，不创建自动合并流程。
 
-文件与来源清单见 `BRANCH_ISOLATION_MANIFEST.json`。本次分支整理不运行新方案测试、训练或仿真。
+文件与来源清单见 `BRANCH_ISOLATION_MANIFEST.json`。2026-11-04 的分支整理本身未运行新方案测试、训练或仿真。
