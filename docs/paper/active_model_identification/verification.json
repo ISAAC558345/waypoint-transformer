@@ -1,0 +1,46 @@
+{
+  "status": "design_manuscript",
+  "pages": 6,
+  "words": 4498,
+  "page_characters": [
+    5536,
+    5751,
+    5400,
+    5326,
+    5745,
+    5307
+  ],
+  "reference_count": 11,
+  "hyperlinks": 11,
+  "pdf_sha256": "da4bd35dd84ac2211f3ee5aa0aecbe63ff1a060733f7f641e3c77b8e708002fb",
+  "source_git_blob": "92ba3fe88ad8a6e99dbf45b655268aa300f802f9",
+  "new_simulation_steps": 0,
+  "new_training_updates": 0,
+  "analytic_utility": {
+    "tight_direct": 4.875,
+    "tight_probe": 6.420999999999999,
+    "loose_direct": 7.975,
+    "loose_probe": 7.920999999999999
+  },
+  "pdf_renderer": "ReportLab; editable LaTeX exported from the same canonical content",
+  "unicode_fonts_embedded": true,
+  "latex_compiled": false,
+  "visual_review": {
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "method": "115 dpi Poppler page renders inspected after final Unicode-font correction",
+    "result": "No clipped text, overlapping columns, or missing math glyphs observed"
+  },
+  "latex_static_checks": {
+    "environments_balanced": true,
+    "equations": 13,
+    "tables": 3,
+    "compiled": false
+  }
+}

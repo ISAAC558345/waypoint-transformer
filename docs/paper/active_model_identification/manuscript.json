@@ -1,0 +1,539 @@
+{
+  "title": "Task-Directed Active Model Identification for Energy-Constrained Multi-UAV Maritime Data Collection",
+  "author": "Tiancheng Zheng",
+  "subtitle": "Research design manuscript | 13 November 2026 | Empirical evaluation pending",
+  "short_title": "Task-Directed Active Model Identification for Multi-UAV Collection",
+  "blocks": [
+    {
+      "type": "abstract",
+      "text": "Multi-UAV maritime data collection couples communication scheduling with uncertain flight costs. A collector can improve its internal model through telemetry, deliberate calibration maneuvers, or additional radio measurements, but these actions consume resources that could otherwise serve buoy queues. We formulate task-directed active model identification as a belief-space decision problem in which service and calibration share a finite energy and time budget. The first-stage model contains one unknown propulsion-cost multiplier per UAV, a calibrated observation likelihood, and explicitly accounted uplink and backhaul delivery. A bounded Bayesian parameter estimator supplies the scheduler with predictive uncertainty. A hierarchical policy selects service, calibration, backhaul, return, and waiting options according to their expected downstream delivery value. We derive a scalar identification update and an analytical example in which the same parameter uncertainty has different decision value under tight and loose energy budgets. We specify matched-budget baselines, decision-relevance controls, model-mismatch tests, and multi-sortie evaluation. This manuscript defines a proposed method and a reproducible evaluation contract. No training result, simulated performance gain, or field validation of the proposed method is reported."
+    },
+    {
+      "type": "p",
+      "text": "<b>Index Terms</b> - UAV communications, maritime data collection, active system identification, value of information, Bayesian estimation, hierarchical reinforcement learning, energy-aware scheduling."
+    },
+    {
+      "type": "h1",
+      "text": "I. Introduction"
+    },
+    {
+      "type": "p",
+      "text": "Unmanned aerial vehicles (UAVs) provide mobile access to maritime sensor buoys. Their service decisions depend on predictions of travel energy, available contact time, link quality, and the future locations of drifting nodes. Errors in these predictions have different consequences. A modest energy error may change whether a remote collection route is feasible near an energy limit, while the same error may have little effect when all candidate routes remain comfortably feasible. A useful autonomous collector must therefore decide both how to execute a communication task and whether additional information would justify changing that task."
+    },
+    {
+      "type": "p",
+      "text": "The repository's reference system separates UAV-buoy assignment from continuous motion execution. A heterogeneous graph scorer ranks legal assignments, and a frozen residual MAPPO controller executes a task option. Its published simulator configuration uses six UAVs, twelve buoys, a 48-slot episode, and a 15-slot assignment hold. That configuration evaluates payload collection under its existing service rules. The present design introduces a separate physical-time, energy-accounted research problem. The reference slot length, service radius, checkpoint performance, and block size are not treated as calibrated maritime hardware parameters."
+    },
+    {
+      "type": "p",
+      "text": "This paper asks when a collector should spend limited resources to improve a model whose uncertainty affects future communication decisions. We focus initially on a single identifiable propulsion-cost multiplier. Measured wind and motion determine a nominal propulsion input, while electrical telemetry reveals a noisy realized energy cost. The scheduler can passively use ordinary service telemetry or deliberately select a more informative calibration option. Both mechanisms update the same belief and compete against immediate data delivery."
+    },
+    {
+      "type": "p",
+      "text": "The proposed contributions are a communication-task formulation with resource-accounted model verification, a bounded Bayesian identification mechanism connected to an option scheduler, and an evaluation protocol that separates prediction accuracy from downstream decision benefit. A task-relevance control holds parameter uncertainty fixed while changing whether identification can alter the preferred service plan. Multi-sortie and multi-UAV knowledge reuse are defined as later evaluations. The contribution claims are hypotheses to be tested through the specified experiments."
+    },
+    {
+      "type": "h1",
+      "text": "II. Related Work"
+    },
+    {
+      "type": "h2",
+      "text": "A. Task-Directed Exploration and Physical Identification"
+    },
+    {
+      "type": "p",
+      "text": "Task-Optimal Exploration studies which model parameters must be learned to complete a specified task and provides task-dependent guarantees for linear dynamical systems [1]. ASID designs exploration using an initially inaccurate simulator, identifies physical parameters from interaction, and then solves the downstream manipulation task [2]. Poke and Strike learns exploration rewards from the task policy's sensitivity to parameter error and selects a transition from exploration to execution [3]. These works motivate choosing measurements through their effect on communication decisions. Their theoretical or empirical guarantees remain tied to their respective systems and assumptions."
+    },
+    {
+      "type": "p",
+      "text": "Dual-control methods assign an action both a direct task effect and an informational effect. Tang et al. apply this idea to wave energy converters, estimating unknown wave parameters while selecting power-take-off profiles [4]. The transferable mechanism is the deliberate trade-off between current utility and information that improves subsequent control. The present first-stage model requires no wave-spectrum reconstruction and uses a scalar energy-cost parameter to make this trade-off auditable."
+    },
+    {
+      "type": "h2",
+      "text": "B. Learning Propagation Models for UAV Communications"
+    },
+    {
+      "type": "p",
+      "text": "Learning to Communicate already designs resource-constrained learning trajectories to estimate propagation parameters before optimizing communication trajectories and scheduling [5]. Spectrum Surveying actively selects UAV measurement locations and updates a radio map and its uncertainty [6]. Partial-CKM trajectory optimization jointly considers UAV navigation and map completion [7]. Active measurement, online model updating, and their use in UAV communications thus provide direct baselines. Our proposed comparison concerns when task-dependent calibration is worth its energy, delay, and lost-service costs under a shared finite budget."
+    },
+    {
+      "type": "h2",
+      "text": "C. Wind-Aware and Maritime Communication Control"
+    },
+    {
+      "type": "p",
+      "text": "Wind-aware trajectory design models rotary-wing propulsion costs and adapts instantaneous velocity using measured wind information [8]. Maritime predictive beamforming incorporates wave-driven buoy motion, recursive state estimation, and sensing-power allocation [9]. These mechanisms support the physical and communication interfaces of this design. We distinguish instantaneous state estimation from the identification of an uncertain persistent parameter. A scalar cost multiplier serves as an effective model correction, without attributing a residual uniquely to wind, battery condition, or actuator efficiency."
+    },
+    {
+      "type": "h1",
+      "text": "III. System Model and Problem Formulation"
+    },
+    {
+      "type": "h2",
+      "text": "A. Collection, Transport, and Information Availability"
+    },
+    {
+      "type": "p",
+      "text": "Consider M UAVs, K buoy queues, and a fixed final receiver at a shore station or a stationary support vessel. UAV m has position p_m(t), ground velocity v_m(t), and remaining usable energy E_m(t). A service assignment is a partial injection from UAVs to buoys. Calibration and waiting options do not occupy a buoy. The diagnostic instance uses M=2 and K=4, followed by a six-UAV, twelve-buoy evaluation. Buoy positions are static in the first identification test. Prescribed drifting trajectories are a subsequent stress test."
+    },
+    {
+      "type": "p",
+      "text": "The receiver, UAV caches, and buoy queues maintain distinct ledgers. An upload to a UAV is credited at the final receiver only after complete backhaul delivery and deduplication. Each message has an identity, creation time, length, and delivery record. Commands, acknowledgements, calibration summaries, and telemetry consume declared channel time and energy. Half-duplex conflicts are resolved by a common medium-access rule. A short packet uses its actual transmission duration within a motion step."
+    },
+    {
+      "type": "equation",
+      "latex": "D=\\sum_{k=1}^{K}\\sum_{j\\in\\mathcal B_k} w_j\\ell_j\\,\\mathbf 1\\{t^{\\rm recv}_j\\le d_j\\},",
+      "text": "D = sum over k,j of w_j l_j 1{receiver time_j <= deadline_j}.",
+      "number": 1
+    },
+    {
+      "type": "p",
+      "text": "Here B_k is the generated packet set, l_j is its bit length, d_j its deadline, and w_j a registered importance weight. Setting all weights to one and all deadlines to mission end recovers a final-receiver payload objective. Artificial packet inflation is excluded. Channel feasibility and the usefulness of mobile collection must be checked against fixed-receiver and feasible direct-transmission controls."
+    },
+    {
+      "type": "p",
+      "text": "The station plans from received messages with age and uncertainty. Each UAV observes its local motion and electrical telemetry and executes the latest valid task command. Local energy checks can reject an unsafe stale command and report the event. Oracle parameters, future environmental realizations, and undelivered buoy observations are evaluator-only quantities. The physical truth generator, onboard estimator, and station information state are separate interfaces."
+    },
+    {
+      "type": "h2",
+      "text": "B. Nominal Physics and Unknown Propulsion Cost"
+    },
+    {
+      "type": "equation",
+      "latex": "\\mathbf v_m^{\\rm air}(t)=\\mathbf v_m(t)-\\mathbf w_m(t),",
+      "text": "v_air,m(t) = v_m(t) - w_m(t).",
+      "number": 2
+    },
+    {
+      "type": "equation",
+      "latex": "P_m^{\\rm actual}(t)=\\theta_m P_m^{\\rm nom}(\\mathbf v_m^{\\rm air},\\mathbf a_m)+P_m^{\\rm aux}(t),",
+      "text": "P_actual,m(t) = theta_m P_nom,m(v_air,m, a_m) + P_aux,m(t).",
+      "number": 3
+    },
+    {
+      "type": "p",
+      "text": "P_nom is a registered rotary-wing propulsion model with declared vehicle parameters and validity range [8]. P_aux includes radio, computation, and other audited loads. The unknown positive multiplier theta_m is constant over one stationary identification segment. This is a deliberately low-dimensional model of effective propulsion error. Measured wind supplies a nominal regressor. A later experiment introduces wind-estimation error and model residuals. The basic conjugate calculation below assumes the stated conditional regression likelihood."
+    },
+    {
+      "type": "equation",
+      "latex": "E_m(t+\\Delta t)=E_m(t)-\\int_t^{t+\\Delta t}P_m^{\\rm actual}(s)\\,ds,",
+      "text": "E_m(t+dt) = E_m(t) - integral of P_actual,m(s) ds.",
+      "number": 4
+    },
+    {
+      "type": "p",
+      "text": "Position updates obey registered speed, acceleration, operating-region, and collision limits. The flight controller selects physically feasible velocity or trajectory commands. A calibration profile changes the nominal excitation and the observations obtained while consuming real mission time and energy. Launch, landing, hover, communication, and return costs enter the ledger once. Energy is evaluated per vehicle, while system totals are reported separately."
+    },
+    {
+      "type": "h2",
+      "text": "C. Energy Observations and Identifiability"
+    },
+    {
+      "type": "equation",
+      "latex": "y_{m,i}=\\Delta E_{m,i}^{\\rm meter}-E_{m,i}^{\\rm aux}=z_{m,i}\\theta_m+\\epsilon_{m,i},",
+      "text": "y_mi = metered energy_mi - auxiliary energy_mi = z_mi theta_m + epsilon_mi.",
+      "number": 5
+    },
+    {
+      "type": "equation",
+      "latex": "z_{m,i}=\\int_{\\mathcal I_i}P_m^{\\rm nom}(s)\\,ds,\\quad \\epsilon_{m,i}\\sim\\mathcal N(0,\\sigma_{m,i}^2).",
+      "text": "z_mi = integral of P_nom,m over interval I_i; epsilon_mi ~ N(0, sigma_mi^2).",
+      "number": 6
+    },
+    {
+      "type": "p",
+      "text": "The interval observation is computed from voltage-current integration and audited auxiliary consumption. Ordinary service intervals and dedicated calibration intervals are processed through the same estimator. Nonoverlapping intervals are used in the base likelihood. Correlated sensor errors require a joint likelihood or an effective independent sample count. A long maneuver cannot be split into arbitrarily many independent observations to manufacture information."
+    },
+    {
+      "type": "p",
+      "text": "Identifiability is assessed before policy training. The first experiment fixes payload and auxiliary-load accounting and identifies only theta_m. If wind or auxiliary energy is uncertain, the implementation must integrate the latent regressor or validate an approximate likelihood against held-out telemetry. Simultaneously estimating wind, drag, battery capacity, and efficiency from a single scalar energy measurement is outside the first-stage model."
+    },
+    {
+      "type": "h2",
+      "text": "D. Belief-Space Objective and Feasibility"
+    },
+    {
+      "type": "p",
+      "text": "At decision epoch n, let beta_n contain locally observed or message-conditioned state estimates, parameter beliefs, packet ledgers, active task versions, and remaining mission time. A joint option o_n specifies per-UAV service, calibration, backhaul, return, or waiting profiles over a common duration Delta_n. The first implementation uses a fixed 30-second decision interval. Optional stopping is represented by continuing or ending calibration at the next epoch. Variable-duration options are evaluated in a separate extension."
+    },
+    {
+      "type": "equation",
+      "latex": "J(\\pi)=\\mathbb E_\\pi\\!\\left[D/B_{\\rm ref}-\\lambda_E\\sum_m E_m^{\\rm used}/E_{\\rm ref}\\right],",
+      "text": "J(pi) = E_pi[D/B_ref - lambda_E sum_m E_used,m/E_ref].",
+      "number": 7
+    },
+    {
+      "type": "p",
+      "text": "The scales B_ref and E_ref and the energy weight lambda_E are fixed before final testing. Calibration receives no permanent information-gain bonus in the evaluation objective. Its energy enters E_used and its time reduces service opportunities. Safety events, infeasible commands, and deadline losses are reported independently. A matched-budget analysis also reports delivery as a function of total consumed energy, so that conclusions are not determined by a single weight."
+    },
+    {
+      "type": "equation",
+      "latex": "\\Pr\\!\\left(E_{m,o}+E_{m,\\rm return}\\le E_m-E_{m,\\rm reserve}\\mid\\beta_n\\right)\\ge1-\\delta,",
+      "text": "Pr(E_option,m + E_return,m <= E_m - E_reserve,m | beta_n) >= 1-delta.",
+      "number": 8
+    },
+    {
+      "type": "p",
+      "text": "The guard uses the current parameter belief and declared wind-prediction uncertainty. After an option is chosen, the local executor checks return feasibility at each physical step. Equation (8) is a model-conditioned design constraint. Its empirical violation rate is measured under misspecified parameters, wind, and observation noise. Collision and geometric safety checks remain separate from energy feasibility."
+    },
+    {
+      "type": "h1",
+      "text": "IV. Task-Directed Identification and Scheduling"
+    },
+    {
+      "type": "figure",
+      "caption": "Fig. 1. Proposed identification and execution loop. Both service and calibration provide telemetry. The scheduler and local guard receive only their available information. The truth generator is reserved for simulation dynamics and evaluation."
+    },
+    {
+      "type": "h2",
+      "text": "A. Bounded Bayesian Parameter Update"
+    },
+    {
+      "type": "p",
+      "text": "For the conditional scalar likelihood in (5), define a truncated Gaussian belief on a physically registered interval [theta_min, theta_max]. Its kernel has precision Lambda and center mu:"
+    },
+    {
+      "type": "equation",
+      "latex": "b_n(\\theta)\\propto \\mathbf1_{[\\theta_{\\min},\\theta_{\\max}]}(\\theta)\\exp[-\\tfrac12\\Lambda_n(\\theta-\\mu_n)^2].",
+      "text": "b_n(theta) proportional to 1_[theta_min,theta_max] exp[-Lambda_n(theta-mu_n)^2 / 2].",
+      "number": 9
+    },
+    {
+      "type": "equation",
+      "latex": "\\Lambda_{n+1}=\\Lambda_n+z_n^2/\\sigma_n^2,",
+      "text": "Lambda_(n+1) = Lambda_n + z_n^2/sigma_n^2,",
+      "number": 10
+    },
+    {
+      "type": "equation",
+      "latex": "\\mu_{n+1}=\\frac{\\Lambda_n\\mu_n+z_n y_n/\\sigma_n^2}{\\Lambda_{n+1}}.",
+      "text": "mu_(n+1) = (Lambda_n mu_n + z_n y_n/sigma_n^2) / Lambda_(n+1).",
+      "number": 11
+    },
+    {
+      "type": "p",
+      "text": "Completing the square gives (10)-(11); the support restriction is retained. The kernel center mu_n and inverse precision are not the mean and variance of the truncated distribution. The scheduler uses the actual posterior expectation and quantiles, obtained by normalized quadrature or the truncated-normal distribution. The channel carries the estimator summary and observation timestamp when the station requires it."
+    },
+    {
+      "type": "p",
+      "text": "Under this likelihood the information contribution is z_n squared divided by sigma_n squared. A higher nominal energy maneuver can be informative but also costly. A repeated low-noise observation can be preferable to a long high-noise maneuver. Selecting the largest information score alone ignores the downstream service decision and the energy already spent obtaining that score."
+    },
+    {
+      "type": "h2",
+      "text": "B. Decision Value of a Calibration Option"
+    },
+    {
+      "type": "equation",
+      "latex": "Q_n(\\beta,o)=\\mathbb E[r_n+\\gamma^{\\Delta_n/\\Delta_0}V_{n+1}(\\beta')\\mid\\beta,o],",
+      "text": "Q_n(beta,o) = E[r_n + gamma^(Delta_n/Delta_0) V_(n+1)(beta') | beta,o].",
+      "number": 12
+    },
+    {
+      "type": "equation",
+      "latex": "\\mathcal V_n^{\\rm cal}=\\max_{o\\in\\mathcal O_{\\rm cal}}Q_n(\\beta_n,o)-\\max_{o\\in\\mathcal O_{\\rm exec}}Q_n(\\beta_n,o).",
+      "text": "V_cal,n = max_cal Q_n(beta_n,o) - max_execution Q_n(beta_n,o).",
+      "number": 13
+    },
+    {
+      "type": "p",
+      "text": "r_n is the actual normalized delivery increment minus the energy cost for the executed interval. The posterior and physical state after calibration both enter beta'. Thus (13) accounts for changed position, spent energy, elapsed time, and possible measurements. Ordinary execution also updates the belief. The finite-horizon objective uses gamma=1 in the initial benchmark. Equation (12) supplies duration-consistent discounting if a later study adopts a discounted objective."
+    },
+    {
+      "type": "p",
+      "text": "The joint-option set O_cal contains at least one calibrating UAV and can simultaneously serve other buoys; O_exec contains no calibration component. Calibration is preferred when its estimated Q-value exceeds that of feasible execution options. It ends when the next execution option has at least the same expected value, or when resource feasibility requires termination. This definition also permits useful calibration during a service route. The value function is approximated by a belief-conditioned critic or a declared finite-lookahead planner; neither approximation is reported as an exact Bayes-optimal solution."
+    },
+    {
+      "type": "h2",
+      "text": "C. Hierarchical Policy and Training"
+    },
+    {
+      "type": "p",
+      "text": "A graph encoder represents UAVs, buoy queues, transport states, and aged estimator summaries. An autoregressive masked actor constructs a legal joint option. Service candidates cover every physically feasible buoy before any optional pruning. Calibration profiles, backhaul, return, and waiting remain explicit choices. High instantaneous link rate is not a prerequisite for retaining an informative task in the action set."
+    },
+    {
+      "type": "p",
+      "text": "The low-level executor follows feasible option trajectories with local motion and return checks. A fixed controller is used first to isolate the high-level decision. Residual MAPPO [11] can be evaluated as a later executor after validation under the new physical-time and energy model. High-level PPO [10] uses complete-mission returns and a centralized belief-conditioned critic. The actor receives no true theta, future weather, or undisclosed packet contents. Training may use simulator truth to calculate rewards and diagnostics, but inference uses received observations."
+    },
+    {
+      "type": "algorithm",
+      "caption": "Algorithm 1. Proposed belief-conditioned collection loop",
+      "steps": [
+        "Initialize declared parameter priors, packet ledgers, energy budgets, and task versions.",
+        "At each decision epoch, process received messages and valid local telemetry intervals.",
+        "Score validation observations against pre-update predictions, then assimilate the interval measurements and update bounded parameter beliefs.",
+        "Construct feasible service, calibration, backhaul, return, and waiting options.",
+        "Score or sample a legal joint option from the available belief and mission context.",
+        "Transmit versioned commands; activate only commands received by the corresponding UAV.",
+        "Execute with per-step motion and return guards; account for time, energy, radio access, and delivered bytes.",
+        "Collect new telemetry, maintain pending acknowledgements, and repeat until mission completion."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "D. Sequential Verification and Knowledge Reuse"
+    },
+    {
+      "type": "p",
+      "text": "A residual monitor compares new metered energy with the pre-update predictive distribution. Each validation interval is scored before its measurements are assimilated. An alarm is based on repeated, registered prediction failures rather than a single noisy measurement. After an alarm, a candidate broader prior or residual model is evaluated using subsequent observations that were not used to fit it. The update is accepted only under a predeclared predictive validation rule. The first implementation records this decision separately from policy actions so that parameter fitting, change detection, and scheduling gains can be ablated."
+    },
+    {
+      "type": "p",
+      "text": "Across sorties, the physical UAV may be recharged, but its parameter belief and validation record can persist. Recharge and ground costs are accounted consistently across methods. A per-UAV propulsion multiplier is associated with the relevant vehicle and payload configuration. Shared environmental information and individual hardware parameters have separate identities. Knowledge sharing and learned forgetting are later extensions; the first experiment studies one stationary parameter segment at a time."
+    },
+    {
+      "type": "h1",
+      "text": "V. Analytical Diagnostic Example"
+    },
+    {
+      "type": "p",
+      "text": "Consider a synthetic one-sortie decision with 260 Wh remaining, of which 60 Wh must be retained as an emergency reserve. The complete remote collection-and-return route has nominal cost 180 Wh and normalized delivery value 10. A local route costs a nominal 100 Wh and has value 6. The multiplier is 1 or 1.25 with equal prior probabilities. Calibration follows a nominal 4.8 Wh loop and costs 4.8 or 6 Wh. For this analytical diagnostic only, it reveals theta perfectly and returns to the same departure point. A route is then committed to completion. These are illustrative assumptions, not measurements."
+    },
+    {
+      "type": "table",
+      "caption": "TABLE I. Analytical energy feasibility after calibration",
+      "headers": [
+        "Condition",
+        "Remote + reserve",
+        "Remaining energy"
+      ],
+      "widths": [
+        0.29,
+        0.38,
+        0.33
+      ],
+      "rows": [
+        [
+          "theta = 1",
+          "180 + 60 = 240 Wh",
+          "255.2 Wh: feasible"
+        ],
+        [
+          "theta = 1.25",
+          "225 + 60 = 285 Wh",
+          "254 Wh: infeasible"
+        ],
+        [
+          "400 Wh control",
+          "240 or 285 Wh",
+          "Both feasible"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Use utility equal to normalized delivery value minus 0.01 times consumed Wh. In the tight-budget case, a robust no-probe choice is the local route, with expected utility 6 - 0.01(112.5) = 4.875. After calibration, execute the remote route when theta=1 and the local route when theta=1.25. Expected utility is 0.5[10 - 0.01(184.8)] + 0.5[6 - 0.01(131)] = 6.421. The analytical net calibration benefit is 1.546 under this finite action set. Both executed branches satisfy the reserve requirement."
+    },
+    {
+      "type": "p",
+      "text": "For the 400 Wh control, both parameter values allow the remote route, all packets meet their deadlines, and no later mission remains. Direct remote execution has expected utility 10 - 0.01(202.5) = 7.975. Calibration followed by the same remote route has utility 7.921, a difference of -0.054. When one execution plan maximizes continuation utility for every theta in the belief support and a probe adds no other task benefit, the expected value of perfect parameter information is zero. A positive probe cost then makes its net value negative. Noisy observations and online route revision are evaluated separately in the proposed simulator."
+    },
+    {
+      "type": "p",
+      "text": "This control tests selective exploration. A policy that calibrates in every uncertain state can improve parameter error yet fail the task-value test. A parameter oracle with no probe cost is reported only as a diagnostic comparator. It is not a deployable competitor and its numerical performance is not assumed to be an exact global upper bound when its planner is approximate."
+    },
+    {
+      "type": "h1",
+      "text": "VI. Experimental Protocol"
+    },
+    {
+      "type": "h2",
+      "text": "A. Registered Scope and Workload Audit"
+    },
+    {
+      "type": "p",
+      "text": "The initial experiment introduces only propulsion uncertainty. Queue arrivals and motion geometry are synthetic and explicitly labeled. Static buoys and a fixed executor precede drifting-buoy, model-residual, and multi-sortie studies. Packet sizes follow a declared observation or data workload. The audit sweeps communication-rich, access-limited, and intermittent-backhaul settings and retains cases where calibration provides no measurable advantage."
+    },
+    {
+      "type": "table",
+      "caption": "TABLE II. Proposed starting configuration, not measurements",
+      "headers": [
+        "Item",
+        "Initial diagnostic choice"
+      ],
+      "widths": [
+        0.42,
+        0.58
+      ],
+      "rows": [
+        [
+          "Nodes",
+          "2 UAVs / 4 buoys; then 6 / 12"
+        ],
+        [
+          "Physical integration",
+          "1 s"
+        ],
+        [
+          "Common option interval",
+          "30 s; fixed in primary comparison"
+        ],
+        [
+          "Mission duration",
+          "1800 s; registered deadline traces"
+        ],
+        [
+          "Area / altitude",
+          "2 km x 2 km / 100 m; synthetic"
+        ],
+        [
+          "Unknown parameter",
+          "One positive cost multiplier per UAV"
+        ],
+        [
+          "Candidate belief support",
+          "[0.8, 1.4]; explicit mismatch tests"
+        ],
+        [
+          "Electric / radio loads",
+          "Model- and device-based audit required"
+        ],
+        [
+          "Packet generation",
+          "Registered bytes and arrival trace"
+        ],
+        [
+          "Evaluation status",
+          "Protocol only; no empirical results"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The proposed values in Table II require a joint feasibility audit before freezing an executable benchmark. No nonexistent wind sensor or battery channel is inferred from the legacy simulator. The new environment must expose metered energy, wind observations, nominal regressors, and communication logs through declared interfaces. Existing M0B evidence on the isolated branch found a collection setting where fixed reception points explained the apparent mobile gain. That result is motivation to include deployment-matched controls, and supplies no performance evidence for active identification."
+    },
+    {
+      "type": "h2",
+      "text": "B. Baselines and Information Matching"
+    },
+    {
+      "type": "table",
+      "caption": "TABLE III. Comparisons under the same sensing and resource budget",
+      "headers": [
+        "Method",
+        "Decision mechanism"
+      ],
+      "widths": [
+        0.39,
+        0.61
+      ],
+      "rows": [
+        [
+          "Fixed-model scheduler",
+          "Nominal parameter, no update"
+        ],
+        [
+          "Passive adaptive scheduler",
+          "Same estimator, service telemetry only"
+        ],
+        [
+          "Periodic calibration",
+          "Registered fixed calibration schedule"
+        ],
+        [
+          "Uncertainty-driven probing",
+          "Probe selected by parameter uncertainty"
+        ],
+        [
+          "Cost-matched random probe",
+          "Matched validation-set probe expenditure"
+        ],
+        [
+          "Belief-space lookahead",
+          "Same model, finite registered search"
+        ],
+        [
+          "Proposed belief policy",
+          "Joint calibration, service, and stopping"
+        ],
+        [
+          "Known-parameter diagnostic",
+          "True theta; identical executor and ledger"
+        ],
+        [
+          "Fixed-receiver control",
+          "Same workload and deployed resources"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Baseline tuning uses development data only. Every adaptive method has the same sensor channels, likelihood family, initial belief, telemetry cost, executor, and delivered-data semantics. Comparison of active and passive methods changes the availability or selection of deliberate verification, without silently upgrading the predictor or controller. A fixed-model method is retained to quantify the value of ordinary adaptation separately. Exploration expenditure matching is specified from validation statistics, rather than retrospectively matching a test outcome."
+    },
+    {
+      "type": "h2",
+      "text": "C. Decision-Relevance and Model-Mismatch Tests"
+    },
+    {
+      "type": "p",
+      "text": "The decisive test pairs tight- and loose-budget mission families with identical initial parameter uncertainty. In the first family, parameter values change which route best satisfies the energy and deadline constraints. In the second, one plan remains optimal over the registered parameter support. Report dedicated calibration frequency, calibration duration, subsequent delivery, and total net utility in both families. A benefit restricted to parameter RMSE is insufficient evidence for the proposed scheduling mechanism."
+    },
+    {
+      "type": "p",
+      "text": "Further tests vary deadline slack, probe noise, prior error, energy-model residuals, and telemetry delay. Wind-estimation error is introduced after the conditional-regression experiment. Later experiments introduce a new multiplier between sorties or a registered in-sortie change, and compare retained beliefs, reset beliefs, passive adaptation, and explicit revalidation. Truth-model changes are hidden from the actor and are not supplied as privileged change alarms."
+    },
+    {
+      "type": "p",
+      "text": "The simulator uses policy-independent environmental random streams. Different actions can change sampled locations and contact times, but cannot alter the external weather by consuming random numbers in another order. A numerical truth model with higher-fidelity residuals is evaluated separately from the matched-model case. Common scenario identifiers supply paired external conditions across methods."
+    },
+    {
+      "type": "h2",
+      "text": "D. Metrics, Splits, and Interpretation"
+    },
+    {
+      "type": "p",
+      "text": "The primary outcome is the normalized net utility J in (7). Final-receiver on-time weighted bits and total energy are reported separately, together with the delivery-energy frontier under per-UAV energy budgets. Report total energy, calibration energy and duration, missed deadlines, service opportunity cost, return failures, guard interventions, and computation latency. Model diagnostics include multiplier error, predictive-interval coverage, calibration-versus-service observation counts, and recovery after changes. An unnecessary-calibration rate is measured on the decision-insensitive control family."
+    },
+    {
+      "type": "p",
+      "text": "Training, validation, and final tests use disjoint environment and parameter seeds. The executable study will register its final sample size using a validation-set precision analysis. The proposed initial allocation is at least five independent training seeds and 100 independent test missions per stationary family. Multi-sortie tests use whole sequences as the statistical unit. Report paired scenario-level confidence intervals, with training-seed variability separately or in a hierarchical analysis. Time steps and packets are not independent replications."
+    },
+    {
+      "type": "p",
+      "text": "Before final tests, freeze workload, physical models, likelihoods, estimator hyperparameters, policy selection, and result aggregation. The proposed mechanism is supported if it improves downstream utility against the strongest declared deployable comparison, directs more useful probing to decision-sensitive cases, and meets the registered resource and safety criteria. A lower estimation error without improved communication utility supports an identification result only. No numerical performance threshold is presented as an observed outcome."
+    },
+    {
+      "type": "h1",
+      "text": "VII. Discussion"
+    },
+    {
+      "type": "h2",
+      "text": "A. Expected System Behavior and Research Claims"
+    },
+    {
+      "type": "p",
+      "text": "The intended result is a collector that checks its forecasts, verifies consequential uncertainty, updates an effective model, and alters subsequent service decisions. The task-sensitive stopping mechanism is the first research hypothesis. Joint radio-and-flight experimentation and selective cross-UAV knowledge sharing are subsequent hypotheses, each requiring its own resource-matched ablation. AI-native operation describes the proposed feedback architecture; the empirical contribution is determined by the decisions and outcomes measured above."
+    },
+    {
+      "type": "h2",
+      "text": "B. Scope of the Physical Model"
+    },
+    {
+      "type": "p",
+      "text": "One multiplier cannot reproduce all rotor, battery, and weather dynamics. It provides a controlled first test of task-directed verification. Under severe likelihood error, a precise posterior may be wrong, so predictive validation and mismatch experiments remain part of the evaluation. Drift learning later requires a separate observation model with declared wind, current, and position information. If those signals identify only a net drift residual, that residual becomes the parameter of interest."
+    },
+    {
+      "type": "h2",
+      "text": "C. Interface to the Existing Repository"
+    },
+    {
+      "type": "p",
+      "text": "The reference paper supplies the hierarchy, service bookkeeping, and scenario-level evaluation pattern. The new design adds energy telemetry, a parameter belief, calibration options, predictive validation, and a joint task-value objective. Old fixed-slot checkpoints require testing under the new interface. The present deliverable changes manuscript artifacts on the existing isolated research branch. Its method, training loop, and result tables await implementation and experiments; previous payload gains are not reused as active-identification evidence."
+    },
+    {
+      "type": "h1",
+      "text": "VIII. Conclusion"
+    },
+    {
+      "type": "p",
+      "text": "We formulated a proposed task-directed identification problem for energy-constrained multi-UAV maritime collection. A bounded scalar parameter estimator connects telemetry and purposeful calibration to legal service options and model-conditioned return checks. The analytical diagnostic exposes when identical parameter uncertainty can have different decision value. The specified experiments test whether calibration expenditure improves on-time delivery and whether the policy stops acquiring information when its decision value is exhausted. This design manuscript establishes the method and evaluation contract to be assessed before integrating the direction into the default branch."
+    },
+    {
+      "type": "h1",
+      "text": "Reproducibility Note"
+    },
+    {
+      "type": "p",
+      "text": "The template is docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV.pdf at default-branch commit e58e5d190109e5a0e860cb5c6a412321c0d74e31 (Git blob 92ba3fe88ad8a6e99dbf45b655268aa300f802f9). The target branch is research/ocean-observation-isolated, whose parent for this manuscript release is 4d8622ef183e734f2d9a890d60d735ed716f5d74. The canonical manuscript content, PDF renderer, editable LaTeX export, bibliography, and Chinese testing handoff are versioned together. No simulator steps or training updates were executed for this release."
+    }
+  ]
+}

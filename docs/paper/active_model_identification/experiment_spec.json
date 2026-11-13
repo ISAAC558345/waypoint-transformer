@@ -1,0 +1,65 @@
+{
+  "status": "proposed_protocol_not_implemented",
+  "date": "2026-11-13",
+  "direction": "task-directed active model identification",
+  "first_stage": {
+    "unknown": "one effective positive propulsion-cost multiplier per UAV",
+    "initial_nodes": {"uavs": 2, "buoys": 4},
+    "scale_up_nodes": {"uavs": 6, "buoys": 12},
+    "physical_step_seconds": 1,
+    "option_interval_seconds": 30,
+    "mission_seconds": 1800,
+    "buoy_motion": "static in primary diagnostic; prescribed drift in later stress test",
+    "truth_and_actor_state": "separate interfaces",
+    "transitions": "time, energy, queue arrivals, deadlines, contacts, and transport all advance during calibration",
+    "observation": "metered total energy minus audited auxiliary energy, nonoverlapping intervals",
+    "likelihood": "conditional y = z * theta + Gaussian error; validate before learning",
+    "belief": "bounded Gaussian kernel, normalized on positive support",
+    "kernel_parameters_are_actual_moments": false,
+    "actors_can_read_true_parameter": false,
+    "telemetry_to_station_is_free": false,
+    "ordinary_service_telemetry_available_to_passive_baseline": true,
+    "arbitrary_packet_size_inflation": false
+  },
+  "actions": ["service", "calibrate", "backhaul", "return", "wait"],
+  "cost_accounting": {
+    "energy": "all executed propulsion, radio, computation, launch, landing, and ground loads",
+    "time": "actual elapsed time and lost service opportunity",
+    "double_charge_for_probe_energy": false,
+    "delivery_credit": "complete, unique packet at final receiver before its deadline",
+    "safety": "per-UAV model-conditioned return guard plus geometric guard; record empirical violations"
+  },
+  "comparisons": [
+    "fixed model", "passive adaptive model", "periodic calibration",
+    "uncertainty-driven calibration", "validation-cost-matched random calibration",
+    "belief-space finite lookahead", "proposed policy", "known-parameter diagnostic",
+    "deployment-matched fixed receiver"
+  ],
+  "decisive_test": {
+    "matched_quantity": "initial parameter uncertainty",
+    "varied_quantity": "whether the parameter changes the preferred feasible task",
+    "expected_behavior_hypothesis": "selective probing when decision-relevant and cost-effective",
+    "measures": ["on-time weighted bits", "net utility", "energy", "calibration duration", "calibration frequency", "return failures"]
+  },
+  "proposed_statistics": {
+    "training_seeds": 5,
+    "test_missions_per_family_starting_count": 100,
+    "final_sample_size": "register after validation-set precision analysis",
+    "unit": "independent mission; whole sequence for multi-sortie tests",
+    "confidence_interval": "paired scenario-level with training-seed variability reported separately or hierarchically",
+    "final_test_used_for_tuning": false
+  },
+  "analytic_example_only": {
+    "theta_values": [1, 1.25], "prior": [0.5, 0.5],
+    "nominal_remote_wh": 180, "remote_normalized_delivery": 10,
+    "nominal_local_wh": 100, "local_normalized_delivery": 6,
+    "nominal_probe_wh": 4.8, "reserve_wh": 60,
+    "utility_energy_weight_per_wh": 0.01,
+    "remaining_energy_cases_wh": [260, 400],
+    "probe_reveals_parameter_perfectly": true,
+    "route_after_choice_committed": true,
+    "is_simulator_performance_result": false
+  },
+  "new_simulation_steps": 0,
+  "new_training_updates": 0
+}
