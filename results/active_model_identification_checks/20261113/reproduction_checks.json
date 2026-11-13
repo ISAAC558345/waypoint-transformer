@@ -1,0 +1,54 @@
+{
+  "branch": "research/ocean-observation-isolated",
+  "commit": "0a8a3b6da76f15a607f2fc8d36ea2e9aab7c6f67",
+  "scope": "Existing non-learning ocean-observation functions only",
+  "source_git_blob_mismatches": [],
+  "source_changes_during_run": [],
+  "checks": [
+    {
+      "name": "M0: recomputed 24 analytical cases",
+      "passed": true,
+      "difference_count": 0,
+      "differences": []
+    },
+    {
+      "name": "M0A: recomputed registered geometry",
+      "passed": true,
+      "difference_count": 0,
+      "differences": []
+    },
+    {
+      "name": "M0A: recomputed complete transmission/flight schedule",
+      "passed": true,
+      "difference_count": 0,
+      "differences": []
+    },
+    {
+      "name": "M0A: recomputed 18 method rows",
+      "passed": true,
+      "difference_count": 0,
+      "differences": []
+    },
+    {
+      "name": "M0B: recomputed saved derived rows",
+      "passed": true,
+      "difference_count": 0,
+      "differences": []
+    },
+    {
+      "name": "M0B: recomputed saved difference table",
+      "passed": true,
+      "difference_count": 0,
+      "differences": []
+    }
+  ],
+  "summary": {
+    "M0_cases": 24,
+    "M0A_method_rows": 18,
+    "M0B_contexts": 6,
+    "M0B_equivalent_contexts": 6,
+    "scheduled_channel_overlaps": 0
+  },
+  "seconds": 0.1150229999984731,
+  "passed": true
+}

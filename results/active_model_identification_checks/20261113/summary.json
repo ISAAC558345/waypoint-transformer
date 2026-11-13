@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "branch": "research/ocean-observation-isolated",
+  "tested_commit": "0a8a3b6da76f15a607f2fc8d36ea2e9aab7c6f67",
+  "status": "PASS",
+  "scope": "Existing functionality in the isolated research branch: M0/M0A/M0B analytical accounting, paper generation and manuscript checks.",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows",
+    "execution": "Isolated copies verified against the tested commit's Git blobs."
+  },
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -p \"test_ocean_observation_m0*.py\" -v",
+    "tests_run": 18,
+    "passed": 18,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 0.064,
+    "log": "unittest.log"
+  },
+  "reproduction": {
+    "passed": true,
+    "checks_run": 6,
+    "checks_passed": 6,
+    "M0_cases": 24,
+    "M0A_method_rows": 18,
+    "M0B_contexts": 6,
+    "M0B_equivalent_contexts": 6,
+    "scheduled_channel_overlaps": 0,
+    "float_comparison": {
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 1e-9
+    },
+    "record": "reproduction_checks.json"
+  },
+  "paper": {
+    "status": "PASS",
+    "pdf_pages": 6,
+    "references": 11,
+    "equations": 13,
+    "tables": 3,
+    "algorithms": 1,
+    "latex_matches_committed_text": true,
+    "latex_compiled": false,
+    "analytic_utility": {
+      "tight_direct": 4.875,
+      "tight_probe": 6.420999999999999,
+      "loose_direct": 7.975,
+      "loose_probe": 7.920999999999999
+    },
+    "visual_review": {
+      "pages_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "dpi": 100,
+      "result": "No clipped text, overlapping columns, or missing math glyphs observed"
+    },
+    "record": "paper_checks.json"
+  },
+  "provenance": {
+    "functional_source_files_verified": 52,
+    "functional_source_git_blob_mismatches": 0,
+    "existing_functional_files_changed": 0,
+    "paper_inputs_verified": 7,
+    "paper_source_inputs_changed": 0
+  },
+  "research_status": {
+    "active_identification_protocol": "proposed_protocol_not_implemented",
+    "active_identification_performance_evaluated": false,
+    "new_environment_steps": 0,
+    "new_training_updates": 0,
+    "old_neural_checkpoints_loaded": 0
+  },
+  "changes_in_this_commit": "New test records only; existing source code, paper inputs, and historical results are unchanged.",
+  "merge_to_default_branch": false
+}

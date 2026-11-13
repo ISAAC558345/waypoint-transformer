@@ -1,0 +1,79 @@
+{
+  "input_git_blobs_match": true,
+  "input_blob_checks": {
+    "build_paper.py": true,
+    "manuscript.json": true,
+    "references_verified.bib": true,
+    "experiment_spec.json": true,
+    "README_CN.md": true
+  },
+  "canonical_block_counts": {
+    "abstract": 1,
+    "p": 47,
+    "h1": 9,
+    "h2": 18,
+    "equation": 13,
+    "figure": 1,
+    "algorithm": 1,
+    "table": 3
+  },
+  "equation_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "equations_contiguous": true,
+  "latex_matches_committed_text": true,
+  "latex_environments_balanced": true,
+  "canonical_equations_exported": true,
+  "latex_equations": 13,
+  "latex_tables": 3,
+  "generated_layout_counts_match_committed_verification": true,
+  "analytic_utility": {
+    "tight_direct": 4.875,
+    "tight_probe": 6.420999999999999,
+    "loose_direct": 7.975,
+    "loose_probe": 7.920999999999999
+  },
+  "new_simulation_steps": 0,
+  "new_training_updates": 0,
+  "latex_compiled": false,
+  "protocol_status": "proposed_protocol_not_implemented",
+  "readme_generation_command": "python build_paper.py",
+  "actual_command": "runtime-python build_paper.py",
+  "status": "PASS",
+  "source_branch": "research/ocean-observation-isolated",
+  "source_commit": "0a8a3b6da76f15a607f2fc8d36ea2e9aab7c6f67",
+  "visual_review": {
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "dpi": 100,
+    "result": "No clipped text, overlapping columns, or missing math glyphs observed"
+  },
+  "commands": [
+    "runtime-python build_paper.py",
+    "runtime-python check_export.py",
+    "pdftoppm -r 100 -png Task_Directed_Active_Model_Identification_MultiUAV.pdf paper_page"
+  ],
+  "limitations": [
+    "The LaTeX source was exported and compared, not compiled.",
+    "The active-identification environment, estimator, policy and experiments remain proposed, not implemented by this branch.",
+    "No new simulation or training was performed."
+  ]
+}

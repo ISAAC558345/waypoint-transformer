@@ -1,0 +1,23 @@
+test_conclusion_rule_and_release_flags (test_ocean_observation_m0.OceanObservationM0Test.test_conclusion_rule_and_release_flags) ... ok
+test_cost_buckets_partition_the_total_and_flight_dominates_the_ferry (test_ocean_observation_m0.OceanObservationM0Test.test_cost_buckets_partition_the_total_and_flight_dominates_the_ferry) ... ok
+test_crosswind_above_airspeed_has_no_ground_speed_and_no_invented_energy (test_ocean_observation_m0.OceanObservationM0Test.test_crosswind_above_airspeed_has_no_ground_speed_and_no_invented_energy) ... ok
+test_cruise_is_the_zero_wind_minimum_and_hover_matches_parts (test_ocean_observation_m0.OceanObservationM0Test.test_cruise_is_the_zero_wind_minimum_and_hover_matches_parts) ... ok
+test_direct_session_uses_the_same_packet_airtime (test_ocean_observation_m0.OceanObservationM0Test.test_direct_session_uses_the_same_packet_airtime) ... ok
+test_drift_is_not_reflected_and_example_is_hidden_before_receipt (test_ocean_observation_m0.OceanObservationM0Test.test_drift_is_not_reflected_and_example_is_hidden_before_receipt) ... ok
+test_full_packet_duplicate_stale_and_unacked_command (test_ocean_observation_m0.OceanObservationM0Test.test_full_packet_duplicate_stale_and_unacked_command) ... ok
+test_headwind_costs_more_than_tailwind_and_round_trip_is_not_double_headwind (test_ocean_observation_m0.OceanObservationM0Test.test_headwind_costs_more_than_tailwind_and_round_trip_is_not_double_headwind) ... ok
+test_infeasible_results_stay_in_the_matrix (test_ocean_observation_m0.OceanObservationM0Test.test_infeasible_results_stay_in_the_matrix) ... ok
+test_long_leg_exceeds_the_registered_reserve (test_ocean_observation_m0.OceanObservationM0Test.test_long_leg_exceeds_the_registered_reserve) ... ok
+test_package_does_not_load_a_policy (test_ocean_observation_m0.OceanObservationM0Test.test_package_does_not_load_a_policy) ... ok
+test_reference_airtime_and_single_threshold (test_ocean_observation_m0.OceanObservationM0Test.test_reference_airtime_and_single_threshold) ... ok
+test_registered_matrix_and_direct_margin (test_ocean_observation_m0.OceanObservationM0Test.test_registered_matrix_and_direct_margin) ... ok
+test_units_and_packet_dimensions (test_ocean_observation_m0.OceanObservationM0Test.test_units_and_packet_dimensions) ... ok
+test_hand_horizon_for_one_and_ten_metres (test_ocean_observation_m0a.OceanObservationM0ATests.test_hand_horizon_for_one_and_ten_metres) ... ok
+test_product_length_and_airtime_stay_on_the_existing_codec (test_ocean_observation_m0a.OceanObservationM0ATests.test_product_length_and_airtime_stay_on_the_existing_codec) ... ok
+test_saved_comparison_is_the_same_eight_products (test_ocean_observation_m0a.OceanObservationM0ATests.test_saved_comparison_is_the_same_eight_products) ... ok
+test_shared_rule_keeps_b2_equal_to_c_and_the_saved_bytes (test_ocean_observation_m0b.OceanObservationM0BTests.test_shared_rule_keeps_b2_equal_to_c_and_the_saved_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.064s
+
+OK
