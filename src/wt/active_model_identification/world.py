@@ -415,7 +415,14 @@ def _stay_landed(uav: Uav, spec: dict, theta: float) -> None:
     _charge(uav, theta, 0.0, _aux_w(spec, False))
 
 
-def _move(uav: Uav, action: Action, spec: dict, theta: float, phase_s: int) -> None:
+def _move(
+    uav: Uav,
+    action: Action,
+    spec: dict,
+    theta: float,
+    phase_s: int,
+    wind_xy: tuple[float, float] = (0.0, 0.0),
+) -> None:
     """One physical second. Only a finished pad landing turns propulsion off."""
     if uav.failed:
         return
@@ -437,7 +444,9 @@ def _move(uav: Uav, action: Action, spec: dict, theta: float, phase_s: int) -> N
     else:
         uav.land_timer_s = 0.0
     desired_vx, desired_vy = _desired_velocity(uav, action, spec, phase_s)
-    x, y, vx, vy, z_j = step_kinematics(uav.x, uav.y, uav.vx, uav.vy, desired_vx, desired_vy, True, 1.0)
+    x, y, vx, vy, z_j = step_kinematics(
+        uav.x, uav.y, uav.vx, uav.vy, desired_vx, desired_vy, True, 1.0, wind_xy
+    )
     uav.x, uav.y, uav.vx, uav.vy = x, y, vx, vy
     _charge(uav, theta, z_j, _aux_w(spec, True))
     touched_down = (
@@ -464,6 +473,9 @@ def advance(
     planning: bool,
     interval_index: int,
     noise_j,
+    wind_at=None,
+    admit=None,
+    return_guard=None,
 ) -> list[dict]:
     """Advance one decision interval and assimilate one observation per UAV."""
     if len(actions) != len(world.uavs) or len(dynamics_theta) != len(world.uavs):
@@ -485,7 +497,10 @@ def advance(
             stats[key] = int(stats.get(key, 0)) + 1
         if phase == 0:
             for index, uav in enumerate(world.uavs):
-                updated, changed = apply_option_guard(uav, executed[index], beliefs[index], spec, factor, world)
+                if admit is None:
+                    updated, changed = apply_option_guard(uav, executed[index], beliefs[index], spec, factor, world)
+                else:
+                    updated, changed = admit(uav, executed[index], beliefs[index], world)
                 executed[index] = updated
                 if changed:
                     option_overrode[index] = True
@@ -496,7 +511,10 @@ def advance(
                     _charge_radio(world, uav, rx_power_w() * airtime)
                     world.shore_radio_j += tx_power_w() * airtime
         for index, uav in enumerate(world.uavs):
-            updated, changed = _return_guard(uav, executed[index], beliefs[index], spec, factor)
+            if return_guard is None:
+                updated, changed = _return_guard(uav, executed[index], beliefs[index], spec, factor)
+            else:
+                updated, changed = return_guard(uav, executed[index], beliefs[index], world)
             executed[index] = updated
             if changed and not option_overrode[index]:
                 option_overrode[index] = True
@@ -507,7 +525,8 @@ def advance(
             spent_before = uav.consumed_j
             if action[0] == "calibrate":
                 world.calibration_s[index] += 1.0
-            _move(uav, action, spec, dynamics_theta[index], phase)
+            wind_xy = (0.0, 0.0) if wind_at is None else tuple(wind_at(uav.x, uav.y, start + phase))
+            _move(uav, action, spec, dynamics_theta[index], phase, wind_xy)
             if action[0] == "calibrate":
                 world.calibration_j[index] += uav.consumed_j - spent_before
             if uav.failed:

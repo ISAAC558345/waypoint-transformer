@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "parent_commit": "4f7333dc0b9561673d33a695276158750bbc7811",
+  "config_sha256": "f3595a45e5ef79748c6afed109d62bb528641fff84d0e89bde1ba908856a8c9b",
+  "result_dir": "results/wind_observation_w1/w1_20261114",
+  "elapsed_s": 2.9935264999999163,
+  "zero_wind": {
+    "saved_request_replay": {
+      "ok": true,
+      "mismatches": [],
+      "mismatch_count": 0,
+      "bits": 140000.0,
+      "energy_j": 115684.95660823316,
+      "utility": 13.678652898310464,
+      "returned": 2
+    },
+    "fresh_scheduler": {
+      "ok": true,
+      "mismatches": [],
+      "mismatch_count": 0,
+      "bits": 140000.0,
+      "energy_j": 115684.95660823316,
+      "utility": 13.678652898310464,
+      "returned": 2
+    }
+  },
+  "sample": {
+    "x_m": 1849.6790013572058,
+    "y_m": 869.2145410037378,
+    "t_s": 150.0,
+    "energy_j": 46373.612542436975
+  },
+  "message_j": {
+    "payload_bytes": 32,
+    "airtime_s": 0.082176,
+    "sender_j": 0.0075930623999999995,
+    "receiver_j": 0.00279316224
+  },
+  "reviews": [
+    {
+      "condition": "headwind_return",
+      "chosen": {
+        "no_send": "return:None",
+        "timely": "return:None",
+        "late": "return:None"
+      },
+      "first_executed": {
+        "no_send": "return:None",
+        "timely": "return:None",
+        "late": "return:None"
+      },
+      "prediction_improved": true,
+      "timely_minus_no_send": {
+        "on_time_bits": 0.0,
+        "utility": -2.8850623223775074e-08,
+        "energy_j": 0.010386224632384256,
+        "returned": 0,
+        "not_returned": 0,
+        "not_landed": 0,
+        "below_reserve": 0,
+        "energy_exhausted": 0,
+        "wind_rmse_m_s": -3.9543280309920976
+      },
+      "timely_minus_late": {
+        "on_time_bits": 0.0,
+        "utility": 0.0,
+        "energy_j": 0.0,
+        "returned": 0,
+        "not_returned": 0,
+        "not_landed": 0,
+        "below_reserve": 0,
+        "energy_exhausted": 0,
+        "wind_rmse_m_s": -3.9543280309920976
+      },
+      "level": "prediction",
+      "reason": "三种信息下选择的动作相同"
+    },
+    {
+      "condition": "tailwind_return",
+      "chosen": {
+        "no_send": "return:None",
+        "timely": "backhaul:None",
+        "late": "return:None"
+      },
+      "first_executed": {
+        "no_send": "return:None",
+        "timely": "backhaul:None",
+        "late": "return:None"
+      },
+      "prediction_improved": true,
+      "timely_minus_no_send": {
+        "on_time_bits": 50000.0,
+        "utility": 4.98494457835171,
+        "energy_j": 5419.9517933843745,
+        "returned": 0,
+        "not_returned": 0,
+        "not_landed": 0,
+        "below_reserve": 0,
+        "energy_exhausted": 0,
+        "wind_rmse_m_s": -3.985482384591699
+      },
+      "timely_minus_late": {
+        "on_time_bits": 50000.0,
+        "utility": 4.984944607202335,
+        "energy_j": 5419.941407159742,
+        "returned": 0,
+        "not_returned": 0,
+        "not_landed": 0,
+        "below_reserve": 0,
+        "energy_exhausted": 0,
+        "wind_rmse_m_s": -3.985482384591699
+      },
+      "retention": true,
+      "improved": true,
+      "level": "mission",
+      "reason": "及时报文使 tailwind_return 的选择从 return:None 变为 backhaul:None"
+    }
+  ],
+  "conclusion": "及时报文使 tailwind_return 的选择从 return:None 变为 backhaul:None。这只说明该显式实验里的这一条及时报文。默认调度保持 legacy。",
+  "default_changed": false
+}

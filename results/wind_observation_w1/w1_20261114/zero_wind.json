@@ -1,0 +1,20 @@
+{
+  "saved_request_replay": {
+    "ok": true,
+    "mismatches": [],
+    "mismatch_count": 0,
+    "bits": 140000.0,
+    "energy_j": 115684.95660823316,
+    "utility": 13.678652898310464,
+    "returned": 2
+  },
+  "fresh_scheduler": {
+    "ok": true,
+    "mismatches": [],
+    "mismatch_count": 0,
+    "bits": 140000.0,
+    "energy_j": 115684.95660823316,
+    "utility": 13.678652898310464,
+    "returned": 2
+  }
+}

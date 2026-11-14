@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_run",
+  "instruction": "CURSOR_NEXT_TASK.md",
+  "base_commit": "4f7333d",
+  "parent_result": "results/active_model_identification_m16/m16_20261114",
+  "scenario_manifest": "results/active_model_identification_m13/m13_20261114/scenario_manifest.json",
+  "scenario_id": "b3_loose",
+  "method": "lookahead_calibration_off",
+  "seed": 1103,
+  "terminal_mode": "return_tail_when_no_business",
+  "selection_mode": "initial_guard_consistent",
+  "default_terminal": "legacy",
+  "default_selection": "legacy",
+  "observer_uav": 0,
+  "decider_uav": 1,
+  "sample_epoch": 4,
+  "sample_time_s": 150,
+  "decision_epoch": 6,
+  "decision_time_s": 180,
+  "late_time_s": 210,
+  "payload_bytes": 32,
+  "observation_sigma_m_s": 0.5,
+  "prior_std_m_s": 8.0,
+  "reserve_j": 4000.0,
+  "field": {
+    "Lx_m": 2000.0,
+    "Ly_m": 2000.0,
+    "period_s": 1200.0,
+    "bx": 1.5,
+    "by": 1.0
+  },
+  "conditions": [
+    {"id": "headwind_return", "ax": 6.0, "ay": 0.0},
+    {"id": "tailwind_return", "ax": -6.0, "ay": 0.0}
+  ],
+  "modes": ["no_send", "timely", "late"],
+  "noise": "random.Random(f'w1-{condition}-{seed}').gauss",
+  "selection_reason": "决策点取 M1.6 被动 OFF 已记录的第 6 个决策（180 秒，1 号机位于 3 号浮标，请求返航）。两种风只改变东西向均值的符号，使向西返航分别成为逆风和顺风。幅度、先验标准差和观测噪声在看到效用之前固定，运行后不改。",
+  "wind_correction": "地面速度仍由原控制器给出。名义功率只用空速 |v_ground - wind| 计算一次。零风时该空速等于原地面速率。",
+  "predictor": "结构项 bx、by、长度和时间周期对预测器已知。无报文时均值风只含结构项，标准差为先验 8 m/s。有报文时，用采样点去掉结构项后的残差估计常值 ax、ay，查询点加回结构项，标准差改为观测噪声 0.5 m/s。准入在均值风上另加一个沿返航反方向、大小等于该标准差的风矢量，只加这一次，不再乘第二次风修正。",
+  "decision_rule": "候选来自 policies.candidates，去掉校准；没有缓存的回传和不存在待取包的服务不进入候选。返航脚本只飞回家，缓存留在机上。回传脚本先交付缓存再返航。服务脚本先取该浮标的剩余包，再回传，再返航。返航始终可执行。其余动作只有在 0.95 分位、逆风偏移、大电池回放的耗电加备用电量不超过当前电量，并且回放落地、按时结束时才准入；服务还要求回放产生按时交付。准入动作按信念均值和均值风的单机增量效用取最大。效用差不超过 integral.tie_abs 时，保留与 M1.6 该时刻请求相同的动作，否则保留候选列表中更靠前的动作。没有准入动作时保留该请求。",
+  "execution_rule": "A 执行 M1.6 日志里的已执行动作。B 执行上面选出的脚本。物理扣电使用真实风和场景真实 theta。返航守卫只作用于 B，使用决策信息集里的均值风，不使用真实风。及时报文在 180 秒扣 LoRa 发/收能量；迟到报文在 210 秒扣同样的能量；不发送不扣这笔能量。",
+  "posthoc": "每个候选在真实 theta 下各回放一次均值风和一次真实风。报价减实际等于能耗误差。回放使用世界副本。",
+  "checks": [
+    {"name": "zero_wind_replay", "catches": "风接口或默认守卫改动了零风调度，使冻结用例的请求、执行、按时交付、耗电或返航偏离 M1.6。"},
+    {"name": "relative_wind_energy", "catches": "同一地面速度被风修正了两次，或功率用了地速而账本按另一套单位扣电。"},
+    {"name": "message_deadline", "catches": "迟到报文进入 180 秒的决策信息，或候选回放改写了源世界的耗电。"}
+  ],
+  "do_not_retune": ["ax", "ay", "bx", "by", "observation_sigma_m_s", "prior_std_m_s", "battery_j", "reserve_j", "utility weights", "guard_probability", "tie_abs"]
+}

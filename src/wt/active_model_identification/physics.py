@@ -43,8 +43,13 @@ def step_kinematics(
     desired_vy: float,
     propulsion: bool,
     dt: float,
+    wind_xy: tuple[float, float] = (0.0, 0.0),
 ) -> tuple[float, float, float, float, float]:
-    """Return x, y, vx, vy and the nominal propulsion energy over dt."""
+    """Return x, y, vx, vy and the nominal propulsion energy over dt.
+
+    The commanded velocity is ground velocity. Nominal power uses airspeed
+    ``|v_ground - wind|`` once. A zero wind leaves the historical energy.
+    """
     if not propulsion:
         return x, y, 0.0, 0.0, 0.0
     dv_limit = ACCEL_M_S2 * dt
@@ -52,7 +57,7 @@ def step_kinematics(
     vy += clamp(desired_vy - vy, dv_limit)
     x += vx * dt
     y += vy * dt
-    airspeed = math.hypot(vx, vy)
+    airspeed = math.hypot(vx - float(wind_xy[0]), vy - float(wind_xy[1]))
     return x, y, vx, vy, propulsion_power_w(airspeed) * dt
 
 
