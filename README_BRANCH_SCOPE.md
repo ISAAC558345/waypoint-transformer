@@ -4,6 +4,10 @@
 
 ## 当前执行任务
 
+执行 [W1 跨机风观测与候选任务能耗小试](CURSOR_NEXT_TASK.md)。先验证一条及时到达的风观测能否改善另一架机的预测和通信选择。当前状态为待执行。
+
+## M1.6 已完成的结果
+
 2026-11-14 **M1.6 已完成**：期初不可执行的服务标签不再占用浮标。报告见 [M1.6 结果](docs/research/Active_Model_Identification_M16_Report_CN.md)，结果在 `results/active_model_identification_m16/m16_20261114/`。指令见 [M1.6 指令](docs/research/Active_Model_Identification_M16_Instructions_CN.md)。
 
 `initial_guard_consistent` 与 M1.5 返航尾只在显式打开时生效，默认选择和默认终端仍是 legacy。被动 OFF 在 12 个场景对 M1.3 OFF 和 M1.5 OFF 都没有少交付或降低净效用，`b3_loose` 收回 20000 bit。该候选保持显式身份，不改默认模式。风浪感知与能耗预测另立任务，本轮没有开始。
