@@ -128,6 +128,19 @@ def score_actions(
     include_calibrate: bool,
     stats: dict | None,
 ) -> list[tuple[float, Action]]:
+    mode = str(spec.get("integral", {}).get("scoring", "legacy"))
+    if mode in ("segment", "frozen"):
+        from wt.active_model_identification.segment import score_segment
+
+        return score_segment(
+            world,
+            beliefs,
+            spec,
+            factor,
+            uav_index,
+            include_calibrate=include_calibrate,
+            stats=stats,
+        )
     nodes = int(spec["belief"]["quadrature_nodes"])
     noise_nodes = int(spec.get("integral", {}).get("noise_nodes", 1))
     grid = quadrature(beliefs[uav_index], nodes)

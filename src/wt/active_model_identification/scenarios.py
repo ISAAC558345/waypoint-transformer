@@ -498,3 +498,136 @@ def ablate_beliefs(before: list[Belief], after: list[Belief], executed: list[Act
         else:
             kept.append(after[index].copy())
     return kept, removed
+
+
+def assess_m13(spec: dict) -> dict:
+    """Freeze tight, the posterior-cost window, and the registered loose battery.
+
+    The window uses theta_ref and the adverse design noise on an untruncated
+    copy. It is not recomputed from a mission's true theta. posterior_zero_admits
+    stays an explanation and does not decide whether tight or loose exist.
+    """
+    from wt.active_model_identification.completion import admits, completion_quote, standard_quantile
+
+    factor = measure_integration_factor()
+    tight_value = float(spec["energy"]["tight_battery_j"])
+    loose = [float(value) for value in spec["energy"]["loose_battery_j"]]
+    reserve = float(spec["energy"]["reserve_j"])
+    theta_ref = float(spec["energy"]["theta_ref"])
+    design_p = float(spec["energy"]["epsilon_design_probability"])
+    sigma = float(spec["belief"]["sigma_j"])
+    epsilon_design = standard_quantile(design_p) * sigma
+    prior = prior_belief(spec)
+    guard_p = float(spec["belief"]["guard_probability"])
+    guard_theta = prior.quantile(guard_p)
+    sentinel = [1.0e8, 1.0e8]
+    tight = [tight_value, tight_value]
+    bounds = []
+    probes = 0
+    for uav_index in range(2):
+        world = make_world(spec, sentinel, f"m13-window-{uav_index}")
+        beliefs = [prior.copy(), prior.copy()]
+        far = _far_id(spec, uav_index)
+        start_quote = completion_quote(world, uav_index, far, guard_theta, spec)
+        upper = start_quote.energy_j + reserve
+        advance(
+            world,
+            _actions(spec, uav_index, ("calibrate", None)),
+            [theta_ref, theta_ref],
+            beliefs,
+            spec,
+            factor,
+            None,
+            planning=True,
+            interval_index=0,
+            noise_j=lambda index, _interval, _epsilon=epsilon_design, _focus=uav_index: _epsilon if index == _focus else 0.0,
+        )
+        probes += 1
+        posterior = beliefs[uav_index]
+        q95 = posterior.quantile(guard_p)
+        post_quote = completion_quote(world, uav_index, far, q95, spec)
+        lower = world.uavs[uav_index].consumed_j + post_quote.energy_j + reserve
+        bounds.append(
+            {
+                "uav": uav_index,
+                "theta_ref": theta_ref,
+                "epsilon_design_j": epsilon_design,
+                "calibration_cost_j": world.uavs[uav_index].consumed_j,
+                "calibration_z_j": world.uavs[uav_index].z_j,
+                "post_x": world.uavs[uav_index].x,
+                "post_y": world.uavs[uav_index].y,
+                "post_airborne": world.uavs[uav_index].airborne,
+                "posterior_mean": posterior.mean(),
+                "posterior_q95": q95,
+                "posterior_std": math.sqrt(posterior.variance()),
+                "post_quote_j": post_quote.energy_j,
+                "post_quote_id": post_quote.quote_id,
+                "start_quote_j": start_quote.energy_j,
+                "start_quote_id": start_quote.quote_id,
+                "L_j": lower,
+                "U_j": upper,
+                "interval": lower < upper,
+            }
+        )
+    window_valid = all(row["interval"] for row in bounds)
+    window_battery = [0.5 * (row["L_j"] + row["U_j"]) for row in bounds] if window_valid else None
+    for row, battery in zip(bounds, window_battery or [None, None]):
+        row["window_battery_j"] = battery
+    zero_rows = []
+    for uav_index in range(2):
+        zero_rows.append(_posterior_case(spec, factor, tight, uav_index, 0.0))
+        probes += 1
+    posterior_zero = all(bool(row["admitted"]) for row in zero_rows)
+    near_rows = []
+    for uav_index in range(2):
+        probe = make_world(spec, tight, f"m13-near-{uav_index}")
+        quote = completion_quote(probe, uav_index, _near_id(spec, uav_index), guard_theta, spec)
+        near_rows.append({"uav": uav_index, "admitted": admits(probe.uavs[uav_index], quote, spec), "quote_plus_reserve_j": quote.energy_j + reserve})
+    tiers: list[tuple[str, list[float]]] = [("tight", tight), ("loose", loose)]
+    if window_valid and window_battery is not None:
+        tiers.insert(1, ("window", window_battery))
+    scenarios = []
+    for base in spec["scenarios"]:
+        for condition, battery in tiers:
+            scenarios.append(
+                {
+                    "id": f"{base['base']}_{condition}",
+                    "base": base["base"],
+                    "condition": condition,
+                    "theta": [float(value) for value in base["theta"]],
+                    "seed": int(base["seed"]),
+                    "battery_j": [float(value) for value in battery],
+                    "wind_xy_m_s": [float(value) for value in spec["motion"]["wind_xy_m_s"]],
+                    "scheduled": True,
+                }
+            )
+    if window_valid:
+        limiting = ""
+    else:
+        limiting = "至少一架 UAV 的 L 不小于 U，window 档无效。上下界已保存。tight 和 loose 仍运行，不改设计噪声或电池。"
+    return {
+        "scenario_status": "FROZEN",
+        "window_valid": window_valid,
+        "window_status": "VALID" if window_valid else "INVALID",
+        "posterior_zero_admits": posterior_zero,
+        "near_admitted_under_prior": all(row["admitted"] for row in near_rows),
+        "limiting_condition": limiting,
+        "tight_battery_j": tight,
+        "window_battery_j": window_battery,
+        "loose_battery_j": loose,
+        "reserve_j": reserve,
+        "theta_ref": theta_ref,
+        "epsilon_design_probability": design_p,
+        "epsilon_design_j": epsilon_design,
+        "guard_theta": guard_theta,
+        "integration_factor": factor,
+        "design_probe_intervals": probes,
+        "design_probe_steps": probes * int(spec["time"]["decision_s"]),
+        "formula": "L = calibration cost(theta_ref) + far completion at the design posterior q95 + reserve; U = far completion at the prior q95 + reserve; B = (L+U)/2 when L < U.",
+        "channel_assumption": "The other UAV waits and still occupies LoRa with its command and telemetry. The design probe and the completion quote use that same assumption. Reserve is added once, outside the quote.",
+        "uavs": bounds,
+        "posterior_zero": zero_rows,
+        "near": near_rows,
+        "scenarios": scenarios,
+        "scheduled_conditions": [name for name, _battery in tiers],
+    }

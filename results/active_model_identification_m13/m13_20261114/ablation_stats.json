@@ -1,0 +1,1 @@
+{"physical_steps": 13680, "planning_steps": 1756800, "planning_copies": 58560, "rollouts": 58560, "cache_hits": 0, "score_calls": 912, "fallback_score_calls": 0, "segment_score_calls": 912, "root_solves": 1914, "algebraic_integrals": 58806, "algebraic_seconds": 0.7594642994808964}

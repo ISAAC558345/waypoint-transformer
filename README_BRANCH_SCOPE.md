@@ -4,13 +4,11 @@
 
 ## 当前执行任务
 
-2026-11-14 当前阶段为 **M1.3：三档资源下的闭环试跑**。入口见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，完整步骤见 [M1.3 执行指令](docs/research/Active_Model_Identification_M13_Instructions_CN.md)。本次文档交接尚未执行 M1.3。
+2026-11-14 **M1.3 已完成**：三档资源下的闭环试跑。报告见 [M1.3 结果](docs/research/Active_Model_Identification_M13_Report_CN.md)，结果在 `results/active_model_identification_m13/m13_20261114/`。入口状态见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)。
 
-保留原 tight/loose，按固定参考参数、观测设计点和后验完整成本公式事前登记中间 window。两个方法共享同一规划器，只切换校准权限，最多 24 核心航次、8 条 window 信息消融续跑；若 window 无效，原两档仍可运行 16 条合法任务。
+24 条核心航次和 8 条 window 消融已经跑完。分段积分通过，主试用 15 点外层和 7 点内层。三档允许校准的净效用都低于关闭校准，按时比特相同，消融差为 0。没有新的执行指令，不据此重跑或改预算。
 
-临界数值优先用区间缓存和阈值分段积分改善。预算、并列和后备评分规则先冻结；本轮允许明确标注精度状态的近似策略实测，不把全部 Q 精确或代表观测校准放行作为所有航次的前提。真实 q95=0.95 与备用电量规则不变。
-
-配置与结果分别保存为 `configs/experiments/active_model_identification_m13.json`、`results/active_model_identification_m13/<run_id>/`，新报告为 `docs/research/Active_Model_Identification_M13_Report_CN.md`。不覆盖历史，不训练、不扩风浪/规模、不自动合并。
+配置与结果分别保存在 `configs/experiments/active_model_identification_m13.json` 和 `results/active_model_identification_m13/<run_id>/`。不覆盖历史，不训练、不扩风浪/规模、不自动合并。
 
 ## M1.2 已完成的诊断
 
@@ -18,7 +16,7 @@
 
 24 项必要测试通过，完整任务报价与实际执行一致，后验矩积分通过；原紧预算下零噪声校准后的保守分位仍不放行远任务，临界 Q 的离散积分差未满足原标准，所以主试和消融均未运行。该结果不等同于校准收益为零。
 
-M1.3 将代表观测窗口诊断与场景可运行性分开，保留原紧预算作为可能有负收益的有效任务；同时事前登记中间预算并保持实际风险规则。M1.2 代码、报告与原始结果作为历史证据保留。
+M1.3 已把代表观测窗口诊断与场景可运行性分开，并保留原紧预算作为可能有负收益的有效任务；中间预算按事前公式登记，实际风险规则没有改。M1.2 代码、报告与原始结果作为历史证据保留。
 
 ## M1.1 已记录的进展与待复核判断
 

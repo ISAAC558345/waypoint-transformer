@@ -1,0 +1,372 @@
+{
+  "scenario_status": "FROZEN",
+  "window_valid": true,
+  "window_status": "VALID",
+  "posterior_zero_admits": false,
+  "limiting_condition": "",
+  "budget": {
+    "scenario_status": "FROZEN",
+    "window_valid": true,
+    "window_status": "VALID",
+    "posterior_zero_admits": false,
+    "near_admitted_under_prior": true,
+    "limiting_condition": "",
+    "tight_battery_j": [
+      52156.035109573495,
+      52156.035109573495
+    ],
+    "window_battery_j": [
+      58319.37060582891,
+      58319.37060582891
+    ],
+    "loose_battery_j": [
+      70355.51783623741,
+      70355.51783623741
+    ],
+    "reserve_j": 4000.0,
+    "theta_ref": 1.0,
+    "epsilon_design_probability": 0.95,
+    "epsilon_design_j": 296.07365285126485,
+    "guard_theta": 1.3380386820934738,
+    "integration_factor": 1.0153003641238145,
+    "design_probe_intervals": 4,
+    "design_probe_steps": 120,
+    "formula": "L = calibration cost(theta_ref) + far completion at the design posterior q95 + reserve; U = far completion at the prior q95 + reserve; B = (L+U)/2 when L < U.",
+    "channel_assumption": "The other UAV waits and still occupies LoRa with its command and telemetry. The design probe and the completion quote use that same assumption. Reserve is added once, outside the quote.",
+    "uavs": [
+      {
+        "uav": 0,
+        "theta_ref": 1.0,
+        "epsilon_design_j": 296.07365285126485,
+        "calibration_cost_j": 4580.357352769315,
+        "calibration_z_j": 4430.340593294276,
+        "post_x": 238.0,
+        "post_y": 400.0,
+        "post_airborne": true,
+        "posterior_mean": 1.0684367243669763,
+        "posterior_q95": 1.133625386200959,
+        "posterior_std": 0.03963189232028772,
+        "post_quote_j": 47863.454054043694,
+        "post_quote_id": "9b73f9f7c2691a74",
+        "start_quote_j": 56194.92980484482,
+        "start_quote_id": "8647afa075e6f819",
+        "L_j": 56443.81140681301,
+        "U_j": 60194.92980484482,
+        "interval": true,
+        "window_battery_j": 58319.37060582891
+      },
+      {
+        "uav": 1,
+        "theta_ref": 1.0,
+        "epsilon_design_j": 296.07365285126485,
+        "calibration_cost_j": 4580.357352769315,
+        "calibration_z_j": 4430.340593294276,
+        "post_x": 238.0,
+        "post_y": 1600.0,
+        "post_airborne": true,
+        "posterior_mean": 1.0684367243669763,
+        "posterior_q95": 1.133625386200959,
+        "posterior_std": 0.03963189232028772,
+        "post_quote_j": 47863.454054043694,
+        "post_quote_id": "3c09dfe8b5afd241",
+        "start_quote_j": 56194.92980484482,
+        "start_quote_id": "433255162640f66c",
+        "L_j": 56443.81140681301,
+        "U_j": 60194.92980484482,
+        "interval": true,
+        "window_battery_j": 58319.37060582891
+      }
+    ],
+    "posterior_zero": [
+      {
+        "uav": 0,
+        "epsilon_j": 0.0,
+        "posterior_mean": 1.0048478240232794,
+        "posterior_q95": 1.0700364631406232,
+        "posterior_std": 0.03963182776287503,
+        "calibration_z_j": 4430.340593294276,
+        "x": 238.0,
+        "y": 400.0,
+        "airborne": true,
+        "energy_left_j": 47575.67775680418,
+        "quote_j": 45251.960874052405,
+        "quote_plus_reserve_j": 49251.960874052405,
+        "quote_id": "ccaa7b9341a4b54f",
+        "seconds": 270.0,
+        "on_time": true,
+        "admitted": false,
+        "slack_j": -1676.2831172482256
+      },
+      {
+        "uav": 1,
+        "epsilon_j": 0.0,
+        "posterior_mean": 1.0048478240232794,
+        "posterior_q95": 1.0700364631406232,
+        "posterior_std": 0.03963182776287503,
+        "calibration_z_j": 4430.340593294276,
+        "x": 238.0,
+        "y": 1600.0,
+        "airborne": true,
+        "energy_left_j": 47575.67775680418,
+        "quote_j": 45251.960874052405,
+        "quote_plus_reserve_j": 49251.960874052405,
+        "quote_id": "96e21ca949c278be",
+        "seconds": 270.0,
+        "on_time": true,
+        "admitted": false,
+        "slack_j": -1676.2831172482256
+      }
+    ],
+    "near": [
+      {
+        "uav": 0,
+        "admitted": true,
+        "quote_plus_reserve_j": 32649.073392268157
+      },
+      {
+        "uav": 1,
+        "admitted": true,
+        "quote_plus_reserve_j": 24115.1547993637
+      }
+    ],
+    "scheduled_conditions": [
+      "tight",
+      "window",
+      "loose"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "b1_tight",
+      "base": "b1",
+      "condition": "tight",
+      "theta": [
+        1.0,
+        1.0
+      ],
+      "seed": 1101,
+      "battery_j": [
+        52156.035109573495,
+        52156.035109573495
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    },
+    {
+      "id": "b1_window",
+      "base": "b1",
+      "condition": "window",
+      "theta": [
+        1.0,
+        1.0
+      ],
+      "seed": 1101,
+      "battery_j": [
+        58319.37060582891,
+        58319.37060582891
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    },
+    {
+      "id": "b1_loose",
+      "base": "b1",
+      "condition": "loose",
+      "theta": [
+        1.0,
+        1.0
+      ],
+      "seed": 1101,
+      "battery_j": [
+        70355.51783623741,
+        70355.51783623741
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    },
+    {
+      "id": "b2_tight",
+      "base": "b2",
+      "condition": "tight",
+      "theta": [
+        1.25,
+        1.25
+      ],
+      "seed": 1102,
+      "battery_j": [
+        52156.035109573495,
+        52156.035109573495
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    },
+    {
+      "id": "b2_window",
+      "base": "b2",
+      "condition": "window",
+      "theta": [
+        1.25,
+        1.25
+      ],
+      "seed": 1102,
+      "battery_j": [
+        58319.37060582891,
+        58319.37060582891
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    },
+    {
+      "id": "b2_loose",
+      "base": "b2",
+      "condition": "loose",
+      "theta": [
+        1.25,
+        1.25
+      ],
+      "seed": 1102,
+      "battery_j": [
+        70355.51783623741,
+        70355.51783623741
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    },
+    {
+      "id": "b3_tight",
+      "base": "b3",
+      "condition": "tight",
+      "theta": [
+        1.0,
+        1.25
+      ],
+      "seed": 1103,
+      "battery_j": [
+        52156.035109573495,
+        52156.035109573495
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    },
+    {
+      "id": "b3_window",
+      "base": "b3",
+      "condition": "window",
+      "theta": [
+        1.0,
+        1.25
+      ],
+      "seed": 1103,
+      "battery_j": [
+        58319.37060582891,
+        58319.37060582891
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    },
+    {
+      "id": "b3_loose",
+      "base": "b3",
+      "condition": "loose",
+      "theta": [
+        1.0,
+        1.25
+      ],
+      "seed": 1103,
+      "battery_j": [
+        70355.51783623741,
+        70355.51783623741
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    },
+    {
+      "id": "b4_tight",
+      "base": "b4",
+      "condition": "tight",
+      "theta": [
+        1.25,
+        1.0
+      ],
+      "seed": 1104,
+      "battery_j": [
+        52156.035109573495,
+        52156.035109573495
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    },
+    {
+      "id": "b4_window",
+      "base": "b4",
+      "condition": "window",
+      "theta": [
+        1.25,
+        1.0
+      ],
+      "seed": 1104,
+      "battery_j": [
+        58319.37060582891,
+        58319.37060582891
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    },
+    {
+      "id": "b4_loose",
+      "base": "b4",
+      "condition": "loose",
+      "theta": [
+        1.25,
+        1.0
+      ],
+      "seed": 1104,
+      "battery_j": [
+        70355.51783623741,
+        70355.51783623741
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": true
+    }
+  ],
+  "config_sha256": "4fb5f4a8ae07bf378be657b04af4b68c9b1513eb0412d77009e46b6735d0425d",
+  "frozen_config_sha256": "d19b3ba01cd0c93ff07f8a4b5cf675356fce0b5959e725f1b1f253f69378f0eb",
+  "unit_tests_status": "PASS",
+  "scenario_manifest_sha256": "787a24be461404f03ec896e130a9698689b68b32fbb0be1055aa42b2b44f7bb6"
+}
