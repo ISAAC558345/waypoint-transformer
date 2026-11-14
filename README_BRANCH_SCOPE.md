@@ -4,11 +4,19 @@
 
 ## 当前执行任务
 
+2026-11-14 当前任务为 [M1.4 校准动作来源与价值分解](docs/research/Active_Model_Identification_M14_Instructions_CN.md)，执行入口见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)。
+
+本轮先分析 M1.3 已保存日志和固定六快照，区分冲突修复、运动/状态成本与信息溢价；必要时才做有界续跑。只做必要测试，完成代码、报告与结果后推送本研究分支。不改电池、不重跑三档主试、不训练或自动合并。
+
+## M1.3 已完成的结果
+
 2026-11-14 **M1.3 已完成**：三档资源下的闭环试跑。报告见 [M1.3 结果](docs/research/Active_Model_Identification_M13_Report_CN.md)，结果在 `results/active_model_identification_m13/m13_20261114/`。入口状态见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)。
 
-24 条核心航次和 8 条 window 消融已经跑完。分段积分通过，主试用 15 点外层和 7 点内层。三档允许校准的净效用都低于关闭校准，按时比特相同，消融差为 0。没有新的执行指令，不据此重跑或改预算。
+24 条核心航次和 8 条 window 消融已经跑完。分段积分通过，主试用 15 点外层和 7 点内层。三档允许校准的净效用都低于关闭校准，按时比特相同，消融差为 0。这些负结果保持原样，不据此重跑或改预算。
 
 配置与结果分别保存在 `configs/experiments/active_model_identification_m13.json` 和 `results/active_model_identification_m13/<run_id>/`。不覆盖历史，不训练、不扩风浪/规模、不自动合并。
+
+M1.4 复核补充：76 条校准请求中 9 条由冲突修复产生，67 条为单机评分首选。已有 window 消融只测试首次校准观测和关闭后续校准的续策，不能概括全部校准信息。备用电量标准不满足与物理未返航分开报告；M1.3 原始结果保留。
 
 ## M1.2 已完成的诊断
 

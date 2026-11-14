@@ -2,17 +2,12 @@
 
 当前分支：`research/ocean-observation-isolated`。
 
-2026-11-14 **M1.3 已完成**。三档闭环试跑、8 条 window 消融和再评分已经写入结果，不再继续加航次或改预算。
+请读取并执行 [M1.4 校准动作来源与价值分解](docs/research/Active_Model_Identification_M14_Instructions_CN.md)。这是 2026-11-14 基于最新推送 `57d3da36969e017d044025e90f90e4e43f0a38e8` 的下一步指令。
 
-- [M1.3 结果报告](docs/research/Active_Model_Identification_M13_Report_CN.md)
-- 结果目录：`results/active_model_identification_m13/m13_20261114/`
-- 数值状态 PASS。主试使用分段评分，外层 15 点、内层 7 点。7 点外层的 |ΔQ| 为 0.010327，没有保留。
-- 核心航次 24，消融续跑 8，再评分快照 12 且排名无变化。
-- window 预算按事前公式算出，两架都是 58319.37060582891 J。tight 与 loose 保持原登记值。
-- 三档里允许校准的净效用都更低，按时比特相同，首次服务目标没有变化。消融净效用差为 0。
+M1.3 已完成：24 条核心航次和 8 条信息消融已保存。三档预算的按时交付无差、允许校准的净效用均更低，保留这些负结果，不重跑或改电池。报告见 [M1.3 结果](docs/research/Active_Model_Identification_M13_Report_CN.md)。
 
-没有新的执行指令。不要把本轮负的效用差当成待修错误去重跑，不要搜索新电池，不要把 L8/L9 或未登记场景接进规划器。
+本次复核发现 76 条校准请求中，9 条来自联合冲突修复，67 条为单机评分首选。M1.4 先用现有日志分类，再用固定六个已有快照分解运动/状态成本与信息溢价；必要时才做最多 24 条受控续跑。完整范围和计算上限以 M1.4 指令为准。
 
-保留历史：[M1.3 指令](docs/research/Active_Model_Identification_M13_Instructions_CN.md)、[M1.2 报告](docs/research/Active_Model_Identification_M12_Report_CN.md)、[M1.1 报告](docs/research/Active_Model_Identification_M11_Report_CN.md)、[M1 报告](docs/research/Active_Model_Identification_M1_Report_CN.md) 及各自结果。
+只做必要测试，不修改现有策略追求正收益，不训练，不扩展场景或风浪。代码、测试和结果完成后推送当前研究分支，报告保存为 `docs/research/Active_Model_Identification_M14_Report_CN.md`，结果放在 `results/active_model_identification_m14/<run_id>/`。
 
-代码和结果只在当前研究分支。不训练、不扩风浪/规模、不覆盖历史产物，也不合并到主分支、默认分支或 `feature/legacy-system-maintenance`。
+未经用户明确允许，不合并主分支、默认分支或 `feature/legacy-system-maintenance`。完成本轮后停止。
