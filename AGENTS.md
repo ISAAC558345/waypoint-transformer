@@ -1,24 +1,10 @@
-# Repository Working Rules
+# 海洋研究分支协作约定
 
-These rules apply to the repository unless a more specific `round_XX/AGENTS.md`
-adds stricter constraints.
+适用于 `research/ocean-observation-isolated` 上后续每次给 Cursor 的指令及执行交接。清理前的轮次文件和全库测试流程属于已归档旧系统。
 
-- Round state is managed with `CURRENT_ROUND.txt`, `ROUND_VERSIONING.md`,
-  `round_manifest.json`, immutable pre-round snapshots, and per-round reports.
-- Do not use Git as the round-versioning mechanism.
-- Preserve completed-round behavior and run the full existing test suite after
-  changes.
-- Keep the maritime environment dynamically sized from its configuration and
-  public `state_dim`, `action_dim`, and `num_buoys` attributes.
-- Do not invent physical variables that the environment does not expose.
-- Learning models, optimizers, backward passes, and neural-network training
-  were outside the completed Round-1 through Round-3 scope. Round-4 trained
-  and locked the two-dimensional spatial Waypoint Network. Round-5 is
-  explicitly authorized to freeze that H=30 network and train only the
-  offline two-dimensional trajectory policies defined in
-  `round_05/AGENTS.md`. Reinforcement learning, formal closed-loop ranking,
-  and all later-round extensions remain prohibited.
-- Generated data, figures, logs, and reports belong under the active round's
-  output directories and must not overwrite earlier-round artifacts.
-- A round must stop after its own acceptance criteria pass; do not begin the
-  next round without a new instruction.
+1. 直接说明目标、依据和结果。涉及行为的改动预先选定可比基线和性能指标。保持任务规模、精度、资源预算和评价口径；只在性能满足该轮标准时推荐采用。有回退时保留证据和原默认行为。
+2. 每次改动前先自检测试必要性，用一句话说明每项检查针对什么变更或性能风险。复用已验证的冻结结果，只运行受影响的检查及回答本轮问题所必需的实验。
+3. 所有变更留在本研究分支。并入主分支须等用户亲自运行并明确同意。任何需要修改其他分支的操作均须先询问用户并取得许可。
+4. 每次向 GitHub 推送指令后，在回复中给出分支、指令或提交链接、主要工作、验收条件及当前执行状态。
+
+保留历史结果和论文出处。每轮的实现、实验和交付范围以 `CURSOR_NEXT_TASK.md` 所指的当前任务为准。
