@@ -4,9 +4,9 @@
 
 ## 当前执行任务
 
-2026-11-14 **M1.6 可执行候选与浮标分配一致性修正**。入口见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，按 [M1.6 完整指令](docs/research/Active_Model_Identification_M16_Instructions_CN.md) 执行。
+先执行[研究分支清理与仿真底座整理](CURSOR_NEXT_TASK.md)。按依赖与复现需要删减冗余，整理研究入口，用同一场景核对清理前后行为。
 
-先复核 b3_loose 在 180 s 的期初准入，将被原守卫即时改成 RETURN 的 service 标签规范化，避免继续占用浮标。继续使用 M1.5 尾估值，保留原冲突强弱规则与精度。本轮以正常业务遥测的 OFF 为主要候选、ON 为对照，先行两条中主要 OFF 满足保留标准后补齐固定 24 条新航次，直接复用旧基线，逐场景确认交付与净效用。完成后推送本研究分支并停止，未经用户明确允许不合并主分支，修改其他分支前先询问用户。
+[M1.6 候选分配一致性修正](docs/research/Active_Model_Identification_M16_Instructions_CN.md)保留为待办。M1.5 的 `b3_loose` 交付回退仍按原报告记录。
 
 ## M1.5 已完成的结果
 
