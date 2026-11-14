@@ -139,7 +139,10 @@ class PlannerTests(unittest.TestCase):
         self.assertGreater(assessed["integration_factor"], 1.0)
         self.assertLess(assessed["integration_factor"], 1.5)
         self.assertFalse(assessed["separates"])
-        self.assertIn("prior guard", assessed["reason"])
+        self.assertIn("does not finish", assessed["reason"])
+        self.assertTrue(all(not row["far_allowed_under_prior"] for row in assessed["budget"]["sensitive_predicates"]))
+        self.assertTrue(all(row["near_allowed_under_prior"] for row in assessed["budget"]["sensitive_predicates"]))
+        self.assertTrue(all(not row["delivers"] for row in assessed["budget"]["sensitive_chain"]))
         world = make_world(spec, [1.0e7, 1.0e7], "scheduler")
         beliefs = [prior_belief(spec), prior_belief(spec)]
         factor = assessed["integration_factor"]

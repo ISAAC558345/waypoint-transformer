@@ -1,0 +1,16 @@
+{
+  "parent_commit": "86ee8299ebc8856fe4da78e2ab6982e5ad631556",
+  "head_at_run": "86ee8299ebc8856fe4da78e2ab6982e5ad631556",
+  "unit_tests_status": "PASS",
+  "accounting_status": "PASS",
+  "numerical_status": "NOT_MET",
+  "scenario_status": "NOT_A_WINDOW",
+  "comparison_status": "NOT_RUN",
+  "core_missions": 0,
+  "ablation_branches": 0,
+  "config_sha256": "ad5bec2ebedc7fdaade0cb867c36a0808b609620beeb2c8aadca6fa594034bdf",
+  "frozen_config_sha256": "82365f357bc40f2d925ec3c13b581a45ac79f39c44818f7beb57d472961e2ddb",
+  "scenario_manifest_sha256": "44607a6b9fd1edc35ebb1e06a3005de6505eaf30ab47d98ebee685ecd7dfdb30",
+  "elapsed_s": 208.8464576999977,
+  "training_updates": 0
+}

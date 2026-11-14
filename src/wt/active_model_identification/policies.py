@@ -11,7 +11,7 @@ from __future__ import annotations
 import math
 
 from wt.active_model_identification.belief import Belief, gaussian_quadrature, quadrature
-from wt.active_model_identification.physics import CRUISE_M_S, hover_energy_j, straight_energy_j
+from wt.active_model_identification.completion import admits, completion_quote
 from wt.active_model_identification.world import (
     Action,
     World,
@@ -20,8 +20,6 @@ from wt.active_model_identification.world import (
     advance,
     energy_used_j,
     on_time_bits,
-    pad_distance_m,
-    tx_seconds,
 )
 
 WAIT: Action = ("wait", None)
@@ -46,71 +44,36 @@ def candidates(spec: dict, world: World, uav_index: int, *, include_calibrate: b
     return actions
 
 
-def _trip_duration_s(world: World, uav_index: int, buoy_id: int, spec: dict, factor: float) -> float:
-    uav = world.uavs[uav_index]
-    buoy = spec["geometry"]["buoys"][buoy_id]
-    outbound = math.hypot(float(buoy["xy"][0]) - uav.x, float(buoy["xy"][1]) - uav.y)
-    inbound = math.hypot(uav.home_x - float(buoy["xy"][0]), uav.home_y - float(buoy["xy"][1]))
-    return factor * (outbound + inbound) / CRUISE_M_S + float(spec["time"]["landing_s"]) + 2.0
-
-
-def _deliverable_cached_bits(world: World, beliefs: list[Belief], spec: dict, factor: float, focus: int) -> float:
-    """Credit cached bits only when backhaul and the return both fit.
-
-    Airtime is the focus UAV's own LoRa time. Contention with the other UAV
-    is omitted; that is part of the one-interval terminal approximation.
-    """
-    bits = _cached_bits(world, focus)
-    uav = world.uavs[focus]
-    if bits <= 0.0 or uav.failed:
-        return 0.0
-    airtime = tx_seconds(bits, spec)
-    decision = float(spec["time"]["decision_s"])
-    occupied = math.ceil(max(airtime, 1e-9) / decision) * decision
-    home = pad_distance_m(uav)
-    landing = float(spec["time"]["landing_s"])
-    return_s = factor * home / CRUISE_M_S + landing
-    deadline = float(spec["time"]["mission_s"])
-    if world.t + airtime > deadline + 1e-9 or world.t + occupied + return_s > deadline + 1e-9:
-        return 0.0
-    theta = beliefs[focus].quantile(float(spec["belief"]["guard_probability"]))
-    aux = float(spec["energy"]["compute_w"])
-    need = hover_energy_j(occupied, theta, aux)
-    need += straight_energy_j(home, theta, aux, factor)
-    need += hover_energy_j(landing, theta, aux)
-    need += float(spec["energy"]["reserve_j"])
-    if uav.energy_j + 1e-6 < need:
-        return 0.0
-    return bits
+def _plan_net(quote, spec: dict) -> float:
+    block = spec["utility"]
+    return quote.on_time_bits / float(block["b_ref_bits"]) - float(block["lambda_e"]) * quote.energy_j / float(block["e_ref_j"])
 
 
 def terminal_value(world: World, beliefs: list[Belief], spec: dict, factor: float, focus: int) -> float:
-    block = spec["utility"]
-    scale_b = float(block["b_ref_bits"])
-    scale_e = float(block["e_ref_j"])
-    weight = float(block["lambda_e"])
-    value = _deliverable_cached_bits(world, beliefs, spec, factor, focus) / scale_b
+    """Best single remaining business, with its delivery and return cost charged.
+
+    Cache delivery and a new target are alternatives. They are not added after
+    each was checked against the same remaining energy. The rollout already
+    counted the interval that just finished.
+    """
+    _ = factor
     uav = world.uavs[focus]
     if uav.failed:
-        return value
+        return 0.0
     theta = beliefs[focus].quantile(float(spec["belief"]["guard_probability"]))
-    remaining = float(spec["time"]["mission_s"]) - world.t
     best = 0.0
+    if _cached_bits(world, focus) > 0.0:
+        quote = completion_quote(world, focus, None, theta, spec)
+        if admits(uav, quote, spec):
+            best = max(best, _plan_net(quote, spec))
     for buoy in spec["geometry"]["buoys"]:
         buoy_id = int(buoy["id"])
-        bits = _bits_at_buoy(world, buoy_id)
-        if bits <= 0.0:
+        if _bits_at_buoy(world, buoy_id) <= 0.0:
             continue
-        action: Action = ("service", buoy_id)
-        if not action_allowed(uav, action, theta, spec, factor):
-            continue
-        if _trip_duration_s(world, focus, buoy_id, spec, factor) > remaining:
-            continue
-        cost = action_cost_j(uav, action, theta, spec, factor)
-        gain = bits / scale_b - weight * cost / scale_e
-        if gain > best:
-            best = gain
-    return value + best
+        quote = completion_quote(world, focus, buoy_id, theta, spec)
+        if admits(uav, quote, spec):
+            best = max(best, _plan_net(quote, spec))
+    return best
 
 
 def _utility_delta(before: World, after: World, spec: dict) -> float:
@@ -196,23 +159,21 @@ def _greedy_scores(
     block = spec["utility"]
     scored: list[tuple[float, Action]] = [(0.0, WAIT)]
     cached = _cached_bits(world, uav_index)
-    if cached > 0.0 and action_allowed(uav, ("backhaul", None), theta, spec, factor):
-        scored.append((cached / float(block["b_ref_bits"]), ("backhaul", None)))
-    if include_calibrate and action_allowed(uav, ("calibrate", None), theta, spec, factor):
+    if cached > 0.0:
+        quote = completion_quote(world, uav_index, None, theta, spec)
+        if admits(uav, quote, spec):
+            scored.append((_plan_net(quote, spec), ("backhaul", None)))
+    if include_calibrate and action_allowed(uav, ("calibrate", None), theta, spec, factor, world):
         cost = action_cost_j(uav, ("calibrate", None), theta, spec, factor)
         scored.append((-float(block["lambda_e"]) * cost / float(block["e_ref_j"]), ("calibrate", None)))
-    remaining = float(spec["time"]["mission_s"]) - world.t
     for buoy in spec["geometry"]["buoys"]:
         buoy_id = int(buoy["id"])
-        bits = _bits_at_buoy(world, buoy_id)
-        action: Action = ("service", buoy_id)
-        if bits <= 0.0 or not action_allowed(uav, action, theta, spec, factor):
+        if _bits_at_buoy(world, buoy_id) <= 0.0:
             continue
-        if _trip_duration_s(world, uav_index, buoy_id, spec, factor) > remaining:
+        quote = completion_quote(world, uav_index, buoy_id, theta, spec)
+        if not admits(uav, quote, spec):
             continue
-        cost = action_cost_j(uav, action, theta, spec, factor)
-        gain = bits / float(block["b_ref_bits"]) - float(block["lambda_e"]) * cost / float(block["e_ref_j"])
-        scored.append((gain, action))
+        scored.append((_plan_net(quote, spec), ("service", buoy_id)))
     scored.sort(key=lambda item: item[0], reverse=True)
     return scored
 

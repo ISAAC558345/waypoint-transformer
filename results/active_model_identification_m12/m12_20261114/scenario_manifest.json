@@ -1,0 +1,294 @@
+{
+  "scenario_status": "NOT_A_WINDOW",
+  "comparison_status": "NOT_RUN",
+  "window_valid": false,
+  "limiting_condition": "\u539f\u7535\u91cf\u843d\u5728\u7406\u60f3\u811a\u672c\u7a97\u53e3\u5185\uff0c\u4f46\u4e00\u6b21\u6821\u51c6\u540e\u7684\u540e\u9a8c 0.95 \u5206\u4f4d\u5b8c\u6574\u6210\u672c\u52a0\u5907\u7528\u8d85\u8fc7\u5269\u4f59\u80fd\u91cf\u3002\u9650\u5236\u9879\u662f\u540e\u9a8c\u5206\u4f4d\u800c\u4e0d\u662f theta=1 \u7684\u7406\u60f3\u771f\u503c\uff1b\u767b\u8bb0\u88d5\u91cf\u76d6\u4e0d\u4f4f\u8fd9\u4e2a\u62ac\u5347\u3002\u4e0d\u5229\u566a\u58f0\u66f4\u7d27\u3002\u666e\u901a\u8fd1\u7a0b\u670d\u52a1\u5728\u5148\u9a8c\u4e0b\u4ecd\u7136\u653e\u884c\u3002",
+  "budget": {
+    "scenario_status": "NOT_A_WINDOW",
+    "window_valid": false,
+    "ideal_script_window": true,
+    "posterior_zero_admits": false,
+    "near_admitted_under_prior": true,
+    "battery_replaced": false,
+    "limiting_condition": "\u539f\u7535\u91cf\u843d\u5728\u7406\u60f3\u811a\u672c\u7a97\u53e3\u5185\uff0c\u4f46\u4e00\u6b21\u6821\u51c6\u540e\u7684\u540e\u9a8c 0.95 \u5206\u4f4d\u5b8c\u6574\u6210\u672c\u52a0\u5907\u7528\u8d85\u8fc7\u5269\u4f59\u80fd\u91cf\u3002\u9650\u5236\u9879\u662f\u540e\u9a8c\u5206\u4f4d\u800c\u4e0d\u662f theta=1 \u7684\u7406\u60f3\u771f\u503c\uff1b\u767b\u8bb0\u88d5\u91cf\u76d6\u4e0d\u4f4f\u8fd9\u4e2a\u62ac\u5347\u3002\u4e0d\u5229\u566a\u58f0\u66f4\u7d27\u3002\u666e\u901a\u8fd1\u7a0b\u670d\u52a1\u5728\u5148\u9a8c\u4e0b\u4ecd\u7136\u653e\u884c\u3002",
+    "candidate_battery_j": 52156.035109573495,
+    "sensitive_battery_j": [
+      52156.035109573495,
+      52156.035109573495
+    ],
+    "insensitive_battery_j": [
+      70355.51783623741,
+      70355.51783623741
+    ],
+    "reserve_j": 4000.0,
+    "margin_j": 1200.0,
+    "guard_theta": 1.3380386820934738,
+    "adverse_epsilon_j": 296.07365285126485,
+    "integration_factor": 1.0153003641238145,
+    "channel_assumption": "The other UAV waits and still occupies LoRa with its command and telemetry. Budget, admission and the terminal quote use that same assumption.",
+    "uavs": [
+      {
+        "uav": 0,
+        "physical_at_true_theta_1": true,
+        "physical_quote_j": 42328.26182878426,
+        "physical_quote_plus_reserve_j": 46328.26182878426,
+        "admitted_under_prior": false,
+        "prior_quote_j": 56194.92980484482,
+        "prior_quote_plus_reserve_j": 60194.92980484482,
+        "near_admitted_under_prior": true,
+        "near_quote_plus_reserve_j": 32649.073392268157,
+        "chain_theta_1_j": 46956.03510957347,
+        "chain_theta_1_plus_reserve_j": 50956.03510957347,
+        "ideal_script_window": true,
+        "zero_noise_posterior": {
+          "uav": 0,
+          "epsilon_j": 0.0,
+          "posterior_mean": 1.0048478240232794,
+          "posterior_q95": 1.0700364631406232,
+          "posterior_std": 0.03963182776287503,
+          "calibration_z_j": 4430.340593294276,
+          "x": 238.0,
+          "y": 400.0,
+          "airborne": true,
+          "energy_left_j": 47575.67775680418,
+          "quote_j": 45251.960874052405,
+          "quote_plus_reserve_j": 49251.960874052405,
+          "quote_id": "ccaa7b9341a4b54f",
+          "seconds": 270.0,
+          "on_time": true,
+          "admitted": false,
+          "slack_j": -1676.2831172482256
+        },
+        "adverse_posterior": {
+          "uav": 0,
+          "epsilon_j": 296.07365285126485,
+          "posterior_mean": 1.0684367243669763,
+          "posterior_q95": 1.133625386200959,
+          "posterior_std": 0.03963189232028772,
+          "calibration_z_j": 4430.340593294276,
+          "x": 238.0,
+          "y": 400.0,
+          "airborne": true,
+          "energy_left_j": 47575.67775680418,
+          "quote_j": 47863.454054043694,
+          "quote_plus_reserve_j": 51863.454054043694,
+          "quote_id": "ccaa7b9341a4b54f",
+          "seconds": 270.0,
+          "on_time": true,
+          "admitted": false,
+          "slack_j": -4287.776297239514
+        },
+        "information_changes_admission": false
+      },
+      {
+        "uav": 1,
+        "physical_at_true_theta_1": true,
+        "physical_quote_j": 42328.26182878426,
+        "physical_quote_plus_reserve_j": 46328.26182878426,
+        "admitted_under_prior": false,
+        "prior_quote_j": 56194.92980484482,
+        "prior_quote_plus_reserve_j": 60194.92980484482,
+        "near_admitted_under_prior": true,
+        "near_quote_plus_reserve_j": 24115.1547993637,
+        "chain_theta_1_j": 46956.03510957347,
+        "chain_theta_1_plus_reserve_j": 50956.03510957347,
+        "ideal_script_window": true,
+        "zero_noise_posterior": {
+          "uav": 1,
+          "epsilon_j": 0.0,
+          "posterior_mean": 1.0048478240232794,
+          "posterior_q95": 1.0700364631406232,
+          "posterior_std": 0.03963182776287503,
+          "calibration_z_j": 4430.340593294276,
+          "x": 238.0,
+          "y": 1600.0,
+          "airborne": true,
+          "energy_left_j": 47575.67775680418,
+          "quote_j": 45251.960874052405,
+          "quote_plus_reserve_j": 49251.960874052405,
+          "quote_id": "96e21ca949c278be",
+          "seconds": 270.0,
+          "on_time": true,
+          "admitted": false,
+          "slack_j": -1676.2831172482256
+        },
+        "adverse_posterior": {
+          "uav": 1,
+          "epsilon_j": 296.07365285126485,
+          "posterior_mean": 1.0684367243669763,
+          "posterior_q95": 1.133625386200959,
+          "posterior_std": 0.03963189232028772,
+          "calibration_z_j": 4430.340593294276,
+          "x": 238.0,
+          "y": 1600.0,
+          "airborne": true,
+          "energy_left_j": 47575.67775680418,
+          "quote_j": 47863.454054043694,
+          "quote_plus_reserve_j": 51863.454054043694,
+          "quote_id": "96e21ca949c278be",
+          "seconds": 270.0,
+          "on_time": true,
+          "admitted": false,
+          "slack_j": -4287.776297239514
+        },
+        "information_changes_admission": false
+      }
+    ],
+    "reserve_note": "reserve_j is added once, outside the completion quote. It is not inside the replayed joules."
+  },
+  "scenarios": [
+    {
+      "id": "b1_sensitive",
+      "base": "b1",
+      "condition": "sensitive",
+      "theta": [
+        1.0,
+        1.0
+      ],
+      "seed": 1101,
+      "battery_j": [
+        52156.035109573495,
+        52156.035109573495
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "b1_insensitive",
+      "base": "b1",
+      "condition": "insensitive",
+      "theta": [
+        1.0,
+        1.0
+      ],
+      "seed": 1101,
+      "battery_j": [
+        70355.51783623741,
+        70355.51783623741
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "b2_sensitive",
+      "base": "b2",
+      "condition": "sensitive",
+      "theta": [
+        1.25,
+        1.25
+      ],
+      "seed": 1102,
+      "battery_j": [
+        52156.035109573495,
+        52156.035109573495
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "b2_insensitive",
+      "base": "b2",
+      "condition": "insensitive",
+      "theta": [
+        1.25,
+        1.25
+      ],
+      "seed": 1102,
+      "battery_j": [
+        70355.51783623741,
+        70355.51783623741
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "b3_sensitive",
+      "base": "b3",
+      "condition": "sensitive",
+      "theta": [
+        1.0,
+        1.25
+      ],
+      "seed": 1103,
+      "battery_j": [
+        52156.035109573495,
+        52156.035109573495
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "b3_insensitive",
+      "base": "b3",
+      "condition": "insensitive",
+      "theta": [
+        1.0,
+        1.25
+      ],
+      "seed": 1103,
+      "battery_j": [
+        70355.51783623741,
+        70355.51783623741
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "b4_sensitive",
+      "base": "b4",
+      "condition": "sensitive",
+      "theta": [
+        1.25,
+        1.0
+      ],
+      "seed": 1104,
+      "battery_j": [
+        52156.035109573495,
+        52156.035109573495
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": false
+    },
+    {
+      "id": "b4_insensitive",
+      "base": "b4",
+      "condition": "insensitive",
+      "theta": [
+        1.25,
+        1.0
+      ],
+      "seed": 1104,
+      "battery_j": [
+        70355.51783623741,
+        70355.51783623741
+      ],
+      "wind_xy_m_s": [
+        0.0,
+        0.0
+      ],
+      "scheduled": false
+    }
+  ],
+  "missions_scheduled": false
+}

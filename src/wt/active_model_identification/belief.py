@@ -127,17 +127,52 @@ def equal_width_quadrature(belief: Belief, nodes: int) -> list[tuple[float, floa
     return [(theta, weight / total) for theta, weight in zip(points, weights)]
 
 
-def quadrature(belief: Belief, nodes: int) -> list[tuple[float, float]]:
-    """Equal-probability nodes of the truncated belief.
+_GL_UNIT: dict[int, tuple[tuple[float, float], ...]] = {}
 
-    Nodes sit at the midpoint quantiles, so a narrow posterior is sampled
-    where its mass is. Weights are the bin probabilities.
+
+def gauss_legendre_unit(nodes: int) -> tuple[tuple[float, float], ...]:
+    """Gauss-Legendre nodes and weights for the integral over (0, 1)."""
+    cached = _GL_UNIT.get(nodes)
+    if cached is not None:
+        return cached
+    if nodes < 1:
+        raise ValueError("quadrature nodes")
+    found: list[tuple[float, float]] = []
+    for index in range(nodes):
+        x = math.cos(math.pi * (index + 0.75) / (nodes + 0.5))
+        for _ in range(80):
+            poly_nm1 = 1.0
+            poly_n = x
+            for degree in range(2, nodes + 1):
+                poly_nm1, poly_n = poly_n, ((2 * degree - 1) * x * poly_n - (degree - 1) * poly_nm1) / degree
+            derivative = nodes * (poly_nm1 - x * poly_n) / (1.0 - x * x)
+            step = poly_n / derivative
+            x -= step
+            if abs(step) < 1e-15:
+                break
+        poly_nm1 = 1.0
+        poly_n = x
+        for degree in range(2, nodes + 1):
+            poly_nm1, poly_n = poly_n, ((2 * degree - 1) * x * poly_n - (degree - 1) * poly_nm1) / degree
+        derivative = nodes * (poly_nm1 - x * poly_n) / (1.0 - x * x)
+        weight = 2.0 / ((1.0 - x * x) * derivative * derivative)
+        found.append(((x + 1.0) / 2.0, weight / 2.0))
+    found.sort(key=lambda item: item[0])
+    cached = tuple(found)
+    _GL_UNIT[nodes] = cached
+    return cached
+
+
+def quadrature(belief: Belief, nodes: int) -> list[tuple[float, float]]:
+    """Expectation nodes on the quantile coordinate.
+
+    The integral of f over the belief is sum w_i f(F^{-1}(u_i)), with
+    Gauss-Legendre nodes u_i in (0, 1). Equal-width support nodes stay in
+    ``equal_width_quadrature`` as the known narrow-posterior counterexample.
     """
     if nodes < 3:
         raise ValueError("quadrature nodes")
-    weight = 1.0 / nodes
-    points = [belief.quantile((index + 0.5) * weight) for index in range(nodes)]
-    return [(theta, weight) for theta in points]
+    return [(belief.quantile(probability), weight) for probability, weight in gauss_legendre_unit(nodes)]
 
 
 def expectation(belief: Belief, nodes: int, function) -> float:

@@ -264,12 +264,26 @@ def uav_target(uav: Uav, buoy_id: int, spec: dict) -> tuple[float, float]:
     return _buoy(spec, buoy_id)
 
 
-def action_allowed(uav: Uav, action: Action, theta: float, spec: dict, factor: float) -> bool:
+def action_allowed(
+    uav: Uav,
+    action: Action,
+    theta: float,
+    spec: dict,
+    factor: float,
+    world: World | None = None,
+) -> bool:
     if uav.failed:
         return action[0] == "wait"
     reserve = float(spec["energy"]["reserve_j"])
     if action[0] in ("wait", "return"):
         return True
+    if action[0] == "service":
+        if world is None or action[1] is None:
+            raise ValueError("service admission requires the world and a buoy")
+        from wt.active_model_identification.completion import admits, completion_quote
+
+        quote = completion_quote(world, uav.index, int(action[1]), theta, spec)
+        return admits(uav, quote, spec)
     return uav.energy_j >= action_cost_j(uav, action, theta, spec, factor) + reserve
 
 
@@ -279,17 +293,20 @@ def apply_option_guard(
     belief: Belief,
     spec: dict,
     factor: float,
+    world: World | None = None,
 ) -> tuple[Action, bool]:
     if uav.failed:
         return ("wait", None), action != ("wait", None)
     theta = belief.quantile(float(spec["belief"]["guard_probability"]))
-    if action_allowed(uav, action, theta, spec, factor):
+    if action_allowed(uav, action, theta, spec, factor, world):
         return action, False
     return ("return", None), True
 
 
 def _return_guard(uav: Uav, action: Action, belief: Belief, spec: dict, factor: float) -> tuple[Action, bool]:
-    if uav.failed or action[0] in ("wait", "return"):
+    if uav.failed or action[0] == "return":
+        return action, False
+    if action[0] == "wait" and (not uav.airborne) and _at_pad(uav, spec):
         return action, False
     theta = belief.quantile(float(spec["belief"]["guard_probability"]))
     aux = _aux_w(spec, True)
@@ -455,7 +472,7 @@ def advance(
             stats[key] = int(stats.get(key, 0)) + 1
         if phase == 0:
             for index, uav in enumerate(world.uavs):
-                updated, changed = apply_option_guard(uav, executed[index], beliefs[index], spec, factor)
+                updated, changed = apply_option_guard(uav, executed[index], beliefs[index], spec, factor, world)
                 executed[index] = updated
                 if changed:
                     option_overrode[index] = True

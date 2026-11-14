@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "status": "executable_m12",
+  "parent_commit": "86ee8299ebc8856fe4da78e2ab6982e5ad631556",
+  "reviewed_m11_commit": "427a360fcc9ac423dc82a687f31b8721410ff135",
+  "reference_base": "fe3b8c023df34d91eac9e3ece026c2e7f2d84ef4",
+  "instruction": "docs/research/Active_Model_Identification_M12_Instructions_CN.md",
+  "time": {
+    "dt_s": 1,
+    "decision_s": 30,
+    "mission_s": 1800,
+    "landing_s": 5,
+    "source": "Paper Table II and the M1 contract. Landing hover remains 5 s and only starts at a registered pad."
+  },
+  "motion": {
+    "cruise_m_s": 18,
+    "accel_m_s2": 2,
+    "altitude_m": 100,
+    "pad_radius_m": 12.0,
+    "pad_speed_m_s": 1.0,
+    "wind_xy_m_s": [
+      0.0,
+      0.0
+    ],
+    "wind_source": "Synthetic calm. Wind is not estimated in M1.2.",
+    "start_state": "Landed at the registered pad. Remote backhaul and wait stay airborne and keep hover propulsion. Airborne wait is subject to the return-reserve check. Only return, after the pad radius and speed gates and the landing hover, turns propulsion off."
+  },
+  "geometry": {
+    "area_m": [
+      2000,
+      2000
+    ],
+    "shore_xy": [
+      0.0,
+      0.0
+    ],
+    "note": "Same pads and buoys as M1. Geometry is not refit to create a calibration benefit.",
+    "uavs": [
+      {
+        "home_xy": [
+          150.0,
+          400.0
+        ],
+        "near_buoy": 0,
+        "far_buoy": 1
+      },
+      {
+        "home_xy": [
+          150.0,
+          1600.0
+        ],
+        "near_buoy": 2,
+        "far_buoy": 3
+      }
+    ],
+    "buoys": [
+      {
+        "id": 0,
+        "role": "low_value",
+        "xy": [
+          150.0,
+          900.0
+        ],
+        "packets": 2,
+        "bits_each": 10000
+      },
+      {
+        "id": 1,
+        "role": "high_value",
+        "xy": [
+          1850.0,
+          400.0
+        ],
+        "packets": 2,
+        "bits_each": 25000
+      },
+      {
+        "id": 2,
+        "role": "low_value",
+        "xy": [
+          150.0,
+          1250.0
+        ],
+        "packets": 2,
+        "bits_each": 10000
+      },
+      {
+        "id": 3,
+        "role": "high_value",
+        "xy": [
+          1850.0,
+          1600.0
+        ],
+        "packets": 2,
+        "bits_each": 25000
+      }
+    ]
+  },
+  "belief": {
+    "support": [
+      0.8,
+      1.4
+    ],
+    "prior_mu": 1.1,
+    "prior_kernel_std": 0.18,
+    "sigma_j": 180.0,
+    "guard_probability": 0.95,
+    "quadrature_nodes": 7,
+    "quadrature": "Gauss-Legendre weights on the quantile coordinate u in (0, 1): expectation is sum w_i f(F^{-1}(u_i)). The count stays the smallest registered candidate inside the moment and Q tolerances. Equal-width support nodes remain only as the known narrow-posterior counterexample.",
+    "fixed_model_mu": 1.0,
+    "fixed_model_kernel_std": 1e-06,
+    "source": "Support matches Table II. Kernel std and noise stay the M1 synthetic contract."
+  },
+  "utility": {
+    "b_ref_bits": 10000.0,
+    "e_ref_j": 3600.0,
+    "lambda_e": 0.01,
+    "formula": "J = on_time_bits / b_ref - lambda_e * sum_m energy_used_j / e_ref",
+    "source": "Same shape as paper equation (7). Scales stay the M1 values."
+  },
+  "energy": {
+    "reserve_j": 4000.0,
+    "budget_margin_j": 1200.0,
+    "compute_w": 5.0,
+    "ground_idle_w": 1.0,
+    "bulk_tx_w": 0.5,
+    "bulk_rx_w": 0.2,
+    "bulk_range_m": 80.0,
+    "bulk_rate_bps": 250000.0,
+    "bulk_source": "Synthetic short-range data-product radio. Not LoRa and not an old service radius.",
+    "candidate_sensitive_battery_j": 52156.035109573495,
+    "execution_abs_tol_j": 1.0,
+    "battery_rule": "Recheck 52156.035109573495 J first and do not replace it by default. The necessary script window is chain-at-theta-1 complete cost plus reserve <= B and B < prior-q95 far complete cost plus reserve. The posterior 0.95 completion quote from the post-calibration state must also fit the remaining energy; theta=1 true cost is not that conservative prediction. Reserve is outside the quote. If a second condition is required, it is only the chain at support endpoint 1.4 plus the same reserve and margin. Do not search another battery after seeing rewards."
+  },
+  "radio": {
+    "reuse": "LoRa airtime, current and the M0A k=4/3 horizon. Commands, acks and telemetry are LoRa. The bulk product is not credited on LoRa.",
+    "command_bytes": 32,
+    "telemetry_bytes": 64,
+    "backhaul_chunk_bytes": 200
+  },
+  "lookahead": {
+    "explicit_depth_intervals": 1,
+    "terminal": "One decision interval of physical rollout plus one best remaining business. The business quote includes backhaul, return and landing, and that cost is charged in the value. Cached bits and a new target are alternatives, not a sum. The other UAV waits. gamma=1. Not an exact Bayes optimum.",
+    "coordinate_wise": true,
+    "other_uav_action_while_scoring": "wait",
+    "noise": "Future telemetry noise is Gauss-Hermite or, for a reference grid larger than 5, equal-probability normal nodes. Zero noise is not the planning expectation."
+  },
+  "integral": {
+    "theta_candidates": [
+      7,
+      15
+    ],
+    "theta_reference_nodes": 81,
+    "theta_mean_abs_tol": 0.002,
+    "theta_variance_abs_tol": 5e-05,
+    "noise_candidates": [
+      3,
+      5
+    ],
+    "noise_reference_nodes": 21,
+    "q_abs_tol": 0.01,
+    "tie_abs": 0.0001,
+    "tie_rule": "Among scores within tie_abs, pick service by ascending buoy id, then backhaul, return, wait, calibrate. This band is fixed here and is not widened to the measured Q gap.",
+    "moment_cases": [
+      {
+        "name": "wide_prior",
+        "mu": 1.1,
+        "std": 0.18
+      },
+      {
+        "name": "narrow_interior",
+        "mu": 1.25,
+        "std": 0.02
+      },
+      {
+        "name": "lower_edge",
+        "mu": 0.82,
+        "std": 0.05
+      }
+    ],
+    "development_states": [
+      {
+        "name": "pad_prior",
+        "belief": "prior",
+        "battery_j": 10000000,
+        "note": "Sentinel battery control. Not a mission sample."
+      },
+      {
+        "name": "pad_narrow",
+        "belief": {
+          "mu": 1.25,
+          "std": 0.02
+        },
+        "battery_j": 10000000,
+        "note": "Narrow interior kernel on the sentinel pad."
+      },
+      {
+        "name": "lower_edge_pad",
+        "belief": {
+          "mu": 0.82,
+          "std": 0.05
+        },
+        "battery_j": 10000000,
+        "note": "Lower-edge posterior on the sentinel pad."
+      },
+      {
+        "name": "tight_pad",
+        "belief": "prior",
+        "battery_j": 52156.035109573495,
+        "note": "Registered sensitive candidate at the pad. Quadrature probe, not a retuned budget."
+      },
+      {
+        "name": "outbound_tight",
+        "belief": "prior",
+        "battery_j": 52156.035109573495,
+        "x": 800.0,
+        "y": 400.0,
+        "vx": 18.0,
+        "vy": 0.0,
+        "airborne": true,
+        "note": "Mid-route on the registered far line with the candidate battery."
+      },
+      {
+        "name": "cached_backhaul",
+        "belief": "prior",
+        "battery_j": 52156.035109573495,
+        "x": 150.0,
+        "y": 900.0,
+        "vx": 0.0,
+        "vy": 0.0,
+        "airborne": true,
+        "cache_buoy": 0,
+        "note": "One cached low-value packet at its buoy, still airborne."
+      },
+      {
+        "name": "calibration_switch",
+        "belief": {
+          "mu": 1.005,
+          "std": 0.04
+        },
+        "battery_j": 52156.035109573495,
+        "x": 240.0,
+        "y": 400.0,
+        "vx": 0.0,
+        "vy": 0.0,
+        "airborne": true,
+        "note": "Narrow posterior near the end of the registered calibration pattern. Battery is still the candidate, not a fitted remainder."
+      }
+    ],
+    "selection": "Smallest registered candidate that meets the tolerances. If none do, return NOT_MET and do not keep the last candidate. Do not read mission utility."
+  },
+  "methods": [
+    "lookahead_calibration_on",
+    "lookahead_calibration_off"
+  ],
+  "matched_planner": "Both methods call the same finite lookahead. The only switch is whether calibrate is in the candidate set.",
+  "scenarios": [
+    {
+      "base": "b1",
+      "theta": [
+        1.0,
+        1.0
+      ],
+      "seed": 1101
+    },
+    {
+      "base": "b2",
+      "theta": [
+        1.25,
+        1.25
+      ],
+      "seed": 1102
+    },
+    {
+      "base": "b3",
+      "theta": [
+        1.0,
+        1.25
+      ],
+      "seed": 1103
+    },
+    {
+      "base": "b4",
+      "theta": [
+        1.25,
+        1.0
+      ],
+      "seed": 1104
+    }
+  ],
+  "conditions": [
+    "sensitive",
+    "insensitive"
+  ],
+  "ablation": "At most the first calibration in each sensitive base, from the calibration-on mission, and only if that comparison runs. Two continuations share the post-calibration physical state and then forbid further calibration.",
+  "integral_result": {
+    "numerical_status": "NOT_MET",
+    "theta_nodes": null,
+    "noise_nodes": null,
+    "tie_abs": 0.0001
+  }
+}

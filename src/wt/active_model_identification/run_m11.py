@@ -438,10 +438,10 @@ def _effects(spec: dict, factor: float, scenarios: list[dict]) -> list[dict]:
                 {
                     "uav": index,
                     "true_theta": theta,
-                    "far_physical": action_allowed(world.uavs[index], far, float(theta), spec, factor),
-                    "near_physical": action_allowed(world.uavs[index], near, float(theta), spec, factor),
-                    "far_under_prior_guard": action_allowed(world.uavs[index], far, guard, spec, factor),
-                    "near_under_prior_guard": action_allowed(world.uavs[index], near, guard, spec, factor),
+                    "far_physical": action_allowed(world.uavs[index], far, float(theta), spec, factor, world),
+                    "near_physical": action_allowed(world.uavs[index], near, float(theta), spec, factor, world),
+                    "far_under_prior_guard": action_allowed(world.uavs[index], far, guard, spec, factor, world),
+                    "near_under_prior_guard": action_allowed(world.uavs[index], near, guard, spec, factor, world),
                 }
             )
         rows.append({"id": scenario["id"], "condition": scenario["condition"], "uavs": per_uav})

@@ -4,11 +4,11 @@
 
 ## 当前执行任务
 
-2026-11-14 当前阶段为 **M1.2：完整任务成本统一与校准价值验证**。入口见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，详细步骤见 [M1.2 执行指令](docs/research/Active_Model_Identification_M12_Instructions_CN.md)。本次提交发布指令，M1.2 尚待执行。
+2026-11-14 **M1.2 诊断已完成并停止**。入口见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，结果见 [M1.2 报告](docs/research/Active_Model_Identification_M12_Report_CN.md) 与 `results/active_model_identification_m12/m12_20261114/`。
 
-先统一 service 准入、终端价值、场景登记与真实完整业务链的成本和时间，复核原候选预算；修正空中 wait 的正常返航核查及积分选择状态。核查通过后冻结配置，运行同一规划器下仅切换校准权限的 16 条核心航次，最多 8 条信息消融续跑，分别计数。
+完整业务报价与同一低层控制器一致。原敏感电量 `52,156.04 J` 保留：它落在理想脚本窗口内，但一次校准后的后验 0.95 分位成本加备用超过剩余能量。Gauss-Legendre 矩检验通过；临界任务上的动作 Q 没有达到 `0.01`，状态为 `NOT_MET`，没有回退到最后候选。16 条核心航次和信息消融未运行。
 
-新配置为 `configs/experiments/active_model_identification_m12.json`，结果为 `results/active_model_identification_m12/<run_id>/`，报告为 `docs/research/Active_Model_Identification_M12_Report_CN.md`。不覆盖此前产物、不训练、不扩风浪或节点规模、不自动合并。
+没有新的预注册指令前，不下调电量、不搜索场景、不补跑对照。不覆盖此前产物、不训练、不扩风浪或节点规模、不自动合并。
 
 ## M1.1 已记录的进展与待复核判断
 

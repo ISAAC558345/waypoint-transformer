@@ -259,7 +259,7 @@ def _validate(spec: dict, factor: float, sensitive: list[float], insensitive: li
     for uav_index, battery in enumerate(sensitive):
         world = make_world(spec, sensitive, "validate-sensitive")
         far = ("service", _far_id(spec, uav_index))
-        if action_allowed(world.uavs[uav_index], far, prior.quantile(guard), spec, factor):
+        if action_allowed(world.uavs[uav_index], far, prior.quantile(guard), spec, factor, world):
             raise RuntimeError(f"sensitive battery still allows the high-value trip for uav {uav_index} under the prior")
         _assert_chain_delivers(spec, factor, sensitive, uav_index, 1.0, counter)
         blocked = _run(
@@ -278,7 +278,7 @@ def _validate(spec: dict, factor: float, sensitive: list[float], insensitive: li
     for uav_index, _battery in enumerate(insensitive):
         world = make_world(spec, insensitive, "validate-insensitive")
         far = ("service", _far_id(spec, uav_index))
-        if not action_allowed(world.uavs[uav_index], far, prior.quantile(guard), spec, factor):
+        if not action_allowed(world.uavs[uav_index], far, prior.quantile(guard), spec, factor, world):
             raise RuntimeError(f"insensitive battery blocks the high-value trip for uav {uav_index} under the prior")
 
 
@@ -325,11 +325,166 @@ def predicate_rows(spec: dict, factor: float, battery: list[float]) -> list[dict
             {
                 "uav": uav_index,
                 "guard_theta": theta,
-                "far_allowed_under_prior": action_allowed(world.uavs[uav_index], far, theta, spec, factor),
-                "near_allowed_under_prior": action_allowed(world.uavs[uav_index], near, theta, spec, factor),
+                "far_allowed_under_prior": action_allowed(world.uavs[uav_index], far, theta, spec, factor, world),
+                "near_allowed_under_prior": action_allowed(world.uavs[uav_index], near, theta, spec, factor, world),
             }
         )
     return rows
+
+
+def _posterior_case(spec: dict, factor: float, battery: list[float], uav_index: int, epsilon_j: float) -> dict:
+    from wt.active_model_identification.completion import admits, completion_quote
+
+    world = make_world(spec, battery, f"posterior-{uav_index}")
+    beliefs = [prior_belief(spec), prior_belief(spec)]
+    advance(
+        world,
+        _actions(spec, uav_index, ("calibrate", None)),
+        [1.0, 1.0],
+        beliefs,
+        spec,
+        factor,
+        None,
+        planning=True,
+        interval_index=0,
+        noise_j=lambda index, _interval, _epsilon=epsilon_j, _focus=uav_index: _epsilon if index == _focus else 0.0,
+    )
+    guard = float(spec["belief"]["guard_probability"])
+    theta = beliefs[uav_index].quantile(guard)
+    quote = completion_quote(world, uav_index, _far_id(spec, uav_index), theta, spec)
+    uav = world.uavs[uav_index]
+    reserve = float(spec["energy"]["reserve_j"])
+    return {
+        "uav": uav_index,
+        "epsilon_j": epsilon_j,
+        "posterior_mean": beliefs[uav_index].mean(),
+        "posterior_q95": theta,
+        "posterior_std": math.sqrt(beliefs[uav_index].variance()),
+        "calibration_z_j": uav.z_j,
+        "x": uav.x,
+        "y": uav.y,
+        "airborne": uav.airborne,
+        "energy_left_j": uav.energy_j,
+        "quote_j": quote.energy_j,
+        "quote_plus_reserve_j": quote.energy_j + reserve,
+        "quote_id": quote.quote_id,
+        "seconds": quote.seconds,
+        "on_time": quote.on_time,
+        "admitted": admits(uav, quote, spec),
+        "slack_j": uav.energy_j - (quote.energy_j + reserve),
+    }
+
+
+def assess_m12(spec: dict) -> dict:
+    """Recheck the registered battery with the shared completion quote.
+
+    The sensitive candidate is not replaced. The insensitive figure is only the
+    registered chain at theta 1.4 plus reserve and margin. Neither is edited
+    after a mission reward, and this function does not read one.
+    """
+    from wt.active_model_identification.completion import admits, chain_quote, completion_quote, standard_quantile
+
+    factor = measure_integration_factor()
+    candidate = float(spec["energy"]["candidate_sensitive_battery_j"])
+    reserve = float(spec["energy"]["reserve_j"])
+    margin = float(spec["energy"]["budget_margin_j"])
+    prior = prior_belief(spec)
+    guard_p = float(spec["belief"]["guard_probability"])
+    guard_theta = prior.quantile(guard_p)
+    sigma = float(spec["belief"]["sigma_j"])
+    adverse = standard_quantile(guard_p) * sigma
+    battery = [candidate, candidate]
+    uavs = []
+    insensitive = []
+    for uav_index in range(2):
+        world = make_world(spec, battery, f"m12-budget-{uav_index}")
+        far_id = _far_id(spec, uav_index)
+        near_id = _near_id(spec, uav_index)
+        far_prior = completion_quote(world, uav_index, far_id, guard_theta, spec)
+        far_true = completion_quote(world, uav_index, far_id, 1.0, spec)
+        near_prior = completion_quote(world, uav_index, near_id, guard_theta, spec)
+        chain = chain_quote(world, uav_index, far_id, 1.0, spec)
+        chain_high = chain_quote(world, uav_index, far_id, 1.4, spec)
+        zero = _posterior_case(spec, factor, battery, uav_index, 0.0)
+        adverse_row = _posterior_case(spec, factor, battery, uav_index, adverse)
+        ideal_low = chain.energy_j + reserve
+        ideal_high = far_prior.energy_j + reserve
+        insensitive.append(chain_high.energy_j + reserve + margin)
+        uavs.append(
+            {
+                "uav": uav_index,
+                "physical_at_true_theta_1": admits(world.uavs[uav_index], far_true, spec),
+                "physical_quote_j": far_true.energy_j,
+                "physical_quote_plus_reserve_j": far_true.energy_j + reserve,
+                "admitted_under_prior": admits(world.uavs[uav_index], far_prior, spec),
+                "prior_quote_j": far_prior.energy_j,
+                "prior_quote_plus_reserve_j": ideal_high,
+                "near_admitted_under_prior": admits(world.uavs[uav_index], near_prior, spec),
+                "near_quote_plus_reserve_j": near_prior.energy_j + reserve,
+                "chain_theta_1_j": chain.energy_j,
+                "chain_theta_1_plus_reserve_j": ideal_low,
+                "ideal_script_window": ideal_low <= candidate + 1e-6 < ideal_high,
+                "zero_noise_posterior": zero,
+                "adverse_posterior": adverse_row,
+                "information_changes_admission": (not admits(world.uavs[uav_index], far_prior, spec)) and zero["admitted"],
+            }
+        )
+    ideal = all(row["ideal_script_window"] for row in uavs)
+    posterior_ok = all(row["zero_noise_posterior"]["admitted"] for row in uavs)
+    near_ok = all(row["near_admitted_under_prior"] for row in uavs)
+    window = ideal and posterior_ok and near_ok
+    if window:
+        limiting = ""
+        scenario_status = "FROZEN"
+    elif not ideal:
+        limiting = "理想脚本窗口本身不成立：校准后 theta=1 的完整成本加备用，或先验保守完整成本加备用，没有把原电量夹在中间。"
+        scenario_status = "NOT_A_WINDOW"
+    elif not posterior_ok:
+        limiting = (
+            "原电量落在理想脚本窗口内，但一次校准后的后验 0.95 分位完整成本加备用超过剩余能量。"
+            "限制项是后验分位而不是 theta=1 的理想真值；登记裕量盖不住这个抬升。不利噪声更紧。"
+            "普通近程服务在先验下仍然放行。"
+        )
+        scenario_status = "NOT_A_WINDOW"
+    else:
+        limiting = "完整成本准入把普通近程服务也拦住了。这不是信息窗口，本轮不把电量调低去制造对照。"
+        scenario_status = "NOT_A_WINDOW"
+    scenarios = []
+    for base in spec["scenarios"]:
+        for condition, values in (("sensitive", battery), ("insensitive", insensitive)):
+            scenarios.append(
+                {
+                    "id": f"{base['base']}_{condition}",
+                    "base": base["base"],
+                    "condition": condition,
+                    "theta": [float(value) for value in base["theta"]],
+                    "seed": int(base["seed"]),
+                    "battery_j": [float(value) for value in values],
+                    "wind_xy_m_s": [float(value) for value in spec["motion"]["wind_xy_m_s"]],
+                    "scheduled": window,
+                }
+            )
+    return {
+        "scenario_status": scenario_status,
+        "window_valid": window,
+        "ideal_script_window": ideal,
+        "posterior_zero_admits": posterior_ok,
+        "near_admitted_under_prior": near_ok,
+        "battery_replaced": False,
+        "limiting_condition": limiting,
+        "candidate_battery_j": candidate,
+        "sensitive_battery_j": battery,
+        "insensitive_battery_j": insensitive,
+        "reserve_j": reserve,
+        "margin_j": margin,
+        "guard_theta": guard_theta,
+        "adverse_epsilon_j": adverse,
+        "integration_factor": factor,
+        "channel_assumption": "The other UAV waits and still occupies LoRa with its command and telemetry. Budget, admission and the terminal quote use that same assumption.",
+        "uavs": uavs,
+        "scenarios": scenarios,
+        "reserve_note": "reserve_j is added once, outside the completion quote. It is not inside the replayed joules.",
+    }
 
 
 def ablate_beliefs(before: list[Belief], after: list[Belief], executed: list[Action]) -> tuple[list[Belief], list[int]]:

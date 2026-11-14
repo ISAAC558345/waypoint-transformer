@@ -1,0 +1,297 @@
+{
+  "status": "PASS",
+  "worst_abs_j": 1.7462298274040222e-10,
+  "tolerance_j": 1.0,
+  "cases": [
+    {
+      "name": "pad_far",
+      "theta": 1.0,
+      "quote_id": "df5b2ab2bc60c4b6",
+      "quote_j": 42328.26182878426,
+      "executed_j": 42328.261828784285,
+      "seconds": 270.0,
+      "executed_seconds": 270.0,
+      "finished": true,
+      "on_time": true,
+      "interventions": 0,
+      "components_j": {
+        "service": 19510.613319500648,
+        "backhaul": 5204.932749989009,
+        "return": 16734.416543902815,
+        "landing": 867.2992153917949,
+        "ground": 11.0,
+        "calibrate": 0.0
+      },
+      "group_errors_j": {
+        "service": 0.0,
+        "backhaul": 6.366462912410498e-12,
+        "return": -2.546585164964199e-11,
+        "calibrate": 0.0,
+        "total": -2.1827872842550278e-11
+      },
+      "affine_z_j": 41020.950295345705,
+      "affine_aux_j": 1307.3115334385598
+    },
+    {
+      "name": "pad_far",
+      "theta": 1.25,
+      "quote_id": "df5b2ab2bc60c4b6",
+      "quote_j": 52583.49940262069,
+      "executed_j": 52583.499402620866,
+      "seconds": 270.0,
+      "executed_seconds": 270.0,
+      "finished": true,
+      "on_time": true,
+      "interventions": 0,
+      "components_j": {
+        "service": 24238.239889900768,
+        "backhaul": 6468.381573076701,
+        "return": 20788.003920403477,
+        "landing": 1077.8740192397436,
+        "ground": 11.0,
+        "calibrate": 0.0
+      },
+      "group_errors_j": {
+        "service": -5.820766091346741e-11,
+        "backhaul": -4.8203219193965197e-11,
+        "return": -6.912159733474255e-11,
+        "calibrate": 0.0,
+        "total": -1.7462298274040222e-10
+      },
+      "affine_z_j": 41020.950295345705,
+      "affine_aux_j": 1307.3115334385598
+    },
+    {
+      "name": "midroute_far",
+      "theta": 1.0,
+      "quote_id": "4fc9d54a1aba7638",
+      "quote_j": 37667.33319733558,
+      "executed_j": 37667.333197335596,
+      "seconds": 240.0,
+      "executed_seconds": 240.0,
+      "finished": true,
+      "on_time": true,
+      "interventions": 0,
+      "components_j": {
+        "service": 14850.076537971143,
+        "backhaul": 5204.9327499890105,
+        "return": 16734.024693983632,
+        "landing": 867.2992153917949,
+        "ground": 11.0,
+        "calibrate": 0.0
+      },
+      "group_errors_j": {
+        "service": 0.0,
+        "backhaul": 6.366462912410498e-12,
+        "return": -2.1827872842550278e-11,
+        "calibrate": 0.0,
+        "total": -1.4551915228366852e-11
+      },
+      "affine_z_j": 36510.03842337206,
+      "affine_aux_j": 1157.2947739635197
+    },
+    {
+      "name": "midroute_far",
+      "theta": 1.25,
+      "quote_id": "4fc9d54a1aba7638",
+      "quote_j": 46794.842803178595,
+      "executed_j": 46794.842803178726,
+      "seconds": 240.0,
+      "executed_seconds": 240.0,
+      "finished": true,
+      "on_time": true,
+      "interventions": 0,
+      "components_j": {
+        "service": 18450.07310285765,
+        "backhaul": 6468.381573076703,
+        "return": 20787.5141080045,
+        "landing": 1077.8740192397436,
+        "ground": 11.0,
+        "calibrate": 0.0
+      },
+      "group_errors_j": {
+        "service": -2.546585164964199e-11,
+        "backhaul": -4.638422979041934e-11,
+        "return": -5.820766091346741e-11,
+        "calibrate": 0.0,
+        "total": -1.3096723705530167e-10
+      },
+      "affine_z_j": 36510.03842337206,
+      "affine_aux_j": 1157.2947739635197
+    },
+    {
+      "name": "holding_cache",
+      "theta": 1.0,
+      "quote_id": "0be28687e341b0e5",
+      "quote_j": 22818.44779562773,
+      "executed_j": 22818.447795627733,
+      "seconds": 150.0,
+      "executed_seconds": 150.0,
+      "finished": true,
+      "on_time": true,
+      "interventions": 0,
+      "components_j": {
+        "service": 0.0,
+        "backhaul": 5204.932749989034,
+        "return": 16735.2158302469,
+        "landing": 867.2992153917949,
+        "ground": 11.0,
+        "calibrate": 0.0
+      },
+      "group_errors_j": {
+        "service": 0.0,
+        "backhaul": 0.0,
+        "return": -3.637978807091713e-12,
+        "calibrate": 0.0,
+        "total": -3.637978807091713e-12
+      },
+      "affine_z_j": 22111.24330008933,
+      "affine_aux_j": 707.2044955384001
+    },
+    {
+      "name": "holding_cache",
+      "theta": 1.25,
+      "quote_id": "0be28687e341b0e5",
+      "quote_j": 28346.25862065006,
+      "executed_j": 28346.25862065007,
+      "seconds": 150.0,
+      "executed_seconds": 150.0,
+      "finished": true,
+      "on_time": true,
+      "interventions": 0,
+      "components_j": {
+        "service": 0.0,
+        "backhaul": 6468.381573076733,
+        "return": 20789.003028333584,
+        "landing": 1077.8740192397436,
+        "ground": 11.0,
+        "calibrate": 0.0
+      },
+      "group_errors_j": {
+        "service": 0.0,
+        "backhaul": 2.7284841053187847e-12,
+        "return": -1.4551915228366852e-11,
+        "calibrate": 0.0,
+        "total": -1.0913936421275139e-11
+      },
+      "affine_z_j": 22111.24330008933,
+      "affine_aux_j": 707.2044955384001
+    },
+    {
+      "name": "near_deadline_cache",
+      "theta": 1.0,
+      "quote_id": "d68c240b4833985f",
+      "quote_j": 22818.44779562773,
+      "executed_j": 22818.447795627733,
+      "seconds": 150.0,
+      "executed_seconds": 150.0,
+      "finished": true,
+      "on_time": false,
+      "interventions": 0,
+      "components_j": {
+        "service": 0.0,
+        "backhaul": 5204.932749989034,
+        "return": 16735.2158302469,
+        "landing": 867.2992153917949,
+        "ground": 11.0,
+        "calibrate": 0.0
+      },
+      "group_errors_j": {
+        "service": 0.0,
+        "backhaul": 0.0,
+        "return": -3.637978807091713e-12,
+        "calibrate": 0.0,
+        "total": -3.637978807091713e-12
+      },
+      "affine_z_j": 22111.24330008933,
+      "affine_aux_j": 707.2044955384001
+    },
+    {
+      "name": "near_deadline_cache",
+      "theta": 1.25,
+      "quote_id": "d68c240b4833985f",
+      "quote_j": 28346.25862065006,
+      "executed_j": 28346.25862065007,
+      "seconds": 150.0,
+      "executed_seconds": 150.0,
+      "finished": true,
+      "on_time": false,
+      "interventions": 0,
+      "components_j": {
+        "service": 0.0,
+        "backhaul": 6468.381573076733,
+        "return": 20789.003028333584,
+        "landing": 1077.8740192397436,
+        "ground": 11.0,
+        "calibrate": 0.0
+      },
+      "group_errors_j": {
+        "service": 0.0,
+        "backhaul": 2.7284841053187847e-12,
+        "return": -1.4551915228366852e-11,
+        "calibrate": 0.0,
+        "total": -1.0913936421275139e-11
+      },
+      "affine_z_j": 22111.24330008933,
+      "affine_aux_j": 707.2044955384001
+    },
+    {
+      "name": "pad_chain",
+      "theta": 1.0,
+      "quote_id": "8545626b9fc9cc72",
+      "quote_j": 46956.03510957347,
+      "executed_j": 46956.035109573495,
+      "seconds": 300.0,
+      "executed_seconds": 300.0,
+      "finished": true,
+      "on_time": true,
+      "interventions": 0,
+      "components_j": {
+        "service": 19558.299094622318,
+        "backhaul": 5204.932749989009,
+        "return": 16734.14669680104,
+        "landing": 867.2992153917949,
+        "ground": 11.0,
+        "calibrate": 4580.357352769316
+      },
+      "group_errors_j": {
+        "service": -3.637978807091713e-12,
+        "backhaul": 6.366462912410498e-12,
+        "return": -2.1827872842550278e-11,
+        "calibrate": 9.094947017729282e-13,
+        "total": -2.1827872842550278e-11
+      },
+      "affine_z_j": 45498.70681665988,
+      "affine_aux_j": 1457.3282929135999
+    },
+    {
+      "name": "pad_chain",
+      "theta": 1.25,
+      "quote_id": "8545626b9fc9cc72",
+      "quote_j": 58330.711813738446,
+      "executed_j": 58330.71181373849,
+      "seconds": 300.0,
+      "executed_seconds": 300.0,
+      "finished": true,
+      "on_time": true,
+      "interventions": 0,
+      "components_j": {
+        "service": 24297.847108802856,
+        "backhaul": 6468.381573076701,
+        "return": 20787.66661152626,
+        "landing": 1077.8740192397436,
+        "ground": 11.0,
+        "calibrate": 5687.942501092885
+      },
+      "group_errors_j": {
+        "service": -4.729372449219227e-11,
+        "backhaul": -5.184119800105691e-11,
+        "return": 5.093170329928398e-11,
+        "calibrate": 9.094947017729282e-13,
+        "total": -4.3655745685100555e-11
+      },
+      "affine_z_j": 45498.70681665988,
+      "affine_aux_j": 1457.3282929135999
+    }
+  ]
+}
