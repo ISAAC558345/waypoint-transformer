@@ -1,0 +1,44 @@
+{
+  "instruction": "docs/research/Active_Model_Identification_M16_Instructions_CN.md",
+  "instruction_commit": "9af9ffd87c3eba96b760988cf22132b9202613b3",
+  "implementation": {
+    "head": "600fb7ee4ab38cda93408ec799f7a7ab5daa6da1",
+    "diff_stat": ""
+  },
+  "checks": [
+    {
+      "change": "期初守卫把 service 改成 RETURN 的时刻",
+      "impact": "若是区间中途替代，选择映射会修错位置",
+      "check": "重放 b3_loose 前六个区间，记录期初守卫和逐秒替代"
+    },
+    {
+      "change": "新增 initial_guard_consistent",
+      "impact": "不可执行的 service 标签可能继续占住浮标，或把可执行冲突修坏",
+      "check": "一架不准入时标签退出；两架可执行时原修复结果不变；别名只评分一次"
+    },
+    {
+      "change": "正式入口使用新选择和 M1.5 尾终端",
+      "impact": "180 秒的旧表可能对不上，或新请求仍不可执行",
+      "check": "两份冻结快照重现 M1.5 联合请求；新模式请求与期初执行器一致"
+    },
+    {
+      "change": "b3_loose 先行后再决定是否补 22 条",
+      "impact": "主要 OFF 可能继续少交付",
+      "check": "新 OFF 对 M1.3 OFF 和 M1.5 OFF 的 bit 与 J 都不下降才继续"
+    }
+  ],
+  "why_these_tests": "只覆盖期初替代时刻、新选择语义、冻结快照重现和先行性能门槛。m13 与 m15 单测只因为 score_actions 的缺省路径经过同一入口。没有跑全库或安全专项。",
+  "input_hashes": {
+    "m13_frozen_config": "d19b3ba01cd0c93ff07f8a4b5cf675356fce0b5959e725f1b1f253f69378f0eb",
+    "m13_manifest": "9853f586bdf8bc570c9039ee86c695eac7755ec75206eb33ebb6fc81f678bb01",
+    "m13_episodes": "2e190d54ad3e2c0ffaa7649a5a9b371a38cc6c8c950df13ed79231812a413f1c",
+    "m13_decisions": "d07ea00d325f14d040707e9c19c5bb4cbb3c0bdf4cdb509487a89889eaa78897",
+    "m15_episodes": "13c591b686dd61af28b30e7f496737b70ef288b49efee804854e05d83450dee8",
+    "m15_decisions": "76fbf2f887a3d8dc2359c11001d97062bb8e13260080e42ba1b31da0ec2d222f",
+    "instruction": "a1622af1cd4aa637d4f9c0c7bb2ba1159544afdde3194b73dfbe51e1c48a642d"
+  },
+  "tests": "PASS",
+  "stop_reason": "",
+  "conclusion": "被动候选在本组登记场景得到性能支持",
+  "elapsed_s": 174.13626060000024
+}

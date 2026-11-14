@@ -1,0 +1,5 @@
+uav,requested,option_outgoing,option_changed,return_change_phase,executed,saved_executed,executed_matches_saved,initial_substitution,mid_interval_substitution
+0,return:None,return:None,False,,return:None,return:None,True,False,False
+1,service:0,return:None,True,,return:None,return:None,True,True,False
+0,return:None,return:None,False,,return:None,return:None,True,False,False
+1,service:0,return:None,True,,return:None,return:None,True,True,False

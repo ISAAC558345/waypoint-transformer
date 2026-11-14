@@ -15,9 +15,11 @@ from wt.active_model_identification.completion import TAIL_MODE, admits, complet
 from wt.active_model_identification.world import (
     Action,
     World,
+    _return_guard,
     action_allowed,
     action_cost_j,
     advance,
+    apply_option_guard,
     energy_used_j,
     on_time_bits,
 )
@@ -32,6 +34,68 @@ def _bits_at_buoy(world: World, buoy_id: int) -> float:
 def _cached_bits(world: World, uav_index: int) -> float:
     holder = f"uav:{uav_index}"
     return math.fsum(packet.bits for packet in world.packets if packet.holder == holder)
+
+
+LEGACY_SELECTION = "legacy"
+GUARD_SELECTION = "initial_guard_consistent"
+
+
+def selection_mode(spec: dict) -> str:
+    """Missing key keeps the historical candidate labels."""
+    mode = LEGACY_SELECTION
+    block = spec.get("selection")
+    if isinstance(block, dict) and block.get("mode"):
+        mode = str(block["mode"])
+    if mode not in (LEGACY_SELECTION, GUARD_SELECTION):
+        raise KeyError(mode)
+    return mode
+
+
+def initial_effective_action(
+    world: World,
+    uav_index: int,
+    action: Action,
+    belief: Belief,
+    spec: dict,
+    factor: float,
+) -> Action:
+    """Action the original executor accepts before the interval moves."""
+    uav = world.uavs[uav_index]
+    updated, _changed = apply_option_guard(uav, action, belief, spec, factor, world)
+    updated, _changed = _return_guard(uav, updated, belief, spec, factor)
+    return updated
+
+
+def selectable_candidates(
+    spec: dict,
+    world: World,
+    beliefs: list[Belief],
+    uav_index: int,
+    *,
+    include_calibrate: bool,
+    factor: float,
+) -> tuple[list[Action], list[dict]]:
+    """Drop labels the initial guard would rewrite, then keep one copy of each action.
+
+    A service label rewritten to RETURN does not keep the buoy. RETURN keeps the
+    score of the RETURN candidate itself. The legacy mode returns the original list.
+    """
+    raw = candidates(spec, world, uav_index, include_calibrate=include_calibrate)
+    if selection_mode(spec) != GUARD_SELECTION:
+        mapping = [{"requested": action, "effective": action, "kept": True, "alias": False} for action in raw]
+        return raw, mapping
+    kept: list[Action] = []
+    seen: set[Action] = set()
+    mapping = []
+    for action in raw:
+        effective = initial_effective_action(world, uav_index, action, beliefs[uav_index], spec, factor)
+        alias = effective != action
+        keep = (not alias) and effective not in seen
+        if keep:
+            kept.append(action)
+            seen.add(action)
+        mapping.append({"requested": action, "effective": effective, "kept": keep, "alias": alias})
+    return kept, mapping
 
 
 def candidates(spec: dict, world: World, uav_index: int, *, include_calibrate: bool) -> list[Action]:
@@ -131,6 +195,18 @@ def score_actions(
     stats: dict | None,
 ) -> list[tuple[float, Action]]:
     mode = str(spec.get("integral", {}).get("scoring", "legacy"))
+    actions, mapping = selectable_candidates(
+        spec,
+        world,
+        beliefs,
+        uav_index,
+        include_calibrate=include_calibrate,
+        factor=factor,
+    )
+    if stats is not None:
+        stats["selection_candidates"] = int(stats.get("selection_candidates", 0)) + len(mapping)
+        stats["selection_kept"] = int(stats.get("selection_kept", 0)) + len(actions)
+        stats["selection_aliases"] = int(stats.get("selection_aliases", 0)) + sum(int(row["alias"]) for row in mapping)
     if mode in ("segment", "frozen"):
         from wt.active_model_identification.segment import score_segment
 
@@ -142,13 +218,14 @@ def score_actions(
             uav_index,
             include_calibrate=include_calibrate,
             stats=stats,
+            actions=actions,
         )
     nodes = int(spec["belief"]["quadrature_nodes"])
     noise_nodes = int(spec.get("integral", {}).get("noise_nodes", 1))
     grid = quadrature(beliefs[uav_index], nodes)
     noises = gaussian_quadrature(float(spec["belief"]["sigma_j"]), noise_nodes)
     scored: list[tuple[float, Action]] = []
-    for action in candidates(spec, world, uav_index, include_calibrate=include_calibrate):
+    for action in actions:
         total = 0.0
         for theta, theta_weight in grid:
             for epsilon, noise_weight in noises:

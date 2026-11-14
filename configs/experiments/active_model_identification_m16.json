@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "candidate_m16",
+  "instruction": "docs/research/Active_Model_Identification_M16_Instructions_CN.md",
+  "instruction_commit": "9af9ffd87c3eba96b760988cf22132b9202613b3",
+  "parent_m13": "results/active_model_identification_m13/m13_20261114",
+  "parent_m15": "results/active_model_identification_m15/m15_20261114",
+  "terminal_mode": "return_tail_when_no_business",
+  "selection_mode": "initial_guard_consistent",
+  "legacy_selection": "legacy",
+  "legacy_terminal": "legacy",
+  "default_selection": "legacy",
+  "default_terminal": "legacy",
+  "primary_method": "lookahead_calibration_off",
+  "control_method": "lookahead_calibration_on",
+  "pilot_scenario": "b3_loose",
+  "methods": {
+    "new_OFF": "lookahead_calibration_off",
+    "new_ON": "lookahead_calibration_on"
+  },
+  "comparisons": [
+    "new_OFF-m15_OFF",
+    "new_ON-m15_ON",
+    "new_OFF-m13_OFF",
+    "new_ON-m13_ON",
+    "new_ON-new_OFF"
+  ],
+  "scenarios": [
+    "b1_tight",
+    "b1_window",
+    "b1_loose",
+    "b2_tight",
+    "b2_window",
+    "b2_loose",
+    "b3_tight",
+    "b3_window",
+    "b3_loose",
+    "b4_tight",
+    "b4_window",
+    "b4_loose"
+  ],
+  "tolerances": {
+    "utility_abs": 1e-9,
+    "replay_position_abs": 1e-6,
+    "replay_energy_abs": 1e-4,
+    "replay_belief_abs": 1e-8,
+    "rescore_q_abs": 1e-6
+  },
+  "budget": {
+    "diagnostic_rollouts": 6000,
+    "mission_rollouts": 250000,
+    "continuation_rollouts": 24000
+  },
+  "scoring": {
+    "theta_nodes": 15,
+    "segment_inner_nodes": 7,
+    "tie_abs": 0.0001
+  },
+  "do_not_switch_default": true,
+  "reserve_j": 4000,
+  "guard_probability": 0.95,
+  "notes": "Primary candidate is passive telemetry OFF with the M1.5 return tail and initial-guard selection. ON is the paired control. Defaults stay legacy."
+}

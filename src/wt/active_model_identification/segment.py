@@ -709,6 +709,7 @@ def score_segment(
     *,
     include_calibrate: bool,
     stats: dict | None,
+    actions: list | None = None,
 ) -> list[tuple[float, Action]]:
     from wt.active_model_identification.policies import candidates
 
@@ -723,7 +724,9 @@ def score_segment(
     inner = int(spec["integral"].get("segment_inner_nodes", 7))
     noise_nodes = int(spec["integral"].get("noise_nodes", 5))
     scored: list[tuple[float, Action]] = []
-    for action in candidates(spec, world, uav_index, include_calibrate=include_calibrate):
+    if actions is None:
+        actions = candidates(spec, world, uav_index, include_calibrate=include_calibrate)
+    for action in actions:
         total = 0.0
         parts: list[float] = []
         weights: list[float] = []

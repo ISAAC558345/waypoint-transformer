@@ -1,0 +1,5 @@
+uav,theta_q95,energy_j,reserve_j,quote_energy_j,quote_finished,quote_landed,quote_on_time,quote_bits,admits,action_allowed,initial_effective,cache,x,y,airborne,method
+0,1.0059150261368925,41404.38572892918,4000.0,31533.309599868444,True,True,True,20000.0,True,True,service:0,[],1849.6790013572058,941.2145271119211,True,lookahead_calibration_off
+1,1.2636340395677927,34532.10808922242,4000.0,41548.38328234471,True,True,True,70000.0,False,False,return:None,"['b3_loose-lookahead_calibration_off-b3-p0', 'b3_loose-lookahead_calibration_off-b3-p1']",1849.6972788589885,1599.0366009169745,True,lookahead_calibration_off
+0,1.0059150261368925,41404.38572892918,4000.0,31533.309599868444,True,True,True,20000.0,True,True,service:0,[],1849.6790013572058,941.2145271119211,True,lookahead_calibration_on
+1,1.2643027557746507,35050.183625346865,4000.0,41570.51923495312,True,True,True,90000.0,False,False,return:None,"['b3_loose-lookahead_calibration_on-b2-p0', 'b3_loose-lookahead_calibration_on-b2-p1', 'b3_loose-lookahead_calibration_on-b3-p0', 'b3_loose-lookahead_calibration_on-b3-p1']",1848.675779038675,1598.8580938644839,True,lookahead_calibration_on

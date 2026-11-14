@@ -51,7 +51,7 @@ py -3 -m unittest tests.test_active_model_identification_m13 tests.test_active_m
 | 风场航段预算 | `src/wt/ocean_observation_m0/flight.py` 的 `leg_budget` |
 | 浮标漂移、时间戳与有效期 | `src/wt/ocean_observation_m0/information.py`，`src/wt/ocean_observation_m0/accounting.py` 的 `drift_report` |
 
-M1.3 与 M1.5 的冻结结果分别在 `results/active_model_identification_m13/m13_20261114/` 和 `results/active_model_identification_m15/m15_20261114/`。`b3_loose` 少交付 20000 bit 的记录见 [M1.5 报告](docs/research/Active_Model_Identification_M15_Report_CN.md)。[M1.6 指令](docs/research/Active_Model_Identification_M16_Instructions_CN.md) 仍是待办，本分支还没有这项调度修复。
+M1.3 与 M1.5 的冻结结果分别在 `results/active_model_identification_m13/m13_20261114/` 和 `results/active_model_identification_m15/m15_20261114/`。M1.5 的 `b3_loose` 少交付 20000 bit，记录见 [M1.5 报告](docs/research/Active_Model_Identification_M15_Report_CN.md)。显式候选 `initial_guard_consistent` 在 [M1.6 报告](docs/research/Active_Model_Identification_M16_Report_CN.md) 中收回这 20000 bit；默认选择模式仍是 legacy。
 
 `python -m wt.active_model_identification.run` 是 M1 的历史全量入口。M1.1 修正空中能耗之后，它在重建敏感电量时会停止，不能当作现在的快速开始。
 

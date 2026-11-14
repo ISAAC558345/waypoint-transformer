@@ -39,6 +39,7 @@ from wt.active_model_identification.world import (
 
 _CACHE: dict[tuple, "Nominal"] = {}
 _TAIL_CACHE: dict[tuple, "ReturnTail"] = {}
+_QUOTE_STATS = {"admission_quotes": 0, "admission_cache_hits": 0}
 _TAIL_STATS = {
     "return_quotes": 0,
     "return_cache_hits": 0,
@@ -87,6 +88,15 @@ def clear_completion_cache() -> None:
 
 def clear_return_tail_cache() -> None:
     _TAIL_CACHE.clear()
+
+
+def reset_quote_stats() -> None:
+    for key in _QUOTE_STATS:
+        _QUOTE_STATS[key] = 0
+
+
+def quote_stats() -> dict:
+    return {key: int(value) for key, value in _QUOTE_STATS.items()}
 
 
 def reset_tail_stats() -> None:
@@ -155,7 +165,9 @@ def _nominal(world: World, uav_index: int, buoy_id: int | None, spec: dict, mode
     key = _cache_key(world, uav_index, buoy_id, spec, mode)
     cached = _CACHE.get(key)
     if cached is not None:
+        _QUOTE_STATS["admission_cache_hits"] += 1
         return cached
+    _QUOTE_STATS["admission_quotes"] += 1
     nominal = _replay(world, uav_index, buoy_id, spec, mode, key)
     _CACHE[key] = nominal
     return nominal

@@ -4,7 +4,11 @@
 
 ## 当前执行任务
 
-清理已完成。按[当前任务](CURSOR_NEXT_TASK.md)执行 M1.6 期初准入与候选分配一致性验证，执行与交接遵循[分支协作约定](AGENTS.md)。此前的回放见[清理记录](docs/research/Repository_Cleanup_20261114_CN.md)。
+2026-11-14 **M1.6 已完成**：期初不可执行的服务标签不再占用浮标。报告见 [M1.6 结果](docs/research/Active_Model_Identification_M16_Report_CN.md)，结果在 `results/active_model_identification_m16/m16_20261114/`。指令见 [M1.6 指令](docs/research/Active_Model_Identification_M16_Instructions_CN.md)。
+
+`initial_guard_consistent` 与 M1.5 返航尾只在显式打开时生效，默认选择和默认终端仍是 legacy。被动 OFF 在 12 个场景对 M1.3 OFF 和 M1.5 OFF 都没有少交付或降低净效用，`b3_loose` 收回 20000 bit。该候选保持显式身份，不改默认模式。风浪感知与能耗预测另立任务，本轮没有开始。
+
+清理记录见 [Repository_Cleanup_20261114_CN.md](docs/research/Repository_Cleanup_20261114_CN.md)。执行与交接遵循[分支协作约定](AGENTS.md)。
 
 ## M1.5 已完成的结果
 
