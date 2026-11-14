@@ -6,11 +6,12 @@ import csv
 import json
 from pathlib import Path
 from wt.common.paths import repo_root
+from wt.common.resources import resolve_logical
 
 ROOT = repo_root()
-PHASE106_CSV = ROOT / "src" / "wt" / "htw_phase106" / "outputs" / "untouched" / "phase106_final_results.csv"
-PHASE106_BOOT = ROOT / "src" / "wt" / "htw_phase106" / "outputs" / "untouched" / "phase106_paired_bootstrap.json"
-OUT = ROOT / "final_artifacts" / "figures"
+PHASE106_CSV = resolve_logical("src/wt/htw_phase106/outputs/untouched/phase106_final_results.csv")
+PHASE106_BOOT = resolve_logical("src/wt/htw_phase106/outputs/untouched/phase106_paired_bootstrap.json")
+OUT = ROOT / "results" / "figures" / "legacy_benchmarks"
 
 
 def _read_methods(path: Path) -> list[dict[str, str]]:

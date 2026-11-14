@@ -7,14 +7,9 @@ __pycache__/
 .vscode/
 backup/
 logs/
-archive/experiments/shared_spectrum_full_tests/
 report/
-docs/archive/
 results/root_exports/
 data/highlevel_revision/
-archive/experiments/*/outputs/
-archive/experiments/*/figures/
-archive/experiments/*/report/
 
 # Regenerable local caches
 **/.mplconfig/

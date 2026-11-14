@@ -6,13 +6,11 @@ import json
 import shutil
 from pathlib import Path
 from wt.common.paths import repo_root
+from wt.common.resources import resolve_logical
 
 ROOT = repo_root()
-PHASE106 = ROOT / "src" / "wt" / "htw_phase106" / "outputs" / "untouched"
-PHASE945 = ROOT / "src" / "wt" / "htw_phase945" / "outputs" / "utility_aligned"
-PHASE943 = ROOT / "src" / "wt" / "htw_phase943" / "outputs" / "order_free_decoder"
-FIG = ROOT / "paper_assets" / "figures"
-TAB = ROOT / "paper_assets" / "tables"
+FIG = ROOT / "results" / "figures" / "legacy_benchmarks"
+TAB = ROOT / "results" / "tables" / "legacy_benchmarks"
 
 
 def _read_csv(path: Path) -> list[dict[str, str]]:
@@ -30,7 +28,7 @@ def _save(fig, stem: str) -> None:
 
 def copy_tables() -> None:
     TAB.mkdir(parents=True, exist_ok=True)
-    src_rows = _read_csv(PHASE106 / "phase106_final_results.csv")
+    src_rows = _read_csv(resolve_logical("src/wt/htw_phase106/outputs/untouched/phase106_final_results.csv"))
     fields = ["method_id", "method", "payload", "completed_blocks", "residual_queue", "dropped", "flight_distance", "legality"]
     main = TAB / "PAPER_TABLE_MAIN_RESULTS.csv"
     with main.open("w", newline="", encoding="utf-8") as handle:
@@ -38,8 +36,7 @@ def copy_tables() -> None:
         writer.writeheader()
         for row in src_rows:
             writer.writerow({key: row[key] for key in fields})
-    shutil.copy2(main, ROOT / "PAPER_TABLE_MAIN_RESULTS.csv")
-    boot = json.loads((PHASE106 / "phase106_paired_bootstrap.json").read_text(encoding="utf-8"))
+    boot = json.loads((resolve_logical("src/wt/htw_phase106/outputs/untouched/phase106_paired_bootstrap.json")).read_text(encoding="utf-8"))
     names = {
         "M3_minus_M0": "FINAL-HIER vs Myopic",
         "M3_minus_M1": "FINAL-HIER vs Exclusive",
@@ -65,11 +62,10 @@ def copy_tables() -> None:
                     "relative_gain": item["relative_gain"],
                 }
             )
-    shutil.copy2(pair, ROOT / "PAPER_TABLE_PAIRWISE_STATS.csv")
 
 
 def plot_main(plt) -> None:
-    rows = _read_csv(PHASE106 / "phase106_final_results.csv")
+    rows = _read_csv(resolve_logical("src/wt/htw_phase106/outputs/untouched/phase106_final_results.csv"))
     names = [row["method"] for row in rows]
     payload = [float(row["payload"]) for row in rows]
     blocks = [float(row["completed_blocks"]) for row in rows]
@@ -99,7 +95,7 @@ def plot_main(plt) -> None:
     fig.tight_layout()
     _save(fig, "fig05_queue_drop")
     plt.close(fig)
-    boot = json.loads((PHASE106 / "phase106_paired_bootstrap.json").read_text(encoding="utf-8"))
+    boot = json.loads((resolve_logical("src/wt/htw_phase106/outputs/untouched/phase106_paired_bootstrap.json")).read_text(encoding="utf-8"))
     fig, ax = plt.subplots(figsize=(7.2, 4.2))
     labels = ["vs Myopic", "vs Exclusive", "vs DeepSets-old"]
     means = [boot["M3_minus_M0"]["mean_delta"], boot["M3_minus_M1"]["mean_delta"], boot["M3_minus_M2"]["mean_delta"]]
@@ -115,7 +111,7 @@ def plot_main(plt) -> None:
 
 
 def plot_ablations(plt) -> None:
-    summary = json.loads((PHASE945 / "summary.json").read_text(encoding="utf-8"))
+    summary = json.loads((resolve_logical("src/wt/htw_phase945/outputs/utility_aligned/summary.json")).read_text(encoding="utf-8"))
     fig, ax = plt.subplots(figsize=(7.2, 4.2))
     labels = ["DeepSets-old", "DeepSets-util", "HGNN-old", "HGNN-util"]
     values = [summary["d_old"], summary["d_util"], summary["g_old"], summary["g_util"]]
@@ -125,7 +121,7 @@ def plot_ablations(plt) -> None:
     ax.tick_params(axis="x", rotation=15)
     _save(fig, "fig07_utility_aligned")
     plt.close(fig)
-    seeds = _read_csv(PHASE945 / "phase945_per_seed_metrics.csv")
+    seeds = _read_csv(resolve_logical("src/wt/htw_phase945/outputs/utility_aligned/phase945_per_seed_metrics.csv"))
     fig, ax = plt.subplots(figsize=(7.2, 4.2))
     xs = [int(row["model_seed"]) for row in seeds]
     ax.plot(xs, [float(row["d_util"]) for row in seeds], marker="o", label="DeepSets-util")
@@ -136,7 +132,7 @@ def plot_ablations(plt) -> None:
     ax.legend()
     _save(fig, "fig08a_deepsets_vs_hgnn")
     plt.close(fig)
-    perm = _read_csv(PHASE943 / "phase943_permutation_sensitivity.csv")
+    perm = _read_csv(resolve_logical("src/wt/htw_phase943/outputs/order_free_decoder/phase943_permutation_sensitivity.csv"))
     ppv = [float(row["ppv"]) for row in perm]
     fig, ax = plt.subplots(figsize=(7.2, 4.2))
     ax.hist(ppv, bins=[-0.05, 0.05, 0.5, 1.0], color="#2a6f97")

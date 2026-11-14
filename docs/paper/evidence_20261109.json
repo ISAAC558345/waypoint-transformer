@@ -102,8 +102,18 @@
     }
   },
   "comparison_scope": "historical TRAIN, 128 candidates, 15-step offline scores on MAX_RATE_INDEPENDENT snapshots; not independent validation and not a 48-step formal gain",
-  "missing_historical_summaries": [
-    "results/phase6iab_planner_stability/summary.json",
-    "results/phase6iac_independent_holdout/summary.json"
-  ]
+  "missing_historical_summaries": [],
+  "archived_formal_summaries": {
+    "validation": {
+      "path": "results/reproducibility/formal_scheme_c/evidence_archive/results/phase6iab_planner_stability/summary.json",
+      "git_blob": "73e01163aafb5edc771cd7f4aee6139fdd775b11",
+      "paired_mean_bits": 2644990.8087698035
+    },
+    "holdout": {
+      "path": "results/reproducibility/formal_scheme_c/evidence_archive/results/phase6iac_independent_holdout/summary.json",
+      "git_blob": "e23290d36258acc7d417a79d21c07a5502d95702",
+      "paired_mean_bits": 3502191.5265653464
+    }
+  },
+  "correction_20261114": "AB/AC summaries were already archived; earlier absence was a resolver error. No episodes/statistics were rerun. Remaining ranking-loss top-level and baseline per-state evidence is a separate gap."
 }

@@ -4,13 +4,14 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 from wt.common.paths import repo_root
+from wt.common.resources import resolve_logical
 
 ROOT = repo_root()
 sys.path.insert(0, str(ROOT / "scripts"))
 
 
 def main() -> None:
-    csv_path = ROOT / "src" / "wt" / "htw_phase106" / "outputs" / "untouched" / "phase106_final_results.csv"
+    csv_path = resolve_logical("src/wt/htw_phase106/outputs/untouched/phase106_final_results.csv")
     if csv_path.is_file():
         from plot_final_results import main as plot_saved
 

@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-14",
+  "original_manifest": "results/reproducibility/layout_refactor_20261109/run_322001/run_manifest.json",
+  "original_git_blob": "986dbf2805b1d9de0470ddcac3385e95e0c2cbad",
+  "recorded_instruction_commit": "204dd3309115dfd369236c408f7e59306a0871d4",
+  "actual_layout_instruction_commit": "b55981aad49e58366870ed3391217af427786c90",
+  "role": "Derived provenance correction; original episode, steps and run manifest are unchanged.",
+  "new_environment_steps": 0
+}

@@ -43,6 +43,15 @@
   "tracked_deleted_files": 6,
   "tracked_deleted_bytes": 142595,
   "local_cleanup_completed": false,
-  "checkpoint_deduplication_completed": false,
-  "remaining_work": "L12: remove regenerable local caches/build intermediates after final paper delivery, and consolidate exact duplicate checkpoints through canonical paths and the migration resolver. Preserve unique scientific artifacts."
+  "checkpoint_deduplication_completed": true,
+  "remaining_work": "Local ignored cache cleanup is not claimed. Scientific artifacts are preserved; no training or simulation.",
+  "checkpoint_deduplication": {
+    "date": "2026-11-14",
+    "source_commit": "7e4428f1652ab03624f95b927c5c9f2006e2dedb",
+    "duplicate_physical_copies_removed": 11,
+    "canonical_contents_preserved": true,
+    "path_index": "docs/development/legacy_paths_20261114.json",
+    "record": "docs/development/functional_layout_20261114.json",
+    "scope": "Git repository tree; local ignored cache cleanup is not claimed."
+  }
 }

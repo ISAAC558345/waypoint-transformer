@@ -11,23 +11,27 @@
   "pages": 7,
   "pages_reviewed": true,
   "review_note": "All seven rendered pages were inspected. The new table is complete. Existing formulas, citations, and earlier tables remain inside the page.",
-  "hash_note": "byte_sha256 is the workspace file bytes. git_blob is git hash-object without writing the object. Those two differ when Git normalizes line endings.",
+  "hash_note": "byte_sha256 preserves the recorded compiler workspace bytes; git_blob identifies the exact published Git object. normalized_lf_git_blob retains a previous LF-normalized identity. The 2026-11-14 correction changes metadata/archive byte identity only, not the compiled manuscript content.",
   "files": {
     "docs/paper/latex/main.tex": {
       "byte_sha256": "e914ea29c52c690128a704005e96d82a2f1238b823ebe3c65148dfacbe37f49e",
-      "git_blob": "436f594e0284b12526a21f8ae69561a71787cc8c"
+      "git_blob": "6896d847f5ea4e06f95b0371ae520252f69e1a9a",
+      "normalized_lf_git_blob": "436f594e0284b12526a21f8ae69561a71787cc8c"
     },
     "docs/paper/latex/body.tex": {
       "byte_sha256": "ccbaae1bb2e411bc63e530ae9d8a69f470a4f087ea08134354355c986f548776",
-      "git_blob": "a42b99b5e889c3fb1ca266dacd6a8fcfd1ebda70"
+      "git_blob": "e57989232fd5daaafc60d583b6bd685131513cfa",
+      "normalized_lf_git_blob": "a42b99b5e889c3fb1ca266dacd6a8fcfd1ebda70"
     },
     "docs/paper/latex/archive/main_20261108.tex": {
       "byte_sha256": "84c80c39ee358474c9229ceac5f2b20dd9a7579ad7725cb5bb4dbdf4227b62c0",
-      "git_blob": "e27043644d5660588ad0f2b4df6cd096bf21403f"
+      "git_blob": "215135796397a26bf5c29bf55f3271897b66a531",
+      "normalized_lf_git_blob": "e27043644d5660588ad0f2b4df6cd096bf21403f"
     },
     "docs/paper/latex/archive/body_20261108.tex": {
       "byte_sha256": "bccca7022dd13a6208b53f8cf2b7cb9d7edf94e51173d5dfac2838e7ac7a6b60",
-      "git_blob": "4615fd6292c12b527fcfe2b7e208b0b56b97ce51"
+      "git_blob": "65f4ff71c93d1085a2438c9cf0e2edeef6bb4937",
+      "normalized_lf_git_blob": "4615fd6292c12b527fcfe2b7e208b0b56b97ce51"
     },
     "docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261109.md": {
       "byte_sha256": "2a360425ad37b0bd345b5937e1d4ab92317b9fd64f7050d5c96ec3f1d936f618",
@@ -38,12 +42,15 @@
       "git_blob": "0e5c156aff38567fae2305e66acc6e47354c088f"
     },
     "docs/paper/evidence_20261109.json": {
-      "byte_sha256": "12b9e8c0791ccb7210954d1e4eb3f56e9634b0f36e0fd9e64a5191302f9506c2",
-      "git_blob": "dfae6ad01e9e196ce00fc50d008a4329cb98213b"
+      "byte_sha256": "12a762816e67b06c295b6fcddb19b5eb622a65a6917c61ed6c1615844c567fcb",
+      "git_blob": "f63c0ebe9c10d221f07524ac77eefe2d82e3433d",
+      "build_time_byte_sha256": "12b9e8c0791ccb7210954d1e4eb3f56e9634b0f36e0fd9e64a5191302f9506c2",
+      "role": "Current evidence sidecar corrected after the recorded compile; manuscript/TeX/PDF contents unchanged."
     },
     "docs/paper/latex/build_l11_tectonic.ps1": {
       "byte_sha256": "34c4fe757c0ebf91aaf41a896e7895133421f763fd7b39ab2b8d6b1498d83002",
       "git_blob": "bd12edb14fb0d6db09fb2f0a5e16e4f1aca3d3fe"
     }
-  }
+  },
+  "metadata_correction_date": "2026-11-14"
 }

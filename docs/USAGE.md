@@ -1,23 +1,29 @@
 # 使用说明
 
-在仓库根目录执行。Python 需要能导入 `src` 下的 `wt` 包。
+在已有Python环境中从仓库根目录设置PYTHONPATH=src。下面的python可替换为实际解释器路径。
 
 ```powershell
 $env:PYTHONPATH = Join-Path (Get-Location).Path 'src'
-py -3 -m wt.cli.evaluate --scenario 322000
-py -3 -m wt.cli.evaluate --scenario 322001
+python -m wt.cli.evaluate --scenario 322000
+python -m wt.cli.evaluate --scenario 322001
 ```
 
-上面两条是预览。它们打印正式合同，不导入 PyTorch，也不写结果。未注册场景在 `--run` 时会在加载模型前返回退出码 2。
-
-已核对的一次运行命令是：
+两条均为只读预览，不导入PyTorch、不写输出。显式运行使用空目录：
 
 ```powershell
-py -3 -m wt.cli.evaluate --scenario 322001 --output results/reproducibility/layout_refactor_20261109/run_322001 --run
+python -m wt.cli.evaluate --scenario 322001 --output results/reproducibility/manual_run --run
 ```
 
-该次结果与 `results/reproducibility/formal_scheme_c/episodes/322001_scheme_c.json` 一致：payload `68952073.58225587`，served `68952073.58225589`，`process_seed` `1322001`，`reset_seed` `322001`，决策时刻 0/15/30/45，高层 4 次，低层 48 步，退出码 0。
+当前仅登记322000/322001参考，不开放其他场景。已保存的322001结果为48环境步、48低层调用、4高层调用，payload=68952073.58225587、served=68952073.58225589，过程/reset种子1322001/322001；退出0、matched。此次目录整理不再运行模型。
 
-`py -3 scripts/benchmark.py` 只查找已保存的验证摘要和保留集摘要。2026-11-09 检查时这两个摘要都不在检出中，脚本报告缺失。
+```powershell
+python scripts/benchmark.py
+```
 
-资源位置由 `configs/resources.json` 登记。`wt.common.resources.resolve_logical` 用最长前缀把旧逻辑路径指到迁移后的文件，不会为了迁移重建旧目录。
+该入口只读以下已存在的历史原件：
+- results/reproducibility/formal_scheme_c/evidence_archive/results/phase6iab_planner_stability/summary.json
+- results/reproducibility/formal_scheme_c/evidence_archive/results/phase6iac_independent_holdout/summary.json
+
+之前的“摘要缺失”来自旧路径映射遗漏；文件一直存在，无需重跑。
+
+configs/resources.json记录当前权重和参考位置。wt.common.resources.resolve_logical解析旧文件逻辑路径；旧目录已拆分为不同功能目录，请按具体工件路径或迁移索引查找，不再依赖旧轮次目录。

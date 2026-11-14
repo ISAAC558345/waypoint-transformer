@@ -1,16 +1,17 @@
-# 交付状态
+# 当前交付状态（2026-11-14）
 
-当前正式模型仍是方案 C Epoch 1 加冻结 MAPPO-V2 seed 0。策略文件是 `configs/formal_scheme_c_policy.json`，内容为 G1_RATE、scheme_c、k=6、hold=15。
+默认分支与维护分支提供相同的功能化布局。旧默认提交e58e5d1保留在Git历史中；不再以旧轮次目录作为当前入口。
 
-当前命令：
+已落实：
+- 正式实现按envs/models/planning/control/evaluation等功能包组织。
+- 历史轮次的配置、权重、结果和说明拆入对应功能目录；不保留round编号目录。
+- 源码中的199份历史checkpoint移出src；11份相同内容副本合并，旧逻辑文件身份通过映射保留。
+- 验证和保留集的已归档摘要可以被只读benchmark入口找到。
+- 当前README、使用说明、系统说明及分支说明同步更新。
+- 正式权重与策略字节不变；本次不执行训练、模型前向或仿真。
 
-```powershell
-$env:PYTHONPATH = Join-Path (Get-Location).Path 'src'
-py -3 -m wt.cli.evaluate --scenario 322001
-```
+已有正式回归：322001的48步与R1对应参考一致，payload=68952073.58225587 bit，served=68952073.58225589 bit。当前登记场景只有322000/322001。
 
-加 `--run` 才会执行。已注册场景是 322000 和 322001。
+论文入口为paper/README.md，当前可编辑稿及PDF为2026-11-09版本。本次不修改论文实验数值或重新编译PDF。论文的更完整实验定义与旧源码清单换行身份属于此前已列出的文字收尾项，不能把目录发布当作这些论文修订已经完成。
 
-最新论文是 `docs/paper/Execution_Grounded_Hierarchical_Graph_Learning_MultiUAV_Revised_20261109.md` 和同名 PDF。L8 与 L9 维持 NOT_PROMOTED，没有接入正式规划器。验证集 322048–322063 和保留集 322064–322079 的摘要文件不在当前检出中。
-
-这次工作按用户选择完成现有系统的目录整理和论文收口，不开始新的模型研究。
+L8/L9继续NOT_PROMOTED。真正缺失的是部分ranking-loss汇总/基线侧分状态证据，不是AB/AC已归档摘要。后续模型研究需用户另行明确。

@@ -1,4 +1,4 @@
-"""Read-only resource locations and legacy logical paths."""
+"""Locate current resources and resolve historical file aliases without moving bytes."""
 from __future__ import annotations
 
 import json
@@ -12,8 +12,7 @@ def _table() -> dict:
 
 
 def checkpoint(name: str) -> Path:
-    relative = _table()["checkpoints"][name]
-    return repo_root() / relative
+    return repo_root() / _table()["checkpoints"][name]
 
 
 def policy_file() -> Path:
@@ -21,17 +20,32 @@ def policy_file() -> Path:
 
 
 def resolve_logical(logical: str) -> Path:
-    """Map a historical logical path to its current file. Longest prefix wins."""
-    normalized = logical.replace("\\", "/").lstrip("./")
-    table = _table()["logical_paths"]
-    if normalized in table:
-        return repo_root() / table[normalized]
-    match = ""
-    for prefix in table:
-        if (normalized == prefix or normalized.startswith(prefix.rstrip("/") + "/")) and len(prefix) > len(match):
-            match = prefix
-    if not match:
-        return repo_root() / normalized
-    suffix = normalized[len(match):].lstrip("/")
-    base = repo_root() / table[match]
-    return base / suffix if suffix else base
+    """Resolve exact file moves and composed directory renames to a final path."""
+    normalized = str(logical).replace("\\", "/")
+    while normalized.startswith("./"):
+        normalized = normalized[2:]
+    if Path(normalized).is_absolute():
+        return Path(normalized)
+    config = _table()
+    aliases = {}
+    index = config.get("legacy_path_index")
+    if index:
+        aliases.update(json.loads((repo_root() / index).read_text(encoding="utf-8"))["paths"])
+    aliases.update(config.get("logical_paths", {}))
+    seen = set()
+    for _ in range(len(aliases) + 1):
+        if normalized in seen:
+            raise ValueError(f"Cyclic resource alias: {logical}")
+        seen.add(normalized)
+        match = normalized if normalized in aliases else ""
+        if not match:
+            for prefix in aliases:
+                if normalized.startswith(prefix.rstrip("/") + "/") and len(prefix) > len(match):
+                    match = prefix
+        if not match:
+            return repo_root() / normalized
+        target = aliases[match] + normalized[len(match):]
+        if target == normalized:
+            return repo_root() / target
+        normalized = target
+    raise ValueError(f"Resource alias chain is too long: {logical}")
