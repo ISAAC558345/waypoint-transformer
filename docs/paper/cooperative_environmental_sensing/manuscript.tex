@@ -1,0 +1,96 @@
+\documentclass[journal]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,hyperref}
+\hypersetup{hidelinks}
+\begin{document}
+\title{Cooperative Environmental Sensing for Energy-Constrained Maritime Data Collection With Multiple UAVs}
+\author{Research design manuscript}
+\maketitle
+\begin{abstract}Reliable delivery of offshore observations requires a rotary-wing unmanned aerial vehicle (UAV) to budget energy for collection, backhaul, and return before committing to a buoy. An observation acquired by another UAV can alter this decision if it reaches the aircraft while a choice is still feasible. We formulate a rolling scheduling problem in which a fleet shares timestamped observations, forecasts the energy of candidate missions, and allocates sensing time against pending data traffic. Integrated sensing and communication provides buoy-motion observations, while onboard telemetry supplies local wind estimates. A fixed, pretrained energy predictor propagates environmental uncertainty to mission completion. A constrained reinforcement learning policy selects sensing and service actions from executable joint candidates. We derive a value-of-information test for a single decision and specify a paired simulation study that measures timely shore delivery, energy use, and return feasibility. Fleet-level performance remains to be evaluated.\end{abstract}
+\begin{IEEEkeywords}Integrated sensing and communication, maritime monitoring, cooperative UAVs, propulsion energy, informative sensing, reinforcement learning.\end{IEEEkeywords}
+\section{Introduction}
+\subsection{Motivation and prior work}
+A buoy may be within radio range and still be too expensive to serve. Completing a mission also requires station keeping during collection, forwarding the packet before its deadline, and returning with sufficient energy. A wind estimate taken at departure can age during transit. Buoy motion can also prolong collection by changing beam alignment. These effects matter most when the cost of one more service lies near the remaining energy budget.
+
+Li et al. \cite{r1} organize maritime sensing, wireless powering, data collection, and backhaul within a common frame. A related predictive beamforming model \cite{r2} uses buoy echoes to forecast alignment in waves. Wind-aware communication planning \cite{r3} relates wind to rotary-wing propulsion, and Fossøy et al. \cite{r4} forecast the power of planned maneuvers from motion and inferred wind. Cooperative path exploration \cite{r5} directs a scout toward a follower's possible route. Queue-aware maritime ISAC \cite{r6} couples multi-UAV sensing with data service across successive frames.
+
+\subsection{Research question}
+We study whether a fleet should spend a limited sensing opportunity to resolve the energy feasibility of a particular communication task. Three choices specify the proposed design. First, candidate tasks are fixed before valuing a measurement. Second, every forecast uses the environment expected at the time of arrival. Third, the reward counts packets delivered to shore and charges actual energy, including the cost of obtaining information. The following sections give an observation model, an implementable two-stage policy, and tests that could reject the case for active sensing.
+
+\section{Maritime network and observation model}
+\subsection{Fleet, queues, and frame timing}
+Consider M rotary-wing UAVs, K surface buoys, and one shore receiver. Buoy k buffers packets with known size and deadline. A UAV collects a packet over the buoy uplink, carries it in an onboard buffer, and transmits it over the shore backhaul. An identifier follows the packet across both hops. Timely payload increases once, at successful shore reception before the deadline. Each aircraft has its own usable battery and required reserve at landing.
+
+At the beginning of decision interval t, the coordinator forms feasible joint mission candidates from current queue estimates, buffers, battery states, and received observations. During the interval a short downlink transmission may carry control information and illuminate a selected buoy. Echo reception supplies range or radial velocity observations. Uplink payload, environmental reports, and backhaul use scheduled resources. Sensing that requires additional dwell, radio time, or travel is charged to the same fleet budget. Each radio follows its half-duplex schedule. Simultaneous links require distinct resources or a modeled interference term.
+
+\begin{equation}\tau_{\rm probe}+\tau_{\rm report}+\tau_{\rm uplink}+\tau_{\rm backhaul}\leq\Delta\end{equation}
+Equation (1) is a conservative time-division implementation. The joint downlink burst occupies its resource once. Each service candidate includes a deadline for changing the next waypoint or allocating the next uplink. Reports received after this deadline remain available to later decisions. Only the first segment of a selected plan is flown, after which the planner constructs a new candidate set.
+
+\subsection{Two observable environmental mechanisms}
+The simulator maintains a hidden, time-varying horizontal wind field at flight height and a surface state that drives buoy displacement. In a first implementation, correlated gusts can be advected across a grid. Buoy motion can combine wave-driven oscillation with slow drift. The policy receives local wind estimates inferred from motion telemetry with calibrated noise. Each estimate carries position, acquisition time and uncertainty. It receives buoy observations from the ISAC receiver.
+
+\begin{equation}z_r=\|q-b\|+\epsilon_r,\qquad z_f=(2/\lambda)u^\top(v_b-v_q)+\epsilon_f\end{equation}
+Here q and b denote UAV and buoy positions, u points from transmitter to buoy, and the Doppler sign denotes increasing range. Equation (2) assumes a monostatic return. Distance, transmitted energy, pointing error and sea clutter determine detection probability and measurement covariance. A missed detection yields no state correction. Radio echoes inform buoy tracking; the wind observation channel has its own uncertainty and sampling geometry.
+
+\section{Forecasting the energy of a candidate mission}
+\subsection{Measurements available at commitment}
+Let Ht contain packet and vehicle states and all reports delivered before the decision cutoff. A report acquired at time s and delivered at time r enters the receiving UAV's history at r. Each candidate a specifies the service target, planned speed and heading, collection and backhaul schedule, and a return route. For each waypoint the predictor queries the environmental belief at its expected traversal time. Reports outside the spatial correlation range, or acquired well before the expected arrival, have limited influence. Shared observations retain their identifiers to prevent double counting.
+
+For simulation, a time-propagated ensemble of wind maps and buoy tracks is sufficient. Particles evolve with the adopted transport and motion models. Local telemetry updates nearby wind estimates. Echo likelihoods update buoy tracks conditional on geometry and clutter. A forecast samples complete trajectories of both processes. Keeping the same environmental realization across aircraft and over successive segments preserves correlated errors in the estimated fleet demand.
+
+\subsection{Propulsion, radio service, and reserve}
+For UAV i the power predictor receives air-relative velocity, acceleration, flight mode and vehicle parameters. We propose an offline fit of a residual to a nominal rotary-wing power law \cite{r3}, using energy labels from separate simulated flights with varied winds, payloads and maneuvers. The simulator used for evaluation should include dynamics or disturbances withheld from the fitting model. Parameters are fixed during each test mission. New observations change the environmental inputs and thus the forecast.
+
+\begin{equation}\begin{aligned}v_{\rm air}&=v_{\rm ground}-w(q,s),\\P_{\rm prop}&=P_{\rm nom}(v_{\rm air})+g_i(v_{\rm air},a,\mathrm{mode}).\end{aligned}\end{equation}
+\begin{equation}E_i(a)=\int_{t}^{T_{i,\rm land}(a)}[P_{\rm prop}(s)+P_{\rm aux}(s)+P_{\rm radio}(s)]\,ds\end{equation}
+The radio term uses the receiver, sensing transmitter or backhaul state over its scheduled duration. Station keeping contributes propulsion power during dwell. For example, a buoy packet of L bits completes collection when the time integral of the successful uplink rate reaches L. Buoy motion changes that rate through range and beam mismatch. A longer collection then consumes additional hover energy and may shorten the backhaul window. This construction assigns waves a physical route to total energy through link service.
+
+For each candidate, retain the mean energy, a predictive interval and the estimated probability of landing below reserve. Periods with little information should produce wider intervals. Report interval coverage and interval width together. A planner can appear conservative simply by producing intervals too wide to authorize any service.
+
+\section{Joint sensing and communication decisions}
+\subsection{Objective and admissible actions}
+Let Dt denote bits delivered to shore on time during interval t, and let Ct be the actual fleet energy consumed during the interval, including idle electronics and sensing. The following finite-horizon objective uses positive reference scales D0 and E0 and an energy weight $\eta$. Each mission starts with a fixed battery allocation. An emergency return action remains available if updated conditions invalidate a service plan.
+
+\begin{equation}\max_{\pi}\;\mathbb E_{\pi}\!\left[\sum_t(D_t/D_0-\eta C_t/E_0)\right]\end{equation}
+\begin{equation}\Pr\{E_i(a)+B_i^{\rm res}\le B_{i,t}\mid H_t\}\ge 1-\alpha_i\end{equation}
+The planner checks (6) for each participating vehicle and enforces radio schedules and unique ownership of any indivisible service job. This conditional check applies to a candidate at a given epoch. Mission-level reserve violations are measured separately over complete runs. Before scoring and allocating a buoy, map each proposed action to the effective action accepted by the execution guard and deduplicate equivalent returns. A service request that immediately triggers return cannot reserve that buoy.
+
+\subsection{Pricing a timely observation}
+At one decision epoch, let A be a common pool of mission options, including return. A sensing option specifies an observer, target, observation time, and reporting slot. Its observation Y includes late and failed reports. For each outcome, propagate time, battery and queue changes caused by sensing. Reapply the feasibility check to the original pool. Let U be the expected downstream utility, and c the immediate loss during sensing, expressed in the utility units of (5). Charge each cost exactly once.
+
+\begin{equation}\begin{aligned}V(s)={}&\mathbb E_Y[\max_{a\in A_{s,Y}}U(a\mid H_t,Y,s)]\\&-\max_{a\in A_0}U(a\mid H_t)-c(s).\end{aligned}\end{equation}
+Here A0 and As,Y are the feasible subsets before and after sensing. The expectation is taken before the report arrives. Reduced energy variance can rank many candidate measurements cheaply, but a precise estimate of a route nobody can use has little task value. Distributed observations of the same patch are scored conditional on reports already available to the team.
+
+\subsection{Rolling reinforcement learning policy}
+A masked high-level actor selects either immediate service or a feasible sensing and reporting option. After any timely report, a second masked decision selects the joint service, backhaul or return option. The observation includes candidate utilities and energy quantiles, message ages, queue deadlines, and battery margin. Train the actor and a value critic in simulation using realized reward (5). Use sampled one-step evaluation of (7) as a transparent planning baseline. The first version keeps the energy predictor frozen throughout policy training and testing. After executing one segment, carry forward physical state, buffers, estimates and the measured energy debit.
+
+\section{Analytical example and evaluation protocol}
+\subsection{When a message can change a service decision}
+Consider a constructed decision with two equally probable wind regimes. A near-buoy task has normalized utility 4 in either regime and meets the reserve constraint. A far-buoy task has utility 8 and meets reserve in mild wind, but violates reserve in strong wind. With a permitted violation probability below one half, the prior admits only the near task. A timely report that perfectly reveals the regime permits the far task in mild wind and retains the near task in strong wind. Assume sufficient margin for reporting and a utility cost c common to both outcomes. If the report arrives before commitment with probability p, independently of wind, the expected gain is 2p $-$ c. At p = 0.5 the gain is positive only for c $<$ 1. This arithmetic example isolates the roles of lead time and opportunity cost; all numbers are constructed.
+
+\subsection{Matched-policy experiment}
+Start from the research branch's two-UAV, four-buoy setting, with a 1 s physical step, a 30 s decision interval and an 1800 s mission \cite{r7}. Keep the existing packet ledger, reserve and communication accounting as the initial reference. Extend the world with a time-varying wind field, buoy motion, detection outcomes and a shared radio schedule. First place one vehicle upstream of a route for which the other must decide between an additional service and return. Replay a fixed observation with arrival just before and just after that commitment. Check that both traces agree until information becomes available and that no expired report affects an earlier action.
+
+Evaluate three policies with identical task candidates, predictors, motion primitives and resource budgets. The passive policy uses normal telemetry and routine echoes. The coverage policy assigns its sensing bonus to newly observed cells along candidate routes, with stale information eligible for renewal. The proposed policy allocates extra sensing for expected communication utility. Tune each policy on validation scenarios and freeze its settings before testing. Vary wind persistence and direction, wave-driven motion, battery margin, reporting latency, and packet urgency. Use held-out environmental realizations and separate training, validation and test missions by field and trajectory, rather than by individual time samples.
+
+\subsection{Endpoints and interpretation}
+Report paired differences across identical scenario seeds in timely shore bits, total joules, and landing reserve violations. Record energy error by forecast horizon, predictive interval coverage and width, sensing airtime, reporting delay, and actual service reassignments. Evaluate prediction error for executed routes and use matched simulator rollouts for alternative-route diagnostics. Report paired confidence intervals across independent scenarios, preserving within-scenario fleet correlation. A reduction in forecast error with unchanged task choices supports the forecast component alone. An increase in timely delivery accompanied by more reserve violations requires a matched-risk comparison.
+
+\section{Discussion and conclusion}
+The maritime scheduling problem considered here makes the value of an observation depend on both the receiving aircraft's route and the time at which the message becomes usable. A nearby UAV can supply a useful wind estimate while serving its own buoy. The same report may have negligible decision value if the second aircraft has already committed its backhaul slot. A short sensing dwell can also be valuable when buoy-motion uncertainty dominates transfer time, even when propulsion estimates at a given airspeed are accurate.
+
+The existing branch supplies the physical clock, candidate execution, battery accounting and shore-delivery records. Its active-identification experiments use stationary buoys and calm wind to estimate individual propulsion coefficients. The archived M1.5 report documents a 20,000-bit delivery regression in one scenario, and the M1.6 instructions describe a candidate-admission issue \cite{r7}. These artifacts motivate the executable-action check in Section IV. They do not provide numerical results for the environmental sensing policy specified here.
+
+The proposed evaluation separates the effect of a shared estimate on planning from the cost of producing it. Aircraft-specific power fitting, uncertainty calibration under unfamiliar winds, and measurement-error models for buoy echoes require independent validation. Claims of fleet-level benefit depend on timely shore delivery and realized energy at matched reserve risk. Full closed-loop trials of this design are pending.
+
+\begin{thebibliography}{7}
+\bibitem{r1}\href{https://doi.org/10.1109/JIOT.2025.3639003}{B. Li et al., “UAV-Enabled Joint Sensing, Communication, Powering, and Backhaul Transmission in Maritime Monitoring Networks,” IEEE Internet of Things Journal, vol. 13, no. 4, pp. 7473–7486, 2026.}
+\bibitem{r2}\href{https://arxiv.org/abs/2606.16717}{B. Li et al., “Sensing-Assisted Predictive Beamforming for UAV-Enabled Ocean Monitoring Networks,” arXiv:2606.16717, 2026.}
+\bibitem{r3}\href{https://doi.org/10.1109/TWC.2023.3292290}{X. Dai, B. Duo, X. Yuan, and M. Di Renzo, “Energy-Efficient UAV Communications in the Presence of Wind: 3D Modeling and Trajectory Design,” IEEE Transactions on Wireless Communications, vol. 23, no. 3, pp. 1840–1854, 2024.}
+\bibitem{r4}\href{https://doi.org/10.1109/IV64158.2025.11097689}{S. Fossøy, M. Haring, A. Simonsen, and E. I. Grøtli, “Estimation of Future Power Consumption for UAVs,” IEEE Intelligent Vehicles Symposium, pp. 1121–1126, 2025.}
+\bibitem{r5}\href{https://doi.org/10.1109/LRA.2024.3513036}{F. M. Rockenbauer et al., “Traversing Mars: Cooperative Informative Path Planning to Efficiently Navigate Unknown Scenes,” IEEE Robotics and Automation Letters, vol. 10, no. 2, pp. 1776–1783, 2025.}
+\bibitem{r6}\href{https://arxiv.org/abs/2607.00324}{B. Li et al., “Queue-Aware Graph Reinforcement Learning for UAV-ISAC-Assisted Maritime Data Collection,” arXiv:2607.00324, 2026.}
+\bibitem{r7}\href{https://github.com/ISAAC558345/waypoint-transformer/tree/e44e5227caa71c2bb5150fe7a1ab62c6fd7fbd05}{ISAAC558345, waypoint-transformer, maritime simulation configuration, M1.5 report, and M1.6 instructions. Research branch snapshot, November 2026.}
+\end{thebibliography}
+\end{document}
