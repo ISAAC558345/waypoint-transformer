@@ -8,11 +8,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 CONFIG_PATH = ROOT / "configs" / "experiments" / "active_model_identification_m1.json"
+M11_CONFIG_PATH = ROOT / "configs" / "experiments" / "active_model_identification_m11.json"
 
 
 @lru_cache(maxsize=1)
 def load_spec() -> dict:
     return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+
+
+@lru_cache(maxsize=1)
+def load_m11_spec() -> dict:
+    return json.loads(M11_CONFIG_PATH.read_text(encoding="utf-8"))
 
 
 def decision_count(spec: dict | None = None) -> int:

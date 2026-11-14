@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "parent_commit": "a7e917d4a54d7884487aa16f050c0cc864c96621",
+  "reviewed_m1_commit": "fbc6f2517ba0631c72df6011963fed2407ee2b25",
+  "result_dir": "results/active_model_identification_m11/m11_20261114",
+  "config_sha256": "5b116c45c1fad5c715e18170ff85db366aa56468461878a04b73a355809da635",
+  "frozen_config_sha256": "896e658808f634220200fa9fe2b23afbcc828db9e90941b76c8c44deae6b064f",
+  "scenario_manifest_sha256": "2b354b2bf6dcb46c7b179ac8d68f2be72aedfc0a1168398bca4ebea770ef9fb8",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "interface_status": "PASS",
+  "scenario_status": "INFEASIBLE",
+  "tests": {
+    "status": "PASS",
+    "ok": true,
+    "log": "results/active_model_identification_m11/m11_20261114/necessary_tests.log"
+  },
+  "integral": {
+    "theta_nodes": 15,
+    "noise_nodes": 3,
+    "tie_abs": 0.0001,
+    "measured_q_gap": 2.4507896112524463e-06,
+    "selection": "smallest registered candidate inside the pre-set tolerances; mission utility was not read"
+  },
+  "counts": {
+    "core_missions": 0,
+    "ablation_branches": 0,
+    "physical_steps": 0,
+    "ablation_physical_steps": 0,
+    "planning_steps": 0,
+    "planning_copies": 0,
+    "development_planning_steps": 345600,
+    "development_planning_copies": 11520,
+    "probe_physical_steps": 2880,
+    "return_failures": 0,
+    "training_updates": 0,
+    "model_forward_passes": 0,
+    "elapsed_s": 14.441614199997275
+  },
+  "answers": {
+    "sensitive_utility_gap": 0.0,
+    "insensitive_utility_gap": 0.0,
+    "sensitive_bits_gap": 0.0,
+    "sensitive_energy_gap_j": 0.0,
+    "sensitive_choice_differences": 0,
+    "sensitive_pairs": 0,
+    "on_sensitive_cal_s": 0.0,
+    "on_insensitive_cal_s": 0.0,
+    "off_cal_s": 0.0,
+    "calibration_snapshots": 0,
+    "ablation_utility_gap": 0.0
+  },
+  "method_means": [],
+  "accounting_note": "\u8fdc\u7aef\u56de\u4f20\u548c\u7b49\u5f85\u4fdd\u6301\u7a7a\u4e2d\u5e76\u79ef\u5206\u60ac\u505c\u63a8\u8fdb\u3002\u53ea\u6709\u5230\u8fbe\u767b\u8bb0\u673a\u576a\u3001\u901f\u5ea6\u4f4e\u4e8e\u673a\u576a\u95e8\u9650\u5e76\u5b8c\u6210 5 \u79d2\u964d\u843d\u60ac\u505c\u540e\u624d\u8f6c\u5730\u9762\u5f85\u673a\u3002\u56de\u4f20\u6210\u672c\u6309\u5f53\u524d\u98de\u884c\u72b6\u6001\u7684\u51b3\u7b56\u95f4\u9694\u60ac\u505c\u6216\u5730\u9762\u5f85\u673a\u80fd\u8017\u8ba1\u7b97\uff0c\u4e0d\u518d\u4f7f\u7528 80 J \u5e38\u6570\u3002\u5b8c\u6574\u5305\u7684\u5230\u5cb8\u65f6\u523b\u662f\u8be5\u5206\u7247 LoRa \u7ed3\u675f\u65f6\u523b\u3002\u4efb\u52a1\u7ec8\u6001\u5206\u5f00\u8bb0\u5f55\u672a\u8fd4\u822a\u3001\u672a\u964d\u843d\u3001\u4f4e\u4e8e\u4f59\u91cf\u548c\u80fd\u91cf\u8017\u5c3d\u3002",
+  "terminal_note": "\u5355\u51b3\u7b56\u95f4\u9694\u7269\u7406\u5c55\u5f00\uff0c\u52a0\u53ea\u5728\u9884\u8ba1\u56de\u4f20\u3001\u8fd4\u822a\u3001\u964d\u843d\u548c\u4f59\u91cf\u90fd\u653e\u5f97\u4e0b\u65f6\u8ba1\u5165\u7684\u7f13\u5b58\u6bd4\u7279\u3002\u672a\u8ba1\u4e24\u673a\u4fe1\u9053\u4e89\u7528\u3002\u4e0d\u662f\u7cbe\u786e\u8d1d\u53f6\u65af\u6700\u4f18\u3002",
+  "mechanism_note": "\u4fee\u6b63\u540e\u7684\u767b\u8bb0\u7535\u91cf\u516c\u5f0f\u4e0d\u80fd\u6784\u6210\u51b3\u7b56\u654f\u611f\u548c\u4e0d\u654f\u611f\u4e24\u7c7b\u4efb\u52a1\uff0c\u6240\u4ee5\u540c\u89c4\u5212\u5668\u7684 16 \u6761\u822a\u6b21\u548c\u4fe1\u606f\u6d88\u878d\u90fd\u6ca1\u6709\u8fd0\u884c\u3002",
+  "next_step": "\u4e0b\u4e00\u6b65\u9700\u8981\u4e00\u6761\u65b0\u7684\u9884\u6ce8\u518c\u9884\u7b97\u89c4\u5219\uff0c\u4f7f\u654f\u611f\u7535\u91cf\u5728\u5148\u9a8c 0.95 \u5206\u4f4d\u4e0b\u4e0d\u5141\u8bb8\u9ad8\u4ef7\u503c\u822a\u7a0b\uff0c\u540c\u65f6\u4fee\u6b63\u540e\u7684\u6821\u51c6\u52a0\u8fdc\u822a\u7a0b\u94fe\u4ecd\u7136\u80fd\u591f\u9001\u8fbe\u3002\u672c\u8f6e\u6ca1\u6709\u6539\u51e0\u4f55\u3001\u5305\u91cf\u6216\u566a\u58f0\u6765\u5236\u9020\u5bf9\u7167\u3002",
+  "commands": {
+    "tests": "py -3 -m unittest tests.test_active_model_identification_m11 tests.test_active_model_identification_m1 -v",
+    "trial": "py -3 -m wt.active_model_identification.run_m11 --tests-log results/active_model_identification_m11/m11_20261114/necessary_tests.log",
+    "pythonpath": "src"
+  },
+  "failure": "Recomputed sensitive battery allows the high-value service under the prior guard, so the registered chain-cost formula does not create the decision-sensitive class.",
+  "git": {
+    "head": "a7e917d4a54d7884487aa16f050c0cc864c96621",
+    "m11_status_lines": [
+      " M src/wt/active_model_identification/belief.py",
+      " M src/wt/active_model_identification/policies.py",
+      " M src/wt/active_model_identification/scenarios.py",
+      " M src/wt/active_model_identification/spec.py",
+      " M src/wt/active_model_identification/world.py",
+      " M tests/test_active_model_identification_m1.py",
+      "?? configs/experiments/active_model_identification_m11.json",
+      "?? src/wt/active_model_identification/integral.py",
+      "?? src/wt/active_model_identification/report_m11.py",
+      "?? src/wt/active_model_identification/run_m11.py",
+      "?? tests/test_active_model_identification_m11.py"
+    ]
+  },
+  "comparison_run": false,
+  "diagnosis": {
+    "chain_theta_1_j": 46956.035109573495,
+    "sensitive_battery_j": 52156.035109573495,
+    "insensitive_battery_j": 70355.51783623747,
+    "guard_theta": 1.3380386820934738,
+    "old_sensitive_battery_j": 46982.23981722261,
+    "old_chain_energy_left_j": 2883.1,
+    "equal_width_narrow_mean": 1.2705687273300423,
+    "variance_tol": 5e-05
+  }
+}

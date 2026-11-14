@@ -109,7 +109,13 @@ def fixed_model_belief(spec: dict) -> Belief:
     return Belief(float(block["fixed_model_mu"]), 1.0 / (std * std), lo, hi)
 
 
-def quadrature(belief: Belief, nodes: int) -> list[tuple[float, float]]:
+def equal_width_quadrature(belief: Belief, nodes: int) -> list[tuple[float, float]]:
+    """Support-wide midpoints. A narrow kernel leaves most nodes in the tails.
+
+    For a kernel centered at 1.25 with standard deviation 0.02 on [0.8, 1.4],
+    seven midpoints renormalize to a mean near 1.2706 instead of the truncated
+    mean. Callers that need the expectation use ``quadrature``.
+    """
     if nodes < 3:
         raise ValueError("quadrature nodes")
     width = (belief.hi - belief.lo) / nodes
@@ -119,6 +125,72 @@ def quadrature(belief: Belief, nodes: int) -> list[tuple[float, float]]:
     if total <= 0.0:
         raise ValueError("quadrature weight")
     return [(theta, weight / total) for theta, weight in zip(points, weights)]
+
+
+def quadrature(belief: Belief, nodes: int) -> list[tuple[float, float]]:
+    """Equal-probability nodes of the truncated belief.
+
+    Nodes sit at the midpoint quantiles, so a narrow posterior is sampled
+    where its mass is. Weights are the bin probabilities.
+    """
+    if nodes < 3:
+        raise ValueError("quadrature nodes")
+    weight = 1.0 / nodes
+    points = [belief.quantile((index + 0.5) * weight) for index in range(nodes)]
+    return [(theta, weight) for theta in points]
+
+
+def expectation(belief: Belief, nodes: int, function) -> float:
+    return math.fsum(weight * float(function(theta)) for theta, weight in quadrature(belief, nodes))
+
+
+# Physicist Gauss-Hermite nodes for weight exp(-x^2), n=5.
+# Standard-normal nodes are sqrt(2) * x and weights are w / sqrt(pi).
+_PHYSICIST_HERMITE_5 = (
+    (0.0, 0.9453087204829419),
+    (0.9585724646138185, 0.39361932315224115),
+    (-0.9585724646138185, 0.39361932315224115),
+    (2.0201828704560856, 0.019953242059045913),
+    (-2.0201828704560856, 0.019953242059045913),
+)
+
+
+def gaussian_quadrature(sigma: float, nodes: int) -> list[tuple[float, float]]:
+    """Nodes for epsilon ~ N(0, sigma^2). n=3 and n=5 are Gauss-Hermite.
+
+    A one-node rule is the zero-noise mean observation. It is not the
+    expectation of a nonlinear function of the future measurement.
+    """
+    if sigma <= 0.0:
+        raise ValueError("noise scale")
+    if nodes == 1:
+        return [(0.0, 1.0)]
+    if nodes == 3:
+        scale = math.sqrt(3.0) * sigma
+        return [(-scale, 1.0 / 6.0), (0.0, 2.0 / 3.0), (scale, 1.0 / 6.0)]
+    if nodes == 5:
+        root = math.sqrt(2.0) * sigma
+        scale = math.sqrt(math.pi)
+        return [(root * x, weight / scale) for x, weight in _PHYSICIST_HERMITE_5]
+    if nodes < 3:
+        raise ValueError("noise nodes")
+    weight = 1.0 / nodes
+    points = []
+    for index in range(nodes):
+        probability = (index + 0.5) * weight
+        points.append(sigma * _standard_quantile(probability))
+    return [(point, weight) for point in points]
+
+
+def _standard_quantile(probability: float) -> float:
+    left, right = -8.0, 8.0
+    for _ in range(80):
+        mid = 0.5 * (left + right)
+        if normal_cdf(mid) < probability:
+            left = mid
+        else:
+            right = mid
+    return 0.5 * (left + right)
 
 
 def telemetry_y(true_drop_j: float, aux_j: float, epsilon_j: float) -> float:

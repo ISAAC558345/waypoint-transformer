@@ -1,0 +1,111 @@
+{
+  "theta_nodes": 15,
+  "noise_nodes": 3,
+  "tie_abs": 0.0001,
+  "measured_q_gap": 2.4507896112524463e-06,
+  "moment_checks": [
+    {
+      "theta_nodes": 7,
+      "passed": false,
+      "cases": [
+        {
+          "analytic_mean": 1.1,
+          "analytic_variance": 0.020521072777179718,
+          "node_mean": 1.1,
+          "node_variance": 0.019198908871602947,
+          "reference_mean": 1.1,
+          "mean_abs_error": 0.0,
+          "variance_abs_error": 0.001322163905576771,
+          "reference_mean_abs_error": 0.0,
+          "equal_width_7_mean": 1.1,
+          "case": "wide_prior"
+        },
+        {
+          "analytic_mean": 1.2499999999999951,
+          "analytic_variance": 0.0003999999999992697,
+          "node_mean": 1.2499999999999984,
+          "node_variance": 0.0003323012133699355,
+          "reference_mean": 1.249999999999998,
+          "mean_abs_error": 3.3306690738754696e-15,
+          "variance_abs_error": 6.76987866293342e-05,
+          "reference_mean_abs_error": 2.886579864025407e-15,
+          "equal_width_7_mean": 1.2705687273300423,
+          "case": "narrow_interior"
+        },
+        {
+          "analytic_mean": 0.8480941351898481,
+          "analytic_variance": 0.0011488368641375717,
+          "node_mean": 0.8472271839347175,
+          "node_variance": 0.000979362766525103,
+          "reference_mean": 0.8480313811412704,
+          "mean_abs_error": 0.000866951255130588,
+          "variance_abs_error": 0.00016947409761246864,
+          "reference_mean_abs_error": 6.275404857769562e-05,
+          "equal_width_7_mean": 0.8510936910958202,
+          "case": "lower_edge"
+        }
+      ]
+    },
+    {
+      "theta_nodes": 15,
+      "passed": false,
+      "cases": [
+        {
+          "analytic_mean": 1.1,
+          "analytic_variance": 0.020521072777179718,
+          "node_mean": 1.1,
+          "node_variance": 0.02018452064595974,
+          "reference_mean": 1.1,
+          "mean_abs_error": 0.0,
+          "variance_abs_error": 0.00033655213121997624,
+          "reference_mean_abs_error": 0.0,
+          "equal_width_7_mean": 1.1,
+          "case": "wide_prior"
+        },
+        {
+          "analytic_mean": 1.2499999999999951,
+          "analytic_variance": 0.0003999999999992697,
+          "node_mean": 1.2499999999999984,
+          "node_variance": 0.00036750062997258564,
+          "reference_mean": 1.249999999999998,
+          "mean_abs_error": 3.3306690738754696e-15,
+          "variance_abs_error": 3.249937002668406e-05,
+          "reference_mean_abs_error": 2.886579864025407e-15,
+          "equal_width_7_mean": 1.2705687273300423,
+          "case": "narrow_interior"
+        },
+        {
+          "analytic_mean": 0.8480941351898481,
+          "analytic_variance": 0.0011488368641375717,
+          "node_mean": 0.847709288819364,
+          "node_variance": 0.0010670346774088522,
+          "reference_mean": 0.8480313811412704,
+          "mean_abs_error": 0.0003848463704840821,
+          "variance_abs_error": 8.180218672871947e-05,
+          "reference_mean_abs_error": 6.275404857769562e-05,
+          "equal_width_7_mean": 0.8510936910958202,
+          "case": "lower_edge"
+        }
+      ]
+    }
+  ],
+  "noise_checks": [
+    {
+      "noise_nodes": 3,
+      "passed": true,
+      "states": [
+        {
+          "state": "pad_prior",
+          "max_abs_q": 2.4507896112524463e-06
+        },
+        {
+          "state": "pad_narrow",
+          "max_abs_q": 2.1316282072803006e-14
+        }
+      ]
+    }
+  ],
+  "development_planning_copies": 11520,
+  "development_planning_steps": 345600,
+  "selection": "smallest registered candidate inside the pre-set tolerances; mission utility was not read"
+}

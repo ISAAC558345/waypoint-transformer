@@ -1,0 +1,343 @@
+{
+  "scenario_status": "INFEASIBLE",
+  "failure": "Recomputed sensitive battery allows the high-value service under the prior guard, so the registered chain-cost formula does not create the decision-sensitive class.",
+  "scenarios": [],
+  "budget": {
+    "integration_factor": 1.0153003641238145,
+    "reserve_j": 4000.0,
+    "margin_j": 1200.0,
+    "sensitive_battery_j": [
+      52156.035109573495,
+      52156.035109573495
+    ],
+    "insensitive_battery_j": [
+      70355.51783623747,
+      70355.51783623747
+    ],
+    "probes": [
+      {
+        "uav": 0,
+        "theta_1": {
+          "chain_j": 46956.035109573495,
+          "far_j": 42328.261828784285,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        },
+        "theta_1_4": {
+          "chain_j": 65155.51783623748,
+          "far_j": 58736.641946922755,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        }
+      },
+      {
+        "uav": 1,
+        "theta_1": {
+          "chain_j": 46956.035109573495,
+          "far_j": 42328.261828784285,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        },
+        "theta_1_4": {
+          "chain_j": 65155.51783623748,
+          "far_j": 58736.641946922755,
+          "chain_return_failures": 0,
+          "far_return_failures": 0
+        }
+      }
+    ],
+    "probe_battery_j": 10000000.0,
+    "probe_intervals": 96,
+    "probe_physical_steps": 2880,
+    "probe_note": "Sentinel-battery probes and the predicate checks measure route cost before the trial. They are not mission samples.",
+    "sensitive_predicates": [
+      {
+        "uav": 0,
+        "guard_theta": 1.3380386820934738,
+        "far_allowed_under_prior": true,
+        "near_allowed_under_prior": true
+      },
+      {
+        "uav": 1,
+        "guard_theta": 1.3380386820934738,
+        "far_allowed_under_prior": true,
+        "near_allowed_under_prior": true
+      }
+    ],
+    "insensitive_predicates": [
+      {
+        "uav": 0,
+        "guard_theta": 1.3380386820934738,
+        "far_allowed_under_prior": true,
+        "near_allowed_under_prior": true
+      },
+      {
+        "uav": 1,
+        "guard_theta": 1.3380386820934738,
+        "far_allowed_under_prior": true,
+        "near_allowed_under_prior": true
+      }
+    ],
+    "sensitive_chain": [
+      {
+        "uav": 0,
+        "delivers": true,
+        "detail": ""
+      },
+      {
+        "uav": 1,
+        "delivers": true,
+        "detail": ""
+      }
+    ],
+    "separates": false
+  },
+  "old_budget_audit": {
+    "present": true,
+    "source": "results/active_model_identification_m1/m1_20261113/scenario_manifest.json",
+    "sha256": "677bfab28b16ecdc14f75bf5b772a391aa745ef131b5e65555f221093ee2aa09",
+    "old_sensitive_battery_j": [
+      46982.23981722261,
+      46982.23981722261
+    ],
+    "old_insensitive_battery_j": [
+      63160.20442694636,
+      63160.20442694636
+    ],
+    "old_sensitive_predicates_under_corrected_physics": [
+      {
+        "uav": 0,
+        "guard_theta": 1.3380386820934738,
+        "far_allowed_under_prior": false,
+        "near_allowed_under_prior": true
+      },
+      {
+        "uav": 1,
+        "guard_theta": 1.3380386820934738,
+        "far_allowed_under_prior": false,
+        "near_allowed_under_prior": true
+      }
+    ],
+    "old_insensitive_predicates_under_corrected_physics": [
+      {
+        "uav": 0,
+        "guard_theta": 1.3380386820934738,
+        "far_allowed_under_prior": true,
+        "near_allowed_under_prior": true
+      },
+      {
+        "uav": 1,
+        "guard_theta": 1.3380386820934738,
+        "far_allowed_under_prior": true,
+        "near_allowed_under_prior": true
+      }
+    ],
+    "old_sensitive_chain_under_corrected_physics": [
+      {
+        "uav": 0,
+        "delivers": false,
+        "detail": "calibration then high-value service failed for uav 0: failed=False delivered=False energy=2883.1"
+      },
+      {
+        "uav": 1,
+        "delivers": false,
+        "detail": "calibration then high-value service failed for uav 1: failed=False delivered=False energy=2883.1"
+      }
+    ],
+    "note": "Old batteries are audited under the corrected model and are not reused as the M1.1 initial energy."
+  },
+  "task_effects": [
+    {
+      "id": "b1_sensitive",
+      "condition": "sensitive",
+      "uavs": [
+        {
+          "uav": 0,
+          "true_theta": 1.0,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        },
+        {
+          "uav": 1,
+          "true_theta": 1.0,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        }
+      ]
+    },
+    {
+      "id": "b1_insensitive",
+      "condition": "insensitive",
+      "uavs": [
+        {
+          "uav": 0,
+          "true_theta": 1.0,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        },
+        {
+          "uav": 1,
+          "true_theta": 1.0,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        }
+      ]
+    },
+    {
+      "id": "b2_sensitive",
+      "condition": "sensitive",
+      "uavs": [
+        {
+          "uav": 0,
+          "true_theta": 1.25,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        },
+        {
+          "uav": 1,
+          "true_theta": 1.25,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        }
+      ]
+    },
+    {
+      "id": "b2_insensitive",
+      "condition": "insensitive",
+      "uavs": [
+        {
+          "uav": 0,
+          "true_theta": 1.25,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        },
+        {
+          "uav": 1,
+          "true_theta": 1.25,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        }
+      ]
+    },
+    {
+      "id": "b3_sensitive",
+      "condition": "sensitive",
+      "uavs": [
+        {
+          "uav": 0,
+          "true_theta": 1.0,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        },
+        {
+          "uav": 1,
+          "true_theta": 1.25,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        }
+      ]
+    },
+    {
+      "id": "b3_insensitive",
+      "condition": "insensitive",
+      "uavs": [
+        {
+          "uav": 0,
+          "true_theta": 1.0,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        },
+        {
+          "uav": 1,
+          "true_theta": 1.25,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        }
+      ]
+    },
+    {
+      "id": "b4_sensitive",
+      "condition": "sensitive",
+      "uavs": [
+        {
+          "uav": 0,
+          "true_theta": 1.25,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        },
+        {
+          "uav": 1,
+          "true_theta": 1.0,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        }
+      ]
+    },
+    {
+      "id": "b4_insensitive",
+      "condition": "insensitive",
+      "uavs": [
+        {
+          "uav": 0,
+          "true_theta": 1.25,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        },
+        {
+          "uav": 1,
+          "true_theta": 1.0,
+          "far_physical": true,
+          "near_physical": true,
+          "far_under_prior_guard": true,
+          "near_under_prior_guard": true
+        }
+      ]
+    }
+  ],
+  "diagnosis_scenarios_not_run": [
+    "b1_sensitive",
+    "b1_insensitive",
+    "b2_sensitive",
+    "b2_insensitive",
+    "b3_sensitive",
+    "b3_insensitive",
+    "b4_sensitive",
+    "b4_insensitive"
+  ],
+  "integral_selection": {
+    "theta_nodes": 15,
+    "noise_nodes": 3,
+    "tie_abs": 0.0001,
+    "measured_q_gap": 2.4507896112524463e-06
+  }
+}

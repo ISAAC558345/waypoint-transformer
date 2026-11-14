@@ -18,7 +18,8 @@ from wt.active_model_identification.belief import (  # noqa: E402
     telemetry_y,
 )
 from wt.active_model_identification.policies import select_actions  # noqa: E402
-from wt.active_model_identification.scenarios import build_scenarios  # noqa: E402
+from wt.active_model_identification.physics import measure_integration_factor  # noqa: E402
+from wt.active_model_identification.scenarios import assess_budgets  # noqa: E402
 from wt.active_model_identification.spec import load_spec  # noqa: E402
 from wt.active_model_identification.world import advance, make_world  # noqa: E402
 
@@ -93,7 +94,7 @@ class AccountingTests(unittest.TestCase):
 
     def test_packet_is_credited_once(self) -> None:
         spec = load_spec()
-        _scenarios, _budget, factor = build_scenarios(spec)
+        factor = measure_integration_factor()
         from wt.active_model_identification.scenarios import _point_belief, _run, _service_script
 
         beliefs = [_point_belief(spec, 1.0), _point_belief(spec, 1.0)]
@@ -134,28 +135,19 @@ class PlannerTests(unittest.TestCase):
 
     def test_budget_and_scheduler_choices(self) -> None:
         spec = load_spec()
-        scenarios, budget, factor = build_scenarios(spec)
-        self.assertGreater(budget["integration_factor"], 1.0)
-        self.assertLess(budget["integration_factor"], 1.5)
-        self.assertEqual(len(scenarios), 8)
-        sensitive = next(item for item in scenarios if item["id"] == "b1_sensitive")
-        insensitive = next(item for item in scenarios if item["id"] == "b1_insensitive")
-        for scenario, expect_calibrate, expect_far in (
-            (sensitive, True, False),
-            (insensitive, False, True),
-        ):
-            world = make_world(spec, scenario["battery_j"], scenario["id"])
-            beliefs = [prior_belief(spec), prior_belief(spec)]
-            passive = select_actions("passive", world, beliefs, spec, factor, 0, None)
-            fixed = select_actions("fixed_calibration", world, beliefs, spec, factor, 0, None)
-            lookahead = select_actions("finite_lookahead", world, [item.copy() for item in beliefs], spec, factor, 0, None)
-            self.assertTrue(all(action[0] != "calibrate" for action in passive))
-            self.assertTrue(all(action[0] == "calibrate" for action in fixed))
-            self.assertEqual(any(action[0] == "calibrate" for action in lookahead), expect_calibrate)
-            far_ids = {1, 3}
-            requested_far = any(action[0] == "service" and action[1] in far_ids for action in lookahead)
-            self.assertEqual(requested_far, expect_far)
-            self.assertEqual(world.uavs[0].energy_j, scenario["battery_j"][0])
+        assessed = assess_budgets(spec)
+        self.assertGreater(assessed["integration_factor"], 1.0)
+        self.assertLess(assessed["integration_factor"], 1.5)
+        self.assertFalse(assessed["separates"])
+        self.assertIn("prior guard", assessed["reason"])
+        world = make_world(spec, [1.0e7, 1.0e7], "scheduler")
+        beliefs = [prior_belief(spec), prior_belief(spec)]
+        factor = assessed["integration_factor"]
+        passive = select_actions("passive", world, beliefs, spec, factor, 0, None)
+        fixed = select_actions("fixed_calibration", world, beliefs, spec, factor, 0, None)
+        self.assertTrue(all(action[0] != "calibrate" for action in passive))
+        self.assertTrue(all(action[0] == "calibrate" for action in fixed))
+        self.assertEqual(world.uavs[0].energy_j, 1.0e7)
 
 
 if __name__ == "__main__":

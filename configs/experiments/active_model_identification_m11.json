@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "status": "executable_m11",
+  "parent_commit": "a7e917d4a54d7884487aa16f050c0cc864c96621",
+  "reviewed_m1_commit": "fbc6f2517ba0631c72df6011963fed2407ee2b25",
+  "reference_base": "fe3b8c023df34d91eac9e3ece026c2e7f2d84ef4",
+  "instruction": "docs/research/Active_Model_Identification_M11_Instructions_CN.md",
+  "time": {
+    "dt_s": 1,
+    "decision_s": 30,
+    "mission_s": 1800,
+    "landing_s": 5,
+    "source": "Paper Table II and the M1 contract. Landing hover remains 5 s and only starts at a registered pad."
+  },
+  "motion": {
+    "cruise_m_s": 18,
+    "accel_m_s2": 2,
+    "altitude_m": 100,
+    "pad_radius_m": 12.0,
+    "pad_speed_m_s": 1.0,
+    "wind_xy_m_s": [0.0, 0.0],
+    "wind_source": "Synthetic calm. Wind is not estimated in M1.1.",
+    "start_state": "Landed at the registered pad. Remote backhaul and wait stay airborne and keep hover propulsion. Only return, after the pad radius and speed gates and the landing hover, turns propulsion off."
+  },
+  "geometry": {
+    "area_m": [2000, 2000],
+    "shore_xy": [0.0, 0.0],
+    "note": "Same pads and buoys as M1. Geometry is not refit after the accounting correction.",
+    "uavs": [
+      {"home_xy": [150.0, 400.0], "near_buoy": 0, "far_buoy": 1},
+      {"home_xy": [150.0, 1600.0], "near_buoy": 2, "far_buoy": 3}
+    ],
+    "buoys": [
+      {"id": 0, "role": "low_value", "xy": [150.0, 900.0], "packets": 2, "bits_each": 10000},
+      {"id": 1, "role": "high_value", "xy": [1850.0, 400.0], "packets": 2, "bits_each": 25000},
+      {"id": 2, "role": "low_value", "xy": [150.0, 1250.0], "packets": 2, "bits_each": 10000},
+      {"id": 3, "role": "high_value", "xy": [1850.0, 1600.0], "packets": 2, "bits_each": 25000}
+    ]
+  },
+  "belief": {
+    "support": [0.8, 1.4],
+    "prior_mu": 1.1,
+    "prior_kernel_std": 0.18,
+    "sigma_j": 180.0,
+    "guard_probability": 0.95,
+    "quadrature_nodes": 7,
+    "quadrature": "Equal-probability quantile nodes of the truncated belief. The count may step to the next registered candidate before the trial if the moment tolerance fails. Equal-width support nodes are retained only as the known narrow-posterior counterexample.",
+    "fixed_model_mu": 1.0,
+    "fixed_model_kernel_std": 0.000001,
+    "source": "Support matches Table II. Kernel std and noise stay the M1 synthetic contract."
+  },
+  "utility": {
+    "b_ref_bits": 10000.0,
+    "e_ref_j": 3600.0,
+    "lambda_e": 0.01,
+    "formula": "J = on_time_bits / b_ref - lambda_e * sum_m energy_used_j / e_ref",
+    "source": "Same shape as paper equation (7). Scales stay the M1 values."
+  },
+  "energy": {
+    "reserve_j": 4000.0,
+    "budget_margin_j": 1200.0,
+    "compute_w": 5.0,
+    "ground_idle_w": 1.0,
+    "bulk_tx_w": 0.5,
+    "bulk_rx_w": 0.2,
+    "bulk_range_m": 80.0,
+    "bulk_rate_bps": 250000.0,
+    "bulk_source": "Synthetic short-range data-product radio. Not LoRa and not an old service radius.",
+    "battery_rule": "Recompute with the corrected airborne backhaul. Sensitive initial energy is the simulated cost of calibration then the high-value trip at theta=1, plus reserve and margin. Insensitive initial energy is the same chain at the support endpoint 1.4, plus reserve and margin. Old M1 joule values are an audit input, not a reason to keep a budget that fails these predicates."
+  },
+  "radio": {
+    "reuse": "LoRa airtime, current and the M0A k=4/3 horizon. Commands, acks and telemetry are LoRa. The bulk product is not credited on LoRa.",
+    "command_bytes": 32,
+    "telemetry_bytes": 64,
+    "backhaul_chunk_bytes": 200
+  },
+  "lookahead": {
+    "explicit_depth_intervals": 1,
+    "terminal": "One decision interval of physical rollout plus an analytic terminal. Cached bits count only when predicted LoRa airtime, the occupied backhaul intervals, return travel, landing hover and reserve all fit. The terminal ignores cross-UAV channel contention. gamma=1. Not an exact Bayes optimum.",
+    "coordinate_wise": true,
+    "other_uav_action_while_scoring": "wait",
+    "noise": "Future telemetry noise is Gauss-Hermite or, for a reference grid larger than 5, equal-probability normal nodes. Zero noise is not the planning expectation."
+  },
+  "integral": {
+    "theta_candidates": [7, 15],
+    "theta_reference_nodes": 81,
+    "theta_mean_abs_tol": 0.002,
+    "theta_variance_abs_tol": 0.00005,
+    "noise_candidates": [3, 5],
+    "noise_reference_nodes": 21,
+    "q_abs_tol": 0.01,
+    "tie_abs": 0.0001,
+    "tie_rule": "Among scores within tie_abs, pick service by ascending buoy id, then backhaul, return, wait, calibrate. This band is fixed here and is not widened to the measured Q gap.",
+    "moment_cases": [
+      {"name": "wide_prior", "mu": 1.1, "std": 0.18},
+      {"name": "narrow_interior", "mu": 1.25, "std": 0.02},
+      {"name": "lower_edge", "mu": 0.82, "std": 0.05}
+    ],
+    "development_states": [
+      {
+        "name": "pad_prior",
+        "belief": "prior",
+        "battery_j": 10000000,
+        "note": "Sentinel battery for the integral check. Not a mission sample."
+      },
+      {
+        "name": "pad_narrow",
+        "belief": {"mu": 1.25, "std": 0.02},
+        "battery_j": 10000000,
+        "note": "Narrow interior kernel on the same sentinel state."
+      }
+    ],
+    "selection": "Smallest registered candidate that meets the tolerances on these cases. Do not read mission utility."
+  },
+  "methods": ["lookahead_calibration_on", "lookahead_calibration_off"],
+  "matched_planner": "Both methods call the same finite lookahead. The only switch is whether calibrate is in the candidate set.",
+  "scenarios": [
+    {"base": "b1", "theta": [1.0, 1.0], "seed": 1101},
+    {"base": "b2", "theta": [1.25, 1.25], "seed": 1102},
+    {"base": "b3", "theta": [1.0, 1.25], "seed": 1103},
+    {"base": "b4", "theta": [1.25, 1.0], "seed": 1104}
+  ],
+  "conditions": ["sensitive", "insensitive"],
+  "ablation": "At most the first calibration in each sensitive base, from the calibration-on mission. Two continuations share the post-calibration physical state and then forbid further calibration."
+}

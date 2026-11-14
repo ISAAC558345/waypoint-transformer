@@ -1,0 +1,21 @@
+{
+  "parent_commit": "a7e917d4a54d7884487aa16f050c0cc864c96621",
+  "reviewed_m1_commit": "fbc6f2517ba0631c72df6011963fed2407ee2b25",
+  "head_at_run": "a7e917d4a54d7884487aa16f050c0cc864c96621",
+  "config_sha256": "5b116c45c1fad5c715e18170ff85db366aa56468461878a04b73a355809da635",
+  "frozen_config_sha256": "896e658808f634220200fa9fe2b23afbcc828db9e90941b76c8c44deae6b064f",
+  "scenario_manifest_sha256": "2b354b2bf6dcb46c7b179ac8d68f2be72aedfc0a1168398bca4ebea770ef9fb8",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "seed_rule": "observation noise is Random(f'm1-obs-{scenario_seed}-{uav}-{interval}') and does not depend on action order; planning noise is the registered deterministic quadrature",
+  "core_missions": 0,
+  "ablation_branches": 0,
+  "physical_steps": 0,
+  "ablation_physical_steps": 0,
+  "planning_steps": 0,
+  "planning_copies": 0,
+  "development_planning_steps": 345600,
+  "probe_physical_steps": 2880,
+  "elapsed_s": 14.441614199997275,
+  "training_updates": 0,
+  "scenario_status": "INFEASIBLE"
+}

@@ -11,7 +11,7 @@ from dataclasses import dataclass, field
 
 from wt.ocean_observation_m0.parameters import MAC_GUARD_S
 from wt.ocean_observation_m0.radio import lora_time_on_air_s, rx_power_w, tx_power_w
-from wt.ocean_observation_m0.flight import hover_power_w
+from wt.ocean_observation_m0.flight import hover_power_w, propulsion_power_w
 
 from wt.active_model_identification.belief import Belief, telemetry_y
 from wt.active_model_identification.physics import (
@@ -79,6 +79,8 @@ class World:
     shore_radio_j: float = 0.0
     buoy_radio_j: float = 0.0
     interval_windows: list[tuple[int, float, float]] = field(default_factory=list)
+    assimilated_ids: list[str] = field(default_factory=list)
+    deliveries: list[dict] = field(default_factory=list)
 
     def snapshot(self) -> "World":
         cloned = World(
@@ -95,6 +97,8 @@ class World:
             shore_radio_j=self.shore_radio_j,
             buoy_radio_j=self.buoy_radio_j,
             interval_windows=list(self.interval_windows),
+            assimilated_ids=list(self.assimilated_ids),
+            deliveries=[dict(item) for item in self.deliveries],
         )
         return cloned
 
@@ -186,22 +190,52 @@ def _aux_w(spec: dict, airborne: bool) -> float:
     return float(energy["compute_w"] if airborne else energy["ground_idle_w"])
 
 
+def pad_radius_m(spec: dict) -> float:
+    return float(spec["motion"].get("pad_radius_m", 12.0))
+
+
+def pad_speed_m_s(spec: dict) -> float:
+    return float(spec["motion"].get("pad_speed_m_s", 1.0))
+
+
+def pad_distance_m(uav: Uav) -> float:
+    return math.hypot(uav.x - uav.home_x, uav.y - uav.home_y)
+
+
+def _at_pad(uav: Uav, spec: dict) -> bool:
+    return pad_distance_m(uav) <= pad_radius_m(spec) and math.hypot(uav.vx, uav.vy) <= pad_speed_m_s(spec)
+
+
+def _interval_hold_j(uav: Uav, theta: float, spec: dict) -> float:
+    """Energy of holding the current flight state for one decision interval.
+
+    Airborne hold is hover propulsion plus compute. A completed landing stays
+    on ground idle. The cost depends on the state and the decision length.
+    """
+    duration = float(spec["time"]["decision_s"])
+    if uav.airborne:
+        return hover_energy_j(duration, theta, _aux_w(spec, True))
+    return _aux_w(spec, False) * duration
+
+
 def action_cost_j(uav: Uav, action: Action, theta: float, spec: dict, factor: float) -> float:
     aux = _aux_w(spec, True)
     landing = float(spec["time"]["landing_s"])
     kind, target = action
-    home_gap = math.hypot(uav.x - uav.home_x, uav.y - uav.home_y)
+    home_gap = pad_distance_m(uav)
     if kind == "wait":
-        return hover_energy_j(landing, theta, aux) if uav.airborne else 0.0
+        return _interval_hold_j(uav, theta, spec)
     if kind == "return":
+        if not uav.airborne and home_gap <= pad_radius_m(spec):
+            return _interval_hold_j(uav, theta, spec)
         return straight_energy_j(home_gap, theta, aux, factor) + hover_energy_j(landing, theta, aux)
     if kind == "backhaul":
-        return 80.0
+        return _interval_hold_j(uav, theta, spec)
     if kind == "calibrate":
-        # Measured closed pattern is about one decision of mixed cruise and hover.
-        # The guard uses hover power as a conservative stand-in plus the trip home.
-        nominal = hover_power_w() * float(spec["time"]["decision_s"])
-        return theta * nominal + aux * float(spec["time"]["decision_s"]) + straight_energy_j(home_gap, theta, aux, factor)
+        duration = float(spec["time"]["decision_s"])
+        nominal = propulsion_power_w(12.0) * 20.0 + hover_power_w() * 10.0
+        pattern = theta * nominal + aux * duration
+        return pattern + straight_energy_j(home_gap, theta, aux, factor) + hover_energy_j(landing, theta, aux)
     if kind == "service":
         if target is None:
             raise ValueError("service target")
@@ -267,33 +301,26 @@ def _return_guard(uav: Uav, action: Action, belief: Belief, spec: dict, factor: 
     return action, False
 
 
-def _desired(uav: Uav, action: Action, spec: dict, phase_s: int) -> tuple[float, float, bool]:
+def _desired_velocity(uav: Uav, action: Action, spec: dict, phase_s: int) -> tuple[float, float]:
+    """Velocity command only. Landing and propulsion are not side effects of the command."""
     kind, target = action
-    if uav.failed:
-        return 0.0, 0.0, False
-    if kind == "wait":
-        if uav.airborne and uav.land_timer_s < float(spec["time"]["landing_s"]):
-            return 0.0, 0.0, True
-        return 0.0, 0.0, False
     if kind == "calibrate":
         if phase_s < 10:
-            return 12.0, 0.0, True
+            return 12.0, 0.0
         if phase_s < 20:
-            return -12.0, 0.0, True
-        return 0.0, 0.0, True
-    if kind == "backhaul":
-        return 0.0, 0.0, False
+            return -12.0, 0.0
+        return 0.0, 0.0
+    if kind in ("backhaul", "wait"):
+        return 0.0, 0.0
     if kind == "return":
-        if math.hypot(uav.x - uav.home_x, uav.y - uav.home_y) < 12.0 and math.hypot(uav.vx, uav.vy) < 1.0:
-            return 0.0, 0.0, uav.airborne and uav.land_timer_s < float(spec["time"]["landing_s"])
-        vx, vy = seek_velocity(uav.x, uav.y, uav.home_x, uav.home_y)
-        return vx, vy, True
+        if pad_distance_m(uav) <= pad_radius_m(spec) and math.hypot(uav.vx, uav.vy) <= pad_speed_m_s(spec):
+            return 0.0, 0.0
+        return seek_velocity(uav.x, uav.y, uav.home_x, uav.home_y)
     if kind == "service":
         buoy_x, buoy_y = _buoy(spec, int(target))
         if math.hypot(buoy_x - uav.x, buoy_y - uav.y) <= float(spec["energy"]["bulk_range_m"]) and math.hypot(uav.vx, uav.vy) < 1.5:
-            return 0.0, 0.0, True
-        vx, vy = seek_velocity(uav.x, uav.y, buoy_x, buoy_y)
-        return vx, vy, True
+            return 0.0, 0.0
+        return seek_velocity(uav.x, uav.y, buoy_x, buoy_y)
     raise KeyError(kind)
 
 
@@ -337,30 +364,63 @@ def _backhaul(world: World, uav: Uav, spec: dict, step_end: float) -> None:
             if packet.remaining_bits <= 1e-6:
                 packet.remaining_bits = 0.0
                 packet.holder = "shore"
-                packet.delivered_s = world.t
+                packet.delivered_s = world.channel_busy_until
                 if packet.id in uav.cache_ids:
                     uav.cache_ids.remove(packet.id)
+                world.deliveries.append(
+                    {
+                        "id": packet.id,
+                        "buoy": packet.buoy,
+                        "bits": packet.bits,
+                        "delivered_s": packet.delivered_s,
+                        "deadline_s": packet.deadline_s,
+                        "on_time": packet.delivered_s <= packet.deadline_s + 1e-9,
+                        "uav": uav.index,
+                    }
+                )
+
+
+def _stay_landed(uav: Uav, spec: dict, theta: float) -> None:
+    uav.vx = 0.0
+    uav.vy = 0.0
+    _charge(uav, theta, 0.0, _aux_w(spec, False))
 
 
 def _move(uav: Uav, action: Action, spec: dict, theta: float, phase_s: int) -> None:
+    """One physical second. Only a finished pad landing turns propulsion off."""
     if uav.failed:
         return
-    desired_vx, desired_vy, propulsion = _desired(uav, action, spec, phase_s)
     kind, _target = action
-    if kind in ("return", "wait") and math.hypot(uav.x - uav.home_x, uav.y - uav.home_y) < 12.0 and math.hypot(uav.vx, uav.vy) < 1.0:
-        uav.land_timer_s += 1.0
-        if uav.land_timer_s > float(spec["time"]["landing_s"]):
-            propulsion = False
-            uav.airborne = False
-    elif propulsion:
+    if not uav.airborne:
+        home = pad_distance_m(uav) <= pad_radius_m(spec)
+        if kind in ("wait", "backhaul") or (kind == "return" and home):
+            _stay_landed(uav, spec, theta)
+            return
         uav.airborne = True
         uav.land_timer_s = 0.0
+    landing = (
+        kind == "return"
+        and pad_distance_m(uav) <= pad_radius_m(spec)
+        and math.hypot(uav.vx, uav.vy) <= pad_speed_m_s(spec)
+    )
+    if landing:
+        uav.land_timer_s += 1.0
     else:
-        uav.airborne = False
-    aux = _aux_w(spec, propulsion or uav.airborne)
-    x, y, vx, vy, z_j = step_kinematics(uav.x, uav.y, uav.vx, uav.vy, desired_vx, desired_vy, propulsion, 1.0)
+        uav.land_timer_s = 0.0
+    desired_vx, desired_vy = _desired_velocity(uav, action, spec, phase_s)
+    x, y, vx, vy, z_j = step_kinematics(uav.x, uav.y, uav.vx, uav.vy, desired_vx, desired_vy, True, 1.0)
     uav.x, uav.y, uav.vx, uav.vy = x, y, vx, vy
-    _charge(uav, theta, z_j, aux * 1.0)
+    _charge(uav, theta, z_j, _aux_w(spec, True))
+    touched_down = (
+        landing
+        and uav.land_timer_s + 1e-9 >= float(spec["time"]["landing_s"])
+        and pad_distance_m(uav) <= pad_radius_m(spec)
+        and math.hypot(uav.vx, uav.vy) <= pad_speed_m_s(spec)
+    )
+    if touched_down:
+        uav.airborne = False
+        uav.vx = 0.0
+        uav.vy = 0.0
 
 
 def advance(
@@ -444,31 +504,107 @@ def advance(
     world.interval_windows.append((interval_index, start, world.t))
     sigma = float(spec["belief"]["sigma_j"])
     for index, uav in enumerate(world.uavs):
-        epsilon = 0.0 if planning else float(noise_j(index, interval_index))
+        epsilon = float(noise_j(index, interval_index))
+        obs_id = f"u{index}-i{interval_index}"
         mean_before, var_before = beliefs[index].moments()
         y_j = telemetry_y(uav.true_drop_j, uav.aux_j, epsilon)
         predictive = uav.z_j * mean_before
         scale = math.sqrt(max(0.0, (uav.z_j ** 2) * var_before + sigma ** 2))
         hit = abs(y_j - predictive) <= 1.6448536269514722 * scale
-        if telemetry_sent[index]:
+        assimilated = False
+        if telemetry_sent[index] and obs_id not in world.assimilated_ids:
             beliefs[index] = beliefs[index].update(uav.z_j, y_j, sigma)
+            world.assimilated_ids.append(obs_id)
+            assimilated = True
+        mean_after, var_after = beliefs[index].moments()
         observations.append(
             {
                 "uav": index,
                 "interval": interval_index,
+                "obs_id": obs_id,
+                "x": uav.x,
+                "y": uav.y,
+                "vx": uav.vx,
+                "vy": uav.vy,
+                "speed_m_s": math.hypot(uav.vx, uav.vy),
+                "pad_distance_m": pad_distance_m(uav),
+                "airborne": uav.airborne,
+                "flight_state": flight_state(uav),
+                "land_timer_s": uav.land_timer_s,
+                "energy_j": uav.energy_j,
                 "z_j": uav.z_j,
+                "aux_j": uav.aux_j,
+                "consumed_j": uav.consumed_j,
                 "y_j": y_j,
                 "prediction_error_j": y_j - predictive,
                 "mean_before": mean_before,
                 "variance_before": var_before,
+                "mean_after": mean_after,
+                "variance_after": var_after,
                 "covered_90": hit,
                 "telemetry_sent": telemetry_sent[index],
+                "assimilated": assimilated,
                 "executed": list(executed[index]),
                 "requested": list(actions[index]),
+                "intervened": option_overrode[index],
             }
         )
     _check_windows(world)
     return observations
+
+
+def flight_state(uav: Uav) -> str:
+    if uav.failed:
+        return "exhausted"
+    if not uav.airborne:
+        return "landed"
+    if uav.land_timer_s > 0.0:
+        return "landing"
+    return "airborne"
+
+
+def mission_terminal(world: World, spec: dict) -> list[dict]:
+    """Separate a finished landing from merely not having exhausted the battery."""
+    reserve = float(spec["energy"]["reserve_j"])
+    rows = []
+    for uav in world.uavs:
+        speed = math.hypot(uav.vx, uav.vy)
+        distance = pad_distance_m(uav)
+        not_returned = distance > pad_radius_m(spec)
+        not_landed = bool(uav.airborne) or speed > pad_speed_m_s(spec) or not_returned
+        below_reserve = uav.energy_j + 1e-6 < reserve
+        energy_exhausted = bool(uav.failed) or uav.energy_j <= 1e-6
+        rows.append(
+            {
+                "uav": uav.index,
+                "pad_distance_m": distance,
+                "speed_m_s": speed,
+                "airborne": uav.airborne,
+                "flight_state": flight_state(uav),
+                "land_timer_s": uav.land_timer_s,
+                "energy_j": uav.energy_j,
+                "not_returned": not_returned,
+                "not_landed": not_landed,
+                "below_reserve": below_reserve,
+                "energy_exhausted": energy_exhausted,
+                "returned": not (not_returned or not_landed or below_reserve or energy_exhausted),
+            }
+        )
+    return rows
+
+
+def tx_seconds(bits: float, spec: dict) -> float:
+    if bits <= 0.0:
+        return 0.0
+    chunk_bits = int(spec["radio"]["backhaul_chunk_bytes"]) * 8.0
+    remaining = bits
+    total = 0.0
+    while remaining > 1e-9:
+        payload_bits = min(remaining, chunk_bits)
+        payload_bytes = max(1, int(math.ceil(payload_bits / 8.0)))
+        total += lora_time_on_air_s(payload_bytes) + MAC_GUARD_S
+        remaining -= payload_bits
+    return total
 
 
 def _check_windows(world: World) -> None:

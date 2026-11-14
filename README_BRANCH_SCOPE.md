@@ -4,11 +4,11 @@
 
 ## 当前执行任务
 
-2026-11-14，用户要求在本分支继续验证主动功耗辨识方向。当前阶段为 **M1.1：物理核算修正与同规划器配对验证**，入口见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，完整任务见 [M1.1 执行指令](docs/research/Active_Model_Identification_M11_Instructions_CN.md)。
+2026-11-14，M1.1 已在本分支记录。入口见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，指令见 [M1.1 执行指令](docs/research/Active_Model_Identification_M11_Instructions_CN.md)，报告见 [M1.1 报告](docs/research/Active_Model_Identification_M11_Report_CN.md)。
 
-本次文档交接将任务设为待执行。M1.1 先修正远端回传与等待的悬停能耗、合法降落、返航终态和交付时间，再核对规划积分；复核场景并冻结配置后，用同一规划器的校准开关运行 16 条核心航次，必要的信息消融最多 8 条续跑分支，分别计数。
+远端回传与等待改为空中悬停，降落只在登记机坪完成，完整包按信道结束时刻计交付。规划积分改为等概率节点，并纳入未来观测噪声。按原链耗能公式重算后，敏感电量在先验 0.95 分位下仍允许高价值航程，两类任务没有成立。16 条核心航次和信息消融没有运行。结果在 `results/active_model_identification_m11/m11_20261114/`。
 
-新结果目录为 `results/active_model_identification_m11/<run_id>/`，新报告为 `docs/research/Active_Model_Identification_M11_Report_CN.md`。本次交接尚未产生新实现或实验结果。
+没有新的预注册预算规则之前，不要重跑这 16 条，也不要改几何或包量来制造对照。
 
 ## 已完成的 M1 与既有核查
 
