@@ -4,11 +4,17 @@
 
 ## 当前执行任务
 
-2026-11-14，M1.1 已在本分支记录。入口见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，指令见 [M1.1 执行指令](docs/research/Active_Model_Identification_M11_Instructions_CN.md)，报告见 [M1.1 报告](docs/research/Active_Model_Identification_M11_Report_CN.md)。
+2026-11-14 当前阶段为 **M1.2：完整任务成本统一与校准价值验证**。入口见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，详细步骤见 [M1.2 执行指令](docs/research/Active_Model_Identification_M12_Instructions_CN.md)。本次提交发布指令，M1.2 尚待执行。
 
-远端回传与等待改为空中悬停，降落只在登记机坪完成，完整包按信道结束时刻计交付。规划积分改为等概率节点，并纳入未来观测噪声。按原链耗能公式重算后，敏感电量在先验 0.95 分位下仍允许高价值航程，两类任务没有成立。16 条核心航次和信息消融没有运行。结果在 `results/active_model_identification_m11/m11_20261114/`。
+先统一 service 准入、终端价值、场景登记与真实完整业务链的成本和时间，复核原候选预算；修正空中 wait 的正常返航核查及积分选择状态。核查通过后冻结配置，运行同一规划器下仅切换校准权限的 16 条核心航次，最多 8 条信息消融续跑，分别计数。
 
-没有新的预注册预算规则之前，不要重跑这 16 条，也不要改几何或包量来制造对照。
+新配置为 `configs/experiments/active_model_identification_m12.json`，结果为 `results/active_model_identification_m12/<run_id>/`，报告为 `docs/research/Active_Model_Identification_M12_Report_CN.md`。不覆盖此前产物、不训练、不扩风浪或节点规模、不自动合并。
+
+## M1.1 已记录的进展与待复核判断
+
+M1.1 实现提交为 `427a360fcc9ac423dc82a687f31b8721410ff135`，见 [M1.1 报告](docs/research/Active_Model_Identification_M11_Report_CN.md) 与 `results/active_model_identification_m11/m11_20261114/`。远端回传/等待改为空中悬停，机坪降落和交付时刻得到修正，16 项必要测试通过；登记场景未通过，主试和信息消融均未运行。
+
+后续审查发现 service 准入仍漏算完整回传成本，且参数积分候选没有全部达到登记容差却回退选用。因此本轮先纠正成本与数值判定，再复核场景；不把 M1.1 的 `INFEASIBLE` 解释成已证明没有可行电量窗口，也不把未运行对照解释成零收益。原始 M1.1 文件保留。
 
 ## 已完成的 M1 与既有核查
 
@@ -20,7 +26,7 @@ M1 已于 2026-11-13 完成，历史入口为 [M1 报告](docs/research/Active_M
 
 ## 历史隔离保存记录
 
-以下保留 2026-11-04 的隔离背景，其“暂不执行”状态已被上面的 M1 与 M1.1 指令在指定范围内更新。历史 M0、M0A、M0B 结果和原始来源清单仍作为各自证据保留。
+以下保留 2026-11-04 的隔离背景，其“暂不执行”状态已被上面的 M1、M1.1 与 M1.2 指令在指定范围内更新。历史 M0、M0A、M0B 结果和原始来源清单仍作为各自证据保留。
 
 分支：`research/ocean-observation-isolated`。依据用户2026-11-04当时的指令，新方案暂不继续修改或执行，未来是否合并原系统由用户另行决定。
 
@@ -31,4 +37,5 @@ M1 已于 2026-11-13 完成，历史入口为 [M1 报告](docs/research/Active_M
 旧系统在 [独立维护分支](https://github.com/ISAAC558345/waypoint-transformer/tree/feature/legacy-system-maintenance) 继续完善。原正式分支和已有研究分支均保留。当前不要根据历史交接自动推进新方案，不创建自动合并流程。
 
 文件与来源清单见 `BRANCH_ISOLATION_MANIFEST.json`。2026-11-04 的分支整理本身未运行新方案测试、训练或仿真。
+
 
