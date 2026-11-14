@@ -4,11 +4,21 @@
 
 ## 当前执行任务
 
-2026-11-14 **M1.2 诊断已完成并停止**。入口见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，结果见 [M1.2 报告](docs/research/Active_Model_Identification_M12_Report_CN.md) 与 `results/active_model_identification_m12/m12_20261114/`。
+2026-11-14 当前阶段为 **M1.3：三档资源下的闭环试跑**。入口见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)，完整步骤见 [M1.3 执行指令](docs/research/Active_Model_Identification_M13_Instructions_CN.md)。本次文档交接尚未执行 M1.3。
 
-完整业务报价与同一低层控制器一致。原敏感电量 `52,156.04 J` 保留：它落在理想脚本窗口内，但一次校准后的后验 0.95 分位成本加备用超过剩余能量。Gauss-Legendre 矩检验通过；临界任务上的动作 Q 没有达到 `0.01`，状态为 `NOT_MET`，没有回退到最后候选。16 条核心航次和信息消融未运行。
+保留原 tight/loose，按固定参考参数、观测设计点和后验完整成本公式事前登记中间 window。两个方法共享同一规划器，只切换校准权限，最多 24 核心航次、8 条 window 信息消融续跑；若 window 无效，原两档仍可运行 16 条合法任务。
 
-没有新的预注册指令前，不下调电量、不搜索场景、不补跑对照。不覆盖此前产物、不训练、不扩风浪或节点规模、不自动合并。
+临界数值优先用区间缓存和阈值分段积分改善。预算、并列和后备评分规则先冻结；本轮允许明确标注精度状态的近似策略实测，不把全部 Q 精确或代表观测校准放行作为所有航次的前提。真实 q95=0.95 与备用电量规则不变。
+
+配置与结果分别保存为 `configs/experiments/active_model_identification_m13.json`、`results/active_model_identification_m13/<run_id>/`，新报告为 `docs/research/Active_Model_Identification_M13_Report_CN.md`。不覆盖历史，不训练、不扩风浪/规模、不自动合并。
+
+## M1.2 已完成的诊断
+
+实现提交 `94f19e8a67df1bac968b3d90a92449b4ad6fd71a`，见 [M1.2 报告](docs/research/Active_Model_Identification_M12_Report_CN.md) 与 `results/active_model_identification_m12/m12_20261114/`。
+
+24 项必要测试通过，完整任务报价与实际执行一致，后验矩积分通过；原紧预算下零噪声校准后的保守分位仍不放行远任务，临界 Q 的离散积分差未满足原标准，所以主试和消融均未运行。该结果不等同于校准收益为零。
+
+M1.3 将代表观测窗口诊断与场景可运行性分开，保留原紧预算作为可能有负收益的有效任务；同时事前登记中间预算并保持实际风险规则。M1.2 代码、报告与原始结果作为历史证据保留。
 
 ## M1.1 已记录的进展与待复核判断
 
@@ -26,7 +36,7 @@ M1 已于 2026-11-13 完成，历史入口为 [M1 报告](docs/research/Active_M
 
 ## 历史隔离保存记录
 
-以下保留 2026-11-04 的隔离背景，其“暂不执行”状态已被上面的 M1、M1.1 与 M1.2 指令在指定范围内更新。历史 M0、M0A、M0B 结果和原始来源清单仍作为各自证据保留。
+以下保留 2026-11-04 的隔离背景，其“暂不执行”状态已被上面的 M1、M1.1、M1.2 与 M1.3 指令在指定范围内更新。历史 M0、M0A、M0B 结果和原始来源清单仍作为各自证据保留。
 
 分支：`research/ocean-observation-isolated`。依据用户2026-11-04当时的指令，新方案暂不继续修改或执行，未来是否合并原系统由用户另行决定。
 
@@ -37,5 +47,6 @@ M1 已于 2026-11-13 完成，历史入口为 [M1 报告](docs/research/Active_M
 旧系统在 [独立维护分支](https://github.com/ISAAC558345/waypoint-transformer/tree/feature/legacy-system-maintenance) 继续完善。原正式分支和已有研究分支均保留。当前不要根据历史交接自动推进新方案，不创建自动合并流程。
 
 文件与来源清单见 `BRANCH_ISOLATION_MANIFEST.json`。2026-11-04 的分支整理本身未运行新方案测试、训练或仿真。
+
 
 
