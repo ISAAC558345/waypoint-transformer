@@ -1,8 +1,0 @@
-{
-  "better_expected": true,
-  "better_regret": true,
-  "better_spearman": true,
-  "conflict_ok": true,
-  "gate": "OBJ-A",
-  "seed_var_ok": false
-}

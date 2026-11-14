@@ -1,1 +1,1 @@
-"""Waypoint Transformer / HTW working package."""
+"""Ocean observation research package on this branch."""

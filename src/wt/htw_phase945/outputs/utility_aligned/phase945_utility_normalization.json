@@ -1,5 +1,0 @@
-{
-  "eps": 1.0,
-  "frozen_before_val_outcomes": true,
-  "method": "median_mad"
-}

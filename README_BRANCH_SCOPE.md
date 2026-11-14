@@ -4,9 +4,9 @@
 
 ## 当前执行任务
 
-先执行[研究分支清理与仿真底座整理](CURSOR_NEXT_TASK.md)。按依赖与复现需要删减冗余，整理研究入口，用同一场景核对清理前后行为。
+2026-11-14 研究分支清理已完成。记录见 [清理记录](docs/research/Repository_Cleanup_20261114_CN.md)，运行入口见 [README.md](README.md)。
 
-[M1.6 候选分配一致性修正](docs/research/Active_Model_Identification_M16_Instructions_CN.md)保留为待办。M1.5 的 `b3_loose` 交付回退仍按原报告记录。
+[M1.6 调度修复](docs/research/Active_Model_Identification_M16_Instructions_CN.md)仍是待办。本轮没有实现它，也没有做 24 航次评估。风浪感知与能耗预测留到下一步，本轮没有开始。M1.5 的 `b3_loose` 交付回退仍按原报告记录。
 
 ## M1.5 已完成的结果
 

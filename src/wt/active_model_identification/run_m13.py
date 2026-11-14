@@ -687,12 +687,76 @@ def run_trial(out_dir: Path, tests_log: str | None, force: bool) -> dict:
     return summary
 
 
+def run_frozen_scenario(scenario_id: str, method: str, frozen_dir: Path) -> dict:
+    """Replay one frozen scenario without writing results or the M1.3 report."""
+    if method not in METHODS:
+        raise SystemExit(f"unknown method {method}; expected one of {METHODS}")
+    spec = json.loads((frozen_dir / "frozen_config.json").read_text(encoding="utf-8"))
+    manifest = json.loads((frozen_dir / "scenario_manifest.json").read_text(encoding="utf-8"))
+    scenario = next((row for row in manifest["scenarios"] if row["id"] == scenario_id), None)
+    if scenario is None:
+        known = ", ".join(row["id"] for row in manifest["scenarios"])
+        raise SystemExit(f"unknown scenario {scenario_id}; frozen manifest has {known}")
+    factor = float(manifest["budget"]["integration_factor"])
+    clear_completion_cache()
+    clear_rollout_cache()
+    stats = {
+        "physical_steps": 0,
+        "planning_steps": 0,
+        "planning_copies": 0,
+        "score_calls": 0,
+        "fallback_score_calls": 0,
+    }
+    world = make_world(spec, scenario["battery_j"], f"{scenario['id']}-{method}")
+    beliefs = [prior_belief(spec), prior_belief(spec)]
+    episode, decisions, _deliveries, _snapshot = _play(
+        method, scenario, spec, factor, stats, "core", 0, world, beliefs, []
+    )
+    return {
+        "entry": "wt.active_model_identification.run_m13",
+        "scenario_id": scenario["id"],
+        "method": method,
+        "seed": int(scenario["seed"]),
+        "theta": [float(value) for value in scenario["theta"]],
+        "condition": scenario["condition"],
+        "battery_j": [float(value) for value in scenario["battery_j"]],
+        "config": str((frozen_dir / "frozen_config.json").relative_to(ROOT)).replace("\\", "/"),
+        "manifest": str((frozen_dir / "scenario_manifest.json").relative_to(ROOT)).replace("\\", "/"),
+        "integration_factor": factor,
+        "utility": episode["utility"],
+        "on_time_bits": episode["on_time_bits"],
+        "energy_j": episode["energy_j"],
+        "return_failures": episode["return_failures"],
+        "returned": episode["returned"],
+        "not_returned": episode["not_returned"],
+        "not_landed": episode["not_landed"],
+        "below_reserve": episode["below_reserve"],
+        "energy_exhausted": episode["energy_exhausted"],
+        "actions": [
+            {
+                "epoch": int(row["epoch"]),
+                "uav": int(row["uav"]),
+                "requested": row["requested"],
+                "executed": row["executed"],
+            }
+            for row in decisions
+        ],
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default="results/active_model_identification_m13/m13_20261114")
     parser.add_argument("--tests-log", default="")
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--scenario", default="", help="Replay one frozen scenario and print it. Does not write results.")
+    parser.add_argument("--method", default=METHODS[0])
+    parser.add_argument("--frozen", default="results/active_model_identification_m13/m13_20261114")
     args = parser.parse_args()
+    if args.scenario:
+        payload = run_frozen_scenario(args.scenario, args.method, ROOT / args.frozen)
+        print(json.dumps(payload, indent=2), flush=True)
+        return
     summary = run_trial(ROOT / args.out, args.tests_log or None, args.force)
     print(
         json.dumps(
