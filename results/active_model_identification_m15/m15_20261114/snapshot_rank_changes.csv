@@ -1,0 +1,16 @@
+uav,action,legacy_rank,new_rank,snapshot,registered_class
+0,calibrate:None,0,3,b1_window,single_score
+0,return:None,1,0,b1_window,single_score
+0,service:1,2,1,b1_window,single_score
+0,service:3,3,2,b1_window,single_score
+0,calibrate:None,0,3,b4_window,single_score
+0,return:None,1,0,b4_window,single_score
+0,service:1,2,1,b4_window,single_score
+0,service:3,3,2,b4_window,single_score
+0,calibrate:None,0,4,b2_loose,single_score
+0,return:None,1,0,b2_loose,single_score
+0,service:3,2,1,b2_loose,single_score
+0,wait:None,3,2,b2_loose,single_score
+0,backhaul:None,4,3,b2_loose,single_score
+1,backhaul:None,1,2,b2_loose,single_score
+1,return:None,2,1,b2_loose,single_score

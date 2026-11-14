@@ -4,9 +4,13 @@
 
 ## 当前执行任务
 
-2026-11-14 **M1.5：无正收益业务分支的返航尾成本修正与配对评估**。从 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md) 进入，按 [M1.5 完整指令](docs/research/Active_Model_Identification_M15_Instructions_CN.md) 执行。
+2026-11-14 **M1.5 已完成**。入口状态见 [CURSOR_NEXT_TASK.md](CURSOR_NEXT_TASK.md)。结论是本轮未满足性能保留标准，默认终端模式仍是 `legacy`。没有新的明确指令时不开始下一阶段。未经用户明确允许不合并主分支、默认分支或维护分支；需修改其他分支时先询问用户。
 
-只在旧终端业务为 none 时补全返航、落地和剩余任务期地面负载成本，保持旧默认模式，新增显式候选。先做必要局部验证和六快照核对，再运行原四组 base × 三档预算 × 候选 ON/OFF 的 24 条新航次；旧核心基线复用。逐场景报告交付量与净效用，性能回退则不采用，不改电池、奖励、冲突修复或积分精度，不训练。全部结果推送当前研究分支，完成后停止，未经用户明确允许不合并主分支；需修改其他分支时先询问用户。
+## M1.5 已完成的结果
+
+2026-11-14 **M1.5 已完成**：无正收益业务分支的返航尾成本修正。报告见 [M1.5 结果](docs/research/Active_Model_Identification_M15_Report_CN.md)，结果在 `results/active_model_identification_m15/m15_20261114/`。指令见 [M1.5 指令](docs/research/Active_Model_Identification_M15_Instructions_CN.md)。
+
+候选 `return_tail_when_no_business` 只在显式打开时替换旧 none 分支的零终端。六个快照的 legacy 评分与 M1.4 保存值一致，三条 single_score 快照确认负尾进入正式 Q。24 条新航次对照 M1.3 核心基线。唯一回退是 b3_loose，同开关都少 20000 bit；其余 11 个场景 bit 与 J 不回退。该负结果保留，不改默认模式，不重跑旧基线。
 
 ## M1.4 已完成的结果
 

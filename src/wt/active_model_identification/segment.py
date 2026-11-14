@@ -23,7 +23,13 @@ from wt.active_model_identification.belief import (
     prior_belief,
     quadrature,
 )
-from wt.active_model_identification.completion import completion_quote
+from wt.active_model_identification.completion import (
+    TAIL_MODE,
+    completion_quote,
+    return_tail_nominal,
+    tail_utility,
+    terminal_mode,
+)
 from wt.active_model_identification.world import Action, World, advance, energy_used_j, make_world, on_time_bits
 
 _A = (
@@ -69,6 +75,13 @@ class Plan:
     bits: float
     ok: bool
     label: str = ""
+    kind: str = "business"
+    landed: bool = False
+    landing_s: float = -1.0
+    flight_z_j: float = 0.0
+    flight_aux_j: float = 0.0
+    ground_aux_j: float = 0.0
+    radio_j: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -164,7 +177,29 @@ def extract_plans(world: World, focus: int, spec: dict) -> tuple:
             continue
         quote = completion_quote(world, focus, buoy_id, 1.0, spec)
         plans.append(Plan(quote.z_j, quote.aux_j, quote.on_time_bits, bool(quote.finished and quote.landed and quote.on_time), f"service:{buoy_id}"))
+    if terminal_mode(spec) == TAIL_MODE:
+        tail = return_tail_nominal(world, focus, spec)
+        plans.append(
+            Plan(
+                z_j=tail.z_j,
+                aux_j=tail.aux_j,
+                bits=0.0,
+                ok=True,
+                label="return_tail",
+                kind="return_tail",
+                landed=tail.landed,
+                landing_s=-1.0 if tail.landing_s is None else float(tail.landing_s),
+                flight_z_j=tail.flight_z_j,
+                flight_aux_j=tail.flight_aux_j,
+                ground_aux_j=tail.ground_aux_j,
+                radio_j=tail.radio_j,
+            )
+        )
     return tuple(plans)
+
+
+def _is_tail(plan: Plan) -> bool:
+    return plan.kind == "return_tail" or plan.label == "return_tail"
 
 
 def _scales(spec: dict) -> tuple[float, float, float]:
@@ -176,7 +211,12 @@ def _scales(spec: dict) -> tuple[float, float, float]:
 
 
 def describe(theta: float, energy: float, plans: tuple, spec: dict, failed: bool) -> tuple[int, float, float, float]:
-    """Active plan as value = A - B * theta, or zero when nothing clears the reserve."""
+    """Active plan as value = A - B * theta.
+
+    Legacy mode returns zero when no positive admitted business clears the
+    reserve. The return-tail mode replaces only that zero. Ids -2 and -3 are
+    the feasible and battery-truncated tails, and the tail keeps its sign.
+    """
     if failed:
         return -1, 0.0, 0.0, 0.0
     reserve, bits_scale, coef = _scales(spec)
@@ -185,7 +225,7 @@ def describe(theta: float, energy: float, plans: tuple, spec: dict, failed: bool
     best_a = 0.0
     best_b = 0.0
     for index, plan in enumerate(plans):
-        if not plan.ok:
+        if _is_tail(plan) or not plan.ok:
             continue
         cost = theta * plan.z_j + plan.aux_j
         if energy + 1e-6 < cost + reserve:
@@ -196,7 +236,33 @@ def describe(theta: float, energy: float, plans: tuple, spec: dict, failed: bool
             best_id = index
             best_a = plan.bits / bits_scale - coef * plan.aux_j
             best_b = coef * plan.z_j
-    return best_id, best_a, best_b, best_net
+    if best_id >= 0 or terminal_mode(spec) != TAIL_MODE:
+        return best_id, best_a, best_b, best_net
+    tail = next((plan for plan in plans if _is_tail(plan)), None)
+    if tail is None:
+        return best_id, best_a, best_b, best_net
+    value, truncated, intercept, slope = tail_utility(tail.z_j, tail.aux_j, theta, energy, coef)
+    return (-3 if truncated else -2), intercept, slope, value
+
+
+def negative_legal_business(theta: float, energy: float, plans: tuple, spec: dict) -> dict:
+    """Largest non-positive net among admitted businesses the zero floor discards."""
+    reserve, bits_scale, coef = _scales(spec)
+    best_net = None
+    best_label = ""
+    for plan in plans:
+        if _is_tail(plan) or not plan.ok:
+            continue
+        cost = theta * plan.z_j + plan.aux_j
+        if energy + 1e-6 < cost + reserve:
+            continue
+        net = plan.bits / bits_scale - coef * cost
+        if net > 0.0:
+            continue
+        if best_net is None or net > best_net:
+            best_net = net
+            best_label = plan.label
+    return {"exists": best_net is not None, "max_net": best_net, "label": best_label}
 
 
 def value_at(theta: float, energy: float, plans: tuple, spec: dict, failed: bool) -> float:
@@ -245,6 +311,7 @@ def _cache_key(world: World, beliefs: list[Belief], action: Action, uav_index: i
         int(spec["time"]["decision_s"]),
         float(spec["belief"]["sigma_j"]),
         float(spec["belief"]["guard_probability"]),
+        terminal_mode(spec),
     )
 
 
@@ -351,7 +418,7 @@ def _theta_breaks(roll: Roll, spec: dict) -> list[float]:
     usable: list[Plan] = []
     points: list[float] = []
     for plan in roll.plans:
-        if not plan.ok:
+        if _is_tail(plan) or not plan.ok:
             continue
         if plan.z_j <= 1e-9:
             if roll.energy_j + 1e-6 >= plan.aux_j + reserve:
@@ -384,6 +451,12 @@ def _theta_breaks(roll: Roll, spec: dict) -> list[float]:
             if _admitted(first, theta, roll.energy_j, reserve) and _admitted(second, theta, roll.energy_j, reserve):
                 if (a_first - b_first * theta) > 0.0 and (a_second - b_second * theta) > 0.0:
                     points.append(theta)
+    if terminal_mode(spec) == TAIL_MODE:
+        tail = next((plan for plan in roll.plans if _is_tail(plan)), None)
+        if tail is not None and tail.z_j > 1e-9:
+            theta_star = (roll.energy_j - tail.aux_j) / tail.z_j
+            if lo < theta_star < hi:
+                points.append(theta_star)
     return points
 
 
@@ -436,9 +509,16 @@ def _integrate_sampled(u0: float, u1: float, nodes: int, roll: Roll, spec: dict,
     return width * total
 
 
-def _constant_terminal(roll: Roll, spec: dict, guard: float) -> float:
+def _note_tail(stats: dict | None, plan_id: int) -> None:
+    if stats is not None and plan_id in (-2, -3):
+        stats["tail_piece_evals"] = int(stats.get("tail_piece_evals", 0)) + 1
+
+
+def _constant_terminal(roll: Roll, spec: dict, guard: float, stats: dict | None = None) -> float:
     theta = fast_truncated_quantile(roll.mu, roll.lam, roll.lo, roll.hi, guard)
-    return value_at(theta, roll.energy_j, roll.plans, spec, roll.failed)
+    plan_id, _intercept, _slope, value = describe(theta, roll.energy_j, roll.plans, spec, roll.failed)
+    _note_tail(stats, plan_id)
+    return value
 
 
 def expectation_pair(roll: Roll, spec: dict, inner_nodes: int, stats: dict | None) -> tuple[float, float]:
@@ -479,6 +559,8 @@ def plan_snapshot(roll: Roll, spec: dict) -> dict:
     post_id = describe(posterior, roll.energy_j, roll.plans, spec, roll.failed)[0]
 
     def _label(index: int) -> str:
+        if index in (-2, -3):
+            return "return_tail"
         if index < 0 or index >= len(roll.plans):
             return "none"
         return roll.plans[index].label or str(index)
@@ -520,7 +602,7 @@ def segment_expectation(roll: Roll, spec: dict, inner_nodes: int, stats: dict | 
         if (not roll.telemetry) or abs(roll.z_j) < 1e-9:
             if stats is not None:
                 stats["algebraic_integrals"] = int(stats.get("algebraic_integrals", 0)) + 1
-            return _constant_terminal(roll, spec, guard)
+            return _constant_terminal(roll, spec, guard, stats)
         cuts = [0.0, 1.0]
         for theta in _theta_breaks(roll, spec):
             epsilon = _invert_epsilon(roll, theta, guard, stats)
@@ -533,7 +615,8 @@ def segment_expectation(roll: Roll, spec: dict, inner_nodes: int, stats: dict | 
         total = 0.0
         for left, right in zip(cuts, cuts[1:]):
             probe = 0.5 * (left + right)
-            _plan_id, intercept, slope, _value = describe(_q_of_u(roll, probe, guard), roll.energy_j, roll.plans, spec, roll.failed)
+            plan_id, intercept, slope, _value = describe(_q_of_u(roll, probe, guard), roll.energy_j, roll.plans, spec, roll.failed)
+            _note_tail(stats, plan_id)
             total += _integrate_linear(left, right, inner_nodes, roll, spec, intercept, slope, guard, stats)
         return total
     finally:
@@ -568,7 +651,7 @@ def reference_expectation(roll: Roll, spec: dict, stats: dict | None) -> float:
         if (not roll.telemetry) or abs(roll.z_j) < 1e-9:
             if stats is not None:
                 stats["algebraic_integrals"] = int(stats.get("algebraic_integrals", 0)) + 1
-            return _constant_terminal(roll, spec, guard)
+            return _constant_terminal(roll, spec, guard, stats)
         rule = spec["integral"]
         scan = int(rule["reference_scan_nodes"])
         piece_nodes = int(rule["reference_piece_gl_nodes"])
@@ -608,7 +691,7 @@ def _noise_nodes(roll: Roll, spec: dict, nodes: int, stats: dict | None) -> floa
     if roll.failed or not roll.plans:
         return 0.0
     if (not roll.telemetry) or abs(roll.z_j) < 1e-9:
-        return _constant_terminal(roll, spec, guard)
+        return _constant_terminal(roll, spec, guard, stats)
     total = 0.0
     for epsilon, weight in gaussian_quadrature(roll.sigma, nodes):
         total += weight * value_at(_quantile_of(roll, epsilon, guard), roll.energy_j, roll.plans, spec, roll.failed)

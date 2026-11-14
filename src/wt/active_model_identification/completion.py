@@ -38,7 +38,16 @@ from wt.active_model_identification.world import (
 )
 
 _CACHE: dict[tuple, "Nominal"] = {}
+_TAIL_CACHE: dict[tuple, "ReturnTail"] = {}
+_TAIL_STATS = {
+    "return_quotes": 0,
+    "return_cache_hits": 0,
+    "return_simulated_seconds": 0,
+    "analytic_ground_intervals": 0,
+}
 _BUCKETS = ("service", "backhaul", "return", "landing", "ground", "calibrate")
+LEGACY_MODE = "legacy"
+TAIL_MODE = "return_tail_when_no_business"
 
 
 @dataclass
@@ -74,6 +83,30 @@ class CompletionQuote:
 
 def clear_completion_cache() -> None:
     _CACHE.clear()
+
+
+def clear_return_tail_cache() -> None:
+    _TAIL_CACHE.clear()
+
+
+def reset_tail_stats() -> None:
+    for key in _TAIL_STATS:
+        _TAIL_STATS[key] = 0
+
+
+def tail_stats() -> dict:
+    return {key: int(value) for key, value in _TAIL_STATS.items()}
+
+
+def terminal_mode(spec: dict) -> str:
+    """Missing key stays on the legacy zero terminal."""
+    mode = LEGACY_MODE
+    block = spec.get("terminal")
+    if isinstance(block, dict) and block.get("mode"):
+        mode = str(block["mode"])
+    if mode not in (LEGACY_MODE, TAIL_MODE):
+        raise KeyError(mode)
+    return mode
 
 
 def admits(uav: Uav, quote: CompletionQuote, spec: dict) -> bool:
@@ -328,6 +361,283 @@ def _lora(world: World, uav: Uav, spec: dict, step_end: float, payload: int, rec
         bucket = kind if kind in _BUCKETS else "return"
         components[bucket]["aux_j"] += delta
     return delta
+
+
+@dataclass(frozen=True)
+class ReturnTail:
+    """Nominal RETURN-to-deadline cost. Energy is theta * z + aux, then clipped by the battery."""
+
+    z_j: float
+    aux_j: float
+    flight_z_j: float
+    flight_aux_j: float
+    ground_z_j: float
+    ground_aux_j: float
+    radio_j: float
+    seconds: float
+    landing_s: float | None
+    landed: bool
+    clock_truncated: bool
+    quote_id: str
+
+
+def tail_utility(z_j: float, aux_j: float, theta: float, energy_j: float, coef: float) -> tuple[float, bool, float, float]:
+    """Future utility of a return tail. The sign stays negative. No reserve is added.
+
+    Returns value, energy_truncated, intercept A, and slope B for value = A - B * theta
+    on the unclipped side. Past the battery the value is the constant -coef * energy.
+    """
+    demand = theta * z_j + aux_j
+    available = max(0.0, energy_j)
+    if demand <= available + 1e-6:
+        return -coef * demand, False, -coef * aux_j, coef * z_j
+    return -coef * available, True, -coef * available, 0.0
+
+
+def return_tail_value(world: World, uav_index: int, theta: float, spec: dict) -> float:
+    uav = world.uavs[uav_index]
+    if uav.failed:
+        return 0.0
+    nominal = return_tail_nominal(world, uav_index, spec)
+    coef = float(spec["utility"]["lambda_e"]) / float(spec["utility"]["e_ref_j"])
+    value, _truncated, _intercept, _slope = tail_utility(nominal.z_j, nominal.aux_j, theta, uav.energy_j, coef)
+    return value
+
+
+def return_tail_nominal(world: World, uav_index: int, spec: dict) -> ReturnTail:
+    """RETURN until the pad landing, then ground load until the original deadline.
+
+    This is not completion_quote(..., None): that quote backhauls the cache and
+    stops when the business is finished. The tail keeps RETURN's physics, does
+    not invent a delivery reward, and prices the remaining ground interval.
+    """
+    key = _tail_key(world, uav_index, spec)
+    cached = _TAIL_CACHE.get(key)
+    if cached is not None:
+        _TAIL_STATS["return_cache_hits"] += 1
+        return cached
+    _TAIL_STATS["return_quotes"] += 1
+    nominal = _replay_return_tail(world, uav_index, spec, key)
+    _TAIL_CACHE[key] = nominal
+    return nominal
+
+
+def _tail_key(world: World, uav_index: int, spec: dict) -> tuple:
+    def rounded(value: float) -> float:
+        return round(float(value), 5)
+
+    focus = world.uavs[uav_index]
+    others = tuple((uav.index, bool(uav.failed)) for uav in world.uavs if uav.index != uav_index)
+    motion = spec["motion"]
+    radio = spec["radio"]
+    energy = spec["energy"]
+    return (
+        TAIL_MODE,
+        uav_index,
+        rounded(world.t),
+        rounded(world.channel_busy_until),
+        rounded(focus.x),
+        rounded(focus.y),
+        rounded(focus.vx),
+        rounded(focus.vy),
+        rounded(focus.home_x),
+        rounded(focus.home_y),
+        bool(focus.airborne),
+        rounded(focus.land_timer_s),
+        bool(focus.failed),
+        others,
+        int(spec["time"]["decision_s"]),
+        int(spec["time"]["mission_s"]),
+        int(spec["time"]["landing_s"]),
+        int(radio["command_bytes"]),
+        int(radio["telemetry_bytes"]),
+        float(energy["ground_idle_w"]),
+        float(energy["compute_w"]),
+        float(motion.get("pad_radius_m", 12.0)),
+        float(motion.get("pad_speed_m_s", 1.0)),
+        float(motion["cruise_m_s"]),
+        float(motion["accel_m_s2"]),
+    )
+
+
+def _focus_landed(world: World, focus: int, spec: dict) -> bool:
+    uav = world.uavs[focus]
+    return (not uav.failed) and (not uav.airborne) and pad_distance_m(uav) <= pad_radius_m(spec)
+
+
+def _new_buckets() -> dict:
+    return {
+        "flight_z": 0.0,
+        "flight_aux": 0.0,
+        "ground_z": 0.0,
+        "ground_aux": 0.0,
+        "radio": 0.0,
+        "landing_s": None,
+    }
+
+
+def _add_buckets(total: dict, part: dict, times: float = 1.0) -> None:
+    for key in ("flight_z", "flight_aux", "ground_z", "ground_aux", "radio"):
+        total[key] += times * part[key]
+
+
+def _radio_charge(world: World, uav: Uav, spec: dict, step_end: float, payload: int, receive: bool, buckets: dict, focus: int) -> None:
+    before = uav.aux_j
+    airtime = _try_lora(world, step_end, payload)
+    if airtime is None:
+        return
+    watts = rx_power_w() if receive else tx_power_w()
+    _charge(uav, 1.0, 0.0, watts * airtime)
+    if receive:
+        world.shore_radio_j += tx_power_w() * airtime
+    else:
+        world.shore_radio_j += rx_power_w() * airtime
+    if uav.index != focus:
+        return
+    delta = uav.aux_j - before
+    buckets["radio"] += delta
+    ground = (not uav.airborne) and pad_distance_m(uav) <= pad_radius_m(spec)
+    if ground:
+        buckets["ground_aux"] += delta
+    else:
+        buckets["flight_aux"] += delta
+
+
+def _motion_charge(world: World, uav: Uav, action: Action, spec: dict, phase: int, buckets: dict, focus: int, t0: float, start: float) -> None:
+    before_air = uav.airborne
+    before_z = uav.z_j
+    before_aux = uav.aux_j
+    distance = pad_distance_m(uav)
+    _move(uav, action, spec, 1.0, phase)
+    if uav.index != focus:
+        return
+    ground = (not before_air) and distance <= pad_radius_m(spec)
+    if ground:
+        buckets["ground_z"] += uav.z_j - before_z
+        buckets["ground_aux"] += uav.aux_j - before_aux
+    else:
+        buckets["flight_z"] += uav.z_j - before_z
+        buckets["flight_aux"] += uav.aux_j - before_aux
+    if before_air and (not uav.airborne) and buckets["landing_s"] is None:
+        buckets["landing_s"] = (start + phase + 1.0) - t0
+
+
+def _simulate_span(world: World, focus: int, spec: dict, seconds: int, buckets: dict, t0: float) -> None:
+    start = world.t
+    actions: list[Action] = [("wait", None) for _ in world.uavs]
+    actions[focus] = ("return", None)
+    command_bytes = int(spec["radio"]["command_bytes"])
+    telemetry_bytes = int(spec["radio"]["telemetry_bytes"])
+    for phase in range(int(seconds)):
+        if phase == 0:
+            for uav in world.uavs:
+                _radio_charge(world, uav, spec, start + 1.0, command_bytes, True, buckets, focus)
+        step_end = start + phase + 1.0
+        for uav in world.uavs:
+            _motion_charge(world, uav, actions[uav.index], spec, phase, buckets, focus, t0, start)
+            if uav.failed:
+                continue
+            if phase == seconds - 1:
+                _radio_charge(world, uav, spec, step_end, telemetry_bytes, False, buckets, focus)
+        world.t = step_end
+        _TAIL_STATS["return_simulated_seconds"] += 1
+
+
+def _prepare_tail_world(world: World) -> World:
+    sim = world.snapshot()
+    for uav in sim.uavs:
+        uav.energy_j = 1.0e8
+        uav.initial_energy_j = 1.0e8
+        uav.failed = False
+        uav.failure_recorded = False
+        uav.pending_failure = False
+        uav.z_j = 0.0
+        uav.aux_j = 0.0
+        uav.true_drop_j = 0.0
+        uav.consumed_j = 0.0
+    return sim
+
+
+def _ground_repeat(sim: World, focus: int, spec: dict, mission: float, decision: int, buckets: dict, t0: float) -> None:
+    remain = mission - sim.t
+    if remain <= 1e-9:
+        return
+    full = int(math.floor(remain / decision + 1e-9))
+    leftover = remain - full * decision
+    if leftover < 1e-6:
+        leftover = 0.0
+    if full <= 0:
+        if leftover > 0.0:
+            _simulate_span(sim, focus, spec, int(round(leftover)), buckets, t0)
+        return
+    probe = sim.snapshot()
+    first = _new_buckets()
+    _simulate_span(probe, focus, spec, decision, first, t0)
+    repeat = abs(first["flight_z"]) < 1e-6 and abs(first["ground_z"]) < 1e-6
+    if full >= 2 and repeat:
+        second = _new_buckets()
+        _simulate_span(probe, focus, spec, decision, second, t0)
+        repeat = (
+            abs(first["ground_aux"] - second["ground_aux"]) < 1e-6
+            and abs(first["radio"] - second["radio"]) < 1e-6
+            and abs(second["ground_z"]) < 1e-6
+            and abs(second["flight_z"]) < 1e-6
+        )
+    if repeat:
+        _add_buckets(buckets, first, full)
+        _TAIL_STATS["analytic_ground_intervals"] += full
+    else:
+        for _ in range(full):
+            _simulate_span(sim, focus, spec, decision, buckets, t0)
+    if leftover > 0.0:
+        anchor = sim if not repeat else sim.snapshot()
+        _simulate_span(anchor, focus, spec, int(round(leftover)), buckets, t0)
+
+
+def _replay_return_tail(world: World, uav_index: int, spec: dict, key: tuple) -> ReturnTail:
+    mission = float(spec["time"]["mission_s"])
+    decision = int(spec["time"]["decision_s"])
+    digest = hashlib.sha256(repr(key).encode("utf-8")).hexdigest()[:16]
+    started_landed = _focus_landed(world, uav_index, spec)
+    if world.uavs[uav_index].failed or world.t >= mission - 1e-9:
+        return ReturnTail(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 if started_landed else None, started_landed, False, digest)
+    sim = _prepare_tail_world(world)
+    t0 = sim.t
+    buckets = _new_buckets()
+    if _focus_landed(sim, uav_index, spec):
+        buckets["landing_s"] = 0.0
+    while sim.t < mission - 1e-9 and buckets["landing_s"] is None:
+        span = int(min(decision, math.floor(mission - sim.t + 1e-9)))
+        if span <= 0:
+            break
+        _simulate_span(sim, uav_index, spec, span, buckets, t0)
+    landed = buckets["landing_s"] is not None
+    if landed and sim.t < mission - 1e-9:
+        _ground_repeat(sim, uav_index, spec, mission, decision, buckets, t0)
+    flight_z = buckets["flight_z"]
+    flight_aux = buckets["flight_aux"]
+    ground_z = buckets["ground_z"]
+    ground_aux = buckets["ground_aux"]
+    radio = buckets["radio"]
+    z_j = flight_z + ground_z
+    aux_j = flight_aux + ground_aux
+    if abs(radio) > abs(aux_j) + 1e-4:
+        raise RuntimeError("return tail radio is not part of the auxiliary ledger")
+    seconds = max(0.0, mission - t0)
+    return ReturnTail(
+        z_j=z_j,
+        aux_j=aux_j,
+        flight_z_j=flight_z,
+        flight_aux_j=flight_aux,
+        ground_z_j=ground_z,
+        ground_aux_j=ground_aux,
+        radio_j=radio,
+        seconds=seconds,
+        landing_s=None if buckets["landing_s"] is None else float(buckets["landing_s"]),
+        landed=landed,
+        clock_truncated=bool((not landed) and seconds > 0.0),
+        quote_id=digest,
+    )
 
 
 def standard_quantile(probability: float) -> float:

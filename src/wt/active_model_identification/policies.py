@@ -11,7 +11,7 @@ from __future__ import annotations
 import math
 
 from wt.active_model_identification.belief import Belief, gaussian_quadrature, quadrature
-from wt.active_model_identification.completion import admits, completion_quote
+from wt.active_model_identification.completion import TAIL_MODE, admits, completion_quote, return_tail_value, terminal_mode
 from wt.active_model_identification.world import (
     Action,
     World,
@@ -73,7 +73,9 @@ def terminal_value(world: World, beliefs: list[Belief], spec: dict, factor: floa
         quote = completion_quote(world, focus, buoy_id, theta, spec)
         if admits(uav, quote, spec):
             best = max(best, _plan_net(quote, spec))
-    return best
+    if best > 0.0 or terminal_mode(spec) != TAIL_MODE:
+        return best
+    return return_tail_value(world, focus, theta, spec)
 
 
 def _utility_delta(before: World, after: World, spec: dict) -> float:

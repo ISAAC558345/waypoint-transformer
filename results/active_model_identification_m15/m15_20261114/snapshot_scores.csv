@@ -1,0 +1,7 @@
+snapshot,registered_class,epoch,focus_uav,legacy_q_abs,legacy_pick,legacy_joint,new_pick,new_joint,positive_branch_mismatches,rank_changes,repair_still_requests_calibrate
+b1_tight,conflict_repair,1,0,0.0,service:0|service:0,calibrate:None|service:0,service:0|service:0,calibrate:None|service:0,0,0,1
+b3_window,conflict_repair,1,1,0.0,service:0|service:0,service:0|calibrate:None,service:0|service:0,service:0|calibrate:None,0,0,1
+b1_loose,conflict_repair,2,0,0.0,service:1|service:1,calibrate:None|service:1,service:1|service:1,calibrate:None|service:1,0,0,1
+b1_window,single_score,3,0,0.0,calibrate:None|service:3,calibrate:None|service:3,service:1|service:3,service:1|service:3,0,4,0
+b4_window,single_score,3,0,0.0,calibrate:None|service:3,calibrate:None|service:3,service:1|service:3,service:1|service:3,0,4,0
+b2_loose,single_score,5,0,0.0,calibrate:None|service:3,calibrate:None|service:3,service:3|service:3,return:None|service:3,0,7,0

@@ -1,0 +1,13 @@
+comparison,condition,n,utility_delta_min,utility_delta_sum,bits_delta_min,regressions,physical_regressions,reserve_regressions,utility_improvements
+corrected_ON-legacy_ON,tight,4,0.08651799238425006,0.5268166447777096,0,0,0,0,4
+corrected_OFF-legacy_OFF,tight,4,0.014371653589863254,0.08544574210567113,0,0,0,0,4
+corrected_ON-corrected_OFF,tight,4,0.0,0.003495978986994608,0,0,0,0,3
+corrected_ON-legacy_OFF,tight,4,0.015368917427417195,0.08894172109266574,0,0,0,0,4
+corrected_ON-legacy_ON,window,4,0.11995540875698119,0.5446799984466542,0,0,0,0,4
+corrected_OFF-legacy_OFF,window,4,0.017881233653995743,0.12057296055010003,0,0,0,0,4
+corrected_ON-corrected_OFF,window,4,0.0,0.0034736527716394683,0,0,0,0,2
+corrected_ON-legacy_OFF,window,4,0.019130591228715854,0.1240466133217395,0,0,0,0,4
+corrected_ON-legacy_ON,loose,4,-1.931783279524435,-1.638390083825307,-20000,1,0,0,3
+corrected_OFF-legacy_OFF,loose,4,-1.936221053652318,-1.8289122797782174,-20000,1,0,0,3
+corrected_ON-corrected_OFF,loose,4,-0.007916863529082718,-0.005171322720697091,0,1,0,0,2
+corrected_ON-legacy_OFF,loose,4,-1.9441379171814006,-1.8340836024989144,-20000,1,0,0,3

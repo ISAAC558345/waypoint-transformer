@@ -1,0 +1,48 @@
+{
+  "snapshots": {
+    "rollouts": 2400,
+    "cache_hits": 1392,
+    "planning_steps": 72000,
+    "planning_copies": 2400,
+    "physical_steps": 0,
+    "score_calls": 24,
+    "segment_score_calls": 24,
+    "algebraic_integrals": 3844,
+    "algebraic_seconds": 0.40839850003067113,
+    "root_solves": 3034,
+    "tail_piece_evals": 666,
+    "budget_exhausted": 0
+  },
+  "missions": {
+    "rollouts": 203220,
+    "cache_hits": 43800,
+    "planning_steps": 6096600,
+    "planning_copies": 203220,
+    "physical_steps": 43200,
+    "score_calls": 2880,
+    "segment_score_calls": 2880,
+    "algebraic_integrals": 210262,
+    "algebraic_seconds": 7.206782199731606,
+    "root_solves": 26573,
+    "tail_piece_evals": 86372,
+    "budget_exhausted": 0
+  },
+  "tail_after_snapshots": {
+    "return_quotes": 33,
+    "return_cache_hits": 1257,
+    "return_simulated_seconds": 4560,
+    "analytic_ground_intervals": 1776
+  },
+  "tail": {
+    "return_quotes": 1894,
+    "return_cache_hits": 201326,
+    "return_simulated_seconds": 152730,
+    "analytic_ground_intervals": 55635
+  },
+  "tail_total": {
+    "return_quotes": 1927,
+    "return_cache_hits": 202583,
+    "return_simulated_seconds": 157290,
+    "analytic_ground_intervals": 57411
+  }
+}
