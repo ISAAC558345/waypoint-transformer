@@ -68,6 +68,7 @@ class Plan:
     aux_j: float
     bits: float
     ok: bool
+    label: str = ""
 
 
 @dataclass(frozen=True)
@@ -86,6 +87,13 @@ class Roll:
     lo: float
     hi: float
     sigma: float
+    aux_j: float = 0.0
+    radio_j: float = 0.0
+    x: float = 0.0
+    y: float = 0.0
+    vx: float = 0.0
+    vy: float = 0.0
+    calibration_s: float = 0.0
 
 
 _ROLL_CACHE: dict[tuple, Roll] = {}
@@ -148,14 +156,14 @@ def extract_plans(world: World, focus: int, spec: dict) -> tuple:
     cached = math.fsum(packet.bits for packet in world.packets if packet.holder == f"uav:{focus}")
     if cached > 0.0:
         quote = completion_quote(world, focus, None, 1.0, spec)
-        plans.append(Plan(quote.z_j, quote.aux_j, quote.on_time_bits, bool(quote.finished and quote.landed and quote.on_time)))
+        plans.append(Plan(quote.z_j, quote.aux_j, quote.on_time_bits, bool(quote.finished and quote.landed and quote.on_time), "cache"))
     for buoy in spec["geometry"]["buoys"]:
         buoy_id = int(buoy["id"])
         pending = math.fsum(packet.bits for packet in world.packets if packet.holder == "buoy" and packet.buoy == buoy_id)
         if pending <= 0.0:
             continue
         quote = completion_quote(world, focus, buoy_id, 1.0, spec)
-        plans.append(Plan(quote.z_j, quote.aux_j, quote.on_time_bits, bool(quote.finished and quote.landed and quote.on_time)))
+        plans.append(Plan(quote.z_j, quote.aux_j, quote.on_time_bits, bool(quote.finished and quote.landed and quote.on_time), f"service:{buoy_id}"))
     return tuple(plans)
 
 
@@ -283,6 +291,7 @@ def roll_action(
     obs = observations[uav_index]
     uav = snap.uavs[uav_index]
     belief = beliefs[uav_index]
+    radio_book = getattr(snap, "interval_uav_radio_j", None)
     roll = Roll(
         immediate=_utility_delta(world, snap, spec),
         z_j=float(uav.z_j),
@@ -298,6 +307,13 @@ def roll_action(
         lo=belief.lo,
         hi=belief.hi,
         sigma=float(spec["belief"]["sigma_j"]),
+        aux_j=float(uav.aux_j),
+        radio_j=0.0 if radio_book is None else float(radio_book[uav_index]),
+        x=float(uav.x),
+        y=float(uav.y),
+        vx=float(uav.vx),
+        vy=float(uav.vy),
+        calibration_s=float(snap.calibration_s[uav_index] - world.calibration_s[uav_index]),
     )
     _ROLL_CACHE[key] = roll
     return roll
@@ -423,6 +439,76 @@ def _integrate_sampled(u0: float, u1: float, nodes: int, roll: Roll, spec: dict,
 def _constant_terminal(roll: Roll, spec: dict, guard: float) -> float:
     theta = fast_truncated_quantile(roll.mu, roll.lam, roll.lo, roll.hi, guard)
     return value_at(theta, roll.energy_j, roll.plans, spec, roll.failed)
+
+
+def expectation_pair(roll: Roll, spec: dict, inner_nodes: int, stats: dict | None) -> tuple[float, float]:
+    """Terminal with this interval assimilated, and the same terminal with that update removed.
+
+    Motion, energy and the other UAV's belief are untouched. The removed case
+    evaluates the pre-update quantile on the post-interval state.
+    """
+    plus = segment_expectation(roll, spec, inner_nodes, stats)
+    minus = _constant_terminal(roll, spec, _guard(spec))
+    if stats is not None:
+        stats["algebraic_integrals"] = int(stats.get("algebraic_integrals", 0)) + 1
+    return plus, minus
+
+
+def plan_snapshot(roll: Roll, spec: dict) -> dict:
+    """Business quotes at the pre-update q95 and at the zero-noise posterior q95."""
+    guard = _guard(spec)
+    reserve, _bits, _coef = _scales(spec)
+    prior = fast_truncated_quantile(roll.mu, roll.lam, roll.lo, roll.hi, guard)
+    posterior = posterior_quantile(roll.mu, roll.lam, roll.lo, roll.hi, roll.z_j, roll.y0, roll.sigma, guard)
+    plans = []
+    for plan in roll.plans:
+        plans.append(
+            {
+                "label": plan.label,
+                "bits": plan.bits,
+                "z_j": plan.z_j,
+                "aux_j": plan.aux_j,
+                "ok": bool(plan.ok),
+                "quote_prior_j": prior * plan.z_j + plan.aux_j,
+                "quote_posterior_j": posterior * plan.z_j + plan.aux_j,
+                "admitted_prior_q95": _admitted(plan, prior, roll.energy_j, reserve),
+                "admitted_posterior_q95_eps0": _admitted(plan, posterior, roll.energy_j, reserve),
+            }
+        )
+    prior_id = describe(prior, roll.energy_j, roll.plans, spec, roll.failed)[0]
+    post_id = describe(posterior, roll.energy_j, roll.plans, spec, roll.failed)[0]
+
+    def _label(index: int) -> str:
+        if index < 0 or index >= len(roll.plans):
+            return "none"
+        return roll.plans[index].label or str(index)
+
+    def _bits(index: int) -> float:
+        if index < 0 or index >= len(roll.plans):
+            return 0.0
+        return float(roll.plans[index].bits)
+
+    return {
+        "prior_q95": prior,
+        "posterior_q95_eps0": posterior,
+        "predicted_bits_prior": _bits(prior_id),
+        "predicted_bits_posterior": _bits(post_id),
+        "active_prior": _label(prior_id),
+        "active_posterior": _label(post_id),
+        "plans": plans,
+        "telemetry": bool(roll.telemetry),
+        "z_j": roll.z_j,
+        "aux_j": roll.aux_j,
+        "radio_j": roll.radio_j,
+        "energy_j": roll.energy_j,
+        "executed": roll.executed,
+        "intervened": bool(roll.intervened),
+        "x": roll.x,
+        "y": roll.y,
+        "vx": roll.vx,
+        "vy": roll.vy,
+        "calibration_s": roll.calibration_s,
+    }
 
 
 def segment_expectation(roll: Roll, spec: dict, inner_nodes: int, stats: dict | None) -> float:

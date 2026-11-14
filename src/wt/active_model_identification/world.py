@@ -185,6 +185,18 @@ def _charge(uav: Uav, theta: float, propulsion_z: float, aux_j: float) -> None:
             uav.vy = 0.0
 
 
+def _charge_radio(world: World, uav: Uav, joules: float) -> None:
+    """Charge a radio-only auxiliary cost and remember the joules actually taken.
+
+    The battery ledger is unchanged from ``_charge``. The side list is diagnostic.
+    """
+    before = uav.aux_j
+    _charge(uav, 1.0, 0.0, joules)
+    radio = getattr(world, "interval_uav_radio_j", None)
+    if radio is not None:
+        radio[uav.index] += uav.aux_j - before
+
+
 def _aux_w(spec: dict, airborne: bool) -> float:
     energy = spec["energy"]
     return float(energy["compute_w"] if airborne else energy["ground_idle_w"])
@@ -357,7 +369,7 @@ def _collect_bulk(world: World, uav: Uav, buoy_id: int, spec: dict) -> None:
         if packet.holder != "buoy" or packet.buoy != buoy_id:
             continue
         duration = packet.bits / rate
-        _charge(uav, 1.0, 0.0, float(energy["bulk_rx_w"]) * duration)
+        _charge_radio(world, uav, float(energy["bulk_rx_w"]) * duration)
         world.buoy_radio_j += float(energy["bulk_tx_w"]) * duration
         packet.holder = f"uav:{uav.index}"
         packet.remaining_bits = packet.bits
@@ -375,7 +387,7 @@ def _backhaul(world: World, uav: Uav, spec: dict, step_end: float) -> None:
             airtime = _try_lora(world, step_end, payload_bytes)
             if airtime is None:
                 return
-            _charge(uav, 1.0, 0.0, tx_power_w() * airtime)
+            _charge_radio(world, uav, tx_power_w() * airtime)
             world.shore_radio_j += rx_power_w() * airtime
             packet.remaining_bits -= payload_bits
             if packet.remaining_bits <= 1e-6:
@@ -465,6 +477,7 @@ def advance(
     executed = list(actions)
     option_overrode = [False] * len(world.uavs)
     telemetry_sent = [False] * len(world.uavs)
+    world.interval_uav_radio_j = [0.0 for _ in world.uavs]
     observations: list[dict] = []
     for phase in range(seconds):
         if stats is not None:
@@ -480,7 +493,7 @@ def advance(
             for index, uav in enumerate(world.uavs):
                 airtime = _try_lora(world, start + 1.0, int(spec["radio"]["command_bytes"]))
                 if airtime is not None:
-                    _charge(uav, 1.0, 0.0, rx_power_w() * airtime)
+                    _charge_radio(world, uav, rx_power_w() * airtime)
                     world.shore_radio_j += tx_power_w() * airtime
         for index, uav in enumerate(world.uavs):
             updated, changed = _return_guard(uav, executed[index], beliefs[index], spec, factor)
@@ -502,7 +515,7 @@ def advance(
             if phase == seconds - 1:
                 airtime = _try_lora(world, step_end, int(spec["radio"]["telemetry_bytes"]))
                 if airtime is not None:
-                    _charge(uav, 1.0, 0.0, tx_power_w() * airtime)
+                    _charge_radio(world, uav, tx_power_w() * airtime)
                     world.shore_radio_j += rx_power_w() * airtime
                     telemetry_sent[index] = True
             if action[0] == "service" and action[1] is not None:
