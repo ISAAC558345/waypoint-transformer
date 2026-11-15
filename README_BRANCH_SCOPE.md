@@ -4,7 +4,7 @@
 
 ## 当前执行任务
 
-W3 已完成，等待下一份推送。报告见 [W3 结果](docs/research/Wind_Observation_W3_Report_CN.md)。本轮没有改默认调度。
+执行 [W4 提前风观测与通信决策实验](CURSOR_NEXT_TASK.md)。W3 已归档，W4 待运行。
 
 ## W3 已完成的结果
 
