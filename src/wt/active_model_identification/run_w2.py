@@ -205,7 +205,24 @@ def _landed(uav, spec: dict) -> bool:
     return (not uav.airborne) and pad_distance_m(uav) <= pad_radius_m(spec)
 
 
-def _step(world, beliefs, spec, factor, scenario, decider: int, observer: int, action, epoch: int, observer_action, wind_at, info, field, prior: float):
+def _step(
+    world,
+    beliefs,
+    spec,
+    factor,
+    scenario,
+    decider: int,
+    observer: int,
+    action,
+    epoch: int,
+    observer_action,
+    wind_at,
+    info,
+    field,
+    prior: float,
+    *,
+    guard_factory=None,
+):
     immediate = script_action(world, decider, action, spec, 0)
     requested = immediate if immediate is not None else ("wait", None)
     actions = [("wait", None) for _ in world.uavs]
@@ -225,7 +242,11 @@ def _step(world, beliefs, spec, factor, scenario, decider: int, observer: int, a
         noise_j=noise,
         wind_at=wind_at,
         admit=_keep,
-        return_guard=make_return_guard(info, field, prior, spec, factor, decider),
+        return_guard=(
+            make_return_guard(info, field, prior, spec, factor, decider)
+            if guard_factory is None
+            else guard_factory(info, field, prior, spec, factor, decider)
+        ),
     )
     executed = tuple(observations[decider]["executed"])
     return requested, executed
@@ -271,7 +292,17 @@ def _block_reason(cache_ids: list[str], admitted: list[str], chosen: str, execut
     return ""
 
 
-def roll_arm(replay: dict, condition: dict, mode: str, message: dict, cfg: dict, *, stop_after_s: float | None = None) -> dict:
+def roll_arm(
+    replay: dict,
+    condition: dict,
+    mode: str,
+    message: dict,
+    cfg: dict,
+    *,
+    stop_after_s: float | None = None,
+    guard_factory=None,
+    capture_s: float | None = None,
+) -> dict:
     case = replay["case"]
     spec = case["spec"]
     scenario = case["scenario"]
@@ -290,6 +321,7 @@ def roll_arm(replay: dict, condition: dict, mode: str, message: dict, cfg: dict,
     charged = None
     decisions = []
     energy_steps = []
+    captured = None
     mission = float(spec["time"]["mission_s"])
     decision_s = float(spec["time"]["decision_s"])
     wind_at = lambda x, y, t, condition=condition: true_wind(condition, x, y, t, field)
@@ -303,6 +335,12 @@ def roll_arm(replay: dict, condition: dict, mode: str, message: dict, cfg: dict,
         if visible(mode, world.t, cfg) and charged is None:
             charged = charge_message(world, observer, decider, int(cfg["payload_bytes"]))
         info = message if visible(mode, world.t, cfg) else None
+        if capture_s is not None and captured is None and abs(world.t - capture_s) <= ENERGY_TOL:
+            captured = {
+                "world": world.snapshot(),
+                "beliefs": [item.copy() for item in beliefs],
+                "info": info,
+            }
         cache_ids = _cache_ids(world, decider)
         chosen, rows = score_state(world, beliefs, info, spec, factor, scenario, decider, field, prior, condition, frozen)
         uav = world.uavs[decider]
@@ -312,7 +350,21 @@ def roll_arm(replay: dict, condition: dict, mode: str, message: dict, cfg: dict,
         decision_below = decision_energy + ENERGY_TOL < float(spec["energy"]["reserve_j"])
         observer_action = _parse(case["requests"][(epoch, observer)]["executed"])
         requested, executed = _step(
-            world, beliefs, spec, factor, scenario, decider, observer, _parse(chosen["action"]), epoch, observer_action, wind_at, info, field, prior
+            world,
+            beliefs,
+            spec,
+            factor,
+            scenario,
+            decider,
+            observer,
+            _parse(chosen["action"]),
+            epoch,
+            observer_action,
+            wind_at,
+            info,
+            field,
+            prior,
+            guard_factory=guard_factory,
         )
         admitted = [row["action"] for row in rows if row["admitted"]]
         executed_label = _label(executed)
@@ -382,6 +434,7 @@ def roll_arm(replay: dict, condition: dict, mode: str, message: dict, cfg: dict,
         "first_below_reserve_s": next((row["t_s"] for row in decisions if row["below_reserve"]), mission if focus["below_reserve"] else None),
         "first_landed_s": next((row["t_s"] for row in decisions if row["landed"]), None),
         "first_block": next(({"t_s": row["t_s"], "reason": row["block"], "energy_j": row["energy_j"], "landed": row["landed"]} for row in decisions if row["block"]), None),
+        "captured": captured,
     }
 
 

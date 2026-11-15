@@ -18,12 +18,15 @@ from wt.active_model_identification.world import (
     World,
     advance,
     energy_used_j,
+    flight_state,
     mission_terminal,
     on_time_bits,
     pad_distance_m,
     pad_radius_m,
+    pad_speed_m_s,
     utility,
 )
+from wt.ocean_observation_m0.parameters import MAC_GUARD_S
 from wt.ocean_observation_m0.radio import lora_time_on_air_s, rx_power_w, tx_power_w
 
 WindFn = Callable[[float, float, float], tuple[float, float]]
@@ -258,22 +261,99 @@ def fly_script(
     }
 
 
-def return_energy_j(uav, theta: float, spec: dict, factor: float, wind_xy: tuple[float, float]) -> float:
-    """Straight return plus landing, with airspeed applied once."""
+def return_energy_parts(uav, theta: float, spec: dict, factor: float, wind_xy: tuple[float, float]) -> dict:
+    """Split the guard's return quote into cruise and a fresh landing hover.
+
+    Airspeed is applied once. This is the estimate, not the pad's ground idle.
+    """
     distance = pad_distance_m(uav)
     aux = float(spec["energy"]["compute_w"])
     landing = float(spec["time"]["landing_s"])
     if distance < 1.0:
+        cruise_s = 0.0
         cruise_j = 0.0
     else:
-        duration = factor * distance / CRUISE_M_S
+        cruise_s = factor * distance / CRUISE_M_S
         heading_x = (uav.home_x - uav.x) / distance
         heading_y = (uav.home_y - uav.y) / distance
         airspeed = math.hypot(CRUISE_M_S * heading_x - wind_xy[0], CRUISE_M_S * heading_y - wind_xy[1])
-        cruise_j = theta * propulsion_power_w(airspeed) * duration + aux * duration
+        cruise_j = theta * propulsion_power_w(airspeed) * cruise_s + aux * cruise_s
     hover_airspeed = math.hypot(wind_xy[0], wind_xy[1])
-    hover_j = theta * propulsion_power_w(hover_airspeed) * landing + aux * landing
-    return cruise_j + hover_j
+    landing_j = theta * propulsion_power_w(hover_airspeed) * landing + aux * landing
+    return {
+        "distance_m": distance,
+        "cruise_s": cruise_s,
+        "cruise_j": cruise_j,
+        "landing_s": landing,
+        "landing_j": landing_j,
+        "total_j": cruise_j + landing_j,
+    }
+
+
+def return_energy_j(uav, theta: float, spec: dict, factor: float, wind_xy: tuple[float, float]) -> float:
+    """Straight return plus landing, with airspeed applied once."""
+    return return_energy_parts(uav, theta, spec, factor, wind_xy)["total_j"]
+
+
+def finished_landing(uav, spec: dict) -> bool:
+    """Pad tolerance, pad speed, and a completed landing hover.
+
+    The mission starts on the pad with a zero landing timer. That state is not
+    a finished landing, so takeoff keeps the airborne guard.
+    """
+    speed = math.hypot(uav.vx, uav.vy)
+    return (
+        flight_state(uav) == "landed"
+        and pad_distance_m(uav) <= pad_radius_m(spec)
+        and speed <= pad_speed_m_s(spec)
+        and uav.land_timer_s + 1e-9 >= float(spec["time"]["landing_s"])
+    )
+
+
+def cache_tx_j(world: World, uav_index: int, spec: dict) -> float:
+    """UAV transmit joules for the cache still on board. Shore reception is excluded."""
+    chunk_bits = int(spec["radio"]["backhaul_chunk_bytes"]) * 8.0
+    total = 0.0
+    for packet in world.packets:
+        if packet.holder != f"uav:{uav_index}" or packet.remaining_bits <= 0.0:
+            continue
+        remaining = float(packet.remaining_bits)
+        while remaining > 1e-9:
+            payload_bits = min(remaining, chunk_bits)
+            payload_bytes = max(1, int(math.ceil(payload_bits / 8.0)))
+            airtime = lora_time_on_air_s(payload_bytes) + MAC_GUARD_S
+            total += tx_power_w() * airtime
+            remaining -= payload_bits
+    return total
+
+
+def landed_ground_quote(world: World, uav_index: int, spec: dict) -> dict:
+    """Remaining ground idle and cache radio. Cruise and a new landing are zero.
+
+    The idle term runs to the deadline. It is the upper-bound standby cost,
+    not the old script quote that stops when the cache is empty.
+    """
+    uav = world.uavs[uav_index]
+    remaining_s = max(0.0, float(spec["time"]["mission_s"]) - float(world.t))
+    idle_w = float(spec["energy"]["ground_idle_w"])
+    idle_j = idle_w * remaining_s
+    radio_j = cache_tx_j(world, uav_index, spec)
+    reserve = float(spec["energy"]["reserve_j"])
+    upper = float(uav.energy_j) - idle_j
+    full = idle_j + radio_j
+    return {
+        "remaining_s": remaining_s,
+        "idle_w": idle_w,
+        "idle_j": idle_j,
+        "radio_j": radio_j,
+        "cruise_j": 0.0,
+        "landing_j": 0.0,
+        "terminal_upper_j": upper,
+        "full_remaining_j": full,
+        "reserve_j": reserve,
+        "holds_reserve_without_radio": upper + 1e-6 >= reserve,
+        "holds_reserve_with_radio": float(uav.energy_j) + 1e-6 >= full + reserve,
+    }
 
 
 def make_return_guard(message: dict | None, field: dict, prior_std: float, spec: dict, factor: float, focus: int):
@@ -292,5 +372,28 @@ def make_return_guard(message: dict | None, field: dict, prior_std: float, spec:
         if uav.energy_j < need:
             return ("return", None), True
         return action, False
+
+    return guard
+
+
+def make_finished_landing_guard(message: dict | None, field: dict, prior_std: float, spec: dict, factor: float, focus: int):
+    """Explicit option. A finished landing quotes ground idle, not another flight.
+
+    Airborne, takeoff, and service keep the original return guard. If the
+    remaining idle through the deadline already misses the reserve, a landed
+    backhaul is not released.
+    """
+    original = make_return_guard(message, field, prior_std, spec, factor, focus)
+
+    def guard(uav, action: Action, belief: Belief, world: World) -> tuple[Action, bool]:
+        if uav.index != focus or uav.failed or action[0] == "return":
+            return original(uav, action, belief, world)
+        if finished_landing(uav, spec) and action[0] in ("wait", "backhaul"):
+            quote = landed_ground_quote(world, uav.index, spec)
+            radio = quote["radio_j"] if action[0] == "backhaul" else 0.0
+            if uav.energy_j + 1e-6 < quote["idle_j"] + radio + quote["reserve_j"]:
+                return ("return", None), True
+            return action, False
+        return original(uav, action, belief, world)
 
     return guard

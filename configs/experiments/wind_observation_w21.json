@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_run",
+  "instruction": "CURSOR_NEXT_TASK.md",
+  "base_commit": "4a959fa",
+  "parent_w2_result": "results/wind_observation_w2/w2_20261115",
+  "plan_change": "唯一显式选项：已经完成降落的等待和回传，按地面待机到截止时刻再加缓存发射电量报价，巡航和一次新的降落悬停记 0。空中、起飞和服务仍用原返航守卫。若这份完整剩余开销加 4000 J 备用超过当前电量，不执行回传。不改原准入公式，也不改默认守卫。",
+  "option": "finished_landing_ground_quote",
+  "scenario_id": "b3_loose",
+  "method": "lookahead_calibration_off",
+  "seed": 1103,
+  "observer_uav": 0,
+  "decider_uav": 1,
+  "sample_time_s": 150,
+  "decision_time_s": 180,
+  "audit_time_s": 300,
+  "prior_air_time_s": 270,
+  "late_time_s": 210,
+  "reserve_j": 4000.0,
+  "ground_idle_w": 1.0,
+  "checks": [
+    {"name": "archived_path", "catches": "重放归档已执行动作后，300 秒电量对不上 W2，说明账本没有沿旧轨迹。"},
+    {"name": "old_guard_300", "catches": "默认守卫不再复现 300 秒的回传请求、返航改写或首次落地阻断。"},
+    {"name": "airborne_270", "catches": "显式选项在落地前一拍改写了空中守卫。"},
+    {"name": "landed_quote", "catches": "落地报价仍计入巡航或新的降落悬停，或者没把地面待机算到截止时刻。"},
+    {"name": "terminal_gate", "catches": "仅待机的任务末上界已经低于备用时，仍把缓存回传放了出去。"}
+  ],
+  "adopt_only_if": "显式选项相对归档 W2 的同一臂，按时 bit、净效用、物理落地和备用都不下降，并且 300 秒的仅待机任务末上界仍不低于 4000 J。否则保持默认守卫。",
+  "do_not_retune": ["ground_idle_w", "reserve_j", "mission_s", "landing_s", "ax", "ay", "utility weights", "guard_probability", "tie_abs"]
+}
