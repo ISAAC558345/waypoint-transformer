@@ -4,7 +4,7 @@
 
 ## 当前执行任务
 
-W4.2 已完成，等待下一份推送。报告见 [W4.2 结果](docs/research/Wind_Observation_W42_Report_CN.md)。本轮没有改默认调度。
+执行 [W5 面向未来航段的风观测选择](CURSOR_NEXT_TASK.md)。W4.2 已归档，W5 待运行。
 
 ## W4.2 已完成的结果
 
