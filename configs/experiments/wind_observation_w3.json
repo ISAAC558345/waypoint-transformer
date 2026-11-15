@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_run",
+  "instruction": "CURSOR_NEXT_TASK.md",
+  "base_commit": "d1c2aee",
+  "parent_w21_result": "results/wind_observation_w21/w21_20261115",
+  "parent_w2_result": "results/wind_observation_w2/w2_20261115",
+  "plan_change": "旁路末端电量改为用现有控制器逐秒积分返航、降落和 1 W 待机。依据是 270–300 秒的飞行实际用了 14 秒，旧报价只按恒定巡航写了约 8.56 秒；把真风代入旧公式解释不了这个时长差。不把 658 J 加进旧公式，不改 4000 J 备用，不改默认守卫。真风只用于离线对账和反事实标签。",
+  "audit_time_s": 270,
+  "highlight_times_s": [180, 210, 270],
+  "reserve_j": 4000.0,
+  "ground_idle_w": 1.0,
+  "risk": "0.95 分位抬高推进功率比例，末端电量估计更低。风向用信息集均值，不另设风的分位。",
+  "checks": [
+    {"name": "interval_buckets", "catches": "逐秒账加总对不上 270–300 秒的归档耗电，说明对的不是执行器。"},
+    {"name": "duration_before_wind", "catches": "把 658 J 主要归到风估计，而飞行时长仍然差着约 5 秒。"},
+    {"name": "kinematic_matches_truth", "catches": "新估计在给定执行器真风和真实 theta 时，仍对不上这 30 秒的飞行、降落和待机。"},
+    {"name": "old_formula_untouched", "catches": "旧返航公式被加上固定残差或改了备用阈值。"}
+  ],
+  "adopt_only_if": "只有某个已检验的既有动作在真风回放里同时保住按时交付和 4000 J 备用，才比较调度。预测更准本身不改默认策略。",
+  "do_not_retune": ["reserve_j", "ground_idle_w", "landing_s", "integration_factor", "ax", "ay", "guard_probability"]
+}

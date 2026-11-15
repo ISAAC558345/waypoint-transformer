@@ -1,0 +1,76 @@
+{
+  "t_s": 270.0,
+  "distance_m": 151.69751879118957,
+  "speed_m_s": 18.0,
+  "energy_j": 8983.14567104367,
+  "theta_mean": 1.248163867253673,
+  "theta_q95": 1.2663271937706475,
+  "theta_truth": 1.25,
+  "predicted_wind_m_s": [
+    5.736669411387528,
+    -0.861609521353657
+  ],
+  "truth_wind_m_s": [
+    6.136910478906341,
+    -0.9394263783810926
+  ],
+  "executed": {
+    "flight_j": 3184.99107795451,
+    "landing_j": 877.6420095619396,
+    "ground_j": 11.0,
+    "radio_j": 0.016759475038270466,
+    "flight_s": 14,
+    "landing_s": 5,
+    "ground_s": 11
+  },
+  "interval_end_energy_j": 4909.4958240521855,
+  "touchdown_s": 289.0,
+  "quotes": {
+    "q95_predicted": {
+      "cruise_s": 8.556585892520776,
+      "cruise_j": 2513.1817754019403,
+      "landing_s": 5.0,
+      "landing_j": 901.9848697451689,
+      "flight_total_j": 3415.166645147109,
+      "idle_s": 1516.4434141074792,
+      "idle_j": 1516.4434141074792,
+      "terminal_energy_j": 4051.5356117890824
+    },
+    "mean_predicted": {
+      "cruise_s": 8.556585892520776,
+      "cruise_j": 2477.7480730486445,
+      "landing_s": 5.0,
+      "landing_j": 889.4060018048878,
+      "flight_total_j": 3367.154074853532,
+      "idle_s": 1516.4434141074792,
+      "idle_j": 1516.4434141074792,
+      "terminal_energy_j": 4099.54818208266
+    },
+    "q95_truth_wind": {
+      "cruise_s": 8.556585892520776,
+      "cruise_j": 2583.3589977904953,
+      "landing_s": 5.0,
+      "landing_j": 887.5470328245173,
+      "flight_total_j": 3470.9060306150127,
+      "idle_s": 1516.4434141074792,
+      "idle_j": 1516.4434141074792,
+      "terminal_energy_j": 3995.7962263211784
+    },
+    "truth_theta_truth_wind": {
+      "cruise_s": 8.556585892520776,
+      "cruise_j": 2550.6024732834717,
+      "landing_s": 5.0,
+      "landing_j": 876.4259160937856,
+      "flight_total_j": 3427.0283893772576,
+      "idle_s": 1516.4434141074792,
+      "idle_j": 1516.4434141074792,
+      "terminal_energy_j": 4039.673867558934
+    }
+  },
+  "raw_gap_j": 658.4832018443785,
+  "flight_gap_j": 671.8093025525695,
+  "landing_gap_j": -24.342860183229277,
+  "omitted_ground_and_radio_j": 11.01675947503827,
+  "truth_wind_formula_shift_j": 55.7393854679035,
+  "duration_gap_s": 5.443414107479224
+}

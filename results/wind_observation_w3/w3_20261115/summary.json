@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "parent_commit": "d1c2aee6cf592a1c3abec06c659dfd9ee65dc0b8",
+  "config_sha256": "04a48f67d1cc7d669330a05ab7337e99664d786f97d6cb682ac45a2d4b6d7839",
+  "result_dir": "results/wind_observation_w3/w3_20261115",
+  "elapsed_s": 1.421957399994426,
+  "ledger": {
+    "t_s": 270.0,
+    "distance_m": 151.69751879118957,
+    "speed_m_s": 18.0,
+    "energy_j": 8983.14567104367,
+    "theta_mean": 1.248163867253673,
+    "theta_q95": 1.2663271937706475,
+    "theta_truth": 1.25,
+    "predicted_wind_m_s": [
+      5.736669411387528,
+      -0.861609521353657
+    ],
+    "truth_wind_m_s": [
+      6.136910478906341,
+      -0.9394263783810926
+    ],
+    "executed": {
+      "flight_j": 3184.99107795451,
+      "landing_j": 877.6420095619396,
+      "ground_j": 11.0,
+      "radio_j": 0.016759475038270466,
+      "flight_s": 14,
+      "landing_s": 5,
+      "ground_s": 11
+    },
+    "interval_end_energy_j": 4909.4958240521855,
+    "touchdown_s": 289.0,
+    "quotes": {
+      "q95_predicted": {
+        "cruise_s": 8.556585892520776,
+        "cruise_j": 2513.1817754019403,
+        "landing_s": 5.0,
+        "landing_j": 901.9848697451689,
+        "flight_total_j": 3415.166645147109,
+        "idle_s": 1516.4434141074792,
+        "idle_j": 1516.4434141074792,
+        "terminal_energy_j": 4051.5356117890824
+      },
+      "mean_predicted": {
+        "cruise_s": 8.556585892520776,
+        "cruise_j": 2477.7480730486445,
+        "landing_s": 5.0,
+        "landing_j": 889.4060018048878,
+        "flight_total_j": 3367.154074853532,
+        "idle_s": 1516.4434141074792,
+        "idle_j": 1516.4434141074792,
+        "terminal_energy_j": 4099.54818208266
+      },
+      "q95_truth_wind": {
+        "cruise_s": 8.556585892520776,
+        "cruise_j": 2583.3589977904953,
+        "landing_s": 5.0,
+        "landing_j": 887.5470328245173,
+        "flight_total_j": 3470.9060306150127,
+        "idle_s": 1516.4434141074792,
+        "idle_j": 1516.4434141074792,
+        "terminal_energy_j": 3995.7962263211784
+      },
+      "truth_theta_truth_wind": {
+        "cruise_s": 8.556585892520776,
+        "cruise_j": 2550.6024732834717,
+        "landing_s": 5.0,
+        "landing_j": 876.4259160937856,
+        "flight_total_j": 3427.0283893772576,
+        "idle_s": 1516.4434141074792,
+        "idle_j": 1516.4434141074792,
+        "terminal_energy_j": 4039.673867558934
+      }
+    },
+    "raw_gap_j": 658.4832018443785,
+    "flight_gap_j": 671.8093025525695,
+    "landing_gap_j": -24.342860183229277,
+    "omitted_ground_and_radio_j": 11.01675947503827,
+    "truth_wind_formula_shift_j": 55.7393854679035,
+    "duration_gap_s": 5.443414107479224
+  },
+  "truth_roll_terminal_j": 3408.657850300206,
+  "highlights": [
+    {
+      "condition": "headwind_return",
+      "mode": "timely",
+      "t_s": 180.0,
+      "used_message": true,
+      "label_j": 3408.657850300206,
+      "label_source": "archived_terminal",
+      "old_q95_j": 2769.8558091831464,
+      "new_mean_j": 4397.772987988266,
+      "new_q95_j": 3811.4201201450765,
+      "old_error_j": -638.8020411170596,
+      "new_mean_error_j": 989.1151376880603,
+      "new_q95_error_j": 402.7622698448704,
+      "actual_holds": false,
+      "old_false_clear": false,
+      "new_q95_false_clear": false,
+      "old_false_alarm": false,
+      "new_q95_false_alarm": false
+    },
+    {
+      "condition": "headwind_return",
+      "mode": "timely",
+      "t_s": 210.0,
+      "used_message": true,
+      "label_j": 3408.657850300206,
+      "label_source": "archived_terminal",
+      "old_q95_j": 4151.773971166224,
+      "new_mean_j": 4122.686314736692,
+      "new_q95_j": 3752.199650213099,
+      "old_error_j": 743.1161208660183,
+      "new_mean_error_j": 714.028464436486,
+      "new_q95_error_j": 343.5417999128931,
+      "actual_holds": false,
+      "old_false_clear": true,
+      "new_q95_false_clear": false,
+      "old_false_alarm": false,
+      "new_q95_false_alarm": false
+    },
+    {
+      "condition": "headwind_return",
+      "mode": "timely",
+      "t_s": 270.0,
+      "used_message": true,
+      "label_j": 3408.657850300206,
+      "label_source": "archived_terminal",
+      "old_q95_j": 4051.5356117890824,
+      "new_mean_j": 3455.813908402262,
+      "new_q95_j": 3398.762982433515,
+      "old_error_j": 642.8777614888763,
+      "new_mean_error_j": 47.156058102055795,
+      "new_q95_error_j": -9.89486786669113,
+      "actual_holds": false,
+      "old_false_clear": true,
+      "new_q95_false_clear": false,
+      "old_false_alarm": false,
+      "new_q95_false_alarm": false
+    }
+  ],
+  "error_summary": [
+    {
+      "condition": "headwind_return",
+      "mode": "no_send",
+      "old_mae_j": 1411.9890402721996,
+      "new_mean_mae_j": 320.49776163006356,
+      "new_q95_mae_j": 303.4090143390379,
+      "old_false_clear": 4,
+      "new_q95_false_clear": 3,
+      "old_false_alarm": 0,
+      "new_q95_false_alarm": 0
+    },
+    {
+      "condition": "headwind_return",
+      "mode": "timely",
+      "old_mae_j": 946.9151446300996,
+      "new_mean_mae_j": 39.145976074778645,
+      "new_q95_mae_j": 17.071792023384894,
+      "old_false_clear": 3,
+      "new_q95_false_clear": 0,
+      "old_false_alarm": 0,
+      "new_q95_false_alarm": 0
+    },
+    {
+      "condition": "headwind_return",
+      "mode": "late",
+      "old_mae_j": 1081.9268996442045,
+      "new_mean_mae_j": 170.30146532411896,
+      "new_q95_mae_j": 150.96625611232224,
+      "old_false_clear": 4,
+      "new_q95_false_clear": 1,
+      "old_false_alarm": 0,
+      "new_q95_false_alarm": 0
+    },
+    {
+      "condition": "tailwind_return",
+      "mode": "no_send",
+      "old_mae_j": 1155.6550458535949,
+      "new_mean_mae_j": 153.59908659908737,
+      "new_q95_mae_j": 174.80950370050527,
+      "old_false_clear": 0,
+      "new_q95_false_clear": 0,
+      "old_false_alarm": 0,
+      "new_q95_false_alarm": 0
+    },
+    {
+      "condition": "tailwind_return",
+      "mode": "timely",
+      "old_mae_j": 988.698647272443,
+      "new_mean_mae_j": 14.409684837751431,
+      "new_q95_mae_j": 6.830185150357836,
+      "old_false_clear": 0,
+      "new_q95_false_clear": 0,
+      "old_false_alarm": 0,
+      "new_q95_false_alarm": 0
+    },
+    {
+      "condition": "tailwind_return",
+      "mode": "late",
+      "old_mae_j": 1028.9877808041424,
+      "new_mean_mae_j": 66.43917768940446,
+      "new_q95_mae_j": 70.5976907173647,
+      "old_false_clear": 0,
+      "new_q95_false_clear": 0,
+      "old_false_alarm": 0,
+      "new_q95_false_alarm": 0
+    }
+  ],
+  "first_q95_warning_s": 180.0,
+  "feasible_actions": [],
+  "last_feasible_t_s": null,
+  "paired_scheduler_run": false,
+  "conclusion": "控制器积分补上了返航刹车的时长。180、210 和 270 秒的已有动作都不能同时保住交付和备用。默认策略不变。",
+  "adopt": false,
+  "default_changed": false
+}
