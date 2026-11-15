@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_run",
+  "instruction": "CURSOR_NEXT_TASK.md",
+  "baseline_commit": "5c41a0b8d5bb39dde63516352b00dc88b41cd938",
+  "task_commit": "eed015562ff25f7c0543a076b76fcdb70d1794ca",
+  "w5_config": "configs/experiments/wind_observation_w5.json",
+  "w51_result": "results/wind_observation_w51/w51_20261115/summary.json",
+  "scenario_id": "b3_loose",
+  "seed": 1103,
+  "condition": "headwind_return",
+  "receiver_uav": 1,
+  "observer_uav": 0,
+  "decision_s": 30,
+  "sample_period_s": 10,
+  "payload_bytes": 32,
+  "observation_sigma_m_s": 0.5,
+  "prior_std_m_s": 8.0,
+  "noise_token": "w5-noise-11030",
+  "horizons_s": [30, 60],
+  "local_field": {
+    "amplitude_m_s": 2.0,
+    "length_m": 600.0,
+    "time_s": 90.0,
+    "generation_jitter": 1e-9,
+    "seeds": [11031, 11032, 11033, 11034],
+    "components": "x and y are independent and use the same kernel"
+  },
+  "prior_weight_global": 0.5,
+  "prior_weight_local": 0.5,
+  "sends": "W5.1 固定第一拍的最新样本，30 条，每条 32 字节。三种方法收到同一序列。",
+  "models": "全局模型是幅度为 0 的原核。局部模型是 W5 登记的局部核。两者共用全局均值先验、测量噪声和结构风。",
+  "update": "报文到达时，先用已经在后验里的样本预测该采样位置和时刻的测值分布，扣除结构风并加上测量噪声。条件对数似然更新两个模型的权重，每个样本编号只计一次。更新之后才把该样本放进两个模型的后验。",
+  "forecast": "权重乘两种模型在 W5.1 决策当时外推坐标上的风矢量。评分用实际位置的真风。场景标签、种子和实际未来位置不进入权重或预报。",
+  "flight_rule": "飞行期是接收机在该决策时刻仍在空中的 8 个决策。任务结束时的权重单独列出，不用来解释飞行期误差。",
+  "checks": [
+    {"name": "fixed_model_archive", "catches": "固定全局或固定局部的在线预报偏离 W5.1 同一报文序列的早发结果。"},
+    {"name": "message_once", "catches": "当前报文被用来预测它自己，或同一个样本编号进入后验两次。"}
+  ],
+  "do_not_retune": ["prior_weight_global", "prior_weight_local", "amplitude_m_s", "length_m", "time_s", "observation_sigma_m_s", "prior_std_m_s", "noise_token", "seeds", "sends"]
+}
