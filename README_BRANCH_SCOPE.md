@@ -4,7 +4,7 @@
 
 ## 当前执行任务
 
-W1 已完成并停止。默认调度仍是 legacy。不要把本轮结果并入主分支或默认分支。见 [W1 结果](docs/research/Wind_Observation_W1_Report_CN.md)。
+执行 [W2 滚动决策下的风报文提前量小试](CURSOR_NEXT_TASK.md)，从同一 180 s 状态核对及时、迟到和不发送的配对续跑。当前状态为待执行。
 
 ## W1 已完成的结果
 
