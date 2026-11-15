@@ -1,6 +1,6 @@
 # 海洋通信仿真研究分支
 
-本分支是 `research/ocean-observation-isolated`。它运行两架无人机、四个静止浮标的服务、回传和返航，并用每架无人机自己的能耗系数做业务遥测。默认闭环仍是零风、浮标不漂移。显式实验 `py -3 -m wt.active_model_identification.run_w1` 只在预注册的 180 秒决策上比较跨机风观测，不改变默认调度。见 [W1 报告](docs/research/Wind_Observation_W1_Report_CN.md)。
+本分支是 `research/ocean-observation-isolated`。它运行两架无人机、四个静止浮标的服务、回传和返航，并用每架无人机自己的能耗系数做业务遥测。默认闭环仍是零风、浮标不漂移。显式实验 `py -3 -m wt.active_model_identification.run_w1` 只在预注册的 180 秒决策上比较跨机风观测；`py -3 -m wt.active_model_identification.run_w2` 从同一状态起每 30 秒重选。两者都不改变默认调度。见 [W1 报告](docs/research/Wind_Observation_W1_Report_CN.md) 和 [W2 报告](docs/research/Wind_Observation_W2_Report_CN.md)。
 
 上游训练代码来自 [StanfordAI4HI/waypoint-transformer](https://github.com/StanfordAI4HI/waypoint-transformer)，许可见 `LICENSE`。旧通信系统对照在默认分支 [`feature/maritime-wt-stage1a`](https://github.com/ISAAC558345/waypoint-transformer/tree/feature/maritime-wt-stage1a)。
 
@@ -50,6 +50,7 @@ py -3 -m unittest tests.test_active_model_identification_m13 tests.test_active_m
 | 评估 | `src/wt/active_model_identification/run_m13.py` |
 | 风场航段预算 | `src/wt/ocean_observation_m0/flight.py` 的 `leg_budget` |
 | 跨机风观测小试 | `configs/experiments/wind_observation_w1.json`，`src/wt/active_model_identification/wind.py`，`src/wt/active_model_identification/run_w1.py` |
+| 滚动重选下的提前量 | `configs/experiments/wind_observation_w2.json`，`src/wt/active_model_identification/run_w2.py` |
 | 浮标漂移、时间戳与有效期 | `src/wt/ocean_observation_m0/information.py`，`src/wt/ocean_observation_m0/accounting.py` 的 `drift_report` |
 
 M1.3 与 M1.5 的冻结结果分别在 `results/active_model_identification_m13/m13_20261114/` 和 `results/active_model_identification_m15/m15_20261114/`。M1.5 的 `b3_loose` 少交付 20000 bit，记录见 [M1.5 报告](docs/research/Active_Model_Identification_M15_Report_CN.md)。显式候选 `initial_guard_consistent` 在 [M1.6 报告](docs/research/Active_Model_Identification_M16_Report_CN.md) 中收回这 20000 bit；默认选择模式仍是 legacy。

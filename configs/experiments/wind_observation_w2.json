@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_run",
+  "instruction": "CURSOR_NEXT_TASK.md",
+  "base_commit": "d48793e",
+  "parent_w1_config": "configs/experiments/wind_observation_w1.json",
+  "parent_w1_result": "results/wind_observation_w1/w1_20261114",
+  "plan_change": "唯一计划变更：B 每 30 秒重新选择。估值仍使用 W1 的完整脚本、候选、准入、平局和效用；物理执行只推进当前 30 秒，下一轮继承实际位置、飞行或落地、电池、缓存、链路占用和已到岸包。A 继续执行 W1 使用的冻结已执行序列。不解除返航，也不为追回缓存新增动作。",
+  "scenario_id": "b3_loose",
+  "method": "lookahead_calibration_off",
+  "seed": 1103,
+  "observer_uav": 0,
+  "decider_uav": 1,
+  "sample_epoch": 4,
+  "sample_time_s": 150,
+  "decision_epoch": 6,
+  "decision_time_s": 180,
+  "late_time_s": 210,
+  "mission_s": 1800,
+  "decision_s": 30,
+  "payload_bytes": 32,
+  "observation_sigma_m_s": 0.5,
+  "prior_std_m_s": 8.0,
+  "reserve_j": 4000.0,
+  "field": {
+    "Lx_m": 2000.0,
+    "Ly_m": 2000.0,
+    "period_s": 1200.0,
+    "bx": 1.5,
+    "by": 1.0
+  },
+  "conditions": [
+    {"id": "headwind_return", "ax": 6.0, "ay": 0.0},
+    {"id": "tailwind_return", "ax": -6.0, "ay": 0.0}
+  ],
+  "modes": ["no_send", "timely", "late"],
+  "noise": "random.Random(f'w1-{condition}-{seed}').gauss",
+  "message_rule": "及时组从 180 秒决策前可见，不发送组始终无报文，迟到组从 210 秒决策前首次可见。可见之后一直查询这一条采样，不刷新时间戳，无线电能量只扣一次。扣费发生在该次决策报价比较之前。",
+  "tie_break": "平局宽度仍是 integral.tie_abs。平局时仍优先 W1 登记的 180 秒请求，不新增动作优先级。",
+  "adverse_offset": "每个决策按该时刻指向本机降落点的方向，把一个预测标准差加在逆风方向，只加一次。公式与 W1 相同，方向随当前位置更新。",
+  "checks": [
+    {"name": "opening_matches_w1", "catches": "180 秒的候选、效用、准入耗电或首选偏离已归档 W1，说明滚动入口改动了原报价。"},
+    {"name": "late_visibility", "catches": "迟到报文进入 180 秒的动作，或到了 210 秒仍没有被读取。"},
+    {"name": "rolling_ledger", "catches": "跨周期把耗电、报文或同一缓存包的到岸记录记了两次。"}
+  ],
+  "benefit_labels": ["persists", "earlier_only", "no_change", "regression"],
+  "adopt_only_if": "两个风况的及时组相对同轮迟到组和不发送组，以及相对归档 W1 同臂，按时 bit、净效用、物理落地和备用电量都不下降，并且备用电量达标。否则保持默认调度。",
+  "do_not_retune": ["ax", "ay", "bx", "by", "observation_sigma_m_s", "prior_std_m_s", "battery_j", "reserve_j", "utility weights", "guard_probability", "tie_abs", "action priority"]
+}

@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "parent_commit": "d48793e1ddff92e7d1550c3e302f816a931ec932",
+  "config_sha256": "4f9a127fdde3f41ba198454d5542448c2783421812df9133727144978a38a743",
+  "w1_candidates_sha256": "d3fb9a006eeaaaa765c1ec0c2a10d6b9a186851209e589f624e548de51f24cd3",
+  "result_dir": "results/wind_observation_w2/w2_20261115",
+  "elapsed_s": 0.5745127999980468,
+  "opening_matches_w1": true,
+  "reviews": [
+    {
+      "condition": "headwind_return",
+      "level": "no_change",
+      "reason": "截止 bit、落地和备用与迟到组相同",
+      "opening": {
+        "no_send": "return:None",
+        "timely": "return:None",
+        "late": "return:None"
+      },
+      "at_210": {
+        "no_send": {
+          "chosen": "return:None",
+          "admitted": [
+            "return:None"
+          ],
+          "used_message": false
+        },
+        "timely": {
+          "chosen": "return:None",
+          "admitted": [
+            "return:None"
+          ],
+          "used_message": true
+        },
+        "late": {
+          "chosen": "return:None",
+          "admitted": [
+            "return:None"
+          ],
+          "used_message": true
+        }
+      },
+      "first_divergence_s": {
+        "timely_minus_late": null,
+        "timely_minus_no_send": null
+      },
+      "timely_minus_late": {
+        "on_time_bits": 0.0,
+        "energy_j": 0.0,
+        "utility": 0.0,
+        "returned": 0,
+        "not_returned": 0,
+        "not_landed": 0,
+        "below_reserve": 0,
+        "energy_exhausted": 0
+      },
+      "timely_minus_no_send": {
+        "on_time_bits": 0.0,
+        "energy_j": 0.010386224632384256,
+        "utility": -2.8850623223775074e-08,
+        "returned": 0,
+        "not_returned": 0,
+        "not_landed": 0,
+        "below_reserve": 0,
+        "energy_exhausted": 0
+      },
+      "w2_minus_w1": {
+        "no_send": {
+          "on_time_bits": 0.0,
+          "energy_j": 0.0,
+          "utility": 0.0,
+          "returned": 0.0,
+          "not_returned": 0.0,
+          "not_landed": 0.0,
+          "below_reserve": 0.0,
+          "energy_exhausted": 0.0
+        },
+        "timely": {
+          "on_time_bits": 0.0,
+          "energy_j": 0.0,
+          "utility": 0.0,
+          "returned": 0.0,
+          "not_returned": 0.0,
+          "not_landed": 0.0,
+          "below_reserve": 0.0,
+          "energy_exhausted": 0.0
+        },
+        "late": {
+          "on_time_bits": 0.0,
+          "energy_j": 0.0,
+          "utility": 0.0,
+          "returned": 0.0,
+          "not_returned": 0.0,
+          "not_landed": 0.0,
+          "below_reserve": 0.0,
+          "energy_exhausted": 0.0
+        }
+      },
+      "packet_lead_vs_late_s": [
+        {
+          "id": "b3_loose-lookahead_calibration_off-b3-p0",
+          "lead_s": null,
+          "timely_s": null,
+          "other_s": null
+        },
+        {
+          "id": "b3_loose-lookahead_calibration_off-b3-p1",
+          "lead_s": null,
+          "timely_s": null,
+          "other_s": null
+        }
+      ],
+      "packets": {
+        "no_send": [
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p0",
+            "bits": 25000.0,
+            "holder": "uav:1",
+            "delivered_s": null,
+            "on_time": false,
+            "reason": "still_cached"
+          },
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p1",
+            "bits": 25000.0,
+            "holder": "uav:1",
+            "delivered_s": null,
+            "on_time": false,
+            "reason": "still_cached"
+          }
+        ],
+        "timely": [
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p0",
+            "bits": 25000.0,
+            "holder": "uav:1",
+            "delivered_s": null,
+            "on_time": false,
+            "reason": "still_cached"
+          },
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p1",
+            "bits": 25000.0,
+            "holder": "uav:1",
+            "delivered_s": null,
+            "on_time": false,
+            "reason": "still_cached"
+          }
+        ],
+        "late": [
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p0",
+            "bits": 25000.0,
+            "holder": "uav:1",
+            "delivered_s": null,
+            "on_time": false,
+            "reason": "still_cached"
+          },
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p1",
+            "bits": 25000.0,
+            "holder": "uav:1",
+            "delivered_s": null,
+            "on_time": false,
+            "reason": "still_cached"
+          }
+        ]
+      },
+      "decider_below_reserve": {
+        "no_send": true,
+        "timely": true,
+        "late": true
+      },
+      "decider_landed": {
+        "no_send": true,
+        "timely": true,
+        "late": true
+      },
+      "decider_energy_j": {
+        "no_send": 3408.660643462445,
+        "timely": 3408.657850300206,
+        "late": 3408.657850300206
+      },
+      "first_below_reserve_s": {
+        "no_send": 1230.0,
+        "timely": 1230.0,
+        "late": 1230.0
+      },
+      "first_block": {
+        "no_send": {
+          "t_s": 180.0,
+          "reason": "admission",
+          "energy_j": 34532.10808922242,
+          "landed": false
+        },
+        "timely": {
+          "t_s": 180.0,
+          "reason": "admission",
+          "energy_j": 34532.10529606018,
+          "landed": false
+        },
+        "late": {
+          "t_s": 180.0,
+          "reason": "admission",
+          "energy_j": 34532.10808922242,
+          "landed": false
+        }
+      },
+      "first_return_guard_s": {
+        "no_send": 300.0,
+        "timely": 300.0,
+        "late": 300.0
+      },
+      "reserve_met": false,
+      "w1_chosen": {
+        "no_send": "return:None",
+        "timely": "return:None",
+        "late": "return:None"
+      },
+      "at_210_detail": {
+        "timely": "return:None",
+        "late": "return:None",
+        "no_send": "return:None"
+      }
+    },
+    {
+      "condition": "tailwind_return",
+      "level": "earlier_only",
+      "reason": "截止 bit 相同，及时组只是更早到岸；提前的秒数不另计效用",
+      "opening": {
+        "no_send": "return:None",
+        "timely": "backhaul:None",
+        "late": "return:None"
+      },
+      "at_210": {
+        "no_send": {
+          "chosen": "return:None",
+          "admitted": [
+            "return:None"
+          ],
+          "used_message": false
+        },
+        "timely": {
+          "chosen": "return:None",
+          "admitted": [
+            "wait:None",
+            "return:None"
+          ],
+          "used_message": true
+        },
+        "late": {
+          "chosen": "backhaul:None",
+          "admitted": [
+            "wait:None",
+            "backhaul:None",
+            "return:None"
+          ],
+          "used_message": true
+        }
+      },
+      "first_divergence_s": {
+        "timely_minus_late": 180.0,
+        "timely_minus_no_send": 180.0
+      },
+      "timely_minus_late": {
+        "on_time_bits": 0.0,
+        "energy_j": -120.60600297404744,
+        "utility": 0.00033501667492785714,
+        "returned": 0,
+        "not_returned": 0,
+        "not_landed": 0,
+        "below_reserve": 0,
+        "energy_exhausted": 0
+      },
+      "timely_minus_no_send": {
+        "on_time_bits": 0.0,
+        "energy_j": -115.31784984741535,
+        "utility": 0.00032032736068821066,
+        "returned": 0,
+        "not_returned": 0,
+        "not_landed": 0,
+        "below_reserve": 0,
+        "energy_exhausted": 0
+      },
+      "w2_minus_w1": {
+        "no_send": {
+          "on_time_bits": 50000.0,
+          "energy_j": 5535.26964323179,
+          "utility": 4.984624250991022,
+          "returned": 0.0,
+          "not_returned": 0.0,
+          "not_landed": 0.0,
+          "below_reserve": 0.0,
+          "energy_exhausted": 0.0
+        },
+        "timely": {
+          "on_time_bits": 0.0,
+          "energy_j": 0.0,
+          "utility": 0.0,
+          "returned": 0.0,
+          "not_returned": 0.0,
+          "not_landed": 0.0,
+          "below_reserve": 0.0,
+          "energy_exhausted": 0.0
+        },
+        "late": {
+          "on_time_bits": 50000.0,
+          "energy_j": 5540.5474101337895,
+          "utility": 4.984609590527407,
+          "returned": 0.0,
+          "not_returned": 0.0,
+          "not_landed": 0.0,
+          "below_reserve": 0.0,
+          "energy_exhausted": 0.0
+        }
+      },
+      "packet_lead_vs_late_s": [
+        {
+          "id": "b3_loose-lookahead_calibration_off-b3-p0",
+          "lead_s": 30.0,
+          "timely_s": 187.645152,
+          "other_s": 217.645152
+        },
+        {
+          "id": "b3_loose-lookahead_calibration_off-b3-p1",
+          "lead_s": 30.0,
+          "timely_s": 195.645152,
+          "other_s": 225.645152
+        }
+      ],
+      "packets": {
+        "no_send": [
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p0",
+            "bits": 25000.0,
+            "holder": "shore",
+            "delivered_s": 247.645152,
+            "on_time": true,
+            "reason": "on_time"
+          },
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p1",
+            "bits": 25000.0,
+            "holder": "shore",
+            "delivered_s": 255.645152,
+            "on_time": true,
+            "reason": "on_time"
+          }
+        ],
+        "timely": [
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p0",
+            "bits": 25000.0,
+            "holder": "shore",
+            "delivered_s": 187.645152,
+            "on_time": true,
+            "reason": "on_time"
+          },
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p1",
+            "bits": 25000.0,
+            "holder": "shore",
+            "delivered_s": 195.645152,
+            "on_time": true,
+            "reason": "on_time"
+          }
+        ],
+        "late": [
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p0",
+            "bits": 25000.0,
+            "holder": "shore",
+            "delivered_s": 217.645152,
+            "on_time": true,
+            "reason": "on_time"
+          },
+          {
+            "id": "b3_loose-lookahead_calibration_off-b3-p1",
+            "bits": 25000.0,
+            "holder": "shore",
+            "delivered_s": 225.645152,
+            "on_time": true,
+            "reason": "on_time"
+          }
+        ]
+      },
+      "decider_below_reserve": {
+        "no_send": false,
+        "timely": false,
+        "late": false
+      },
+      "decider_landed": {
+        "no_send": true,
+        "timely": true,
+        "late": true
+      },
+      "decider_energy_j": {
+        "no_send": 9081.616043415124,
+        "timely": 9196.941486324895,
+        "late": 9076.335483350857
+      },
+      "first_below_reserve_s": {
+        "no_send": null,
+        "timely": null,
+        "late": null
+      },
+      "first_block": {
+        "no_send": {
+          "t_s": 180.0,
+          "reason": "admission",
+          "energy_j": 34532.10808922242,
+          "landed": false
+        },
+        "timely": null,
+        "late": {
+          "t_s": 180.0,
+          "reason": "admission",
+          "energy_j": 34532.10808922242,
+          "landed": false
+        }
+      },
+      "first_return_guard_s": {
+        "no_send": null,
+        "timely": null,
+        "late": null
+      },
+      "reserve_met": true,
+      "w1_chosen": {
+        "no_send": "return:None",
+        "timely": "backhaul:None",
+        "late": "return:None"
+      },
+      "at_210_detail": {
+        "timely": "return:None",
+        "late": "backhaul:None",
+        "no_send": "return:None"
+      }
+    }
+  ],
+  "conclusion": "滚动重选后，提前一个周期没有增加截止时的按时交付，只让相同的 bit 更早到岸。默认调度不变。",
+  "adopt": false,
+  "default_changed": false
+}

@@ -1,0 +1,13 @@
+condition,mode,id,bits,holder,delivered_s,on_time,reason
+headwind_return,no_send,b3_loose-lookahead_calibration_off-b3-p0,25000.0,uav:1,,False,still_cached
+headwind_return,no_send,b3_loose-lookahead_calibration_off-b3-p1,25000.0,uav:1,,False,still_cached
+headwind_return,timely,b3_loose-lookahead_calibration_off-b3-p0,25000.0,uav:1,,False,still_cached
+headwind_return,timely,b3_loose-lookahead_calibration_off-b3-p1,25000.0,uav:1,,False,still_cached
+headwind_return,late,b3_loose-lookahead_calibration_off-b3-p0,25000.0,uav:1,,False,still_cached
+headwind_return,late,b3_loose-lookahead_calibration_off-b3-p1,25000.0,uav:1,,False,still_cached
+tailwind_return,no_send,b3_loose-lookahead_calibration_off-b3-p0,25000.0,shore,247.645152,True,on_time
+tailwind_return,no_send,b3_loose-lookahead_calibration_off-b3-p1,25000.0,shore,255.645152,True,on_time
+tailwind_return,timely,b3_loose-lookahead_calibration_off-b3-p0,25000.0,shore,187.645152,True,on_time
+tailwind_return,timely,b3_loose-lookahead_calibration_off-b3-p1,25000.0,shore,195.645152,True,on_time
+tailwind_return,late,b3_loose-lookahead_calibration_off-b3-p0,25000.0,shore,217.645152,True,on_time
+tailwind_return,late,b3_loose-lookahead_calibration_off-b3-p1,25000.0,shore,225.645152,True,on_time
