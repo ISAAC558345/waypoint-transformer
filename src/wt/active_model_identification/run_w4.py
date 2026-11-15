@@ -272,12 +272,17 @@ def quote_candidate(case: dict, world, beliefs, uav_index: int, action, message:
     idle_s = max(0.0, float(spec["time"]["mission_s"]) - float(result["t_end_s"])) if landed else 0.0
     idle_j = float(spec["energy"]["ground_idle_w"]) * idle_s
     terminal = float(result["sim"].uavs[uav_index].energy_j) - idle_j
+    fresh = []
+    for packet in result["sim"].packets:
+        if packet.holder == "shore" and packet.delivered_s is not None and float(packet.delivered_s) > float(world.t) + 1e-9:
+            fresh.append({"packet": packet.id, "buoy": int(packet.buoy), "delivered_s": float(packet.delivered_s)})
     return {
         "terminal_j": terminal,
         "bits": float(result["on_time_bits"]),
         "energy_j": float(result["focus_energy_j"]) + idle_j,
         "landed": landed,
         "on_time": bool(result["on_time"]),
+        "deliveries": fresh,
     }
 
 
@@ -312,9 +317,23 @@ def _repair(actions: list, tables: list[list[dict]]) -> list:
     return actions
 
 
-def play_message(case: dict, condition: dict, mode: str, link: dict) -> dict:
+def play_message(
+    case: dict,
+    condition: dict,
+    mode: str,
+    link: dict,
+    *,
+    origin: tuple | None = None,
+    preset: tuple | None = None,
+    trace: list | None = None,
+) -> dict:
     spec = case["spec"]
-    world, beliefs = _fresh(case)
+    if origin is None:
+        world, beliefs = _fresh(case)
+        start_epoch = 0
+        charged = None
+    else:
+        world, beliefs, start_epoch, charged = origin
     scenario = case["scenario"]
     noise = observation_noise(int(scenario["seed"]), float(spec["belief"]["sigma_j"]))
     wind_at = _truth(condition, case["cfg"]["field"])
@@ -322,8 +341,7 @@ def play_message(case: dict, condition: dict, mode: str, link: dict) -> dict:
     reserve = float(spec["energy"]["reserve_j"])
     block = spec["utility"]
     rows = []
-    charged = None
-    for epoch in range(decision_count(spec)):
+    for epoch in range(int(start_epoch), decision_count(spec)):
         if _visible(mode, world.t, link) and charged is None:
             charged = charge_message(
                 world,
@@ -332,6 +350,17 @@ def play_message(case: dict, condition: dict, mode: str, link: dict) -> dict:
                 int(case["cfg"]["payload_bytes"]),
             )
         info = link["message"] if _visible(mode, world.t, link) else None
+        if trace is not None:
+            trace.append(
+                {
+                    "epoch": epoch,
+                    "t_s": float(world.t),
+                    "world": world.snapshot(),
+                    "beliefs": [item.copy() for item in beliefs],
+                    "info": info,
+                    "energy_j": [float(uav.energy_j) for uav in world.uavs],
+                }
+            )
         scheduler, _tables = select_lookahead(case["cfg"]["method"], world, beliefs, spec, case["factor"], None)
         tables = []
         chosen = []
@@ -352,6 +381,9 @@ def play_message(case: dict, condition: dict, mode: str, link: dict) -> dict:
             chosen.append(action)
             reasons.append(reason)
         chosen = _repair(chosen, tables)
+        if preset is not None and int(preset[0]) == epoch:
+            chosen[int(preset[1])] = preset[2]
+            reasons[int(preset[1])] = "preset"
         observations = advance(
             world,
             chosen,

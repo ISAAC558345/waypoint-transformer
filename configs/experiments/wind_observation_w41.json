@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_run",
+  "instruction": "CURSOR_NEXT_TASK.md",
+  "base_commit": "ade8497",
+  "parent_w4_result": "results/wind_observation_w4/w4_20261115",
+  "scenario_id": "b3_loose",
+  "seed": 1103,
+  "condition": "headwind_return",
+  "decision_s": 240,
+  "focus_uav": 1,
+  "target_buoy": 3,
+  "archived_no_send_energy_j": 113807.099,
+  "archived_scheduler_energy_j": 111310.329,
+  "archived_gap_j": 5202.704,
+  "archived_delay_s": 22.613,
+  "plan_change": "在 240 秒的同一物理快照上只切换 1 号机能否使用已收到的风信息，并交叉回放返航和回传。不改 W4 的排序公式、备用阈值和默认调度。",
+  "checks": [
+    {"name": "archive_choice", "catches": "240 秒的请求、执行和选择原因与 W4 在线记录不一致。"},
+    {"name": "archive_endpoint", "catches": "从起飞重放的终点不再等于 W4 的按时 bit 和全队能耗。"},
+    {"name": "forced_backhaul_reproduces_timely", "catches": "指定归档已经选过的回传后，后续闭环偏离了及时组记录。"}
+  ],
+  "do_not_retune": ["reserve_j", "tie_abs", "guard_probability", "ax", "ay", "message_deadline_s"]
+}

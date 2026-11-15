@@ -1,0 +1,7 @@
+action,admitted,utility,bits,quote_energy_j,terminal_j,holds_reserve,predicted_arrival_s,arrival_used_in_score,bits_used_in_score,energy_used_in_score,terminal_used_in_admission,information
+wait:None,True,-0.036780581472717025,0.0,13241.00933017813,5229.060874236604,True,[],False,True,True,True,message
+backhaul:None,True,6.963215050159176,70000.0,13242.581942696532,5227.4882617182175,True,"[253.645152, 261.645152]",False,True,True,True,message
+return:None,True,-0.022207736616155088,0.0,7994.785181815831,10558.424671084269,True,[],False,True,True,True,message
+wait:None,False,-0.04037714919371208,0.0,14535.77370973635,3913.2972944468,False,[],False,True,True,True,none
+backhaul:None,False,6.959618482438181,70000.0,14537.34632225475,3911.7246819284137,False,"[253.645152, 261.645152]",False,True,True,True,none
+return:None,True,-0.022705381367877312,0.0,8173.937292435832,10376.366973083104,True,[],False,True,True,True,none

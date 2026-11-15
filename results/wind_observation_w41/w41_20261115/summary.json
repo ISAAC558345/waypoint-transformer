@@ -1,0 +1,571 @@
+{
+  "schema_version": 1,
+  "parent_commit": "ade84975315a1355ec7e646f90d927f2cf0fbe26",
+  "config_sha256": "29c4c473e8d8d5d4d2116361c0fbdc656237cf697a255e32c50ad0b363761ce3",
+  "elapsed_s": 16.340572000000975,
+  "archive_match": true,
+  "states": [
+    {
+      "mode": "no_send",
+      "uavs": [
+        {
+          "x_m": 147.07521900189724,
+          "y_m": 899.2385247302575,
+          "vx_m_s": 0.0,
+          "vy_m_s": 0.0,
+          "speed_m_s": 0.0,
+          "energy_j": 28730.39449060294,
+          "airborne": true,
+          "flight_state": "airborne",
+          "land_timer_s": 0.0
+        },
+        {
+          "x_m": 145.50820678069647,
+          "y_m": 1250.4315750087292,
+          "vx_m_s": 0.0,
+          "vy_m_s": 0.0,
+          "speed_m_s": 0.0,
+          "energy_j": 18655.36926194223,
+          "airborne": true,
+          "flight_state": "airborne",
+          "land_timer_s": 0.0
+        }
+      ],
+      "packets": [
+        {
+          "packet": "b0-p0",
+          "buoy": 0,
+          "holder": "uav:0",
+          "delivered_s": null,
+          "remaining_bits": 10000.0
+        },
+        {
+          "packet": "b0-p1",
+          "buoy": 0,
+          "holder": "uav:0",
+          "delivered_s": null,
+          "remaining_bits": 10000.0
+        },
+        {
+          "packet": "b1-p0",
+          "buoy": 1,
+          "holder": "uav:0",
+          "delivered_s": null,
+          "remaining_bits": 25000.0
+        },
+        {
+          "packet": "b1-p1",
+          "buoy": 1,
+          "holder": "uav:0",
+          "delivered_s": null,
+          "remaining_bits": 25000.0
+        },
+        {
+          "packet": "b2-p0",
+          "buoy": 2,
+          "holder": "uav:1",
+          "delivered_s": null,
+          "remaining_bits": 10000.0
+        },
+        {
+          "packet": "b2-p1",
+          "buoy": 2,
+          "holder": "uav:1",
+          "delivered_s": null,
+          "remaining_bits": 10000.0
+        },
+        {
+          "packet": "b3-p0",
+          "buoy": 3,
+          "holder": "uav:1",
+          "delivered_s": null,
+          "remaining_bits": 25000.0
+        },
+        {
+          "packet": "b3-p1",
+          "buoy": 3,
+          "holder": "uav:1",
+          "delivered_s": null,
+          "remaining_bits": 25000.0
+        }
+      ],
+      "beliefs": [
+        {
+          "mean": 0.9829793626670298,
+          "q95": 1.0031003832232508
+        },
+        {
+          "mean": 1.2400143149311855,
+          "q95": 1.2601255485273297
+        }
+      ],
+      "used_message": false,
+      "previous_executed": "service:2",
+      "requested": "return:None",
+      "executed": "return:None",
+      "reason": "tie_scheduler",
+      "partner_requested": "backhaul:None",
+      "guard_rewrote": false
+    },
+    {
+      "mode": "timely",
+      "uavs": [
+        {
+          "x_m": 147.07521900189724,
+          "y_m": 899.2385247302575,
+          "vx_m_s": 0.0,
+          "vy_m_s": 0.0,
+          "speed_m_s": 0.0,
+          "energy_j": 28730.38689754054,
+          "airborne": true,
+          "flight_state": "airborne",
+          "land_timer_s": 0.0
+        },
+        {
+          "x_m": 145.50820678069647,
+          "y_m": 1250.4315750087292,
+          "vx_m_s": 0.0,
+          "vy_m_s": 0.0,
+          "speed_m_s": 0.0,
+          "energy_j": 18655.366468779997,
+          "airborne": true,
+          "flight_state": "airborne",
+          "land_timer_s": 0.0
+        }
+      ],
+      "packets": [
+        {
+          "packet": "b0-p0",
+          "buoy": 0,
+          "holder": "uav:0",
+          "delivered_s": null,
+          "remaining_bits": 10000.0
+        },
+        {
+          "packet": "b0-p1",
+          "buoy": 0,
+          "holder": "uav:0",
+          "delivered_s": null,
+          "remaining_bits": 10000.0
+        },
+        {
+          "packet": "b1-p0",
+          "buoy": 1,
+          "holder": "uav:0",
+          "delivered_s": null,
+          "remaining_bits": 25000.0
+        },
+        {
+          "packet": "b1-p1",
+          "buoy": 1,
+          "holder": "uav:0",
+          "delivered_s": null,
+          "remaining_bits": 25000.0
+        },
+        {
+          "packet": "b2-p0",
+          "buoy": 2,
+          "holder": "uav:1",
+          "delivered_s": null,
+          "remaining_bits": 10000.0
+        },
+        {
+          "packet": "b2-p1",
+          "buoy": 2,
+          "holder": "uav:1",
+          "delivered_s": null,
+          "remaining_bits": 10000.0
+        },
+        {
+          "packet": "b3-p0",
+          "buoy": 3,
+          "holder": "uav:1",
+          "delivered_s": null,
+          "remaining_bits": 25000.0
+        },
+        {
+          "packet": "b3-p1",
+          "buoy": 3,
+          "holder": "uav:1",
+          "delivered_s": null,
+          "remaining_bits": 25000.0
+        }
+      ],
+      "beliefs": [
+        {
+          "mean": 0.9829793626670298,
+          "q95": 1.0031003832232508
+        },
+        {
+          "mean": 1.2400143149311855,
+          "q95": 1.2601255485273297
+        }
+      ],
+      "used_message": true,
+      "previous_executed": "service:2",
+      "requested": "backhaul:None",
+      "executed": "backhaul:None",
+      "reason": "max_utility",
+      "partner_requested": "backhaul:None",
+      "guard_rewrote": false
+    }
+  ],
+  "tables": {
+    "no_send_natural": {
+      "rows": [
+        {
+          "action": "wait:None",
+          "admitted": false,
+          "utility": -0.04037714919371208,
+          "bits": 0.0,
+          "quote_energy_j": 14535.77370973635,
+          "terminal_j": 3913.300087609032,
+          "holds_reserve": false,
+          "predicted_arrival_s": [],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        },
+        {
+          "action": "backhaul:None",
+          "admitted": false,
+          "utility": 6.959618482438181,
+          "bits": 70000.0,
+          "quote_energy_j": 14537.34632225475,
+          "terminal_j": 3911.7274750906454,
+          "holds_reserve": false,
+          "predicted_arrival_s": [
+            253.645152,
+            261.645152
+          ],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        },
+        {
+          "action": "return:None",
+          "admitted": true,
+          "utility": -0.022705381367877312,
+          "bits": 0.0,
+          "quote_energy_j": 8173.937292435832,
+          "terminal_j": 10376.369766245336,
+          "holds_reserve": true,
+          "predicted_arrival_s": [],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        }
+      ],
+      "chosen": "return:None",
+      "reason": "tie_scheduler",
+      "tied": [
+        "return:None"
+      ],
+      "scheduler": "return:None"
+    },
+    "timely_natural": {
+      "rows": [
+        {
+          "action": "wait:None",
+          "admitted": true,
+          "utility": -0.036780581472717025,
+          "bits": 0.0,
+          "quote_energy_j": 13241.00933017813,
+          "terminal_j": 5229.060874236604,
+          "holds_reserve": true,
+          "predicted_arrival_s": [],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        },
+        {
+          "action": "backhaul:None",
+          "admitted": true,
+          "utility": 6.963215050159176,
+          "bits": 70000.0,
+          "quote_energy_j": 13242.581942696532,
+          "terminal_j": 5227.4882617182175,
+          "holds_reserve": true,
+          "predicted_arrival_s": [
+            253.645152,
+            261.645152
+          ],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        },
+        {
+          "action": "return:None",
+          "admitted": true,
+          "utility": -0.022207736616155088,
+          "bits": 0.0,
+          "quote_energy_j": 7994.785181815831,
+          "terminal_j": 10558.424671084269,
+          "holds_reserve": true,
+          "predicted_arrival_s": [],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        }
+      ],
+      "chosen": "backhaul:None",
+      "reason": "max_utility",
+      "tied": [
+        "backhaul:None"
+      ],
+      "scheduler": "return:None"
+    }
+  },
+  "toggled": {
+    "message": {
+      "rows": [
+        {
+          "action": "wait:None",
+          "admitted": true,
+          "utility": -0.036780581472717025,
+          "bits": 0.0,
+          "quote_energy_j": 13241.00933017813,
+          "terminal_j": 5229.060874236604,
+          "holds_reserve": true,
+          "predicted_arrival_s": [],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        },
+        {
+          "action": "backhaul:None",
+          "admitted": true,
+          "utility": 6.963215050159176,
+          "bits": 70000.0,
+          "quote_energy_j": 13242.581942696532,
+          "terminal_j": 5227.4882617182175,
+          "holds_reserve": true,
+          "predicted_arrival_s": [
+            253.645152,
+            261.645152
+          ],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        },
+        {
+          "action": "return:None",
+          "admitted": true,
+          "utility": -0.022207736616155088,
+          "bits": 0.0,
+          "quote_energy_j": 7994.785181815831,
+          "terminal_j": 10558.424671084269,
+          "holds_reserve": true,
+          "predicted_arrival_s": [],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        }
+      ],
+      "chosen": "backhaul:None",
+      "reason": "max_utility",
+      "tied": [
+        "backhaul:None"
+      ],
+      "scheduler": "return:None"
+    },
+    "none": {
+      "rows": [
+        {
+          "action": "wait:None",
+          "admitted": false,
+          "utility": -0.04037714919371208,
+          "bits": 0.0,
+          "quote_energy_j": 14535.77370973635,
+          "terminal_j": 3913.2972944468,
+          "holds_reserve": false,
+          "predicted_arrival_s": [],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        },
+        {
+          "action": "backhaul:None",
+          "admitted": false,
+          "utility": 6.959618482438181,
+          "bits": 70000.0,
+          "quote_energy_j": 14537.34632225475,
+          "terminal_j": 3911.7246819284137,
+          "holds_reserve": false,
+          "predicted_arrival_s": [
+            253.645152,
+            261.645152
+          ],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        },
+        {
+          "action": "return:None",
+          "admitted": true,
+          "utility": -0.022705381367877312,
+          "bits": 0.0,
+          "quote_energy_j": 8173.937292435832,
+          "terminal_j": 10376.366973083104,
+          "holds_reserve": true,
+          "predicted_arrival_s": [],
+          "arrival_used_in_score": false,
+          "bits_used_in_score": true,
+          "energy_used_in_score": true,
+          "terminal_used_in_admission": true
+        }
+      ],
+      "chosen": "return:None",
+      "reason": "tie_scheduler",
+      "tied": [
+        "return:None"
+      ],
+      "scheduler": "return:None"
+    }
+  },
+  "cells": [
+    {
+      "information": "message",
+      "preset": "backhaul:None",
+      "executed": "backhaul:None",
+      "partner_executed": "backhaul:None",
+      "on_time_bits": 140000.0,
+      "energy_j": 119009.80315920449,
+      "utility": 13.669417213446653,
+      "uav_energy_j": [
+        16312.556799944961,
+        5388.6757133250885
+      ],
+      "returned": 2,
+      "below_reserve": 0,
+      "not_landed": 0,
+      "deliveries": [
+        {
+          "id": "w4-b3-p0",
+          "uav": 1,
+          "delivered_s": 336.258064,
+          "bits": 25000.0
+        },
+        {
+          "id": "w4-b3-p1",
+          "uav": 1,
+          "delivered_s": 344.258064,
+          "bits": 25000.0
+        }
+      ],
+      "reserve_met": true
+    },
+    {
+      "information": "message",
+      "preset": "return:None",
+      "executed": "return:None",
+      "partner_executed": "backhaul:None",
+      "on_time_bits": 140000.0,
+      "energy_j": 119222.27114102914,
+      "utility": 13.668827024608252,
+      "uav_energy_j": [
+        16312.556799944961,
+        5176.207731500368
+      ],
+      "returned": 2,
+      "below_reserve": 0,
+      "not_landed": 0,
+      "deliveries": [
+        {
+          "id": "w4-b3-p0",
+          "uav": 1,
+          "delivered_s": 283.645152,
+          "bits": 25000.0
+        },
+        {
+          "id": "w4-b3-p1",
+          "uav": 1,
+          "delivered_s": 291.645152,
+          "bits": 25000.0
+        }
+      ],
+      "reserve_met": true
+    },
+    {
+      "information": "none",
+      "preset": "backhaul:None",
+      "executed": "backhaul:None",
+      "partner_executed": "backhaul:None",
+      "on_time_bits": 140000.0,
+      "energy_j": 119009.80315920449,
+      "utility": 13.669417213446653,
+      "uav_energy_j": [
+        16312.556799944961,
+        5388.6757133250885
+      ],
+      "returned": 2,
+      "below_reserve": 0,
+      "not_landed": 0,
+      "deliveries": [
+        {
+          "id": "w4-b3-p0",
+          "uav": 1,
+          "delivered_s": 336.258064,
+          "bits": 25000.0
+        },
+        {
+          "id": "w4-b3-p1",
+          "uav": 1,
+          "delivered_s": 344.258064,
+          "bits": 25000.0
+        }
+      ],
+      "reserve_met": true
+    },
+    {
+      "information": "none",
+      "preset": "return:None",
+      "executed": "return:None",
+      "partner_executed": "backhaul:None",
+      "on_time_bits": 140000.0,
+      "energy_j": 113807.1091312338,
+      "utility": 13.683869141302129,
+      "uav_energy_j": [
+        16312.556799944961,
+        10591.369741295694
+      ],
+      "returned": 2,
+      "below_reserve": 0,
+      "not_landed": 0,
+      "deliveries": [
+        {
+          "id": "w4-b3-p0",
+          "uav": 1,
+          "delivered_s": 313.645152,
+          "bits": 25000.0
+        },
+        {
+          "id": "w4-b3-p1",
+          "uav": 1,
+          "delivered_s": 321.645152,
+          "bits": 25000.0
+        }
+      ],
+      "reserve_met": true
+    }
+  ],
+  "ledger_gap_j": 5202.704414195237,
+  "archived_gap_j": 5202.704414195352,
+  "unexplained_j": 1.1459633242338896e-10,
+  "message_gap_j": 0.010386224639660213,
+  "ranking_opposite": false,
+  "proposal": "",
+  "default_changed": false,
+  "scheduler_reference_j": 111310.32858681791
+}
