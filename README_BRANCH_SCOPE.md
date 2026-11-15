@@ -4,7 +4,7 @@
 
 ## 当前执行任务
 
-W4.1 已完成，等待下一份推送。报告见 [W4.1 结果](docs/research/Wind_Observation_W41_Report_CN.md)。本轮没有改默认调度。
+执行 [W4.2 两机回传的逐包到岸预测](CURSOR_NEXT_TASK.md)。W4.1 已归档，W4.2 待运行。
 
 ## W4.1 已完成的结果
 
