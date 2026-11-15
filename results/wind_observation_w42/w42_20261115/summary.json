@@ -1,0 +1,750 @@
+{
+  "schema_version": 1,
+  "parent_commit": "9c33816e602e3fe3a6d2f585b2b85127cd12058e",
+  "config_sha256": "4c9f795b9832e9e220293463da6de305f12993a5808870f7d0992d96847e4b8c",
+  "elapsed_s": 9.604111200009356,
+  "archive_match": true,
+  "scheduler_action": "return:None",
+  "solo_choice": {
+    "action": "backhaul:None",
+    "reason": "max_utility"
+  },
+  "joint_choice": {
+    "action": "return:None",
+    "reason": "tie_scheduler"
+  },
+  "choice_changed": true,
+  "closed_loop": {
+    "on_time_bits": 140000.0,
+    "energy_j": 119222.27114102914,
+    "utility": 13.668827024608252,
+    "uav_energy_j": [
+      16312.556799944961,
+      5176.207731500368
+    ],
+    "returned": 2,
+    "below_reserve": 0,
+    "not_landed": 0,
+    "target": [
+      {
+        "packet": "b3-p0",
+        "holder": "shore",
+        "delivered_s": 283.645152,
+        "on_time": true
+      },
+      {
+        "packet": "b3-p1",
+        "holder": "shore",
+        "delivered_s": 291.645152,
+        "on_time": true
+      }
+    ],
+    "missing_control_packets": [],
+    "target_on_time": true,
+    "business_kept": true,
+    "reserve_met": true,
+    "full_goal": true,
+    "delivery_held": true,
+    "energy_shortfall_j": [
+      0.0,
+      0.0
+    ],
+    "deliveries": [
+      {
+        "packet": "b3-p0",
+        "uav": 1,
+        "delivered_s": 283.645152,
+        "bits": 25000.0,
+        "on_time": true
+      },
+      {
+        "packet": "b3-p1",
+        "uav": 1,
+        "delivered_s": 291.645152,
+        "bits": 25000.0,
+        "on_time": true
+      }
+    ],
+    "requested": "return:None"
+  },
+  "default_changed": false,
+  "arrival_used_in_score": false,
+  "joint_candidate_computed_before_step": true,
+  "later_requests_known_at_decision": false,
+  "queue_residual_bits": 0.0,
+  "splits": [
+    {
+      "packet": "b3-p0",
+      "quote_s": 253.645152,
+      "joint_s": 276.258064,
+      "actual_s": 336.258064,
+      "shared_link_s": 22.612911999999994,
+      "reselection_s": 60.0,
+      "residual_s": 0.0
+    },
+    {
+      "packet": "b3-p1",
+      "quote_s": 261.645152,
+      "joint_s": 284.258064,
+      "actual_s": 344.258064,
+      "shared_link_s": 22.612911999999994,
+      "reselection_s": 60.0,
+      "residual_s": 0.0
+    }
+  ],
+  "intervals": [
+    {
+      "t_s": 240.0,
+      "requested": [
+        "backhaul:None",
+        "backhaul:None"
+      ],
+      "executed": [
+        "backhaul:None",
+        "backhaul:None"
+      ],
+      "requested_air_s": [
+        17.019616,
+        17.019616
+      ],
+      "granted_air_s": [
+        17.019616,
+        6.052112
+      ],
+      "control_air_s": 0.47929599999999994,
+      "bits_sent": [
+        70000.0,
+        24800.0
+      ],
+      "spent_j": [
+        4220.352394828431,
+        5230.578074331343
+      ],
+      "queue_after": [
+        {
+          "packet": "b0-p0",
+          "buoy": 0,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 242.897072
+        },
+        {
+          "packet": "b0-p1",
+          "buoy": 0,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 245.897072
+        },
+        {
+          "packet": "b1-p0",
+          "buoy": 1,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 253.645152
+        },
+        {
+          "packet": "b1-p1",
+          "buoy": 1,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 261.645152
+        },
+        {
+          "packet": "b2-p0",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 264.89707200000004
+        },
+        {
+          "packet": "b2-p1",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 267.89707200000004
+        },
+        {
+          "packet": "b3-p0",
+          "buoy": 3,
+          "holder": "uav:1",
+          "remaining_bits": 20200.0,
+          "delivered_s": null
+        },
+        {
+          "packet": "b3-p1",
+          "buoy": 3,
+          "holder": "uav:1",
+          "remaining_bits": 25000.0,
+          "delivered_s": null
+        }
+      ]
+    },
+    {
+      "t_s": 270.0,
+      "requested": [
+        "return:None",
+        "return:None"
+      ],
+      "executed": [
+        "return:None",
+        "return:None"
+      ],
+      "requested_air_s": [
+        0.0,
+        0.0
+      ],
+      "granted_air_s": [
+        0,
+        0
+      ],
+      "control_air_s": 0.47929599999999994,
+      "bits_sent": [
+        0.0,
+        0.0
+      ],
+      "spent_j": [
+        5044.625629949474,
+        5833.196684391972
+      ],
+      "queue_after": [
+        {
+          "packet": "b0-p0",
+          "buoy": 0,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 242.897072
+        },
+        {
+          "packet": "b0-p1",
+          "buoy": 0,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 245.897072
+        },
+        {
+          "packet": "b1-p0",
+          "buoy": 1,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 253.645152
+        },
+        {
+          "packet": "b1-p1",
+          "buoy": 1,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 261.645152
+        },
+        {
+          "packet": "b2-p0",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 264.89707200000004
+        },
+        {
+          "packet": "b2-p1",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 267.89707200000004
+        },
+        {
+          "packet": "b3-p0",
+          "buoy": 3,
+          "holder": "uav:1",
+          "remaining_bits": 20200.0,
+          "delivered_s": null
+        },
+        {
+          "packet": "b3-p1",
+          "buoy": 3,
+          "holder": "uav:1",
+          "remaining_bits": 25000.0,
+          "delivered_s": null
+        }
+      ]
+    },
+    {
+      "t_s": 300.0,
+      "requested": [
+        "return:None",
+        "return:None"
+      ],
+      "executed": [
+        "return:None",
+        "return:None"
+      ],
+      "requested_air_s": [
+        0.0,
+        0.0
+      ],
+      "granted_air_s": [
+        0,
+        0
+      ],
+      "control_air_s": 0.47929599999999994,
+      "bits_sent": [
+        0.0,
+        0.0
+      ],
+      "spent_j": [
+        1682.0308585406237,
+        731.0813850850809
+      ],
+      "queue_after": [
+        {
+          "packet": "b0-p0",
+          "buoy": 0,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 242.897072
+        },
+        {
+          "packet": "b0-p1",
+          "buoy": 0,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 245.897072
+        },
+        {
+          "packet": "b1-p0",
+          "buoy": 1,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 253.645152
+        },
+        {
+          "packet": "b1-p1",
+          "buoy": 1,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 261.645152
+        },
+        {
+          "packet": "b2-p0",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 264.89707200000004
+        },
+        {
+          "packet": "b2-p1",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 267.89707200000004
+        },
+        {
+          "packet": "b3-p0",
+          "buoy": 3,
+          "holder": "uav:1",
+          "remaining_bits": 20200.0,
+          "delivered_s": null
+        },
+        {
+          "packet": "b3-p1",
+          "buoy": 3,
+          "holder": "uav:1",
+          "remaining_bits": 25000.0,
+          "delivered_s": null
+        }
+      ]
+    },
+    {
+      "t_s": 330.0,
+      "requested": [
+        "return:None",
+        "backhaul:None"
+      ],
+      "executed": [
+        "return:None",
+        "backhaul:None"
+      ],
+      "requested_air_s": [
+        0.0,
+        10.967504
+      ],
+      "granted_air_s": [
+        0,
+        10.967504
+      ],
+      "control_air_s": 0.47929599999999994,
+      "bits_sent": [
+        0.0,
+        45200.0
+      ],
+      "spent_j": [
+        30.01675947504191,
+        31.030156844632984
+      ],
+      "queue_after": [
+        {
+          "packet": "b0-p0",
+          "buoy": 0,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 242.897072
+        },
+        {
+          "packet": "b0-p1",
+          "buoy": 0,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 245.897072
+        },
+        {
+          "packet": "b1-p0",
+          "buoy": 1,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 253.645152
+        },
+        {
+          "packet": "b1-p1",
+          "buoy": 1,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 261.645152
+        },
+        {
+          "packet": "b2-p0",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 264.89707200000004
+        },
+        {
+          "packet": "b2-p1",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 267.89707200000004
+        },
+        {
+          "packet": "b3-p0",
+          "buoy": 3,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 336.258064
+        },
+        {
+          "packet": "b3-p1",
+          "buoy": 3,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 344.258064
+        }
+      ]
+    }
+  ],
+  "window": {
+    "wait": {
+      "spent_j": [
+        4212.875093363371,
+        5272.614705776483
+      ],
+      "bits": 70000.0,
+      "queue": [
+        {
+          "packet": "b0-p0",
+          "buoy": 0,
+          "holder": "uav:0",
+          "remaining_bits": 10000.0,
+          "delivered_s": null
+        },
+        {
+          "packet": "b0-p1",
+          "buoy": 0,
+          "holder": "uav:0",
+          "remaining_bits": 10000.0,
+          "delivered_s": null
+        },
+        {
+          "packet": "b1-p0",
+          "buoy": 1,
+          "holder": "uav:0",
+          "remaining_bits": 25000.0,
+          "delivered_s": null
+        },
+        {
+          "packet": "b1-p1",
+          "buoy": 1,
+          "holder": "uav:0",
+          "remaining_bits": 25000.0,
+          "delivered_s": null
+        },
+        {
+          "packet": "b2-p0",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 242.897072
+        },
+        {
+          "packet": "b2-p1",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 245.897072
+        },
+        {
+          "packet": "b3-p0",
+          "buoy": 3,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 253.645152
+        },
+        {
+          "packet": "b3-p1",
+          "buoy": 3,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 261.645152
+        }
+      ],
+      "deliveries": [
+        {
+          "packet": "b2-p0",
+          "buoy": 2,
+          "uav": 1,
+          "delivered_s": 242.897072,
+          "bits": 10000.0,
+          "on_time": true
+        },
+        {
+          "packet": "b2-p1",
+          "buoy": 2,
+          "uav": 1,
+          "delivered_s": 245.897072,
+          "bits": 10000.0,
+          "on_time": true
+        },
+        {
+          "packet": "b3-p0",
+          "buoy": 3,
+          "uav": 1,
+          "delivered_s": 253.645152,
+          "bits": 25000.0,
+          "on_time": true
+        },
+        {
+          "packet": "b3-p1",
+          "buoy": 3,
+          "uav": 1,
+          "delivered_s": 261.645152,
+          "bits": 25000.0,
+          "on_time": true
+        }
+      ]
+    },
+    "backhaul": {
+      "spent_j": [
+        4214.447705881772,
+        5271.601308406884
+      ],
+      "bits": 20000.0,
+      "queue": [
+        {
+          "packet": "b0-p0",
+          "buoy": 0,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 242.897072
+        },
+        {
+          "packet": "b0-p1",
+          "buoy": 0,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 245.897072
+        },
+        {
+          "packet": "b1-p0",
+          "buoy": 1,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 253.645152
+        },
+        {
+          "packet": "b1-p1",
+          "buoy": 1,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 261.645152
+        },
+        {
+          "packet": "b2-p0",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 264.89707200000004
+        },
+        {
+          "packet": "b2-p1",
+          "buoy": 2,
+          "holder": "shore",
+          "remaining_bits": 0.0,
+          "delivered_s": 267.89707200000004
+        },
+        {
+          "packet": "b3-p0",
+          "buoy": 3,
+          "holder": "uav:1",
+          "remaining_bits": 20200.0,
+          "delivered_s": null
+        },
+        {
+          "packet": "b3-p1",
+          "buoy": 3,
+          "holder": "uav:1",
+          "remaining_bits": 25000.0,
+          "delivered_s": null
+        }
+      ],
+      "deliveries": [
+        {
+          "packet": "b0-p0",
+          "buoy": 0,
+          "uav": 0,
+          "delivered_s": 242.897072,
+          "bits": 10000.0,
+          "on_time": true
+        },
+        {
+          "packet": "b0-p1",
+          "buoy": 0,
+          "uav": 0,
+          "delivered_s": 245.897072,
+          "bits": 10000.0,
+          "on_time": true
+        },
+        {
+          "packet": "b1-p0",
+          "buoy": 1,
+          "uav": 0,
+          "delivered_s": 253.645152,
+          "bits": 25000.0,
+          "on_time": true
+        },
+        {
+          "packet": "b1-p1",
+          "buoy": 1,
+          "uav": 0,
+          "delivered_s": 261.645152,
+          "bits": 25000.0,
+          "on_time": true
+        },
+        {
+          "packet": "b2-p0",
+          "buoy": 2,
+          "uav": 1,
+          "delivered_s": 264.89707200000004,
+          "bits": 10000.0,
+          "on_time": true
+        },
+        {
+          "packet": "b2-p1",
+          "buoy": 2,
+          "uav": 1,
+          "delivered_s": 267.89707200000004,
+          "bits": 10000.0,
+          "on_time": true
+        }
+      ]
+    }
+  },
+  "log_bits_sent": [
+    70000.0,
+    24800.0
+  ],
+  "solo_scores": [
+    {
+      "action": "wait:None",
+      "admitted": true,
+      "utility": -0.036780581472717025,
+      "bits": 0.0,
+      "quote_energy_j": 13241.00933017813,
+      "terminal_j": 5229.060874236604,
+      "predicted_arrival_s": [],
+      "arrival_used_in_score": false
+    },
+    {
+      "action": "backhaul:None",
+      "admitted": true,
+      "utility": 6.963215050159176,
+      "bits": 70000.0,
+      "quote_energy_j": 13242.581942696532,
+      "terminal_j": 5227.4882617182175,
+      "predicted_arrival_s": [
+        253.645152,
+        261.645152
+      ],
+      "arrival_used_in_score": false
+    },
+    {
+      "action": "return:None",
+      "admitted": true,
+      "utility": -0.022207736616155088,
+      "bits": 0.0,
+      "quote_energy_j": 7994.785181815831,
+      "terminal_j": 10558.424671084269,
+      "predicted_arrival_s": [],
+      "arrival_used_in_score": false
+    }
+  ],
+  "joint_scores": [
+    {
+      "action": "wait:None",
+      "admitted": true,
+      "utility": -0.036780581472717025,
+      "bits": 0.0,
+      "quote_energy_j": 13241.00933017813,
+      "terminal_j": 5229.060874236604,
+      "predicted_arrival_s": [],
+      "arrival_used_in_score": false
+    },
+    {
+      "action": "backhaul:None",
+      "admitted": false,
+      "utility": 6.948527211145105,
+      "bits": 70000.0,
+      "quote_energy_j": 18530.20398776196,
+      "terminal_j": -143.94484567106338,
+      "predicted_arrival_s": [
+        276.258064,
+        284.258064
+      ],
+      "arrival_used_in_score": false
+    },
+    {
+      "action": "return:None",
+      "admitted": true,
+      "utility": -0.022207736616155088,
+      "bits": 0.0,
+      "quote_energy_j": 7994.785181815831,
+      "terminal_j": 10558.424671084269,
+      "predicted_arrival_s": [],
+      "arrival_used_in_score": false
+    }
+  ],
+  "quote_backhaul": {
+    "action": "backhaul:None",
+    "admitted": true,
+    "utility": 6.963215050159176,
+    "bits": 70000.0,
+    "quote_energy_j": 13242.581942696532,
+    "terminal_j": 5227.4882617182175,
+    "predicted_arrival_s": [
+      253.645152,
+      261.645152
+    ],
+    "arrival_used_in_score": false
+  },
+  "baseline_energy_j": 119009.80315920449,
+  "baseline_utility": 13.669417213446653,
+  "baseline_bits": 140000.0,
+  "energy_delta_j": 212.46798182465136,
+  "utility_delta": -0.0005901888384016729,
+  "recommend_more": false
+}

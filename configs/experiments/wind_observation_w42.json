@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_run",
+  "instruction": "CURSOR_NEXT_TASK.md",
+  "base_commit": "9c33816",
+  "parent_w41_result": "results/wind_observation_w41/w41_20261115",
+  "scenario_id": "b3_loose",
+  "seed": 1103,
+  "condition": "headwind_return",
+  "decision_s": 240,
+  "focus_uav": 1,
+  "partner_uav": 0,
+  "target_buoy": 3,
+  "quote_arrival_s": [253.645152, 261.645152],
+  "actual_arrival_s": [336.258064, 344.258064],
+  "arrival_gap_s": 82.613,
+  "plan_change": "在 240 秒快照上对照另机等待和两机同时回传。30 秒之后的重选只用归档动作离线解释。到岸时刻不进入分数，不改备用阈值和默认调度。",
+  "checks": [
+    {"name": "archive_actions", "catches": "240 秒之后的请求、执行或电量与 W4 在线记录不一致。"},
+    {"name": "archive_arrival", "catches": "及时组 3 号浮标两包的到岸时刻偏离 W4.1 归档。"},
+    {"name": "solo_quote", "catches": "另机等待的脚本不再复现 W4.1 记下的 253.645 秒和 261.645 秒。"}
+  ],
+  "do_not_retune": ["reserve_j", "tie_abs", "guard_probability", "ax", "ay", "message_deadline_s"]
+}
