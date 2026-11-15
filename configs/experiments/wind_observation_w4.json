@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_run",
+  "instruction": "CURSOR_NEXT_TASK.md",
+  "base_commit": "7b7abc6",
+  "parent_w3_result": "results/wind_observation_w3/w3_20261115",
+  "scenario_id": "b3_loose",
+  "method": "lookahead_calibration_off",
+  "seed": 1103,
+  "observer_uav": 0,
+  "receiver_uav": 1,
+  "target_buoy": 3,
+  "reserve_j": 4000.0,
+  "ground_idle_w": 1.0,
+  "decision_s": 30,
+  "historical_reference_bits": [90000, 140000],
+  "plan_change": "执行器从起飞起使用真风，早期状态不拼接 W1 的零风快照。无报文组沿用原调度。分叉只替换一个已有合法动作的当前 30 秒，之后仍用原调度。报文实验才改用 W3 的控制器积分末端电量。",
+  "link_rule": "采样点取无报文轨迹上 0 号机第一次处于决策时刻且已经离地的位置。报文沿用 32 字节和 w1-{condition}-{seed} 的噪声。接收机要等空中时间走完，所以可用时刻是不早于采样加空中时间的下一个决策；迟到再晚一个决策间隔。采样值不写入更早的决策。不发送不扣这笔无线电。",
+  "quote_rule": "每个已有候选用信息集均值风把脚本飞到返航结束，再加 1 W 待机到 1800 秒。0.95 分位提高该机推进功率比例，末端电量更低，用来准入；均值用来排序。准入要求该机落地、按时结束且末端电量不低于 4000 J，服务或回传还要产生新的按时 bit。返航不再自动准入。没有准入动作时退回该状态的原调度动作。效用差不超过 tie_abs 时保留原调度动作。真风不进入报价。",
+  "adopt_only_if": "只有及时报文让交付和备用达到标准、不发送达不到，而且顺风对照没有少交付或失去备用时，才建议扩大验证。预测更准本身不改默认策略。",
+  "do_not_retune": ["ax", "ay", "bx", "by", "observation_sigma_m_s", "prior_std_m_s", "reserve_j", "ground_idle_w", "tie_abs", "guard_probability"]
+}

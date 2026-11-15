@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "parent_commit": "7b7abc637a8f448f8dc40eeeaaff091dd362d45e",
+  "config_sha256": "d76d84392104e41ef2e124aae041d2020ca5b2e776a7ef58cb785b4ddac10ec9",
+  "result_dir": "results/wind_observation_w4/w4_20261115",
+  "elapsed_s": 153.53617150000355,
+  "control": {
+    "on_time_bits": 140000.0,
+    "energy_j": 111310.32858681791,
+    "utility": 13.690804642814395,
+    "uav_energy_j": [
+      16221.761573906493,
+      13178.945511750133
+    ],
+    "returned": 2,
+    "below_reserve": 0,
+    "not_landed": 0,
+    "target": [
+      {
+        "packet": "b3-p0",
+        "holder": "shore",
+        "delivered_s": 1729.645152,
+        "on_time": true
+      },
+      {
+        "packet": "b3-p1",
+        "holder": "shore",
+        "delivered_s": 1737.645152,
+        "on_time": true
+      }
+    ],
+    "missing_control_packets": [],
+    "target_on_time": true,
+    "business_kept": true,
+    "reserve_met": true,
+    "full_goal": true,
+    "delivery_held": true,
+    "energy_shortfall_j": [
+      0.0,
+      0.0
+    ]
+  },
+  "link": {
+    "sample_t_s": 30.0,
+    "sample_x_m": 618.0,
+    "sample_y_m": 400.0,
+    "airtime_s": 0.082176,
+    "message_j": 0.01038622464,
+    "timely_t_s": 60.0,
+    "late_t_s": 90.0,
+    "team_commit_t_s": 30.0,
+    "team_commit_uav": 0,
+    "receiver_commit_t_s": 60.0,
+    "team_shortfall_s": 30.0,
+    "receiver_shortfall_s": 0.0,
+    "message": {
+      "x_m": 618.0,
+      "y_m": 400.0,
+      "sample_time_s": 30.0,
+      "wind_x_m_s": 5.063036198812825,
+      "wind_y_m_s": 0.22659487437709347,
+      "sigma_m_s": 0.5
+    }
+  },
+  "inspected": [
+    {
+      "t_s": 0.0,
+      "uav": 0,
+      "requested": "service:1"
+    },
+    {
+      "t_s": 0.0,
+      "uav": 1,
+      "requested": "service:2"
+    },
+    {
+      "t_s": 30.0,
+      "uav": 0,
+      "requested": "service:3"
+    },
+    {
+      "t_s": 30.0,
+      "uav": 1,
+      "requested": "service:1"
+    },
+    {
+      "t_s": 60.0,
+      "uav": 0,
+      "requested": "service:1"
+    },
+    {
+      "t_s": 60.0,
+      "uav": 1,
+      "requested": "service:3"
+    },
+    {
+      "t_s": 90.0,
+      "uav": 0,
+      "requested": "service:1"
+    },
+    {
+      "t_s": 90.0,
+      "uav": 1,
+      "requested": "service:3"
+    },
+    {
+      "t_s": 120.0,
+      "uav": 1,
+      "requested": "service:3"
+    },
+    {
+      "t_s": 150.0,
+      "uav": 0,
+      "requested": "service:0"
+    },
+    {
+      "t_s": 150.0,
+      "uav": 1,
+      "requested": "return:None"
+    }
+  ],
+  "fork_full_goal": 44,
+  "latest_feasible_t_s": 150.0,
+  "online": true,
+  "action_change": true,
+  "first_action_change_s": 240.0,
+  "mission_change": false,
+  "recommend_expanded_validation": false,
+  "default_changed": false,
+  "conclusion": "报文改变了动作。按时交付、落地和备用没有分开。"
+}
