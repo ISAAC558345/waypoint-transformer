@@ -1,0 +1,520 @@
+{
+  "schema_version": 1,
+  "parent_commit": "23ee3f44203ded70f9f5b35db99ad453978c4cfc",
+  "config_sha256": "2410fa5154d23512f2f1025c255383b86b34713b1188af173d733b1bcbab403c",
+  "config_status": "registered_before_run",
+  "baseline_replay": true,
+  "budget_match": true,
+  "timeline_ok": true,
+  "default_changed": false,
+  "timeline": {
+    "choose_s": 30,
+    "sample_s": 60,
+    "send_s": 60,
+    "usable_s": 90,
+    "score_s": [
+      120,
+      150
+    ],
+    "horizons_s": [
+      30,
+      60
+    ]
+  },
+  "airtime_s": 0.082176,
+  "centralized_assumption": "\u9009\u62e9\u65f6\u540c\u65f6\u77e5\u9053\u4e24\u673a\u5f53\u524d\u72b6\u6001\u3001\u5df2\u63d0\u4ea4\u52a8\u4f5c\u3001\u5df2\u6709\u672c\u673a\u6d4b\u98ce\u548c\u539f\u8ba1\u5212\u5916\u63a8\u3002\u8fd9\u662f\u96c6\u4e2d\u5f0f\u8c03\u5ea6\u624d\u6709\u7684\u4fe1\u606f\uff0c\u4e0d\u662f 32 \u5b57\u8282\u98ce\u62a5\u6587\u7684\u5185\u5bb9\u3002",
+  "opportunities": {
+    "b3_loose": 1,
+    "b1_tight": 0,
+    "b1_window": 1
+  },
+  "n_changed": 3,
+  "n_tasks": 9,
+  "rmse": {
+    "all": {
+      "30": {
+        "baseline": {
+          "n": 9,
+          "rmse_m_s": 2.5274094167753773
+        },
+        "experiment": {
+          "n": 9,
+          "rmse_m_s": 2.4062029787627
+        }
+      },
+      "60": {
+        "baseline": {
+          "n": 9,
+          "rmse_m_s": 2.2180934697531574
+        },
+        "experiment": {
+          "n": 9,
+          "rmse_m_s": 2.093919981675615
+        }
+      }
+    },
+    "changed": {
+      "30": {
+        "baseline": {
+          "n": 3,
+          "rmse_m_s": 3.280687862560674
+        },
+        "experiment": {
+          "n": 3,
+          "rmse_m_s": 2.9948215466965364
+        }
+      },
+      "60": {
+        "baseline": {
+          "n": 3,
+          "rmse_m_s": 2.6286491467136393
+        },
+        "experiment": {
+          "n": 3,
+          "rmse_m_s": 2.302929239862738
+        }
+      }
+    }
+  },
+  "tasks": [
+    {
+      "scenario_id": "b3_loose",
+      "field": "control",
+      "seed": "control",
+      "opportunities": 1,
+      "n_candidates": 3,
+      "changed": 0,
+      "chosen": "service:3",
+      "original": "service:3",
+      "separations_m": [
+        0.0,
+        710.7070627393676,
+        576.1416328351926
+      ],
+      "scores": [
+        1.879864395209516,
+        1.945807573669198,
+        1.970213545324398
+      ],
+      "messages": 1,
+      "bytes": 32,
+      "airtime_s": 0.082176,
+      "use_delay_s": 30.0,
+      "valid_predictions": 2,
+      "extra_path_m": 0.0,
+      "extra_energy_j": 0.0,
+      "bits_baseline": 140000.0,
+      "bits_experiment": 140000.0,
+      "packets_baseline": 8,
+      "packets_experiment": 8,
+      "last_delivery_baseline_s": 1737.645152,
+      "last_delivery_experiment_s": 1737.645152,
+      "returned_baseline": [
+        true,
+        true
+      ],
+      "returned_experiment": [
+        true,
+        true
+      ],
+      "energy_left_baseline_j": [
+        16221.761573906493,
+        13178.945511750133
+      ],
+      "energy_left_experiment_j": [
+        16221.761573906493,
+        13178.945511750133
+      ],
+      "weight_global_experiment": 0.9965500651138808
+    },
+    {
+      "scenario_id": "b3_loose",
+      "field": "local",
+      "seed": "11051",
+      "opportunities": 1,
+      "n_candidates": 3,
+      "changed": 0,
+      "chosen": "service:3",
+      "original": "service:3",
+      "separations_m": [
+        0.0,
+        710.7070627393676,
+        576.1416328351926
+      ],
+      "scores": [
+        3.3650750076853195,
+        3.488178616818392,
+        3.5337400117243343
+      ],
+      "messages": 1,
+      "bytes": 32,
+      "airtime_s": 0.082176,
+      "use_delay_s": 30.0,
+      "valid_predictions": 2,
+      "extra_path_m": 0.0,
+      "extra_energy_j": 0.0,
+      "bits_baseline": 140000.0,
+      "bits_experiment": 140000.0,
+      "packets_baseline": 8,
+      "packets_experiment": 8,
+      "last_delivery_baseline_s": 1737.645152,
+      "last_delivery_experiment_s": 1737.645152,
+      "returned_baseline": [
+        true,
+        true
+      ],
+      "returned_experiment": [
+        true,
+        true
+      ],
+      "energy_left_baseline_j": [
+        16221.761573906493,
+        13178.945511750133
+      ],
+      "energy_left_experiment_j": [
+        16221.761573906493,
+        13178.945511750133
+      ],
+      "weight_global_experiment": 0.00543386285341318
+    },
+    {
+      "scenario_id": "b3_loose",
+      "field": "local",
+      "seed": "11052",
+      "opportunities": 1,
+      "n_candidates": 3,
+      "changed": 0,
+      "chosen": "service:3",
+      "original": "service:3",
+      "separations_m": [
+        0.0,
+        710.7070627393676,
+        576.1416328351926
+      ],
+      "scores": [
+        2.1606170257889197,
+        2.2373653662517565,
+        2.2657703941207856
+      ],
+      "messages": 1,
+      "bytes": 32,
+      "airtime_s": 0.082176,
+      "use_delay_s": 30.0,
+      "valid_predictions": 2,
+      "extra_path_m": 0.0,
+      "extra_energy_j": 0.0,
+      "bits_baseline": 140000.0,
+      "bits_experiment": 140000.0,
+      "packets_baseline": 8,
+      "packets_experiment": 8,
+      "last_delivery_baseline_s": 1737.645152,
+      "last_delivery_experiment_s": 1737.645152,
+      "returned_baseline": [
+        true,
+        true
+      ],
+      "returned_experiment": [
+        true,
+        true
+      ],
+      "energy_left_baseline_j": [
+        16221.761573906493,
+        13178.945511750133
+      ],
+      "energy_left_experiment_j": [
+        16221.761573906493,
+        13178.945511750133
+      ],
+      "weight_global_experiment": 4.498872027466901e-16
+    },
+    {
+      "scenario_id": "b1_tight",
+      "field": "control",
+      "seed": "control",
+      "opportunities": 0,
+      "n_candidates": 1,
+      "changed": 0,
+      "chosen": "wait:None",
+      "original": "wait:None",
+      "separations_m": [
+        0.0
+      ],
+      "scores": [
+        0.0
+      ],
+      "messages": 0,
+      "bytes": 0,
+      "airtime_s": 0.082176,
+      "use_delay_s": 30.0,
+      "valid_predictions": 2,
+      "extra_path_m": 0.0,
+      "extra_energy_j": 0.0,
+      "bits_baseline": 40000.0,
+      "bits_experiment": 40000.0,
+      "packets_baseline": 4,
+      "packets_experiment": 4,
+      "last_delivery_baseline_s": 1721.897072,
+      "last_delivery_experiment_s": 1721.897072,
+      "returned_baseline": [
+        true,
+        true
+      ],
+      "returned_experiment": [
+        true,
+        true
+      ],
+      "energy_left_baseline_j": [
+        34762.66764764198,
+        32505.09905287873
+      ],
+      "energy_left_experiment_j": [
+        34762.66764764198,
+        32505.09905287873
+      ],
+      "weight_global_experiment": 0.9752301558606665
+    },
+    {
+      "scenario_id": "b1_tight",
+      "field": "local",
+      "seed": "11051",
+      "opportunities": 0,
+      "n_candidates": 1,
+      "changed": 0,
+      "chosen": "wait:None",
+      "original": "wait:None",
+      "separations_m": [
+        0.0
+      ],
+      "scores": [
+        0.0
+      ],
+      "messages": 0,
+      "bytes": 0,
+      "airtime_s": 0.082176,
+      "use_delay_s": 30.0,
+      "valid_predictions": 2,
+      "extra_path_m": 0.0,
+      "extra_energy_j": 0.0,
+      "bits_baseline": 40000.0,
+      "bits_experiment": 40000.0,
+      "packets_baseline": 4,
+      "packets_experiment": 4,
+      "last_delivery_baseline_s": 1721.897072,
+      "last_delivery_experiment_s": 1721.897072,
+      "returned_baseline": [
+        true,
+        true
+      ],
+      "returned_experiment": [
+        true,
+        true
+      ],
+      "energy_left_baseline_j": [
+        34762.66764764198,
+        32505.09905287873
+      ],
+      "energy_left_experiment_j": [
+        34762.66764764198,
+        32505.09905287873
+      ],
+      "weight_global_experiment": 0.06694945773411318
+    },
+    {
+      "scenario_id": "b1_tight",
+      "field": "local",
+      "seed": "11052",
+      "opportunities": 0,
+      "n_candidates": 1,
+      "changed": 0,
+      "chosen": "wait:None",
+      "original": "wait:None",
+      "separations_m": [
+        0.0
+      ],
+      "scores": [
+        0.0
+      ],
+      "messages": 0,
+      "bytes": 0,
+      "airtime_s": 0.082176,
+      "use_delay_s": 30.0,
+      "valid_predictions": 2,
+      "extra_path_m": 0.0,
+      "extra_energy_j": 0.0,
+      "bits_baseline": 40000.0,
+      "bits_experiment": 40000.0,
+      "packets_baseline": 4,
+      "packets_experiment": 4,
+      "last_delivery_baseline_s": 1721.897072,
+      "last_delivery_experiment_s": 1721.897072,
+      "returned_baseline": [
+        true,
+        true
+      ],
+      "returned_experiment": [
+        true,
+        true
+      ],
+      "energy_left_baseline_j": [
+        34762.66764764198,
+        32505.09905287873
+      ],
+      "energy_left_experiment_j": [
+        34762.66764764198,
+        32505.09905287873
+      ],
+      "weight_global_experiment": 0.010394920231572709
+    },
+    {
+      "scenario_id": "b1_window",
+      "field": "control",
+      "seed": "control",
+      "opportunities": 1,
+      "n_candidates": 3,
+      "changed": 1,
+      "chosen": "service:1",
+      "original": "service:0",
+      "separations_m": [
+        0.0,
+        471.01809929447063,
+        465.3702949066652
+      ],
+      "scores": [
+        2.0406594924306014,
+        1.9950808408211886,
+        1.967298799554719
+      ],
+      "messages": 1,
+      "bytes": 32,
+      "airtime_s": 0.082176,
+      "use_delay_s": 30.0,
+      "valid_predictions": 2,
+      "extra_path_m": -18.95114511254178,
+      "extra_energy_j": -4131.612201066455,
+      "bits_baseline": 140000.0,
+      "bits_experiment": 120000.0,
+      "packets_baseline": 8,
+      "packets_experiment": 6,
+      "last_delivery_baseline_s": 1754.258064,
+      "last_delivery_experiment_s": 1747.645152,
+      "returned_baseline": [
+        true,
+        true
+      ],
+      "returned_experiment": [
+        true,
+        true
+      ],
+      "energy_left_baseline_j": [
+        7557.4420923475145,
+        12001.542555369082
+      ],
+      "energy_left_experiment_j": [
+        11689.054293413898,
+        12001.542555369082
+      ],
+      "weight_global_experiment": 0.9967286955906498
+    },
+    {
+      "scenario_id": "b1_window",
+      "field": "local",
+      "seed": "11051",
+      "opportunities": 1,
+      "n_candidates": 3,
+      "changed": 1,
+      "chosen": "service:1",
+      "original": "service:0",
+      "separations_m": [
+        0.0,
+        471.01809929447063,
+        465.3702949066652
+      ],
+      "scores": [
+        3.6652494497001413,
+        3.580162612159119,
+        3.528298725266293
+      ],
+      "messages": 1,
+      "bytes": 32,
+      "airtime_s": 0.082176,
+      "use_delay_s": 30.0,
+      "valid_predictions": 2,
+      "extra_path_m": -18.95114511254178,
+      "extra_energy_j": -4131.612201066455,
+      "bits_baseline": 140000.0,
+      "bits_experiment": 120000.0,
+      "packets_baseline": 8,
+      "packets_experiment": 6,
+      "last_delivery_baseline_s": 1754.258064,
+      "last_delivery_experiment_s": 1747.645152,
+      "returned_baseline": [
+        true,
+        true
+      ],
+      "returned_experiment": [
+        true,
+        true
+      ],
+      "energy_left_baseline_j": [
+        7557.4420923475145,
+        12001.542555369082
+      ],
+      "energy_left_experiment_j": [
+        11689.054293413898,
+        12001.542555369082
+      ],
+      "weight_global_experiment": 0.005862229496891398
+    },
+    {
+      "scenario_id": "b1_window",
+      "field": "local",
+      "seed": "11052",
+      "opportunities": 1,
+      "n_candidates": 3,
+      "changed": 1,
+      "chosen": "service:1",
+      "original": "service:0",
+      "separations_m": [
+        0.0,
+        471.01809929447063,
+        465.3702949066652
+      ],
+      "scores": [
+        2.3477593072884995,
+        2.294712336346767,
+        2.262378050804627
+      ],
+      "messages": 1,
+      "bytes": 32,
+      "airtime_s": 0.082176,
+      "use_delay_s": 30.0,
+      "valid_predictions": 2,
+      "extra_path_m": -18.95114511254178,
+      "extra_energy_j": -4131.612201066455,
+      "bits_baseline": 140000.0,
+      "bits_experiment": 120000.0,
+      "packets_baseline": 8,
+      "packets_experiment": 6,
+      "last_delivery_baseline_s": 1754.258064,
+      "last_delivery_experiment_s": 1747.645152,
+      "returned_baseline": [
+        true,
+        true
+      ],
+      "returned_experiment": [
+        true,
+        true
+      ],
+      "energy_left_baseline_j": [
+        7557.4420923475145,
+        12001.542555369082
+      ],
+      "energy_left_experiment_j": [
+        11689.054293413898,
+        12001.542555369082
+      ],
+      "weight_global_experiment": 2.9903624922598755e-07
+    }
+  ],
+  "elapsed_s": 43.204557900025975
+}

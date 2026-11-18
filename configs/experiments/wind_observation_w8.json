@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_run",
+  "instruction": "CURSOR_NEXT_TASK.md",
+  "baseline_commit": "ebebef34fb0959e910797794062eaa046ec7d4df",
+  "task_commit": "23ee3f44203ded70f9f5b35db99ad453978c4cfc",
+  "w7_result": "results/wind_observation_w7/w7_20261118/summary.json",
+  "w62_config": "configs/experiments/wind_observation_w62.json",
+  "condition": "headwind_return",
+  "method": "lookahead_calibration_off",
+  "observer_uav": 0,
+  "receiver_uav": 1,
+  "decision_s": 30,
+  "payload_bytes": 32,
+  "observation_sigma_m_s": 0.5,
+  "prior_std_m_s": 8.0,
+  "prior_weight_global": 0.5,
+  "prior_weight_local": 0.5,
+  "local_field": {
+    "amplitude_m_s": 2.0,
+    "length_m": 600.0,
+    "time_s": 90.0,
+    "generation_jitter": 1e-9,
+    "seeds": [11051, 11052],
+    "components": "x and y are independent and use the same kernel"
+  },
+  "timeline": {
+    "choose_s": 30,
+    "sample_s": 60,
+    "send_s": 60,
+    "usable_s": 90,
+    "score_s": [120, 150],
+    "horizons_s": [30, 60]
+  },
+  "trigger": "30 秒时两机都在空中，且任一机能耗信念均值已经离开先验。再用当前信念把原计划向前推，接收机在 120 秒仍被预测为在空中，才构成这一次机会。",
+  "candidates": "原动作的 60 秒预测位置是原航路采样点。其余合法动作里，预测位置与该点相距至少 300 米的，按距离从大到小最多保留两个。300 米是局部相关长度 600 米的一半。绕行只替换这一个 30 秒动作，巡航 18 米/秒下的一个时隙约 540 米，与相关长度同一量级。没有合格替代就飞原动作。",
+  "score_rule": "候选分数是混合模型在共同接收机预测点上的风矢量预测方差，东向和北向相加。方差公式不使用候选位置的测量值。分数比原航路低不过 1e-6 (m/s)^2 时保留原航路。",
+  "tie_variance": 1e-6,
+  "min_separation_m": 300.0,
+  "max_alternatives": 2,
+  "shared_target": "选择时的接收机目标来自原计划的两步外推，所有候选共用。主表的真值取基线接收机在 120 秒和 150 秒的实际位置。",
+  "onboard": "主表的本机样本用基线 1 号机在 0、30、60、90 秒的位置，两臂相同。远端样本用该臂 0 号机在 60 秒的实际位置。噪声按种子和角色配对，不随位置重抽。",
+  "centralized_assumption": "选择时同时知道两机当前状态、已提交动作、已有本机测风和原计划外推。这是集中式调度才有的信息，不是 32 字节风报文的内容。",
+  "approximation": "机体系仍用登记的逆风，局部扰动只进入测风和评分，这样基线能对照 W7。选择和外推使用当前能耗信念均值与无报文结构风，不吸收未来遥测。实际执行器使用场景真实能耗系数和登记逆风。",
+  "checks": [
+    {"name": "baseline_replay", "catches": "原调度的按时交付或耗电偏离 W7。"},
+    {"name": "budget_match", "catches": "两臂的报文条数或字节数不同。"},
+    {"name": "timeline", "catches": "预报使用了采样时刻尚未到达的远端样本，或评分早于报文可用时刻。"}
+  ],
+  "do_not_retune": ["ax", "ay", "amplitude_m_s", "length_m", "time_s", "observation_sigma_m_s", "prior_std_m_s", "prior_weight_global", "prior_weight_local", "seeds", "min_separation_m", "tie_variance", "timeline"]
+}
