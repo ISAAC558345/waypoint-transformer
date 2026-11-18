@@ -1,6 +1,6 @@
-# W8 待审批方案 · 空中主动选择一次测风航点
+# W8 执行任务 · 空中主动选择一次测风航点
 
-状态：W7 已完成。以下是 2026-11-18 提交用户审阅的方案。取得用户对 W8 的明确批准后，方可在 research/ocean-observation-isolated 实现和运行。基线 ebebef3，参见 [W7 报告](docs/research/Wind_Observation_W7_Report_CN.md)。
+状态：2026-11-18 用户已明确批准 W8。Cursor 请在 research/ocean-observation-isolated 实现并运行以下已审阅的小规模仿真实验，交付结果表、中文报告和复现入口。基线 ebebef3，参见 [W7 报告](docs/research/Wind_Observation_W7_Report_CN.md)。
 
 目标是检验在通信任务中，0 号机能否仅凭决策时的信息，选择一个可达测点，让 1 号机随后飞过的航段获得更准确的风预报。第一轮每次任务最多主动选点一次，以便将实际预报变化和这次选点对应起来。
 
