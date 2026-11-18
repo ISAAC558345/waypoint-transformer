@@ -1,0 +1,17 @@
+alternative,status,packet,buoy,bits,created_s,baseline_collected_s,baseline_collector,baseline_collect_action,baseline_forward_s,baseline_forward_action,baseline_delivered_s,baseline_on_time,baseline_holder,other_collected_s,other_collector,other_collect_action,other_forward_s,other_forward_action,other_delivered_s,other_on_time,other_holder,deadline_s
+service:1,missing,w4-b0-p0,0,10000.0,0.0,37,0,service:0,61,backhaul:None,1712.897072,1,shore,,,,,,,0,buoy,1800.0
+service:1,missing,w4-b0-p1,0,10000.0,0.0,37,0,service:0,64,backhaul:None,1715.897072,1,shore,,,,,,,0,buoy,1800.0
+service:1,shifted,w4-b1-p0,1,25000.0,0.0,167,0,service:1,187,backhaul:None,1723.645152,1,shore,137,0,service:1,151,backhaul:None,1717.645152,1,shore,1800.0
+service:1,shifted,w4-b1-p1,1,25000.0,0.0,167,0,service:1,195,backhaul:None,1731.645152,1,shore,137,0,service:1,159,backhaul:None,1725.645152,1,shore,1800.0
+service:1,shifted,w4-b2-p0,2,10000.0,0.0,29,1,service:2,31,backhaul:None,1734.897072,1,shore,29,1,service:2,61,backhaul:None,1728.897072,1,shore,1800.0
+service:1,shifted,w4-b2-p1,2,10000.0,0.0,29,1,service:2,34,backhaul:None,1737.897072,1,shore,29,1,service:2,64,backhaul:None,1731.897072,1,shore,1800.0
+service:1,shifted,w4-b3-p0,3,25000.0,0.0,135,1,service:3,157,backhaul:None,1746.258064,1,shore,135,1,service:3,157,backhaul:None,1739.9400960000003,1,shore,1800.0
+service:1,shifted,w4-b3-p1,3,25000.0,0.0,135,1,service:3,165,backhaul:None,1754.258064,1,shore,135,1,service:3,165,backhaul:None,1747.645152,1,shore,1800.0
+service:3,missing,w4-b0-p0,0,10000.0,0.0,37,0,service:0,61,backhaul:None,1712.897072,1,shore,,,,,,,0,buoy,1800.0
+service:3,missing,w4-b0-p1,0,10000.0,0.0,37,0,service:0,64,backhaul:None,1715.897072,1,shore,,,,,,,0,buoy,1800.0
+service:3,shifted,w4-b1-p0,1,25000.0,0.0,167,0,service:1,187,backhaul:None,1723.645152,1,shore,145,0,service:1,151,backhaul:None,1717.645152,1,shore,1800.0
+service:3,shifted,w4-b1-p1,1,25000.0,0.0,167,0,service:1,195,backhaul:None,1731.645152,1,shore,145,0,service:1,159,backhaul:None,1725.645152,1,shore,1800.0
+service:3,shifted,w4-b2-p0,2,10000.0,0.0,29,1,service:2,31,backhaul:None,1734.897072,1,shore,29,1,service:2,61,backhaul:None,1728.897072,1,shore,1800.0
+service:3,shifted,w4-b2-p1,2,10000.0,0.0,29,1,service:2,34,backhaul:None,1737.897072,1,shore,29,1,service:2,64,backhaul:None,1731.897072,1,shore,1800.0
+service:3,shifted,w4-b3-p0,3,25000.0,0.0,135,1,service:3,157,backhaul:None,1746.258064,1,shore,135,1,service:3,157,backhaul:None,1739.9400960000003,1,shore,1800.0
+service:3,shifted,w4-b3-p1,3,25000.0,0.0,135,1,service:3,165,backhaul:None,1754.258064,1,shore,135,1,service:3,165,backhaul:None,1747.645152,1,shore,1800.0

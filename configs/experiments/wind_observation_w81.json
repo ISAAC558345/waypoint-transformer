@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_run",
+  "instruction": "CURSOR_NEXT_TASK.md",
+  "task_commit": "54ef2a712ffc25baafd8082fbc35134c2dadb95c",
+  "w8_commit": "585438333575ade702fed54b40f4b52e35e0ec13",
+  "w8_result": "results/wind_observation_w8/w8_20261118/summary.json",
+  "w8_pairs": "results/wind_observation_w8/w8_20261118/pairs.csv",
+  "scenario_id": "b1_window",
+  "actions": ["service:0", "service:1", "service:3"],
+  "reference_action": "service:0",
+  "chosen_action": "service:1",
+  "bits_tolerance": 1e-4,
+  "energy_tolerance_j": 1e-3,
+  "rmse_tolerance_m_s": 1e-6,
+  "balance_rule": "三个风场都至少保住原路线的按时交付量和包数，两机返航并达到原备用要求，总能耗和报文预算不增加。两个局部场的两个时距误差都不高于原路线，且每个局部场至少一个时距严格更低。对照场只列差值。",
+  "forwarding": "执行器没有机间转发。采集是浮标到飞机的整包转移，转发是该包第一次进入岸站回传。",
+  "checks": [
+    {"name": "baseline_reuse", "catches": "原动作回放的按时交付、包数或耗电离开 W8 的 b1_window 基线。"},
+    {"name": "chosen_reuse", "catches": "service:1 的交付、耗电或风矢量误差离开 W8 已记录的改选结果。"},
+    {"name": "budget_timeline", "catches": "候选的报文条数或字节数不同，或评分用了 90 秒之前的远端样本。"}
+  ]
+}
