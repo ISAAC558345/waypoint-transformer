@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_run",
+  "instruction": "CURSOR_NEXT_TASK.md",
+  "task_commit": "7030781407180b3f21f0fe26f0018ed5118998dd",
+  "baseline_commit": "4f1b76f8408c4650589a3f03dd6900d8b311fa9d",
+  "w81_result": "results/wind_observation_w81/w81_20261118/summary.json",
+  "w8_config": "configs/experiments/wind_observation_w8.json",
+  "scenario_id": "b1_window",
+  "watched_packets": ["w4-b0-p0", "w4-b0-p1"],
+  "timeline": {
+    "choose_s": 60,
+    "sample_s": 90,
+    "send_s": 90,
+    "usable_s": 120,
+    "score_s": [150, 180],
+    "horizons_s": [30, 60],
+    "choice_onboard_s": [0, 30, 60],
+    "forecast_onboard_s": [0, 30, 60, 90, 120]
+  },
+  "min_separation_m": 300.0,
+  "max_alternatives": 2,
+  "tie_variance": 1e-6,
+  "bits_tolerance": 1e-4,
+  "energy_tolerance_j": 1e-3,
+  "rmse_tolerance_m_s": 1e-6,
+  "payload_bytes": 32,
+  "field_draw": "本轮只在 b1_window 的新评分时刻上重新抽样。种子、核和生成函数与 W8 相同，点集不同，所以绝对误差不与 W8 对比，只比较本轮各候选。",
+  "checks": [
+    {"name": "baseline_replay", "catches": "第 60 秒之后沿原动作继续飞，按时包标识、比特或总能耗离开 W8.1 原路线。"},
+    {"name": "snapshot_shared", "catches": "候选不是从同一份第 60 秒的机队、信念和包队列出发。"},
+    {"name": "budget_timeline", "catches": "远端样本在 120 秒前进入预报，或候选之间的报文条数或字节数不同。"}
+  ]
+}

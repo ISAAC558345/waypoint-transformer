@@ -1,6 +1,6 @@
 # W8.2 执行任务 · 采包后的下一次决策还有没有测风机会
 
-状态：待 Cursor 执行。研究分支 `research/ocean-observation-isolated`。基线为 `4f1b76f` 的 [W8.1 逐包报告](docs/research/Wind_Observation_W81_Report_CN.md)。
+状态：已完成。第 60 秒的 return 和 backhaul 都在第 167 秒错过浮标 1 的 50000 bit，没有候选同时保住交付并改善预报。默认调度未改。研究分支 `research/ocean-observation-isolated`。基线为 `4f1b76f` 的 [W8.1 逐包报告](docs/research/Wind_Observation_W81_Report_CN.md)。结果见 [W8.2 报告](docs/research/Wind_Observation_W82_Report_CN.md)。
 
 W8.1 查明，第 30 秒改选的两个替代航点都会错过第 37 秒从浮标 0 采集的两包。原路线在第 61 和 64 秒开始回传它们。因此第 60 秒是一个可以直接检验的决策点：包已在机上，但回传仍占用通信资源。检验此时是否存在一次既能保住交付又改善另一架无人机风预报的改点。限定为已有场景的单时隙离线回放。
 

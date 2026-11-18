@@ -1,0 +1,1078 @@
+{
+  "schema_version": 1,
+  "parent_commit": "7030781407180b3f21f0fe26f0018ed5118998dd",
+  "config_sha256": "21c8596db68d6bce0aa8aa4970b05986e24c2ac083566d0bb1fce7ba04034975",
+  "config_status": "registered_before_run",
+  "baseline_replay": true,
+  "snapshot_shared": true,
+  "budget_timeline": true,
+  "default_changed": false,
+  "scenario_id": "b1_window",
+  "timeline": {
+    "choose_s": 60,
+    "sample_s": 90,
+    "send_s": 90,
+    "usable_s": 120,
+    "score_s": [
+      150,
+      180
+    ],
+    "horizons_s": [
+      30,
+      60
+    ],
+    "choice_onboard_s": [
+      0,
+      30,
+      60
+    ],
+    "forecast_onboard_s": [
+      0,
+      30,
+      60,
+      90,
+      120
+    ]
+  },
+  "onboard_choice_s": [
+    0,
+    30,
+    60
+  ],
+  "onboard_forecast_s": [
+    0,
+    30,
+    60,
+    90,
+    120
+  ],
+  "field_draw": "\u672c\u8f6e\u53ea\u5728 b1_window \u7684\u65b0\u8bc4\u5206\u65f6\u523b\u4e0a\u91cd\u65b0\u62bd\u6837\u3002\u79cd\u5b50\u3001\u6838\u548c\u751f\u6210\u51fd\u6570\u4e0e W8 \u76f8\u540c\uff0c\u70b9\u96c6\u4e0d\u540c\uff0c\u6240\u4ee5\u7edd\u5bf9\u8bef\u5dee\u4e0d\u4e0e W8 \u5bf9\u6bd4\uff0c\u53ea\u6bd4\u8f83\u672c\u8f6e\u5404\u5019\u9009\u3002",
+  "queue_at_choice": [
+    {
+      "id": "w4-b0-p0",
+      "holder": "uav:0",
+      "remaining_bits": 10000.0
+    },
+    {
+      "id": "w4-b0-p1",
+      "holder": "uav:0",
+      "remaining_bits": 10000.0
+    },
+    {
+      "id": "w4-b1-p0",
+      "holder": "buoy",
+      "remaining_bits": 25000.0
+    },
+    {
+      "id": "w4-b1-p1",
+      "holder": "buoy",
+      "remaining_bits": 25000.0
+    },
+    {
+      "id": "w4-b2-p0",
+      "holder": "uav:1",
+      "remaining_bits": 10000.0
+    },
+    {
+      "id": "w4-b2-p1",
+      "holder": "uav:1",
+      "remaining_bits": 10000.0
+    },
+    {
+      "id": "w4-b3-p0",
+      "holder": "buoy",
+      "remaining_bits": 25000.0
+    },
+    {
+      "id": "w4-b3-p1",
+      "holder": "buoy",
+      "remaining_bits": 25000.0
+    }
+  ],
+  "actions_at_choice": [
+    "service:1",
+    "service:3"
+  ],
+  "legal": [
+    "wait:None",
+    "backhaul:None",
+    "return:None",
+    "service:1"
+  ],
+  "rejected": [
+    {
+      "action": "wait:None",
+      "separation_m": 475.42841527685476,
+      "reason": "beyond_cap"
+    }
+  ],
+  "choice_epoch": [
+    {
+      "uav": 0,
+      "requested": "service:1",
+      "executed": "service:1"
+    },
+    {
+      "uav": 1,
+      "requested": "service:3",
+      "executed": "service:3"
+    }
+  ],
+  "choice_seconds": [
+    {
+      "t_s": 61,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 62,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 63,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 64,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 65,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 66,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 67,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 68,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 69,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 70,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 71,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 72,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 73,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 74,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 75,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 76,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 77,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 78,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 79,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 80,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 81,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 82,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 83,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 84,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 85,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 86,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 87,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 88,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 89,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    },
+    {
+      "t_s": 90,
+      "uav0": "service:1",
+      "uav1": "service:3"
+    }
+  ],
+  "predicted_airborne": {
+    "90": true,
+    "120": true,
+    "150": true,
+    "180": true
+  },
+  "packets_on_uav0": true,
+  "watched_baseline": [
+    {
+      "packet": "w4-b0-p0",
+      "forward_s": 1711,
+      "delivered_s": 1712.897072,
+      "on_time": 1,
+      "holder": "shore"
+    },
+    {
+      "packet": "w4-b0-p1",
+      "forward_s": 1714,
+      "delivered_s": 1715.897072,
+      "on_time": 1,
+      "holder": "shore"
+    }
+  ],
+  "stopped": false,
+  "stop_reason": "",
+  "passed": [],
+  "on_time_ids": [
+    "w4-b0-p0",
+    "w4-b0-p1",
+    "w4-b1-p0",
+    "w4-b1-p1",
+    "w4-b2-p0",
+    "w4-b2-p1",
+    "w4-b3-p0",
+    "w4-b3-p1"
+  ],
+  "field_points": 10,
+  "receiver_airborne_actual": {
+    "150": true,
+    "180": true
+  },
+  "evaluable_horizons_s": [
+    30,
+    60
+  ],
+  "airtime_s": 0.082176,
+  "messages": 1,
+  "bytes": 32,
+  "extensions": [],
+  "variance_order": {
+    "control:control": [
+      "return:None",
+      "service:1",
+      "backhaul:None"
+    ],
+    "local:11051": [
+      "return:None",
+      "service:1",
+      "backhaul:None"
+    ],
+    "local:11052": [
+      "return:None",
+      "service:1",
+      "backhaul:None"
+    ]
+  },
+  "selectable": [],
+  "candidates": [
+    {
+      "field": "control",
+      "seed": "control",
+      "action": "service:1",
+      "separation_m": 0.0,
+      "variance": 0.5659762509795788,
+      "messages": 1,
+      "bytes": 32,
+      "baseline_bytes": 32,
+      "bits": 140000.0,
+      "baseline_bits": 140000.0,
+      "packets": 8,
+      "baseline_packets": 8,
+      "energy_j": 97079.75656394116,
+      "baseline_energy_j": 97079.75656394116,
+      "returned": [
+        true,
+        true
+      ],
+      "energy_left_j": [
+        7557.4420923475145,
+        12001.542555369082
+      ],
+      "reserve_margin_j": [
+        3557.4420923475145,
+        8001.542555369082
+      ],
+      "last_s": 1754.258064,
+      "watched": [
+        {
+          "packet": "w4-b0-p0",
+          "forward_s": 1711,
+          "delivered_s": 1712.897072,
+          "on_time": 1,
+          "holder": "shore"
+        },
+        {
+          "packet": "w4-b0-p1",
+          "forward_s": 1714,
+          "delivered_s": 1715.897072,
+          "on_time": 1,
+          "holder": "shore"
+        }
+      ],
+      "sender_airborne_at_sample": true,
+      "mission_ok": true,
+      "scored": true,
+      "earliest": null,
+      "first_action_s": "",
+      "balances": 0,
+      "failed": "",
+      "rmse_30": 0.20450634227090014,
+      "baseline_rmse_30": 0.20450634227090014,
+      "d_rmse_30": 0.0,
+      "rmse_60": 0.20440686930023727,
+      "baseline_rmse_60": 0.20440686930023727,
+      "d_rmse_60": 0.0,
+      "d_bits": 0.0,
+      "d_packets": 0,
+      "d_energy_j": 0.0
+    },
+    {
+      "field": "control",
+      "seed": "control",
+      "action": "return:None",
+      "separation_m": 552.9239382419519,
+      "variance": 0.5624159071757966,
+      "messages": 1,
+      "bytes": 32,
+      "baseline_bytes": 32,
+      "bits": 90000.0,
+      "baseline_bits": 140000.0,
+      "packets": 6,
+      "baseline_packets": 8,
+      "energy_j": 63711.66342674666,
+      "baseline_energy_j": 97079.75656394116,
+      "returned": [
+        true,
+        true
+      ],
+      "energy_left_j": [
+        40925.53522954219,
+        12001.542555369082
+      ],
+      "reserve_margin_j": [
+        36925.53522954219,
+        8001.542555369082
+      ],
+      "last_s": 1737.645152,
+      "watched": [
+        {
+          "packet": "w4-b0-p0",
+          "forward_s": 1711,
+          "delivered_s": 1712.897072,
+          "on_time": 1,
+          "holder": "shore"
+        },
+        {
+          "packet": "w4-b0-p1",
+          "forward_s": 1714,
+          "delivered_s": 1715.897072,
+          "on_time": 1,
+          "holder": "shore"
+        }
+      ],
+      "sender_airborne_at_sample": true,
+      "mission_ok": false,
+      "scored": false,
+      "earliest": {
+        "t_s": 167,
+        "packets": [
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p0",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          },
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p1",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          }
+        ],
+        "bits": 50000.0
+      },
+      "first_action_s": 61,
+      "balances": 0,
+      "failed": "control:control:bits;control:control:packets;local:11051:bits;local:11051:packets;11051:unscored;local:11052:bits;local:11052:packets;11052:unscored",
+      "rmse_30": "",
+      "baseline_rmse_30": 0.20450634227090014,
+      "d_rmse_30": "",
+      "rmse_60": "",
+      "baseline_rmse_60": 0.20440686930023727,
+      "d_rmse_60": "",
+      "d_bits": -50000.0,
+      "d_packets": -2,
+      "d_energy_j": -33368.093137194504
+    },
+    {
+      "field": "control",
+      "seed": "control",
+      "action": "backhaul:None",
+      "separation_m": 475.42841527685476,
+      "variance": 0.5743408389494145,
+      "messages": 1,
+      "bytes": 32,
+      "baseline_bytes": 32,
+      "bits": 90000.0,
+      "baseline_bits": 140000.0,
+      "packets": 6,
+      "baseline_packets": 8,
+      "energy_j": 67797.0010112556,
+      "baseline_energy_j": 97079.75656394116,
+      "returned": [
+        true,
+        true
+      ],
+      "energy_left_j": [
+        36840.19764503328,
+        12001.542555369082
+      ],
+      "reserve_margin_j": [
+        32840.19764503328,
+        8001.542555369082
+      ],
+      "last_s": 1731.645152,
+      "watched": [
+        {
+          "packet": "w4-b0-p0",
+          "forward_s": 61,
+          "delivered_s": 62.897071999999994,
+          "on_time": 1,
+          "holder": "shore"
+        },
+        {
+          "packet": "w4-b0-p1",
+          "forward_s": 64,
+          "delivered_s": 65.89707200000001,
+          "on_time": 1,
+          "holder": "shore"
+        }
+      ],
+      "sender_airborne_at_sample": true,
+      "mission_ok": false,
+      "scored": false,
+      "earliest": {
+        "t_s": 167,
+        "packets": [
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p0",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          },
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p1",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          }
+        ],
+        "bits": 50000.0
+      },
+      "first_action_s": 61,
+      "balances": 0,
+      "failed": "control:control:bits;control:control:packets;local:11051:bits;local:11051:packets;11051:unscored;local:11052:bits;local:11052:packets;11052:unscored",
+      "rmse_30": "",
+      "baseline_rmse_30": 0.20450634227090014,
+      "d_rmse_30": "",
+      "rmse_60": "",
+      "baseline_rmse_60": 0.20440686930023727,
+      "d_rmse_60": "",
+      "d_bits": -50000.0,
+      "d_packets": -2,
+      "d_energy_j": -29282.755552685558
+    },
+    {
+      "field": "local",
+      "seed": "11051",
+      "action": "service:1",
+      "separation_m": 0.0,
+      "variance": 0.5160697894791043,
+      "messages": 1,
+      "bytes": 32,
+      "baseline_bytes": 32,
+      "bits": 140000.0,
+      "baseline_bits": 140000.0,
+      "packets": 8,
+      "baseline_packets": 8,
+      "energy_j": 97079.75656394116,
+      "baseline_energy_j": 97079.75656394116,
+      "returned": [
+        true,
+        true
+      ],
+      "energy_left_j": [
+        7557.4420923475145,
+        12001.542555369082
+      ],
+      "reserve_margin_j": [
+        3557.4420923475145,
+        8001.542555369082
+      ],
+      "last_s": 1754.258064,
+      "watched": [
+        {
+          "packet": "w4-b0-p0",
+          "forward_s": 1711,
+          "delivered_s": 1712.897072,
+          "on_time": 1,
+          "holder": "shore"
+        },
+        {
+          "packet": "w4-b0-p1",
+          "forward_s": 1714,
+          "delivered_s": 1715.897072,
+          "on_time": 1,
+          "holder": "shore"
+        }
+      ],
+      "sender_airborne_at_sample": true,
+      "mission_ok": true,
+      "scored": true,
+      "earliest": null,
+      "first_action_s": "",
+      "balances": 0,
+      "failed": "",
+      "rmse_30": 4.202816472727692,
+      "baseline_rmse_30": 4.202816472727692,
+      "d_rmse_30": 0.0,
+      "rmse_60": 3.2045147395308122,
+      "baseline_rmse_60": 3.2045147395308122,
+      "d_rmse_60": 0.0,
+      "d_bits": 0.0,
+      "d_packets": 0,
+      "d_energy_j": 0.0
+    },
+    {
+      "field": "local",
+      "seed": "11051",
+      "action": "return:None",
+      "separation_m": 552.9239382419519,
+      "variance": 0.5129122679042182,
+      "messages": 1,
+      "bytes": 32,
+      "baseline_bytes": 32,
+      "bits": 90000.0,
+      "baseline_bits": 140000.0,
+      "packets": 6,
+      "baseline_packets": 8,
+      "energy_j": 63711.66342674666,
+      "baseline_energy_j": 97079.75656394116,
+      "returned": [
+        true,
+        true
+      ],
+      "energy_left_j": [
+        40925.53522954219,
+        12001.542555369082
+      ],
+      "reserve_margin_j": [
+        36925.53522954219,
+        8001.542555369082
+      ],
+      "last_s": 1737.645152,
+      "watched": [
+        {
+          "packet": "w4-b0-p0",
+          "forward_s": 1711,
+          "delivered_s": 1712.897072,
+          "on_time": 1,
+          "holder": "shore"
+        },
+        {
+          "packet": "w4-b0-p1",
+          "forward_s": 1714,
+          "delivered_s": 1715.897072,
+          "on_time": 1,
+          "holder": "shore"
+        }
+      ],
+      "sender_airborne_at_sample": true,
+      "mission_ok": false,
+      "scored": false,
+      "earliest": {
+        "t_s": 167,
+        "packets": [
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p0",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          },
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p1",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          }
+        ],
+        "bits": 50000.0
+      },
+      "first_action_s": 61,
+      "balances": 0,
+      "failed": "control:control:bits;control:control:packets;local:11051:bits;local:11051:packets;11051:unscored;local:11052:bits;local:11052:packets;11052:unscored",
+      "rmse_30": "",
+      "baseline_rmse_30": 4.202816472727692,
+      "d_rmse_30": "",
+      "rmse_60": "",
+      "baseline_rmse_60": 3.2045147395308122,
+      "d_rmse_60": "",
+      "d_bits": -50000.0,
+      "d_packets": -2,
+      "d_energy_j": -33368.093137194504
+    },
+    {
+      "field": "local",
+      "seed": "11051",
+      "action": "backhaul:None",
+      "separation_m": 475.42841527685476,
+      "variance": 0.5234879963814072,
+      "messages": 1,
+      "bytes": 32,
+      "baseline_bytes": 32,
+      "bits": 90000.0,
+      "baseline_bits": 140000.0,
+      "packets": 6,
+      "baseline_packets": 8,
+      "energy_j": 67797.0010112556,
+      "baseline_energy_j": 97079.75656394116,
+      "returned": [
+        true,
+        true
+      ],
+      "energy_left_j": [
+        36840.19764503328,
+        12001.542555369082
+      ],
+      "reserve_margin_j": [
+        32840.19764503328,
+        8001.542555369082
+      ],
+      "last_s": 1731.645152,
+      "watched": [
+        {
+          "packet": "w4-b0-p0",
+          "forward_s": 61,
+          "delivered_s": 62.897071999999994,
+          "on_time": 1,
+          "holder": "shore"
+        },
+        {
+          "packet": "w4-b0-p1",
+          "forward_s": 64,
+          "delivered_s": 65.89707200000001,
+          "on_time": 1,
+          "holder": "shore"
+        }
+      ],
+      "sender_airborne_at_sample": true,
+      "mission_ok": false,
+      "scored": false,
+      "earliest": {
+        "t_s": 167,
+        "packets": [
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p0",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          },
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p1",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          }
+        ],
+        "bits": 50000.0
+      },
+      "first_action_s": 61,
+      "balances": 0,
+      "failed": "control:control:bits;control:control:packets;local:11051:bits;local:11051:packets;11051:unscored;local:11052:bits;local:11052:packets;11052:unscored",
+      "rmse_30": "",
+      "baseline_rmse_30": 4.202816472727692,
+      "d_rmse_30": "",
+      "rmse_60": "",
+      "baseline_rmse_60": 3.2045147395308122,
+      "d_rmse_60": "",
+      "d_bits": -50000.0,
+      "d_packets": -2,
+      "d_energy_j": -29282.755552685558
+    },
+    {
+      "field": "local",
+      "seed": "11052",
+      "action": "service:1",
+      "separation_m": 0.0,
+      "variance": 7.394988709309862,
+      "messages": 1,
+      "bytes": 32,
+      "baseline_bytes": 32,
+      "bits": 140000.0,
+      "baseline_bits": 140000.0,
+      "packets": 8,
+      "baseline_packets": 8,
+      "energy_j": 97079.75656394116,
+      "baseline_energy_j": 97079.75656394116,
+      "returned": [
+        true,
+        true
+      ],
+      "energy_left_j": [
+        7557.4420923475145,
+        12001.542555369082
+      ],
+      "reserve_margin_j": [
+        3557.4420923475145,
+        8001.542555369082
+      ],
+      "last_s": 1754.258064,
+      "watched": [
+        {
+          "packet": "w4-b0-p0",
+          "forward_s": 1711,
+          "delivered_s": 1712.897072,
+          "on_time": 1,
+          "holder": "shore"
+        },
+        {
+          "packet": "w4-b0-p1",
+          "forward_s": 1714,
+          "delivered_s": 1715.897072,
+          "on_time": 1,
+          "holder": "shore"
+        }
+      ],
+      "sender_airborne_at_sample": true,
+      "mission_ok": true,
+      "scored": true,
+      "earliest": null,
+      "first_action_s": "",
+      "balances": 0,
+      "failed": "",
+      "rmse_30": 1.8416586590598556,
+      "baseline_rmse_30": 1.8416586590598556,
+      "d_rmse_30": 0.0,
+      "rmse_60": 0.4366994287893343,
+      "baseline_rmse_60": 0.4366994287893343,
+      "d_rmse_60": 0.0,
+      "d_bits": 0.0,
+      "d_packets": 0,
+      "d_energy_j": 0.0
+    },
+    {
+      "field": "local",
+      "seed": "11052",
+      "action": "return:None",
+      "separation_m": 552.9239382419519,
+      "variance": 7.336307687002398,
+      "messages": 1,
+      "bytes": 32,
+      "baseline_bytes": 32,
+      "bits": 90000.0,
+      "baseline_bits": 140000.0,
+      "packets": 6,
+      "baseline_packets": 8,
+      "energy_j": 63711.66342674666,
+      "baseline_energy_j": 97079.75656394116,
+      "returned": [
+        true,
+        true
+      ],
+      "energy_left_j": [
+        40925.53522954219,
+        12001.542555369082
+      ],
+      "reserve_margin_j": [
+        36925.53522954219,
+        8001.542555369082
+      ],
+      "last_s": 1737.645152,
+      "watched": [
+        {
+          "packet": "w4-b0-p0",
+          "forward_s": 1711,
+          "delivered_s": 1712.897072,
+          "on_time": 1,
+          "holder": "shore"
+        },
+        {
+          "packet": "w4-b0-p1",
+          "forward_s": 1714,
+          "delivered_s": 1715.897072,
+          "on_time": 1,
+          "holder": "shore"
+        }
+      ],
+      "sender_airborne_at_sample": true,
+      "mission_ok": false,
+      "scored": false,
+      "earliest": {
+        "t_s": 167,
+        "packets": [
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p0",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          },
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p1",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          }
+        ],
+        "bits": 50000.0
+      },
+      "first_action_s": 61,
+      "balances": 0,
+      "failed": "control:control:bits;control:control:packets;local:11051:bits;local:11051:packets;11051:unscored;local:11052:bits;local:11052:packets;11052:unscored",
+      "rmse_30": "",
+      "baseline_rmse_30": 1.8416586590598556,
+      "d_rmse_30": "",
+      "rmse_60": "",
+      "baseline_rmse_60": 0.4366994287893343,
+      "d_rmse_60": "",
+      "d_bits": -50000.0,
+      "d_packets": -2,
+      "d_energy_j": -33368.093137194504
+    },
+    {
+      "field": "local",
+      "seed": "11052",
+      "action": "backhaul:None",
+      "separation_m": 475.42841527685476,
+      "variance": 7.532852522554313,
+      "messages": 1,
+      "bytes": 32,
+      "baseline_bytes": 32,
+      "bits": 90000.0,
+      "baseline_bits": 140000.0,
+      "packets": 6,
+      "baseline_packets": 8,
+      "energy_j": 67797.0010112556,
+      "baseline_energy_j": 97079.75656394116,
+      "returned": [
+        true,
+        true
+      ],
+      "energy_left_j": [
+        36840.19764503328,
+        12001.542555369082
+      ],
+      "reserve_margin_j": [
+        32840.19764503328,
+        8001.542555369082
+      ],
+      "last_s": 1731.645152,
+      "watched": [
+        {
+          "packet": "w4-b0-p0",
+          "forward_s": 61,
+          "delivered_s": 62.897071999999994,
+          "on_time": 1,
+          "holder": "shore"
+        },
+        {
+          "packet": "w4-b0-p1",
+          "forward_s": 64,
+          "delivered_s": 65.89707200000001,
+          "on_time": 1,
+          "holder": "shore"
+        }
+      ],
+      "sender_airborne_at_sample": true,
+      "mission_ok": false,
+      "scored": false,
+      "earliest": {
+        "t_s": 167,
+        "packets": [
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p0",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          },
+          {
+            "t_s": 167,
+            "kind": "collect",
+            "packet": "w4-b1-p1",
+            "status": "missing",
+            "bits": 25000.0,
+            "baseline_action": "service:1",
+            "other_action": "",
+            "baseline_uav": 0,
+            "other_uav": "",
+            "actor_action": "service:1",
+            "actor_uav": 0
+          }
+        ],
+        "bits": 50000.0
+      },
+      "first_action_s": 61,
+      "balances": 0,
+      "failed": "control:control:bits;control:control:packets;local:11051:bits;local:11051:packets;11051:unscored;local:11052:bits;local:11052:packets;11052:unscored",
+      "rmse_30": "",
+      "baseline_rmse_30": 1.8416586590598556,
+      "d_rmse_30": "",
+      "rmse_60": "",
+      "baseline_rmse_60": 0.4366994287893343,
+      "d_rmse_60": "",
+      "d_bits": -50000.0,
+      "d_packets": -2,
+      "d_energy_j": -29282.755552685558
+    }
+  ],
+  "elapsed_s": 22.554581300006248
+}
